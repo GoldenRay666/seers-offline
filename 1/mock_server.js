@@ -720,6 +720,16 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Map Walk ----
     if (cmd.includes('map_player_walk')) {
+        // Push NPC dialog trigger after walk completes (guide expects this)
+        const x = fields[1] || 0;
+        const y = fields[2] || 0;
+        console.log(`[WALK] Player walked to (${x}, ${y})`);
+        // Trigger NPC 3 (Eva/多罗) dialog via text_msg_out
+        const textBody = Buffer.concat([
+            encodeUint32(1, 3),    // npc_id = 3
+            encodeString(2, '欢迎来到异蘑世界！'),
+        ]);
+        pushMessage(socket, 'ISeer20CSProto.text_msg_out', textBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
         return Buffer.alloc(0);
     }
 
