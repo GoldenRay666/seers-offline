@@ -1,0 +1,15 @@
+package ISeer20Conf;
+
+message recommendation_t {
+    required uint32 mon_id = 1;
+    required uint32 mon_egg_id = 2;
+    required uint32 mon_NumbersID = 3;
+}
+message restrain_sprite_t {
+    required uint32 attributes_id = 1;  //克制的类型
+    repeated recommendation_t recommendation = 2;  // 精灵的id和对应精灵蛋的id
+    
+}
+message top_config_restrain_t{
+    repeated restrain_sprite_t restrain_sprite = 1;
+}

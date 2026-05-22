@@ -1,0 +1,83 @@
+package ISeer20Conf;
+
+
+message lottery_t {
+    enum lottery_type_t {
+        LOTTERY_TYPE_LEGEND = 1; //传说精灵大乐透
+        LOTTERY_TYPE_ELITE  = 2; //精英精灵大乐透
+        LOTTERY_TYPE_COMM   = 3; //普通精灵大乐透
+        LOTTERY_TYPE_POINT  = 4; //积分精灵大乐透
+        LOTTERY_TYPE_COIN   = 5; //幸运精灵大乐透
+    }
+
+    enum lottery_play_type_t {
+        PLAY_TYPE_SINGLE  = 1; //抽取单精灵
+        PLAY_TYPE_FIVE    = 2; //5连抽
+    }
+
+    enum prize_sale_type_t {
+        SALE_TYPE_COMM = 0; //普通奖品
+        SALE_TYPE_SPEC = 1; //稀有奖品
+        SALE_TYPE_ACTI = 2; //活动奖
+    }
+
+    message cost_t {
+        // 乐透的所需物品和货币
+        message item_t {
+            required uint32 item_id   = 1; //物品id
+            required int32 item_count = 2; //物品数量
+        }
+        optional int32 coin     = 1; // 需要花费的赛尔豆
+        optional int32 gcoin    = 2; // 需要花费的金豆
+        optional int32 pvp_point    = 3; // 需要花费的积分
+        repeated item_t item    = 6; // 所需的物品列表  
+    }
+
+    message lottery_play_t {
+        required lottery_play_type_t type = 1; //玩法类型
+        required bytes describe           = 2; //玩法描述
+        required int32 prize_cnt          = 3; //奖品数量
+        required int32 cd_time            = 4; //CD时间(为0表示不能免费)
+        repeated cost_t opt_cost          = 5; //花费物品信息(按照配置顺序选项选择一个)
+    }
+
+    message lottery_prize_t {
+        required uint32 id = 1; //抽奖物品ID
+        required bytes name = 2; //抽奖物品名称
+        optional int32 cnt = 3 [default = 1]; //物品数量
+        required prize_sale_type_t sale_type = 4; //抽奖物品产出类型 2：活动奖励 1：稀有 0：普通
+        required int32 rate = 5; //奖品输出概率
+        optional int32 max = 6 [default = 0]; //每天抽奖物品输出最大数量,0没有上线
+        optional uint32 mon_id = 7 [default = 0]; //抽奖物品为精灵蛋则mon_id对其应精灵ID
+    }
+    message mon_t {
+        required uint32 id  = 1; // 精灵ID  
+        required bytes name = 2; // 精灵的名字
+    }
+
+    // 活动时间的组合方式
+    enum time_type_t {
+        TIME_TYPE_1        = 1; //某日某时 至 某日某时
+        TIME_TYPE_2        = 2; //某日至某日之间 每天的某时至某时
+    }
+
+    message time_t {
+        required string date = 1; //某日至某日 
+        required string time = 2; //某时至某时
+        required time_type_t type = 3;
+    }
+
+    required int32 id = 1; //大乐透ID
+    required lottery_type_t type = 2; //乐透类型
+    required bytes name = 3; //乐透名称
+    required bytes describe = 4; // 描述
+    optional time_t time = 6; //活动有效时间 如果没有配则长期有效
+    optional mon_t target_mon = 7; //目标精灵 
+    repeated lottery_play_t play_info = 8; //玩法输出奖品限制信息
+    repeated lottery_prize_t prize = 9; //待抽奖的奖品列表
+}
+
+message top_config_lottery_t {
+    repeated lottery_t lottery = 1;
+}
+

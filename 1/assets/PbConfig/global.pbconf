@@ -1,0 +1,39 @@
+free_energy: {
+    start_time: "11:30"
+    end_time: "12:30"
+    yield_energy: 50    
+}
+free_energy: {
+    start_time: "18:00"
+    end_time: "19:00"
+    yield_energy: 50    
+}
+buy_action_cost: 20
+clean_give_gift_cd_cost: 1
+online_prize_list: {
+    online_prize: {
+        idx: 1
+        period: 60
+        prize_id: 130001
+    }
+    online_prize: {
+        idx: 2
+        period: 300
+        prize_id: 130002
+    }
+    online_prize: {
+        idx: 3
+        period: 900
+        prize_id: 130003
+    }
+    online_prize: {
+        idx: 4
+        period: 1800
+        prize_id: 130004
+    } 
+    online_prize: {
+        idx: 5
+        period: 3600
+        prize_id: 130005
+    } 
+}

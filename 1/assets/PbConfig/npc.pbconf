@@ -1,0 +1,3426 @@
+npc: {				
+	id: 1
+	avatar: 1
+	name: "伊娃博士"
+	dialogue_id: 1
+}
+
+npc: {
+	id: 2
+	avatar: 2
+	name: "乔休尔"
+	dialogue_id: 2
+    func_type: NPC_FUNCTION_TYPE_EXCHANGE
+}
+npc: {
+	id: 500
+	avatar: 500
+	name: "精灵扭蛋机"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_LOTTERY
+}
+npc: {
+	id: 501
+	avatar: 501
+	name: "特训舱"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_TRAIN
+}
+
+npc: {
+	id: 502
+	avatar: 502
+	name: "鉴定中心"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_MON_IDENTIFY
+}
+
+npc: {
+	id: 503
+	avatar: 503
+	name: "资质增幅仪"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_ADD_QUALITY
+}
+
+npc: {
+	id: 504
+	avatar: 504
+	name: "精灵王之战\n昨日冠军"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_PVP_CHAMPION
+}
+
+npc: {
+	id: 505
+	avatar: 505
+	name: "挑战雷伊\n昨日冠军"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_LEIYI_CHAMPION
+}
+
+npc: {
+	id: 510
+	avatar: 510
+	name: "自由切磋"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_FREE_QIECUO
+}
+
+npc: {
+	id: 511
+	avatar: 511
+	name: "暂未开放"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_UNKNOWN_QIECUO
+}
+
+npc: {
+	id: 512
+	avatar: 511
+	name: "暂未开放"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_UNKNOWN_QIECUO
+}
+
+npc: {
+	id: 513
+	avatar: 511
+	name: "暂未开放"
+	dialogue_id: 0
+	func_type: NPC_FUNCTION_TYPE_UNKNOWN_QIECUO
+}
+
+npc: {
+	id: 3
+	avatar: 3
+	name: "多罗"
+	dialogue_id: 3
+	mon: {
+		id: 10
+		min_level: 7
+		max_level: 7
+		capturable: true
+		task_list: 3
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 10
+	avatar: 10
+	name: "法拉"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 19
+	avatar: 19
+	name: "琪琪"
+	dialogue_id: 4
+	mon: {
+		id: 10
+		min_level: 10
+		max_level: 10
+		capturable: true
+		task_list: 15
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 13
+		min_level: 12
+		max_level: 12
+		capturable: true
+		task_list: 15
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 12
+	avatar: 12
+	name: "法伊娜"
+	dialogue_id: 5
+}
+
+npc: {
+	id: 13
+	avatar: 13
+	name: "小小葵"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 16
+	avatar: 16
+	name: "神目酋长"
+	dialogue_id: 6
+}
+
+npc: {
+	id: 18
+	avatar: 18
+	name: "斯利普"
+	dialogue_id: 7
+	mon: {
+		id: 13
+		min_level: 16
+		max_level: 16
+		capturable: true
+		task_list: 24
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 18
+		min_level: 18
+		max_level: 18
+		capturable: true
+		task_list: 24
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 4
+	avatar: 4
+	name: "巴蒂"
+	dialogue_id: 8
+}
+
+npc: {
+	id: 208
+	avatar: 202
+	name: "萨伦士兵"
+	dialogue_id: 9
+	mon: {
+		id: 18
+		min_level: 16
+		max_level: 16
+		capturable: true
+		task_list: 31
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 28
+		min_level: 23
+		max_level: 23
+		capturable: true
+		task_list: 30
+        task_list: 41
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 33
+		min_level: 12
+		max_level: 12
+		capturable: true
+		task_list: 31
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 41
+		min_level: 16
+		max_level: 18
+		capturable: true
+		task_list: 30
+        task_list: 31
+        task_list: 41
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 59
+		min_level: 25
+		max_level: 25
+		capturable: true
+        task_list: 30
+		task_list: 41
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 41
+	avatar: 41
+	name: "水墨点点"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 25
+	avatar: 25
+	name: "莱斯"
+	dialogue_id: 10
+	mon: {
+		id: 41
+		min_level: 20
+		max_level: 20
+		capturable: true
+		task_list: 37
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 28
+		min_level: 22
+		max_level: 22
+		capturable: true
+		task_list: 37
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 26
+	avatar: 25
+	name: "尼尔森"
+	dialogue_id: 11
+	mon: {
+		id: 87
+		min_level: 24
+		max_level: 24
+		capturable: true
+		task_list: 46
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 92
+		min_level: 26
+		max_level: 26
+		capturable: true
+		task_list: 46
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 112
+		min_level: 28
+		max_level: 28
+		capturable: true
+		task_list: 46
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 23
+	avatar: 23
+	name: "爱丽丝公主"
+	dialogue_id: 12
+	mon: {
+		id: 41
+		min_level: 26
+		max_level: 26
+		capturable: true
+		task_list: 53
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 2
+		min_level: 26
+		max_level: 26
+		capturable: true
+		task_list: 53
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 178
+		min_level: 28
+		max_level: 28
+		capturable: true
+		task_list: 53
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 27
+	avatar: 27
+	name: "占卜婆婆"
+	dialogue_id: 13
+}
+
+npc: {
+	id: 34
+	avatar: 34
+	name: "马丁"
+	dialogue_id: 14
+	mon: {
+		id: 35
+		min_level: 30
+		max_level: 30
+		capturable: true
+		task_list: 211
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 33
+		min_level: 31
+		max_level: 31
+		capturable: true
+		task_list: 211
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 207
+	avatar: 202
+	name: "萨伦士兵"
+	dialogue_id: 15
+	mon: {
+		id: 41
+		min_level: 20
+		max_level: 20
+		capturable: true
+		task_list: 200
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 28
+		min_level: 22
+		max_level: 22
+		capturable: true
+		task_list: 200
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 32
+		min_level: 30
+		max_level: 30
+		capturable: true
+		task_list: 200
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 31
+	avatar: 31
+	name: "巴尔卡"
+	dialogue_id: 16
+	mon: {
+		id: 34
+		min_level: 13
+		max_level: 13
+		capturable: true
+		task_list: 223
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 35
+		min_level: 27
+		max_level: 27
+		capturable: true
+		task_list: 223
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 36
+		min_level: 42
+		max_level: 42
+		capturable: true
+		task_list: 223
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 32
+	avatar: 32
+	name: "洛克"
+	dialogue_id: 17
+	mon: {
+		id: 32
+		min_level: 30
+		max_level: 30
+		capturable: true
+		task_list: 224
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 33
+		min_level: 36
+		max_level: 36
+		capturable: true
+		task_list: 224
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 33
+		min_level: 38
+		max_level: 38
+		capturable: true
+		task_list: 229
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 5
+		min_level: 38
+		max_level: 38
+		capturable: true
+		task_list: 229
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 209
+	avatar: 203
+	name: "萨伦军官"
+	dialogue_id: 18
+	mon: {
+		id: 36
+		min_level: 38
+		max_level: 38
+		capturable: true
+		task_list: 231
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 69
+		min_level: 38
+		max_level: 38
+		capturable: true
+		task_list: 231
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 95
+		min_level: 40
+		max_level: 40
+		capturable: true
+		task_list: 231
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 37
+	avatar: 37
+	name: "小霍克"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 212
+	avatar: 202
+	name: "噩梦之影"
+	dialogue_id: 35
+	mon: {
+		id: 16
+		min_level: 30
+		max_level: 30
+		capturable: true
+		task_list: 233
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 30
+		min_level: 30
+		max_level: 30
+		capturable: true
+		task_list: 233
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 37
+		min_level: 30
+		max_level: 30
+		capturable: true
+		task_list: 233
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 95
+		min_level: 35
+		max_level: 35
+		capturable: true
+		task_list: 234
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 46
+	avatar: 46
+	name: "地月先知"
+	dialogue_id: 20
+	mon: {
+		id: 114
+		min_level: 34
+		max_level: 34
+		capturable: true
+		task_list: 301
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 112
+		min_level: 36
+		max_level: 36
+		capturable: true
+		task_list: 301
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 114
+		min_level: 40
+		max_level: 40
+		capturable: true
+		task_list: 324
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 69
+		min_level: 42
+		max_level: 42
+		capturable: true
+		task_list: 324
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 36
+		min_level: 44
+		max_level: 44
+		capturable: true
+		task_list: 324
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 60
+		min_level: 50
+		max_level: 50
+		capturable: true
+		task_list: 324
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 43
+	avatar: 43
+	name: "阿泰尔"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 45
+	avatar: 45
+	name: "吉吉参谋"
+	dialogue_id: 21
+	mon: {
+		id: 87
+		min_level: 34
+		max_level: 34
+		capturable: true
+		task_list: 309
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 92
+		min_level: 35
+		max_level: 35
+		capturable: true
+		task_list: 309
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 112
+		min_level: 36
+		max_level: 36
+		capturable: true
+		task_list: 309
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 47
+	avatar: 47
+	name: "霍加族长"
+	dialogue_id: 22
+	mon: {
+		id: 87
+		min_level: 34
+		max_level: 34
+		capturable: true
+		task_list: 312
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 118
+		min_level: 40
+		max_level: 40
+		capturable: true
+		task_list: 312
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 87
+	avatar: 87
+	name: "三眼石蝎"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 42
+	avatar: 42
+	name: "大牙"
+	dialogue_id: 23
+	mon: {
+		id: 112
+		min_level: 40
+		max_level: 40
+		capturable: true
+		task_list: 314
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 19
+		min_level: 42
+		max_level: 42
+		capturable: true
+		task_list: 314
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 9
+		min_level: 40
+		max_level: 40
+		capturable: true
+		task_list: 315
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 3
+		min_level: 41
+		max_level: 41
+		capturable: true
+		task_list: 315
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 6
+		min_level: 42
+		max_level: 42
+		capturable: true
+		task_list: 315
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 44
+	avatar: 44
+	name: "小牙"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 48
+	avatar: 46
+	name: "先知"
+	dialogue_id: 24
+	mon: {
+		id: 69
+		min_level: 46
+		max_level: 46
+		capturable: true
+		task_list: 329
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 12
+		min_level: 46
+		max_level: 46
+		capturable: true
+		task_list: 329
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 6
+		min_level: 48
+		max_level: 48
+		capturable: true
+		task_list: 329
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 114
+		min_level: 48
+		max_level: 48
+		capturable: true
+		task_list: 329
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 55
+	avatar: 55
+	name: "阿凡提族长"
+	dialogue_id: 25
+}
+
+npc: {
+	id: 56
+	avatar: 56
+	name: "扎克"
+	dialogue_id: 26
+	mon: {
+		id: 87
+		min_level: 46
+		max_level: 46
+		capturable: true
+		task_list: 340
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 57
+		min_level: 48
+		max_level: 48
+		capturable: true
+		task_list: 340
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 80
+		min_level: 46
+		max_level: 46
+		capturable: true
+		task_list: 340
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 69
+	avatar: 69
+	name: "酷壳鸡"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 210
+	avatar: 210
+	name: "萨伦士兵"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 58
+	avatar: 58
+	name: "卓戈"
+	dialogue_id: 27
+}
+
+npc: {
+	id: 202
+	avatar: 202
+	name: "萨伦士兵"
+	dialogue_id: 28
+	mon: {
+		id: 60
+		min_level: 48
+		max_level: 48
+		capturable: true
+		task_list: 242
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 92
+		min_level: 50
+		max_level: 50
+		capturable: true
+		task_list: 242
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 204
+	avatar: 202
+	name: "萨伦士兵"
+	dialogue_id: 29
+	mon: {
+		id: 139
+		min_level: 50
+		max_level: 50
+		capturable: true
+		task_list: 248
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 29
+		min_level: 54
+		max_level: 54
+		capturable: true
+		task_list: 248
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 205
+	avatar: 58
+	name: "卓戈"
+	dialogue_id: 30
+	mon: {
+		id: 42
+		min_level: 50
+		max_level: 50
+		capturable: true
+		task_list: 398
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 19
+		min_level: 52
+		max_level: 52
+		capturable: true
+		task_list: 398
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 139
+		min_level: 55
+		max_level: 55
+		capturable: true
+		task_list: 398
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 49
+	avatar: 49
+	name: "雪诺"
+	dialogue_id: 31
+}
+
+npc: {
+	id: 50
+	avatar: 50
+	name: "吉米"
+	dialogue_id: 32
+}
+
+npc: {
+	id: 211
+	avatar: 202
+	name: "萨伦士兵"
+	dialogue_id: 34
+	mon: {
+		id: 125
+		min_level: 52
+		max_level: 52
+		capturable: true
+		task_list: 399
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 29
+		min_level: 54
+		max_level: 54
+		capturable: true
+		task_list: 399
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 12
+		min_level: 56
+		max_level: 56
+		capturable: true
+		task_list: 399
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 139
+		min_level: 58
+		max_level: 58
+		capturable: true
+		task_list: 399
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 203
+	avatar: 203
+	name: "萨伦守将"
+	dialogue_id: 33
+	mon: {
+		id: 125
+		min_level: 55
+		max_level: 55
+		capturable: true
+		task_list: 273
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 31
+		min_level: 56
+		max_level: 56
+		capturable: true
+		task_list: 273
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 94
+		min_level: 58
+		max_level: 58
+		capturable: true
+		task_list: 273
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 206
+	avatar: 202
+	name: "萨伦士兵"
+	dialogue_id: 34
+	mon: {
+		id: 139
+		min_level: 52
+		max_level: 52
+		capturable: true
+		task_list: 267
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 93
+		min_level: 54
+		max_level: 54
+		capturable: true
+		task_list: 267
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 70
+	avatar: 70
+	name: "葛雷芬团长"
+	dialogue_id: 42
+	mon: {
+		id: 93
+		min_level: 62
+		max_level: 62
+		capturable: true
+		task_list: 402
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 78
+		min_level: 62
+		max_level: 62
+		capturable: true
+		task_list: 402
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 50
+		min_level: 62
+		max_level: 62
+		capturable: true
+        task_list: 349
+		task_list: 402
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 73
+		min_level: 64
+		max_level: 64
+		capturable: true
+		task_list: 349
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 95
+		min_level: 66
+		max_level: 66
+		capturable: true
+		task_list: 349
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 71
+	avatar: 71
+	name: "小萨"
+	dialogue_id: 36
+	mon: {
+		id: 199
+		min_level: 60
+		max_level: 60
+		capturable: true
+		task_list: 288
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 92
+		min_level: 60
+		max_level: 60
+		capturable: true
+		task_list: 288
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 12
+		min_level: 60
+		max_level: 60
+		capturable: true
+		task_list: 288
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 72
+	avatar: 72
+	name: "执政官"
+	dialogue_id: 37
+	mon: {
+		id: 112
+		min_level: 90
+		max_level: 90
+		capturable: true
+		task_list: 382
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 73
+	avatar: 73
+	name: "飞翼之王"
+	dialogue_id: 38
+}
+
+npc: {
+	id: 74
+	avatar: 74
+	name: "财政官"
+	dialogue_id: 39
+	mon: {
+		id: 125
+		min_level: 70
+		max_level: 70
+		capturable: true
+		task_list: 403
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 29
+		min_level: 74
+		max_level: 74
+		capturable: true
+		task_list: 403
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 12
+		min_level: 80
+		max_level: 80
+		capturable: true
+		task_list: 403
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 139
+		min_level: 78
+		max_level: 78
+		capturable: true
+		task_list: 403
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 75
+	avatar: 75
+	name: "卫队长"
+	dialogue_id: 40
+	mon: {
+		id: 93
+		min_level: 64
+		max_level: 64
+		capturable: true
+		task_list: 347
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 121
+		min_level: 64
+		max_level: 64
+		capturable: true
+		task_list: 347
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 76
+		min_level: 64
+		max_level: 64
+		capturable: true
+		task_list: 347
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 76
+	avatar: 76
+	name: "斯坦因博士"
+	dialogue_id: 41
+	mon: {
+		id: 213
+		min_level: 79
+		max_level: 79
+		capturable: true
+		task_list: 357
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 92
+		min_level: 80
+		max_level: 80
+		capturable: true
+		task_list: 357
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 50
+		min_level: 82
+		max_level: 82
+		capturable: true
+		task_list: 357
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 199
+		min_level: 78
+		max_level: 78
+		capturable: true
+		task_list: 361
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 95
+		min_level: 79
+		max_level: 79
+		capturable: true
+		task_list: 361
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 112
+		min_level: 82
+		max_level: 82
+		capturable: true
+		task_list: 361
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 77
+	avatar: 77
+	name: "桑铎"
+	dialogue_id: 43
+}
+
+npc: {
+	id: 78
+	avatar: 71
+	name: "小萨"
+	dialogue_id: 44
+	mon: {
+		id: 213
+		min_level: 90
+		max_level: 90
+		capturable: true
+		task_list: 360
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 29
+		min_level: 54
+		max_level: 54
+		capturable: true
+		task_list: 360
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 150
+		min_level: 84
+		max_level: 84
+		capturable: true
+		task_list: 360
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 151
+	avatar: 90
+	name: "雷伊"
+	dialogue_id: 3000
+	mon: {
+		id: 150
+		min_level: 90
+		max_level: 90
+		capturable: true
+		task_list: 364
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 301
+		min_level: 95
+		max_level: 95
+		capturable: true
+		task_list: 364
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 302
+		min_level: 100
+		max_level: 100
+		capturable: true
+		task_list: 364
+		btl_attr: {
+		}
+	    move_list: 11188
+        move_list: 11180
+        move_list: 11182
+        move_list: 11192
+        move_list: 11189
+    }
+}
+npc: {
+	id: 201
+	avatar: 1002
+	portrait: 201
+	name: "库贝萨"
+	dialogue_id: 9038
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	max_mon_lv_require: 20
+	required_task: 500
+	reverse: true
+	mon: {
+		id: 1002
+		min_level: 100
+		max_level: 100
+		capturable: false
+		btl_attr: {
+			hp: 2000
+		}
+	}
+}
+npc: {
+	id: 230
+	avatar: 230
+	name: "小巴"
+	dialogue_id: 3009
+}
+
+npc: {
+	id: 200
+	avatar: 90
+	name: "雷伊"
+	type: NPC_TYPE_BOSS
+	dialogue_id: 0
+	mon: {
+		id: 90
+		min_level: 100
+		max_level: 100
+		btl_attr: {
+			hp: 10000000
+			atk: 50000
+			def: 300
+			sp_atk: 50000
+			sp_def: 300
+			spd: 1
+		}
+		move_list: 11177
+		move_list: 11182
+		move_list: 11192
+	}
+}
+
+npc: {
+	id: 152
+	avatar: 152
+	name: "萨伯尔"
+	dialogue_id: 0
+}
+
+npc: {
+	id: 153
+	avatar: 153
+	name: "石像魔"
+	dialogue_id: 0
+}
+
+
+npc: {
+	id: 154
+	avatar: 154
+	name: "活动兑换"
+	dialogue_id: 3010
+}
+npc: {
+	id: 90271
+	avatar: 271
+	portrait: 90271
+	name: "恶狼传说"
+	dialogue_id: 9115
+	type: NPC_TYPE_BOSS 
+	yield_exp: 120
+	yield_ev: 1
+	pre_npc_id: 90157
+	max_mon_lv_require: 70
+	required_task: 406
+	reverse: true
+	mon: {
+		id: 3001
+		min_level: 90
+		max_level: 90
+		capturable: false
+		btl_attr: {
+			hp: 3000
+			atk: 1100
+			def: 700
+			sp_atk: 900
+			sp_def: 700
+			spd: 100000
+		}
+		move_list: 11697 
+		move_list: 11700
+		move_list: 11705 
+		move_list: 11706
+		move_list: 11707
+    }
+}
+npc: {
+	id: 100011
+	avatar: 10
+	name: "法拉"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 120
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20215
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:13
+	}
+	drop_list: {
+		task_item_id:20218
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:40
+	}
+	mon: {
+		id: 10
+		min_level: 2
+		max_level: 4
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100021
+	avatar: 13
+	name: "小小葵"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 134
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20207
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:5
+	}
+	drop_list: {
+		task_item_id:20207
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:35
+	}
+	drop_list: {
+		task_item_id:20201
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:220
+	}
+	mon: {
+		id: 13
+		min_level: 5
+		max_level: 7
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100031
+	avatar: 18
+	name: "小树根"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 126
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20216
+		task_item_count: 1
+		drop_rate: 5000
+		task_list:23
+	}
+	mon: {
+		id: 18
+		min_level: 9
+		max_level: 11
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100032
+	avatar: 210
+	name: "弗格"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 128
+	yield_ev: 1
+    normal_mon_npc: false
+    rate: 100
+	mon: {
+		id: 210
+		min_level: 11
+		max_level: 13
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100191
+	avatar: 210
+	name: "弗格"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 128
+	yield_ev: 1
+    normal_mon_npc: false
+    rate: 100
+	mon: {
+		id: 210
+		min_level: 18
+		max_level: 22
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100101
+	avatar: 41
+	name: "水墨点点"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 102
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20219
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:48
+	}
+	mon: {
+		id: 41
+		min_level: 13
+		max_level: 15
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100102
+	avatar: 72
+	name: "乌达"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 68
+	yield_ev: 1
+    normal_mon_npc: false
+    rate: 100
+	mon: {
+		id: 72
+		min_level: 22
+		max_level: 25
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100161
+	avatar: 28
+	name: "蓝喵"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 98
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20222
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:206
+	}
+	drop_list: {
+		task_item_id:20217
+		task_item_count: 1
+		drop_rate: 5000
+		task_list:39
+	}
+	mon: {
+		id: 28
+		min_level: 18
+		max_level: 20
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100162
+	avatar: 72
+	name: "乌达"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 68
+	yield_ev: 1
+    normal_mon_npc: false
+    rate: 100
+	mon: {
+		id: 72
+		min_level: 22
+		max_level: 25
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100131
+	avatar: 32
+	name: "尤尼"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 67
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20204
+		task_item_count: 1
+		drop_rate: 6000
+		task_list:306
+	}
+	drop_list: {
+		task_item_id:20203
+		task_item_count: 1
+		drop_rate: 7000
+		task_list:208
+	}
+	mon: {
+		id: 32
+		min_level: 22
+		max_level: 24
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100132
+	avatar: 74
+	name: "达达"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 69
+	yield_ev: 1
+    normal_mon_npc: false
+    rate: 100
+	mon: {
+		id: 74
+		min_level: 12
+		max_level: 15
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100141
+	avatar: 35
+	name: "大角岩浮"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 98
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20223
+		task_item_count: 1
+		drop_rate: 5000
+		task_list:217
+	}
+	drop_list: {
+		task_item_id:20224
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:219
+	}
+	mon: {
+		id: 35
+		min_level: 25
+		max_level: 27
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100142
+	avatar: 74
+	name: "达达"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 69
+	yield_ev: 1
+    normal_mon_npc: false
+    rate: 100
+	mon: {
+		id: 74
+		min_level: 12
+		max_level: 15
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100151
+	avatar: 74
+	name: "达达"
+	type: NPC_TYPE_VIRTUAL
+    normal_mon_npc: false
+	yield_exp: 69
+	yield_ev: 1
+    rate: 100
+	mon: {
+		id: 74
+		min_level: 12
+		max_level: 15
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100091
+	avatar: 112
+	name: "砂吉塔"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 169
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20220
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:302
+	}
+	mon: {
+		id: 112
+		min_level: 30
+		max_level: 32
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100211
+	avatar: 87
+	name: "三眼石蝎"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 169
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20228
+		task_item_count: 1
+		drop_rate: 6000
+		task_list:261
+	}
+	mon: {
+		id: 87
+		min_level: 35
+		max_level: 37
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100051
+	avatar: 114
+	name: "蹦蹦鼠"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 168
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20213
+		task_item_count: 1
+		drop_rate: 5000
+		task_list:326
+	}
+	drop_list: {
+		task_item_id:20211
+		task_item_count: 1
+		drop_rate: 5000
+		task_list:241
+	}
+	mon: {
+		id: 114
+		min_level: 39
+		max_level: 41
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100061
+	avatar: 68
+	name: "酷壳鸡"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 69
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20212
+		task_item_count: 1
+		drop_rate: 8000
+		task_list:240
+	}
+	mon: {
+		id: 68
+		min_level: 43
+		max_level: 45
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100111
+	avatar: 139
+	name: "多普利"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 167
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20225
+		task_item_count: 1
+		drop_rate: 8000
+		task_list:250
+	}
+	drop_list: {
+		task_item_id:20226
+		task_item_count: 1
+		drop_rate: 6000
+		task_list:253
+	}
+	mon: {
+		id: 139
+		min_level: 47
+		max_level: 49
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100201
+	avatar: 125
+	name: "伊露辛"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 168
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20227
+		task_item_count: 1
+		drop_rate: 8000
+		task_list:259
+	}
+	mon: {
+		id: 125
+		min_level: 51
+		max_level: 53
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100251
+	avatar: 199
+	name: "泰姆尔"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 238
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20231
+		task_item_count: 1
+		drop_rate: 5000
+		task_list:375
+	}
+	mon: {
+		id: 199
+		min_level: 55
+		max_level: 57
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100271
+	avatar: 195
+	name: "克里普特"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 236
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20229
+		task_item_count: 1
+		drop_rate: 6000
+		task_list:381
+	}
+	mon: {
+		id: 195
+		min_level: 51
+		max_level: 53
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100291
+	avatar: 213
+	name: "石像魔"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 258
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20230
+		task_item_count: 1
+		drop_rate: 5000
+		task_list:363
+	}
+	mon: {
+		id: 213
+		min_level: 75
+		max_level: 78
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 100171
+	avatar: 72
+	name: "乌达"
+	type: NPC_TYPE_VIRTUAL
+	yield_exp: 68
+	yield_ev: 1
+    normal_mon_npc: false
+    rate: 100
+	mon: {
+		id: 72
+		min_level: 22
+		max_level: 25
+		capturable: true
+		btl_attr: {
+		}
+	}
+}
+
+npc: {
+	id: 90017
+	avatar: 17
+	portrait: 101
+	name: "布鲁托"
+	dialogue_id: 2001
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	max_mon_lv_require: 20
+	required_task: 26
+	reverse: true
+	mon: {
+		id: 17
+		min_level: 20
+		max_level: 20
+		capturable: true
+		btl_attr: {
+			hp: 120
+		}
+	}
+}
+
+npc: {
+	id: 90031
+	avatar: 31
+	portrait: 102
+	name: "阿卡纳斯"
+	dialogue_id: 2005
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	pre_npc_id: 90017
+	max_mon_lv_require: 30
+	required_task: 54
+	reverse: true
+	mon: {
+		id: 31
+		min_level: 30
+		max_level: 30
+		capturable: true
+		btl_attr: {
+			hp: 400
+		}
+	}
+}
+
+npc: {
+	id: 90036
+	avatar: 36
+	name: "大将岩浮"
+	dialogue_id: 2001
+	type: NPC_TYPE_BOSS 
+	yield_exp: 126
+	yield_ev: 1
+	max_mon_lv_require: 40
+	mon: {
+		id: 36
+		min_level: 35
+		max_level: 35
+		capturable: true
+		btl_attr: {
+			hp: 400
+		}
+	}
+}
+
+npc: {
+	id: 90033
+	avatar: 33
+	name: "乔尼"
+	type: NPC_TYPE_BOSS 
+	yield_exp: 117
+	yield_ev: 1
+	max_mon_lv_require: 40
+	mon: {
+		id: 33
+		min_level: 35
+		max_level: 35
+		capturable: true
+		btl_attr: {
+			hp: 400
+		}
+	}
+}
+
+
+npc: {
+	id: 90038
+	avatar: 38
+	portrait: 103
+	name: "霍克努尔"
+	dialogue_id: 2009
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	pre_npc_id: 90031
+	max_mon_lv_require: 40
+    required_task: 230
+	reverse: true
+	mon: {
+		id: 36
+		min_level: 35
+		max_level: 35
+		capturable: false
+		btl_attr: {
+			hp: 400
+		}
+	}
+	mon: {
+		id: 33
+		min_level: 35
+		max_level: 35
+		capturable: false
+		btl_attr: {
+			hp: 400
+		}
+	}	
+	mon: {
+		id: 38
+		min_level: 40
+		max_level: 40
+		capturable: true
+		btl_attr: {
+			hp: 600
+		}
+	}
+}
+
+npc: {
+	id: 90014
+	avatar: 14
+	name: "呆呆葵"
+	type: NPC_TYPE_BOSS 
+	yield_exp: 194
+	yield_ev: 1
+	max_mon_lv_require: 45
+	mon: {
+		id: 14
+		min_level: 40
+		max_level: 40
+		capturable: true
+		btl_attr: {
+			hp: 600
+		}
+	}
+}
+
+npc: {
+	id: 90057
+	avatar: 57
+	portrait: 104
+	name: "麦麦迪"
+	dialogue_id: 2013
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	drop_list: {
+		task_item_id:20221
+		task_item_count: 1
+		drop_rate: 10000
+		task_list:303
+	}
+	pre_npc_id: 90038
+	max_mon_lv_require: 45
+	required_task: 238
+	reverse: true
+	mon: {
+		id: 14
+		min_level: 40
+		max_level: 40
+		capturable: false
+		btl_attr: {
+			hp: 600
+		}
+	}
+	mon: {
+		id: 57
+		min_level: 45
+		max_level: 45
+		capturable: true
+		btl_attr: {
+			hp: 800
+		}
+	}
+}
+
+npc: {
+	id: 90080
+	avatar: 80
+	portrait: 105
+	name: "巨锤莫古"
+	dialogue_id: 2017
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	pre_npc_id: 90057
+	max_mon_lv_require: 50
+	required_task: 321
+	reverse: true
+	mon: {
+		id: 80
+		min_level: 50
+		max_level: 50
+		capturable: true
+		btl_attr: {
+			hp: 1000
+		}
+	}
+}
+
+npc: {
+	id: 90082
+	avatar: 82
+	portrait: 106
+	name: "沙皇鸟"
+	dialogue_id: 2021
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	pre_npc_id: 90080
+	max_mon_lv_require: 55
+	required_task: 397
+	reverse: true
+	mon: {
+		id: 82
+		min_level: 55
+		max_level: 55
+		capturable: true
+		btl_attr: {
+			hp: 1200
+		}
+	}
+}
+
+npc: {
+	id: 90090
+	avatar: 90
+	portrait: 90
+	name: "雷伊"
+	dialogue_id: 3000
+	yield_exp: 135
+	yield_ev: 1
+	type: NPC_TYPE_BOSS 
+	max_mon_lv_require: 1
+	mon: {
+		id: 90
+		min_level: 100
+		max_level: 100
+		capturable: false
+		btl_attr: {
+			hp: 5000
+		}
+	}
+}
+
+npc: {
+	id: 90127
+	avatar: 127
+	portrait: 107
+	name: "卡尼娅"
+	dialogue_id: 2025
+	type: NPC_TYPE_BOSS 
+	yield_exp: 240
+	yield_ev: 1
+	pre_npc_id: 90082
+	max_mon_lv_require: 70
+	required_task: 400
+	reverse: true
+	mon: {
+		id: 127
+		min_level: 70
+		max_level: 70
+		capturable: true
+		btl_attr: {
+			hp: 2000
+		}
+	}
+}
+
+npc: {
+	id: 90157
+	avatar: 157
+	portrait: 108
+	name: "菲亚斯"
+	dialogue_id: 2029
+	type: NPC_TYPE_BOSS 
+	yield_exp: 120
+	yield_ev: 1
+	pre_npc_id: 90127
+	max_mon_lv_require: 70
+	required_task: 377
+	reverse: true
+	mon: {
+		id: 157
+		min_level: 90
+		max_level: 90
+		capturable: true
+		btl_attr: {
+			hp: 5000
+		}
+        move_list: 11012
+        move_list: 11013
+        move_list: 11014 
+        move_list: 11005 
+        move_list: 10832 
+	}
+}
+
+npc: {
+	id: 110001
+	avatar: 11
+	name: "法娜"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 11
+		min_level: 30
+		max_level: 35
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110002
+	avatar: 14
+	name: "呆呆葵"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 14
+		min_level: 30
+		max_level: 35
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110003
+	avatar: 17
+	name: "布鲁托"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 17
+		min_level: 40
+		max_level: 45
+		capturable: false
+		btl_attr: {
+		}
+	}
+}  
+npc: {
+	id: 110004
+	avatar: 18
+	name: "小树根"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 18
+		min_level: 30
+		max_level: 35
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110005
+	avatar: 28
+	name: "蓝喵"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 28
+		min_level: 35
+		max_level: 40
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110006
+	avatar: 32
+	name: "乔尼"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 32
+		min_level: 35
+		max_level: 40
+		capturable: false
+		btl_attr: {
+		}
+	}
+ 	mon: {
+		id: 19
+		min_level: 40
+		max_level: 45
+		capturable: false
+		btl_attr: {
+            hp: 200        
+		}
+	}   
+}
+npc: {
+	id: 110007
+	avatar: 35
+	name: "大角岩浮"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 35
+		min_level: 35
+		max_level: 40
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110008
+	avatar: 41
+	name: "水墨点点"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 41
+		min_level: 35
+		max_level: 40
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110009
+	avatar: 36
+	name: "大将岩浮"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 36
+		min_level: 35
+		max_level: 40
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110010
+	avatar: 31
+	name: "阿卡纳斯"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 38
+		min_level: 40
+		max_level: 45
+		capturable: false
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 31
+		min_level: 50
+		max_level: 60
+		capturable: false
+		btl_attr: {
+            hp: 400
+		}
+	    move_list: 10182
+        move_list: 10184
+        move_list: 10192          
+        move_list: 10188          
+	}
+}
+npc: {
+	id: 110011
+	avatar: 12
+	name: "法伊娜"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 12
+		min_level: 50
+		max_level: 55
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110012
+	avatar: 15
+	name: "笑笑葵"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 15
+		min_level: 50
+		max_level: 55
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110013
+	avatar: 60
+	name: "长臂猴"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 17
+		min_level: 50
+		max_level: 55
+		capturable: false
+		btl_attr: {
+		}
+	}
+ 	mon: {
+		id: 60
+		min_level: 55
+		max_level: 65
+		capturable: false
+		btl_attr: {
+            hp: 500        
+		}
+	}   
+}  
+npc: {
+	id: 110014
+	avatar: 19
+	name: "树根使者"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 19
+		min_level: 50
+		max_level: 55
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110015
+	avatar: 29
+	name: "蓝虎鲸"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 29
+		min_level: 50
+		max_level: 55
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110016
+	avatar: 33
+	name: "乔尼"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 33
+		min_level: 55
+		max_level: 65
+		capturable: false
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 29
+		min_level: 50
+		max_level: 65
+		capturable: false
+		btl_attr: {
+            hp: 800
+		}
+	}    
+}
+npc: {
+	id: 110017
+	avatar: 35
+	name: "大角岩浮"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 35
+		min_level: 50
+		max_level: 55
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110018
+	avatar: 42
+	name: "水墨点点"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 42
+		min_level: 50
+		max_level: 55
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110019
+	avatar: 36
+	name: "大将岩浮"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 36
+		min_level: 55
+		max_level: 60
+		capturable: false
+		btl_attr: {
+		}
+	}
+}
+npc: {
+	id: 110020
+	avatar: 209
+	name: "安吉丽塔"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 69
+	yield_ev: 1
+	mon: {
+		id: 56
+		min_level: 55
+		max_level: 65
+		capturable: false
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 87
+		min_level: 65
+		max_level: 75
+		capturable: false
+		btl_attr: {
+		}
+	}   
+	mon: {
+		id: 209
+		min_level: 70
+		max_level: 75
+		capturable: false
+		btl_attr: {
+            hp: 1000
+            atk: 350
+            def: 600
+            sp_atk: 350
+            sp_def: 350            
+		}
+	    move_list: 11167
+        move_list: 11171
+        move_list: 11172
+        move_list: 11173           
+	}     
+}
+npc: {
+	id: 110021
+	avatar: 38
+	name: "霍克努尔"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 38
+		min_level: 65
+		max_level: 70
+		capturable: false
+		btl_attr: {
+            hp: 1200   
+		}
+	}
+}
+npc: {
+	id: 110022
+	avatar: 69
+	name: "蛋壳鸡"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 69
+		min_level: 65
+		max_level: 70
+		capturable: false
+		btl_attr: {
+            hp: 1300           
+		}
+	}
+}
+npc: {
+	id: 110023
+	avatar: 42
+	name: "水墨飞马"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 114
+		min_level: 75
+		max_level: 80
+		capturable: false
+		btl_attr: {      
+		}
+	}    
+	mon: {
+		id: 42
+		min_level: 75
+		max_level: 80
+		capturable: false
+		btl_attr: {
+            hp: 1800
+		}
+	    move_list: 10250
+        move_list: 10252
+        move_list: 10259
+        move_list: 10260
+        move_list: 10258        
+	}
+}
+npc: {
+	id: 110024
+	avatar: 87
+	name: "三眼石蝎"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 87
+		min_level: 65
+		max_level: 70
+		capturable: false
+		btl_attr: {
+            hp: 1400           
+		}
+	}
+}
+npc: {
+	id: 110025
+	avatar: 112
+	name: "砂吉塔"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 112
+		min_level: 65
+		max_level: 70
+		capturable: false
+		btl_attr: {
+            hp: 1500           
+		}
+	}
+}
+npc: {
+	id: 110026
+	avatar: 114
+	name: "蹦蹦鼠"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 60
+		min_level: 75
+		max_level: 80
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 114
+		min_level: 75
+		max_level: 85
+		capturable: false
+		btl_attr: {
+            hp: 1800  
+            spd: 550
+		}
+	    move_list: 10600
+        move_list: 10603
+        move_list: 10604
+        move_list: 10609
+        move_list: 10607                  
+	}
+}
+npc: {
+	id: 110027
+	avatar: 125
+	name: "伊露辛"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 125
+		min_level: 65
+		max_level: 70
+		capturable: false
+		btl_attr: {
+            hp: 1500          
+		}
+	}
+}
+npc: {
+	id: 110028
+	avatar: 139
+	name: "多普利"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 139
+		min_level: 65
+		max_level: 70
+		capturable: false
+		btl_attr: {
+            hp: 1600          
+		}
+	}
+}
+npc: {
+	id: 110029
+	avatar: 78
+	name: "呆目齿轮鹰"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 78
+		min_level: 65
+		max_level: 70
+		capturable: false
+		btl_attr: {
+            hp: 1700          
+		}
+	}
+}
+npc: {
+	id: 110030
+	avatar: 50
+	name: "多摩桑"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 150
+	yield_ev: 1
+	mon: {
+		id: 134
+		min_level: 80
+		max_level: 90
+		capturable: false
+		btl_attr: {
+		}
+	}
+	mon: {
+		id: 50
+		min_level: 80
+		max_level: 90
+		capturable: false
+		btl_attr: {
+            hp: 2000
+            def: 800
+            sp_def: 800          
+		}
+	    move_list: 10294
+        move_list: 10300
+        move_list: 10301
+        move_list: 10302
+	}    
+}
+
+npc: {
+	id: 110031
+	avatar: 150
+	name: "勇敢的巴图"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 92
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 9
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+		}
+	}	    
+    mon: {
+		id: 150
+		min_level: 99
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 3000
+            sp_atk: 700
+            sp_def: 900            
+		}
+	    move_list: 10838
+        move_list: 10839
+        move_list: 10845
+        move_list: 10848
+        move_list: 10844
+    }
+}
+npc: {
+	id: 110032
+	avatar: 100
+	name: "无敌战伊特"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 6
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 82
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	    
+    mon: {
+		id: 100
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+            hp: 4000
+            atk: 700
+            def: 900
+            sp_atk: 700
+            sp_def: 900            
+		}
+	    move_list: 11429
+        move_list: 11432
+        move_list: 11433
+        move_list: 11436
+        move_list: 11434
+    }
+}
+npc: {
+	id: 110033
+	avatar: 9
+	name: "坚强的拉奥叶"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 69
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+		}
+	}
+    mon: {
+		id: 31
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 9
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 2500
+            sp_def: 900            
+		}
+	    move_list: 10036
+        move_list: 10037
+        move_list: 10039
+        move_list: 10047
+        move_list: 10046
+    }        
+}
+npc: {
+	id: 110034
+	avatar: 118
+	name: "强力的阿布布"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 112
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 139
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	    
+    mon: {
+		id: 118
+		min_level: 99
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 2500
+            def: 900     
+            spd: 700             
+		}
+	    move_list: 10616
+        move_list: 10613
+        move_list: 10618
+        move_list: 10623
+        move_list: 10621
+    }	    
+}
+npc: {
+	id: 110035
+	avatar: 178
+	name: "进击的米咔"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 50
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 42
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	    
+    mon: {
+		id: 178
+		min_level: 99
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 2800
+            sp_def: 900   
+            spd: 700
+		}
+	    move_list: 10944
+        move_list: 10945
+        move_list: 10951
+        move_list: 10952
+        move_list: 10950
+    }
+}
+npc: {
+	id: 110036
+	avatar: 6
+	name: "魔力的休罗斯"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 199
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}
+    mon: {
+		id: 205
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 6
+		min_level: 99
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 2200
+            sp_atk: 700  
+		}
+	    move_list: 10021
+        move_list: 10026
+        move_list: 10029
+        move_list: 10030
+    }        
+}
+npc: {
+	id: 110037
+	avatar: 95
+	name: "隐忍的暗伊特"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 80
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 57
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+		}
+	}	    
+    mon: {
+		id: 95
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+            hp: 3000
+            def: 900
+            sp_def: 900            
+		}
+	    move_list: 10586
+        move_list: 10587
+        move_list: 10589
+        move_list: 10592
+        move_list: 10593
+    }
+}
+npc: {
+	id: 110038
+	avatar: 94
+	name: "进击的冰伊特"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 3
+		min_level: 95
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 33
+		min_level: 95
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	    
+    mon: {
+		id: 94
+		min_level: 99
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 3000
+            sp_atk: 800
+            spd: 800
+		}
+	    move_list: 10545
+        move_list: 10546
+        move_list: 10549
+        move_list: 10553
+        move_list: 10551
+    }
+}
+npc: {
+	id: 110039
+	avatar: 93
+	name: "铁壁电伊特"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 42
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 42
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+		}
+	}    
+    mon: {
+		id: 93
+		min_level: 93
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 3500
+            def: 900
+            sp_def: 900            
+		}
+	    move_list: 10535
+        move_list: 10536
+        move_list: 10538
+        move_list: 10544
+        move_list: 10541
+    }
+}
+npc: {
+	id: 110040
+	avatar: 3
+	name: "极速的迪兰特"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 195
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 82
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}    
+    mon: {
+		id: 3
+		min_level: 99
+		max_level: 100
+		capturable: false
+		btl_attr: {
+            hp: 2200
+            sp_atk: 700 
+            def: 700
+            sp_def: 700  
+            spd: 700              
+		}
+	    move_list: 10008
+        move_list: 10005
+        move_list: 10014
+        move_list: 10016
+        move_list: 10013
+    }
+}
+npc: {
+	id: 111000
+	avatar: 495
+	name: "盖亚之影"
+	type: NPC_TYPE_NORMAL
+	yield_exp: 200
+	yield_ev: 1
+    mon: {
+		id: 3
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	
+    mon: {
+		id: 9
+		min_level: 90
+		max_level: 100
+		capturable: false
+		btl_attr: {
+		}
+	}	    
+    mon: {
+		id: 495
+		min_level: 90
+		max_level: 95
+		capturable: false
+		btl_attr: {
+            hp: 5000
+            atk: 900
+            def: 900
+            sp_atk: 700
+            sp_def: 900            
+		}
+	    move_list: 13045
+        move_list: 13049
+        move_list: 13050
+        move_list: 13055
+        move_list: 13057
+    }
+}

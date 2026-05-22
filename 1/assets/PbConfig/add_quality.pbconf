@@ -1,0 +1,166 @@
+clean_cd_cost: 20
+add_quality_cd_dur: 36000
+buy_quality_cost: 100
+
+egg_energy: {
+    quality: QUALITY_WHITE
+    energy: 10
+}
+
+egg_energy: {
+    quality: QUALITY_GREEN
+    energy: 20
+}
+
+egg_energy: {
+    quality: QUALITY_BLUE
+    energy: 30
+}
+
+egg_energy: {
+    quality: QUALITY_PURPLE
+    energy: 40
+}
+
+egg_energy: {
+    quality: QUALITY_ORANGE
+    energy: 50
+}
+
+up_rate: {
+    energy: 10
+    up_0_rate: 65
+    up_1_rate: 35
+}
+
+up_rate: {
+    energy: 20
+    up_0_rate: 50
+    up_1_rate: 50
+}
+
+up_rate: {
+    energy: 30
+    up_0_rate: 35
+    up_1_rate: 65
+}
+
+up_rate: {
+    energy: 40
+    up_0_rate: 20
+    up_1_rate: 80
+}
+
+up_rate: {
+    energy: 50
+    up_1_rate: 90
+    up_2_rate: 8
+    up_3_rate: 2
+}
+
+up_rate: {
+    energy: 60
+    up_1_rate: 75
+    up_2_rate: 20
+    up_3_rate: 5
+}
+
+up_rate: {
+    energy: 70
+    up_1_rate: 50
+    up_2_rate: 40
+    up_3_rate: 10
+}
+
+up_rate: {
+    energy: 80
+    up_1_rate: 35
+    up_2_rate: 50
+    up_3_rate: 15
+}
+
+up_rate: {
+    energy: 90
+    up_1_rate: 20
+    up_2_rate: 60
+    up_3_rate: 20
+}
+
+up_rate: {
+    energy: 100
+    up_1_rate: 5
+    up_2_rate: 70
+    up_3_rate: 25
+}
+
+up_rate: {
+    energy: 110
+    up_2_rate: 70
+    up_3_rate: 30
+}
+
+up_rate: {
+    energy: 120
+    up_2_rate: 55
+    up_3_rate: 45
+}
+
+up_rate: {
+    energy: 130
+    up_2_rate: 40
+    up_3_rate: 60
+}
+
+up_rate: {
+    energy: 140
+    up_2_rate: 25
+    up_3_rate: 75
+}
+
+up_rate: {
+    energy: 150
+    up_2_rate: 10
+    up_3_rate: 90
+}
+
+up_rate: {
+    energy: 160
+    up_3_rate: 100
+}
+
+
+cost: {
+    beg_quality: 0
+    end_quality: 20
+    coin: 200
+}
+
+cost: {
+    beg_quality: 21
+    end_quality: 30
+    coin: 400
+}
+
+cost: {
+    beg_quality: 31
+    end_quality: 35
+    coin: 600
+}
+
+cost: {
+    beg_quality: 36
+    end_quality: 40
+    coin: 800
+}
+
+cost: {
+    beg_quality: 41
+    end_quality: 45
+    coin: 1000
+}
+
+cost: {
+    beg_quality: 46
+    end_quality: 51
+    coin: 1200
+}

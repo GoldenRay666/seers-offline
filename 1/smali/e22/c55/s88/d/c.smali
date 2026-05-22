@@ -1,0 +1,144 @@
+.class Le22/c55/s88/d/c;
+.super Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+
+# instance fields
+.field final synthetic a:Le22/c55/s88/d/b;
+
+.field private b:Ljava/lang/Thread;
+
+.field private c:I
+
+
+# direct methods
+.method public constructor <init>(Le22/c55/s88/d/b;)V
+    .locals 1
+
+    iput-object p1, p0, Le22/c55/s88/d/c;->a:Le22/c55/s88/d/b;
+
+    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+
+    new-instance v0, Ljava/util/Random;
+
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+
+    invoke-virtual {v0}, Ljava/util/Random;->nextInt()I
+
+    move-result v0
+
+    iput v0, p0, Le22/c55/s88/d/c;->c:I
+
+    return-void
+.end method
+
+.method static synthetic a(Le22/c55/s88/d/c;Ljava/lang/Thread;)Ljava/lang/Thread;
+    .locals 0
+
+    iput-object p1, p0, Le22/c55/s88/d/c;->b:Ljava/lang/Thread;
+
+    return-object p1
+.end method
+
+
+# virtual methods
+.method public a()V
+    .locals 3
+
+    invoke-virtual {p0}, Le22/c55/s88/d/c;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Le22/c55/s88/d/e;
+
+    invoke-virtual {v0}, Le22/c55/s88/d/e;->h()I
+
+    move-result v0
+
+    const/4 v2, -0x3
+
+    if-ne v0, v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public a(Le22/c55/s88/d/e;)Z
+    .locals 2
+
+    invoke-super {p0, p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->add(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Le22/c55/s88/d/c;->b:Ljava/lang/Thread;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Le22/c55/s88/d/d;
+
+    invoke-direct {v1, p0}, Le22/c55/s88/d/d;-><init>(Le22/c55/s88/d/c;)V
+
+    iput-object v1, p0, Le22/c55/s88/d/c;->b:Ljava/lang/Thread;
+
+    iget-object v1, p0, Le22/c55/s88/d/c;->b:Ljava/lang/Thread;
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+
+    :cond_0
+    return v0
+.end method
+
+.method public synthetic add(Ljava/lang/Object;)Z
+    .locals 1
+
+    check-cast p1, Le22/c55/s88/d/e;
+
+    invoke-virtual {p0, p1}, Le22/c55/s88/d/c;->a(Le22/c55/s88/d/e;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Le22/c55/s88/f/e;->bB:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Le22/c55/s88/d/c;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method

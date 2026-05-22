@@ -1,0 +1,11 @@
+page
+0
+plist_test
+0
+1
+0
+4
+UI/BigBuff.plist plist_dictionary
+UI/SeerIcon.plist plist_dictionary
+UI/SpriteIcon.plist plist_dictionary
+UI/ItemIcon.plist plist_dictionary

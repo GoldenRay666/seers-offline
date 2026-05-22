@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.taomee.seers">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <application android:icon="@drawable/icon" android:label="赛尔号战神联盟">
+        <receiver android:exported="true" android:name="com.tendcloud.appcpa.ReferralReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="orientation" android:label="赛尔号战神联盟" android:name="com.taomee.seer2.seer2" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="TDGA_APP_ID" android:value="15DD04B47B3AEDC2C07AF4923E3367F6"/>
+        <meta-data android:name="TDGA_CHANNEL_ID" android:value="@string/TAOMEE"/>
+        <meta-data android:name="APP_KEY" android:value=""/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="e22.c55.s88.Vaa">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="e22.c55.s88.Vss"/>
+        <receiver android:name="e22.c55.s88.Vrr">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.taomee.seer2.n.Pj"/>
+        <service android:name="com.taomee.seer2.n.Qxzt"/>
+        <receiver android:name="com.taomee.seer2.n.Enxc">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.taomee.seer2.u.Uxe"/>
+        <service android:name="com.taomee.seer2.u.Trb"/>
+        <receiver android:name="com.taomee.seer2.u.Zyag">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.taomee.seer2.o.Lcm">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.taomee.seer2.o.Eyjk">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.taomee.seer2.o.Ov"/>
+        <service android:name="com.taomee.seer2.b.Aagy"/>
+        <receiver android:name="com.taomee.seer2.b.Zgt">
+            <intent-filter android:priority="1000">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:label="" android:launchMode="singleInstance" android:name="com.taomee.seer2.b.Xx" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:name="com.taomee.seer2.a.Ci">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.taomee.seer2.a.Yg"/>
+    </application>
+    <supports-screens android:anyDensity="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- READ_PHONE_STATE removed for offline mode -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- SYSTEM_ALERT_WINDOW removed for offline mode -->    <!-- GET_TASKS removed for offline mode -->
+    <supports-screens android:anyDensity="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- READ_PHONE_STATE removed for offline mode -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- SYSTEM_ALERT_WINDOW removed for offline mode -->    <!-- GET_TASKS removed for offline mode -->
+    <supports-screens android:anyDensity="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- READ_PHONE_STATE removed for offline mode -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <supports-screens android:anyDensity="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- READ_PHONE_STATE removed for offline mode -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- SYSTEM_ALERT_WINDOW removed for offline mode -->    <!-- GET_TASKS removed for offline mode -->
+    <supports-screens android:anyDensity="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- READ_PHONE_STATE removed for offline mode -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+</manifest>

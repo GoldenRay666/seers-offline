@@ -1,0 +1,1440 @@
+/*
+ Localizable.strings
+ iSeer
+ 
+ Created by adamgliea on 12-11-26.
+ 
+ */
+
+/*
+ B_   表示用在战斗中的提示语言
+ */
+
+/*
+ Message error labels
+ */
+"ERR_CONNECTION_BREAK"                  = "与服务器的连接断开了，请重新登录";
+"ERR_CLIENT_SERVER_SYNC_ERROR"          = "与服务器同步失败，请重新登录";
+
+"ERR_UNKNOWN_ERR"                       = "发生了未知错误，操作失败";
+"ERR_UNKNOWN_ERR_WITH_RETRY"            = "发生了未知错误，请重试";
+"ERR_LOGIN_SERVER_BUSY"                 = "目前系统繁忙，请稍后再试";
+"ERR_PLAYER_NOT_FOUND"                  = "没有找到该角色，请重试";
+"ERR_LOGIN_FAILED"                      = "登录失败，请重试";
+"ERR_LOGIN_INVALID_VERSION"             = "游戏版本过低，请去应用商店更新后再试";
+"ERR_SERVER_TIMEOUT"                    = "系统响应超时";
+"ERR_LOGIN_ON_OTHER_DEVICE"             = "此账号在其它设备上登录，您被踢下线了";
+"ERR_NO_NEED_RECHECK_SESSION_IN_BATTLE" = "由于网络原因，战斗被强制终止了";
+"ERR_NEED_RECHECK_SESSION"              = "离线时间过长，请重新登陆";
+"ERR_UNKNOWN_FROZEN_ACCOUNT"            = "账号已冻结,请联系客服!";
+
+"ERR_ENTER_MAP_FAILED"                  = "进入地图失败，请重试";
+"ERR_MAP_IS_FULL"                       = "该地图已经人满为患，请稍后再尝试";
+"ERR_MAP_PERMISSION_DENY"               = "您尚未达到进入该地图的条件";
+"ERR_MAP_NOT_ENOUGH_ENERGY"             = "赛尔电量不足";
+
+"ERR_ITEM_NOT_EXIST"                    = "该物品不存在";
+"ERR_ITEM_NOT_ENOUGH"                   = "该物品数量不足";
+"ERR_ITEM_REACH_MAX_LIMIT"              = "该物品数量达到上限，无法再获得";
+"ERR_ITEM_NOT_USABLE"                   = "该物品无法使用";
+"ERR_ITEM_NOT_EQUIPMENT"                = "该物品无法装备";
+"ERR_ITEM_MONSTER_NOT_USABLE"           = "该物品无法对精灵使用";
+"ERR_ITEM_BAG_FULL"                     = "物品背包已满，无法再获得新种类的物品";
+
+"ERR_SPRITE_FULL"                       = "没有更多的空间容纳新精灵了";
+"ERR_SPRITE_CATCH_ABNORMAL"             = "捕捉时发生异常，捕捉失败";
+"ERR_SPRITE_CANT_CREATE"                = "获得精灵时发生异常，获得失败";
+"ERR_SPRITE_BAG_FULL"                   = "精灵背包已满";
+"ERR_SPRITE_STORAGE_FULL"               = "精灵仓库已满";
+"ERR_SPRITE_ABNORMAL_OPERATION"         = "操作发生异常，操作失败";
+"ERR_SPRITE_STORAGE_REACH_MAX_SIZE"     = "精灵仓库已扩展至最大，无法继续扩展";
+"ERR_MON_INVALID_STORE_SORT_MODE"       = "网络延迟，请稍后再试";
+"ERR_SPRITE_FREE_FORBIDDEN"             = "该精灵不能放生!";
+
+"ERR_BTL_CANT_CANCEL_BATTLE"            = "无法取消本次战斗";
+"ERR_BTL_CANT_START_BATTLE"             = "开始战斗时发生异常，战斗取消";
+"ERR_BTL_SELECT_BTL_MON_NUM"            = "出战精灵数量不足";
+
+"ERR_CHARACTER_NICK_DIRTY_WORD"         = "昵称中含有限制词汇，请更换昵称后重试";
+"ERR_CHARACTER_CREATE_ERROR"            = "创建角色时发生异常，请重试";
+
+"ERR_MAIL_RECEIVER_NOT_FOUND"           = "收件人不存在，请重试";
+"ERR_MAIL_CONTAIN_DIRTY_WORD"           = "邮件中含有限制词汇，请去掉这些词汇后重试";
+"ERR_MAIL_GET_ENCLOSURE_ERR"            = "获取附件时发生错误，获取失败";
+"ERR_MAIL_SEND_TO_SELF_FORBIDDEN"       = "不能给自己发送邮件";
+"ERR_MAIL_TITLE_TOO_LONG"               = "邮件标题过长，请缩短后重试";
+"ERR_MAIL_CONTENT_TOO_LONG"             = "邮件内容过长，请缩短后重试";
+"ERR_MAIL_ID_NOT_EXIST"                 = "邮件ID不存在";
+"ERR_MAIL_NO_ENCLOSURE"                 = "邮件里没有附件";
+"ERR_MAIL_RECEIVER_NOT_EXIST"           = "收件人不存在";
+"ERR_MAIL_TITLE_DIRTY_WORD"             = "邮件标题有脏话";
+"ERR_MAIL_CONTENT_DIRTY_WORD"           = "邮件内容有脏话";
+"ERR_MAIL_ENCLOSURE_ID_NOT_EXIST"       = "邮件附件里的物品ID不存在";
+"ERR_MAIL_MAIL_NOT_LOAD"                = "邮件正文还未加载";
+"ERR_MAIL_CLIENT_FORBIDDEN"             = "目前不允许客户端发邮件";
+"ERR_MAIL_RECEIVER_ID_INVALID"          = "收件人米米号不合法";
+"ERR_MAIL_TAKE_ENCLOSURE_ERR"           = "背包已满, 无法收取附件";
+"ERR_MAIL_MAX_LIMIT"                    = "邮件满";
+"ERR_MAIL_ENCLOSURE_ALREADY_TAKEN"      = "附件已经领取过";
+
+"ERR_INVALID_LOTTERY_TYPE"              = "大乐透类型非法";
+"ERR_INVALID_LOTTERY_PLAY"              = "大乐透玩法非法";
+"ERR_SYSERR_PROC_LOT_PRIZE"             = "系统处理奖励出错";
+
+"ERR_QUEST_ALREADY_TAKEN"               = "您已经接受过此任务了";
+"ERR_QUEST_NOT_TAKEN"                   = "您尚未接受此任务";
+"ERR_QUEST_ALREADY_SUBMIT"              = "您已经提交过此任务了";
+"ERR_QUEST_TAKE_QUEST_ERROR"            = "接受任务时发生异常，请重试";
+"ERR_QUEST_SUBMIT_QUEST_ERROR"          = "提交任务时发生异常，请重试";
+
+"ERR_SHOP_INVALID_GOOD_ID"              = "该商品不存在，建议您更新游戏";
+"ERR_SHOP_INVALID_GOOD_CNT"             = "购买后道具的数量超过了可持有的上限，请减少购买量后重试";
+"ERR_SHOP_LACK_PVP_SCORE"               = "您的PVP剩余积分不足，建议您重新登录";
+
+"ERR_NICK_EXIST"                        = "该昵称已经存在";
+
+"ERR_TOP_LEVEL_CULTIVATE_CHARACTER_NO_NEED_CHANGE"      = "该精灵已经是此性格，不需要更改";
+"ERR_TOP_LEVEL_CULTIVATE_LEARN_POINT_NO_NEED_CHANGE"    = "该精灵已经是此套学习力分配方式，不需要更改";
+
+// time out message
+"NETWORK_TIMEOUT_NORMAL"                = "网络响应超时，请重试";
+"NETWORK_TIMEOUT_INITIALIZE_USER_DATA"  = "初始化用户数据时网络超时，请重新登录";
+"NETWORK_TIMEOUT_BATTLE"                = "战斗中网络超时，是否要退出战斗?";
+"NETWORK_TIMEOUT_CAPTURE"               = "捕捉中网络超时，是否要退出捕捉?";
+"NETWORK_TIME_OUT_REQUEST"              = "服务器正在努力处理您的请求,请稍后";
+
+// back key message
+"BACK_KEY_MESSAGE"						= "您是否要完全退出游戏？";
+
+// need download resource message
+"REQUIRE_DOWNLOAD_RESOURCE_MESSAGE"		= "必须下载全部资源包后才能继续进行游戏";
+"DOWNLOAD_FULL_RESOURCE_INQUIRE"		= "您是否要下载完整资源包？\n您可以选择不下载对游戏的部分功能进行试玩。资源包较大，建议在wifi环境中下载,并请耐心等待。\n老用户不下载可能会导致游戏异常！";
+"WHOLE_VERSION_PLAYER_HINT"				= "您是完整版用户，请下载完整资源包后再进入游戏";
+
+"CONFIRM"       = "确定";
+"CANCEL"        = "取消";
+"RESET"         = "重置";
+"BACK"          = "返回";
+"PLAY_SKIP"     = "跳过";
+"YES"           = "是";
+"NO"            = "否";
+"B_GET_EXP"     = "获得经验:";
+"B_NEED_EXP" = "离升级还需经验:";
+"B_LRN"       = "学习力:";
+"ABILITY_ATK" = "物攻: %d";
+"ABILITY_DEF" = "物防: %d";
+"ABILITY_SP_ATK" = "特攻: %d";
+"ABILITY_SP_DEF" = "特防: %d";
+"ABILITY_SPD" = "速度: %d";
+"ABILITY_HP" = "体力: %d";
+"ABILITY_ID" = "序号: %d";
+"ABILITY_NAME" = "名字: %s";
+"ABILITY_LV" = "等级: %d";
+"ABILITY_TEMP" = "性格: %s";
+"ABILITY_APTITUDE" = "资质: %d";
+"LEVEL_UP_NEED_EXP" = "升级所需经验:";
+"LEVEL_UP_NEED_EXP_VALUE" = "升级所需经验: %d";
+"LEVEL_UP_NEED_EXP_NO_VALUE" = "升级所需经验: %s";
+"UNUSED_EXP_VALUE" = "剩余经验值: %d";
+"TOTAL_EXP" = "累计经验: %d";
+"ADD_EXP_FOR_SP" = "增加经验值:";
+"UN_USED_LRN" = "剩余学习力";
+"LEVEL_UP_ATK"              = "物攻";
+"LEVEL_UP_DEF"              = "物防";
+"LEVEL_UP_SP_ATK"           = "特攻";
+"LEVEL_UP_SP_DEF"           = "特防";
+"LEVEL_UP_SPD"              = "速度";
+"LEVEL_UP_HP" = "体力";
+"LEVEL_UP_LV_EX" = "等级";
+"UNKNOW_NAME" = "未知";
+"DEAL_SP_LINK" = "连接";
+"DEAL_SP_UN_LINK" = "断开";
+"DEAL_SP_FIRST" = "首发";
+"DEAL_SP_FOLLOW" = "跟随";
+"DEAL_SP_UN_FOLLOW" = "收回";
+"DEAL_SP_TO_PACK" = "入库";
+"PACK_INFO" = "资料";
+"PACK_ABILITY" = "能力";
+"PACK_SKILLS" = "技能";
+"PACK_TOOLS" = "道具";
+"PACK_ASSIGN_EXP" = "经验分配器";
+"PACK_ASSIGN_LRN" = "分配学习力";
+"SP_PROPERTY_ATT" = "属性: %s";
+"SP_PROPERTY_LV" = "等级: %d";
+"SP_PROPERTY_TEMP" = "性格: %s";
+"SP_PROPERTY_HEIGHT" = "身高: %dcm";
+"SP_PROPERTY_WEIGHT" = "体重: %dkg";
+"SP_CATCH_TIME" = "获取时间: %d年%d月%d日";
+"SP_EVO_VALUE" = "进化等级:";
+"SKILL_CATEGORY_PY" = "物理";
+"SKILL_CATEGORY_SP" = "特殊";
+"SKILL_CATEGORY_NATURE" = "属性";
+"SKILL_CATEGORY_OBI_1" = "必杀";
+"SKILL_CATEGORY_OBI_2" = "合体必杀";
+"SKILL_POWER" = "威力:";
+"SKILL_POWER_VALUE" = "威力 %d";
+"SKILL_ANGER" = "怒气:";
+"LEVEL_UP_LV" = "等级:";
+"SKILL_ANGER_VALUE"= "怒气 %d";
+"SORT_TIME" = "时间排序";
+"SORT_LV" = "等级排序";
+"STORAGE_EXT" = "仓库扩展";
+"NOTICE_STORAGE_EXT_USE" = "是否使用仓库扩展卡来扩展仓库容量?";
+"NOTICE_TO_SHOP_BUY_STORAGE_EXT" = "很抱歉，您没有仓库扩展卡，是否前往商店购买?";
+"NOTICE_CANNOT_USE_MORE_STORAGE_EXT" = "仓库已经扩展到最大，不能使用仓库扩展卡";
+"SP_NUM" = "数量:";
+"SP_TO_PACK" = "带走";
+"SP_TO_FREE" = "放生";
+"SP_TO_FREE_MESSAGE" = "是否要放生?\n放生精灵无法找回";
+"SP_PACK_IS_FULL"   = "精灵背包已满，无法容纳更多精灵！";
+"SP_STORAGE_IS_FULL" = "精灵仓库已满，无法容纳更多精灵！";
+"SP_FIRST_DEAD"     = "首发精灵体力耗尽,请补充体力!";
+"B_TIMEOUT_SELF"    = "你已经离开战斗";
+"B_TIMEOUT_OTHER"   = "对方已经离开战斗";
+"TOSTORAGE"         = "%s已放入精灵仓库";
+"SKILL_OBI_TIPS"    = "必杀技，60级可以领悟，需要100怒气才能释放";
+"SKILL_EXCHANGE_TIPS" = "技能栏中的技能可以与左侧待选区的技能进行交换";
+"HOT_PRICE"         ="X %d";
+
+"SP_High" = "身高: %d-%dcm";
+"SP_WEIGHT" = "体重: %d-%dkg";
+"SP_LACTION" = "分布: %s";
+"SP_FEATURE" = "特性:【%s】";
+"SP_BRIEF" = "简介:%s";
+"NO_WEIBO_SHARE"    = "需要连接网络才能进行微薄分享";
+"BIG_Fresent"       = "饱满的果实×10\n中级资质果实×10\n性格重置药剂×5\n高级学习力胶囊×5";
+
+//PVP
+"PVP_WAINT"         = "等待中";
+"PVP_SINGLE"        ="单精灵";
+"PVP_MULTE"         ="多精灵";
+"PVP_SINGLE_FIRST"  ="首发精灵参与战斗";
+"PVP_MULTE_ALL"     ="背包内精灵参与战斗";
+"PVPTOP"            = "排行榜";
+"PVP_DECLARE"       = "显示精灵王对战中的积分和排行榜，只显示前100名，对战积分可以兑换丰厚的奖励。";
+"PVP_CONDITION_LBAEL" = "今日剩余挑战次数:%d/%d";
+"PVP_CNT_NOT_ENOUGH_ERR" = "今日挑战次数已用完!";
+"PVP_CNT_NO_NEED_BUY_CNT" = "次数未用完,不需要购买次数";
+"PVP_UNLOCK_CONDITION" = "30级解锁";
+"COMPETE_UNLOCK_CONDITION" = "60级解锁";
+"MY_SCORE"          = "我的积分:";
+"MY_RANK"           = "我的排名:";
+"TODAY_SCORE"       = "今日积分";
+"TODAY_RANK"        = "今日排名";
+"LEFT_SCORE"        = "剩余积分";
+"SCORE_EXCHANGE"    = "积分兑换";
+"RANK"              = "排名";
+"NEW_RANK"          = "今日排行";
+"HISTORY_RANK"      = "历史排行";
+
+"PALYER" = "玩家";
+"SCORE" = "积分";
+"ID"    = "米米号";
+"TOP_STRENGTH" = "陀螺力量:";
+"TOP_POWER" = "陀螺能力:";
+"MONSTER_NUM" = "精灵数量:";
+"MONSTER_MAX_LV" = "最高等级:";
+"SEER_GOLD" = "赛尔豆:";
+"SEER_VIP_GOLD" = "赛尔金豆:";
+"B_CAPTURE"     = "这个精灵可以捕捉，是否要捕捉";
+"AUTO_DISABLE_CAPTURE" = "背包，仓库已满，无法捕捉新精灵，请扩充仓库";
+"AUTO_DISABLE_CAPTURE_ADDHINT" = "(特训中的精灵需要预留空位)";
+"USE_ITEM_MESSAGE" = "你确定要使用%s吗？";
+"CANNOT_USE_EXP_ITEM" = "%s已满级，不能使用%s";
+"DATA_TIME" = "%d年%d月%d日";
+"SEER_TITLE" = "称号:";
+"SEER_NAME" = "昵称:";
+"SEER_ID" = "米米号:";
+"SEER_REGISTER_DATA" = "登船日期:";
+
+//sprite train
+"sprite_train_invalid_mode" = "特训模式不存在！";
+"sprite_train_no_train_count" = "今日特训次数已用完！";
+"sprite_train_no_clean_cd" = "CD时间未清！";
+"sprite_train_no_enough_vip" = "VIP等级不够！";
+"sprite_train_no_enough_level" = "赛尔等级不够！";
+"sprite_train_store_lock" = "特训仓未解锁！";
+"sprite_train_no_store" = "特训仓不存在！";
+"sprite_train_unlock_warning" = "请依次解锁训练舱！";
+"sprite_train_lock_sprite_level" = "解锁需\n最高精灵等级%d";
+"sprite_train_lock_vip_level"    = "解锁需 VIP%d";
+"sprite_train_unlock_price" = "解锁新的训练舱？";
+"sprite_train_clean_cd_price" = "消除训练舱的等待时间？";
+"sprite_train_get_experience" = "%s通过训练获得了%d点经验。";
+"sprite_train_not_enough_gold" = "你的金豆不足！\n去商场看看吧！";
+"sprite_train_unlock_store" = "新的训练舱已解锁！";
+"sprite_train_fast_mode" = "急速";
+"sprite_train_common_mode" = "普通";
+"sprite_train_infinite" = "无限";
+"sprite_train_begin" = "训练精灵";
+"sprite_train_unlock" = "点击解锁";
+"sprite_train_cd_time" = "倒计时\n%s";
+"sprite_shop_have"      = "不能购买，已经有了，别太贪心哦！";
+"item_shop_max"         = "物品数量已达上限，无法再购买";
+"TITLE_NO"              = "无";
+"QUEST"                 = "任务";
+"SPRITE_ICON"           = "精灵图鉴";
+"SHOP"                  = "商城";
+"SHOP_OWN_MONEY"        = "当前拥有";
+"MAP"                   = "地图";
+"BACK_MY_ROOM"          = "确定返回主菜单？";
+"SPECIAL_TRAIN"         = "特训";
+"PACK"                  = "精灵背包";
+"STORAGE"               = "精灵仓库";
+"ITEM_PACK"             = "物品背包";
+"MY_ROOM"               = "我的小屋";
+"INPUT_YOUR_NICK_NAME"  = "输入你的昵称";
+"FOUR_TO_TEN_CHAR"      = "1-10个字符";
+"CHOOSE_YOUR_SEX"       = "选择你的性别";
+"CHOOSE_SPRITE"         = "请选择精灵";
+"SPRITE_MAX_LEVEL"      = "精灵等级修炼完成，不再需要进行特训";
+"SPRITE_TRAIN_NOCOMMON" = "精灵等级修炼完成，不再需要进行普通特训";
+"COMMON_TRAIN" = "普通特训";
+"STRENGTHEN_TRAIN"      = "强化特训";
+"GETBACK"               = "取回";
+"ACCELERATE"            = "加速";
+"PLUSFIVE"              = "x3";
+"PLUSTEN"               = " x6";
+"Message"               = "消息通知";
+"BACK_FINISHED"         = "%s特训完成";
+"EXPADD"                = "经验 +%d";
+"LRNADD"                = "学习力 +%d";
+"BACK_MIDDLE"           = "特训还未完成，现在收回效果将大打折扣";
+"COMMON_DECLARE"        = "%s将进行2小时普通特训。完成后可获得：";
+"STRENGTHEN_DECLARE"    = "%s将进行8小时的强化特训。完成后可获得：";
+"SPEEDUP_DECLARE"       = "你将消耗%d金豆立刻完成该次特训";
+"TRAINING"              = "特训中";
+"NOSPACE"               = "训练仓位已满";
+"ALREADY_TRAINING"      = "该精灵已经在训练";
+"LAST_ONE"              = "至少要留一只精灵保护你！";
+"VIPGOLD_LACK"          = "你的金豆不足！是否去商城购买？";
+"CHOOSE_SPRITE_TRAIN"   = "请选择精灵";
+"ITEM_MAX"              = "物品数量已达上限，无法再兑换";
+
+"MINE_RECYCLING"        = "矿石回收";
+"CHALLENGE_BOSS_INQUIRY"= "要挑战%s吗？";
+
+// quest related
+"QUEST_AIM"             = "任务目标: ";
+"QUEST_AWARD"           = "任务奖励: ";
+"QUEST_ACCEPT"          = "接受";
+"QUEST_PRIMARY"         = "主线";
+"QUEST_BRANCH"          = "支线";
+"QUEST_DAILY"           = "日常";
+"QUEST_NEED_GEM"        = "需要 ";
+
+// capture releated
+"CAPTURE_INQUIRY1"          = "%s看起来有点虚弱,要不要捕捉？";
+"CAPTURE_INQUIRY2"          = "如果要捕捉，请选择使用的陀螺";
+"CAPTURE_NOT_SPINNINGTOP"   = "必须拥有陀螺才能进行连接";
+
+// 事件文字提示
+"HINT_KEY"              = "［%s］";
+"HINT_GET_ITEM"         = "你获得了:";
+"HINT_EXP"              = "经验值";
+"HINT_MINE_RECYCLING"   = "卖出矿石,你获得了:";
+"HINT_ACCEPT_QUEST_PRE" = "接受任务:";
+"HINT_FINISH_QUEST_PRE" = "任务:";
+"HINT_FINISH_QUEST_POST"= "完成";
+"HINT_SUBMIT_QUEST_PRE" = "提交任务:";
+"HINT_SPRITE_TO_BAG"    = "已放入精灵背包";
+"HINT_SPRITE_TO_STORAGE"= "已放入精灵仓库";
+"HINT_EXTEND_STORAGE"   = "精灵仓库增加了9格空间!";
+"HINT_STORAGE_PACK_FULL"= "精灵背包和精灵仓库都已满,请使用仓库扩展卡扩展精灵仓库!";
+"HINT_BUY_HOT_SPRITE_PACK"   = "%s-等级%d 已放入精灵背包";
+"HINT_BUY_HOT_SPRITE_STORAGE"   = "%s-等级%d 已放入精灵仓库";
+"HINT_NO_SPRITE_NEED_EXP"    = "背包中的精灵都已满级，不再需要分配经验!";
+
+//choose data
+"LOCAL_USERINFO_FILE"      = "本地存档";
+"SERVER_USERINFO_FILE"     = "服务器存档";
+"USERINFO_TIME"            = "时间:%d-%d-%d %02d:%02d";
+"USERINFO_SAI_ER_DOU"      = "赛尔豆";
+"USERINFO_JIN_DOU"         = "金豆";
+"USERINFO_SPRITE_NUM"      = "精灵总数:%d";
+
+//three main sprite
+//迪兰，水系，平衡型，能攻也能防；
+//休咻，火系，攻击型，擅长火攻；
+//拉奥，草系，防守型，擅长治愈；
+"FIRST_MAIN_SPRITE"     = "休咻,火系,攻击型,擅长火攻";
+"SECOND_MAIN_SPRITE"    = "迪兰,水系,平衡型,能攻也能防";
+"THIRD_MAIN_SPRITE"     = "拉奥,草系,防守型,擅长治愈";
+
+"RECOMMAND_HOT"         = "热卖推荐";
+
+"USER_DATA_CHANGED"     ="本地数据被篡改,不能启动游戏";
+"USER_DATE_NEED_UPDATE" ="您的版本需要更新";
+
+"NOT_ENOUGH_SAI_DOU"    = "没有足够的赛尔豆";
+"NOT_ENOUGH_JIN_DOU"    = "没有足够的金豆";
+"BUY_SUCCESS"           = "购买成功";
+"BUY_FAIL"              = "购买失败";
+"SHOP_MONEY"            = "充值";
+"SHOP_CONVERT"          = "兑换";//added by danny on 2012/09/04
+"SHOP_WAIT"             = "等待数据加载";
+"CAN_NOT_BUY_MORE_SP_EXT"  = "超过仓库扩展上限，不能再购买";
+
+"BATCH_BUY_TYPE" = "购买 [%s]";
+"BATCH_BUY_NAME" = "兑换 [%s]";
+"BATCH_BUY_PRICE" = "价格: %d";
+"BATCH_BUY_NUM" = "数量:";
+"BATCH_BUY_TOTAL_PRICE" = "总价: %d";
+"BATCH_BUY_MONEY_SAI_DOU" = " 赛尔豆";
+"BATCH_BUY_MONEY_JIN_DOU" = " 金豆";
+"BATCH_BUY_MONEY_SCORE" = " 积分";
+"DISCOUNT_VALUE" = "省%d%%";
+
+"NOT_REACHED_STAR"     = "需要收集%d个";
+
+//bravetower
+"BRAVETOWER_CRAY_BOSS"  = "达到%d级并击败%s后开启";
+"HARD_DEGREE"           = "难度:";
+"POSITION"              = "位置:";
+"LEVEL"                 = "等级:";
+"CHALLENGE"             = "挑战";
+"TICK1"                 = "捕获%s才算胜利";
+
+"SALING_TITLE"          = "矿石回收";
+"SALING_CAN_GOT"        = "出售可得:";
+"SALE"                  = "售出";
+"NO_MINE"               = "没有矿石";
+"CONFIRM_TO_BUY"        = "确认购买%s?";
+"CONFIRM_TO_EXCHANGE"   = "确认兑换%s";
+
+"MUSIC" = "音乐";
+"SOUND" = "音效";
+
+"CONFIRM_TO_BUY"        = "确认购买%s?";
+"CONFIRM_RUN"           = "确认逃跑?";
+"SPRITE_CAN_NOT_FREE"   = "该精灵不能被放生";
+"LOGIN_AGAIN"           = "您的账号在别处登陆";
+
+//游戏帮助菜单
+"HELP_IMPROVE_SPRITE_LEVEL"= "怎么提升精灵等级";
+"HELP_HOW_GET_MONEY"    = "怎么得到赛尔豆和金豆";
+"HELP_ATTR"             = "属性相克查询";
+"HELP_SPRITE_CHAR"      = "精灵性格查询";
+"HELP_BATTLE_WIKI"      = "对战百科";
+"HELP_CATCH_WIKI"       = "捕捉百科";
+"HELP_PERFECT_SPRITE"   = "极品精灵养成之道";
+
+//怎样提升精灵等级
+"IMP_SPRITE_A"          = "A.野外精灵对战";
+"IMP_SPRITE_B"          = "B.精灵特训(最多两只)";
+"IMP_SPRITE_C"          = "C.任务奖励经验";
+"IMP_SPRITE_D"          = "D.经验道具";
+
+//怎么样得到塞尔斗
+"GET_MONEY_A"           = "A.任务奖励";
+"GET_MONEY_B"           = "B.采集矿石";
+"GET_MONEY_C"           = "C.商店购买";
+"GET_MONEY_D"           = "D.勇者之塔";
+"GET_MONEY_E"           = "E.捕捉大挑战";
+
+//极品精灵养成之道
+"PERFECT_SPRITE_FEED_A" = "A.精灵等级,每次升级都会提升精灵能力";
+"PERFECT_SPRITE_FEED_B" = "B.精灵资质,资质越高精灵能力越强";
+"PERFECT_SPRITE_FEED_C" = "C.精灵性格,适合的性格使精灵战斗力更强";
+"PERFECT_SPRITE_FEED_D" = "D.学习力,将学习力分配到精灵能力上可以强化对应能力";
+
+//精灵性格查询
+"RED_ARROW_MEANS"       = "红色箭头表示增强";
+"BLUE_ARROW_MEANS"      = "蓝色箭头表示削弱";
+"NONE_ARROW_MEANS"      = "没有箭头表示不影响";
+
+//战斗百科
+"BATTLE_WIKI_A"         = "能力上升";
+"BATTLE_WIKI_B"         = "能力下降";
+"BATTLE_WIKI_C"         = "不良状态";
+"BATTLE_WIKI_D"         = "异常状态";
+"BATTLE_WIKI_E"         = "环境效果";
+
+//属性相克
+"CATCH_WIKI_A"              = "陀螺";
+"CATCH_WIKI_B"              = "精灵技能";
+"ATTR_RESTRAINT_TIPS"       = "点击任意属性查看相克关系";
+"ATTR_RESTRAINT_RED_ARROW"  ="红箭头2倍伤害";
+"ATTR_RESTRAINT_NONE_ARROW" ="无箭头1倍伤害";
+"ATTR_RESTRAINT_BLUE_ARROW" ="蓝箭头0.5倍伤害";
+"ATTR_RESTRAINT_GRAY_ARROW" ="灰箭头伤害为0";
+
+//网络没有链接
+"NOT_CONNECTED"             = "无可用网络连接，请确保您的设备已连接网络";
+"PVP_NO_NETWORK"            = "需要连接网络才能进行精灵王之战";
+"TRAIN_NO_NETWORK"          = "需要连接网络才能进行精灵特训";
+"NO_NETWORK_BACK"           = "没有网络连接, 取回精灵将得不到经验和学习力，是否要取回？";
+"TOP_NO_NETWORK"            = "没有网络连接, 不能查看排行榜！";
+"NO_SERVER"                 = "连接游戏服务器失败";
+
+"CONFIRM_CHOOSE_SPRIE"      = "确认选择这只精灵?";
+"SELECTED_ALL"              = "全部";
+"CHOOSE_NEED_TO_BE_TAKE_BY" = "请选择需要替换的宠物";
+
+"CHARACTER_CHANGED"         = "性格变%s啦!";
+
+"LARGEMAP_TITLE_STAR"       = "星球冒险";
+"LARGEMAP_TITLE_SPACE"      = "太空站";
+"LARGEMAP_TITLE_CAPTURE"    = "捕捉大挑战";
+
+"HERO_RULE"                 = "规则说明：击败守层精灵就可以进入下一关。努力挑战直到突破塔顶吧！";
+"HERO_BEST_RESULT"          = "最佳战绩：%d层";
+"HERO_BEST_RESULT_NONE"     = "最佳战绩：无挑战记录";
+"HERO_BONUS_ALL_PACK_FULL_ERROR"     = "精灵背包和精灵仓库都已满，您无法获得奖励的精灵！";
+"HERO_SELECT_TIPS"          = "点击上方面板可以重新选择楼层";
+
+//effect notic
+"USE_SPRITE_STORAGE_EXP"	= "精灵仓库已扩容";
+"USE_SPRITE_HIDE_SKILL_MIRROR" = "已掌握精灵的潜能特性";
+"USE_SPRITE_STUDY_RESET"	= "已成功重置学习力";
+"USE_DOUBLE_EXP"			= "获得%d次双倍经验";
+
+"ABILITY_TEMP_CHANGE" = "性格: ";
+"ABILITY_ATK_CHANGE" = "物攻: ";
+"ABILITY_DEF_CHANGE" = "物防: ";
+"ABILITY_SP_ATK_CHANGE" = "特攻: ";
+"ABILITY_SP_DEF_CHANGE" = "特防: ";
+"ABILITY_SPD_CHANGE" = "速度: ";
+"CHANGE_ARROW_UP" = "↑";
+"CHANGE_ARROW_DOWN" = "↓";
+"CHANGE_ARROW_RIGHT" = "→";
+"SPRITE_INDIVIDUAL" = "资质变成了%d";
+"REACH_MAX_ADD_LRN" = "已达到学习力增加最大点,使用无效";
+"WILL_REACH_MAX_ADD_LRN" = "将要达到学习力增加最大点,确认使用会有部分浪费";
+
+//choose data notice
+"CHOOSE_DATA_WARNING" = "未被选择的存档将会被删除 确定选择该存档吗?";
+
+//map lock notice
+"MAP_IS_LOCK_WARNING" = "未解锁\n需完成 %s 挑战任务";
+"UNLOCK" = "解锁";
+"MAP_IS_UNLOCK" = "地图解锁 \"%s\"";
+
+//rate add golds
+"RATE_GET_GOLDS" = "感谢您的评价,送您5颗金豆";
+
+//spin to connect/disconnect notice
+"SPIN_TOP_CONNECT_PREFIX" = "陀螺已与";
+"SPIN_TOP_CONNECT_POSTFIX" = "连接";
+"SPIN_TOP_ATTRIBUTE_CHANGE" = "陀螺属性变为";
+"SPIN_TOP_HIDE_SKILL_PREFIX" = "捕捉时对";
+"SPIN_TOP_HIDE_SKILL_POSTFIX" = "效果显著";
+"SPIN_TOP_DISCONNECT_MSG_LINE0" = "陀螺连接已取消";
+"SPIN_TOP_DISCONNECT_MSG_LINE1" = "陀螺变为无属性";
+"SPIN_TOP_NO_IMPROVE_EFFECT" = "捕捉时无额外提升效果";
+
+//battle force stoped
+"BATTLE_FORCE_STOPED" = "战斗意外中止了";
+
+//spin top state
+"SPIN_TOP_STATE_NO" = "没有陀螺无法捕捉精灵,快去商城购买吧";
+"SPIN_TOP_STATE_ENABLE" = "捕捉陀螺提示已开启";
+"SPIN_TOP_STATE_DISABLE" = "捕捉陀螺提示已关闭";
+"CHANGE_SPIN_TOP" = "请选择宠物连接/断开陀螺";
+
+// pvp text message
+"PvP_Single_NotOpen" = "服务器维护，单精灵对战暂时关闭！";
+"PvP_Multi_NotOpen" = "服务器维护，多精灵对战暂时关闭！";
+"PVP_MATCH_TIMEOUT" = "未能找到配对玩家，请重试！";
+"PVP_BATTLE_END_TIMEOUT" = "对方玩家连接断开！";
+
+// notification message string
+"NOTIFICATION_BTN_TEXT" = "开始游戏";
+"NOTIFICATION_PLAY_SEER" = "赛尔号正在探索星际银河，急需每个小赛尔们的鼎力相助！快登录《赛尔号》吧！";
+"NOTIFICATION_COMMON_TRAINING" = "经过艰苦训练，您的精灵已经完成普通特训。";
+"NOTIFICATION_STRENGTHEN_TRAINING" = "经过艰苦训练，您的精灵已经完成强化特训。";
+"NOTIFICATION_VS_LEIYI" = "雷神雷伊再次降临，快去小屋发起挑战吧！";
+
+//use for version 91
+"LOGIN_NO_NETCONNECT" = "未找到网络!";
+"LOGIN_RETRY" = "重试";
+"SHOP_PRICE_NINE1" = "%.0f个 91豆";
+
+"SHOP_SAERDOU_PRICE" = "%.0f个金豆";
+
+// weibo share message string
+"SHARE_TO_FRIENT" = "分享";
+"GO_TO_UNLOCK_MAP" = "前往";
+"BUY_SPIN_CAPTURE" = "立刻购买";
+
+"SHARE_NEW_SPRITE"= " 赛尔号移动版 我捕捉到了一只全新的精灵:%s！不要眼红，赶快加入到赛尔号的世界, 遍游星际，探险银河，和我一起寻找稀有精灵，比比看谁是“精灵王”！";
+"SHARE_UNLOCK_PLANET1" = " 赛尔号移动版 我在这里参加星际探险，披荆斩棘终于发现了神秘的星球";
+"SHARE_UNLOCK_PLANET2" = "。还等什么？来这里, 一起加入到赛尔号的世界，共同遨游星际，穿梭未知之地吧！";
+
+"HP_FULL_HINTS" = "精灵未受伤，无需使用体力药剂";
+
+"SPRITE_TYPE"   = "普通,草,水,火,风,虫,飞行,电,地面,冰,超能,光,暗影,战斗,龙,沙漠,神秘,特质";
+
+"CHANLLENGE_RAYE_BONUS_TITLE" = "挑战雷伊奖励";
+"CHANLLENGE_RAYE_SELECT_BONUS_BOX" = "请选取一个宝箱";
+"CONNECT_ITUNES_FAIL" = "无法连接iTunes商店";
+"SHOW_STONE_WORK"    = "1.帮助NPC，完成任务获得    ;\n\n2.  　达到要求数量并完成前置任务，可解锁关键任务;\n\n３.完成关键任务，解锁新地图。";
+"GEM_STONE"          = "能量宝石";
+
+"DEVICE_NOT_SUPPORT" = "非常抱歉，您的设备不支持该游戏";
+
+"PVP_SCORE"     = "战斗积分 ";
+"PVP_SCORE_DATA"     = "+ %d";
+"BATTLE_END_WITH_DRAW" = "平局！请继续努力，下次一定能获胜。";
+
+"BATTLE_LOSE_TIP_0" = "小贴士：利用经验分配器或购买经验果实可以快速提升精灵等级";
+"BATTLE_LOSE_TIP_1" = "小贴士：掌握属性相克往往能事半功倍";
+"BATTLE_LOSE_TIP_2" = "小贴士：体力药剂往往能在战局危机时扭转乾坤";
+"BATTLE_LOSE_TIP_3" = "小贴士：只要上场的精灵都能获得经验，不妨用强力精灵帮新精灵提升等级";
+"BATTLE_LOSE_TIP_4" = "小贴士：在精灵背包中可以配置技能";
+"BATTLE_LOSE_TIP_5" = "小贴士：为精灵分配学习力可以提升属性";
+"BATTLE_LOSE_TIP_6" = "小贴士：精灵资质会影响战斗力，可以通过资质果实提高资质哦";
+"BATTLE_LOSE_TIP_7" = "小贴士：性格会对精灵能力产生影响，商城中的性格重置药可以改变性格";
+"BATTLE_LOSE_TIP_8" = "小贴士：双倍经验是提升精灵等级的利器，可以在商城中购买";
+
+"UPDATE_NEW_VERSION" = "有新的版本了,请及时更新";
+"NEED_UPDATE_VERSION" = "版本过低,请更新版本";
+"CLIENT_CHANGE_SAVE_DATE" = "检测到存档数据篡改,本地存档将被废弃";
+"UDID_NOT_MATCH" = "存档数据与您的设备信息不一致,本地存档将被清除";
+
+"91_VERSION_QQGROUP"  = "91QQ一群: 252722779 二群: 254445600";
+"iTunes_VERSION_QQGROUP"  = "QQ群: 59362767";
+
+"ABOUT_TITLE"       = "关于";
+"ABOUT_SEER_91"     = "《赛尔号》91版";
+"ABOUT_SEER_SINA"   = "新浪微博: 赛尔号移动版";
+"ABOUT_COPYRIGHT"   = "Copyright©2012 Shanghai Shengran Information Technology Co.,Ltd.\nAll Rights Reserved";
+
+"DRESS_TITLE"       = "装扮";
+"DRESS_SUIT"        = "套装";
+"DRESS_NOT_OPEN"    = "未开放";
+"DRESS_LOAD"        = "装备";
+"DRESS_UNLOAD"      = "卸下";
+
+// AD Walls
+"ADWALL_IMMOB" = "力美平台";
+"ADWALL_ADWAY" = "爱德威平台";
+"ADWALL_TAPJOY" = "Tapjoy 平台";
+"ADWALL_DIANRU" = "点入平台";
+"ADWALL_YOUMI" = "有米平台";
+"AD_NOT_AVAIL_TITLE" = "温馨提醒";
+"AD_NOT_AVAIL" = "此服务暂不可用!";
+"NETWORK_NOT_AVAIL" = "此服务需要联网!";
+"GET_VIPGOLD_TITLE" = "恭喜";
+"GET_VIPGOLD_BY_ADWALL" = "从%@获得%d个金豆!!";
+"ACTIONSHEET_TITLE" = "免费金豆\n按提示操作后再次点击\"FREE\"按钮获取金豆";
+"LATER_RATE"        = "以后再说";
+"FREE_ADWALL"        = "免费";
+
+//登陆奖励
+"LOGIN_CONTINUOUS"  = "连续登陆%d天";
+"LOGIN_6"           = "连续登陆%d天以上";
+"LOGIN_INTRO"       = "连续登陆天数越多可获得更好的奖励";
+"confirm"           = "领取";
+"sconfirm"           = "已领取";
+"rename"            = "改名";
+"lack_rename_item"  = "很抱歉，您没有改名芯片，是否前往商店购买？";
+"award_hint"        = "恭喜您，获得%d个%s";
+"Award_no_network"  = "没有网络连接, 不能查看登陆奖励！";
+
+//积分商城
+"PVP_SCORE_EXCHANGE"   = "积分商城";
+"history_score"     = "历史积分: ";
+"rest_score"        = "剩余积分: ";
+"score_tool"  = "道具";
+"score_sprite"  = "精灵";
+"score_price"   = "积分 %d";
+"score_lack"    = "没有足够的积分";
+"sprite_already_have"              = "不能兑换，已经有了，别太贪心哦！";
+"CHANGE_SUCCESS" = "兑换成功";
+"HOT_SCORE"         ="积分 %d";
+"exchange_no_network"  = "没有网络连接, 不能进行积分兑换！";
+"exchange_deney"    = "验证失败，兑换取消";
+
+//版本信息
+"new_version"   = "版本1.0.4火热上线啦!";
+"new_function"  = "新功能! 每日登陆奖励等你来拿;";
+"new_vision"    = "新视觉! 赛尔换装打造个性赛尔;";
+"new_goods"     = "新商品! PVP积分兑换商城上线，神秘精灵限时兑换;";
+"new_sprites"    = "新精灵! 发现稀有精灵，快去寻找并收为伙伴吧;";
+"new_future"    = "新版本展望";
+"new_contents"  = "成就，社交等你来体验，全方位游戏享受就在赛尔号";
+
+"new_version_left" = "新功能!新精灵!新视觉!1.0.4火热上线!";
+"new_version_right" = "新版本展望";
+
+//登陆
+"LOGIN" = "登陆";
+"NO_CHARACTER" = "(没有角色)";
+
+//精灵属性界面
+"SP_BATTLE_POWER" = "综合战斗力";
+
+"SP_LEVEL" = "等级 :";
+"SP_CHARACTER" = "性格 :";
+"SP_FEATURE" = "特性 :";
+
+"SP_FEATURE_NOT_OBTAINED" = "未获得";
+
+"SP_HP" = "体力 :";
+"SP_ATK" = "物攻 :";
+"SP_DEF" = "物防 :";
+"SP_SP_ATK" = "特攻 :";
+"SP_SP_DEF" = "特防 :";
+"SP_SPD" = "速度 :";
+
+"SP_DETAIL_STATUS" = "查看详细属性";
+
+"UNLOCK_MON_PACK_GRID_MSG" = "新的战斗栏已开启";
+"UNLOCK_MON_STORAGE_GRID_MSG" = "新的仓库位已开启";
+
+//任务中心界面
+"CANCEL_QUEST" = "取消任务";
+"SUBMIT_QUEST" = "完成任务";
+"TAKE_QUEST" = "接受任务";
+"LEVEL_REQUIREMENT" = "赛尔等级%d级可接";
+
+"AUTO_NAVI" = "自动寻路";
+"OPEN_PACKAGE" = "打开背包";
+"OPEN_SHOP" = "打开商城";
+"OPEN_PVP" = "去对战中心";
+"OPEN_BRAVE_TOWER" = "去勇者之塔";
+"OPEN_CAPTURE_CHALLENGE" = "去捕捉挑战";
+"VIEW_SPRITE" = "查看精灵";
+"VIEW_FARM" = "查看家园";
+"GO_TO_TRAIN_CABIN" = "去训练舱";
+
+"CAPTURE_SPRITE_HINT" = "任务提示：请捕捉%u只%s系列精灵！";
+"CAPTURE_NEED_SPINNING_TOP" = "您的陀螺不足，是否去商城购买？";
+"BATTLE_WITH_SPECIFIED_SPRITE_HINT" = "请将%s系列精灵设为首发";
+"BATTLE_WITH_ROUND_LIMIT" = "任务提示：请在%u回合内打败%s！";
+"SPRITE_LEVEL_UP_HINT" = "任务提示：%s";
+"BATTLE_BY_SPRITE_WIN" = "任务提示：使用%s系列精灵战斗胜利%u次";
+
+//map instance select
+"INSTANCE_BONUS_1" = "达到%d";
+"INSTANCE_BONUS_2" = "可获得";
+"INSTANCE_BONUS_3" = "x%d";
+"INSTANCE_LOCK_1" = "解锁需赛尔等级【%d级】";
+"INSTANCE_LOCK_2" = "解锁需接受【%s】任务";
+"INSTANCE_LOCK_3" = "解锁需完成【%s】任务";
+"INSTANCE_LOCK_4" = "解锁需通关【%s】";
+"INSTANCE_LOCK_10" = "今日剩余次数：%d";
+"INSTANCE_LOCK_11" = "累积%d      可解锁";
+"INSTANCE_LOCK_12" = "可解锁";
+"INSTANCE_UNLOCK"  = "需完成\"%s\"";
+
+"SPRITE_EXP_ADD"        = "经验值 +%d";
+"SPRITE_LEARN_POINT_ADD"= "学习力 +%d";
+"CHARACTER_EXP_ADD"     = "赛尔经验 +%d";
+"CHARACTER_GROWTH_ADD"  = "成长点 +%d";
+
+"ADD_POINT"             = "+%d";
+"LEVEL_UP_TITLE"        = "等级提升！";
+"LEARNED_SKILL_TITLE"   = "学会了新技能！";
+
+
+//道具背包界面
+"ITEM_BAG_USE" = "使用";
+"ITEM_BAG_UNWEAR" = "脱下";
+"ITEM_CATEGORY" = "物品类型 : ";
+"EQUIPMENT_PLACE" = "装备部位 : ";
+"EQUIPMENT_QUALITY" = "装备品级 : ";
+"USEAGE_REQUIREMENT" = "使用要求 : ";
+"EQUIPMENT_ATTR" = "装备属性 : ";
+"EQUIPMENT_SCORE" = "装备评分 : ";
+"SELL_PRICE" = "出售价格 : ";
+"ITEM_DESCRIPTION" = "物品描述 : ";
+"ITEM_BAG_LACK_UNLOCK_CHIP" = "缺少解锁芯片";
+"ITEM_BAG_PIECE_NOT_ENOUGH" = "碎片数量不足";
+
+"ITEM_BAG_GAIN_DOUBLE_EXP" = "战斗后获得双倍经验的次数增加%d次";
+"ITEM_BAG_STORAGE_EXTENDED" = "精灵仓库已扩容，空间增加3格";
+
+//物品类型
+"ITEM_CATEGORY_1" = "赛尔装扮";
+"ITEM_CATEGORY_2" = "赛尔道具";
+"ITEM_CATEGORY_3" = "精灵装备";
+"ITEM_CATEGORY_4" = "精灵道具";
+
+//装备部位
+"EQUIPMENT_PLACE_0" = "未知部位";
+"EQUIPMENT_PLACE_1" = "赛尔头饰";
+"EQUIPMENT_PLACE_2" = "赛尔服装";
+"EQUIPMENT_PLACE_3" = "赛尔坐骑";
+"EQUIPMENT_PLACE_4" = "精灵武器";
+"EQUIPMENT_PLACE_5" = "精灵防具";
+"EQUIPMENT_PLACE_6" = "精灵附件";
+
+//装备品质
+"EQUIPMENT_QUALITY_0" = "普通";
+"EQUIPMENT_QUALITY_1" = "优秀";
+"EQUIPMENT_QUALITY_2" = "稀有";
+"EQUIPMENT_QUALITY_3" = "极品";
+"EQUIPMENT_QUALITY_4" = "战神";
+
+//使用要求
+"USEAGE_REQUIREMENT_1" = "赛尔等级%d级";
+"USEAGE_REQUIREMENT_2" = "精灵等级%d级";
+"USEAGE_REQUIREMENT_NONE" = "没有要求";
+
+//装备属性
+"EQUIPMENT_ATTR_1" = "指挥+%d";
+"EQUIPMENT_ATTR_2" = "亲和+%d";
+"EQUIPMENT_ATTR_3" = "稳定+%d";
+"EQUIPMENT_ATTR_4" = "反应+%d";
+"EQUIPMENT_ATTR_5" = "物攻+%d";
+"EQUIPMENT_ATTR_6" = "物防+%d";
+"EQUIPMENT_ATTR_7" = "特攻+%d";
+"EQUIPMENT_ATTR_8" = "特防+%d";
+"EQUIPMENT_ATTR_9" = "速度+%d";
+"EQUIPMENT_ATTR_10" = "体力+%d";
+"EQUIPMENT_ATTR_NONE" = "没有属性";
+
+//出售
+"CANNOT_SELL" = "不能出售";
+
+//数量选择界面
+"AMOUNT_TITLE_1" = "出售【%s】";
+
+"AMOUNT_PRICE_1" = "出售价格 : ";
+
+//解锁确认界面
+"UNLOCK_REASON_3" = "赛尔电量不足";
+
+"UNLOCK_TITLE_1" = "解锁新的道具栏";
+"UNLOCK_TITLE_2" = "解锁新的战斗栏";
+"UNLOCK_TITLE_3" = "补充电量";
+"UNLOCK_TITLE_4" = "购买次数";
+"UNLOCK_TITLE_5" = "解锁新的仓库位";
+"UNLOCK_TITLE_6" = "购买行动力";
+"UNLOCK_TITLE_7" = "行动力不足";
+"UNLOCK_TITLE_8" = "精灵鉴定";
+
+"UNLOCK_TARGET_1" = "解锁一格道具栏";
+"UNLOCK_TARGET_2" = "解锁一格战斗栏";
+"UNLOCK_TARGET_3" = "补充所有电量吗";
+"UNLOCK_TARGET_4" = "继续挑战？";
+"UNLOCK_TARGET_5" = "解锁3格新的仓库位";
+"UNLOCK_TARGET_6" = "补充所有行动力吗";
+"UNLOCK_TARGET_7" = "补充所有行动力吗";
+"UNLOCK_TARGET_8" = "鉴定这只精灵";
+"UNLOCK_TARGET_9" = "消除冷却时间?";
+
+"ENERGY_TIP_0" = "赛尔电量不足\n今日购买电量次数已达上限！";
+"ENERGY_TIP_1" = "今日购买电量次数已达上限！";
+"ENERGY_TIP_2" = "您的电量已满，无需购买！";
+//等级不够界面
+"INSUFFICIENT_TITLE_1" = "赛尔等级不够";
+"INSUFFICIENT_TITLE_2" = "VIP等级不够";
+
+"INSUFFICIENT_TARGET_1" = "赛尔";
+"INSUFFICIENT_TARGET_2" = "VIP";
+
+"INSUFFICIENT_LINE_TWO_1" = "请提升等级!";
+"INSUFFICIENT_LINE_TWO_2" = "请提升VIP等级!";
+
+"INSUFFICIENT_REQUIRE" = "需要";
+"INSUFFICIENT_LEVEL" = "等级";
+
+//聊天界面
+"CHAT_METHOD_1" = "私聊";
+"CHAT_METHOD_2" = "小喇叭";
+"CHAT_METHOD_3" = "大喇叭";
+"CHAT_METHOD_5" = "世界";
+
+"CHAT_CHANNEL_0" = "【世界】:";
+"CHAT_CHANNEL_1" = "【私聊】:";
+"CHAT_CHANNEL_2" = "【系统】:";
+
+"CHAT_INPUT_PLACEHOLDER" = "请输入想说的话……";
+
+"CHAT_HINT_IS_IN_COLD_TIME" = "发送信息频率过快，请稍后再试";
+"CHAT_HINT_RECEIVER_IS_NOT_ONLINE" = "对方不在线";
+"CHAT_HINT_TRUMPET" = "小喇叭即全服公告，使用本功能将消耗一个【小喇叭】";
+"CHAT_HINT_TYPHON" = "大喇叭即跨服公告，将在后续版本中开放使用";
+"CHAT_HINT_ITEM_NOT_SUFFICIENT" = "您的%s数量不足";
+"CHAT_HINT_SHOULD_SELECT_PLAYER_FIRST" = "请先选择私聊对象";
+"CHAT_HINT_CANNOT_SEND_WHISPER_TO_SELF" = "不能对自己发送私聊信息";
+"CHAT_HINT_LAST_CHAT_IS_SENDING" = "您的上一条消息尚未发送成功，请稍后再试";
+"CHAT_HINT_LAST_CHAT_SEND_FAILED" = "由于网络超时，您刚才发送的\"%s\"可能没有发送成功";
+"CHAT_HINT_CANNOT_SEND_EMPTY_CHAT" = "不能发送空内容";
+"CHAT_HINT_TALK_ALLOWED" = "您的禁言状态已被解除";
+"CHAT_HINT_TALK_FORBIDDENED" = "您已被禁言，剩余禁言时间%u小时%u分%u秒";
+
+//角色创建
+"NAME_INPUT_HINT" = "（1-16个字符）";
+"WRONG_NICK_NAME_LEN" = "请输入正确的昵称长度";
+
+//精灵道具使用
+"SPRITE_ITEM_CANNOT_EAT_EXP_FOOD" = "该精灵已满级，无法使用%s";
+"SPRITE_ITEM_CANNOT_EAT_QUALITY_FOOD" = "该精灵资质已达上限，无法使用%s";
+"SPRITE_ITEM_CANNOT_EAT_LEARN_FOOD" = "该精灵学习力已达上限，无法使用%s";
+"SPRITE_ITEM_WASTE_WARNING_MSG" = "学习力上限值为510，该精灵当前学习力为%u，使用该道具将浪费%u点学习力，确认使用吗？";
+
+//精灵主界面使用
+"SPRITE_MAIN_CONFIRM_TO_FREE" = "确认放生精灵吗？";
+"SPRITE_MAIN_MAIN_SPRITE_CANNOT_BE_FREE" = "主宠精灵不能放生！";
+
+//道具获取通知界面
+"NOTIFY_GET_EXP"            = "经验值x%d";
+"NOTIFY_GET_SEER_BEAN"      = "赛尔豆x%d";
+"NOTIFY_GET_SEER_GOLD_BEAN" = "金豆x%d";
+"NOTIFY_GET_ITEM"           = "%sx%d";
+
+//登陆奖励界面
+"LOGIN_BONUS_HINT_0"  = "您已经连续登录";
+"LOGIN_BONUS_HINT_1"  = "天，剩余抽奖次数";
+"LOGIN_BONUS_HINT_2"  = "次";
+"LOGIN_BONUS_TIMEOUT" = "获取登陆奖励信息超时";
+
+// challenge boss
+"global_boss_duration_time" = "挑战时间：每日%s--%s";
+"global_boss_challenge_title" = "挑战雷伊";
+"global_boss_scoredetail" = "查看详细";
+"global_boss_challenge" = "挑战";
+"global_boss_inspire" = "鼓舞";
+"global_boss_start_time_interval" = "离挑战开始还剩:";
+"global_boss_end_time_interval" = "离挑战结束还剩:";
+"global_boss_cd_time" = "倒计时:";
+"global_boss_inspire_info" = "攻击增加: ";
+"global_boss_inspire_next_info" = "下次攻击增加: ";
+"global_boss_inspire_max" = "攻击属性已经提升到最大值，不能太贪心哦。";
+"global_boss_use_gold_bean" = "提升攻击属性%d%%。";
+"global_boss_use_seer_bean" = "提升攻击属性%d%%。";
+"global_boss_clear_cd_warning" = "立刻挑战雷伊？";
+"global_boss_prize_last_hit" = "您对雷伊完成了致命一击，额外获得赛尔豆10000";
+"global_boss_prize_in_30min" = "30分钟内击败雷伊，奖励双倍赛尔豆";
+"global_boss_prize_in_15min" = "15分钟内击败雷伊，奖励三倍赛尔豆";
+"global_boss_prize_failed" = "很遗憾，未能在规定时间内击败雷伊，没有奖励翻倍";
+"global_boss_prize_double_energy" = "鼓舞奖励无尽能源x%d";
+"global_boss_get_prize_notice" = "今天的挑战活动结束啦，大家明天要加油哦！";
+"global_boss_not_begin" = "对不起，活动还没有开始！";
+"global_boss_begin" = "挑战雷伊活动即将开始，大家抓紧时间准备啊！";
+
+// lbs
+"lbs_shake_left_count" = "今日剩余次数：%d";
+"lbs_authorize_fail" = "无法获得你的位置，请到系统的【设置】->【定位服务】中打开定位服务，并允许战神联盟使用定位服务。";
+"lbs_shake_fail" = "糟糕！和赛尔先锋队失去联系了，赶快查看一下网络连接情况。";
+"lbs_shake_max_time" = "一天只能获得10次奖励哦，明天继续吧。";
+"lbs_shake_error_place" = "摇动地方的地方不符合。";
+"lbs_shake_no_prize" = "不好，奖品被星际海盗抢走了！";
+"lbs_shake_time_out" = "时间超时！";
+"lbs_shake_get_sprite" = "喜报！喜报！赛尔先锋队为你捕捉到了精灵“%s”！";
+"lbs_shake_get_item" = "不错不错！赛尔先锋队为你找到了“%s”！";
+"lbs_shake_get_seer_bean" = "大吉大利，赛尔先锋队为你找到%d赛尔豆！";
+"lbs_shake_get_gold_bean" = "财源滚滚，赛尔先锋队为你找到%d金豆！";
+"lbs_begin_introduce_1" = "伊娃博士已对您的\n设备进行改装，\n注入了特殊能量!";
+"lbs_begin_introduce_2" = "摇一摇即可获得\n精灵、道具、赛尔豆\n等奖励！每天可\n获得10次奖励!";
+"lbs_begin_introduce_3" = "您在不同场所、\n不同日子、不同\n时间(白天或夜晚)\n 摇到的奖品\n也会不同!";
+
+// activation exchange
+"activation_exchange_title" = "激活码兑换";
+"activation_exchange_parameter_error" = "兑换参数错误！";
+"activation_exchange_invalid_code" = "兑换码非法！";
+"activation_exchange_unactive_code" = "兑换码未激活！";
+"activation_exchange_invalid_date" = "兑换码不在有效期内！";
+"activation_exchange_frozen_code" = "兑换码被冻结！";
+"activation_exchange_used_code" = "兑换码已经被使用！";
+"activation_exchange_server_error" = "系统服务器错误！";
+"activation_exchange_max_prize_count" = "兑换已经达到上限！";
+"activation_exchange_unbinded" = "兑换码未绑定！";
+"activation_exchange_has_exchanged" = "物品已经兑换过！";
+"activation_exchange_type_book" = "图书兑换";
+
+// activity center
+"activity_center_flag_prize" = "可领奖";
+"activity_center_flag_sign" = "可签到";
+"activity_center_consume_title" = "累计消费%d金豆";
+"activity_center_recharge_title" = "累计充值%d金豆";
+"activity_center_sign_title" = "签到%d次";
+"activity_center_festival_title" = "国庆第%d天";
+"activity_center_recharge_info" = "已充值：%d金豆";
+"activity_center_consume_info" = "已消费：%d金豆";
+"activity_center_no_prize" = "充值";
+"activity_center_have_get_prize" = "已领取";
+"activity_center_get_prize" = "领取奖励";
+"activity_center_month_title" = "%d月";
+"activity_center_patch_sign_info" = "补签一天？";
+"activity_center_current_gold" = "当前金豆：%d";
+
+// Skill Category
+"SKILL_CATEGORY_PHYSICS" = "物理";
+"SKILL_CATEGORY_SPECIAL" = "特殊";
+"SKILL_CATEGORY_NATURE" = "属性";
+"SKILL_CATEGORY_OBI_1" = "必杀";
+"SKILL_CATEGORY_OBI_2" = "合体";
+"SKILL_HIDE_LEARNIING_CON_DIS" = "隐藏技能(60级后有几率领悟)\n%s";
+"SKILL_LEARNIING_CON_DIS" = "%d级领悟\n%s";
+
+// 商城与兑换
+"SHOP_EMPTY_PAGE" = "目前没有该类商品";
+"SHOP_PVP_SCORE" = "积分";
+"SHOP_PURCHASE_SUCCESS" = "购买成功";
+"ITEM_EXCHANGE_SUCCESS" = "兑换成功";
+"SHOP_DISCOUNT_LABEL" = "%s%s折";
+"SHOP_DISCOUNT_1" = "一";
+"SHOP_DISCOUNT_2" = "二";
+"SHOP_DISCOUNT_3" = "三";
+"SHOP_DISCOUNT_4" = "四";
+"SHOP_DISCOUNT_5" = "五";
+"SHOP_DISCOUNT_6" = "六";
+"SHOP_DISCOUNT_7" = "七";
+"SHOP_DISCOUNT_8" = "八";
+"SHOP_DISCOUNT_9" = "九";
+
+"SHOP_CAN_BUY_GOOD_COUNT" = "由于道具数量限制，您至多只能购买%u个该商品";
+"SHOP_CANNOT_BUY_GOOD" = "由于道具数量限制，您不能再购买该商品了";
+
+// NPC交谈界面
+"NPC_TALK_CHALLENGE" = "挑战！";
+
+// Hidden Skill
+"PLEASE_ENVOLVE_TO_FINAL" = "请将%s进化到最终形态";
+"LEARN_HIDDEN_SKILL_DENYIED" = "领悟技能条件不足";
+"NEED_SPRITES_FOR_DIXIULAZHINU" = "需集齐休罗斯，迪兰特，拉奥叶才能领悟迪休拉之怒！";
+"NEED_SPRITES_FOR_YITESANLIANXING" = "需集齐冰伊特，电伊特，风伊特才能领悟伊特三连星！";
+"NEED_SPRITES_FOR_YITEDALUANDOU" = "需集齐风伊特，电伊特，冰伊特，暗伊特，光伊特，飞伊特，沙伊特，虫伊特，战伊特才能领悟伊特大乱斗！";
+"NEED_SPRITES_FOR_MIEWANGSANJIAOZHEN" = "需集齐飞伊特，沙伊特，虫伊特才能领悟灭亡三角阵！";
+"NEED_SPRITES_FOR_LEIMINGYANPOZHAN" = "需集齐雷伊，凯撒才能领悟雷鸣炎破斩！";
+"NEED_SPRITES_FOR_GUANGYINGHUANXIANG" = "需集齐暗伊特，光伊特才能领悟光影幻象！";
+"NEED_SPRITES_FOR_SHENGMOSHIZIZHAN" = "需集，才能领悟圣魔十字斩！";
+"GAIYA_COMPOSED_SKILL_NOT_OPEN" = "该技能尚未开放，敬请期待!";
+//精灵图鉴
+"HAND_BOOK_SPRITE_HEIGHT" = "身高：%d-%dcm";
+"HAND_BOOK_SPRITE_WEIGHT" = "体重：%d-%dkg";
+"HAND_BOOK_SPRITE_HEIGHT_UNKNOW" = "身高：???";
+"HAND_BOOK_SPRITE_WEIGHT_UNKNOW" = "体重：???";
+"HAND_BOOK_SPRITE_FOUNDIN" = "分布：%s";
+"HAND_BOOK_SPRITE_FEATURE" = "特性：%s\n%s";
+"HAND_BOOK_SPRITE_BRIEF" = "简介：%s";
+"HAND_BOOK_SPRITE_LEVEL" = "%d级";
+
+
+//float hint
+"FLOAT_HINT_USE"    = "使用了";
+"FLOAT_HINT_GET"    = "获得了";
+"FLOAT_HINT_STATE"  = "状态";
+
+// Sprite Grade
+"SPRITE_GRADE_0" = "良好";
+"SPRITE_GRADE_1" = "优秀";
+"SPRITE_GRADE_2" = "稀有";
+"SPRITE_GRADE_3" = "极品";
+"SPRITE_GRADE_4" = "传说";
+
+// Lottery
+"LOTTERY_NEED_ITEM_NAME" = "张%s";
+"LOTTERY_VIP_ITEM_GAIN_FUNCTION" = "%s可以通过充值获得";
+"LOTTERY_SEERBEAN_NOT_ENOUGH" = "您的赛尔豆不足";
+"LOTTERY_GCOIN_NOT_ENOUGH" = "您的金豆不足，充值后可再抽奖";
+"LOTTERY_PVPSCORE_NOT_ENOUGH" = "您的积分不足";
+"LOTTERY_VIP_ITEM_NOT_ENOUGH" = "您的乐透券不足，参与活动中心的充值活动即可获得";
+
+// game guide
+"GAME_GUIDE_DIALOG_1_0" = "欢迎你，%s，我是赛尔号上的伊娃博士。我们的飞船被未知的力量吸引，失去了动力";
+"GAME_GUIDE_DIALOG_1_1" = "现在任命你为第七小队队长，率领赛尔先锋队去寻找飞船失去动力的缘由";
+"GAME_GUIDE_DIALOG_1_2" = "首先你需要选择一只精灵作为你的伙伴，陪你一起进行星球冒险";
+
+"GAME_GUIDE_DIALOG_2_2" = "点击这里显示功能按钮";
+"GAME_GUIDE_DIALOG_2_3" = "从这里进入目标地图";
+"GAME_GUIDE_DIALOG_2_6" = "点击一只法拉开始战斗!";
+"GAME_GUIDE_DIALOG_2_7" = "点击技能按钮发动攻击!";
+"GAME_GUIDE_DIALOG_2_8" = "%s，每场战斗会消耗5点赛尔电量，电量不足时可直接点击电量图标购买获得";
+"GAME_GUIDE_DIALOG_2_9" = "返回飞船，向博士交还任务";
+
+"GAME_GUIDE_DIALOG_3_1" = "你可以在商城里购买优质精灵、道具以及充值金豆";
+"GAME_GUIDE_DIALOG_3_2" = "在商城中购买道具是快速变强的方式之一";
+"GAME_GUIDE_DIALOG_3_3" = "点击标签切换页面";
+"GAME_GUIDE_DIALOG_3_4" = "向左拖动后松开";
+"GAME_GUIDE_DIALOG_3_8" = "金豆不足时，可在此处充值购买金豆";
+"GAME_GUIDE_DIALOG_3_9" = "点击关闭页面";
+
+"GAME_GUIDE_DIALOG_4_2" = "精灵背包是养成精灵的主要场所";
+"GAME_GUIDE_DIALOG_4_3" = "精灵的养成主要在此界面中完成";
+"GAME_GUIDE_DIALOG_4_4" = "点击进入喂食页面";
+"GAME_GUIDE_DIALOG_4_5" = "点击选择食物";
+"GAME_GUIDE_DIALOG_4_7" = "点击关闭页面";
+"GAME_GUIDE_DIALOG_4_8" = "点击关闭页面";
+
+"GAME_GUIDE_DIALOG_5_0" = "点击这里隐藏功能按钮";
+"GAME_GUIDE_DIALOG_5_1" = "通过任务引导按钮快速地接取、完成和提交任务";
+
+"GAME_GUIDE_DIALOG_6_2" = "点击任务引导寻找目标";
+"GAME_GUIDE_DIALOG_6_6" = "点击任务引导提交任务";
+
+"GAME_GUIDE_DIALOG_7_1" = "在设置中关闭捕捉提示，再次战胜该精灵将不会出现捕捉提示";
+"GAME_GUIDE_DIALOG_7_3" = "点击关闭页面";
+
+"GAME_GUIDE_DIALOG_8_1" = "刚刚捕捉到的法拉已经放到精灵背包中了";
+"GAME_GUIDE_DIALOG_8_2" = "你可以将不需要的精灵放入仓库中";
+"GAME_GUIDE_DIALOG_8_3" = "向左滑动屏幕后松开";
+"GAME_GUIDE_DIALOG_8_4" = "也可以将仓库中的精灵放到背包中等待出战";
+"GAME_GUIDE_DIALOG_8_5" = "还可以将厉害的精灵设为首发";
+"GAME_GUIDE_DIALOG_8_6" = "点击关闭背包页面";
+
+"GAME_GUIDE_DIALOG_9_1" = "%s你现在很厉害了哦，我给你的帮助就到这里为止了";
+"GAME_GUIDE_DIALOG_9_2" = "接下来你将独自前行。更多的游戏功能将会在你精灵等级提升后自动解锁！";
+
+
+//Unlock Function
+
+"GAME_UNLOCK_GUIDE_DIALOG_1_0" = "恭喜，你解锁了经验分配功能。通过分配经验可以快速地升级精灵。";
+"GAME_UNLOCK_GUIDE_DIALOG_1_3" = "给精灵分配经验可以提高精灵的等级";
+"GAME_UNLOCK_GUIDE_DIALOG_1_7" = "点击关闭页面";
+"GAME_UNLOCK_GUIDE_DIALOG_1_8" = "点击关闭页面";
+
+"GAME_UNLOCK_GUIDE_DIALOG_2_0" = "恭喜，你解锁了学习力分配功能。通过分配学习力可以养成极品精灵。";
+"GAME_UNLOCK_GUIDE_DIALOG_2_3" = "给精灵分配学习力可以提高精灵的基础属性。";
+"GAME_UNLOCK_GUIDE_DIALOG_2_8" = "点击关闭页面";
+"GAME_UNLOCK_GUIDE_DIALOG_2_9" = "点击关闭页面";
+
+"GAME_UNLOCK_GUIDE_DIALOG_3_0" = "恭喜，你解锁了【特训舱】，把精灵放入特训舱可以使精灵快速地成长。";
+
+"GAME_UNLOCK_GUIDE_DIALOG_4_0" = "恭喜，你解锁了精灵扭蛋机。在这里可以获得极品和稀有精灵。";
+"GAME_UNLOCK_GUIDE_DIALOG_4_1" = "在这里可以获得极品和稀有精灵，来提升你的战斗力";
+
+"GAME_UNLOCK_GUIDE_DIALOG_5_0" = "恭喜，你解锁了【进化】功能，精灵进化之后可以获得更炫的形象，学习更强的技能。";
+"GAME_UNLOCK_GUIDE_DIALOG_5_4" = "拥有进化材料的前提下你的精灵达到进化等级，即可点击【进化】按钮完成进化。";
+
+"GAME_UNLOCK_GUIDE_DIALOG_6_0" = "恭喜，你解锁了活动中心。这里汇集了众多的活动等你来体验。";
+
+"GAME_UNLOCK_GUIDE_DIALOG_7_0" = "恭喜，你解锁了对战中心。彪悍的人生不需要解释，在战斗中证明自己吧！";
+
+"GAME_UNLOCK_GUIDE_DIALOG_8_0" = "恭喜，你解锁了战神之塔。扫荡即可得经验，海量经验等你来。";
+
+"GAME_UNLOCK_GUIDE_DIALOG_9_0" = "恭喜，你解锁了挑战【战神联盟】，来自战神雷伊的召唤，用实力斩获无尽能源，兑换属于你的雷神套装！";
+
+"GAME_UNLOCK_GUIDE_DIALOG_10_0" = "恭喜，你解锁了玩法中心。这里汇集了众多的玩法等你来探索";
+
+"GAME_UNLOCK_GUIDE_DIALOG_11_1" = "恭喜，你获得博士的最新研究成果--合金匕首。快去试试这个新的发明吧。";
+"GAME_UNLOCK_GUIDE_DIALOG_11_8" = "你可以在背包中强化装备，让你的精灵变得更加强大！";
+"GAME_UNLOCK_GUIDE_DIALOG_11_12" = "点击关闭页面";
+"GAME_UNLOCK_GUIDE_DIALOG_11_13" = "点击关闭页面";
+
+"GAME_UNLOCK_GUIDE_DIALOG_12_0" = "你收到了一封邮件";
+"GAME_UNLOCK_GUIDE_DIALOG_13_0" = "恭喜，你解锁了资质增幅仪。消耗精灵蛋即可获得资质，还能突破现有上限至51点。";
+
+//Battle center
+"BATTLE_CENTER_PVP_TIPS" = "系统随机为您找到在线的对手进行PVP竞技";
+"BATTLE_CENTER_UNOPEN_TIPS" = "系统功能暂未开放,敬请期待!";
+"BATTLE_CENTER_COMPETE_TIPS" = "与在线的玩家进行实时对战！出战位前三位的精灵出战";
+// challenge center
+"CHALLENGE_CENTER_LEIYI_TIPS" = "战神雷伊在赫尔卡星等待你的挑战，勇者的赛尔，快来完成你的成人礼吧！";
+"CHALLENGE_CENTER_GAIYA_TIPS" = "盖亚";
+"CHALLENGE_CENTER_KAXIUSI_TIPS" = "卡修斯";
+
+// Sprite Exp Allocator
+"NO_NEED_TO_OPEN_EXP_ALLOCATOR" = "该精灵等级已达上限，无需使用经验分配器。";
+
+// Sprite Skill
+"NO_OTHER_OBI_SKILL_TO_SUBSTITUTE" = "未获得新的必杀技";
+
+// Sprite
+"CANNOT_VIEW_SPRITE_INFO_IN_STORAGE" = "仓库中的精灵不能查看详细信息，请先将精灵设为出战状态！";
+
+//option setting label
+"SETTING_TAB_0" = "游戏设置";
+"SETTING_TAB_1" = "客服平台";
+"SETTING_SET_0" = "音乐";
+"SETTING_SET_1" = "音效";
+"SETTING_SET_2" = "陀螺";
+"SETTING_SET_3" = "通知";
+"SETTING_SET_4" = "退出游戏";
+"SETTING_SET_5" = "修改密码";
+"SETTING_SET_6" = "显示玩家";
+"SETTING_PLAT_0" = "热点问题";
+"SETTING_PLAT_1" = "在线提问";
+"SETTING_PLAT_2" = "游戏论坛";
+"SETTING_PLAT_3" = "查询回复";
+"SETTING_PLAT_4" = "客服电话：021－61130880";
+"SETTING_SET_4_TB" = "注销账号";
+
+"SETTING_SPIN_TIP_0" = "强捕捉模式：只要在战斗胜利后就会提示是否捕捉。";
+"SETTING_SPIN_TIP_1" = "弱捕捉模式：当接有捕捉精灵的任务、战胜未曾捕捉过的精灵时，才会在战斗后有捕捉提示跳出。";
+
+//Login Error Code
+"LOGIN_ERROR_CODE_1001" = "网络问题,请检查网络是否连接";
+"LOGIN_ERROR_CODE_2001" = "系统错误";
+"LOGIN_ERROR_CODE_3001" = "账号为空";
+"LOGIN_ERROR_CODE_3005" = "账号不存在";
+"LOGIN_ERROR_CODE_4001" = "没有输入密码";
+"LOGIN_ERROR_CODE_4006" = "密码不正确,请注意大小写";
+//Register Error Code
+"REGISTER_ERROR_CODE_1001" = "网络问题,请检查网络是否连接";
+"REGISTER_ERROR_CODE_2001" = "系统错误";
+"REGISTER_ERROR_CODE_3001" = "账号为空";
+"REGISTER_ERROR_CODE_3002" = "账号已被注册";
+"REGISTER_ERROR_CODE_3003" = "账号长度需为6-20个字符";
+"REGISTER_ERROR_CODE_3004" = "账号含非法字符,只能为字母、数字和'_'";
+"REGISTER_ERROR_CODE_3005" = "账号不能全为数字";
+"REGISTER_ERROR_CODE_4001" = "没有输入密码";
+"REGISTER_ERROR_CODE_4002" = "密码长度需为6-20个字符";
+"REGISTER_ERROR_CODE_4003" = "密码含非法字符,只能为字母、数字和'_'";
+"REGISTER_ERROR_CODE_4004" = "没有输入确认密码";
+"REGISTER_ERROR_CODE_4005" = "确认密码和密码不一致";
+//Modify Error Code
+"MODIFY_PSW_ERROR_CODE_1001" = "网络问题,请检查网络是否连接";
+"MODIFY_PSW_ERROR_CODE_2001" = "系统错误";
+"MODIFY_PSW_ERROR_CODE_4001" = "请输入老密码";
+"MODIFY_PSW_ERROR_CODE_4002" = "密码长度需为6-20个字符";
+"MODIFY_PSW_ERROR_CODE_4003" = "新密码含非法字符,只能为字母、数字和'_'";
+"MODIFY_PSW_ERROR_CODE_4004" = "请输入确认密码";
+"MODIFY_PSW_ERROR_CODE_4005" = "两次输入的密码不一致";
+"MODIFY_PSW_ERROR_CODE_4006" = "密码不正确";
+"MODIFY_PSW_ERROR_CODE_4007" = "请输入新密码";
+"MODIFY_PSW_SUCCESS" = "修改密码成功!";
+//Login placeholder
+"LOGIN_PLACEHOLDER_DEFAULT" = "字母/数字/'_',长度6~20";
+
+// 修改昵称界面
+"CHANGE_NICK_SUCCESS" = "昵称已成功修改为%s";
+
+// 道具兑换界面
+"EXCHANGE_SEER_BEAN" = "赛尔豆";
+"EXCHANGE_SEER_GOLD_BEAN" = "金豆";
+
+// Mail
+"MAIL_DELETE_WITHOUT_FETCH_ENCLOSURE_CONFIRM_MSG" = "邮件附件还未领取，您确认要删除该邮件吗？";
+"MAIL_DELETE_CONFIRM_MSG" = "您确定要删除该邮件吗？";
+
+// choose main sprite layer
+"CHOOSE_MAIN_SPRITE_QUERY" = "您确定要选择这只精灵吗？";
+"CHOOSE_MAIN_SPRITE_INFO_0_1" = "水系";
+"CHOOSE_MAIN_SPRITE_INFO_0_4" = "火系";
+"CHOOSE_MAIN_SPRITE_INFO_0_7" = "草系";
+"CHOOSE_MAIN_SPRITE_INFO_1_1" = "平衡型";
+"CHOOSE_MAIN_SPRITE_INFO_1_4" = "攻击型";
+"CHOOSE_MAIN_SPRITE_INFO_1_7" = "防守型";
+"CHOOSE_MAIN_SPRITE_INFO_2_1" = "能攻也能防";
+"CHOOSE_MAIN_SPRITE_INFO_2_4" = "擅长火攻";
+"CHOOSE_MAIN_SPRITE_INFO_2_7" = "擅长治愈";
+
+// game help layer
+"HELP_TITLE_WORLD_BOSS" = "游戏规则";
+"HELP_TITLE_QUEST" = "任务";
+"HELP_TITLE_ITEM_BAG" = "道具背包";
+"HELP_TITLE_TRAIN" = "特训";
+"HELP_TITLE_SPRITE_MAIN" = "精灵背包";
+"HELP_TITLE_SPRITE_CULTIVATE" = "精灵养成";
+"HELP_TITLE_SPRITE_LEVEL_UP" = "如何培养精灵";
+"HELP_TITLE_SHOP" = "商城";
+"HELP_TITLE_PVP_SCORE_SHOP" = "积分商城";
+"HELP_TITLE_BATTLE_CENTER" = "对战中心";
+"HELP_TITLE_SEER" = "赛尔";
+"HELP_TITLE_HIDE_SKILL" = "隐藏技能";
+"HELP_TITLE_BATTLE_TOWER" = "战神之塔";
+"HELP_TITLE_SPRITE_IDENTIFY" = "鉴定中心";
+
+"HELP_INFO_WORLD_BOSS" = "1.	“挑战雷伊”是全服一起挑战战神雷伊的活动，每天晚上定时开放。\n2.	战神雷伊具有隐藏血量、无视BUFF等特殊技能，更有无穷的攻击力。\n3.	每次挑战结束后，参与玩家可获得无尽能源、雷伊宝箱和赛尔豆的奖励：\n    A.	无尽能源：依据最终排名和鼓舞次数发放；可在NPC“挑战雷伊”处兑换包括金鳞蛋在内的稀有物品；\n    B.	雷伊宝箱：排名前三及最后一击的玩家可获得；可开出包括雷神套装在内的优质道具；\n    C.	赛尔豆：依据对雷伊造成的累积伤害、最终排名及最后一击发放；\n4.	推荐以下方法提升攻击效果\n    A.	使用克制系精灵，推荐：金鳞、砂吉塔和巨锤莫古；\n    B.	将精灵练到60级以上，使用必杀技攻击；\n    C.	使用鼓舞，直接提升伤害值，最高可达300%；\n    D.	清除CD时间，增加累积伤害值；\n5.	活动结束后可点击场景中的【领取奖励】按钮领奖。\n6.	活动结束后至下次活动开启前一小时为领奖时间，超出该时间段则奖励作废，请及时领奖。\n7.	如有任何问题请与淘米客服联系，电话021- 61130880；客服邮箱：kf@61.com。";
+"HELP_INFO_QUEST" = "任务面板中包含“已接任务”和“可接任务”两个页面。\n1.在“已接任务”中，可以看到当前已经接受过的任务。\n2.在“已接任务”中，若任务条件已达成，则点击右方的“完成任务”即可直接自动交付任务。\n3.在“已接任务”中，若任务条件未达成，则点击任务右方的“自动寻路”按钮，即可自动帮您进行任务。（小部分任务没有自动寻路功能，需玩家根据任务指示自己完成）\n4.在“可接任务”中，可以看到当前能够接受的任务。\n5.在“可接任务”中，点击任务右方的“接受任务”即可自动接受任务。";
+"HELP_INFO_ITEM_BAG" = "道具背包包含五个标签页面:\n1.“全部”页面：显示所有道具。\n2.“赛尔装备”页面：只显示赛尔装备类道具。\n3.“赛尔道具”页面：只显示赛尔道具，含改名芯片，仓库扩展卡，精灵蛋，宝箱等。\n4.“精灵装备”页面：只显示精灵装备。\n5.“精灵道具”页面：只显示精灵道具，包含经验果，性格药，资质果，学习力胶囊等。\n \n道具如何使用/升级：\n1.赛尔装备：在背包界面中选中赛尔装备，点击右下角的使用按钮即可完成换装。\n2.赛尔道具：仅部分赛尔道具可使用。使用方式同赛尔装备。\n3.精灵装备：背包中不能直接使用精灵装备。可以在精灵界面->选择精灵->点击装备栏进行换装。背包中可以进行装备升级：选中装备后点击右下角的升级按钮。升级后的装备其属性会增加。\n4.精灵道具：背包中不能直接使用精灵道具。可以在精灵界面->选择精灵->点击喂食按钮来使用精灵道具。\n \n道具如何出售：\n1.大部分道具都可以出售：选中道具后，点击右方的出售按钮。";
+"HELP_INFO_TRAIN" = "在特训舱中进行特训，精灵能立即获得大量的经验值！\n1.每个玩家最多解锁6个特训舱。解锁时需花费赛尔豆或金豆。\n2.特训舱只能对玩家出战精灵进行特训。仓库中的精灵无法特训。\n3.等级已满的精灵无法进行特训。\n4.特训时需消耗一定赛尔豆或金豆，特训后精灵能立即获得大量经验值。每次特训后，特训舱会进入一段冷却时间。";
+"HELP_INFO_SPRITE_MAIN" = "精灵面板中包含“出战”和“仓库”两个页面。\n1.“出战”页面显示当前出战的精灵。每个玩家最多拥有6个出战位，可以用过花费金豆/赛尔豆解锁出战位。\n2.点击“出战”页面中精灵下方的“放回仓库”按钮，即可将精灵转移到仓库中。\n3.点击“出战”页面中精灵下方的“首发”按钮，即可将精灵转为首发精灵。\n4.点击“出战”页面中精灵头像，即可进入精灵的详细信息页面。\n5.“仓库”页面显示玩家仓库中的精灵信息，每个玩家最多拥有99个仓库位，可以用过花费金豆/赛尔豆解锁仓库位。\n6.点击“仓库”页面中精灵下方的“出战”按钮，即可将精灵转移到出战位。\n7.点击“仓库”页面中精灵下方的“放生”按钮，即可将精灵出售。";
+"HELP_INFO_SPRITE_CULTIVATE" = "精灵换装\n1.精灵穿上装备后，能提升其属性值，增加战斗力。\n2.换装方法：精灵面板出战页面->点击精灵头像->在属性/技能/资料页面中点击精灵下方的装备栏->在列表中选择装备。\n \n精灵道具\n1.精灵使用道具后，能对其经验，属性等进行培养，从而增加战斗力。\n2.道具使用方法：精灵面板出战页面->点击精灵头像->在属性页面中点击“精灵喂食”->在列表中选择道具。\n \n经验分配器：\n1.使用经验分配器后，能直接为精灵提供大量经验值，从而增加精灵战斗力。\n2.经验分配器使用方法：精灵面板出战页面->点击精灵头像->在属性页面中点击“分配经验”->在列表中选择分配经验的数额。\n \n学习力分配：\n1.使用学习力分配器后，能为精灵分配学习力，从而增加精灵属性值。\n2.学习力分配器使用方法：精灵面板出战页面->点击精灵头像->在属性页面中点击“分配学习力”->在列表中选择分配学习力的数额。\n \n选择技能\n1.每只高等级的精灵都将拥有4个以上普通技能以及0-2个必杀技。\n2.更换技能方法：精灵面板出战页面->点击精灵头像->在技能页面中点击右方的某个技能按钮->在列表中选择技能。\n \n领悟技能\n1.每只精灵都有4个隐藏技能。\n2.当精灵等级超过60级，且已经进化到最终形态，则有机会领悟到隐藏技能\n3.当满足上述条件时，精灵每升一级都有小概率能获得隐藏技能。\n4.可以花费金豆来领悟隐藏技能：精灵面板出战页面->点击精灵头像->在技能页面中点击“领悟隐藏技能”->在列表中花费金豆来领悟。\n \n精灵进化\n1.大部分精灵都有2-3个进化形态。\n2.当精灵达到进化等级时，可以在精灵进化面板中进行进化。少部分精灵进化需要特定道具。\n3.进化方式：精灵面板出战页面->点击精灵头像->在进化页面中点击“进化”按钮。";
+"HELP_INFO_SPRITE_LEVEL_UP" = "精灵升级：\n每只精灵最多升级到100级。等级越高，精灵的属性和能力越高。\n1.战胜野外精灵或NPC，能增加精灵的经验值，从而提高精灵等级。\n2.给精灵喂食各类经验果实（小果实，大果实等）能直接提升精灵经验值。（精灵界面->选择精灵->选择喂食->选择使用果实）\n3.对精灵进行特训能直接提升精灵经验值。（特训->选择精灵->进行特训）";
+"HELP_INFO_SHOP" = "商城中包含“礼包”“精灵”“精灵养成”“特殊道具”以及“金豆”五类商品。\n1.“礼包”类物品一般包含多种物品，例如精灵蛋，精灵道具等，且价格会便宜许多。要养成极品精灵的玩家不可错过。\n2.“精灵”类物品，即各种精灵蛋。使用后能得到对应的精灵。\n3.“精灵养成”类物品，包含精灵养成道具以及精灵装备。\n4.“特殊道具”类物品，包含赛尔道具以及赛尔装备。\n5.“金豆”类物品，即充值兑换金豆。";
+"HELP_INFO_PVP_SCORE_SHOP" = "玩家参与精灵王之战，就有机会获得积分。在积分商城中可用积分兑换相应物品。\n兑换的物品包含赛尔装备，稀有精灵以及特殊类道具。";
+"HELP_INFO_BATTLE_CENTER" = "对战中心内包含“精灵王之战”“梦幻切磋大厅“以及”银河竞技联赛（未开放）”。\n1.玩家最高精灵等级达到30级时，即可参与精灵王之战。\n2.精灵王之战，即自动匹配PVP。系统随机为您找到在线的对手进行PVP竞技。\n3.在精灵王之战中，无论胜负都将获得积分。积分可以用来兑换稀有精灵以及赛尔装备等。\n4.在精灵王之战的排行榜中，能够查看你今日排名以及历史排名。\n5.玩家最高精灵等级达到30级时，即可进入切磋大厅。\n6.在自由切磋界面中，玩家可以看见当前位于【切磋大厅】的玩家。\n7.点击界面列表中的玩家，即可向对方发出切磋邀请。若对方接受，则能开始进行对战。\n8.切磋大厅的对战，最多允许3个精灵出战（默认设为出战位前三位的精灵）。";
+"HELP_INFO_SEER" = "赛尔界面包含赛尔基本信息以及PVP信息两个页面。\n赛尔信息页面\n1.赛尔界面中，玩家可以查看到当前的昵称，登船日期（注册日期），拥有的精灵数量，最高精灵等级，赛尔豆，金豆数，VIP等级以及当前的战力总和。\n2.赛尔界面中，玩家可以对赛尔进行换装。（赛尔界面->点击左下方的装备栏->在列表中选择装备）。\n3.赛尔界面中，玩家可以更改昵称，更改昵称需要改名芯片道具。（赛尔界面->更改昵称>输入新的昵称名）\n \nPVP信息页面\n1.PVP信息页面中显示玩家在精灵王之战中的历史积分，今日积分以及兑换积分。下方可查询玩家在精灵王之战中的总胜场，总负场以及胜率。";
+"HELP_INFO_HIDE_SKILL" = "领悟隐藏技能\n1.每只精灵都有4个隐藏技能。\n2.当精灵等级超过60级，且已经进化到最终形态，则有机会领悟到隐藏技能\n3.当满足上述条件时，精灵每升一级都有小概率能获得隐藏技能。\n4.可以花费金豆来领悟隐藏技能：精灵面板出战页面->点击精灵头像->在技能页面中点击“领悟隐藏技能”->在列表中花费金豆来领悟。";
+
+"HELP_INFO_BATTLE_TOWER" = "1.战神之塔以经验产出为主，有概率掉落精灵进化道具，不同章节掉落的进化道具不同。\n2.您可以通过上下滑动“战神之塔”实现章节切换。\n3.玩家初始化行动力为100点，每前进一步扣除5点，每5分钟恢复5点，普通玩家每天可购买一次，VIP玩家购买次数详见VIP系统。\n4.爬塔过程中获得的经验奖励将存入您的经验分配器内。\n5.在塔内会遇到其他玩家，您可以选择PK或者路过：PK胜利之后有概率掉落稀有物品，路过直接跳过该事件且不消耗行动力。\n6.当完成某层内的所有事件则意味着通过该层，即可选择【扫荡】，跳过战斗直接获得奖励。\n7.在塔内可以进入精灵背包中调整精灵出战顺序，但是不能够进入精灵仓库以及精灵培养界面。";
+"HELP_INFO_SPRITE_IDENTIFY" = "玩家可以对当前的出战精灵进行鉴定，鉴定时需花费赛尔豆。\n \n经过鉴定的精灵，可以查看到系统推荐的养成方式，包括极限等级，极限资质，推荐的性格以及学习力分配方式。\n \n经过鉴定的精灵，可直接通过花费金豆，将其等级提到到100级，将其资质提升到31（不能直接提升到51），将其性格转化为系统推荐的3种之一，将其学习力重置，充满到510并自动分配为系统推荐的3种之一。";
+
+// 捕捉询问界面
+"CAPTURE_INQUIRY_HINT" = "%s比较虚弱，选择陀螺即可捕捉";
+"CAPTURE_INQUIRY_UPPER_INFO" = "使用黄金陀螺，有%u%%的概率直接获得该精灵";
+"CAPTURE_INQUIRY_CAPTURE" = "捕捉";
+"CAPTURE_INQUIRY_BUY" = "购买";
+"CAPTURE_INQUIRY_ERROR" = "找不到对应商品，无法购买该道具";
+
+// 捕捉UI
+"CAPTURE_UI_ESCAPE" = "确定要逃跑吗？";
+
+// 捕捉界面
+"CAPTURE_MONSTER_HP"        = "体力: %d";
+"CAPTURE_MONSTER_APPEAR"    = "野生的%s出现啦！";
+
+"CAPTURE_DAMAGE"            = "%d\n伤害";
+
+// Character
+"CHANGE_NICK_CHIP_NOT_ENOUGH" = "更改昵称需要改名芯片，是否去商城购买？";
+
+// MessageBoxLayer Button Label
+"MESSAGE_BOX_CANCEL" = "取消";
+"MESSAGE_BOX_CONFIRM" = "确定";
+"MESSAGE_BOX_GO_NOW" = "现在就去";
+"MESSAGE_BOX_ACKNOWLEDGE" = "知道了";
+"MESSAGE_BOX_HOW_TO_LEVEL_UP" = "如何升级";
+"MESSAGE_BOX_DOWNLOAD" = "下载";
+"MESSAGE_BOX_TRIAL" = "试玩";
+//Select Sever
+"SERVER_CANT_ENTER" = "服务器已满员,请选择其他服!";
+
+"SEER_CELL_TITLE"   = "赛尔电量";
+"SEER_CELL_TIME"    = "倒计时 %02d:%02d";
+
+// Equipment
+"NO_SPRITE_EQUIPMENT_MSG" = "目前没有精灵装备";
+"NO_SEER_EQUIPMENT_MSG" = "目前没有赛尔装备";
+
+// movie hint layer labels
+"MOVIE_HINT_LABEL_0" = "记录了邪神身世之谜的老胶片已经修复，";
+"MOVIE_HINT_LABEL_1" = "他从何而来，有过怎样的经历，又为何如此强大？";
+"MOVIE_HINT_LABEL_2" = "更多内幕消息，详见《赛尔号大电影3-战神联盟》……";
+
+"MOVIE_HINT_LABEL_26" = "战胜布鲁托的赛尔勇士，\n欢迎你踏上探索阿卡迪亚星球的旅程！\n接下来你将进入蔚蓝的世界—水脉氏族。";
+"MOVIE_HINT_LABEL_53" = "勇猛的赛尔勇士，\n接下来我们将进入炎热的火幻氏族！\n到了让水系精灵一展身手的时候了！！";
+"MOVIE_HINT_LABEL_238" = "勇猛的赛尔勇士，\n接下来我们将进入神秘的地月氏族！\n一起去寻找霍加族长一探究竟吧…";
+"MOVIE_HINT_LABEL_321" = "虽然莫古的巨锤阴影还未褪去，\n但是我们不能停下前行的步伐！\n强化你的草系精灵，让我们一起挺进沙爪氏族！";
+"MOVIE_HINT_LABEL_397" = "随着沙皇鸟的应身倒下，\n一股强烈的寒意扑面而来！\n接下来又会有怎样的奇遇呢…";
+"MOVIE_HINT_LABEL_401" = "赛尔号飞船终于可以起飞啦，\n但是星球的黑化程度也越来越严重\n迅速养成你的冰系精灵，飞翼的探险中需要他们！";
+"MOVIE_HINT_LABEL_405" = "艰难的战斗总是让人难忘，\n但是残酷的战斗才刚刚响起。\n让我们用风系和超能系的精灵克制传说中的恶狼！！";
+"MOVIE_HINT_LABEL_406" = "传说中的恶狼也不过如此，\n接下来又会有怎样的挑战在等待着我们。\n让我们一同期待…";
+"MOVIE_HINT_LABEL_506" = "邪神从何而来，又为何如此强大？\n让我们在后续的星球探险中\n逐渐地靠近真相，解开谜团...";
+
+// NPC
+"STRING_IS_NOT_UNLOCK_NOW_1" = "22级解锁";
+"STRING_IS_NOT_UNLOCK_NOW_2" = "25级解锁";
+"STRING_IS_NOT_UNLOCK_NOW_3" = "50级解锁";
+//Device Check
+"DEVICE_NOT_SUPPORT" = "非常抱歉，您的设备不支持该游戏";
+
+"BATTLE_END_OPPONENT_RUNAWAY" = "对方逃跑了";
+//TBT Platform
+"TB_UPDATE_CHECK_FAIL" = "版本检查失败,请检查网络连接";
+// VIP
+"VIP_INFO_NEXT_LEVEL" = "再充值获得%d个金豆，您将成为VIP%d。";
+"VIP_INFO_MAX_LEVLE" = "您的VIP已经达到最高等级！";
+"VIP_INFO_TITLE" = "成为VIP%d可享受以下特权";
+"VIP_DAILY_PRIZE" = "VIP每日小礼包";
+"VIP_WEEKLY_PRIZE" = "VIP每周大礼包";
+"VIP_PRIZE_NOT_VIP" = "充值成为VIP";
+"VIP_PRIZE_RECEIVED" = "已领取";
+"VIP_PRIZE_NOT_RECEIVED" = "领取";
+"VIP_UPDATE_TITLE" = "恭喜！您的VIP等级提升到%d级！";
+
+//battle tower
+"BATTLE_TOWER_ACTION_POINT" = "行动力";
+"BATTLE_TOWER_DROP_TITLE"   = "掉落奖励";
+"BATTLE_TOWER_LEVEL_NUM"    = "%d-%d";
+"BATTLE_TOWER_SWEEP"        = "扫荡";
+"BATTLE_TOWER_TITLE"        = "第%d-%d层";
+"BATTLE_TOWER_PROGRESS"     = "完成度: %d/%d";
+"BATTLE_TOWER_ENCOUNTER"    = "遇见了%s";
+"BATTLE_TOWER_GAIN_EXP"     = "获得了%d经验值";
+"BATTLE_TOWER_GAIN_ITEM"    = "获得了%sx%d";
+"BATTLE_TOWER_GAIN_ACTION_POINT"    = "获得了%d点行动力";
+"BATTLE_TOWER_SKIP"         = "路过";
+"BATTLE_TOWER_CHALLENGE"    = "挑战";
+"BATTLE_TOWER_PVP_COMBAT_TITLE" = "偶遇玩家%s，是否发起挑战？\n对方战斗力: %d\n我方战斗力: %d";
+"BATTLE_TOWER_ACTION_POINT_NOT_ENOUGH" = "您的行动力不足，休息一会儿再闯关吧！";
+"BATTLE_TOWER_ACTION_POINT_BUY_MAX_TIME" = "您今天购买行动力的次数已达上限，成为vip用户可提升每日购买次数上限";
+"BATTLE_TOWER_ACTION_POINT_DONT_NED_BUY" = "您的行动力已达上限，无需购买";
+"BATTLE_TOWER_STAGE_COMPLETE" = "恭喜您闯关成功！";
+"BATTLE_TOWER_BATTLE_WIN"   = "您击败了对手";
+"BATTLE_TOWER_BATTLE_LOSE"  = "您被对手击败了";
+"BATTLE_TOWER_SWEEP_TIMES_MSG" = "第%d次扫荡";
+"BATTLE_TOWER_GUIDE_TIP" = "拖动塔体即可切换章节";
+
+//champion
+"CHAMPION_TITLE_1" = "挑战雷伊 冠军";
+"CHAMPION_TITLE_2" = "精灵王之战 昨日冠军";
+"CHAMPION_INFO_0" = "昨日积分 : ";
+"CHAMPION_INFO_1" = "鲜花 : ";
+"CHAMPION_INFO_2" = "鸡蛋 : ";
+"CHAMPION_INFO_LEIYI" = "冠军伤害 : ";
+"CHAMPION_SEND_TITLE_0" = "送鲜花";
+"CHAMPION_SEND_TITLE_1" = "扔鸡蛋";
+"CHAMPION_CLEAR_TITLE_0" = "下次送鲜花";
+"CHAMPION_CLEAR_TITLE_1" = "下次扔鸡蛋";
+
+//compete
+"COMPETE_WAIT" = "等待中的玩家";
+"COMPETE_SEARCH" = "查找玩家";
+"COMPETE_SORT" = "排列方式";
+"COMPETE_QUICK_MATCH" = "快速匹配";
+"COMPETE_POWER" = "战力 :";
+"COMPETE_WIN" = "连胜 :";
+"COMPETE_MATCHING" = "匹配中";
+"COMPETE_INVITE" = "%s(战力: %d, 连胜: %d)\n邀请您进行自由切磋\n是否接受邀请？";
+"COMPETE_INVITE_ACK" = "切磋邀请已发送\n等待%s回应...";
+"COMPETE_TIME_BACK" = "%d秒后自动返回";
+"COMPETE_AGREE" = "接受";
+"COMPETE_DISAGREE" = "拒绝";
+"COMPETE_SEARCH_INPUT" = "请输入对方的米米号";
+"COMPETE_SEARCH_AUTO" = "自动搜索对手";
+"COMPETE_SEARCH_AUTO_WAIT" = "请耐心等待哦！";
+"COMPETE_REJECT_INVITE" = "对方拒绝您的邀请！";
+"COMPETE_CANCEL_INVITE" = "对方取消了邀请！";
+
+// sprite top level cultivate
+"SPRITE_TOP_LEVEL_CULTIVATE_PAY" = "是否花费";
+"SPRITE_TOP_LEVEL_CULTIVATE_LEVEL_UP" = "将%s的等级提升到";
+"SPRITE_TOP_LEVEL_CULTIVATE_LEVEL_UP_VALUE" = "%d级";
+"SPRITE_TOP_LEVEL_CULTIVATE_CHARACTER_CHANGE"    = "将%s的性格转为";
+"SPRITE_TOP_LEVEL_CULTIVATE_INDIVIDUAL_RAISE"    = "将%s的资质提升到";
+"SPRITE_TOP_LEVEL_CULTIVATE_INDIVIDUAL_RAISE_VALUE" = "31";
+"SPRITE_TOP_LEVEL_CULTIVATE_LEARN_POINT_REALLOCATE"    = "重新分配%s的学习力？";
+"SPRITE_TOP_LEVEL_CULTIVATE_QUICK_STRENGTHEN" = "一键提升%s的战斗力？";
+"SPRITE_TOP_LEVEL_CULTIVATE_LEVEL_TITLE" = "等级：";
+"SPRITE_TOP_LEVEL_CULTIVATE_INDIVIDUAL_TITLE" = "资质：";
+"ERR_MON_CAN_NOT_IDENTIFY_THIS_MON" = "无法鉴定这只精灵";
+"SPRITE_TOP_LEVEL_IDENTIFY_GO_TO_INCREASE_INDIVIDUAL_MSG" = "%s的资质已经超过30！\n使用资质增幅器可以进一步提升资质上限至51。是否现在就去？";
+"SPRITE_TOP_LEVEL_IDENTIFY_IMPROVE_INDIVIDUAL" = "提升资质";
+"SPRITE_TOP_LEVEL_IDENTIFY_UPGRADE_INDIVIDUAL" = "资质突破";
+"SRPITE_TOP_LEVEL_IDENTIFY_CANNOT_GO_TO_APTITUDE_MSG" = "使用资质增幅仪需精灵等级达到60级!";
+
+// sprite aptitude
+"SPRITE_APTITUDE_SELECT_EGG" = "选择精灵蛋";
+"SPRITE_APTITUDE_MAX_SELECT_EGG" = "您的选择已达上限，可点击已选中的精灵蛋做替换操作。";
+"SPRITE_APTITUDE_SELECT_SPRITE_EGG" = "请选择精灵蛋";
+"SPRITE_APTITUDE_SELECT_SPRITE" = "请选择培养精灵";
+"SPRITE_APTITUDE_ADD_APTITUDE" = "恭喜！\n您的精灵资质增加了%d点";
+"SPRITE_APTITUDE_NOT_ADD_APTITUDE" = "很遗憾\n您的精灵资质没有发生变化";
+"SPRITE_APTITUDE_BUY_ONE_APTITUDE" = "花费%d金豆即可稳定增加1点资质，是否增加？";
+"SPRITE_APTITUDE_START_MAX_TIME" = "您今天开启的次数已达上限！";
+"HELP_TITLE_SPRITE_APTITUDE" = "资质增幅仪";
+"HELP_INFO_SPRITE_APTITUDE" = "1. 精灵资质为精灵的核心能力值之一，资质越高，精灵的战斗实力越强；\n2. 可以通过给精灵食用资质果和使用精灵增幅仪两种方式提升精灵资质；\n3. 食用资质果的上限为31点，使用资质增幅仪可突破31点，最高至极限值51点；\n4. 使用资质增幅仪需要消耗精灵蛋，可在“精灵扭蛋机”，“摇一摇”等玩法中获得精灵蛋；\n5. 每次使用资质增幅仪可获得[0,3]点的资质增加，消耗的精灵品级越高，获得高点数资质的概率越高；\n6. 该功能有使用CD时间的设置，可以花费金豆清除，所需费用和当日累计清除次数及CD时长相关。\n7. 花费清除CD时间的次数和VIP等级相关，详见VIP系统。";
+"SPRITE_APTITUDE_CLEAN_CD_TIME" = "清除CD时间？";
+"SPRITE_APTITUDE_LEFT_COUTN" = "今天剩余次数：%d";
+"SPRITE_APTITUDE_MAX_VALUE" = "你的精灵资质已达上限";
+
+// seer fund
+"SEER_FUND_GET_PRIZE_TITLE" = "%d级领取";
+"SEER_FUND_PROFIT_RATE" = "收益\n%d%%";
+"SEER_FUND_BUY_PLAN" = "立刻购买";
+"SEER_FUND_GET_PRIZE" = "领取奖励";
+"SEER_FUND_COST_PRICE" = "每份价格：";
+"SEER_FUND_FIRST_PRICE" = "立刻返还：";
+"SEER_FUND_FOLLOW_PRICE" = "后续返还：";
+"SEER_FUND_FINAL_PRICE" = "最终返还：";
+"SEER_FUND_FINANCE_DESC1" = "%d日后获取奖励";
+"SEER_FUND_FINANCE_DESC2" = "分期%d/%d";
+"SEER_FUND_FINANCE_DESC3" = "分%d期返还";
+"SEER_FUND_CAN_NOT_BUY" = "您的级别过高，不能购买！";
+"SEER_FUND_NON_VIP_CAN_NOT_BUY" = "VIP级别不够!\n去商场看看吧！";
+"SEER_FUND_BUY_DESC" = "%d级以前花费%d金豆购买新手成长基金，购买后升级到对应级别就可以获得塞尔豆哦！\n\n每10级可以领取一次赛尔豆，您还在等什么！";
+"SEER_FUND_HELP_TITLE" = "投资收益";
+"SEER_FUND_HELP_INFO" = "基金计划：\n1. 基金玩法以玩家控制自身升级时间来决定奖励的获取时间；\n2. 购买条件需玩家等级在35级以下(含35级)；\n3. 玩家购买后基金计划后，所有赛尔豆奖励将分8次在玩家升级时领取；\n4. 每位玩家只可购买一次。\n理财计划：\n1. 理财玩法以7天为一个周期，共4个周期。每个周期玩家可以领取固定奖励；\n2. 玩家初次购买一份计划后可以立即领取当日赛尔豆奖励和额外道具奖励；\n3. 领取完奖励，界面将会出现后续奖励内容，玩家可到期后领取；\n4. 普通玩家只购买雷伊计划；VIP3玩家可同时购买两个计划。";
+
+// rank
+"RANK_TITLE_TOTAL_BATTLE_CAPACITY" = "总战力排行";
+"RANK_TITLE_PVP_SCORE" = "精灵王之战";
+"RANK_DESC_TODAY_PVP_SCORE" = "-今日积分排行-";
+"RANK_DESC_TOTAL_PVP_SCORE" = "-历史积分排行-";
+"RANK_TITLE_TOTAL_RECHARGE" = "累计充值排行";
+"RANK_TITLE_CHALLENGE_LEIYI_BOSS" = "挑战雷伊伤害排行";
+"RANK_TITLE_0" = "最高战力";
+"RANK_TITLE_1" = "积分";
+"RANK_TITLE_3" = "充值金豆";
+"RANK_TITLE_4" = "伤害值";
+
+//compete map
+"SERACH_USER_ERR_TIPS_INPUT_NULL" = "请输入米米号!";
+"SERACH_USER_ERR_TIPS_FORMAT_ILLEGAL" = "米米号格式不正确!";
+"COMPETE_MAP_SORT_TYPE_TITLE_BEGIN" = "按玩家";
+"COMPETE_MAP_SORT_TYPE_TITLE_END" = "排序";
+"COMPETE_MAP_SORT_TYPE_BY_NAME" = "昵称";
+"COMPETE_MAP_SORT_TYPE_BY_POWER" = "战力";
+"COMPETE_MAP_SORT_TYPE_BY_WIN" = "连胜";
+"COMPETE_ERR_CODE_NOT_IN_MAP" = "玩家不在切磋大厅内";
+"COMPETE_ERR_CODE_CANT_FIND_FOE" = "未找到对手!";
+"COMPETE_ERR_CODE_INVITE_NOT_IN_MAP" = "对方不在切磋大厅,不能发出邀请!";
+"COMPETE_ERR_CODE_CANT_LOOKUP_SELF" = "不能邀请自己~";

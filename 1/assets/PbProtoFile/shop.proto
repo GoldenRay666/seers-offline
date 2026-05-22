@@ -1,0 +1,49 @@
+package ISeer20Conf;
+
+message good_t {
+	// 商城类型
+	enum shop_type_t {
+		ITEM             = 1; // 道具商城
+		POINT	         = 2; // 积分商城
+        ENDLESSENERGY    = 3; // 无尽能源兑换
+        ACTIVITY         = 4; // 活动兑换
+        MON_PROPAGANDA   = 5; // 精灵宣传活动兑换
+	}
+
+    message item_t {
+        required int32 item_id      = 1; // 物品ID
+        required int32 item_count   = 2; // 物品个数
+        optional int32 item_level   = 3; // 只有装备才有等级
+    }
+    message cost_t {
+        optional int32 coin     = 1; // 需要花费的赛尔豆
+        optional int32 gcoin    = 2; // 需要花费的金豆
+        optional int32 point    = 3; // 需要花费的积分
+        optional int32 rmb      = 4; // 需要花费的人民币(单位:元)
+        optional int32 dollar   = 5; // 需要花费的美金(单位:美分)
+        repeated item_t item    = 6; // 需要花费的物品列表  
+    }
+
+    message money_t {
+        optional int32 gcoin    = 1;// 购买的金豆数
+        optional int32 coin     = 2;// 购买的赛尔豆数
+    }
+
+    required bytes name             = 1; // 商品名
+    required bytes description      = 2; // 商品描述   
+    required int64 id               = 3; // 商品ID
+    required bytes good_icon        = 4; // 商品Icon
+    required shop_type_t shop_type  = 5; // 商城类型
+    required int32 row_pos          = 6; // 分类位置
+    required bytes row_des          = 7; // 分类描述
+    optional int32 discount         = 8; // 折扣率
+    required cost_t cost            = 9; // 花费
+    repeated item_t item            = 10; // 购买物品
+    optional money_t money          = 11; // 购买的游戏金钱 
+    optional int32  hot_sale        = 12 [default = 0];// 商品是否热卖  
+    optional int32 vip_level        = 13; // 购买者所需的vip等级
+}
+
+message top_config_shop_t {
+	repeated good_t good = 1;
+}

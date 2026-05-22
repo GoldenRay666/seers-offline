@@ -1,0 +1,8045 @@
+map: {
+	id: 10001
+	name: "异蘑世界"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 1
+	area_index: 0
+	init_x: 501
+	init_y: 204
+	battle_map_id: 11001
+	weather: BATTLE_WEATHER_SUN
+	required_task: 0
+	required_pre_map: 0
+	mine_type: 3
+	npc: {
+		id: 3
+		x: 740
+		y: 220
+	}
+	npc: {
+		id: 100011
+		x: 700
+		y: 200
+		prize_id: 100011
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10002
+	name: "荆棘林"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 1
+	area_index: 1
+	init_x: 600
+	init_y: 170
+	battle_map_id: 11001
+	weather: BATTLE_WEATHER_SUN
+	required_task: 3
+	required_pre_map: 10001
+	mine_type: 0
+	npc: {
+		id: 19
+		x: 680
+		y: 240
+	}
+	npc: {
+		id: 12
+		x: 520
+		y: 260
+	}
+	npc: {
+		id: 100021
+		x: 700
+		y: 200
+		prize_id: 100021
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10003
+	name: "幻影崖"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 1
+	area_index: 2
+	init_x: 350
+	init_y: 290
+	battle_map_id: 11001
+	weather: BATTLE_WEATHER_NONE
+	required_task: 15
+	required_pre_map: 10002
+	mine_type: 0
+	npc: {
+		id: 16
+		x: 440
+		y: 165
+	}
+    npc: {
+		id: 201
+		x: 840
+		y: 140
+	}
+	npc: {
+		id: 18
+		x: 835
+		y: 400
+	}
+	npc: {
+		id: 100031
+		x: 700
+		y: 200
+		prize_id: 100031
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 100032
+		x: 700
+		y: 200
+		prize_id: 100031
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 90017
+		x: 720
+		y: 188
+		prize_id: 100031
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+
+map: {
+	id: 10004
+	name: "巨石洞穴"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 2
+	area_index: 2
+	init_x: 250
+	init_y: 180
+	battle_map_id: 11005
+	weather: BATTLE_WEATHER_NONE
+	required_task: 312
+	required_pre_map: 10021
+	mine_type: 0
+	npc: {
+		id: 42
+		x: 280
+		y: 240
+	}
+	npc: {
+		id: 90080
+		x: 670
+		y: 383
+		prize_id: 100051
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+
+map: {
+	id: 10005
+	name: "三八跑道线"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 3
+	area_index: 0
+	init_x: 628
+	init_y: 334
+	battle_map_id: 11004
+	weather: BATTLE_WEATHER_NONE
+	required_task: 321
+	required_pre_map: 10004
+	mine_type: 4
+	npc: {
+		id: 48
+		x: 420
+		y: 140
+	}
+	npc: {
+		id: 55
+		x: 560
+		y: 370
+	}
+	npc: {
+		id: 100051
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10006
+	name: "黄金之路"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 3
+	area_index: 1
+	init_x: 550
+	init_y: 200
+	battle_map_id: 11004
+	weather: BATTLE_WEATHER_NONE
+	required_task: 329
+	required_pre_map: 10005
+	mine_type: 0
+	npc: {
+		id: 56
+		x: 330
+		y: 370
+	}
+	npc: {
+		id: 100061
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10007
+	name: "海市蜃楼"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 3
+	area_index: 2
+	init_x: 770
+	init_y: 250
+	battle_map_id: 11004
+	weather: BATTLE_WEATHER_NONE
+	required_task: 340
+	required_pre_map: 10006
+	mine_type: 0
+	npc: {
+		id: 58
+		x: 730
+		y: 315
+	}
+	npc: {
+		id: 202
+		x: 430
+		y: 200
+	}
+	npc: {
+		id: 90082
+		x: 520
+		y: 353
+		prize_id: 100051
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10009
+	name: "地下黑市"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 2
+	area_index: 0
+	init_x: 500
+	init_y: 211
+	battle_map_id: 11005
+	weather: BATTLE_WEATHER_NONE
+	required_task: 238
+	required_pre_map: 10019
+	mine_type: 1
+	npc: {
+		id: 46
+		x: 520
+		y: 240
+	}
+	npc: {
+		id: 100091
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10010
+	name: "银脉山脊"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 0
+	area_index: 0
+	init_x: 665
+	init_y: 156
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 26
+	required_pre_map: 10003
+	mine_type: 4
+	npc: {
+		id: 4
+		x: 720
+		y: 310
+	}
+	npc: {
+		id: 208
+		x: 420
+		y: 225
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_THREE
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 100101
+		x: 700
+		y: 200
+		prize_id: 100101
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+	npc: {
+		id: 100102
+		x: 700
+		y: 200
+		prize_id: 100101
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10011
+	name: "冰之谷"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 8
+	area_index: 0
+	init_x: 325
+	init_y: 185
+	battle_map_id: 11006
+	weather: BATTLE_WEATHER_NONE
+	required_task: 397
+	required_pre_map: 10007
+	mine_type: 3
+	npc: {
+		id: 204
+		x: 285
+		y: 170
+	}
+	npc: {
+		id: 205
+		x: 690
+		y: 215
+	}
+	npc: {
+		id: 49
+		x: 950
+		y: 300
+	}
+	npc: {
+		id: 100111
+		x: 700
+		y: 200
+		prize_id: 100111
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10012
+	name: "冰晶矿场"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 8
+	area_index: 2
+	init_x: 500
+	init_y: 300
+	battle_map_id: 11006
+	weather: BATTLE_WEATHER_BLIZZARD
+	required_task: 399
+	required_pre_map: 10020
+	mine_type: 0
+	npc: {
+		id: 203
+		x: 520
+		y: 320
+	}
+	npc: {
+		id: 206
+		x: 730
+		y: 310
+	}
+	npc: {
+		id: 90127
+		x: 608
+		y: 350
+		prize_id: 100111
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10013
+	name: "幻空通道"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 7
+	area_index: 0
+	init_x: 445
+	init_y: 225
+	battle_map_id: 11003
+	weather: BATTLE_WEATHER_NONE
+	required_task: 53
+	required_pre_map: 10017
+	mine_type: 2
+	npc: {
+		id: 34
+		x: 560
+		y: 355
+	}
+	npc: {
+		id: 207
+		x: 670
+		y: 170
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_THREE
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 100131
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}		
+	npc: {
+		id: 100132
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10014
+	name: "灰烬之地"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 7
+	area_index: 1
+	init_x: 700
+	init_y: 280
+	battle_map_id: 11003
+	weather: BATTLE_WEATHER_NONE
+	required_task: 210
+	required_pre_map: 10013
+	mine_type: 0
+	npc: {
+		id: 31
+		x: 610
+		y: 350
+	}
+	npc: {
+		id: 100141
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}		
+	npc: {
+		id: 100142
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10015
+	name: "魅罗门"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 7
+	area_index: 2
+	init_x: 205
+	init_y: 360
+	battle_map_id: 11003
+	weather: BATTLE_WEATHER_HOT
+	required_task: 217
+	required_pre_map: 10014
+	mine_type: 0
+	npc: {
+		id: 32
+		x: 360
+		y: 380
+	}
+	npc: {
+		id: 209
+		x: 785
+		y: 190
+	}
+	npc: {
+		id: 100151
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+	npc: {
+		id: 90038
+		x: 680
+		y: 353
+		prize_id: 100051
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10016
+	name: "残骸通道"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 0
+	area_index: 1
+	init_x: 360
+	init_y: 240
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_RAIN
+	required_task: 35
+	required_pre_map: 10010
+	mine_type: 0
+	npc: {
+		id: 25
+		x: 690
+		y: 360
+	}
+	npc: {
+		id: 26
+		x: 890
+		y: 350
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_THREE
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 100161
+		x: 700
+		y: 200
+		prize_id: 100101
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+	npc: {
+		id: 100162
+		x: 700
+		y: 200
+		prize_id: 100101
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10017
+	name: "悲伤残骸"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 0
+	area_index: 2
+	init_x: 300
+	init_y: 220
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 46
+	required_pre_map: 10016
+	mine_type: 0
+	npc: {
+		id: 23
+		x: 385
+		y: 325
+	}
+	npc: {
+		id: 27
+		x: 700
+		y: 420
+	}
+	npc: {
+		id: 90031
+		x: 780
+		y: 438
+		prize_id: 100101
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 100171
+		x: 700
+		y: 200
+		prize_id: 100101
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10019
+	name: "水仙溪口"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 1
+	area_index: 3
+	init_x: 270
+	init_y: 325
+	battle_map_id: 11001
+	weather: BATTLE_WEATHER_NONE
+	required_task: 231
+	required_pre_map: 10015
+	mine_type: 0
+	npc: {
+		id: 212
+		x: 595
+		y: 345
+	}
+	npc: {
+		id: 90057
+		x: 850
+		y: 448
+		prize_id: 100101
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 100191
+		x: 700
+		y: 200
+		prize_id: 100101
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10020
+	name: "冰沁宫殿"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 8
+	area_index: 1
+	init_x: 670
+	init_y: 190
+	battle_map_id: 11006
+	weather: BATTLE_WEATHER_NONE
+	required_task: 398
+	required_pre_map: 10011
+	mine_type: 0
+	npc: {
+		id: 50
+		x: 440
+		y: 300
+	}
+	npc: {
+		id: 211
+		x: 680
+		y: 310
+	}
+	npc: {
+		id: 100201
+		x: 700
+		y: 200
+		prize_id: 100111
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10021
+	name: "乌黑矿坑"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 2
+	area_index: 1
+	init_x: 600
+	init_y: 445
+	battle_map_id: 11005
+	weather: BATTLE_WEATHER_NONE
+	required_task: 303
+	required_pre_map: 10009
+	mine_type: 0
+	npc: {
+		id: 45
+		x: 255
+		y: 265
+	}
+	npc: {
+		id: 47
+		x: 490
+		y: 190
+	}
+	npc: {
+		id: 100211
+		x: 700
+		y: 200
+		prize_id: 100051
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10023
+	name: "我的小屋"
+	type: MAP_TYPE_HOME
+	icon_id: 0
+	area_id: 12
+	area_index: 0
+	init_x: 1500
+	init_y: 168
+	battle_map_id: 0
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 0
+	mine_type: 0
+	npc: {
+		id: 1
+		x: 470
+		y: 296
+	}
+	npc: {
+		id: 2
+		x: 920
+		y: 413
+	}
+	npc: {
+		id: 500
+		x: 1222
+		y: 400
+	}
+	npc: {
+		id: 501
+		x: 1705
+		y: 390
+	}
+	npc: {
+		id: 503
+		x: 1470
+		y: 430
+	}
+	npc: {
+		id: 502
+		x: 1950
+		y: 400
+	}
+	npc: {
+		id: 504
+		x: 1070
+		y: 140
+	}
+	npc: {
+		id: 505
+		x: 1250
+		y: 140
+	}
+}
+
+map: {
+	id: 10041
+	name: "切磋大厅"
+	type: MAP_TYPE_QIECUO
+	icon_id: 0
+	area_id: 12
+	area_index: 0
+	init_x: 800
+	init_y: 168
+	battle_map_id: 11007
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 0
+	mine_type: 0
+	npc: {
+		id: 510
+		x: 600
+		y: 140
+	}
+	npc: {
+		id: 511
+		x: 1000
+		y: 140
+	}
+	npc: {
+		id: 512
+		x: 1400
+		y: 140
+	}
+	npc: {
+		id: 513
+		x: 1800
+		y: 140
+	}
+}
+
+map: {
+	id: 10024
+	name: "勇者之塔"
+	type: MAP_TYPE_STATION
+	icon_id: 0
+	area_id: 10
+	area_index: 0
+	init_x: 290
+	init_y: 330
+	battle_map_id: 11007
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 0
+	mine_type: 0
+}
+map: {
+	id: 10025
+	name: "空港"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 9
+	area_index: 0
+	init_x: 850
+	init_y: 250
+	battle_map_id: 11008
+	weather: BATTLE_WEATHER_NONE
+	required_task: 401
+	required_pre_map: 10012
+	mine_type: 2
+	npc: {
+		id: 70
+		x: 210
+		y: 280
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_THREE
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 71
+		x: 610
+		y: 385
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_THREE
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 100251
+		x: 700
+		y: 200
+		prize_id: 100111
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10026
+	name: "飞翼王庭"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 9
+	area_index: 1
+	init_x: 275
+	init_y: 90
+	battle_map_id: 11008
+	weather: BATTLE_WEATHER_NONE
+	required_task: 402
+	required_pre_map: 10025
+	mine_type: 0
+	npc: {
+		id: 72
+		x: 730
+		y: 370
+	}
+	npc: {
+		id: 73
+		x: 460
+		y: 390
+	}
+	npc: {
+		id: 75
+		x: 360
+		y: 240
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_THREE
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10027
+	name: "飞翼王庭·郊"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 9
+	area_index: 2
+	init_x: 670
+	init_y: 190
+	battle_map_id: 11008
+	weather: BATTLE_WEATHER_NONE
+	required_task: 402
+	required_pre_map: 10026
+	mine_type: 0
+	npc: {
+		id: 74
+		x: 680
+		y: 130
+	}
+	npc: {
+		id: 100271
+		x: 700
+		y: 200
+		prize_id: 100111
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10029
+	name: "飞翼之核"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 9
+	area_index: 3
+	init_x: 170
+	init_y: 130
+	battle_map_id: 11008
+	weather: BATTLE_WEATHER_NONE
+	required_task: 403
+	required_pre_map: 10027
+	mine_type: 0
+	npc: {
+		id: 76
+		x: 670
+		y: 190
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_THREE
+		type4: BTL_TYPE4_NON_GATE
+	}
+	npc: {
+		id: 78
+		x: 540
+		y: 290
+	}
+	npc: {
+		id: 151
+		x: 380
+		y: 180
+	}
+	npc: {
+		id: 100291
+		x: 700
+		y: 200
+		prize_id: 100111
+		type2: BTL_TYPE2_WILD
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}	
+}
+map: {
+	id: 10030
+	name: "遗忘之岛"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 9
+	area_index: 4
+	init_x: 320
+	init_y: 200
+	battle_map_id: 11008
+	weather: BATTLE_WEATHER_NONE
+	required_task: 404
+	required_pre_map: 10029
+	mine_type: 0
+	npc: {
+		id: 77
+		x: 580
+		y: 250
+	}
+	npc: {
+		id: 90157
+		x: 450
+		y: 350
+		prize_id: 100111
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+map: {
+	id: 10031
+	name: "赫尔卡星"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 13
+	area_index: 0
+	init_x: 420
+	init_y: 340
+	battle_map_id: 11006
+	weather: BATTLE_WEATHER_BLIZZARD
+	required_task: 0
+	required_pre_map: 0
+	mine_type: 0
+	npc: {
+		id: 200
+		x: 620
+		y: 348
+		type2: BTL_TYPE2_LEIYI
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+
+map: {
+	id: 10018
+	name: "黄金海岸"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 13
+	area_index: 0
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_BLIZZARD
+	required_task: 0
+	required_pre_map: 0
+	mine_type: 0
+}
+map: {
+	id: 10032
+	name: "汲雨之岛"
+	type: MAP_TYPE_STAR
+	icon_id: 0
+	area_id: 9
+	area_index: 4
+	init_x: 320
+	init_y: 200
+	battle_map_id: 11008
+	weather: BATTLE_WEATHER_NONE
+	required_task: 405
+	required_pre_map: 10030
+	mine_type: 0
+	npc: {
+		id: 90271
+		x: 780
+		y: 400
+		prize_id: 100111
+		type2: BTL_TYPE2_BOSS
+		type3: BTL_TYPE3_UNLIMITED
+		type4: BTL_TYPE4_NON_GATE
+	}
+}
+
+map: {
+    chapter_name:"第一章 星际远征"
+	id: 90001
+	name: "战神之塔1-1"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 0
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 0
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {    
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110001
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013
+        }
+    }
+    award_item: 38026    
+    award_item: 38011    
+    award_item: 38018    
+    award_item: 38019    
+    award_item: 38016    
+}
+
+map: {
+	id: 90002
+	name: "战神之塔1-2"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 1
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90001
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 110015
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }       
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110002
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+                prize_id: 120013
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+map: {
+	id: 90003
+	name: "战神之塔1-3"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 2
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90002
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 41
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }      
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110003
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+map: {
+	id: 90004
+	name: "战神之塔1-4"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 3
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90003
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 37
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }       
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110004
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+map: {
+	id: 90005
+	name: "战神之塔1-5"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 4
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90004
+	mine_type: 0
+    scene_id: 90001
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 87
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110005
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+map: {
+	id: 90006
+	name: "战神之塔1-6"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 5
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90005
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 69
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110006
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+map: {
+	id: 90007
+	name: "战神之塔1-7"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 6
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90006 
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100021
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110007
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+
+map: {
+	id: 90008
+	name: "战神之塔1-8"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 7
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90007
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100031
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }       
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110008
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+map: {
+	id: 90009
+	name: "战神之塔1-9"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 8
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90008
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100032
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }     
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110009
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+    }
+}    
+map: {
+	id: 90010
+	name: "战神之塔1-10"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 901
+	area_index: 9
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90009
+	mine_type: 0
+    scene_id: 90001
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100101
+                x: 740
+                y: 220
+            }
+            prize_id: 120011
+        }       
+    }
+    event: {  
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 40
+            prize_id: 120012                   
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 40
+            yield_action: 5
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 20194
+                item_count: 1
+            }
+        }               
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38026
+                item_count: 1
+            }
+        }      
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 15
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 55
+            yield_exp: 2000
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }    
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38019
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38016
+                item_count: 1
+            }
+        }       
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 95
+            npc: {
+                id: 110010
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120013            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 5
+            npc: {
+                id: 111000
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 121000
+        }           
+    }
+}    
+map: {
+    chapter_name:"第二章 初入银河"
+	id: 90011
+	name: "战神之塔2-1"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 0
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90010
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100102
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100162
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110011
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+    award_item: 38011  
+    award_item: 38012   
+    award_item: 38013    
+    award_item: 38015    
+}
+
+map: {
+	id: 90012
+	name: "战神之塔2-2"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 1
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90011
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100131
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100132
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100141
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110012
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+map: {
+	id: 90013
+	name: "战神之塔2-3"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 2
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90012
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100091
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100211
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100051
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110013
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+
+map: {
+	id: 90014
+	name: "战神之塔2-4"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 3
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90013
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100061
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100111
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100201
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110014
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+map: {
+	id: 90015
+	name: "战神之塔2-5"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 4
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90014
+	mine_type: 0
+    scene_id: 90001
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100251
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100271
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100291
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110015
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+
+map: {
+	id: 90016
+	name: "战神之塔2-6"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 5
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90015
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110016
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+map: {
+	id: 90017
+	name: "战神之塔2-7"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 6
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90016 
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100031
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100031
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100032
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110017
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+
+map: {
+	id: 90018
+	name: "战神之塔2-8"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 7
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90017
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100032
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100032
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100101
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110018
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+map: {
+	id: 90019
+	name: "战神之塔2-9"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 8
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90018
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100102
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110019
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+    }
+}
+
+map: {
+	id: 90020
+	name: "战神之塔2-10"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 902
+	area_index: 9
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90019
+	mine_type: 0
+    scene_id: 90001
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100141
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120022          
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100141
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 25
+            prize_id: 120022        
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 15
+            yield_action: 5
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 5
+            yield_action: 10
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100091
+                x: 740
+                y: 220
+            }
+            prize_id: 120021
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38015
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }   
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 90
+            npc: {
+                id: 110020
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120022            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 10
+            npc: {
+                id: 111000
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 121000
+        }          
+    }
+}
+map: {
+    chapter_name:"第三章 银河探险"
+	id: 90021
+	name: "战神之塔3-1"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 0
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90020
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100051
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }               
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100211
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }        
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110021
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+    award_item: 37011    
+    award_item: 38012    
+    award_item: 38013    
+    award_item: 38014    
+    award_item: 38018   
+}
+
+map: {
+	id: 90022
+	name: "战神之塔3-2"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 1
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90021
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100061
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100201
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }        
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110022
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+map: {
+	id: 90023
+	name: "战神之塔3-3"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 2
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90022
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100251
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100171
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110023
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+
+map: {
+	id: 90024
+	name: "战神之塔3-4"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 3
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90023
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100141
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100021
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }       
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110024
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+map: {
+	id: 90025
+	name: "战神之塔3-5"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 4
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90024
+	mine_type: 0
+    scene_id: 90001
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100031
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100031
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }        
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110025
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+
+map: {
+	id: 90026
+	name: "战神之塔3-6"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 5
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90025
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100032
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }       
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110026
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+map: {
+	id: 90027
+	name: "战神之塔3-7"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 6
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90026 
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100162
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }         
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110027
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+
+map: {
+	id: 90028
+	name: "战神之塔3-8"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 7
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90027
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }        
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110028
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+map: {
+	id: 90029
+	name: "战神之塔3-9"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 8
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90028
+	mine_type: 0
+    scene_id: 90001    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }        
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110029
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+    }
+}
+map: {
+	id: 90030
+	name: "战神之塔3-10"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 903
+	area_index: 9
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90029
+	mine_type: 0
+    scene_id: 90001
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 10
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 20
+            yield_action: 5
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120031
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38018
+                item_count: 1
+            }
+        }       
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 100
+            prize_id: 120032               
+        }
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 85
+            npc: {
+                id: 110030
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120032            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 15
+            npc: {
+                id: 111000
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 121000
+        }         
+    }
+}
+map: {
+    chapter_name:"第四章 战神之子"
+	id: 90031
+	name: "战神之塔4-1"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 0
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90030
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100131
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100132
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100141
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }          
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110031
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    } 
+    award_item: 37501    
+    award_item: 37502    
+    award_item: 38027    
+    award_item: 38025    
+    award_item: 38017    
+    award_item: 38023    
+    award_item: 38024   
+    award_item: 38011   
+    award_item: 38012   
+    award_item: 38013   
+    award_item: 38014   
+}
+map: {
+	id: 90032
+	name: "战神之塔4-2"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 1
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90031
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100142
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100091
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100091
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }                 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }        
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }             
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100211
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110032
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90033
+	name: "战神之塔4-3"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 2
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90032
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100051
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100061
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }          
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100111
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }          
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }            
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100201
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110033
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90034
+	name: "战神之塔4-4"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 3
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90033
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100251
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100271
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100291
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }            
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100291
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110034
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90035
+	name: "战神之塔4-5"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 4
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90034
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100031
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100032
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }          
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100032
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110035
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90036
+	name: "战神之塔4-6"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 5
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90035
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100161
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100162
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100162
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        } 
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100162
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110036
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90037
+	name: "战神之塔4-7"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 6
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90036
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100131
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100132
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100132
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }          
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }            
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100132
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110037
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90038
+	name: "战神之塔4-8"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 7
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90037
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100141
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 10
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100142
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }            
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100142
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110038
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90039
+	name: "战神之塔4-9"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 8
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90038
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100091
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100211
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100211
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100211
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }         
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 100
+            npc: {
+                id: 110039
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+    }
+}
+map: {
+	id: 90040
+	name: "战神之塔4-10"
+	type: MAP_TYPE_GAIYA
+	icon_id: 0
+	area_id: 904
+	area_index: 9
+	init_x: 680
+	init_y: 170
+	battle_map_id: 11002
+	weather: BATTLE_WEATHER_NONE
+	required_task: 0
+	required_pre_map: 90039
+	mine_type: 0
+    scene_id: 90001        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 100
+            npc: {
+                id: 100051
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }          
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100061
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 10
+            yield_exp: 2000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38025
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38017
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38023
+                item_count: 1
+            }
+        }   
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }          
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 15
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 5
+        }     
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_ACTION
+            rate: 10
+            yield_action: 10
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 10
+            npc: {
+                id: 100061
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 2000
+        }          
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38011
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38012
+                item_count: 1
+            }
+        } 
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38013
+                item_count: 1
+            }
+        }         
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 45
+            prize_id: 120042             
+        }           
+        element: {
+            type: RANDOM_EVENT_TYPE_SEC_KILL
+            rate: 20
+            npc: {
+                id: 100061
+                x: 740
+                y: 220
+            }
+            prize_id: 120041
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 25
+            yield_exp: 3000
+        }         
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 10
+            item: {
+                item_id: 38014
+                item_count: 1
+            }
+        }      
+    }    
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_COIN
+            rate: 20
+            yield_coin: 50
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_GCOIN
+            rate: 10
+            yield_gcoin: 1
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_YIELD_EXP
+            rate: 70
+            yield_exp: 3000
+        }        
+    }
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PK_COMBAT
+            rate: 85
+            prize_id: 120042             
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37501
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 37502
+                item_count: 1
+            }
+        }  
+        element: {
+            type: RANDOM_EVENT_TYPE_DROP_ITEM
+            rate: 5
+            item: {
+                item_id: 38027
+                item_count: 1
+            }
+        }  
+    }        
+    event: {
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 80
+            npc: {
+                id: 110040
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 120042            
+        }
+        element: {
+            type: RANDOM_EVENT_TYPE_PVE
+            rate: 20
+            npc: {
+                id: 111000
+                x: 740
+                y: 220
+                type2: BTL_TYPE2_WILD
+                type3: BTL_TYPE3_UNLIMITED
+                type4: BTL_TYPE4_NON_GATE
+            }
+            prize_id: 121000
+        }        
+    }
+}

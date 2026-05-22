@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/tm_loading_rt" android:background="@drawable/tm_login_bg" android:layout_width="367.0dip" android:layout_height="104.0dip" android:layout_centerInParent="true">
+        <ImageView android:id="@id/tm_account_logo" android:layout_width="47.0dip" android:layout_height="47.0dip" android:layout_marginLeft="45.0dip" android:src="@drawable/tm_logo" android:layout_centerVertical="true" android:contentDescription="@string/tm_account_contentDescription" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_toRightOf="@id/tm_account_logo" android:layout_centerVertical="true">
+            <LinearLayout android:id="@id/tm_welcome_lt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+                <TextView android:textSize="15.0dip" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tm_account_tmUser" />
+                <TextView android:textSize="15.0dip" android:textColor="#ff0067cb" android:id="@id/userNameTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="15.0dip" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tm_account_welcomeYou" />
+            </LinearLayout>
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_below="@id/tm_welcome_lt" android:layout_centerHorizontal="true">
+                <ProgressBar android:id="@id/tm_loading_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminate="false" android:indeterminateDrawable="@anim/tm_account_loading" android:layout_centerVertical="true" />
+                <TextView android:textSize="15.0dip" android:textColor="#ff666666" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/tm_account_loading" android:layout_toRightOf="@id/tm_loading_bar" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageView android:id="@id/tm_account_switch" android:layout_width="107.0dip" android:layout_height="29.0dip" android:layout_marginLeft="332.0dip" android:layout_marginBottom="39.0dip" android:src="@drawable/tm_account_switch" android:layout_above="@id/tm_loading_rt" android:layout_alignLeft="@id/tm_loading_rt" android:onClick="onAccountSwitch" android:contentDescription="@string/tm_account_contentDescription" />
+</RelativeLayout>

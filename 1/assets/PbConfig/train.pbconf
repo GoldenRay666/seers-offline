@@ -1,0 +1,36 @@
+train: {
+    mode_id: 1
+    train_time: 1
+    cala_exp_attr: 4000
+    cala_exp_attr: 200
+    cala_exp_attr: 1
+    cost_gcoin: 10
+    train_cnt_limit: "1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 5" 
+}
+train: {
+    mode_id: 2
+    train_time: 60
+    cala_exp_attr: 200
+    cala_exp_attr: 10
+    cala_exp_attr: 1
+    cost_coin: 10
+    train_cnt_limit: "999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999" 
+}
+train: {
+    mode_id: 3
+    train_time: 10800
+    cala_exp_attr: 2000
+    cala_exp_attr: 120
+    cala_exp_attr: 1
+    cost_coin: 600 
+    train_cnt_limit: "999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999" 
+}
+train: {
+    mode_id: 4
+    train_time: 28800
+    cala_exp_attr: 4000
+    cala_exp_attr: 200
+    cala_exp_attr: 1
+    cost_coin: 1200 
+    train_cnt_limit: "999, 999, 999, 999, 999, 999, 999, 999, 999, 999, 999" 
+}

@@ -1,0 +1,22 @@
+package ISeer20Conf;
+
+message evolve_t {
+    message evolve_item_t {
+        required uint32 id = 1;     //进化所需物品ID
+        required uint32 cnt = 2;    //所需物品个数
+    }
+    message evolve_to_t {
+        required uint32 evolve_to = 1;          //将进化到evolve_to去
+        repeated evolve_item_t evolve_item = 2; //进化所需道具
+        optional int32 need_gcoin = 3;          //进化所需的金豆
+        optional int32 need_coin = 4;           //进化所需的赛尔豆
+    }
+    
+    required uint32 mon_id = 1;                 //进化精灵id
+    required uint32 evolve_level = 2;           //进化精灵等级要求
+    repeated evolve_to_t evolve_branch = 3;     //进化分支
+}
+
+message top_config_evolve_t {
+    repeated evolve_t evolve = 1;
+}

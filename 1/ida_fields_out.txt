@@ -1,0 +1,87 @@
+D:/BaiduNetdiskDownload/IDA_Pro_v8.3_Portable123/plugins/mcp-plugin.py:903: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if result is not 0:
+Database C:\javatools\1\lib\armeabi\libgame_logic.so.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+ 69705728  8509 8192 allocating memory for b-tree...
+ 45023232  5496 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+114991104            total memory allocated
+
+Loading processor module D:\BaiduNetdiskDownload\IDA_Pro_v8.3_Portable123\procs\arm.dll for ARM...Initializing processor module ARM...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'libgame_logic.so' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  License: 56-B947-7F7A-47 Hex-Rays SA (32767 users)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+================================================================================
+Findcrypt v0.2 by David BERARD, 2017
+Findcrypt search shortcut key is Ctrl-Alt-F
+Global rules in D:\BaiduNetdiskDownload\IDA_Pro_v8.3_Portable123\plugins\findcrypt3.rules
+User-defined rules in C:\Users\23287\AppData\Roaming\Hex-Rays\IDA Pro\plugins\findcrypt-yara/*.rules
+================================================================================
+Hex-rays version 7.6.0.210427 has been detected, gooMBA plugin ready to use
+================================================================================
+Keypatch v2.2 (c) Nguyen Anh Quynh & Thanh Nguyen, 2018
+IDA Pro 8.3 support by PiaoYun/P.Y.G(https://www.chinapyg.com)
+Keypatch is using Keystone v0.9.2
+Keypatch Patcher's shortcut key is Ctrl-Alt-K
+Use the same hotkey Ctrl-Alt-K to open 'Fill Range' window on a selected range of code
+To revert (undo) the last patching, choose menu Edit | Keypatch | Undo last patching
+Keypatch Search is available from menu Edit | Keypatch | Search
+Find more information about Keypatch at http://keystone-engine.org/keypatch
+================================================================================
+D:/BaiduNetdiskDownload/IDA_Pro_v8.3_Portable123/plugins/mcp-plugin.py:903: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if result is not 0:
+[MCP] Plugin loaded, use Edit -> Plugins -> MCP (Ctrl+Alt+M) to start the server
+[RetDec info]   :	RetDec version 1.0-ida77 loaded OK
+
+ IDA Strong Charset Code View 0.3 
+ Show Strong Charset View Use 'shift' 
+ Auto Set Default 8bit Decode to CP-ACP True.
+ IDA Strong Charset Code View Plugin By 微笑一刀 
+
+=== mon_basic_info_t kFieldNumber values ===
+
+=== mon_info_t kFieldNumber values ===
+
+=== select_main_mon_out descriptor ===
+  0x5ec0d8: PUSH    {R3,LR}
+  0x5ec0da: BL      sub_5AE230
+  0x5ec0de: LDR     R3, =(dword_AC6B84 - 0x5EC0E4)
+  0x5ec0e0: ADD     R3, PC; dword_AC6B84
+  0x5ec0e2: LDR     R0, [R3,#(dword_AC6B88 - 0xAC6B84)]
+  0x5ec0e4: POP     {R3,PC}
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+  0xffffffff: 
+Flushing buffers, please wait...ok
+Keypatch: configuration is saved to C:\Users\23287\AppData\Roaming\Hex-Rays\IDA Pro\keypatch.cfg
+Unloading IDP module D:\BaiduNetdiskDownload\IDA_Pro_v8.3_Portable123\procs\arm.dll...

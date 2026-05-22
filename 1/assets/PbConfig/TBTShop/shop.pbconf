@@ -1,0 +1,797 @@
+
+good: {
+	name: "精灵培养礼包"
+	description: "资质果实×10,性格重置药剂×5,学习力胶囊×5"
+	id: 1
+    good_icon: "goods_304"  
+	shop_type: ITEM
+    row_pos: 0
+    row_des: "礼包"
+    discount: 40
+    cost: {
+        gcoin: 999
+    }
+    item: {
+        item_id: 20031
+        item_count: 10
+    }
+    item: {
+        item_id: 20041
+        item_count: 5
+    }
+    item: {
+        item_id: 20054
+        item_count: 5 
+    }        
+    hot_sale: 1
+}
+good: {
+	name: "小喇叭礼包"
+	description: "小喇叭×12"
+	id: 2
+    good_icon: "goods_320"     
+	shop_type: ITEM
+    row_pos: 0
+    row_des: "礼包"
+    discount: 20
+    cost: {
+        gcoin: 50
+    }
+    item: {
+        item_id: 28101
+        item_count: 12
+    }
+    hot_sale: 1
+}
+
+good: {
+	name: "解锁芯片礼包"
+	description: "解锁芯片×10"
+	id: 3
+    good_icon: "goods_321"     
+	shop_type: ITEM
+    row_pos: 0
+    row_des: "礼包"
+    discount: 20
+    cost: {
+        gcoin: 200
+    }
+    item: {
+        item_id: 20195
+        item_count: 10
+    }
+    hot_sale: 1
+}
+
+
+good: {
+    name: "沉甸的果实"
+	description: "增加精灵10000经验"
+	id: 201
+    good_icon: "item_20015" 
+	shop_type: ITEM
+    row_pos: 2
+    row_des: "精灵道具"
+    discount: 0
+    cost: {
+        gcoin: 50
+    }
+    item: {
+        item_id: 20015
+        item_count: 1
+    }
+}
+good: {
+    name: "资质果实"
+	description: "随机改变精灵的资质"
+	id: 202
+    good_icon: "item_20031"
+	shop_type: ITEM
+    row_pos: 2
+    row_des: "精灵道具"
+    discount: 0
+    cost: {
+        gcoin: 25
+    }
+    item: {
+        item_id: 20031
+        item_count: 1
+    }
+}
+good: {
+    name: "学习力胶囊"
+	description: "增加精灵100点学习力"
+	id: 203
+    good_icon: "item_20054"
+	shop_type: ITEM
+    row_pos: 2
+    row_des: "精灵道具"
+    discount: 0
+    cost: {
+        gcoin: 75
+    }
+    item: {
+        item_id: 20054
+        item_count: 1
+    }
+}
+
+good: {
+    name: "大果实"
+	description: "增加精灵2000经验"
+	id: 205
+    good_icon: "item_20013"
+	shop_type: ITEM
+    row_pos: 2
+    row_des: "精灵道具"
+    discount: 0
+    cost: {
+        gcoin: 15
+    }
+    item: {
+        item_id: 20013
+        item_count: 1
+    }
+}
+
+
+good: {
+    name: "学习力重置"
+	description: "将精灵的学习力变为未分配状态"
+	id: 209
+    good_icon: "item_20055"
+	shop_type: ITEM
+    row_pos: 2
+    row_des: "精灵道具"
+    discount: 0
+    cost: {
+        gcoin: 200
+    }
+    item: {
+        item_id: 20055
+        item_count: 1
+    }
+}
+good: {
+    name: "性格重置药"
+	description: "随机改变精灵的性格"
+	id: 210
+    good_icon: "item_20041"
+	shop_type: ITEM
+    row_pos: 2
+    row_des: "精灵道具"
+    discount: 0
+    cost: {
+        gcoin: 75
+    }
+    item: {
+        item_id: 20041
+        item_count: 1
+    }
+}
+
+good: {
+    name: "解锁芯片"
+	description: "打开伊娃工具箱的解锁芯片！"
+	id: 251
+    good_icon: "item_20195"
+	shop_type: ITEM
+    row_pos: 3
+    row_des: "功能道具"
+    discount: 0
+    cost: {
+        gcoin: 25
+    }
+    item: {
+        item_id: 20195
+        item_count: 1
+    }
+}
+
+good: {
+    name: "感应陀螺"
+	description: "最普通的陀螺,用于捕捉精灵，力量10能量3"
+	id: 253
+    good_icon: "item_20071"
+	shop_type: ITEM
+    row_pos: 3
+    row_des: "功能道具"
+    discount: 0
+    cost: {
+        coin: 200
+    }
+    item: {
+        item_id: 20071
+        item_count: 1
+    }
+}
+
+good: {
+    name: "精良陀螺"
+	description: "精良材质的陀螺,用于捕捉精灵，力量20能量5"
+	id: 252
+    good_icon: "item_20072"
+	shop_type: ITEM
+    row_pos: 3
+    row_des: "功能道具"
+    discount: 0
+    cost: {
+        gcoin: 20
+    }
+    item: {
+        item_id: 20072
+        item_count: 1
+    }
+}
+
+good: {
+    name: "小喇叭"
+	description: "可以给朋友送上祝福的小喇叭"
+	id: 254
+    good_icon: "item_28101"
+	shop_type: ITEM
+    row_pos: 3
+    row_des: "功能道具"
+    discount: 0
+    cost: {
+        gcoin: 5
+    }
+    item: {
+        item_id: 28101
+        item_count: 1
+    }
+}
+
+good: {
+    name: "双倍经验20"
+	description: "战斗可获得双倍经验，共20次"
+	id: 256
+    good_icon: "item_20022"
+	shop_type: ITEM
+    row_pos: 3
+    row_des: "功能道具"
+    discount: 0
+    cost: {
+        gcoin: 100
+    }
+    item: {
+        item_id: 20022
+        item_count: 1
+    }
+}
+
+good: {
+    name: "仓库扩展卡"
+	description: "增加精灵仓库3格空间（仓库上限为99格）"
+	id: 260
+    good_icon: "item_20122"
+	shop_type: ITEM
+    row_pos: 3
+    row_des: "功能道具"
+    discount: 0
+    cost: {
+        gcoin: 10
+    }
+    item: {
+        item_id: 20122
+        item_count: 1
+    }
+}
+good: {
+    name: "改名芯片"
+	description: "一次性道具，用于修改玩家昵称"
+	id: 261
+    good_icon: "item_20123"
+	shop_type: ITEM
+    row_pos: 3
+    row_des: "功能道具"
+    discount: 0
+    cost: {
+        gcoin: 100
+    }
+    item: {
+        item_id: 20123
+        item_count: 1
+    }
+}
+
+good: {
+	name: "4200金豆"
+	description: "充值4200金豆"
+	id: 90001
+    good_icon: "goods_206"
+	shop_type: ITEM
+    row_pos: 4
+    row_des: "充值"
+    discount: 29
+    cost: {
+        rmb: 328
+    }
+    money: {
+        gcoin: 4200
+    }
+}
+good: {
+	name: "1620金豆"
+	description: "充值1620金豆"
+	id: 90002
+    good_icon: "goods_205"
+	shop_type: ITEM
+    row_pos: 4
+    row_des: "充值"
+    discount: 26
+    cost: {
+        rmb: 128
+    }
+    money: {
+        gcoin: 1620
+    }
+}
+good: {
+	name: "780金豆"
+	description: "充值780金豆"
+	id: 90003
+    good_icon: "goods_204"
+	shop_type: ITEM
+    row_pos: 4
+    row_des: "充值"
+    discount: 23
+    cost: {
+        rmb: 68
+    }
+    money: {
+        gcoin: 780
+    }
+}
+good: {
+	name: "330金豆"
+	description: "充值330金豆"
+	id: 90004
+    good_icon: "goods_203"
+	shop_type: ITEM
+    row_pos: 4
+    row_des: "充值"
+    discount: 10
+    cost: {
+        rmb: 30
+    }
+    money: {
+        gcoin: 330
+    }
+}
+good: {
+	name: "126金豆"
+	description: "充值126金豆"
+	id: 90005
+    good_icon: "goods_202"
+	shop_type: ITEM
+    row_pos: 4
+    row_des: "充值"
+    discount: 5
+    cost: {
+        rmb: 12
+    }
+    money: {
+        gcoin: 126
+    }
+}
+good: {
+	name: "60金豆"
+	description: "充值60金豆"
+	id: 90006
+    good_icon: "goods_202"
+	shop_type: ITEM
+    row_pos: 4
+    row_des: "充值"
+    discount: 0
+    cost: {
+        rmb: 6
+    }
+    money: {
+        gcoin: 60
+    }
+}
+good: {
+	name: "合金侠装扮"
+	description: "传说中一位米国英雄使用过的机甲"
+	id: 501
+    good_icon: "item_30001"
+	shop_type: POINT
+    row_pos: 0
+    row_des: "热卖"
+    cost: {
+        point: 1000
+    }
+    item: {
+        item_id: 30001
+        item_count: 1
+    }
+}
+good: {
+	name: "齿轮鹰蛋"
+	description: "可以开出飞行系精灵齿轮鹰"
+	id: 502
+    good_icon: "goods_78"
+	shop_type: POINT
+    row_pos: 0
+    row_des: "热卖"
+    cost: {
+        point: 800
+    }
+    item: {
+        item_id: 25028
+        item_count: 1
+    }
+}
+good: {
+	name: "大果实"
+	description: "增加精灵2000经验"
+	id: 503
+    good_icon: "item_20013"
+	shop_type: POINT
+    row_pos: 0
+    row_des: "热卖"
+    cost: {
+        point: 150
+    }
+    item: {
+        item_id: 20013
+        item_count: 1
+    }
+}
+good: {
+	name: "双倍经验20"
+	description: "20次对战双倍经验"
+	id: 504
+    good_icon: "item_20022"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 1000
+    }
+    item: {
+        item_id: 20022
+        item_count: 1
+    }
+}
+
+good: {
+	name: "资质果实"
+	description: "随机改变精灵的资质（-2至2）"
+	id: 505
+    good_icon: "item_20031"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 250
+    }
+    item: {
+        item_id: 20031
+        item_count: 1
+    }
+}
+
+good: {
+	name: "仓库扩展卡"
+	description: "增加精灵仓库3格空间（仓库上限为99格）"
+	id: 506
+    good_icon: "item_20122"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 100
+    }
+    item: {
+        item_id: 20122
+        item_count: 1
+    }
+}
+
+good: {
+	name: "学习力胶囊"
+	description: "增加精灵100点学习力"
+	id: 507
+    good_icon: "item_20054"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 750
+    }
+    item: {
+        item_id: 20054
+        item_count: 1
+    }
+}
+good: {
+	name: "齿轮鹰蛋"
+	description: "可以开出飞行系精灵齿轮鹰"
+	id: 508
+    good_icon: "goods_78"
+	shop_type: POINT
+    row_pos: 1
+    row_des: "精灵"
+    cost: {
+        point: 800
+    }
+    item: {
+        item_id: 25028
+        item_count: 1
+    }
+}
+
+good: {
+	name: "阿宝蛋"
+	description: "可以开出普通系精灵阿宝"
+	id: 509
+    good_icon: "item_25024"
+	shop_type: POINT
+    row_pos: 1
+    row_des: "精灵"
+    cost: {
+        point: 600
+    }
+    item: {
+        item_id: 25024
+        item_count: 1
+    }
+}
+
+good: {
+	name: "多摩蛋"
+	description: "可以开出普通系精灵多摩"
+	id: 510
+    good_icon: "item_25029"
+	shop_type: POINT
+    row_pos: 1
+    row_des: "精灵"
+    cost: {
+        point: 1000
+    }
+    item: {
+        item_id: 25029
+        item_count: 1
+    }
+}
+
+good: {
+	name: "晓月兔蛋"
+	description: "可以开出超能系精灵晓月兔"
+	id: 511
+    good_icon: "item_25027"
+	shop_type: POINT
+    row_pos: 1
+    row_des: "精灵"
+    cost: {
+        point: 3600
+    }
+    item: {
+        item_id: 25027
+        item_count: 1
+    }
+}
+
+good: {
+	name: "合金侠装扮"
+	description: "传说中一位米国英雄使用过的机甲"
+	id: 512
+    good_icon: "item_30001"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 1000
+    }
+    item: {
+        item_id: 30001
+        item_count: 1
+    }
+}
+
+good: {
+	name: "1000赛尔豆"
+	description: "1000赛尔豆"
+	id: 513
+    good_icon: "goods_252"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 500
+    }
+    money: {
+        coin: 1000
+    }
+}
+
+good: {
+	name: "5000赛尔豆"
+	description: "5000赛尔豆"
+	id: 514
+    good_icon: "goods_254"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 2000
+    }
+    money: {
+        coin: 5000
+    }
+}
+
+good: {
+	name: "10000赛尔豆"
+	description: "10000赛尔豆"
+	id: 515
+    good_icon: "goods_256"
+	shop_type: POINT
+    row_pos: 2
+    row_des: "道具"
+    cost: {
+        point: 3500
+    }
+    money: {
+        coin: 10000
+    }
+}
+
+good: {
+	name: "小金精灵蛋"
+	description: "开出金鳞，神秘的蛇年专属精灵，地面系金蛇"
+	id: 1001
+    good_icon: "item_25051"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 300
+        }
+    }
+    item: {
+        item_id: 25051
+        item_count: 1
+    }
+}
+
+good: {
+	name: "雷伊宝箱"
+	description: "雷伊守护的神秘宝箱，可开出雷神套装等优质道具"
+	id: 1002
+    good_icon: "item_20196"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 15
+        }
+    }
+    item: {
+        item_id: 20196
+        item_count: 1
+    }
+}
+good: {
+	name: "菲亚蛋"
+	description: "使用后能得到飞行系精灵菲亚"
+	id: 1008
+    good_icon: "item_25052"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 10
+        }
+    }
+    item: {
+        item_id: 25052
+        item_count: 1
+    }
+}
+
+good: {
+	name: "尼娅蛋"
+	description: "使用后能得到冰系精灵尼娅"
+	id: 1009
+    good_icon: "item_25044"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 10
+        }
+    }
+    item: {
+        item_id: 25044
+        item_count: 1
+    }
+}
+good: {
+	name: "沉甸的果实"
+	description: "增加精灵10000经验"
+	id: 1010
+    good_icon: "item_20015"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 5
+        }
+    }
+    item: {
+        item_id: 20015
+        item_count: 1
+    }
+}
+good: {
+	name: "双倍经验50"
+	description: "战斗可获得双倍经验，共50次"
+	id: 1011
+    good_icon: "item_20023"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 20
+        }
+    }
+    item: {
+        item_id: 20023
+        item_count: 1
+    }
+}
+good: {
+	name: "性格重置药"
+	description: "随机改变精灵的性格"
+	id: 1012
+    good_icon: "item_20041"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 8
+        }
+    }
+    item: {
+        item_id: 20041
+        item_count: 1
+    }
+}
+good: {
+	name: "学习力重置"
+	description: "使用后将精灵的学习力变为未分配状态。"
+	id: 1013
+    good_icon: "item_20055"
+	shop_type: ENDLESSENERGY
+    row_pos: 1
+    row_des: "道具"
+    cost: {
+        item: {
+            item_id: 27002
+            item_count: 20
+        }
+    }
+    item: {
+        item_id: 20055
+        item_count: 1
+    }
+}
+
+

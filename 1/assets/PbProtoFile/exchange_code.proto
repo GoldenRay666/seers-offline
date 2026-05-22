@@ -1,0 +1,19 @@
+package ISeer20Conf;
+
+
+message exchange_code_t {
+    required int32 code_type          = 1; // 兑换码类型 
+    required bytes type_name          = 2; // 兑换码的类型名称
+    required bytes get_way            = 3; // 兑换码的获得方式 
+    required bytes use_way            = 4; // 兑换码的使用方式
+    required bytes effective_date     = 5; // 有效日期
+    required bytes title              = 6; // 兑换的标题
+    required bytes show_icon          = 7; // 兑换奖励ICON
+    required bytes description        = 8; // 兑换奖励描述
+    required int32 player_exg_cnt     = 9; // 每个用户可以兑换的次数
+}
+
+message top_config_exchange_code_t {
+    repeated exchange_code_t exchange_code = 1;
+}
+

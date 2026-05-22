@@ -1,0 +1,1656 @@
+lottery: {
+    id: 1
+    type: LOTTERY_TYPE_LEGEND
+    name: "传说扭蛋机"
+    describe: "有机会获得极品精灵“英菲尼迪”！每5天免费一次"
+	time: {
+        date: "2013.09.13-2013.10.10"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+	}
+    target_mon: {
+        id:  261
+        name: "英菲尼迪"
+    }
+    play_info: {
+        type: PLAY_TYPE_SINGLE
+        describe: "扭蛋一次"
+        prize_cnt: 1
+        cd_time: 396000
+        opt_cost: {
+            item: {
+                item_id: 20003
+                item_count: 1
+            }
+        }
+		opt_cost: {
+            gcoin: 99
+        }
+    }
+	play_info: {
+        type: PLAY_TYPE_FIVE
+        describe: "扭蛋五次"
+        prize_cnt: 5
+        cd_time: 0
+        opt_cost: {
+            item: {
+                item_id: 20003
+                item_count: 5
+            }
+        }
+        opt_cost: {
+            gcoin: 495
+        }
+    } 
+    prize: {
+        id: 25053
+        name: "英菲蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 259
+    } 
+    prize: {
+        id: 25032
+        name: "冰伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 94
+    }    
+    prize: {
+        id: 25035
+        name: "暗伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 95
+    } 
+    prize: {
+        id: 25059
+        name: "光伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 96
+    }
+    prize: {
+        id: 25033
+        name: "风伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 92
+    }
+    prize: {
+        id: 25058
+        name: "虫伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 99
+    }
+    prize: {
+        id: 25034
+        name: "电伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 93
+    } 
+    prize: {
+        id: 25056
+        name: "沙伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 98
+    } 
+    prize: {
+        id: 25060
+        name: "战伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 100
+    }
+   prize: {
+        id: 25037
+        name: "小巴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 300
+        max: 0
+        mon_id: 149
+    }    
+    prize: {
+        id: 25321
+        name: "萌犸蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 300
+        max: 0
+        mon_id: 404
+    } 
+    prize: {
+        id: 25027
+        name: "晓月兔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 300
+        max: 0
+        mon_id: 61
+    } 
+    prize: {
+        id: 25062
+        name: "库贝多蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 300
+        max: 0
+        mon_id: 1000
+    }
+    prize: {
+        id: 25328
+        name: "卜古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 300
+        max: 0
+        mon_id: 262
+    }    
+    prize: {
+        id: 25055
+        name: "艾希蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 300
+        max: 0
+        mon_id: 214
+    }     
+     prize: {
+        id: 25054
+        name: "维维蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 350
+        max: 0
+        mon_id: 222
+    } 
+    prize: {
+        id: 25026
+        name: "大耳猴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1000
+        max: 0
+        mon_id: 58
+    } 
+    prize: {
+        id: 25025
+        name: "阿布蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1000
+        max: 0
+        mon_id: 117
+    }
+    prize: {
+        id: 25318
+        name: "芙拉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1000
+        max: 0
+        mon_id: 204
+    }
+    prize: {
+        id: 25317
+        name: "安吉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1000
+        max: 0
+        mon_id: 208
+    }    
+    prize: {
+        id: 25324
+        name: "萨菲蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1000
+        max: 0
+        mon_id: 379
+    }   
+    prize: {
+        id: 25049
+        name: "伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1000
+        max: 0
+        mon_id: 91
+    }    
+}
+
+lottery: {
+    id: 2
+    type: LOTTERY_TYPE_ELITE
+    name: "精英扭蛋机"
+    describe: "必定获得优质及以上品质的精灵！每3天免费一次"
+    play_info: {
+        type: PLAY_TYPE_SINGLE
+        describe: "扭蛋一次"
+        prize_cnt: 1
+        cd_time: 237600
+		opt_cost: {
+            gcoin: 49
+        }
+    }
+	play_info: {
+        type: PLAY_TYPE_FIVE
+        describe: "扭蛋五次"
+        prize_cnt: 5
+        cd_time: 0
+        opt_cost: {
+            gcoin: 245
+        }
+    }	
+    prize: {
+        id: 25032
+        name: "冰伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 94
+    }    
+    prize: {
+        id: 25035
+        name: "暗伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 95
+    } 
+    prize: {
+        id: 25059
+        name: "光伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 96
+    }
+    prize: {
+        id: 25033
+        name: "风伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 92
+    }
+    prize: {
+        id: 25058
+        name: "虫伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 99
+    }
+    prize: {
+        id: 25034
+        name: "电伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 93
+    } 
+    prize: {
+        id: 25056
+        name: "沙伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 98
+    } 
+    prize: {
+        id: 25060
+        name: "战伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 100
+    }
+   prize: {
+        id: 25037
+        name: "小巴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 149
+    }    
+    prize: {
+        id: 25321
+        name: "萌犸蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 404
+    } 
+    prize: {
+        id: 25027
+        name: "晓月兔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 61
+    } 
+    prize: {
+        id: 25062
+        name: "库贝多蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 1000
+    }
+    prize: {
+        id: 25328
+        name: "卜古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 262
+    }    
+    prize: {
+        id: 25055
+        name: "艾希蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 214
+    }     
+     prize: {
+        id: 25054
+        name: "维维蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 250
+        max: 0
+        mon_id: 222
+    } 
+    prize: {
+        id: 25026
+        name: "大耳猴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1200
+        max: 0
+        mon_id: 58
+    } 
+    prize: {
+        id: 25025
+        name: "阿布蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1200
+        max: 0
+        mon_id: 117
+    }
+    prize: {
+        id: 25318
+        name: "芙拉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1200
+        max: 0
+        mon_id: 204
+    }
+    prize: {
+        id: 25317
+        name: "安吉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1200
+        max: 0
+        mon_id: 208
+    }    
+    prize: {
+        id: 25324
+        name: "萨菲蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1200
+        max: 0
+        mon_id: 379
+    }   
+    prize: {
+        id: 25049
+        name: "伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 1200
+        max: 0
+        mon_id: 91
+    }    
+}
+
+lottery: {
+    id: 3
+    type: LOTTERY_TYPE_COMM
+    name: "普通扭蛋机"
+    describe: "必定获得良品及以上品质的精灵！每天免费一次"
+    play_info: {
+        type: PLAY_TYPE_SINGLE
+        describe: "扭蛋一次"
+        prize_cnt: 1
+        cd_time: 79200
+		opt_cost: {
+            gcoin: 19
+        }
+    }
+	play_info: {
+        type: PLAY_TYPE_FIVE
+        describe: "扭蛋五次"
+        prize_cnt: 5
+        cd_time: 0
+        opt_cost: {
+            gcoin: 95
+        }
+    }
+    prize: {
+        id: 25032
+        name: "冰伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 94
+    }    
+    prize: {
+        id: 25035
+        name: "暗伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 95
+    } 
+    prize: {
+        id: 25059
+        name: "光伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 96
+    }
+    prize: {
+        id: 25033
+        name: "风伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 92
+    }
+    prize: {
+        id: 25058
+        name: "虫伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 99
+    }
+    prize: {
+        id: 25034
+        name: "电伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 93
+    } 
+    prize: {
+        id: 25056
+        name: "沙伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 98
+    } 
+    prize: {
+        id: 25060
+        name: "战伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 50
+        max: 0
+        mon_id: 100
+    }
+   prize: {
+        id: 25037
+        name: "小巴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 100
+        max: 0
+        mon_id: 149
+    }    
+    prize: {
+        id: 25321
+        name: "萌犸蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 100
+        max: 0
+        mon_id: 404
+    } 
+    prize: {
+        id: 25027
+        name: "晓月兔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 100
+        max: 0
+        mon_id: 61
+    } 
+    prize: {
+        id: 25062
+        name: "库贝多蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 100
+        max: 0
+        mon_id: 1000
+    }
+    prize: {
+        id: 25328
+        name: "卜古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 100
+        max: 0
+        mon_id: 262
+    }    
+    prize: {
+        id: 25055
+        name: "艾希蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 100
+        max: 0
+        mon_id: 214
+    }     
+     prize: {
+        id: 25054
+        name: "维维蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 222
+    } 
+    prize: {
+        id: 25026
+        name: "大耳猴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 58
+    } 
+    prize: {
+        id: 25025
+        name: "阿布蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 117
+    }
+    prize: {
+        id: 25318
+        name: "芙拉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 204
+    }
+    prize: {
+        id: 25317
+        name: "安吉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 208
+    }    
+    prize: {
+        id: 25324
+        name: "萨菲蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 379
+    }   
+    prize: {
+        id: 25049
+        name: "伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 200
+        max: 0
+        mon_id: 91
+    }
+    prize: {
+        id: 25038
+        name: "布尔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 16
+    } 
+    prize: {
+        id: 25039
+        name: "阿卡蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 30
+    }
+    prize: {
+        id: 25040
+        name: "霍克蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 37
+    }
+    prize: {
+        id: 25041
+        name: "麦麦籽蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 55
+    }    
+    prize: {
+        id: 25042
+        name: "莫古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 79
+    } 
+    prize: {
+        id: 25043
+        name: "沙之鹤蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 81
+    }
+    prize: {
+        id: 25044
+        name: "尼娅蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 126
+    }
+    prize: {
+        id: 25052
+        name: "菲亚蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 156
+    }
+    prize: {
+        id: 25030
+        name: "小结蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 133
+    }
+    prize: {
+        id: 25325
+        name: "缇姆蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 245
+    }   
+   prize: {
+        id: 25327
+        name: "小绿蜓蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 402
+    }    
+    prize: {
+        id: 25028
+        name: "齿轮鹰蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 77
+    } 
+    prize: {
+        id: 25061
+        name: "泰格蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 361
+    } 
+    prize: {
+        id: 25024
+        name: "阿宝蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 51
+    }
+    prize: {
+        id: 25045
+        name: "乌达蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 72
+    }
+    prize: {
+        id: 25046
+        name: "达达蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 74
+    }    
+    prize: {
+        id: 25048
+        name: "豚豚蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 119
+    }     
+     prize: {
+        id: 25029
+        name: "多摩蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 49
+    } 
+    prize: {
+        id: 25319
+        name: "锦鲤蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 364
+    } 
+}   
+
+lottery: {
+    id: 4
+    type: LOTTERY_TYPE_POINT
+    name: "积分扭蛋机"
+    describe: "使用PVP积分扭蛋，有机会获得各种品质的精灵！"
+    play_info: {
+        type: PLAY_TYPE_SINGLE
+        describe: "扭蛋一次"
+        prize_cnt: 1
+        cd_time: 0
+		opt_cost: {
+            pvp_point: 20
+        }
+    }
+	play_info: {
+        type: PLAY_TYPE_FIVE
+        describe: "扭蛋五次"
+        prize_cnt: 5
+        cd_time: 0
+        opt_cost: {
+            pvp_point: 100
+        }
+    }
+   prize: {
+        id: 25037
+        name: "小巴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 10
+        max: 0
+        mon_id: 149
+    }    
+    prize: {
+        id: 25321
+        name: "萌犸蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 10
+        max: 0
+        mon_id: 404
+    } 
+    prize: {
+        id: 25027
+        name: "晓月兔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 10
+        max: 0
+        mon_id: 61
+    } 
+    prize: {
+        id: 25062
+        name: "库贝多蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 10
+        max: 0
+        mon_id: 1000
+    }
+    prize: {
+        id: 25328
+        name: "卜古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 10
+        max: 0
+        mon_id: 262
+    }    
+    prize: {
+        id: 25055
+        name: "艾希蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 10
+        max: 0
+        mon_id: 214
+    }     
+     prize: {
+        id: 25054
+        name: "维维蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 10
+        max: 0
+        mon_id: 222
+    } 
+    prize: {
+        id: 25026
+        name: "大耳猴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 58
+    } 
+    prize: {
+        id: 25025
+        name: "阿布蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 117
+    }
+    prize: {
+        id: 25318
+        name: "芙拉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 204
+    }
+    prize: {
+        id: 25317
+        name: "安吉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 208
+    }    
+    prize: {
+        id: 25324
+        name: "萨菲蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 379
+    }   
+    prize: {
+        id: 25049
+        name: "伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 91
+    }
+    prize: {
+        id: 25038
+        name: "布尔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 16
+    } 
+    prize: {
+        id: 25039
+        name: "阿卡蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 30
+    }
+    prize: {
+        id: 25040
+        name: "霍克蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 37
+    }
+    prize: {
+        id: 25041
+        name: "麦麦籽蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 55
+    }    
+    prize: {
+        id: 25042
+        name: "莫古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 79
+    } 
+    prize: {
+        id: 25043
+        name: "沙之鹤蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 81
+    }
+    prize: {
+        id: 25044
+        name: "尼娅蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 126
+    }
+    prize: {
+        id: 25052
+        name: "菲亚蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 156
+    }
+    prize: {
+        id: 25030
+        name: "小结蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 133
+    }
+    prize: {
+        id: 25325
+        name: "缇姆蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 245
+    }   
+   prize: {
+        id: 25327
+        name: "小绿蜓蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 402
+    }    
+    prize: {
+        id: 25028
+        name: "齿轮鹰蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 77
+    } 
+    prize: {
+        id: 25061
+        name: "泰格蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 361
+    } 
+    prize: {
+        id: 25024
+        name: "阿宝蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 51
+    }
+    prize: {
+        id: 25045
+        name: "乌达蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 72
+    }
+    prize: {
+        id: 25046
+        name: "达达蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 74
+    }    
+    prize: {
+        id: 25048
+        name: "豚豚蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 119
+    }     
+     prize: {
+        id: 25029
+        name: "多摩蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 49
+    } 
+    prize: {
+        id: 25319
+        name: "锦鲤蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 364
+    }
+    prize: {
+        id: 25301
+        name: "尤尼蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 32
+    }   
+   prize: {
+        id: 25302
+        name: "稚壳鸡蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 67
+    }    
+    prize: {
+        id: 25303
+        name: "三眼蝎蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 86
+    } 
+    prize: {
+        id: 25304
+        name: "砂砂蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 111
+    } 
+    prize: {
+        id: 25305
+        name: "跳跳鼠蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 113
+    }
+    prize: {
+        id: 25306
+        name: "伊露蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 124
+    }
+    prize: {
+        id: 25307
+        name: "多利蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 138
+    }    
+    prize: {
+        id: 25308
+        name: "泰姆蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 198
+    }     
+     prize: {
+        id: 25309
+        name: "小小葵蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 13
+    } 
+    prize: {
+        id: 25310
+        name: "小树根蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 18
+    } 
+    prize: {
+        id: 25311
+        name: "法拉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 500
+        max: 0
+        mon_id: 10
+    }
+    prize: {
+        id: 25312
+        name: "蓝喵蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 28
+    }
+    prize: {
+        id: 25313
+        name: "水墨蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 41
+    }    
+    prize: {
+        id: 25314
+        name: "小岩浮蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 34
+    }   
+    prize: {
+        id: 25315
+        name: "克里普蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 194
+    }    
+    prize: {
+        id: 25316
+        name: "石像鬼蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 212
+    }
+    prize: {
+        id: 25320
+        name: "荷玛蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 142
+    }
+}   
+lottery: {
+    id: 5
+    type: LOTTERY_TYPE_COIN
+    name: "幸运扭蛋机"
+    describe: "使用赛尔豆扭蛋，有机会获得各种品质精灵！"
+    play_info: {
+        type: PLAY_TYPE_SINGLE
+        describe: "扭蛋一次"
+        prize_cnt: 1
+        cd_time: 0
+		opt_cost: {
+            coin: 1000
+        }
+    }
+	play_info: {
+        type: PLAY_TYPE_FIVE
+        describe: "扭蛋五次"
+        prize_cnt: 5
+        cd_time: 0
+        opt_cost: {
+            coin: 5000
+        }
+    }
+    prize: {
+        id: 25032
+        name: "冰伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 94
+    }    
+    prize: {
+        id: 25035
+        name: "暗伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 95
+    } 
+    prize: {
+        id: 25059
+        name: "光伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 96
+    }
+    prize: {
+        id: 25033
+        name: "风伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 92
+    }
+    prize: {
+        id: 25058
+        name: "虫伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 99
+    }
+    prize: {
+        id: 25034
+        name: "电伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 93
+    } 
+    prize: {
+        id: 25056
+        name: "沙伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 98
+    } 
+    prize: {
+        id: 25060
+        name: "战伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 5
+        max: 0
+        mon_id: 100
+    }
+   prize: {
+        id: 25037
+        name: "小巴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 15
+        max: 0
+        mon_id: 149
+    }    
+    prize: {
+        id: 25321
+        name: "萌犸蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 15
+        max: 0
+        mon_id: 404
+    } 
+    prize: {
+        id: 25027
+        name: "晓月兔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 15
+        max: 0
+        mon_id: 61
+    } 
+    prize: {
+        id: 25062
+        name: "库贝多蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 15
+        max: 0
+        mon_id: 1000
+    }
+    prize: {
+        id: 25328
+        name: "卜古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 15
+        max: 0
+        mon_id: 262
+    }    
+    prize: {
+        id: 25055
+        name: "艾希蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 15
+        max: 0
+        mon_id: 214
+    }     
+     prize: {
+        id: 25054
+        name: "维维蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 35
+        max: 0
+        mon_id: 222
+    } 
+    prize: {
+        id: 25026
+        name: "大耳猴蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 58
+    } 
+    prize: {
+        id: 25025
+        name: "阿布蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 117
+    }
+    prize: {
+        id: 25318
+        name: "芙拉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 204
+    }
+    prize: {
+        id: 25317
+        name: "安吉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 208
+    }    
+    prize: {
+        id: 25324
+        name: "萨菲蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 379
+    }   
+    prize: {
+        id: 25049
+        name: "伊特蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 30
+        max: 0
+        mon_id: 91
+    }
+    prize: {
+        id: 25038
+        name: "布尔蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 16
+    } 
+    prize: {
+        id: 25039
+        name: "阿卡蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 30
+    }
+    prize: {
+        id: 25040
+        name: "霍克蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 37
+    }
+    prize: {
+        id: 25041
+        name: "麦麦籽蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 55
+    }    
+    prize: {
+        id: 25042
+        name: "莫古蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 79
+    } 
+    prize: {
+        id: 25043
+        name: "沙之鹤蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 81
+    }
+    prize: {
+        id: 25044
+        name: "尼娅蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 126
+    }
+    prize: {
+        id: 25052
+        name: "菲亚蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 156
+    }
+    prize: {
+        id: 25030
+        name: "小结蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 133
+    }
+    prize: {
+        id: 25325
+        name: "缇姆蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 245
+    }   
+   prize: {
+        id: 25327
+        name: "小绿蜓蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 402
+    }    
+    prize: {
+        id: 25028
+        name: "齿轮鹰蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 77
+    } 
+    prize: {
+        id: 25061
+        name: "泰格蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 361
+    } 
+    prize: {
+        id: 25024
+        name: "阿宝蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 51
+    }
+    prize: {
+        id: 25045
+        name: "乌达蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 72
+    }
+    prize: {
+        id: 25046
+        name: "达达蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 74
+    }    
+    prize: {
+        id: 25048
+        name: "豚豚蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 119
+    }     
+     prize: {
+        id: 25029
+        name: "多摩蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 49
+    } 
+    prize: {
+        id: 25319
+        name: "锦鲤蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 150
+        max: 0
+        mon_id: 364
+    }
+    prize: {
+        id: 25301
+        name: "尤尼蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 32
+    }   
+   prize: {
+        id: 25302
+        name: "稚壳鸡蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 67
+    }    
+    prize: {
+        id: 25303
+        name: "三眼蝎蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 86
+    } 
+    prize: {
+        id: 25304
+        name: "砂砂蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 111
+    } 
+    prize: {
+        id: 25305
+        name: "跳跳鼠蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 113
+    }
+    prize: {
+        id: 25306
+        name: "伊露蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 124
+    }
+    prize: {
+        id: 25307
+        name: "多利蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 138
+    }    
+    prize: {
+        id: 25308
+        name: "泰姆蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 198
+    }     
+     prize: {
+        id: 25309
+        name: "小小葵蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 13
+    } 
+    prize: {
+        id: 25310
+        name: "小树根蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 18
+    } 
+    prize: {
+        id: 25311
+        name: "法拉蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 10
+    }
+    prize: {
+        id: 25312
+        name: "蓝喵蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 28
+    }
+    prize: {
+        id: 25313
+        name: "水墨蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 41
+    }    
+    prize: {
+        id: 25314
+        name: "小岩浮蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 34
+    }   
+    prize: {
+        id: 25315
+        name: "克里普蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 194
+    }    
+    prize: {
+        id: 25316
+        name: "石像鬼蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 212
+    }
+    prize: {
+        id: 25320
+        name: "荷玛蛋"
+        sale_type: SALE_TYPE_COMM
+        rate: 400
+        max: 0
+        mon_id: 142
+    }
+}   

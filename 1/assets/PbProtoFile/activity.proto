@@ -1,0 +1,93 @@
+package ISeer20Conf;
+
+message activity_t {
+    //活动类型
+    enum activity_type_t {
+        ACT_TYP_SHOW       = 1; //显示类活动
+        ACT_TYP_CHARGE     = 2; //充值类活动
+        ACT_TYP_SIGN_IN    = 3; //签到类活动
+        ACT_TYP_FESTIVAL   = 4; //节日大使类活动
+        ACT_TYP_SYS_CONST  = 5; //修改系统的常量
+        ACT_TYP_GCOIN_CONSUME = 6; //金豆消耗类活动
+    }
+
+    //活动是否可循环参加
+    enum loop_able_t {
+        UN_LOOP_ABLE    = 1; //不可循环
+        LOOP_ABLE       = 2; //可循环
+    }
+    //活动条件类型
+    enum cond_type_t {
+        COND_TYPE_FIRST_CHARGE   = 1;  //首充
+        COND_TYPE_SINGLE_CHARGE  = 2;  //单笔充值
+        COND_TYPE_TOTAL_CHARGE   = 3;  //累计充值 
+        COND_TYPE_SIGN_IN        = 4;  //登入签到 
+        COND_TYPE_FESTIVAL       = 5;  //节日大使
+        COND_TYPE_SHOW           = 6;  //显示类活动
+        COND_TYPE_SINGLE_CONSUME = 7;  //单笔消费
+        COND_TYPE_TOTAL_CONSUME  = 8;  //累积消费
+    }
+    
+    // 活动时间的组合方式
+    enum time_type_t {
+        TIME_TYPE_1        = 1; //某日某时 至 某日某时
+        TIME_TYPE_2        = 2; //某日至某日之间 每天的某时至某时
+    }
+
+    // 系统常量类型
+    enum system_constant_type_t {
+         PVP_POINT_COEFF         = 1; // PVP积分加成系数
+         PVE_EXP_COEFF           = 2; // PVE经验加成系数
+         LEIYI_COIN_DROP_RATE    = 3; // 雷伊的赛尔豆产出比率
+         LEIYI_ENERGY_DROP_RATE  = 4; // 雷伊无尽能源产出比率
+         LEIYI_BOX_DROP_RATE     = 5; // 雷伊宝箱产出比率
+    }
+
+    message system_constant_t {
+        required system_constant_type_t type = 1; // 常量类型  
+        required int32 value  = 2; //常量的值
+    }
+    
+    message activity_constant_t {
+         optional int32 sign_momey = 1; // 补签的价格
+    }
+
+    message condition_t {
+        required int32 seq = 1;
+        //活动条件类型
+        required cond_type_t cond_type = 2;
+        //完成活动的限定
+        repeated bytes key = 3; 
+        //完成活动的限定对于的值
+        required int32 value = 4;
+        //完成活动的限定对应的奖励
+        required uint32 prize_id = 5;
+        //活动跳转链接
+        optional bytes hyperlink = 6;
+    }
+
+    message time_t {
+       required string date = 1;    //某日至某日 
+       required string time = 2;    //某时至某时
+       required time_type_t type = 3; 
+    }
+
+    optional int32 svr_id = 1[default = 0]; //服ID
+    required int32 id  = 2; //活动ID
+    required activity_type_t type = 3; //活动类型
+    required int32 row_pos = 4; //位置
+    required bytes row_des = 5; //标签标题
+    required bytes title = 6; //活动标题
+    required bytes description = 7; //活动描述
+    required time_t time = 8; //活动有效时间
+    optional string parti_date = 9; //活动可参加时间(默认和活动有限时间一致)
+    optional int32 is_new = 10 [default = 0]; //是否是新活动
+    optional loop_able_t loop = 11 [default = UN_LOOP_ABLE]; //活动是否循环
+    repeated condition_t cond = 12; //活动完成条件和对应的奖励
+    optional activity_constant_t act_const = 13;
+    repeated system_constant_t sys_const = 14;   
+}
+
+message top_config_activity_t {
+    repeated activity_t activity = 1;
+}

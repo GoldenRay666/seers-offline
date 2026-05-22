@@ -1,0 +1,220 @@
+package ISeer20Conf;
+
+message item_t {
+	// item宿主类型
+	enum host_type_t {
+		SEER_HOST			= 1; // 宿主是赛尔
+		MONSTER_HOST		= 2; // 宿主是精灵
+	}
+
+	// item种类
+	enum category_t {
+		EQUIPMENT			= 1; // 装备
+		MATERIAL			= 2; // 物品 (没有等级)
+	    HIDEMATERIAL        = 3; // 隐藏物品（不显示显示在背包中，没有等级）
+	}
+
+	// item 是否可堆叠
+	enum overlap_able_t {
+		OVERLAP_ABLE		= 1; // 可堆叠
+		UN_OVERLAP_ABLE		= 2; // 不可堆叠
+	}
+
+	// 装备/精灵蛋(EQUIPMENT)品质
+	enum quality_t {
+		QUALITY_WHITE		= 0; // 白
+		QUALITY_GREEN		= 1; // 绿
+		QUALITY_BLUE		= 2; // 蓝
+		QUALITY_PURPLE		= 3; // 紫
+		QUALITY_ORANGE		= 4; // 橙
+	}
+
+	// "赛尔装备" (SEER_HOST + EQUIPMENT)
+	//	对"玩家属性力加成值" 影响类型 (玩家属性力会进而换算加成到精灵属性力加成值)
+	enum seer_equipment_attr_type_t {
+		SEER_EQUIPMENT_ATTR_ZHIHUI				= 1; // 指挥力
+		SEER_EQUIPMENT_ATTR_QINHE				= 2; // 亲和力
+		SEER_EQUIPMENT_ATTR_WENDING				= 3; // 稳定力
+		SEER_EQUIPMENT_ATTR_FANYING				= 4; // 反应力
+	}
+
+	// "精灵装备" (MONSTER_HOST + EQUIPMENT)
+	// 对"精灵属性力加成值" 影响类型 (精灵属性力加成会最终加到发送给btlsvr的六项属性值里)
+	enum mon_equipment_attr_type_t {
+		MON_EQUIPMENT_ATTR_ATK					= 0; // 物攻
+		MON_EQUIPMENT_ATTR_DEF					= 1; // 物防
+		MON_EQUIPMENT_ATTR_SP_ATK				= 2; // 特攻
+		MON_EQUIPMENT_ATTR_SP_DEF				= 3; // 特防
+		MON_EQUIPMENT_ATTR_SPD					= 4; // 速度
+		MON_EQUIPMENT_ATTR_HP					= 5; // 体力(血量)
+
+	}
+
+    // "赛尔装备装配的位置"
+    enum seer_equipment_pos_t {
+        SEER_EQUIP_POS_HEAD                     = 1; // 头部
+        SEER_EQUIP_POS_SUIT                     = 2; // 服饰
+        SEER_EQUIP_POS_RIDING                   = 3; // 坐骑
+    }    
+
+    // "精灵装备装配的位置"
+    enum mon_equipment_pos_t {
+        MON_EQUIP_POS_ATK                       = 1; // 攻击部位
+        MON_EQUIP_POS_DEF                       = 2; // 防御部位
+        MON_EQUIP_POS_SPE                       = 3; // 特殊部位
+    }
+
+	// 物品类型 (赛尔物品和精灵物品放在一起管理)
+	enum material_attr_type_t {
+		MATERIAL_ATTR_TYPE_1_COIN				    = 1;  // 加赛尔豆的道具
+		MATERIAL_ATTR_TYPE_2_GCOIN				    = 2;  // 加金豆的道具
+		MATERIAL_ATTR_TYPE_3_ADD_MON_EXP		    = 3;  // 增加精灵的经验值的道具
+		MATERIAL_ATTR_TYPE_4_ADD_MON_LEVEL		    = 4;  // 增加精灵的等级的道具(经验设定为等级的初始值)	
+		MATERIAL_ATTR_TYPE_5_DOUBLE_EXP			    = 5;  // 双倍经验卡(战斗后精灵获得双倍经验)
+        MATERIAL_ATTR_TYPE_6_RESET_MON_QUALITY       = 6;  // 重置精灵资质的道具
+        MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR          = 7;  // 重置精灵性格的道具
+        MATERIAL_ATTR_TYPE_8_ADD_MON_LEARN          = 8;  // 增加精灵学习力的道具
+        MATERIAL_ATTR_TYPE_9_RESET_MON_LEARN         = 9;  // 重置精灵学习力的道具
+		MATERIAL_ATTR_TYPE_10_ADD_ENERGY		    = 10; // 增加赛尔电量的道具
+		MATERIAL_ATTR_TYPE_11_INCR_ENERGY_LIMIT		= 11; // 增加赛尔电量上限的道具
+		MATERIAL_ATTR_TYPE_12_TOP				    = 12; // 陀螺(威力和能量)道具
+        MATERIAL_ATTR_TYPE_13_ADD_TOP_ENERGY        = 13; // 增加陀螺能量
+        MATERIAL_ATTR_TYPE_14_ADD_TOWER_CHALLENGE_TIEMS  = 14; // 增加勇者之塔挑战次数
+        MATERIAL_ATTR_TYPE_15_PICK_UP               = 15; // 采集的物品
+        MATERIAL_ATTR_TYPE_16_ADD_MON_HP            = 16; // 精灵加血的道具
+        MATERIAL_ATTR_TYPE_17_TOWER_RECORD          = 17; // 勇者之塔存档道具
+        MATERIAL_ATTR_TYPE_18_CHECK_HIDE_SKILL      = 18; // 查看精灵隐藏技能的道具
+        MATERIAL_ATTR_TYPE_19_ADD_MON_STORE         = 19; // 增加精灵仓库容量
+        MATERIAL_ATTR_TYPE_20_TASK_DROP             = 20; // 任务掉落收集到的道具
+        MATERIAL_ATTR_TYPE_21_STORY                 = 21; // 剧情道具
+        MATERIAL_ATTR_TYPE_22_TREASURE_CHEST        = 22; // 宝箱道具
+		MATERIAL_ATTR_TYPE_23_MON_EGG			    = 23; // 精灵蛋
+		MATERIAL_ATTR_TYPE_24_SEER_EQUIP			= 24; // 角色装备
+		MATERIAL_ATTR_TYPE_25_MON_EQUIP			    = 25; // 精灵装备
+		MATERIAL_ATTR_TYPE_26_CHANGE_NICK			= 26; // 改名道具
+		MATERIAL_ATTR_TYPE_27_CATCH_ITEM		    = 27; // 捕捉道具（威力和范围）	
+        MATERIAL_ATTR_TYPE_28_MINERAL			    = 28; // 矿石
+        MATERIAL_ATTR_TYPE_29_ADD_MON_QUALITY       = 29; // 增加精灵资质
+        MATERIAL_ATTR_TYPE_30_TRUMPET               = 30; // 小喇叭
+        MATERIAL_ATTR_TYPE_31_TYPHON                = 31; // 大喇叭
+        MATERIAL_ATTR_TYPE_32_PIECE                 = 32; // 碎片
+        MATERIAL_ATTR_TYPE_33_LOTTO                 = 33; // 至尊乐透券
+
+        // 物品背包中的物品的类型号段是（0， 10000）,
+        // 其他不在背包显示不占背包格子的物品类型号段是[10000, 20000)
+        MATERIAL_ATTR_TYPE_34_MON_EGG_PIECE         = 10000; // 精灵蛋碎片
+        MATERIAL_ATTR_TYPE_33_MON_EQUIP_PIECE       = 10001; // 精灵装备碎片
+	}
+
+	// 赛尔装备属性
+	message seer_equipment_attr_t {
+		required seer_equipment_attr_type_t type	= 1;
+		required int32 init_value					= 2;
+		optional float level_increment				= 3 [default = 0]; // 升级步进 (由于某些装备的某种步进是不随等级成长的, 所以设置成optional, 默认是0)
+    }
+
+	// 精灵装备属性
+	message mon_equipment_attr_t {
+		required mon_equipment_attr_type_t type		= 1;
+		required int32 init_value					= 2;
+		optional float level_increment				= 3 [default = 0.0]; // 升级步进 (由于某些装备的某种步进是不随等级成长的, 所以设置成optional, 默认是0)
+	}
+
+	// 物品(seer+mon)物品属性
+	message material_attr_t {
+		required material_attr_type_t type			= 1; // 属性类型
+		// 注意:
+		// (1) 以下字段必须都是 optional, 并且如果不配置, 则"默认是0值" (由此可能带来业务逻辑问题)
+		// (2) @dev最好能和策划沟通, 并用代码确认 type 所需的字段都已经配置 (如果配了该type不需要的字段则给出警告)
+		optional int32 tuoluo_power					= 2;  // 陀螺威力
+		optional int32 tuoluo_hp					= 3;  // 陀螺能量
+		optional int32 capture_power				= 4;  // 捕捉道具威力
+		optional int32 capture_range				= 5;  // 捕捉道具范围
+
+		// ------------------------- 以上是客户端有效, 服务端忽略的字段
+        optional int32 incr_coin                    = 6;    // 增加赛尔豆量
+        optional int32 incr_gcoin                   = 7;    // 增加金豆量
+		optional int32 incr_mon_exp					= 8;    // 增加精灵经验量
+		optional int32 incr_mon_level				= 9;    // 增加精灵等级数
+		optional int32 double_exp_times				= 10;   // 双倍经验次数
+        repeated int32 reset_mon_quality_value_vec  = 11;   // 重置精灵资质 在vec中选择一个值的方式
+        optional int32 reset_mon_quality_value_min  = 12;   // 重置精灵资质 范围方式 最小值
+        optional int32 reset_mon_quality_value_max  = 13;   // 重置精灵资质 范围方式 最大值
+        repeated int32 reset_mon_char_value_vec     = 14;   // 重置精灵性格 在vec中选择一个值的方式
+        optional int32 reset_mon_char_value_min     = 15;   // 重置精灵性格 范围方式 最小值
+        optional int32 reset_mon_char_value_max     = 16;   // 重置精灵性格 范围方式 最大值
+        optional int32 incr_learn                   = 17;   // 增加学习力
+        repeated int32 reset_mon_learn_value_vec    = 18;   // 重置精灵学习力 在vec中选择一个值的方式
+        optional int32 reset_mon_learn_value_min    = 19;   // 重置精灵学习力 范围方式 最小值
+        optional int32 reset_mon_learn_value_max    = 20;   // 重置精灵学习力 范围方式 最大值
+		optional int32 recover_energy				= 21;   // 恢复的赛尔电量数
+		optional int32 incr_max_energy_limit		= 22;   // 增加的电量上限
+        optional int32 incr_hero_tower_challenge    = 23;   // 增加勇者之塔挑战次数
+		optional int32 recover_mon_hp				= 24;   // 恢复精灵生命
+        optional int32 incr_mon_store               = 25;   // 增加精灵仓库容量
+        optional int32 treasure_chest_prize_id      = 26;   // 打开宝箱获得的物品对应的奖励ID
+		optional int32 egg_prize_id					= 27;   // 开精灵蛋对应的奖励ID
+        
+        optional int32 piece_target_item_id         = 28;   //碎片物品合成装备的目标装备物品ID
+        optional int32 piece_grade                  = 29;   //碎片品级
+        optional int32 piece_compose_need_count     = 30;   //碎片合成需要的数量
+        optional int32 add_mon_quality_value_min    = 31;   //调整精灵资质 最小值可以为负
+        optional int32 add_mon_quality_value_max    = 32;   //调整精灵资质 最大值可以为负
+	    
+        optional quality_t egg_quality              = 33;   //精灵蛋的品质
+    }
+
+	// 前缀属性 (保留定义, 还没实现, 也没放到 item 的配置里, 根据讨论, 如果要加这个类型的字段的话, 应该是 required)
+	message prefix_attr_t {
+		message node_t {
+			required int32 type = 1; // 1: 数值, 2: 千分比
+			required int32 attr = 2; // 0: atk, 1: def, 2: sp_atk, 3: sp_def, 4: spd, 5: hp, 6: 所有属性
+			required int32 value = 3; // 对应属性加成值 或 千分比数值
+		}
+		required int32 id = 1;
+		required bytes name = 2;
+		required int32 degree = 3;
+		required int32 rate_on_get = 4; // 获得 '比率' (除以总数换算成获得概率)
+		required int32 rate_on_change = 5; // 洗练 '比率' (同上)
+		repeated node_t node = 6;
+	}
+    // 成长属性 
+    message growth_attr_t {
+		optional float growth_unit = 1 [default = 0.05]; // 成长属性值的最小单位 
+        required int32 min_growth_attr = 2; // 成长属性区间最小值      
+        required int32 max_growth_attr = 3; // 成长属性区间最大值     
+    }
+
+	// 所有 item 共有
+	required bytes name						= 1; // 物品名
+	required int32 id						= 2; // 物品id
+	required host_type_t host_type			= 3; // SEER_HOST or MONSTER_HOST
+	required category_t category			= 4; // EQUIPMENT or MATERIAL
+	required overlap_able_t overlap			= 5; // OVERLAP_ABLE or UN_OVERLAP_ABLE
+	optional int32 one_grid_max				= 6 [default = 1]; // UN_OVERLAP_ABLE 时, max_in_grid 必须等于1
+	required int32 max_own					= 7; // 最大拥有数量, 0表示无限拥有
+	required int32 base_sell_price			= 8; // -1: 表示不能出售, 0-99999: 装备的出售价格
+	required int32 player_level_limit		= 9; // SEER_HOST item 的 赛尔使用等级限制
+	required int32 mon_level_limit			= 10; // MONSTER_HOST item 的 精灵使用等级限制
+
+	// EQUIPMENT 特有
+	optional quality_t quality				= 11; // 只有 EQUIPMENT 才有品质, 必须>0
+	optional int32 max_level				= 12; // 只有 EQUIPMENT 才有等级
+	optional int32 base_score				= 13; // 只有 EQUIPMENT 才有等级, 必须>0
+	optional int32 lifetime					= 14 [default = 0]; // 只有 EQUIPMENT 才有使用期限, 
+                                                  // EQUIPMENT item 的 lifetime 必须>0 (NOTE(zog): 此字段先预埋, 但未使用)
+    optional seer_equipment_pos_t seer_pos  = 15; // 赛尔装备的位置
+    optional mon_equipment_pos_t mon_pos    = 16; // 精灵装备的位置
+
+	// 各类item属性 (@dev: Union风格)
+	repeated seer_equipment_attr_t seer_equipment_attr	= 17;
+	repeated mon_equipment_attr_t mon_equipment_attr	= 18;
+	repeated material_attr_t material_attr				= 19;
+    
+    optional growth_attr_t growth_attr                  = 20; // 物品的成长属性
+	optional bytes description							= 21; // 物品描述
+}
+
+message top_config_item_t {
+	repeated item_t item = 1;
+}

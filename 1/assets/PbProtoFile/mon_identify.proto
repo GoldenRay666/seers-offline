@@ -1,0 +1,45 @@
+package ISeer20Conf;
+
+message identify_t {
+    message best_ev_t {
+        optional int32 atk = 1; 
+        optional int32 def = 2;
+        optional int32 sp_atk = 3;
+        optional int32 sp_def = 4;
+        optional int32 spd = 5;
+        optional int32 hp = 6;
+    }
+
+    enum best_ev_idx_t {
+        best_ev_idx_atk = 0;
+        best_ev_idx_def = 1;
+        best_ev_idx_sp_atk = 2;
+        best_ev_idx_sp_def = 3;
+        best_ev_idx_spd = 4;
+        best_ev_idx_hp = 5;
+    }
+    required uint32 family = 1;          //精灵家族id
+    required int32 best_level = 2;      //极限等级
+    required int32 best_quality = 3;    //极限资质
+    repeated int32 best_character = 4;  //推荐性格
+    repeated best_ev_t best_ev = 5;     //推荐学习力
+    
+    repeated best_ev_idx_t best_ev_idx = 10;    //推荐学习力类型(前端显示用)    
+    
+    optional int32 identify_cost_gcoin = 20[default = 0];     //鉴定花费的金豆
+    optional int32 identify_cost_coin = 21[default = 0];     //鉴定花费的赛尔豆
+    optional int32 chg_character_cost_gcoin = 22[default = 0]; //改变性格花费的金豆
+    optional int32 chg_character_cost_coin = 23[default = 0]; //改变性格花费的赛尔豆
+}
+
+
+message top_config_mon_identify_t {
+    repeated identify_t identify = 1;
+    
+    optional int32 level_up_cost_gcoin = 2[default = 0];    //升级时花费的金豆
+    optional int32 level_up_cost_coin = 3[default = 0];     //升级时花费的赛尔豆
+    optional int32 quality_up_cost_gcoin = 4[default = 0];  //资质花费的金豆
+    optional int32 quality_up_cost_coin = 5[default = 0];   //资质花费的赛尔豆
+    optional int32 reset_ev_cost_gcoin = 6[default = 0];    //调整学习力花费金豆
+    optional int32 reset_ev_cost_coin = 7[default = 0];     //调整学习力花费赛尔豆
+}

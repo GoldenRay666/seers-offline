@@ -1,0 +1,1160 @@
+/**
+ * Local mock server for 赛尔号战神联盟 (Seer Alliance) offline mode.
+ * Run: node mock_server.js
+ */
+"use strict";
+
+const http = require('http');
+const net = require('net');
+const fs = require('fs');
+const path = require('path');
+
+// =============================================================================
+// Protobuf helpers (minimal implementation for the game protocol)
+// =============================================================================
+
+function encodeVarint(value) {
+    const result = [];
+    while (value > 0x7f) {
+        result.push((value & 0x7f) | 0x80);
+        value >>>= 7;
+    }
+    result.push(value & 0x7f);
+    return Buffer.from(result);
+}
+
+function encodeTag(fieldNumber, wireType) {
+    return encodeVarint((fieldNumber << 3) | wireType);
+}
+
+function encodeLengthDelimited(fieldNumber, data) {
+    const tag = encodeTag(fieldNumber, 2);
+    const len = encodeVarint(data.length);
+    return Buffer.concat([tag, len, data]);
+}
+
+function encodeUint32(fieldNumber, value) {
+    return Buffer.concat([encodeTag(fieldNumber, 0), encodeVarint(value)]);
+}
+
+function encodeInt32(fieldNumber, value) {
+    // int32 uses the same varint encoding as uint32
+    return encodeUint32(fieldNumber, value);
+}
+
+function encodeString(fieldNumber, s) {
+    return encodeLengthDelimited(fieldNumber, Buffer.from(s, 'utf-8'));
+}
+
+function encodeMessage(fieldNumber, msgData) {
+    return encodeLengthDelimited(fieldNumber, msgData);
+}
+
+// =============================================================================
+// Message builders (based on proto definitions)
+// =============================================================================
+
+// Remember created roles: server_id -> [{role_tm, nick, gender}]
+let createdRoles = {};
+
+function buildServerListResponse() {
+    // CORRECT field numbers from protobuf descriptor:
+    // cli_get_server_list_out:
+    //   field 1: server_list (repeated message)
+    //   field 2: login_ip (uint32)
+    //   field 3: login_port (uint32)
+    // server_info_t:
+    //   field 1: server_id (uint32)
+    //   field 2: server_name (string)
+    //   field 3: server_status (uint32)
+
+    // Build server_info_t for one server
+    const serverInfo = Buffer.concat([
+        encodeUint32(1, 1),              // server_id = 1
+        encodeString(2, "Offline Server"), // server_name
+        encodeUint32(3, 1),              // server_status = 1 (normal)
+    ]);
+
+    // IP "127.0.0.1" as uint32 in big-endian (network byte order)
+    // 127.0.0.1 = 0x7F000001 = 2130706433
+    const ipAsUint32 = (127 << 24) | (0 << 16) | (0 << 8) | 1; // = 2130706433
+
+    // Build top-level message: cli_get_server_list_out
+    return Buffer.concat([
+        encodeMessage(1, serverInfo),     // server_list (field 1)
+        encodeUint32(2, ipAsUint32),      // login_ip as uint32 (field 2)
+        encodeUint32(3, 8002),            // login_port (field 3)
+    ]);
+}
+
+function buildCheckSessionResponse() {
+    // cli_check_session_out has ONLY one field:
+    //   field 1: server_role_list (repeated server_role_t)
+    // server_role_t:
+    //   field 1: server_info (server_info_t message)
+    //   field 2: role_info (optional - only if role exists)
+    //
+    // IMPORTANT: return NO role info so game always goes through create_role flow.
+    // Returning role info on reconnection causes game to expect server-pushed data.
+
+    const serverInfo = Buffer.concat([
+        encodeUint32(1, 1),              // server_id = 1
+        encodeUint32(2, 0x7F000001),     // server_ip = 127.0.0.1 as uint32
+        encodeUint32(3, 8002),           // server_port
+        encodeUint32(4, 0),              // server_type = 0
+        encodeUint32(5, 100),            // total_players_cnt
+        encodeUint32(6, 10),             // vip_players_cnt
+        encodeUint32(7, 1),              // server_status = 1
+        encodeString(8, "Offline Server"),// server_name
+    ]);
+
+    // Only server_info, no role_info — forces game into create_role path
+    const serverRole = encodeMessage(1, serverInfo);
+    return encodeMessage(1, serverRole);
+}
+
+function buildLoginResponse() {
+    // login_out:
+    //   field 1: basic (player_basic_info_t)
+    //   field 2: switch_info (functional_switch_info_t)
+    //   field 3: sys_cur_time (uint32)
+    //   field 4: can_award_energy (uint32?)
+    //
+    // player_basic_info_t fields (verified from IDA and Python mock):
+    const now = Math.floor(Date.now() / 1000);
+    const roles = createdRoles[1] || [];
+    const lastRole = roles.length > 0 ? roles[roles.length - 1] : null;
+    const basicInfo = Buffer.concat([
+        encodeString(1, lastRole ? lastRole.nick : "Player"),  // nick
+        encodeUint32(2, lastRole ? lastRole.role_tm : now),    // role_tm
+        encodeUint32(4, now - 60),       // last_logout_tm
+        encodeUint32(5, 20),             // level (was working with this!)
+        encodeUint32(6, 999999),         // exp
+        encodeUint32(7, lastRole ? lastRole.gender : 1),  // gender
+        encodeUint32(8, 999999),         // gcoin
+        encodeUint32(9, 999999),         // coin
+        encodeUint32(10, 10),            // vip_level
+        encodeUint32(11, 999),           // energy
+        encodeUint32(12, 999),           // max_energy
+        encodeUint32(13, 999),           // action
+        encodeUint32(14, 999),           // max_action
+    ]);
+
+    // functional_switch_info_t - empty (all features default)
+    const switchInfo = Buffer.alloc(0);
+
+    return Buffer.concat([
+        encodeMessage(1, basicInfo),     // basic
+        encodeMessage(2, switchInfo),    // switch_info
+        encodeUint32(3, now),            // sys_cur_time
+        encodeUint32(4, 0),              // can_award_energy
+    ]);
+}
+
+function buildCreateRoleResponse(fields) {
+    const nick = fields[2] || "Player";
+    const gender = fields[3] || 1;
+    const serverId = fields[1] || 1;
+    const now = Math.floor(Date.now() / 1000);
+
+    // Save the created role
+    if (!createdRoles[serverId]) createdRoles[serverId] = [];
+    createdRoles[serverId].push({role_tm: now, nick: nick, gender: gender});
+    console.log('[ROLE] Created role:', nick, 'on server', serverId, 'role_tm:', now);
+    console.log('[ROLE] All roles:', JSON.stringify(createdRoles));
+
+    // Try minimal response: just result code = 0 (success)
+    return encodeUint32(1, 0);
+}
+
+function buildPlayerInfoResponse() {
+    const now = Math.floor(Date.now() / 1000);
+    const roles = createdRoles[1] || [];
+    const lastRole = roles.length > 0 ? roles[roles.length - 1] : null;
+    // cli_get_player_info_out:
+    //   field 1: player_info (player_basic_info_t or similar)
+    const playerInfo = Buffer.concat([
+        encodeString(1, lastRole ? lastRole.nick : "Player"),
+        encodeUint32(2, lastRole ? lastRole.role_tm : now),
+        encodeUint32(5, 1),     // level
+        encodeUint32(7, lastRole ? lastRole.gender : 1),  // gender
+        encodeUint32(8, 1000),  // gcoin
+        encodeUint32(9, 10000), // coin
+        encodeUint32(11, 100),  // energy
+        encodeUint32(12, 200),  // max_energy
+    ]);
+    return encodeMessage(1, playerInfo);
+}
+
+// Monster names from petDictionary.plist: 1=迪兰, 4=休咻, 7=(grass starter)
+const MONSTER_NAMES = {1: '迪兰', 4: '休咻', 7: '小小葵'};
+
+function buildSelectMainMonResponse(monId, nick, roleTm) {
+    // Proto structure confirmed via IDA disassembly of libgame_logic.so
+    // mon_basic_info_t: 23 fields (fields 7 & 13 are SkipField/gaps)
+    // Required fields mask 0xF7F59: fields 1,4,5,8,9,10,11,12,14,15,17,18,19,20,21,22
+    // Fields 2,3,6,16,23 are optional
+    const now = Math.floor(Date.now() / 1000);
+    const monName = MONSTER_NAMES[monId] || ('Monster_' + monId);
+
+    // mon_basic_info_t — send all 23 fields (minus gaps 7,13)
+    const basicInfo = Buffer.concat([
+        encodeString(1, monName),           // 1: STRING name (required)
+        encodeUint32(2, monId),             // 2: VARINT (optional)
+        encodeUint32(3, monId),             // 3: VARINT (optional)
+        encodeInt32(4, 0),                  // 4: INT32 signed (required)
+        encodeUint32(5, 5),                 // 5: VARINT level (required)
+        encodeUint32(6, 0),                 // 6: VARINT exp (optional)
+        // field 7 is SkipField
+        encodeUint32(8, 1),                 // 8: VARINT quality? (required)
+        encodeUint32(9, 0),                 // 9: VARINT (required)
+        encodeUint32(10, 0),                // 10: VARINT (required)
+        encodeUint32(11, 0),                // 11: VARINT (required)
+        encodeInt32(12, 0),                 // 12: INT32 signed (required)
+        // field 13 is SkipField
+        encodeUint32(14, 0),                // 14: VARINT (required, 0=not in fight party)
+        encodeUint32(15, 0),                // 15: VARINT (required, 0=no party slot)
+        encodeUint32(16, 0),                // 16: VARINT (optional)
+        encodeUint32(17, monId),            // 17: VARINT template_id (required)
+        encodeUint32(18, now),              // 18: VARINT born_time (required)
+        encodeUint32(19, 1),                // 19: VARINT form (required)
+        encodeUint32(20, 0),                // 20: VARINT (required)
+        encodeUint32(21, 0),                // 21: VARINT (required)
+        encodeUint32(22, 0),                // 22: VARINT (required, mask bit 19 set)
+        encodeUint32(23, 0),                // 23: VARINT (optional)
+    ]);
+
+    // mon_btl_attr_t (6 fields, mask 0x3F = all required)
+    const btlAttr = Buffer.concat([
+        encodeUint32(1, 80),    // HP
+        encodeUint32(2, 20),    // ATK
+        encodeUint32(3, 20),    // DEF
+        encodeUint32(4, 20),    // SP_ATK
+        encodeUint32(5, 20),    // SP_DEF
+        encodeUint32(6, 20),    // SPD
+    ]);
+
+    // mon_ev_info_t: 7 VARINT fields (IDA: switch 7 cases, all varint)
+    const evInfo = Buffer.concat([
+        encodeUint32(1, 0), encodeUint32(2, 0),
+        encodeUint32(3, 0), encodeUint32(4, 0),
+        encodeUint32(5, 0), encodeUint32(6, 0),
+        encodeUint32(7, 0),
+    ]);
+
+    // mon_character_info_t: 7 VARINT fields (IDA: switch 7 cases, all varint)
+    const charInfo = Buffer.concat([
+        encodeUint32(1, 0), encodeUint32(2, 0),
+        encodeUint32(3, 0), encodeUint32(4, 0),
+        encodeUint32(5, 0), encodeUint32(6, 0),
+        encodeUint32(7, 0),
+    ]);
+
+    // mon_grow_info_t: 6 VARINT fields (IDA: switch 6 cases, all varint)
+    const growInfo = Buffer.concat([
+        encodeUint32(1, 0), encodeUint32(2, 0),
+        encodeUint32(3, 0), encodeUint32(4, 0),
+        encodeUint32(5, 0), encodeUint32(6, 0),
+    ]);
+
+    // mon_moves_info_t: has nested sub-messages (IDA: complex structure)
+    // Fields 2,3,4 are VARINT; field 1 appears to be a sub-message
+    const movesInfo = Buffer.concat([
+        encodeUint32(2, 0), encodeUint32(3, 0), encodeUint32(4, 0),
+    ]);
+
+    // mon_info_t: 7 fields, mask 0x79 requires fields 1,4,5,6,7
+    // Fields 2,3 (btl_attr, equip_btl_attr) are optional
+    const monInfo = Buffer.concat([
+        encodeMessage(1, basicInfo),    // 1: basic_info (required)
+        encodeMessage(2, btlAttr),      // 2: btl_attr (optional)
+        encodeMessage(3, btlAttr),      // 3: equip_btl_attr (optional)
+        encodeMessage(4, evInfo),       // 4: ev_info (required)
+        encodeMessage(5, charInfo),     // 5: character_info (required)
+        encodeMessage(6, growInfo),     // 6: grow_info (required)
+        encodeMessage(7, movesInfo),    // 7: moves_info (required)
+    ]);
+
+    return encodeMessage(1, monInfo);
+}
+
+function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
+    // player_enter_map_out fields (verified from ELF symbols):
+    //   1: map_id, 2: players, 3: npcs, 4: mine_info, 5: events
+
+    // player_enter_map_out_player_t:
+    //   1: uid, 2: role_tm, 3: nick, 4: x, 5: y, 6: gender, 7: equip_id_list, 8: vip_level
+    const playerEntry = Buffer.concat([
+        encodeUint32(1, 1),              // uid
+        encodeUint32(2, roleTm),         // role_tm
+        encodeString(3, nick),           // nick
+        encodeUint32(4, 0),             // x
+        encodeUint32(5, 0),             // y
+        encodeUint32(6, gender || 1),    // gender
+        encodeUint32(8, 0),             // vip_level
+    ]);
+
+    // player_enter_map_out_npc_t: 1: npc_id, 2: mons (repeated mon_t)
+    // player_enter_map_out_mon_t: 1: mon_id, 2: mon_lv
+    const npc3 = Buffer.concat([encodeUint32(1, 3)]);
+    const npcWild = Buffer.concat([encodeUint32(1, 100011)]);
+
+    // map_mine_info_t: 1=map_id, 2=remain_count, 3=last_flush_time
+    const mineInfo = Buffer.concat([
+        encodeUint32(1, mapId),
+        encodeUint32(2, 5),
+        encodeUint32(3, Math.floor(Date.now() / 1000)),
+    ]);
+
+    // Build empty events list (field 5)
+    // player_enter_map_out_event_t has: type, yieldAction, yieldCoin, yieldGcoin,
+    //   yieldExp, yieldEv, item, npc, pkCombat, boxId
+    // Empty events = empty repeated field
+
+    return Buffer.concat([
+        encodeUint32(1, mapId),           // 1: map_id
+        encodeMessage(2, playerEntry),    // 2: players
+        encodeMessage(3, npc3),           // 3: npcs - NPC 3 (多罗)
+        encodeMessage(3, npcWild),        // 3: npcs - NPC 100011 (wild 法拉)
+        encodeMessage(4, mineInfo),       // 4: mine_info
+    ]);
+}
+
+function buildRandomNickResponse() {
+    // cli_lookup_random_nick_out:
+    //   field 1: nick (string) — repeated
+    const nicks = ["赛尔勇士", "星辰使者", "雷电先锋", "暗影猎手"];
+    let result = Buffer.alloc(0);
+    for (const nick of nicks) {
+        result = Buffer.concat([result, encodeString(1, nick)]);
+    }
+    return result;
+}
+
+// Track player state for tutorial progression
+let playerState = {};
+
+function buildTaskListResponse(serverId) {
+    // get_task_list_out: repeated pb_task_info_t (task_id+ buffer) in field 1, ret in field 2
+    const tasks = playerState[serverId] ? (playerState[serverId].tasks || []) : [];
+    let taskList = Buffer.alloc(0);
+    for (const t of tasks) {
+        const detail = serializeConfTask(t);
+        const pbTask = Buffer.concat([
+            encodeUint32(1, t.id),                // task_id
+            encodeLengthDelimited(2, detail),     // buffer
+        ]);
+        taskList = Buffer.concat([taskList, encodeMessage(1, pbTask)]);
+    }
+    return Buffer.concat([
+        taskList.length > 0 ? taskList : Buffer.from([0x0a, 0x00]),
+        encodeUint32(2, 0),  // ret = 0
+    ]);
+}
+
+function serializeConfTask(taskDef) {
+    // Serialize conf task_t (from task.proto) into bytes for the buffer field
+    let stepList = Buffer.alloc(0);
+    if (taskDef.steps) {
+        for (const s of taskDef.steps) {
+            let keys = Buffer.alloc(0);
+            if (s.link) for (const k of s.link) keys = Buffer.concat([keys, encodeUint32(3, k)]);
+            const step = Buffer.concat([
+                encodeUint32(1, s.seq),
+                encodeUint32(2, s.step_type),
+                encodeUint32(4, s.value || 1),
+                encodeString(5, s.target || ''),
+                keys,
+            ]);
+            stepList = Buffer.concat([stepList, encodeMessage(15, step)]);
+        }
+    }
+    return Buffer.concat([
+        encodeUint32(1, taskDef.id),
+        encodeString(2, taskDef.name || ''),
+        encodeString(3, taskDef.info || ''),
+        encodeUint32(4, taskDef.task_type || 2),
+        encodeUint32(5, taskDef.need_level || 0),
+        encodeUint32(6, taskDef.obtain_map_id || 10001),
+        encodeUint32(7, taskDef.commit_map_id || 10001),
+        encodeUint32(8, taskDef.obtain_npc_id || 3),
+        encodeUint32(9, taskDef.commit_npc_id || 3),
+        encodeUint32(10, taskDef.obtain_dialog || 0),
+        encodeUint32(11, taskDef.progress_dialog || 0),
+        encodeUint32(12, taskDef.finish_dialog || 0),
+        stepList,
+        encodeUint32(16, taskDef.prize_id || 0),
+        encodeUint32(17, taskDef.area_id || 1),
+    ]);
+}
+
+function buildPbTaskInfo(taskDef) {
+    // pb_task_info_t (ISeer20Comm): CS-level task representation
+    // Fields: 1=task_id(varint), 2=task_type(varint), 3=task_flag(varint), 4=buffer(bytes)
+    // The buffer contains serialized task detail (conf task_t)
+    let stepList = Buffer.alloc(0);
+    if (taskDef.steps) {
+        for (const s of taskDef.steps) {
+            let keys = Buffer.alloc(0);
+            if (s.link) for (const k of s.link) keys = Buffer.concat([keys, encodeUint32(3, k)]);
+            const step = Buffer.concat([
+                encodeUint32(1, s.seq),
+                encodeUint32(2, s.step_type),
+                encodeUint32(4, s.value || 1),
+                encodeString(5, s.target || ''),
+                keys,
+            ]);
+            stepList = Buffer.concat([stepList, encodeMessage(15, step)]);
+        }
+    }
+    const detail = Buffer.concat([
+        encodeUint32(1, taskDef.id),
+        encodeString(2, taskDef.name || ''),
+        encodeString(3, taskDef.info || ''),
+        encodeUint32(4, taskDef.task_type || 2),
+        encodeUint32(5, taskDef.need_level || 0),
+        encodeUint32(6, taskDef.obtain_map_id || 10001),
+        encodeUint32(7, taskDef.commit_map_id || 10001),
+        encodeUint32(8, taskDef.obtain_npc_id || 3),
+        encodeUint32(9, taskDef.commit_npc_id || 3),
+        encodeUint32(10, taskDef.obtain_dialog || 0),
+        encodeUint32(11, taskDef.progress_dialog || 0),
+        encodeUint32(12, taskDef.finish_dialog || 0),
+        stepList,
+        encodeUint32(16, taskDef.prize_id || 0),
+        encodeUint32(17, taskDef.area_id || 1),
+    ]);
+    return Buffer.concat([
+        encodeUint32(1, taskDef.id),        // 1: task_id
+        encodeUint32(2, taskDef.task_type || 2), // 2: task_type
+        encodeUint32(3, 0),                 // 3: task_flag
+        encodeLengthDelimited(4, detail),   // 4: buffer (serialized task detail)
+    ]);
+}
+
+function buildObtainTaskResponse(taskId) {
+    console.log('[TASK] Obtaining task:', taskId);
+    const taskDef = TUTORIAL_TASKS.tasks.find(t => t.id === taskId);
+    if (!taskDef) {
+        return Buffer.concat([encodeUint32(2, 1)]); // ret = 1 error
+    }
+    const pbTask = buildPbTaskInfo(taskDef);
+    return Buffer.concat([
+        encodeMessage(1, pbTask),  // field 1: task_info (pb_task_info_t)
+        encodeUint32(2, 0),        // field 2: ret = 0
+    ]);
+}
+
+function buildFinishTaskResponse(taskId) {
+    // finish_task_out
+    console.log('[TASK] Finishing task:', taskId);
+    return Buffer.concat([
+        encodeUint32(1, taskId),
+        encodeUint32(2, 0),  // ret = 0 success
+    ]);
+}
+
+function buildSetTaskStepResponse() {
+    // set_task_step_out
+    return Buffer.concat([
+        encodeUint32(1, 0),  // ret = 0 success
+    ]);
+}
+
+function buildSubmitMapEventResponse(eventType, npcId) {
+    // submit_map_event_out: returns event result
+    // field 1: result (uint32, 0=success)
+    // field 2: event data (optional)
+    console.log('[EVENT] Map event type=' + eventType + ' npc=' + npcId);
+    return Buffer.concat([
+        encodeUint32(1, 0),  // result = 0 success
+    ]);
+}
+
+function buildNotifyTextMsg(msg) {
+    // cli_notify_text_msg_out: server-pushed text message
+    // field 1: msg (string)
+    const text = Buffer.from(msg, 'utf-8');
+    return encodeString(1, msg);
+}
+
+// Tutorial task definitions for map 10001
+const TUTORIAL_TASKS = {
+    serverId: 1,
+    tasks: [
+        {
+            id: 1, name: '矿石采集', info: '采集一次矿石',
+            task_type: 2, need_level: 0,
+            obtain_map_id: 10001, commit_map_id: 10001,
+            obtain_npc_id: 3, commit_npc_id: 3,
+            obtain_dialog: 100, progress_dialog: 105, finish_dialog: 107,
+            prize_id: 50001, area_id: 1,
+            steps: [{seq: 1, step_type: 6, value: 1, target: '采矿', link: [10001]}]
+        },
+    ],
+};
+
+function ensurePlayerTasks(serverId) {
+    if (!playerState[serverId]) playerState[serverId] = {tasks: []};
+    if (playerState[serverId].tasks.length === 0) {
+        // Give player the first tutorial task
+        playerState[serverId].tasks.push(TUTORIAL_TASKS.tasks[0]);
+        console.log('[TASK] Auto-assigned tutorial task 1 to player');
+    }
+}
+
+function hexDump(data) {
+    for (let i = 0; i < data.length; i += 16) {
+        const hex = Array.from(data.slice(i, i + 16))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join(' ');
+        const ascii = Array.from(data.slice(i, i + 16))
+            .map(b => (b >= 32 && b < 127) ? String.fromCharCode(b) : '.')
+            .join('');
+        console.log(`  ${i.toString(16).padStart(4, '0')}: ${hex.padEnd(48, ' ')} ${ascii}`);
+    }
+}
+
+// =============================================================================
+// HTTP Server (handles login and server list requests)
+// =============================================================================
+
+const HTTP_PORT = 8000;
+
+const httpServer = http.createServer((req, res) => {
+    const url = req.url;
+    const timestamp = new Date().toISOString().split('T')[1].slice(0, 12);
+    console.log(`[HTTP ${timestamp}] ${req.method} ${url}`);
+
+    let body = Buffer.alloc(0);
+    req.on('data', chunk => { body = Buffer.concat([body, chunk]); });
+    req.on('end', () => {
+        if (body.length > 0) {
+            console.log(`[HTTP] Body: ${body.length} bytes`);
+        }
+
+        if (url.includes('/account_service.php')) {
+            // Taomee authentication endpoint
+            console.log(`[HTTP] Auth request: ${url}`);
+            const authData = {
+                status_code: "0",
+                user_id: "offline_user_001",
+                session: "offline_session_" + Date.now(),
+                username: "offline_player"
+            };
+            const text = JSON.stringify(authData);
+            const response = Buffer.from(text, 'utf-8');
+            res.writeHead(200, {
+                'Content-Type': 'text/plain; charset=utf-8',
+                'Content-Length': response.length,
+                'Access-Control-Allow-Origin': '*',
+            });
+            res.end(response);
+            console.log(`[HTTP] Auth response: ${text}`);
+        } else if (url.includes('/iseer2.fcgi')) {
+            // Try login_ip as uint32 number (network byte order) first
+            const data = {
+                online_list: [{
+                    online_id: 1,
+                    online_name: "Offline Server",
+                    online_status: 1
+                }],
+                login_ip: 2130706433,  // 127.0.0.1 as uint32
+                login_port: 8002
+            };
+            const text = JSON.stringify(data);
+            const response = Buffer.from(text, 'utf-8');
+            res.writeHead(200, {
+                'Content-Type': 'text/plain; charset=utf-8',
+                'Content-Length': response.length,
+                'Access-Control-Allow-Origin': '*',
+            });
+            res.end(response);
+            console.log(`[HTTP] Sent JSON (${response.length} bytes):`);
+            console.log(text);
+        } else {
+            // For all other requests, log them clearly
+            console.log(`[HTTP] UNHANDLED: ${req.method} ${url}`);
+            console.log(`[HTTP] Headers: ${JSON.stringify(req.headers)}`);
+            const html = '<html><body><h1>Offline Server</h1><script>console.log("offline server received request: ' + url + '");</script></body></html>';
+            const response = Buffer.from(html, 'utf-8');
+            res.writeHead(200, {
+                'Content-Type': 'text/html; charset=utf-8',
+                'Content-Length': response.length,
+                'Access-Control-Allow-Origin': '*',
+            });
+            res.end(response);
+        }
+    });
+});
+
+httpServer.listen(HTTP_PORT, '0.0.0.0', () => {
+    console.log(`[HTTP] Mock HTTP server running on 0.0.0.0:${HTTP_PORT}`);
+});
+
+function pushServerMsg(socket, cmd, body, f3, f4, f5) {
+    if (!socket._pushSeq) socket._pushSeq = 1000;
+    socket._pushSeq++;
+    const headerProto = Buffer.concat([
+        encodeString(1, cmd),
+        encodeUint32(2, socket._pushSeq),
+        encodeUint32(3, f3 || 1),
+        encodeUint32(4, f4 || 0),
+        encodeUint32(5, f5 || 0),
+    ]);
+    const headerLen = 4 + headerProto.length;
+    const totalLen = 8 + headerProto.length + body.length;
+    const packet = Buffer.alloc(totalLen);
+    packet.writeUInt32BE(totalLen, 0);
+    packet.writeUInt32BE(headerLen, 4);
+    headerProto.copy(packet, 8);
+    body.copy(packet, 8 + headerProto.length);
+    socket.write(packet);
+    console.log(`[TCP:${TCP_PORT}] Pushed ${cmd} (${packet.length} bytes)`);
+}
+
+// Push initialization messages after login
+function pushInitMessages(socket, f3, f4, f5) {
+    socket._initMsgCount = (socket._initMsgCount || 0);
+    const now = Math.floor(Date.now() / 1000);
+    // Messages to push with their bodies
+    const initMessages = [
+        { cmd: 'ISeer20CSProto.cli_notify_item_bag_updates_out', body: Buffer.alloc(0) },
+        { cmd: 'ISeer20CSProto.cli_get_item_out', body: Buffer.from([0x0a, 0x00]) },
+        { cmd: 'ISeer20CSProto.cli_get_player_info_out', body: buildPlayerInfoResponse() },
+        { cmd: 'ISeer20CSProto.cli_get_server_time_out', body: encodeUint32(1, now) },
+        { cmd: 'ISeer20CSProto.cli_get_friend_list_out', body: Buffer.from([0x0a, 0x00]) },
+        { cmd: 'ISeer20CSProto.cli_get_mail_list_out', body: Buffer.from([0x0a, 0x00]) },
+        { cmd: 'ISeer20CSProto.cli_get_activity_list_out', body: Buffer.from([0x0a, 0x00]) },
+    ];
+    for (const msg of initMessages) {
+        socket._initMsgCount++;
+        const headerProto = Buffer.concat([
+            encodeString(1, msg.cmd),
+            encodeUint32(2, socket._initMsgCount),
+            encodeUint32(3, f3),
+            encodeUint32(4, f4),
+            encodeUint32(5, f5),
+        ]);
+        const headerLen = 4 + headerProto.length;
+        const totalLen = 8 + headerProto.length + msg.body.length;
+        const packet = Buffer.alloc(totalLen);
+        packet.writeUInt32BE(totalLen, 0);
+        packet.writeUInt32BE(headerLen, 4);
+        headerProto.copy(packet, 8);
+        msg.body.copy(packet, 8 + headerProto.length);
+        socket.write(packet);
+    }
+    console.log(`[TCP] Pushed ${initMessages.length} init messages after login`);
+}
+
+// =============================================================================
+// TCP Game Server
+// =============================================================================
+
+const TCP_PORT = 8002;
+
+function handleGameClient(socket) {
+    const addr = `${socket.remoteAddress}:${socket.remotePort}`;
+    console.log(`[TCP:${TCP_PORT}] Client connected from ${addr}`);
+
+    let buffer = Buffer.alloc(0);
+
+    socket.on('data', (data) => {
+        console.log(`[TCP:${TCP_PORT}] Raw data event: ${data.length} bytes`);
+        hexDump(data.slice(0, Math.min(data.length, 64)));
+        buffer = Buffer.concat([buffer, data]);
+
+        // Game uses 4-byte LE uint32 length prefix
+        while (buffer.length >= 4) {
+            const totalLen = buffer.readUInt32BE(0);  // BE total length (includes 4-byte prefix)
+            console.log(`[TCP:${TCP_PORT}] Total length: ${totalLen}, buffer has ${buffer.length} bytes`);
+
+            if (totalLen > buffer.length) {
+                console.log(`[TCP:${TCP_PORT}] Need ${totalLen} bytes, have ${buffer.length} — waiting`);
+                return;
+            }
+
+            const dataLen = totalLen - 4;
+            const msgData = buffer.slice(4, 4 + dataLen);
+            buffer = buffer.slice(totalLen);
+            const remainingAfterSlice = buffer.length;
+
+            console.log(`[TCP:${TCP_PORT}] Received message (${msgData.length} bytes):`);
+            if (msgData.length <= 256) {
+                hexDump(msgData);
+            } else {
+                hexDump(msgData.slice(0, 256));
+                console.log(`  ... (${msgData.length - 256} more bytes)`);
+            }
+
+            // Try to identify message type and respond
+            // First byte of protobuf often contains field tag
+            let msgType = "unknown";
+            if (msgData.length > 0) {
+                const firstTag = msgData[0];
+                // Common message tags and their types
+                if (firstTag === 0x0a) msgType = "login_in (field 1, string)";
+                else if (firstTag === 0x08) msgType = "message (field 1, varint)";
+                else if (firstTag === 0x12) msgType = "message (field 2, length-delimited)";
+                console.log(`[TCP:${TCP_PORT}] Detected message type: ${msgType}`);
+            }
+
+            // Parse game's CMD from the header protobuf
+            // header format: [4b BE header_len][cs_msg_head_t proto]
+            const headerDataLen = msgData.readUInt32BE(0);
+            const headerProto = msgData.slice(4, 4 + headerDataLen - 4);
+            console.log(`[TCP:${TCP_PORT}] Game header (${headerProto.length} bytes):`);
+            hexDump(headerProto.slice(0, 40));
+
+            // Extract CMD from headerProto field 1
+            let gameCmd = "unknown";
+            if (headerProto.length > 2 && headerProto[0] === 0x0a) {
+                const strLen = headerProto[1];
+                gameCmd = headerProto.slice(2, 2 + strLen).toString('utf-8');
+            }
+            console.log(`[TCP:${TCP_PORT}] Game CMD: ${gameCmd}`);
+
+            // Parse incoming header fields to echo back
+            let inSeqId = 0, inField3 = 0, inField4 = 0, inField5 = 0;
+            let pos = 0;
+            while (pos < headerProto.length) {
+                const tag = headerProto[pos];
+                if (tag >= 0x80) break; // safety
+                const fieldNum = tag >> 3;
+                const wireType = tag & 0x07;
+                pos++;
+                if (wireType === 0) { // varint
+                    let value = 0, shift = 0;
+                    while (pos < headerProto.length) {
+                        const b = headerProto[pos++];
+                        value |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    if (fieldNum === 2) inSeqId = value;
+                    else if (fieldNum === 3) inField3 = value;
+                    else if (fieldNum === 4) inField4 = value;
+                    else if (fieldNum === 5) inField5 = value;
+                } else if (wireType === 2) { // length-delimited
+                    let len = 0, shift = 0;
+                    while (pos < headerProto.length) {
+                        const b = headerProto[pos++];
+                        len |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    if (fieldNum === 1) {
+                        gameCmd = headerProto.slice(pos, pos + len).toString('utf-8');
+                    }
+                    pos += len;
+                } else {
+                    break; // unknown wire type
+                }
+            }
+            console.log(`[TCP:${TCP_PORT}] Parsed header: cmd=${gameCmd} seq=${inSeqId} f3=${inField3} f4=${inField4} f5=${inField5}`);
+
+            // Map game CMD to response CMD
+            const cmdMap = {
+                'ISeer20CSProto.cli_check_session_in': 'ISeer20CSProto.cli_check_session_out',
+                'ISeer20CSProto.login_in': 'ISeer20CSProto.login_out',
+                'ISeer20CSProto.cli_create_role_in': 'ISeer20CSProto.cli_create_role_out',
+                'ISeer20CSProto.cli_get_item_in': 'ISeer20CSProto.cli_get_item_out',
+                'ISeer20CSProto.cli_get_player_info_in': 'ISeer20CSProto.cli_get_player_info_out',
+                'ISeer20CSProto.cli_get_server_time_in': 'ISeer20CSProto.cli_get_server_time_out',
+                'ISeer20CSProto.cli_get_friend_list_in': 'ISeer20CSProto.cli_get_friend_list_out',
+                'ISeer20CSProto.cli_get_bag_mon_in': 'ISeer20CSProto.cli_get_bag_mon_out',
+                'ISeer20CSProto.cli_get_mail_list_in': 'ISeer20CSProto.cli_get_mail_list_out',
+                'ISeer20CSProto.cli_get_task_list_in': 'ISeer20CSProto.cli_get_task_list_out',
+                'ISeer20CSProto.cli_get_activity_list_in': 'ISeer20CSProto.cli_get_activity_list_out',
+                'ISeer20CSProto.cli_get_shop_info_in': 'ISeer20CSProto.cli_get_shop_info_out',
+                'ISeer20CSProto.cli_lookup_random_nick_in': 'ISeer20CSProto.cli_lookup_random_nick_out',
+                'ISeer20CSProto.get_bag_mon_in': 'ISeer20CSProto.get_bag_mon_out',
+                'ISeer20CSProto.get_player_info_in': 'ISeer20CSProto.get_player_info_out',
+                'ISeer20CSProto.get_server_time_in': 'ISeer20CSProto.get_server_time_out',
+                'ISeer20CSProto.get_friend_list_in': 'ISeer20CSProto.get_friend_list_out',
+                'ISeer20CSProto.get_mail_list_in': 'ISeer20CSProto.get_mail_list_out',
+                'ISeer20CSProto.get_task_list_in': 'ISeer20CSProto.get_task_list_out',
+                'ISeer20CSProto.get_activity_list_in': 'ISeer20CSProto.get_activity_list_out',
+                'ISeer20CSProto.get_shop_info_in': 'ISeer20CSProto.get_shop_info_out',
+                'ISeer20CSProto.get_storemon_index_in': 'ISeer20CSProto.get_storemon_index_out',
+                'ISeer20CSProto.cli_get_storemon_index_in': 'ISeer20CSProto.cli_get_storemon_index_out',
+                // Additional init messages
+                'ISeer20CSProto.get_unlocked_map_id_list_in': 'ISeer20CSProto.get_unlocked_map_id_list_out',
+                'ISeer20CSProto.get_pvp_data_in': 'ISeer20CSProto.get_pvp_data_out',
+                'ISeer20CSProto.get_player_simple_info_in': 'ISeer20CSProto.get_player_simple_info_out',
+                'ISeer20CSProto.get_player_detail_info_in': 'ISeer20CSProto.get_player_detail_info_out',
+                'ISeer20CSProto.get_config_in': 'ISeer20CSProto.get_config_out',
+                'ISeer20CSProto.get_finance_plan_in': 'ISeer20CSProto.get_finance_plan_out',
+                'ISeer20CSProto.get_lottery_info_in': 'ISeer20CSProto.get_lottery_info_out',
+                'ISeer20CSProto.get_shop_in': 'ISeer20CSProto.get_shop_out',
+                'ISeer20CSProto.get_ranking_list_in': 'ISeer20CSProto.get_ranking_list_out',
+                'ISeer20CSProto.get_self_ranking_in': 'ISeer20CSProto.get_self_ranking_out',
+                'ISeer20CSProto.get_lbs_notice_in': 'ISeer20CSProto.get_lbs_notice_out',
+                'ISeer20CSProto.get_exchange_code_info_in': 'ISeer20CSProto.get_exchange_code_info_out',
+                'ISeer20CSProto.get_talent_attr_data_in': 'ISeer20CSProto.get_talent_attr_data_out',
+                'ISeer20CSProto.get_champion_data_in': 'ISeer20CSProto.get_champion_data_out',
+                'ISeer20CSProto.get_challenge_leiyi_data_in': 'ISeer20CSProto.get_challenge_leiyi_data_out',
+                'ISeer20CSProto.get_captured_mon_list_in': 'ISeer20CSProto.get_captured_mon_list_out',
+                'ISeer20CSProto.get_black_list_in': 'ISeer20CSProto.get_black_list_out',
+                'ISeer20CSProto.get_sys_cur_time_in': 'ISeer20CSProto.get_sys_cur_time_out',
+                'ISeer20CSProto.submit_map_event_in': 'ISeer20CSProto.submit_map_event_out',
+                'ISeer20CSProto.submit_map_mine_in': 'ISeer20CSProto.submit_map_mine_info_out',
+                'ISeer20CSProto.submit_map_mine_info_in': 'ISeer20CSProto.submit_map_mine_info_out',
+                'ISeer20CSProto.obtain_task_in': 'ISeer20CSProto.obtain_task_out',
+                'ISeer20CSProto.finish_task_in': 'ISeer20CSProto.finish_task_out',
+                'ISeer20CSProto.cancel_task_in': 'ISeer20CSProto.cancel_task_out',
+                'ISeer20CSProto.set_task_step_in': 'ISeer20CSProto.set_task_step_out',
+                'ISeer20CSProto.get_task_buff_list_in': 'ISeer20CSProto.get_task_buff_list_out',
+                'ISeer20CSProto.get_task_flag_list_in': 'ISeer20CSProto.get_task_flag_list_out',
+                'ISeer20CSProto.player_ready_in': 'ISeer20CSProto.player_ready_out',
+                'ISeer20CSProto.text_msg_in': 'ISeer20CSProto.text_msg_out',
+                'ISeer20CSProto.pb_cs_task_in': 'ISeer20CSProto.pb_cs_task_out',
+                'ISeer20CSProto.pass_do_action_in': 'ISeer20CSProto.pass_do_action_out',
+                'ISeer20CSProto.notify_in': 'ISeer20CSProto.cli_echo_out',
+                'ISeer20CSProto.notify_mon_in': 'ISeer20CSProto.cli_echo_out',
+                'ISeer20CSProto.notify_player_in': 'ISeer20CSProto.cli_echo_out',
+                'ISeer20CSProto.cli_recheck_session_in': 'ISeer20CSProto.cli_recheck_session_out',
+                'ISeer20CSProto.select_main_mon_in': 'ISeer20CSProto.select_main_mon_out',
+                'ISeer20CSProto.player_enter_map_in': 'ISeer20CSProto.player_enter_map_out',
+                'ISeer20CSProto.map_player_walk_in': 'ISeer20CSProto.map_player_walk_out',
+                'ISeer20CSProto.get_lottery_prize_in': 'ISeer20CSProto.get_lottery_prize_out',
+                'ISeer20CSProto.get_reward_in': 'ISeer20CSProto.get_reward_out',
+                'ISeer20CSProto.get_lottery_in': 'ISeer20CSProto.get_lottery_out',
+                'ISeer20CSProto.get_lbs_prize_in': 'ISeer20CSProto.get_lbs_prize_out',
+                'ISeer20CSProto.get_mail_body_in': 'ISeer20CSProto.get_mail_body_out',
+                'ISeer20CSProto.get_mail_enclosure_in': 'ISeer20CSProto.get_mail_enclosure_out',
+            };
+            if (!socket._msgCount) socket._msgCount = 0;
+
+            // Parse body proto for request-specific data
+            const bodyStart = headerDataLen;
+            const bodyData = msgData.slice(bodyStart);
+            let bodyFields = {};
+            let bp = 0;
+            while (bp < bodyData.length) {
+                const tag = bodyData[bp];
+                if (tag >= 0x80) break;
+                const fieldNum = tag >> 3;
+                const wireType = tag & 0x07;
+                bp++;
+                if (wireType === 0) { // varint
+                    let value = 0, shift = 0;
+                    while (bp < bodyData.length) {
+                        const b = bodyData[bp++];
+                        value |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    bodyFields[fieldNum] = value;
+                } else if (wireType === 2) { // length-delimited
+                    let len = 0, shift = 0;
+                    while (bp < bodyData.length) {
+                        const b = bodyData[bp++];
+                        len |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    bodyFields[fieldNum] = bodyData.slice(bp, bp + len).toString('utf-8');
+                    bp += len;
+                } else {
+                    break;
+                }
+            }
+            console.log(`[TCP:${TCP_PORT}] Parsed body fields:`, JSON.stringify(bodyFields));
+            console.log(`[TCP:${TCP_PORT}] Buffer remaining after slice: ${remainingAfterSlice} bytes`);
+
+            // Select response body and CMD based on command
+            let body;
+            let respCmd = cmdMap[gameCmd] || (gameCmd.endsWith('_in') ? gameCmd.slice(0, -3) + '_out' : gameCmd);
+            if (gameCmd.includes('check_session') || gameCmd.includes('recheck_session')) {
+                // Both check_session and recheck_session: return empty role list
+                // This forces the game to go through create_role for a clean flow
+                body = buildCheckSessionResponse();
+            } else if (gameCmd.includes('create_role')) {
+                const nick = bodyFields[2] || "Player";
+                const gender = bodyFields[3] || 1;
+                const serverId = bodyFields[1] || 1;
+                const now = Math.floor(Date.now() / 1000);
+                if (!createdRoles[serverId]) createdRoles[serverId] = [];
+                createdRoles[serverId].push({role_tm: now, nick: nick, gender: gender});
+                console.log('[ROLE] Created role:', nick, 'role_tm:', now);
+                // Pre-assign task 1 so guide might skip to next step
+                if (!playerState[1]) playerState[1] = {tasks: []};
+                if (!playerState[1].tasks.find(t => t.id === 1)) {
+                    playerState[1].tasks.push({...TUTORIAL_TASKS.tasks[0]});
+                    console.log('[TASK] Pre-assigned task 1 to new player');
+                }
+                body = buildLoginResponse();
+                respCmd = 'ISeer20CSProto.login_out';
+            } else if (gameCmd.includes('login_in')) {
+                body = buildLoginResponse();
+            } else if (gameCmd.includes('lookup_random_nick')) {
+                body = buildRandomNickResponse();
+            } else if (gameCmd.includes('get_item')) {
+                // cli_get_item_out: field 1 = repeated items (empty for new user)
+                // Also include ret=0 (field 2 with success code) in case game checks it
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),  // field 1: empty item list
+                    encodeUint32(2, 0),          // field 2: ret = 0 (success)
+                ]);
+            } else if (gameCmd.includes('get_bag_mon')) {
+                // Return empty bag — game will show pet selection
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_player_info')) {
+                body = buildPlayerInfoResponse();
+            } else if (gameCmd.includes('get_server_time')) {
+                body = Buffer.concat([
+                    encodeUint32(1, Math.floor(Date.now() / 1000)),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_friend_list')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_mail_list') || gameCmd.includes('get_mail_head')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_activity_list')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_task_list')) {
+                body = buildTaskListResponse(1);
+                console.log('[TASK] Returning task list, tasks count:', (playerState[1] && playerState[1].tasks) ? playerState[1].tasks.length : 0);
+            } else if (gameCmd.includes('get_task_buff') || gameCmd.includes('get_task_flag')) {
+                // Task buff/flag lists - empty for new player
+                body = Buffer.concat([Buffer.from([0x0a, 0x00]), encodeUint32(2, 0)]);
+            } else if (gameCmd.includes('get_shop_info')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_storemon') || gameCmd.includes('storemon_index')) {
+                // Storemon index: empty list for new user
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('select_main_mon')) {
+                const monId = bodyFields[1] || 1;
+                console.log('[ROLE] Selected starter monster:', monId);
+
+                // Restore full response but log the exact body hex
+                const roles = createdRoles[1] || [];
+                const lastRole = roles.length > 0 ? roles[roles.length - 1] : null;
+                const nick = lastRole ? lastRole.nick : 'Starter';
+                const roleTm = lastRole ? lastRole.role_tm : Math.floor(Date.now() / 1000);
+                const gender = lastRole ? lastRole.gender : 1;
+                body = buildSelectMainMonResponse(monId, nick, roleTm);
+                console.log('[BODY HEX] select_main_mon_out body (' + body.length + ' bytes):');
+                hexDump(body);
+                respCmd = 'ISeer20CSProto.select_main_mon_out';
+
+                // CRITICAL: Push player_enter_map_out BEFORE select_main_mon_out
+                const enterMapBody = buildPlayerEnterMapOut(10001, nick, roleTm, gender);
+                console.log('[PUSH] Sending player_enter_map_out BEFORE select_main_mon_out');
+                pushServerMsg(socket, 'ISeer20CSProto.player_enter_map_out', enterMapBody, inField3 || 1, inField4, inField5);
+                console.log('[PUSH] player_enter_map_out sent (', enterMapBody.length, 'bytes)');
+                hexDump(enterMapBody);
+
+                // Also push notify_player_enter_map_out for current player
+                // Fields: uid(1), role_tm(2), nick(3), x(4), y(5), gender(6), equip_id_list(7), vip_level(8), map_id(9)
+                const notifyBody = Buffer.concat([
+                    encodeUint32(1, 1), encodeUint32(2, roleTm), encodeString(3, nick),
+                    encodeUint32(4, 0), encodeUint32(5, 0), encodeUint32(6, gender || 1),
+                    encodeUint32(8, 0), encodeUint32(9, 10001),
+                ]);
+                pushServerMsg(socket, 'ISeer20CSProto.notify_player_enter_map_out', notifyBody, inField3 || 1, inField4, inField5);
+            } else if (gameCmd.includes('map_player_walk')) {
+                const x = bodyFields[1] || 0;
+                const y = bodyFields[2] || 0;
+                console.log(`[WALK] Player at (${x}, ${y})`);
+                body = Buffer.alloc(0);
+                // After walk: try to open NPC dialogue via text_msg_out
+                // text_msg_content_t has fields for sender, content, etc.
+                const textBody = Buffer.concat([
+                    encodeUint32(1, 3),    // npc_id = 3 (多罗)
+                    encodeString(2, '欢迎来到异蘑世界！我是多罗，你需要接个任务吗？'),
+                ]);
+                pushServerMsg(socket, 'ISeer20CSProto.text_msg_out', textBody, inField3 || 1, inField4, inField5);
+                console.log('[GUIDE] Pushed NPC dialogue via text_msg_out');
+            } else if (gameCmd.includes('player_enter_map')) {
+                // player_enter_map_in: client requests to enter a map
+                const mapId = bodyFields[1] || 10001;
+                const roles = createdRoles[1] || [];
+                const lastRole = roles.length > 0 ? roles[roles.length - 1] : null;
+                const nick = lastRole ? lastRole.nick : 'Player';
+                const roleTm = lastRole ? lastRole.role_tm : Math.floor(Date.now() / 1000);
+                const gender = lastRole ? lastRole.gender : 1;
+                body = buildPlayerEnterMapOut(mapId, nick, roleTm, gender);
+                console.log(`[TCP:${TCP_PORT}] player_enter_map_in for map ${mapId}`);
+            } else if (gameCmd.includes('get_pvp_data')) {
+                // get_pvp_data_out: return empty — new player has no PVP data
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),  // field 1: empty list
+                    encodeUint32(2, 0),          // field 2: ret=0 success
+                ]);
+                console.log(`[TCP:${TCP_PORT}] get_pvp_data: sending empty response`);
+            } else if (gameCmd.includes('unlocked_map_id_list')) {
+                // Non-packed repeated int32: each map gets its own field tag
+                body = Buffer.concat([
+                    encodeUint32(1, 10001),    // map 10001 (异蘑世界)
+                    encodeUint32(1, 10002),    // map 10002 (荆棘林)
+                    encodeUint32(1, 10003),    // map 10003
+                    Buffer.from([0x12, 0x00]), // field 2 empty
+                ]);
+            } else if (gameCmd.includes('submit_map_mine')) {
+                // Player interacting with a mine spot
+                const mineId = bodyFields[1] || 0;
+                console.log('[MINE] Player mining at mine_id=' + mineId);
+                body = Buffer.concat([
+                    encodeUint32(1, 0),  // result = 0 success
+                    encodeUint32(2, 1),  // mine_id
+                    encodeUint32(3, 5),  // yield_count or item_id
+                ]);
+                // Push completion text
+                const msg = buildNotifyTextMsg('采集成功！获得矿石 x1');
+                pushServerMsg(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msg, inField3 || 1, inField4, inField5);
+            } else if (gameCmd.includes('submit_map_event')) {
+                // Map event submission (NPC interaction, tutorial steps, etc.)
+                const eventType = bodyFields[1] || 0;
+                const npcId = bodyFields[2] || 0;
+                console.log(`[EVENT] submit_map_event type=${eventType} npc=${npcId} fields=`, JSON.stringify(bodyFields));
+                body = buildSubmitMapEventResponse(eventType, npcId);
+                // If interacting with NPC 3 during tutorial, push dialogue
+                if (npcId === 3 && eventType > 0) {
+                    const msg = buildNotifyTextMsg('多罗：欢迎来到异蘑世界！试着采集矿石吧。');
+                    pushServerMsg(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msg, inField3 || 1, inField4, inField5);
+                }
+            } else if (gameCmd.includes('obtain_task')) {
+                const taskId = bodyFields[1] || 0;
+                console.log('[TASK] Player obtaining task:', taskId);
+                if (!playerState[1]) playerState[1] = {tasks: []};
+                const taskDef = TUTORIAL_TASKS.tasks.find(t => t.id === taskId);
+                if (taskDef && !playerState[1].tasks.find(x => x.id === taskId)) {
+                    playerState[1].tasks.push({...taskDef});
+                }
+                // obtain_task_out: 1=task_id, 2=buffer(serialized conf task_t)
+                const detail = taskDef ? serializeConfTask(taskDef) : Buffer.alloc(0);
+                body = Buffer.concat([
+                    encodeUint32(1, taskId),
+                    encodeLengthDelimited(2, detail),
+                ]);
+            } else if (gameCmd.includes('finish_task')) {
+                const taskId = bodyFields[1] || 0;
+                body = buildFinishTaskResponse(taskId);
+            } else if (gameCmd.includes('set_task_step')) {
+                body = buildSetTaskStepResponse();
+            } else if (gameCmd.includes('player_ready')) {
+                console.log('[READY] Player ready signal received');
+                body = Buffer.alloc(0);
+            } else if (gameCmd.includes('text_msg')) {
+                // text_msg_in: client sends text/dialog response
+                console.log('[TEXT] Text message from client');
+                body = Buffer.alloc(0);  // empty ack
+            } else if (gameCmd.includes('pb_cs_task')) {
+                // pb_cs_task_in: unified task message
+                console.log('[TASK] pb_cs_task_in received');
+                body = Buffer.concat([encodeUint32(1, 0)]);  // ret=0
+            } else if (gameCmd.includes('pass_do_action')) {
+                body = Buffer.concat([encodeUint32(1, 0)]);
+            } else if (gameCmd.includes('notify_in') || gameCmd.includes('notify_mon_in') || gameCmd.includes('notify_player_in')) {
+                // Client acknowledgment of server notifications
+                body = Buffer.alloc(0);
+            } else if (gameCmd.includes('get_sys_cur_time')) {
+                body = Buffer.concat([
+                    encodeUint32(1, Math.floor(Date.now() / 1000)),
+                    encodeUint32(2, 0),
+                ]);
+            } else {
+                // Generic response
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+                console.log(`[TCP:${TCP_PORT}] Unknown CMD "${gameCmd}", sending generic body`);
+            }
+            console.log(`[TCP:${TCP_PORT}] Response CMD: ${respCmd}`);
+
+            if (body === null) { console.log(`[TCP:${TCP_PORT}] Skipping send`); continue; }
+
+            // Build response header proto — simple sequential counter
+            socket._msgCount++;
+            const respSeq = socket._msgCount;
+            const headerProto2 = Buffer.concat([
+                encodeString(1, respCmd),
+                encodeUint32(2, respSeq),
+                encodeUint32(3, inField3 || 1),
+                encodeUint32(4, inField4),
+                encodeUint32(5, inField5),
+            ]);
+
+            const headerLen = 4 + headerProto2.length;
+            const totalMsgLen = 8 + headerProto2.length + body.length;
+
+            const finalPacket = Buffer.alloc(totalMsgLen);
+            finalPacket.writeUInt32BE(totalMsgLen, 0);
+            finalPacket.writeUInt32BE(headerLen, 4);
+            headerProto2.copy(finalPacket, 8);
+            body.copy(finalPacket, 8 + headerProto2.length);
+
+            socket.write(finalPacket);
+            console.log(`[TCP:${TCP_PORT}] Sent ${finalPacket.length} bytes (cmd=${respCmd})`);
+            hexDump(finalPacket.slice(0, Math.min(80, finalPacket.length)));
+
+            // Post-response pushes (map entry + init messages for reconnection)
+            if (socket._pendingMapPush) {
+                const p = socket._pendingMapPush;
+                socket._pendingMapPush = null;
+                console.log('[PUSH] Post-recheck: pushing player_enter_map_out + init messages');
+                const enterMapBody = buildPlayerEnterMapOut(10001, p.nick, p.roleTm, p.gender);
+                pushServerMsg(socket, 'ISeer20CSProto.player_enter_map_out', enterMapBody, p.f3, p.f4, p.f5);
+                pushInitMessages(socket, p.f3, p.f4, p.f5);
+            }
+
+            if (buffer.length > 0) {
+                console.log(`[TCP:${TCP_PORT}] NOTE: ${buffer.length} bytes still in buffer after response!`);
+                hexDump(buffer.slice(0, Math.min(64, buffer.length)));
+            }
+        }
+    });
+
+    socket.on('close', () => {
+        console.log(`[TCP:${TCP_PORT}] Client disconnected: ${addr}`);
+    });
+
+    socket.on('error', (err) => {
+        console.log(`[TCP:${TCP_PORT}] Socket error: ${err.message}`);
+    });
+}
+
+const tcpServer = net.createServer(handleGameClient);
+
+tcpServer.listen(TCP_PORT, '0.0.0.0', () => {
+    console.log(`[TCP] Mock game server running on 0.0.0.0:${TCP_PORT}`);
+});
+
+// =============================================================================
+// Main
+// =============================================================================
+
+console.log('='.repeat(60));
+console.log('  赛尔号战神联盟 - Local Mock Server (Node.js)');
+console.log('  Seer Alliance Offline Mode Server');
+console.log('='.repeat(60));
+console.log('');
+console.log('Server map:');
+console.log(`  HTTP Login:  http://127.0.0.1:${HTTP_PORT}/iseer2.fcgi`);
+console.log(`  TCP Game:   127.0.0.1:${TCP_PORT}`);
+console.log('');
+console.log('Waiting for game client connections...');
+console.log('Press Ctrl+C to stop.');
+console.log('');

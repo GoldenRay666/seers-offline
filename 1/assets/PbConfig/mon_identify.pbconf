@@ -1,0 +1,1798 @@
+level_up_cost_gcoin: 20
+quality_up_cost_gcoin: 30
+reset_ev_cost_gcoin: 250
+
+identify: {
+    family: 1
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 9
+    best_character: 16
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 2
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 1
+    best_character: 17
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        spd: 255
+        atk: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        sp_atk: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 3
+    best_level: 100
+    best_quality: 51
+    best_character: 4
+    best_character: 12
+    best_character: 8
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+	best_ev_idx: best_ev_idx_sp_def
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 4
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 8
+    best_character: 9
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 5
+    best_level: 100
+    best_quality: 51
+    best_character: 5
+    best_character: 14
+    best_character: 8
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 6
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 5
+    best_character: 6
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 7
+    best_level: 100
+    best_quality: 51
+    best_character: 4
+    best_character: 7
+    best_character: 6
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 11
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 5
+    best_character: 3
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 12
+    best_level: 100
+    best_quality: 51
+    best_character: 3
+    best_character: 1
+    best_character: 4
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 13
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 10
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 14
+    best_level: 100
+    best_quality: 51
+    best_character: 3
+    best_character: 11
+    best_character: 1
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 15
+    best_level: 100
+    best_quality: 51
+    best_character: 0
+    best_character: 10
+    best_character: 16
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 17
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 8
+    best_character: 9
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 20
+    best_level: 100
+    best_quality: 51
+    best_character: 0
+    best_character: 19
+    best_character: 2
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 21
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 9
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 23
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 9
+    best_character: 11
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 24
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 1
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 25
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 9
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 28
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 4
+    best_character: 11
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 30
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 11
+    best_character: 4
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        sp_def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 31
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 9
+    best_character: 11
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_atk: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 32
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 18
+    best_character: 17
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 33
+    best_level: 100
+    best_quality: 51
+    best_character: 7
+    best_character: 1
+    best_character: 3
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 34
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 17
+    best_character: 19
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 36
+    best_level: 100
+    best_quality: 51
+    best_character: 0
+    best_character: 3
+    best_character: 1
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 40
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 10
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 41
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 1
+    best_character: 19
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        spd: 255
+        sp_atk: 255
+    }
+    best_ev: {
+        spd: 255
+        atk: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 42
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 9
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 43
+    best_level: 100
+    best_quality: 51
+    best_character: 19
+    best_character: 17
+    best_character: 18
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        sp_atk: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 44
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 1
+    best_character: 19
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 45
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 8
+    best_character: 19
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 46
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 1
+    best_character: 0
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 47
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 9
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 48
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 18
+    best_character: 5
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_def
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 58
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 4
+    best_character: 3
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 59
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 14
+    best_character: 5
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 61
+    best_level: 100
+    best_quality: 51
+    best_character: 0
+    best_character: 1
+    best_character: 18
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        sp_atk: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 62
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 9
+    best_character: 10
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 64
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 1
+    best_character: 3
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 65
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 10
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 68
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 16
+    best_character: 1
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 70
+    best_level: 100
+    best_quality: 51
+    best_character: 17
+    best_character: 18
+    best_character: 19
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 72
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 16
+    best_character: 17
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        sp_atk: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 73
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 10
+    best_character: 9
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        sp_def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 75
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 17
+    best_character: 19
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 78
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 0
+    best_character: 16
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 88
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 8
+    best_character: 17
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 96
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 8
+    best_character: 17
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 97
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 8
+    best_character: 17
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 98
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 2
+    best_character: 3
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 100
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 4
+    best_character: 3
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 101
+    best_level: 100
+    best_quality: 51
+    best_character: 7
+    best_character: 4
+    best_character: 5
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    best_ev: {
+        def: 255
+        atk: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 103
+    best_level: 100
+    best_quality: 51
+    best_character: 16
+    best_character: 17
+    best_character: 19
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 104
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 3
+    best_character: 5
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 105
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 1
+    best_character: 0
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 106
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 1
+    best_character: 7
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_spd
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 107
+    best_level: 100
+    best_quality: 51
+    best_character: 18
+    best_character: 17
+    best_character: 16
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 110
+    best_level: 100
+    best_quality: 51
+    best_character: 0
+    best_character: 8
+    best_character: 7
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+	best_ev_idx: best_ev_idx_sp_atk
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 127
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 11
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_def
+    best_ev: {
+        sp_atk: 255
+        sp_def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 126
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 17
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 182
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 18
+    best_character: 3
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+	best_ev_idx: best_ev_idx_def
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 1000
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 18
+    best_character: 3
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+	best_ev_idx: best_ev_idx_spd
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        spd: 255
+    }
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 204
+    best_level: 100
+    best_quality: 51
+    best_character: 5
+    best_character: 1
+    best_character: 18
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 222
+    best_level: 100
+    best_quality: 51
+    best_character: 5
+    best_character: 1
+    best_character: 18
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        def: 255
+        sp_def: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    best_ev: {
+        sp_def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 191
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 9
+    best_character: 12
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+
+identify: {
+    family: 121
+    best_level: 100
+    best_quality: 51
+    best_character: 5
+    best_character: 14
+    best_character: 1
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_hp
+	best_ev_idx: best_ev_idx_sp_def
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        atk: 255
+        sp_def: 255
+    }
+    best_ev: {
+        sp_def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 203
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 10
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_spd
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        sp_atk: 255
+        spd: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    best_ev: {
+        spd: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 129
+    best_level: 100
+    best_quality: 51
+    best_character: 1
+    best_character: 5
+	best_character: 6
+	best_ev_idx: best_ev_idx_atk
+	best_ev_idx: best_ev_idx_def
+	best_ev_idx: best_ev_idx_hp
+    best_ev: {
+        atk: 255
+        def: 255
+    }
+    best_ev: {
+        atk: 255
+        hp: 255
+    }
+    best_ev: {
+        def: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}
+
+identify: {
+    family: 137
+    best_level: 100
+    best_quality: 51
+    best_character: 8
+    best_character: 16
+    best_character: 11
+	best_ev_idx: best_ev_idx_sp_atk
+	best_ev_idx: best_ev_idx_sp_def
+	best_ev_idx: best_ev_idx_def
+    best_ev: {
+        sp_atk: 255
+        sp_def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        def: 255
+    }
+    best_ev: {
+        sp_atk: 255
+        hp: 255
+    }
+    identify_cost_coin: 1000
+    chg_character_cost_gcoin: 250
+}

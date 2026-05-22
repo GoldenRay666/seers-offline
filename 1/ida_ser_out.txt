@@ -1,0 +1,368 @@
+D:/BaiduNetdiskDownload/IDA_Pro_v8.3_Portable123/plugins/mcp-plugin.py:903: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if result is not 0:
+Database C:\javatools\1\lib\armeabi\libgame_logic.so.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+ 69705728  8509 8192 allocating memory for b-tree...
+ 45023232  5496 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+114991104            total memory allocated
+
+Loading processor module D:\BaiduNetdiskDownload\IDA_Pro_v8.3_Portable123\procs\arm.dll for ARM...Initializing processor module ARM...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'libgame_logic.so' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  License: 56-B947-7F7A-47 Hex-Rays SA (32767 users)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+================================================================================
+Findcrypt v0.2 by David BERARD, 2017
+Findcrypt search shortcut key is Ctrl-Alt-F
+Global rules in D:\BaiduNetdiskDownload\IDA_Pro_v8.3_Portable123\plugins\findcrypt3.rules
+User-defined rules in C:\Users\23287\AppData\Roaming\Hex-Rays\IDA Pro\plugins\findcrypt-yara/*.rules
+================================================================================
+Hex-rays version 7.6.0.210427 has been detected, gooMBA plugin ready to use
+================================================================================
+Keypatch v2.2 (c) Nguyen Anh Quynh & Thanh Nguyen, 2018
+IDA Pro 8.3 support by PiaoYun/P.Y.G(https://www.chinapyg.com)
+Keypatch is using Keystone v0.9.2
+Keypatch Patcher's shortcut key is Ctrl-Alt-K
+Use the same hotkey Ctrl-Alt-K to open 'Fill Range' window on a selected range of code
+To revert (undo) the last patching, choose menu Edit | Keypatch | Undo last patching
+Keypatch Search is available from menu Edit | Keypatch | Search
+Find more information about Keypatch at http://keystone-engine.org/keypatch
+================================================================================
+D:/BaiduNetdiskDownload/IDA_Pro_v8.3_Portable123/plugins/mcp-plugin.py:903: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if result is not 0:
+[MCP] Plugin loaded, use Edit -> Plugins -> MCP (Ctrl+Alt+M) to start the server
+[RetDec info]   :	RetDec version 1.0-ida77 loaded OK
+
+ IDA Strong Charset Code View 0.3 
+ Show Strong Charset View Use 'shift' 
+ Auto Set Default 8bit Decode to CP-ACP True.
+ IDA Strong Charset Code View Plugin By 微笑一刀 
+
+
+[+] _ZNK14ISeer20CSProto19select_main_mon_out31SerializeWithCachedSizesToArrayEPh at 0x5c0054
+  0x5c0054: PUSH    {R4-R6,LR}
+  0x5c0056: LDR     R3, [R0,#0x10]
+  0x5c0058: MOVS    R5, R0
+  0x5c005a: MOVS    R6, R1
+  0x5c005c: LSLS    R2, R3, #0x1F; unsigned __int8 *
+  0x5c005e: BPL     loc_5C0086
+  0x5c0060: LDR     R4, [R0,#8]
+  0x5c0062: CMP     R4, #0
+  0x5c0064: BNE     loc_5C0070
+  0x5c0066: LDR     R3, =(_ZN14ISeer20CSProto19select_main_mon_out17default_instance_E_ptr - 0x5C006C)
+  0x5c0068: ADD     R3, PC; _ZN14ISeer20CSProto19select_main_mon_out17default_instance_E_ptr
+  0x5c006a: LDR     R3, [R3]; ISeer20CSProto::select_main_mon_out::default_instance_
+  0x5c006c: LDR     R3, [R3]; ISeer20CSProto::select_main_mon_out::default_instance_
+  0x5c006e: LDR     R4, [R3,#8]
+  0x5c0070: MOVS    R3, #0xA
+  0x5c0072: STRB    R3, [R6]
+  0x5c0074: ADDS    R1, R6, #1; unsigned int
+  0x5c0076: LDR     R0, [R4,#0x24]; this
+  0x5c0078: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x5c007c: MOVS    R1, R0; unsigned __int8 *
+  0x5c007e: MOVS    R0, R4; this
+  0x5c0080: BL      _ZNK11ISeer20Comm10mon_info_t31SerializeWithCachedSizesToArrayEPh; ISeer20Comm::mon_info_t::SerializeWithCachedSizesToArray(uchar *)
+  0x5c0084: MOVS    R6, R0
+  0x5c0086: ADDS    R4, R5, #4
+  0x5c0088: MOVS    R0, R4; this
+  0x5c008a: BL      _ZNK6google8protobuf15UnknownFieldSet5emptyEv; google::protobuf::UnknownFieldSet::empty(void)
+  0x5c008e: CMP     R0, #0
+  0x5c0090: BNE     loc_5C009C
+  0x5c0092: MOVS    R1, R6; google::protobuf::UnknownFieldSet *
+  0x5c0094: MOVS    R0, R4; this
+
+[+] _ZNK11ISeer20Comm10mon_info_t31SerializeWithCachedSizesToArrayEPh at 0x58d5ec
+  0x58d5ec: PUSH    {R3-R7,LR}
+  0x58d5ee: LDR     R7, =(_GLOBAL_OFFSET_TABLE_ - 0x58D5F8)
+  0x58d5f0: LDR     R3, [R0,#0x28]
+  0x58d5f2: MOVS    R4, R0
+  0x58d5f4: ADD     R7, PC; _GLOBAL_OFFSET_TABLE_
+  0x58d5f6: MOVS    R5, R1
+  0x58d5f8: LSLS    R2, R3, #0x1F; unsigned __int8 *
+  0x58d5fa: BPL     loc_58D620
+  0x58d5fc: LDR     R6, [R0,#8]
+  0x58d5fe: CMP     R6, #0
+  0x58d600: BNE     loc_58D60A
+  0x58d602: LDR     R3, =0xFFFFCF90
+  0x58d604: LDR     R3, [R7,R3]
+  0x58d606: LDR     R3, [R3]; ISeer20Comm::mon_info_t::default_instance_
+  0x58d608: LDR     R6, [R3,#8]
+  0x58d60a: MOVS    R3, #0xA
+  0x58d60c: STRB    R3, [R5]
+  0x58d60e: ADDS    R1, R5, #1; unsigned int
+  0x58d610: LDR     R0, [R6,#0x74]; this
+  0x58d612: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58d616: MOVS    R1, R0; unsigned __int8 *
+  0x58d618: MOVS    R0, R6; this
+  0x58d61a: BL      _ZNK11ISeer20Comm16mon_basic_info_t31SerializeWithCachedSizesToArrayEPh; ISeer20Comm::mon_basic_info_t::SerializeWithCachedSizesToArray(uchar *)
+  0x58d61e: MOVS    R5, R0
+  0x58d620: LDR     R3, [R4,#0x28]
+  0x58d622: LSLS    R2, R3, #0x1E; unsigned __int8 *
+  0x58d624: BPL     loc_58D64A
+  0x58d626: LDR     R6, [R4,#0xC]
+  0x58d628: CMP     R6, #0
+  0x58d62a: BNE     loc_58D634
+  0x58d62c: LDR     R3, =0xFFFFCF90
+  0x58d62e: LDR     R3, [R7,R3]
+  0x58d630: LDR     R3, [R3]; ISeer20Comm::mon_info_t::default_instance_
+  0x58d632: LDR     R6, [R3,#0xC]
+  0x58d634: MOVS    R3, #0x12
+  0x58d636: STRB    R3, [R5]
+  0x58d638: ADDS    R1, R5, #1; unsigned int
+  0x58d63a: LDR     R0, [R6,#0x20]; this
+  0x58d63c: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58d640: MOVS    R1, R0; unsigned __int8 *
+  0x58d642: MOVS    R0, R6; this
+  0x58d644: BL      _ZNK11ISeer20Comm14mon_btl_attr_t31SerializeWithCachedSizesToArrayEPh; ISeer20Comm::mon_btl_attr_t::SerializeWithCachedSizesToArray(uchar *)
+  0x58d648: MOVS    R5, R0
+  0x58d64a: LDR     R3, [R4,#0x28]
+  0x58d64c: LSLS    R2, R3, #0x1D; unsigned __int8 *
+  0x58d64e: BPL     loc_58D674
+  0x58d650: LDR     R6, [R4,#0x10]
+  0x58d652: CMP     R6, #0
+  0x58d654: BNE     loc_58D65E
+  0x58d656: LDR     R3, =0xFFFFCF90
+  0x58d658: LDR     R3, [R7,R3]
+  0x58d65a: LDR     R3, [R3]; ISeer20Comm::mon_info_t::default_instance_
+  0x58d65c: LDR     R6, [R3,#0x10]
+  0x58d65e: MOVS    R3, #0x1A
+  0x58d660: STRB    R3, [R5]
+  0x58d662: ADDS    R1, R5, #1; unsigned int
+  0x58d664: LDR     R0, [R6,#0x20]; this
+  0x58d666: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58d66a: MOVS    R1, R0; unsigned __int8 *
+  0x58d66c: MOVS    R0, R6; this
+  0x58d66e: BL      _ZNK11ISeer20Comm14mon_btl_attr_t31SerializeWithCachedSizesToArrayEPh; ISeer20Comm::mon_btl_attr_t::SerializeWithCachedSizesToArray(uchar *)
+  0x58d672: MOVS    R5, R0
+  0x58d674: LDR     R3, [R4,#0x28]
+  0x58d676: LSLS    R2, R3, #0x1C; unsigned __int8 *
+  0x58d678: BPL     loc_58D69E
+  0x58d67a: LDR     R6, [R4,#0x14]
+  0x58d67c: CMP     R6, #0
+  0x58d67e: BNE     loc_58D688
+  0x58d680: LDR     R3, =0xFFFFCF90
+  0x58d682: LDR     R3, [R7,R3]
+  0x58d684: LDR     R3, [R3]; ISeer20Comm::mon_info_t::default_instance_
+  0x58d686: LDR     R6, [R3,#0x14]
+  0x58d688: MOVS    R3, #0x22 ; '"'
+  0x58d68a: STRB    R3, [R5]
+  0x58d68c: ADDS    R1, R5, #1; unsigned int
+  0x58d68e: LDR     R0, [R6,#0x24]; this
+  0x58d690: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58d694: MOVS    R1, R0; unsigned __int8 *
+  0x58d696: MOVS    R0, R6; this
+  0x58d698: BL      _ZNK11ISeer20Comm13mon_ev_info_t31SerializeWithCachedSizesToArrayEPh; ISeer20Comm::mon_ev_info_t::SerializeWithCachedSizesToArray(uchar *)
+
+[+] _ZNK11ISeer20Comm16mon_basic_info_t31SerializeWithCachedSizesToArrayEPh at 0x58c85c
+  0x58c85c: PUSH    {R3-R7,LR}
+  0x58c85e: LDR     R3, [R0,#0x78]
+  0x58c860: MOVS    R4, R0
+  0x58c862: MOVS    R5, R1
+  0x58c864: LSLS    R2, R3, #0x1F; unsigned __int8 *
+  0x58c866: BPL     loc_58C88A
+  0x58c868: LDR     R6, [R0,#8]
+  0x58c86a: MOVS    R3, #0xA
+  0x58c86c: STRB    R3, [R1]
+  0x58c86e: LDR     R3, [R6]
+  0x58c870: ADDS    R1, #1; unsigned int
+  0x58c872: SUBS    R3, #0xC
+  0x58c874: LDR     R0, [R3]; this
+  0x58c876: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c87a: MOVS    R2, R0; dest
+  0x58c87c: LDR     R0, [R6]; this
+  0x58c87e: MOVS    R3, R0
+  0x58c880: SUBS    R3, #0xC; unsigned __int8 *
+  0x58c882: LDR     R1, [R3]; n
+  0x58c884: BL      _ZN6google8protobuf2io17CodedOutputStream15WriteRawToArrayEPKviPh; google::protobuf::io::CodedOutputStream::WriteRawToArray(void const*,int,uchar *)
+  0x58c888: MOVS    R5, R0
+  0x58c88a: LDR     R3, [R4,#0x78]
+  0x58c88c: LSLS    R2, R3, #0x1E; unsigned __int8 *
+  0x58c88e: BPL     loc_58C89E
+  0x58c890: MOVS    R3, #0x10
+  0x58c892: LDR     R0, [R4,#0xC]; this
+  0x58c894: ADDS    R1, R5, #1; unsigned int
+  0x58c896: STRB    R3, [R5]
+  0x58c898: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c89c: MOVS    R5, R0
+  0x58c89e: LDR     R3, [R4,#0x78]
+  0x58c8a0: LSLS    R2, R3, #0x1D; unsigned __int8 *
+  0x58c8a2: BPL     loc_58C8B2
+  0x58c8a4: MOVS    R3, #0x18
+  0x58c8a6: LDR     R0, [R4,#0x10]; this
+  0x58c8a8: ADDS    R1, R5, #1; unsigned int
+  0x58c8aa: STRB    R3, [R5]
+  0x58c8ac: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c8b0: MOVS    R5, R0
+  0x58c8b2: LDR     R3, [R4,#0x78]
+  0x58c8b4: LSLS    R2, R3, #0x1C; unsigned __int8 *
+  0x58c8b6: BPL     loc_58C8C6
+  0x58c8b8: MOVS    R3, #0x20 ; ' '
+  0x58c8ba: LDR     R0, [R4,#0x14]; this
+  0x58c8bc: ADDS    R1, R5, #1; unsigned __int8 *
+  0x58c8be: STRB    R3, [R5]
+  0x58c8c0: BL      _ZN6google8protobuf2io17CodedOutputStream32WriteVarint32SignExtendedToArrayEiPh; google::protobuf::io::CodedOutputStream::WriteVarint32SignExtendedToArray(int,uchar *)
+  0x58c8c4: MOVS    R5, R0
+  0x58c8c6: LDR     R3, [R4,#0x78]
+  0x58c8c8: LSLS    R2, R3, #0x1B; unsigned __int8 *
+  0x58c8ca: BPL     loc_58C8DA
+  0x58c8cc: MOVS    R3, #0x28 ; '('
+  0x58c8ce: LDR     R0, [R4,#0x18]; this
+  0x58c8d0: ADDS    R1, R5, #1; unsigned int
+  0x58c8d2: STRB    R3, [R5]
+  0x58c8d4: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c8d8: MOVS    R5, R0
+  0x58c8da: LDR     R3, [R4,#0x78]
+  0x58c8dc: LSLS    R2, R3, #0x1A; unsigned __int8 *
+  0x58c8de: BPL     loc_58C8EE
+  0x58c8e0: MOVS    R3, #0x30 ; '0'
+  0x58c8e2: LDR     R0, [R4,#0x1C]; this
+  0x58c8e4: ADDS    R1, R5, #1; unsigned int
+  0x58c8e6: STRB    R3, [R5]
+  0x58c8e8: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c8ec: MOVS    R5, R0
+  0x58c8ee: LDR     R2, [R4,#0x78]; unsigned __int8 *
+  0x58c8f0: MOVS    R3, #0x40 ; '@'
+  0x58c8f2: TST     R2, R3
+  0x58c8f4: BEQ     loc_58C902
+  0x58c8f6: LDR     R0, [R4,#0x20]; this
+  0x58c8f8: ADDS    R1, R5, #1; unsigned int
+  0x58c8fa: STRB    R3, [R5]
+  0x58c8fc: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c900: MOVS    R5, R0
+  0x58c902: LDR     R3, [R4,#0x78]
+  0x58c904: LSLS    R2, R3, #0x18; unsigned __int8 *
+  0x58c906: BPL     loc_58C916
+  0x58c908: MOVS    R3, #0x48 ; 'H'
+  0x58c90a: LDR     R0, [R4,#0x24]; this
+  0x58c90c: ADDS    R1, R5, #1; unsigned int
+  0x58c90e: STRB    R3, [R5]
+  0x58c910: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c914: MOVS    R5, R0
+  0x58c916: LDR     R3, [R4,#0x78]
+  0x58c918: LSLS    R2, R3, #0x17; unsigned __int8 *
+  0x58c91a: BPL     loc_58C92A
+  0x58c91c: MOVS    R3, #0x50 ; 'P'
+  0x58c91e: LDR     R0, [R4,#0x28]; this
+  0x58c920: ADDS    R1, R5, #1; unsigned int
+  0x58c922: STRB    R3, [R5]
+  0x58c924: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c928: MOVS    R5, R0
+  0x58c92a: LDR     R3, [R4,#0x78]
+  0x58c92c: LSLS    R2, R3, #0x16; unsigned __int8 *
+  0x58c92e: BPL     loc_58C93E
+  0x58c930: MOVS    R3, #0x58 ; 'X'
+  0x58c932: LDR     R0, [R4,#0x2C]; this
+  0x58c934: ADDS    R1, R5, #1; unsigned int
+  0x58c936: STRB    R3, [R5]
+  0x58c938: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c93c: MOVS    R5, R0
+  0x58c93e: LDR     R3, [R4,#0x78]
+  0x58c940: LSLS    R2, R3, #0x15; unsigned __int8 *
+  0x58c942: BPL     loc_58C952
+  0x58c944: MOVS    R3, #0x60 ; '`'
+  0x58c946: LDR     R0, [R4,#0x30]; this
+  0x58c948: ADDS    R1, R5, #1; unsigned int
+  0x58c94a: STRB    R3, [R5]
+  0x58c94c: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c950: MOVS    R5, R0
+  0x58c952: LDR     R3, [R4,#0x78]
+  0x58c954: LSLS    R2, R3, #0x14; unsigned __int8 *
+  0x58c956: BPL     loc_58C966
+  0x58c958: MOVS    R3, #0x70 ; 'p'
+  0x58c95a: LDR     R0, [R4,#0x34]; this
+  0x58c95c: ADDS    R1, R5, #1; unsigned __int8 *
+  0x58c95e: STRB    R3, [R5]
+  0x58c960: BL      _ZN6google8protobuf2io17CodedOutputStream32WriteVarint32SignExtendedToArrayEiPh; google::protobuf::io::CodedOutputStream::WriteVarint32SignExtendedToArray(int,uchar *)
+  0x58c964: MOVS    R5, R0
+  0x58c966: LDR     R3, [R4,#0x78]
+  0x58c968: LSLS    R2, R3, #0x13; unsigned __int8 *
+  0x58c96a: BPL     loc_58C97A
+  0x58c96c: MOVS    R3, #0x78 ; 'x'
+  0x58c96e: LDR     R0, [R4,#0x38]; this
+  0x58c970: ADDS    R1, R5, #1; unsigned int
+  0x58c972: STRB    R3, [R5]
+  0x58c974: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c978: MOVS    R5, R0
+  0x58c97a: LDR     R3, [R4,#0x78]
+  0x58c97c: LSLS    R2, R3, #0x12; unsigned __int8 *
+  0x58c97e: BPL     loc_58C992
+  0x58c980: MOVS    R3, #0x80 ; '€'
+  0x58c982: LDR     R0, [R4,#0x3C]; this
+  0x58c984: STRB    R3, [R5]
+  0x58c986: MOVS    R3, #1
+  0x58c988: STRB    R3, [R5,#1]
+  0x58c98a: ADDS    R1, R5, #2; unsigned int
+  0x58c98c: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c990: MOVS    R5, R0
+  0x58c992: LDR     R3, [R4,#0x78]
+  0x58c994: LSLS    R2, R3, #0x11; unsigned __int8 *
+  0x58c996: BPL     loc_58C9AA
+  0x58c998: MOVS    R3, #0x88
+  0x58c99a: LDR     R0, [R4,#0x40]; this
+  0x58c99c: STRB    R3, [R5]
+  0x58c99e: MOVS    R3, #1
+  0x58c9a0: STRB    R3, [R5,#1]
+  0x58c9a2: ADDS    R1, R5, #2; unsigned int
+  0x58c9a4: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c9a8: MOVS    R5, R0
+  0x58c9aa: LDR     R3, [R4,#0x78]
+  0x58c9ac: LSLS    R2, R3, #0x10; unsigned __int8 *
+  0x58c9ae: BPL     loc_58C9C2
+  0x58c9b0: MOVS    R3, #0x90
+  0x58c9b2: LDR     R0, [R4,#0x44]; this
+  0x58c9b4: STRB    R3, [R5]
+  0x58c9b6: MOVS    R3, #1
+  0x58c9b8: STRB    R3, [R5,#1]
+  0x58c9ba: ADDS    R1, R5, #2; unsigned int
+  0x58c9bc: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c9c0: MOVS    R5, R0
+  0x58c9c2: LDR     R3, [R4,#0x78]
+  0x58c9c4: LSLS    R2, R3, #0xF; unsigned __int8 *
+  0x58c9c6: BPL     loc_58C9DA
+  0x58c9c8: MOVS    R3, #0x98
+  0x58c9ca: LDR     R0, [R4,#0x48]; this
+  0x58c9cc: STRB    R3, [R5]
+  0x58c9ce: MOVS    R3, #1
+  0x58c9d0: STRB    R3, [R5,#1]
+  0x58c9d2: ADDS    R1, R5, #2; unsigned int
+  0x58c9d4: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c9d8: MOVS    R5, R0
+  0x58c9da: LDR     R3, [R4,#0x78]
+  0x58c9dc: LSLS    R2, R3, #0xE; unsigned __int8 *
+  0x58c9de: BPL     loc_58C9F2
+  0x58c9e0: MOVS    R3, #0xA0
+  0x58c9e2: LDR     R0, [R4,#0x4C]; this
+  0x58c9e4: STRB    R3, [R5]
+  0x58c9e6: MOVS    R3, #1
+  0x58c9e8: STRB    R3, [R5,#1]
+  0x58c9ea: ADDS    R1, R5, #2; unsigned int
+  0x58c9ec: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58c9f0: MOVS    R5, R0
+  0x58c9f2: LDR     R3, [R4,#0x78]
+  0x58c9f4: LSLS    R2, R3, #0xD; unsigned __int8 *
+  0x58c9f6: BPL     loc_58CA0A
+  0x58c9f8: MOVS    R3, #0xA8
+  0x58c9fa: LDR     R0, [R4,#0x50]; this
+  0x58c9fc: STRB    R3, [R5]
+  0x58c9fe: MOVS    R3, #1
+  0x58ca00: STRB    R3, [R5,#1]
+  0x58ca02: ADDS    R1, R5, #2; unsigned int
+  0x58ca04: BL      _ZN6google8protobuf2io17CodedOutputStream20WriteVarint32ToArrayEjPh; google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(uint,uchar *)
+  0x58ca08: MOVS    R5, R0
+  0x58ca0a: LDR     R3, [R4,#0x78]
+  0x58ca0c: LSLS    R2, R3, #0xC; unsigned __int8 *
+  0x58ca0e: BPL     loc_58CA22
+  0x58ca10: MOVS    R3, #0xB0
+  0x58ca12: LDR     R0, [R4,#0x70]; this
+Flushing buffers, please wait...ok
+Keypatch: configuration is saved to C:\Users\23287\AppData\Roaming\Hex-Rays\IDA Pro\keypatch.cfg
+Unloading IDP module D:\BaiduNetdiskDownload\IDA_Pro_v8.3_Portable123\procs\arm.dll...

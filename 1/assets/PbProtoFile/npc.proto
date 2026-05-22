@@ -1,0 +1,100 @@
+package ISeer20Conf;
+
+
+message npc_t {
+    enum npc_type_t {
+        NPC_TYPE_NORMAL     = 0; // 普通NPC
+        NPC_TYPE_BOSS       = 1; // BOSS NPC
+        NPC_TYPE_VIRTUAL    = 2; // 地图野怪配置的虚拟NPC
+    }
+
+    enum npc_function_type_t {
+        NPC_FUNCTION_TYPE_NORMAL = 0; //普通功能NPC
+        NPC_FUNCTION_TYPE_LOTTERY = 1; //乐透NPC
+        NPC_FUNCTION_TYPE_TRAIN  = 2; //特训NPC
+        NPC_FUNCTION_TYPE_EXCHANGE = 3; //兑换NPC
+        NPC_FUNCTION_TYPE_ADD_QUALITY = 4; //资质增幅仪
+        NPC_FUNCTION_TYPE_MON_IDENTIFY = 5; //精灵鉴定中心
+        NPC_FUNCTION_TYPE_PVP_CHAMPION = 6; //pvp冠军
+        NPC_FUNCTION_TYPE_LEIYI_CHAMPION = 7; //挑战雷伊冠军
+        NPC_FUNCTION_TYPE_FREE_QIECUO = 8; //自由切磋
+        NPC_FUNCTION_TYPE_UNKNOWN_QIECUO = 9; //未知切磋
+    }
+
+    enum map_mon_type_t {
+        MAP_MON_TYPE_NORMAL     = 0;
+        MAP_MON_TYPE_RARE       = 1;
+        MAP_MON_TYPE_SP_RARE    = 2;
+    }
+
+	message btl_attr_t {
+        optional int32 hp = 1;
+		optional int32 atk = 2;
+		optional int32 def = 3;
+		optional int32 sp_atk = 4;
+		optional int32 sp_def = 5;
+		optional int32 spd = 6;
+	}
+	
+	message mon_t {
+		required uint32 id = 1;
+		required uint32 min_level = 2; // 随机等级的下界
+		required uint32 max_level = 3; // 随机等级的上界
+		optional uint32 anger = 4; // 初始怒气值
+        optional bool capturable = 5 [default = true]; //精灵是否可以捕捉
+        optional uint32 captured_lv = 6 [default = 10]; // 该精灵能被捕获的话 等级是多少
+   
+		required btl_attr_t btl_attr = 14;
+		repeated uint32 move_list = 15;
+        repeated uint32 task_list = 16; // 该NPC的哪些任务里可以刷出来这个精灵(不配表示没有任务限制)
+	}
+
+    //打完NPC的物品掉落
+    message task_drop_t {
+        required int32 task_item_id = 1;
+        optional int32 task_item_count = 2 [default = 1];
+        optional int32 drop_rate = 3 [default = 10000];
+        repeated int32 task_list = 4; //哪些任务会掉落这个物品
+    }
+
+    //基本信息
+	required int32 id = 1;  // NPC ID
+	required bytes name = 2; // NPC Name
+    optional npc_type_t type = 3 [default = NPC_TYPE_NORMAL]; //NPC TYPE
+    optional npc_function_type_t func_type = 4 [default = NPC_FUNCTION_TYPE_NORMAL];
+
+    //挑战条件
+    optional int32 pre_npc_id = 5; // 挑战该NPC(BOSS)时需挑战的前置NPC(BOSS)
+    optional uint32 max_mon_lv_require = 6; // 挑战时玩家要有的最大精灵等级
+
+
+    //挑战成功后的产出
+	optional uint32 yield_exp = 7;  // 产出经验
+	optional uint32 yield_ev = 8;   // 产出学习力
+
+    //携带的精灵信息
+	repeated mon_t mon = 12;
+    
+    //野怪NPC 特殊野怪NPC 稀有特殊野怪NPC 需要配置一下字段
+    optional bool normal_mon_npc = 13 [default = true]; //是否普通野怪NPC
+    optional uint32 rate = 14 [default = 10000]; // 对于特殊和稀有怪 其刷出来的概率
+    optional string begin_date = 15 [default = "0000-01-01"]; //特殊稀有怪刷出的时间段限制日期起始
+    optional string end_date = 16 [default = "0000-01-01"]; //…………日期终止
+    optional string begin_time = 17 [default = "00:00:00"]; //小时分钟起始
+    optional string end_time = 18 [default = "00:00:00"]; //小时分钟终止
+
+    optional int32 required_task = 19 [default = 0]; //挑战该NPC的任务要求
+
+    //任务掉落
+    repeated task_drop_t drop_list = 20;
+
+    //客户端用到的信息
+	optional uint32 avatar = 30; // client
+	optional int32 dialogue_id = 31; // client(默认对话id)
+    optional bool reverse = 32 [default = false]; // NPC形象是否翻转
+    optional int32 portrait = 33 ;// NPC头象资源ID
+}
+
+message top_config_npc_t {
+	repeated npc_t npc = 1;
+}

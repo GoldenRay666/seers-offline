@@ -1,0 +1,44 @@
+exchange_code: {
+    code_type: 1
+    type_name: "勇士召集令"
+    get_way: "2013年7月1日前注册《赛尔号-异星精灵传说》账号的玩家均可获得"
+    use_way: "输入星际勇士召集令面板中的兑换码即可"
+    effective_date: "2013.6.1-2013.10.30"
+    title: "勇士召集令" 
+    show_icon: "code_exchange_6" 
+    description: "普通用户可领取“战神联盟成长礼包”，充值用户将额外获得稀有精灵阿布！"
+    player_exg_cnt: 1
+}
+exchange_code: {
+    code_type: 3
+    type_name: "雷神带你游"
+    get_way: "参加“雷神带你十一游东南亚”即可获得兑换码"
+    use_way: ""
+    effective_date: "2013.8.1-2013.10.30"
+    title: "东南亚之旅" 
+    show_icon: "code_exchange_2" 
+    description: "参加“雷神带你十一游东南亚”抽奖活动即可获得兑换码兑换奖品。"
+    player_exg_cnt: 1
+}
+exchange_code: {
+    code_type: 10000
+    type_name: "联通卡兑换"
+    get_way: "在联通营业厅内免费获得礼品卡即可获得兑换码（仅限浙江联通）"
+    use_way: ""
+    effective_date: "2013.9.1-2013.10.30"
+    title: "联通卡兑换" 
+    show_icon: "code_exchange_4" 
+    description: "可兑换大果实*10"
+    player_exg_cnt: 1
+}
+exchange_code: {
+    code_type: 2
+    type_name: "玩具兑换"
+    get_way: "购买灵动赛尔号玩具，即可获得兑换码"
+    use_way: "输入玩具上的兑换码即可"
+    effective_date: "2013.6.1-2013.7.30"
+    title: "玩具兑换" 
+    show_icon: "code_exchange_4" 
+    description: "可兑换大果实*10、性格重置药*2、解锁芯片*6、仓库拓展卡*5"
+    player_exg_cnt: 1
+}

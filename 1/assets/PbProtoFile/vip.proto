@@ -1,0 +1,12 @@
+package ISeer20Conf;
+
+message vip_privilege_t {
+    required int32  type = 1;  //特权ID
+    required bytes  name = 2;         //特权名字
+    required bytes  description = 3;  //特权描述
+    optional bytes  vip_info = 4; // vip参数
+}
+
+message top_config_vip_t {
+    repeated vip_privilege_t privilege = 1;
+}

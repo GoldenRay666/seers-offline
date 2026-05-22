@@ -1,0 +1,9 @@
+package ISeer20Conf;
+message news_t {
+	required int32 id      = 1;
+    required bytes title   = 2; 
+    required bytes content = 3;
+}
+message top_config_news_t {
+    repeated news_t news = 2;
+}

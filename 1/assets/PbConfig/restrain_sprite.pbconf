@@ -1,0 +1,154 @@
+restrain_sprite {
+   attributes_id: 1
+    recommendation: {
+        mon_id: 93
+        mon_egg_id: 25034
+        mon_NumbersID: 41
+    }
+    recommendation: {
+        mon_id: 178
+        mon_egg_id: 25031
+        mon_NumbersID: 88
+    }
+}
+
+restrain_sprite {
+    attributes_id: 2
+    recommendation: {
+        mon_id: 205
+        mon_egg_id: 25318
+        mon_NumbersID: 101
+    }
+}
+
+restrain_sprite {
+    attributes_id: 3
+    recommendation: {
+        mon_id: 209
+        mon_egg_id: 25317
+        mon_NumbersID: 103
+    }
+}
+
+restrain_sprite {
+    attributes_id: 4
+    recommendation: {
+        mon_id: 76
+        mon_egg_id: 25046
+        mon_NumbersID: 31
+    }
+}
+
+restrain_sprite {
+    attributes_id: 5
+    recommendation: {
+        mon_id: 92
+        mon_egg_id: 25033
+        mon_NumbersID: 40
+    }
+}
+
+restrain_sprite {
+    attributes_id: 6
+    recommendation: {
+        mon_id: 99
+        mon_egg_id: 25058
+        mon_NumbersID: 47
+    }
+}
+
+restrain_sprite {
+    attributes_id: 7
+    recommendation: {
+        mon_id: 381
+        mon_egg_id: 25324
+        mon_NumbersID: 191
+    }
+}
+
+restrain_sprite {
+    attributes_id: 8
+    recommendation: {
+        mon_id: 150
+        mon_egg_id: 25037
+        mon_NumbersID: 75
+    }
+    recommendation: {
+        mon_id: 93
+        mon_egg_id: 25034
+        mon_NumbersID: 41
+    }
+}
+
+restrain_sprite {
+    attributes_id: 9
+    recommendation: {
+        mon_id: 405
+        mon_egg_id: 25321
+        mon_NumbersID: 204
+    }
+}
+
+restrain_sprite {
+    attributes_id: 10
+    recommendation: {
+        mon_id: 94
+        mon_egg_id: 25032
+        mon_NumbersID: 42
+    }
+}
+
+restrain_sprite {
+    attributes_id: 11
+    recommendation: {
+        mon_id: 223
+        mon_egg_id: 25054
+        mon_NumbersID: 110
+    }
+}
+
+restrain_sprite {
+    attributes_id: 12
+    recommendation: {
+        mon_id: 215
+        mon_egg_id: 25055
+        mon_NumbersID: 107
+    }
+}
+
+restrain_sprite {
+    attributes_id: 13
+    recommendation: {
+        mon_id: 95
+        mon_egg_id: 25035
+        mon_NumbersID: 43
+    }
+}
+
+restrain_sprite {
+    attributes_id: 14
+    recommendation: {
+        mon_id: 1002
+        mon_egg_id: 25062
+        mon_NumbersID: 1000
+    }
+}
+
+restrain_sprite {
+    attributes_id: 15
+    recommendation: {
+        mon_id: 261
+        mon_egg_id: 25053
+        mon_NumbersID: 127
+    }
+}
+
+restrain_sprite {
+    attributes_id: 16
+    recommendation: {
+        mon_id: 82
+        mon_egg_id: 25043
+        mon_NumbersID: 34
+    }
+}
+

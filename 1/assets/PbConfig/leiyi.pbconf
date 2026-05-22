@@ -1,0 +1,164 @@
+guwu: {
+	guwu_times: 1
+	coins: 500
+	gcoins: 0
+	guwu: 0.05
+}
+
+guwu: {
+	guwu_times: 2
+	coins: 0
+	gcoins: 2
+	guwu: 0.15
+}
+
+guwu: {
+	guwu_times: 3
+	coins: 0
+	gcoins: 2
+	guwu: 0.25
+}
+
+guwu: {
+	guwu_times: 4
+	coins: 0
+	gcoins: 5
+	guwu: 0.5
+}
+
+guwu: {
+	guwu_times: 5
+	coins: 0
+	gcoins: 5
+	guwu: 0.75
+}
+
+guwu: {
+	guwu_times: 6
+	coins: 0
+	gcoins: 10
+	guwu: 1.1
+}
+
+guwu: {
+	guwu_times: 7
+	coins: 0
+	gcoins: 50
+	guwu: 1.5
+}
+
+guwu: {
+	guwu_times: 8
+	coins: 0
+	gcoins: 100
+	guwu: 2.0
+}
+
+guwu: {
+	guwu_times: 9
+	coins: 0
+	gcoins: 150
+	guwu: 2.5
+}
+
+guwu: {
+	guwu_times: 10
+	coins: 0
+	gcoins: 200
+	guwu: 3.0
+}
+
+cd: {
+	coins: 0
+	gcoins: 2
+}
+
+hp: {
+    min_hp: 75000
+    max_hp: 100000
+}
+
+time: {
+    clear_data_time: "09:30"
+    start_time: "09:45"
+    end_time: "10:00"
+}
+
+time: {
+    clear_data_time: "10:15"
+    start_time: "10:30"
+    end_time: "10:45"
+}
+
+time: {
+    clear_data_time: "11:00"
+    start_time: "11:15"
+    end_time: "11:30"
+}
+
+time: {
+    clear_data_time: "12:45"
+    start_time: "13:00"
+    end_time: "13:15"
+}
+
+time: {
+    clear_data_time: "13:30"
+    start_time: "13:45"
+    end_time: "14:00"
+}
+
+time: {
+    clear_data_time: "14:15"
+    start_time: "14:30"
+    end_time: "14:45"
+}
+
+time: {
+    clear_data_time: "15:00"
+    start_time: "15:15"
+    end_time: "15:30"
+}
+
+time: {
+    clear_data_time: "15:45"
+    start_time: "16:00"
+    end_time: "16:15"
+}
+
+time: {
+    clear_data_time: "16:30"
+    start_time: "16:45"
+    end_time: "17:00"
+}
+
+time: {
+    clear_data_time: "17:15"
+    start_time: "17:30"
+    end_time: "17:45"
+}
+
+time: {
+    clear_data_time: "19:30"
+    start_time: "20:15"
+    end_time: "20:30"
+}
+
+time: {
+    clear_data_time: "20:45"
+    start_time: "21:00"
+    end_time: "21:15"
+}
+
+time: {
+    clear_data_time: "21:30"
+    start_time: "21:45"
+    end_time: "22:00"
+}
+
+notice: {
+    almost_start: "挑战雷伊活动即将开始，大家抓紧时间准备啊！"
+    start: "挑战雷伊活动开始！"
+    end: "今天的挑战活动结束啦，大家明天要加油哦！"
+    dead: "恭喜xxx击杀雷伊，他将获得10000赛尔豆！"
+}

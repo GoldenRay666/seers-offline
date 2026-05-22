@@ -1,0 +1,101 @@
+# ── IDA Pro / Ghidra databases (multi-GB) ──
+*.i64
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+*.idb
+ghidra_project/
+ghidra_11.4.2_PUBLIC/
+
+# ── Android NDK / SDK downloads ──
+xndk/
+ndk.zip
+
+# ── APK files (200MB+ each) ──
+*.apk
+*.apk.idsig
+
+# ── Frida binaries (50MB+ each) ──
+frida-server*
+frida-gadget*.so
+frida-gadget*.so.xz
+
+# ── JAR tools (can re-download) ──
+apktool.jar
+apktool_*.jar
+uber-apk-signer*.jar
+
+# ── Python virtualenv / packages ──
+frida_lib/
+*.pyc
+__pycache__/
+
+# ── Logs / temporary output ──
+*.log
+*.log.*
+*.log.new
+mock_server.js.regression_*
+server.log
+frida_run.log
+frida_emu.log
+logcat.log
+scan_log.txt
+fix_log.txt
+work_log.txt
+spawn_log.txt
+spawn2_log.txt
+spawn3_log.txt
+frida_attach_log.txt
+daemon_log.txt
+daemon2_stdout.txt
+frida_output.txt
+
+# ── Screenshots ──
+*.png
+
+# ── Build artifacts ──
+build/
+*.keystore
+
+# ── IDE / Claude Code ──
+.claude/
+.idea/
+.vscode/
+.vs/
+
+# ── OS junk ──
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# ── Other APK build variants ──
+1_offline/
+1.jadx
+1_fixed.apk
+1_frida.apk
+1_offline.apk
+1_offline_clean.apk
+1_offline_orig_so.apk
+new/
+new2/
+new2_offline.apk
+new_offline.apk
+orig/
+orig_aligned.apk
+orig_offline.apk
+orig_test.apk
+orig_unsigned.apk
+original apk/
+
+# ── Old .so reference copy ──
+new_orig.so
+
+# ── Miscellaneous ──
+cmd.txt
+apktool.bat
+idafree_96-78F2-D8A0-01.hexlic
+
+# ── Git ──
+.git/

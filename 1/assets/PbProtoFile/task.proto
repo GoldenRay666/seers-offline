@@ -1,0 +1,147 @@
+package ISeer20Conf;
+
+enum task_type_t {
+    TASK_TYPE_BEGIN     = 0; //起始
+    TASK_TYPE_MAIN      = 1; //主线
+    TASK_TYPE_BRANCH    = 2; //支线
+    TASK_TYPE_DAILY     = 3; //日常
+    TASK_TYPE_ONCE      = 4; //一次性任务
+    TASK_TYPE_END       = 5; //结束
+};
+
+enum task_step_type_t {
+    
+    TASK_STEP_TYPE_BEGIN                        = 0;
+    //点击精灵背包 逻辑步骤 无KEY VAL=1表示点击过 由客户端提交设置是否点击
+    TASK_STEP_TYPE_CLICK_MONSTER_BAG            = 1;
+    //挑战精灵 累积步骤 KEY为对方精灵ID 回合限制  VAL为次数要求
+    TASK_STEP_TYPE_CHALLENGE_MONSTER            = 2;
+    //购买物品 累积步骤 KEY为物品ID  VAL为次数要求
+    TASK_STEP_TYPE_BUY_ITEM                     = 3;
+    //使用物品 累积步骤 KEY为物品ID VAL为次数要求
+    TASK_STEP_TYPE_USE_ITEM                     = 4;
+    //捕捉精灵 累积步骤 KEY为精灵组ID 等级  VAL为捕捉数量要求
+    TASK_STEP_TYPE_CAPTURE_MONSTER              = 5;
+    //挖矿 累积步骤 无KEY VAL为挖矿次数要求
+    TASK_STEP_TYPE_MINING                       = 6;
+    //精灵等级达到 逻辑步骤 KEY为级别 VAL=1表示达到了(任意精灵达到等级KEY即可)
+    TASK_STEP_TYPE_MONSTER_LEVEL_REACH          = 7;
+    //参与特训 累积步骤 无KEY VAL为特训次数要求
+    TASK_STEP_TYPE_TRAINING                     = 8;
+    //参与精灵王之战 累积步骤 无KEY VAL为参与次数要求
+    TASK_STEP_TYPE_KING_OF_MONSTER              = 9;
+    //接取每日任务 累积步骤 无KEY VAL为接取次数要求
+    TASK_STEP_TYPE_TAKE_EVERYDAY_TASK           = 10;
+    //与NPC对话 逻辑步骤 KEY为NPCID VAL=1表示对话完成
+    TASK_STEP_TYPE_TALK_TO_NPC                  = 11;
+    //打败精灵 累积步骤 KEY为目标精灵ID 回合限制 VAL为打败次数要求
+    TASK_STEP_TYPE_DEFEAT_MONSTER               = 12;
+    //使用特定精灵打败目标精灵 累积步骤 KEY为精灵组ID 目标精灵ID VAL为打败次数要求
+    TASK_STEP_TYPE_WIN_WITH_MONSTER_FAMILY      = 13;//ABANDON 合并到12
+    //特定精灵达到指定等级 逻辑步骤 KEY为精灵组ID(不为0) 级别 VAL=1标示达到
+    TASK_STEP_TYPE_SPECIAL_MONSTER_LEVEL_REACH  = 14;
+    //打怪收集虚拟道具 累积步骤 KEY为怪ID 物品ID VAL为收集的数量要求
+    TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION      = 15;
+    //点击经验分配器 逻辑步骤 无KEY VAL=1表示点击过
+    TASK_STEP_TYPE_CLICK_EXP_ALLOCATOR          = 16;
+    //使用必杀技 逻辑步骤 无KEY VAL=1表示使用过
+    TASK_STEP_TYPE_USE_UNIQUE_MOVE              = 17;
+    //收集实体道具 累积步骤 KEY为道具ID VAL为数量要求
+    TASK_STEP_TYPE_ACTUAL_ITEM_COLLECTION       = 18;
+    //精灵王之战获胜 累积步骤 无KEY VAL为获胜次数要求
+    TASK_STEP_TYPE_WIN_KING_OF_MONSTER          = 19;
+    //挑战NPC 逻辑步骤 KEY为NPCID  VAL=1表示挑战过
+    TASK_STEP_TYPE_CHALLENGE_NPC                = 20;
+    //配置战斗 TODO(不知什么意思,没有对应的任务) NO QUEST
+    TASK_STEP_TYPE_BATTLE_CONFIG                = 21;
+    //勇者之塔 逻辑步骤 KEY为层数 VAL=1表示达到这么多层
+    TASK_STEP_TYPE_TOWER_OF_HERO                = 22;
+    //捕捉关卡 逻辑步骤 KEY为关卡数VAL=1表示达到这么多关
+    TASK_STEP_TYPE_CAPTURE_PROCESS              = 23;
+    //挑战SPT 逻辑步骤 KEY为 SPT BOSS ID VAL=1表示挑战过
+    TASK_STEP_TYPE_CHALLENGE_SPT                = 24;
+    //答题 TODO(不知道什么意思,没有对应的任务) NO QUEST
+    TASK_STEP_TYPE_ANSWER_QUESTIONS             = 25;
+    //挑战NPC 3V3 逻辑步骤 KEY为NPCID VAL=1表示已经以3V3挑战过NPC了
+    TASK_STEP_TYPE_CHALLENGE_NPC_3V3            = 26;
+    //挑战NPC 三局两胜 逻辑步骤 KEY为NPCID
+    TASK_STEP_TYPE_CHALLENGE_NPC_2IN3           = 27;
+    //使用特定精灵战斗 KEY为精灵组ID 目标精灵组ID VAL为战斗次数要求
+    //ABANDON已经合并到2
+    TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY   = 28;
+    //关闭陀螺按钮
+    TASK_STEP_TYPE_CLOSE_TOP_CONNECTION         = 29;
+    //设置精灵首发
+    TASK_STEP_TYPE_SET_HEAD_MON                 = 30;
+    //挑战NPC(不要求战胜)
+    TASK_STEP_TYPE_BATTLE_WITH_NPC              = 31;
+    TASK_STEP_TYPE_END                          = 32;
+};
+
+message task_t {
+    //步骤定义
+    message step_t {
+        //步骤在该任务中的序号(从1开始按顺序往下排,为了防止步骤的顺序配错,故用序号标识)
+        required uint32 seq = 1;
+        //步骤类型1-28种,见excel表.(点击按钮、挑战、购买、使用、捕捉、收集...)
+        required task_step_type_t step_type = 2;
+        //完成步骤的限定 .比如在1号地图打死2级的3号NPC 可配置3项: 1 2 3
+        repeated uint32 key = 3;
+        //完成步骤的条件,如果在上述限定下要打死4次.则value的值配置成 4 
+        required uint32 value = 4;
+        //步骤目标描述
+        required bytes target = 5;
+        //步骤目标描述的信息
+        optional bytes info = 6;
+        //链接跳转信息
+        repeated uint32 link = 7;
+        //前置步骤列表(值必须为该任务中的其他步骤的seq的值)
+        repeated uint32 pre_step = 8;
+        //前置步骤是否必须全部完成 还是可以只完成其中一个(以免以后有类似:完成A或B都可以进行C的需求)
+        optional uint32 is_and = 9 [default = 1];
+        
+    }
+    
+    //------------------------------基本配置
+    //任务ID
+    required uint32 id = 1;
+    //任务名称
+    required bytes name = 2;
+    //任务信息
+    required bytes info = 3;
+    //任务类型 1:主线 2:支线 3:日常
+    required task_type_t task_type = 4;
+    //等级需求
+    required uint32 need_level = 5;
+    //接取任务的地图ID
+    required uint32 obtain_map_id = 6;
+    //提交任务的地图ID
+    required uint32 commit_map_id = 7;
+    //接取任务的NPC ID
+    required uint32 obtain_npc_id = 8;
+    //提交任务的NPC ID
+    required uint32 commit_npc_id = 9;
+    //接取任务时的对话ID
+    required uint32 obtain_dialog = 10;
+    //处理任务时的对话ID
+    required uint32 progress_dialog = 11;
+    //完成任务时的对话ID
+    required uint32 finish_dialog = 12;
+    //前置任务列表
+    repeated uint32 pre_task = 13;
+    //前置任务是否必须全部完成 还是可以只完成其中一个(以免以后有类似:完成A或B都可以进行C的需求)
+    optional uint32 is_and = 14 [default = 1];
+
+    //-------------------------步骤配置
+    repeated step_t step = 15;
+
+    //-------------------------奖励配置 默认没有奖励
+    optional uint32 prize_id = 16 [default = 0];
+
+    //-------------------------任务对应的氏族ID
+    optional uint32 area_id = 17 [default = 0];
+}
+
+message top_config_task_t {
+    repeated task_t task = 1;
+}

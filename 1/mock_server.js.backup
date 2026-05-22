@@ -1,0 +1,694 @@
+/**
+ * Local mock server for 赛尔号战神联盟 (Seer Alliance) offline mode.
+ * Run: node mock_server.js
+ */
+"use strict";
+
+const http = require('http');
+const net = require('net');
+const fs = require('fs');
+const path = require('path');
+
+// =============================================================================
+// Protobuf helpers (minimal implementation for the game protocol)
+// =============================================================================
+
+function encodeVarint(value) {
+    const result = [];
+    while (value > 0x7f) {
+        result.push((value & 0x7f) | 0x80);
+        value >>>= 7;
+    }
+    result.push(value & 0x7f);
+    return Buffer.from(result);
+}
+
+function encodeTag(fieldNumber, wireType) {
+    return encodeVarint((fieldNumber << 3) | wireType);
+}
+
+function encodeLengthDelimited(fieldNumber, data) {
+    const tag = encodeTag(fieldNumber, 2);
+    const len = encodeVarint(data.length);
+    return Buffer.concat([tag, len, data]);
+}
+
+function encodeUint32(fieldNumber, value) {
+    return Buffer.concat([encodeTag(fieldNumber, 0), encodeVarint(value)]);
+}
+
+function encodeInt32(fieldNumber, value) {
+    // int32 uses the same varint encoding as uint32
+    return encodeUint32(fieldNumber, value);
+}
+
+function encodeString(fieldNumber, s) {
+    return encodeLengthDelimited(fieldNumber, Buffer.from(s, 'utf-8'));
+}
+
+function encodeMessage(fieldNumber, msgData) {
+    return encodeLengthDelimited(fieldNumber, msgData);
+}
+
+// =============================================================================
+// Message builders (based on proto definitions)
+// =============================================================================
+
+// Remember created roles: server_id -> [{role_tm, nick, gender}]
+let createdRoles = {};
+
+function buildServerListResponse() {
+    // CORRECT field numbers from protobuf descriptor:
+    // cli_get_server_list_out:
+    //   field 1: server_list (repeated message)
+    //   field 2: login_ip (uint32)
+    //   field 3: login_port (uint32)
+    // server_info_t:
+    //   field 1: server_id (uint32)
+    //   field 2: server_name (string)
+    //   field 3: server_status (uint32)
+
+    // Build server_info_t for one server
+    const serverInfo = Buffer.concat([
+        encodeUint32(1, 1),              // server_id = 1
+        encodeString(2, "Offline Server"), // server_name
+        encodeUint32(3, 1),              // server_status = 1 (normal)
+    ]);
+
+    // IP "127.0.0.1" as uint32 in big-endian (network byte order)
+    // 127.0.0.1 = 0x7F000001 = 2130706433
+    const ipAsUint32 = (127 << 24) | (0 << 16) | (0 << 8) | 1; // = 2130706433
+
+    // Build top-level message: cli_get_server_list_out
+    return Buffer.concat([
+        encodeMessage(1, serverInfo),     // server_list (field 1)
+        encodeUint32(2, ipAsUint32),      // login_ip as uint32 (field 2)
+        encodeUint32(3, 8002),            // login_port (field 3)
+    ]);
+}
+
+function buildCheckSessionResponse() {
+    // cli_check_session_out has ONLY one field:
+    //   field 1: server_role_list (repeated server_role_t)
+    // server_role_t:
+    //   field 1: server_info (server_info_t message)
+    //   field 2: role_info (optional - only if role exists)
+    //
+    // IMPORTANT: return NO role info so game always goes through create_role flow.
+    // Returning role info on reconnection causes game to expect server-pushed data.
+
+    const serverInfo = Buffer.concat([
+        encodeUint32(1, 1),              // server_id = 1
+        encodeUint32(2, 0x7F000001),     // server_ip = 127.0.0.1 as uint32
+        encodeUint32(3, 8002),           // server_port
+        encodeUint32(4, 0),              // server_type = 0
+        encodeUint32(5, 100),            // total_players_cnt
+        encodeUint32(6, 10),             // vip_players_cnt
+        encodeUint32(7, 1),              // server_status = 1
+        encodeString(8, "Offline Server"),// server_name
+    ]);
+
+    // Only server_info, no role_info — forces game into create_role path
+    const serverRole = encodeMessage(1, serverInfo);
+    return encodeMessage(1, serverRole);
+}
+
+function buildLoginResponse() {
+    // login_out:
+    //   field 1: basic (player_basic_info_t)
+    //   field 2: switch_info (functional_switch_info_t)
+    //   field 3: sys_cur_time (uint32)
+    //   field 4: can_award_energy (uint32?)
+    //
+    // player_basic_info_t fields (verified from IDA and Python mock):
+    const now = Math.floor(Date.now() / 1000);
+    const roles = createdRoles[1] || [];
+    const lastRole = roles.length > 0 ? roles[roles.length - 1] : null;
+    const basicInfo = Buffer.concat([
+        encodeString(1, lastRole ? lastRole.nick : "Player"),  // nick
+        encodeUint32(2, lastRole ? lastRole.role_tm : now),    // role_tm
+        encodeUint32(4, now - 60),       // last_logout_tm
+        encodeUint32(5, 1),              // level
+        encodeUint32(6, 0),              // exp
+        encodeUint32(7, lastRole ? lastRole.gender : 1),  // gender
+        encodeUint32(8, 1000),           // gcoin
+        encodeUint32(9, 10000),          // coin
+        encodeUint32(10, 0),             // vip_level
+        encodeUint32(11, 100),           // energy (体力)
+        encodeUint32(12, 200),           // max_energy
+        encodeUint32(13, 100),           // action (行动力)
+        encodeUint32(14, 200),           // max_action
+    ]);
+
+    // functional_switch_info_t - enable all features (field 1-16)
+    const switchInfo = Buffer.concat([
+        encodeUint32(1, 1),   // mail
+        encodeUint32(2, 1),   // shopping
+        encodeUint32(3, 1),   // arena
+        encodeUint32(4, 1),   // hero union
+        encodeUint32(5, 1),   // lottery
+        encodeUint32(6, 1),   // train
+        encodeUint32(7, 1),   // ev alloc
+        encodeUint32(8, 1),   // qa
+        encodeUint32(9, 1),   // activity
+    ]);
+
+    return Buffer.concat([
+        encodeMessage(1, basicInfo),     // basic
+        encodeMessage(2, switchInfo),    // switch_info
+        encodeUint32(3, now),            // sys_cur_time
+        encodeUint32(4, 0),              // can_award_energy
+    ]);
+}
+
+function buildCreateRoleResponse(fields) {
+    const nick = fields[2] || "Player";
+    const gender = fields[3] || 1;
+    const serverId = fields[1] || 1;
+    const now = Math.floor(Date.now() / 1000);
+
+    // Save the created role
+    if (!createdRoles[serverId]) createdRoles[serverId] = [];
+    createdRoles[serverId].push({role_tm: now, nick: nick, gender: gender});
+    console.log('[ROLE] Created role:', nick, 'on server', serverId, 'role_tm:', now);
+    console.log('[ROLE] All roles:', JSON.stringify(createdRoles));
+
+    // Try minimal response: just result code = 0 (success)
+    return encodeUint32(1, 0);
+}
+
+function buildPlayerInfoResponse() {
+    const now = Math.floor(Date.now() / 1000);
+    const roles = createdRoles[1] || [];
+    const lastRole = roles.length > 0 ? roles[roles.length - 1] : null;
+    // cli_get_player_info_out:
+    //   field 1: player_info (player_basic_info_t or similar)
+    const playerInfo = Buffer.concat([
+        encodeString(1, lastRole ? lastRole.nick : "Player"),
+        encodeUint32(2, lastRole ? lastRole.role_tm : now),
+        encodeUint32(5, 1),     // level
+        encodeUint32(7, lastRole ? lastRole.gender : 1),  // gender
+        encodeUint32(8, 1000),  // gcoin
+        encodeUint32(9, 10000), // coin
+        encodeUint32(11, 100),  // energy
+        encodeUint32(12, 200),  // max_energy
+    ]);
+    return encodeMessage(1, playerInfo);
+}
+
+function buildRandomNickResponse() {
+    // cli_lookup_random_nick_out:
+    //   field 1: nick (string) — repeated
+    const nicks = ["赛尔勇士", "星辰使者", "雷电先锋", "暗影猎手"];
+    let result = Buffer.alloc(0);
+    for (const nick of nicks) {
+        result = Buffer.concat([result, encodeString(1, nick)]);
+    }
+    return result;
+}
+
+function hexDump(data) {
+    for (let i = 0; i < data.length; i += 16) {
+        const hex = Array.from(data.slice(i, i + 16))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join(' ');
+        const ascii = Array.from(data.slice(i, i + 16))
+            .map(b => (b >= 32 && b < 127) ? String.fromCharCode(b) : '.')
+            .join('');
+        console.log(`  ${i.toString(16).padStart(4, '0')}: ${hex.padEnd(48, ' ')} ${ascii}`);
+    }
+}
+
+// =============================================================================
+// HTTP Server (handles login and server list requests)
+// =============================================================================
+
+const HTTP_PORT = 8000;
+
+const httpServer = http.createServer((req, res) => {
+    const url = req.url;
+    const timestamp = new Date().toISOString().split('T')[1].slice(0, 12);
+    console.log(`[HTTP ${timestamp}] ${req.method} ${url}`);
+
+    let body = Buffer.alloc(0);
+    req.on('data', chunk => { body = Buffer.concat([body, chunk]); });
+    req.on('end', () => {
+        if (body.length > 0) {
+            console.log(`[HTTP] Body: ${body.length} bytes`);
+        }
+
+        if (url.includes('/iseer2.fcgi')) {
+            // JSON snake_case - confirmed to work for displaying server selection screen
+            const data = {
+                online_list: [{
+                    online_id: 1,
+                    online_name: "Offline Server",
+                    online_status: 1
+                }],
+                login_ip: "127.0.0.1",
+                login_port: 8002
+            };
+            const text = JSON.stringify(data);
+            const response = Buffer.from(text, 'utf-8');
+            res.writeHead(200, {
+                'Content-Type': 'text/plain; charset=utf-8',
+                'Content-Length': response.length,
+                'Access-Control-Allow-Origin': '*',
+            });
+            res.end(response);
+            console.log(`[HTTP] Sent JSON (${response.length} bytes):`);
+            console.log(text);
+        } else {
+            // For ALL other requests, return empty 200 to prevent any network errors
+            console.log(`[HTTP] Generic 200 for: ${url}`);
+            res.writeHead(200, {
+                'Content-Type': 'application/octet-stream',
+                'Access-Control-Allow-Origin': '*',
+            });
+            res.end('');
+        }
+    });
+});
+
+httpServer.listen(HTTP_PORT, '0.0.0.0', () => {
+    console.log(`[HTTP] Mock HTTP server running on 0.0.0.0:${HTTP_PORT}`);
+});
+
+function pushServerMsg(socket, cmd, body, f3, f4, f5) {
+    if (!socket._pushSeq) socket._pushSeq = 1000;
+    socket._pushSeq++;
+    const headerProto = Buffer.concat([
+        encodeString(1, cmd),
+        encodeUint32(2, socket._pushSeq),
+        encodeUint32(3, f3 || 1),
+        encodeUint32(4, f4 || 0),
+        encodeUint32(5, f5 || 0),
+    ]);
+    const headerLen = 4 + headerProto.length;
+    const totalLen = 8 + headerProto.length + body.length;
+    const packet = Buffer.alloc(totalLen);
+    packet.writeUInt32BE(totalLen, 0);
+    packet.writeUInt32BE(headerLen, 4);
+    headerProto.copy(packet, 8);
+    body.copy(packet, 8 + headerProto.length);
+    socket.write(packet);
+    console.log(`[TCP:${TCP_PORT}] Pushed ${cmd} (${packet.length} bytes)`);
+}
+
+// Push initialization messages after login
+function pushInitMessages(socket, f3, f4, f5) {
+    socket._initMsgCount = (socket._initMsgCount || 0);
+    const now = Math.floor(Date.now() / 1000);
+    // Messages to push with their bodies
+    const initMessages = [
+        { cmd: 'ISeer20CSProto.cli_notify_item_bag_updates_out', body: Buffer.alloc(0) },
+        { cmd: 'ISeer20CSProto.cli_get_item_out', body: Buffer.from([0x0a, 0x00]) },
+        { cmd: 'ISeer20CSProto.cli_get_bag_mon_out', body: Buffer.from([0x0a, 0x00]) },
+        { cmd: 'ISeer20CSProto.cli_get_player_info_out', body: buildPlayerInfoResponse() },
+        { cmd: 'ISeer20CSProto.cli_get_server_time_out', body: encodeUint32(1, now) },
+        { cmd: 'ISeer20CSProto.cli_get_friend_list_out', body: Buffer.from([0x0a, 0x00]) },
+        { cmd: 'ISeer20CSProto.cli_get_mail_list_out', body: Buffer.from([0x0a, 0x00]) },
+        { cmd: 'ISeer20CSProto.cli_get_activity_list_out', body: Buffer.from([0x0a, 0x00]) },
+    ];
+    for (const msg of initMessages) {
+        socket._initMsgCount++;
+        const headerProto = Buffer.concat([
+            encodeString(1, msg.cmd),
+            encodeUint32(2, socket._initMsgCount),
+            encodeUint32(3, f3),
+            encodeUint32(4, f4),
+            encodeUint32(5, f5),
+        ]);
+        const headerLen = 4 + headerProto.length;
+        const totalLen = 8 + headerProto.length + msg.body.length;
+        const packet = Buffer.alloc(totalLen);
+        packet.writeUInt32BE(totalLen, 0);
+        packet.writeUInt32BE(headerLen, 4);
+        headerProto.copy(packet, 8);
+        msg.body.copy(packet, 8 + headerProto.length);
+        socket.write(packet);
+    }
+    console.log(`[TCP] Pushed ${initMessages.length} init messages after login`);
+}
+
+// =============================================================================
+// TCP Game Server
+// =============================================================================
+
+const TCP_PORT = 8002;
+
+function handleGameClient(socket) {
+    const addr = `${socket.remoteAddress}:${socket.remotePort}`;
+    console.log(`[TCP:${TCP_PORT}] Client connected from ${addr}`);
+
+    let buffer = Buffer.alloc(0);
+
+    socket.on('data', (data) => {
+        console.log(`[TCP:${TCP_PORT}] Raw data event: ${data.length} bytes`);
+        hexDump(data.slice(0, Math.min(data.length, 64)));
+        buffer = Buffer.concat([buffer, data]);
+
+        // Game uses 4-byte LE uint32 length prefix
+        while (buffer.length >= 4) {
+            const totalLen = buffer.readUInt32BE(0);  // BE total length (includes 4-byte prefix)
+            console.log(`[TCP:${TCP_PORT}] Total length: ${totalLen}, buffer has ${buffer.length} bytes`);
+
+            if (totalLen > buffer.length) {
+                console.log(`[TCP:${TCP_PORT}] Need ${totalLen} bytes, have ${buffer.length} — waiting`);
+                return;
+            }
+
+            const dataLen = totalLen - 4;
+            const msgData = buffer.slice(4, 4 + dataLen);
+            buffer = buffer.slice(totalLen);
+            const remainingAfterSlice = buffer.length;
+
+            console.log(`[TCP:${TCP_PORT}] Received message (${msgData.length} bytes):`);
+            if (msgData.length <= 256) {
+                hexDump(msgData);
+            } else {
+                hexDump(msgData.slice(0, 256));
+                console.log(`  ... (${msgData.length - 256} more bytes)`);
+            }
+
+            // Try to identify message type and respond
+            // First byte of protobuf often contains field tag
+            let msgType = "unknown";
+            if (msgData.length > 0) {
+                const firstTag = msgData[0];
+                // Common message tags and their types
+                if (firstTag === 0x0a) msgType = "login_in (field 1, string)";
+                else if (firstTag === 0x08) msgType = "message (field 1, varint)";
+                else if (firstTag === 0x12) msgType = "message (field 2, length-delimited)";
+                console.log(`[TCP:${TCP_PORT}] Detected message type: ${msgType}`);
+            }
+
+            // Parse game's CMD from the header protobuf
+            // header format: [4b BE header_len][cs_msg_head_t proto]
+            const headerDataLen = msgData.readUInt32BE(0);
+            const headerProto = msgData.slice(4, 4 + headerDataLen - 4);
+            console.log(`[TCP:${TCP_PORT}] Game header (${headerProto.length} bytes):`);
+            hexDump(headerProto.slice(0, 40));
+
+            // Extract CMD from headerProto field 1
+            let gameCmd = "unknown";
+            if (headerProto.length > 2 && headerProto[0] === 0x0a) {
+                const strLen = headerProto[1];
+                gameCmd = headerProto.slice(2, 2 + strLen).toString('utf-8');
+            }
+            console.log(`[TCP:${TCP_PORT}] Game CMD: ${gameCmd}`);
+
+            // Parse incoming header fields to echo back
+            let inSeqId = 0, inField3 = 0, inField4 = 0, inField5 = 0;
+            let pos = 0;
+            while (pos < headerProto.length) {
+                const tag = headerProto[pos];
+                if (tag >= 0x80) break; // safety
+                const fieldNum = tag >> 3;
+                const wireType = tag & 0x07;
+                pos++;
+                if (wireType === 0) { // varint
+                    let value = 0, shift = 0;
+                    while (pos < headerProto.length) {
+                        const b = headerProto[pos++];
+                        value |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    if (fieldNum === 2) inSeqId = value;
+                    else if (fieldNum === 3) inField3 = value;
+                    else if (fieldNum === 4) inField4 = value;
+                    else if (fieldNum === 5) inField5 = value;
+                } else if (wireType === 2) { // length-delimited
+                    let len = 0, shift = 0;
+                    while (pos < headerProto.length) {
+                        const b = headerProto[pos++];
+                        len |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    if (fieldNum === 1) {
+                        gameCmd = headerProto.slice(pos, pos + len).toString('utf-8');
+                    }
+                    pos += len;
+                } else {
+                    break; // unknown wire type
+                }
+            }
+            console.log(`[TCP:${TCP_PORT}] Parsed header: cmd=${gameCmd} seq=${inSeqId} f3=${inField3} f4=${inField4} f5=${inField5}`);
+
+            // Map game CMD to response CMD
+            const cmdMap = {
+                'ISeer20CSProto.cli_check_session_in': 'ISeer20CSProto.cli_check_session_out',
+                'ISeer20CSProto.login_in': 'ISeer20CSProto.login_out',
+                'ISeer20CSProto.cli_create_role_in': 'ISeer20CSProto.cli_create_role_out',
+                'ISeer20CSProto.cli_get_item_in': 'ISeer20CSProto.cli_get_item_out',
+                'ISeer20CSProto.cli_get_player_info_in': 'ISeer20CSProto.cli_get_player_info_out',
+                'ISeer20CSProto.cli_get_server_time_in': 'ISeer20CSProto.cli_get_server_time_out',
+                'ISeer20CSProto.cli_get_friend_list_in': 'ISeer20CSProto.cli_get_friend_list_out',
+                'ISeer20CSProto.cli_get_bag_mon_in': 'ISeer20CSProto.cli_get_bag_mon_out',
+                'ISeer20CSProto.cli_get_mail_list_in': 'ISeer20CSProto.cli_get_mail_list_out',
+                'ISeer20CSProto.cli_get_task_list_in': 'ISeer20CSProto.cli_get_task_list_out',
+                'ISeer20CSProto.cli_get_activity_list_in': 'ISeer20CSProto.cli_get_activity_list_out',
+                'ISeer20CSProto.cli_get_shop_info_in': 'ISeer20CSProto.cli_get_shop_info_out',
+                'ISeer20CSProto.cli_lookup_random_nick_in': 'ISeer20CSProto.cli_lookup_random_nick_out',
+                'ISeer20CSProto.get_bag_mon_in': 'ISeer20CSProto.get_bag_mon_out',
+                'ISeer20CSProto.get_player_info_in': 'ISeer20CSProto.get_player_info_out',
+                'ISeer20CSProto.get_server_time_in': 'ISeer20CSProto.get_server_time_out',
+                'ISeer20CSProto.get_friend_list_in': 'ISeer20CSProto.get_friend_list_out',
+                'ISeer20CSProto.get_mail_list_in': 'ISeer20CSProto.get_mail_list_out',
+                'ISeer20CSProto.get_task_list_in': 'ISeer20CSProto.get_task_list_out',
+                'ISeer20CSProto.get_activity_list_in': 'ISeer20CSProto.get_activity_list_out',
+                'ISeer20CSProto.get_shop_info_in': 'ISeer20CSProto.get_shop_info_out',
+                'ISeer20CSProto.get_storemon_index_in': 'ISeer20CSProto.get_storemon_index_out',
+                'ISeer20CSProto.cli_get_storemon_index_in': 'ISeer20CSProto.cli_get_storemon_index_out',
+                // Additional init messages
+                'ISeer20CSProto.get_unlocked_map_id_list_in': 'ISeer20CSProto.get_unlocked_map_id_list_out',
+                'ISeer20CSProto.get_pvp_data_in': 'ISeer20CSProto.get_pvp_data_out',
+                'ISeer20CSProto.get_player_simple_info_in': 'ISeer20CSProto.get_player_simple_info_out',
+                'ISeer20CSProto.get_player_detail_info_in': 'ISeer20CSProto.get_player_detail_info_out',
+                'ISeer20CSProto.get_config_in': 'ISeer20CSProto.get_config_out',
+                'ISeer20CSProto.get_finance_plan_in': 'ISeer20CSProto.get_finance_plan_out',
+                'ISeer20CSProto.get_lottery_info_in': 'ISeer20CSProto.get_lottery_info_out',
+                'ISeer20CSProto.get_shop_in': 'ISeer20CSProto.get_shop_out',
+                'ISeer20CSProto.get_ranking_list_in': 'ISeer20CSProto.get_ranking_list_out',
+                'ISeer20CSProto.get_self_ranking_in': 'ISeer20CSProto.get_self_ranking_out',
+                'ISeer20CSProto.get_lbs_notice_in': 'ISeer20CSProto.get_lbs_notice_out',
+                'ISeer20CSProto.get_exchange_code_info_in': 'ISeer20CSProto.get_exchange_code_info_out',
+                'ISeer20CSProto.get_talent_attr_data_in': 'ISeer20CSProto.get_talent_attr_data_out',
+                'ISeer20CSProto.get_champion_data_in': 'ISeer20CSProto.get_champion_data_out',
+                'ISeer20CSProto.get_challenge_leiyi_data_in': 'ISeer20CSProto.get_challenge_leiyi_data_out',
+                'ISeer20CSProto.get_captured_mon_list_in': 'ISeer20CSProto.get_captured_mon_list_out',
+                'ISeer20CSProto.get_black_list_in': 'ISeer20CSProto.get_black_list_out',
+                'ISeer20CSProto.get_sys_cur_time_in': 'ISeer20CSProto.get_sys_cur_time_out',
+                'ISeer20CSProto.get_lottery_prize_in': 'ISeer20CSProto.get_lottery_prize_out',
+                'ISeer20CSProto.get_reward_in': 'ISeer20CSProto.get_reward_out',
+                'ISeer20CSProto.get_lottery_in': 'ISeer20CSProto.get_lottery_out',
+                'ISeer20CSProto.get_lbs_prize_in': 'ISeer20CSProto.get_lbs_prize_out',
+                'ISeer20CSProto.get_mail_body_in': 'ISeer20CSProto.get_mail_body_out',
+                'ISeer20CSProto.get_mail_enclosure_in': 'ISeer20CSProto.get_mail_enclosure_out',
+            };
+            if (!socket._msgCount) socket._msgCount = 0;
+
+            // Parse body proto for request-specific data
+            const bodyStart = headerDataLen;
+            const bodyData = msgData.slice(bodyStart);
+            let bodyFields = {};
+            let bp = 0;
+            while (bp < bodyData.length) {
+                const tag = bodyData[bp];
+                if (tag >= 0x80) break;
+                const fieldNum = tag >> 3;
+                const wireType = tag & 0x07;
+                bp++;
+                if (wireType === 0) { // varint
+                    let value = 0, shift = 0;
+                    while (bp < bodyData.length) {
+                        const b = bodyData[bp++];
+                        value |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    bodyFields[fieldNum] = value;
+                } else if (wireType === 2) { // length-delimited
+                    let len = 0, shift = 0;
+                    while (bp < bodyData.length) {
+                        const b = bodyData[bp++];
+                        len |= (b & 0x7f) << shift;
+                        if (!(b & 0x80)) break;
+                        shift += 7;
+                    }
+                    bodyFields[fieldNum] = bodyData.slice(bp, bp + len).toString('utf-8');
+                    bp += len;
+                } else {
+                    break;
+                }
+            }
+            console.log(`[TCP:${TCP_PORT}] Parsed body fields:`, JSON.stringify(bodyFields));
+            console.log(`[TCP:${TCP_PORT}] Buffer remaining after slice: ${remainingAfterSlice} bytes`);
+
+            // Select response body and CMD based on command
+            let body;
+            let respCmd = cmdMap[gameCmd] || (gameCmd.endsWith('_in') ? gameCmd.slice(0, -3) + '_out' : gameCmd);
+            if (gameCmd.includes('check_session')) {
+                body = buildCheckSessionResponse();
+            } else if (gameCmd.includes('create_role')) {
+                const nick = bodyFields[2] || "Player";
+                const gender = bodyFields[3] || 1;
+                const serverId = bodyFields[1] || 1;
+                const now = Math.floor(Date.now() / 1000);
+                if (!createdRoles[serverId]) createdRoles[serverId] = [];
+                createdRoles[serverId].push({role_tm: now, nick: nick, gender: gender});
+                console.log('[ROLE] Created role:', nick, 'role_tm:', now);
+                body = buildLoginResponse();
+                respCmd = 'ISeer20CSProto.login_out';
+            } else if (gameCmd.includes('login_in')) {
+                body = buildLoginResponse();
+            } else if (gameCmd.includes('lookup_random_nick')) {
+                body = buildRandomNickResponse();
+            } else if (gameCmd.includes('get_item')) {
+                // cli_get_item_out: field 1 = repeated items (empty for new user)
+                // Also include ret=0 (field 2 with success code) in case game checks it
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),  // field 1: empty item list
+                    encodeUint32(2, 0),          // field 2: ret = 0 (success)
+                ]);
+            } else if (gameCmd.includes('get_bag_mon')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),  // field 1: empty mon list
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_player_info')) {
+                body = buildPlayerInfoResponse();
+            } else if (gameCmd.includes('get_server_time')) {
+                body = Buffer.concat([
+                    encodeUint32(1, Math.floor(Date.now() / 1000)),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_friend_list')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_mail_list') || gameCmd.includes('get_mail_head')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_activity_list')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_task_list')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_shop_info')) {
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_storemon') || gameCmd.includes('storemon_index')) {
+                // Storemon index: empty list for new user
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+            } else if (gameCmd.includes('get_pvp_data')) {
+                // Last resort: include ALL field numbers 1-8 in BOTH varint and LEN
+                // Hope the game's parser finds what it needs
+                const buf = Buffer.alloc(64, 0);
+                let pos = 0;
+                // For each field 1-8: varint 0 + LEN 0 msg + LEN 2 msg with inner field 1=0
+                for (let fn = 1; fn <= 8; fn++) {
+                    buf[pos++] = (fn << 3) | 0;  // varint tag
+                    buf[pos++] = 0;                // value 0
+                    buf[pos++] = (fn << 3) | 2;  // LEN tag
+                    buf[pos++] = 2;                // length 2
+                    buf[pos++] = 0x08;             // inner field 1 varint
+                    buf[pos++] = 0;                // value 0
+                }
+                body = buf.slice(0, pos);
+                console.log(`[TCP:${TCP_PORT}] get_pvp_data: sending ${body.length} byte body with all field combos`);
+            } else if (gameCmd.includes('unlocked_map_id_list')) {
+                // Packed repeated int32: map 10001 (in assets/Map/)
+                // Also empty field 2
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x02, 0x91, 0x4e]),  // packed: map 10001
+                    Buffer.from([0x12, 0x00]),
+                ]);
+            } else {
+                // Generic response
+                body = Buffer.concat([
+                    Buffer.from([0x0a, 0x00]),
+                    encodeUint32(2, 0),
+                ]);
+                console.log(`[TCP:${TCP_PORT}] Unknown CMD "${gameCmd}", sending generic body`);
+            }
+            console.log(`[TCP:${TCP_PORT}] Response CMD: ${respCmd}`);
+
+            if (body === null) { console.log(`[TCP:${TCP_PORT}] Skipping send`); continue; }
+
+            // Build response header proto — simple sequential counter
+            socket._msgCount++;
+            const respSeq = socket._msgCount;
+            const headerProto2 = Buffer.concat([
+                encodeString(1, respCmd),
+                encodeUint32(2, respSeq),
+                encodeUint32(3, inField3 || 1),
+                encodeUint32(4, inField4),
+                encodeUint32(5, inField5),
+            ]);
+
+            const headerLen = 4 + headerProto2.length;
+            const totalMsgLen = 8 + headerProto2.length + body.length;
+
+            const finalPacket = Buffer.alloc(totalMsgLen);
+            finalPacket.writeUInt32BE(totalMsgLen, 0);
+            finalPacket.writeUInt32BE(headerLen, 4);
+            headerProto2.copy(finalPacket, 8);
+            body.copy(finalPacket, 8 + headerProto2.length);
+
+            socket.write(finalPacket);
+            console.log(`[TCP:${TCP_PORT}] Sent ${finalPacket.length} bytes (cmd=${respCmd})`);
+            hexDump(finalPacket.slice(0, Math.min(80, finalPacket.length)));
+            if (buffer.length > 0) {
+                console.log(`[TCP:${TCP_PORT}] NOTE: ${buffer.length} bytes still in buffer after response!`);
+                hexDump(buffer.slice(0, Math.min(64, buffer.length)));
+            }
+        }
+    });
+
+    socket.on('close', () => {
+        console.log(`[TCP:${TCP_PORT}] Client disconnected: ${addr}`);
+    });
+
+    socket.on('error', (err) => {
+        console.log(`[TCP:${TCP_PORT}] Socket error: ${err.message}`);
+    });
+}
+
+const tcpServer = net.createServer(handleGameClient);
+
+tcpServer.listen(TCP_PORT, '0.0.0.0', () => {
+    console.log(`[TCP] Mock game server running on 0.0.0.0:${TCP_PORT}`);
+});
+
+// =============================================================================
+// Main
+// =============================================================================
+
+console.log('='.repeat(60));
+console.log('  赛尔号战神联盟 - Local Mock Server (Node.js)');
+console.log('  Seer Alliance Offline Mode Server');
+console.log('='.repeat(60));
+console.log('');
+console.log('Server map:');
+console.log(`  HTTP Login:  http://127.0.0.1:${HTTP_PORT}/iseer2.fcgi`);
+console.log(`  TCP Game:   127.0.0.1:${TCP_PORT}`);
+console.log('');
+console.log('Waiting for game client connections...');
+console.log('Press Ctrl+C to stop.');
+console.log('');

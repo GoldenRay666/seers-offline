@@ -1,0 +1,24 @@
+mon_propaganda: {
+    title: "精灵展示"
+    icon: "27003"
+    mon: {
+        id:261
+        name: "英菲尼迪"
+        grade: 3
+        description: "龙系极品精灵" 
+    }
+    show_time:{
+        date: "2013.08.28-2013.9.30"
+        time: "00:00:00-24:00:00"    
+    }
+    hyperlink:{
+        link_intent: LINK_INTENT_EXCHANGE
+        link_type: LINK_TYPE_UI
+        hyperlink: 5
+        paritc_time:{
+            date: "2013.09.04-2013.9.30"
+            time: "00:00:00-24:00:00"         
+        }
+    }
+    
+}

@@ -1,0 +1,22 @@
+version: 2.12.1
+apkFileName: 1.apk
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: 8
+  targetSdkVersion: 15
+packageInfo:
+  forcedPackageId: 127
+versionInfo:
+  versionCode: 202
+  versionName: 2.0.2
+doNotCompress:
+- mp3
+- mp4
+- png
+- assets/Data/Attributes.xml
+- assets/Data/feature.xml
+- assets/IconTBT/iTunesArtwork
+- assets/UI/iTunesArtwork
+- assets/version.data

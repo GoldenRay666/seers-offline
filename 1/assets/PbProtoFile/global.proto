@@ -1,0 +1,25 @@
+package ISeer20Conf;
+
+// 免费电量
+message free_energy_t {
+    required string start_time = 1; // 开始时间
+    required string end_time = 2;   // 结束时间
+    required int32 yield_energy = 3;// 输出电量
+}
+
+message online_prize_t {
+    required int32 idx = 1; // 序号
+    required int32 period  = 2; // 在线时长(单位为s)
+    required uint32 prize_id = 3; // 奖励ID
+}
+
+message online_prize_list_t {
+    repeated online_prize_t online_prize = 1; 
+}
+
+message top_config_global_t {
+    repeated free_energy_t free_energy = 1;
+    optional int32 buy_action_cost = 2; // 购买行动力花费(金豆)
+    required online_prize_list_t online_prize_list = 3; // 在线奖励
+    optional int32 clean_give_gift_cd_cost = 4; // 清除向冠军鲜花CD花费(金豆)
+}

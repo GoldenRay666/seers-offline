@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="tm_account_title_image" />
+    <item type="id" name="imageView4" />
+    <item type="id" name="tm_account_edittext" />
+    <item type="id" name="tm_account_close_input" />
+    <item type="id" name="tm_account_pwd_edittext" />
+    <item type="id" name="tm_account_selected" />
+    <item type="id" name="tm_account_selected_text" />
+    <item type="id" name="tm_account_forget_pwd" />
+    <item type="id" name="tm_account_reg" />
+    <item type="id" name="tm_account_login" />
+    <item type="id" name="tm_loading_rt" />
+    <item type="id" name="tm_account_logo" />
+    <item type="id" name="tm_welcome_lt" />
+    <item type="id" name="userNameTextView" />
+    <item type="id" name="tm_loading_bar" />
+    <item type="id" name="tm_account_switch" />
+    <item type="id" name="tm_account_login_suc_bg" />
+    <item type="id" name="accountInputImageView" />
+    <item type="id" name="accountTextView" />
+    <item type="id" name="username" />
+    <item type="id" name="pwdTextView" />
+    <item type="id" name="pwd" />
+    <item type="id" name="confirmPwdTextView" />
+    <item type="id" name="confirmPwd" />
+    <item type="id" name="loginBtn" />
+    <item type="id" name="regBtn" />
+</resources>

@@ -1,0 +1,35 @@
+package ISeer20Conf;
+
+enum switch_type_t {
+    SWITCH_OFF  = 0; // 关闭开发开关
+    SWITCH_OPEN = 1; // 开启开发开关
+}
+
+message finance_plan_t
+{
+    enum finance_plan_type_t {
+        JIJIN_PLAN       = 1; // 基金计划 (根据用户的等级)
+        LEIYI_LICAI_PLAN = 2; // 雷伊理财计划
+        GAYA_LICAI_PLAN  = 3; // 盖亚理财计划
+    }
+
+    required int32 id = 1; 
+    required finance_plan_type_t type = 2; // 类型
+    required bytes name = 3; // 名称
+    required int32 need_gcoin = 4; // 价格（金豆）
+    required int32 periods = 5; //期数
+    optional int32 period_day  = 6 [default = 7]; // 每期持天数
+    optional int32 period_level  = 7 [default = 10]; // 每期等级间隔
+    required int32 yield_rate = 9; // 收益率(%)
+    required bytes total_revenue = 10; // 总的收益
+    optional int32 max_mon_level = 11 [default = 100]; // 购买者精灵的最高等级
+    optional int32 plyer_vip_level = 12 [default = 0]; // 购买者所需vip等级
+    optional int32 immediately_prize = 13 [default = 0]; // 立即返还奖励
+    repeated int32 follow_prize = 14; // 后续每期返还的奖励
+}
+
+message top_config_finance_plan_t
+{
+    repeated finance_plan_t finance_plan = 1; 
+    optional switch_type_t finance_plan_switch = 2[default = SWITCH_OPEN];
+}

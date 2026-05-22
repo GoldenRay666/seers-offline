@@ -1,0 +1,6294 @@
+prize: {
+    prize_id: 1
+    info: {
+        prize_idx: 1
+        player_attr: {
+            exp: 100
+            coin: 100
+            gcoin: 5
+        }	
+    }
+}
+
+prize: {
+    prize_id: 2
+    info: {
+        prize_idx: 1
+        player_attr: {
+            exp: 200
+            coin: 1000
+        }	
+    }
+}
+
+prize: {
+    prize_id: 3
+    info: {
+        prize_idx: 1
+        player_attr: {
+            exp: 500
+            gcoin: 10
+        }	
+    }
+}
+
+prize: {
+    prize_id: 4
+    info: {
+        prize_idx: 1
+        player_attr: {
+            exp: 600
+            coin: 3000
+        }	
+    }
+}
+
+prize: {
+    prize_id: 5
+    info: {
+        prize_idx: 1
+        player_attr: {
+            exp: 1000
+            coin: 1000
+            gcoin: 10
+        }	
+    }
+}
+
+prize: {
+    prize_id: 6
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20073
+            item_count: 1
+        }
+        mon: {
+            mon_id: 29
+            mon_lv: 10
+        }
+        player_attr: {
+            exp: 10
+        }
+    }
+}
+
+prize: {
+    prize_id: 8
+    info: {
+        prize_idx: 1
+        player_attr: {
+            exp: 1000
+            coin: 2000
+        }	
+        item: {
+            item_id: 20012
+            item_count: 100
+        }
+        item: { 
+            item_id: 20014
+            item_count: 100
+        }
+        item: {
+            item_id: 20015
+            item_count: 100
+        }
+    }   
+}
+
+prize: {
+    prize_id: 9
+    info: {
+        prize_idx: 1
+        player_attr: {
+            exp: 1000
+            coin: 2200
+        }	
+        item: {
+            item_id: 20012
+            item_count: 5
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50001
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50002
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50003
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50004
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50005
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50006
+    info: {
+        prize_idx: 1
+        player_attr: {
+           mon_exp_allocator: 1500           
+           coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50007
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50008
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50009
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50010
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50011
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500        
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50012
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50013
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50014
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500        
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50015
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 3000
+			gcoin: 5
+        }	
+        item: {
+            item_id: 20071
+            item_count: 3
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50016
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50017
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+        }	
+        item: {
+            item_id: 20071
+            item_count: 3
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50018
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50019
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500        
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50020
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500        
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50021
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500
+            coin: 30
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50022
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500        
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50023
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500     
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50024
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500     
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50025
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1500     
+        }	
+        item: {
+            item_id: 20012
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50026
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 3500     
+            coin: 200
+			gcoin: 10
+        }	
+        item: {
+            item_id: 20301
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50027
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50028
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50029
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50030
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50031
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+			gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50032
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50033
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50035
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 3500        
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50036
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50037
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50038
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50039
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50040
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50041
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 180
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50042
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50043
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50044
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50045
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50046
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 3500        
+            coin: 500
+            gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50047
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50048
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 120
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50049
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50050
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 280
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50051
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50052
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 100
+        }	
+        item: {
+            item_id: 20021
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50053
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700        
+            coin: 100
+        }	
+        item: {
+            item_id: 20014
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50054
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 4000
+            gcoin: 2
+        }	
+        item: {
+            item_id: 20302
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50055
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1700
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50200
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900        
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50201
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900            
+            coin: 120
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50202
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900            
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50205
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50206
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50207
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900            
+            coin: 150
+        }	
+        item: {
+            item_id: 20011
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50208
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900            
+            coin: 100
+        }	
+        item: {
+            item_id: 20122
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50209
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 1900            
+            coin: 120
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50210
+    info: {
+        prize_idx: 1
+        player_attr: {
+            mon_exp_allocator: 3500            
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50211
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900
+            gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50212
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900        
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50213
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50214
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900        
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50215
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50216
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50217
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3500        
+            coin: 80
+        }	
+        item: {
+            item_id: 20041
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50218
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900        
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50219
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900        
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50220
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50221
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900        
+            coin: 50
+        }	
+        item: {
+            item_id: 20051
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50222
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1900        
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50223
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000
+            gcoin: 5			
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50224
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000        
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50225
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000            
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50226
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000    
+            coin: 120		
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50227
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000    
+        }	
+        item: {
+            item_id: 20031
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50228
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50229
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50230
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000
+            gcoin: 10	
+        }	
+        item: {
+            item_id: 20303
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50231
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000            
+            coin: 150		
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50232
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2200    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50233
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2200    
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50234
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2200    
+        }	
+        item: {
+            item_id: 20051
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50235
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2200            
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50236
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2200    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50237
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2200    
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50238
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000            
+            coin: 200
+            gcoin: 10
+        }	
+        item: {
+            item_id: 20304
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50300
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400            
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50301
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            gcoin: 5
+        }	
+        item: {
+            item_id: 20055
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50302
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20012
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50303
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           	
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50304
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50305
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50306
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400   
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50307
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50308
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50309
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50310
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50311
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 120
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50312
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3500           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50313
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 200	
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50314
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50315
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50316
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50317
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50318
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50319
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50320
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2400           
+            coin: 120
+        }	
+        item: {
+            item_id: 20011
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50321
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000           
+            gcoin: 10
+        }	
+        item: {
+            item_id: 20305
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50322
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50323
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50324
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50325
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50326
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 120
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50327
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50328
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50329
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3500           
+            coin: 200
+            gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50330
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50331
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50332
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50333
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50334
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 80
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50335
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50336
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50337
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50338
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50339
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50340
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000   
+            gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50239
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50240
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50241
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20051
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50242
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50243
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50244
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50245
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2600   
+        }	
+        item: {
+            item_id: 20022
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50397
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000           
+            gcoin: 10
+        }	
+        item: {
+            item_id: 20306
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50247
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2700   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50248
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2700   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50249
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2700           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50250
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20014
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50251
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2700   
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50252
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2700   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50253
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2700   
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50254
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20012
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50255
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2700           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50398
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3500   
+            gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50257
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50258
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50259
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50260
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50261
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50262
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50263
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50264
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50399
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3500
+            gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50267
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50268
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50269
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50278
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50270
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20041
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50271
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50272
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50273
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50274
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50400
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 5000
+            gcoin: 10
+        }	
+        item: {
+            item_id: 20307
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50276
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50292
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50277
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50291
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50279
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50280
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800           
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50281
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2800   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50401
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000           
+            coin: 100
+            gcoin: 5
+        }	
+        item: {
+            item_id: 20190
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50283
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50284
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50285
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 150
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50286
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50287
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50288
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50289
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50290
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50402
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000
+            gcoin: 5
+        }	
+        item: {
+            item_id: 20012
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50341
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50342
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50343
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50344
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50345
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+        item: {
+            item_id: 20013
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50346
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 50
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50347
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+            coin: 250
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50348
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50349
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50380
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 100
+            gcoin: 5
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50381
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50382
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50403
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000
+            coin: 200
+        }	
+        item: {
+            item_id: 20191
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50356
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2900   
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50357
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000           
+            coin: 300
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50358
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50056
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50057
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50359
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50360
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+            coin: 500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50361
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50362
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000           
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50363
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+            coin: 100
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50364
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000            
+            coin: 500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50404
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50366
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50367
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50368
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50370
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50371
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000            
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50372
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50373
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+            coin: 500
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50375
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+            coin: 200
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50377
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000    
+            gcoin: 10
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50405
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000    
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 50350
+    info: {
+        prize_idx: 1
+        player_attr: {
+            gcoin: 10
+        }	
+        item: {
+            item_id: 20192
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50351
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 35001
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50352
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 35002
+            item_count: 1
+        }
+    }   
+}
+
+prize: {
+    prize_id: 50353
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 35003
+            item_count: 1
+        }
+    }   
+}
+prize: {
+    prize_id: 50500
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 500    
+        }	
+    }   
+}
+prize: {
+    prize_id: 50506
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1000    
+        }	
+    }   
+}
+prize: {
+    prize_id: 59001
+    info: {
+        prize_idx: 1
+        player_attr: {
+            gcoin: 20
+        }	
+    }
+}
+
+prize: {
+    prize_id: 59004
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20071
+            item_count: 3
+        }
+    }   
+}
+
+prize: {
+    prize_id: 59005
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 500
+		    mon_exp_allocator: 2000                
+        }
+        item: {
+            item_id: 40000
+            item_count: 1
+        }        
+    }
+}
+
+prize: {
+    prize_id: 60190
+    info: {
+        prize_idx: 1
+	    player_attr: {
+            coin: 50
+        }
+        award_rate: 1400
+    }
+    info: {
+        prize_idx: 2
+	    player_attr: {
+            coin: 100
+        }
+        award_rate: 2100
+    }
+    info: {
+        prize_idx: 3
+	    player_attr: {
+            coin: 300
+        }
+        award_rate: 1400
+    }
+    info: {
+        prize_idx: 4
+	    item: {
+            item_id: 20012
+            item_count: 1
+        }
+        award_rate: 2100
+    }
+    info: {
+        prize_idx: 5
+	    item: {
+            item_id: 20012
+            item_count: 1
+        }
+        award_rate: 700
+    }
+    info: {
+        prize_idx: 6
+	    item: {
+            item_id: 20011
+            item_count: 1
+        }
+        award_rate: 1400
+    }
+    info: {
+        prize_idx: 7
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+        award_rate: 400
+    }
+    info: {
+        prize_idx: 8
+	    item: {
+            item_id: 20051
+            item_count: 1
+        }
+        award_rate: 250
+    }
+    info: {
+        prize_idx: 9
+	    item: {
+            item_id: 20031
+            item_count: 1
+        }
+        award_rate: 250
+    }
+}
+
+prize: {
+    prize_id: 60191
+    info: {
+        prize_idx: 1
+	    player_attr: {
+            coin: 100
+        }
+        award_rate: 1300
+    }
+    info: {
+        prize_idx: 2
+	    player_attr: {
+            coin: 300
+        }
+        award_rate: 1950
+    }
+    info: {
+        prize_idx: 3
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+        award_rate: 1300
+    }
+    info: {
+        prize_idx: 4
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+        award_rate: 650
+    }
+    info: {
+        prize_idx: 5
+	    item: {
+            item_id: 20021
+            item_count: 1
+        }
+        award_rate: 1300
+    }
+    info: {
+        prize_idx: 6
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+        award_rate: 1300
+    }
+    info: {
+        prize_idx: 7
+	    item: {
+            item_id: 20041
+            item_count: 1
+        }
+        award_rate: 1040
+    }
+    info: {
+        prize_idx: 8
+	    item: {
+            item_id: 20031
+            item_count: 1
+        }
+        award_rate: 1030
+    }
+    info: {
+        prize_idx: 9
+	    item: {
+            item_id: 20072
+            item_count: 1
+        }
+        award_rate: 130
+    }
+}
+
+prize: {
+    prize_id: 60192
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+        award_rate: 1170
+    }
+    info: {
+        prize_idx: 2
+    	item: {
+            item_id: 20014
+            item_count: 1
+        }
+        award_rate: 1940
+    }
+    info: {
+        prize_idx: 3
+	    item: {
+            item_id: 20021
+            item_count: 1
+        }
+        award_rate: 1940
+    }
+    info: {
+        prize_idx: 4
+	    item: {
+            item_id: 20022
+            item_count: 1
+        }
+        award_rate: 390
+    }
+    info: {
+        prize_idx: 5
+	    item: {
+            item_id: 20031
+            item_count: 1
+        }
+        award_rate: 2720
+    }
+    info: {
+        prize_idx: 6
+	    item: {
+            item_id: 20041
+            item_count: 1
+        }
+        award_rate: 970
+    }
+    info: {
+        prize_idx: 7
+	    item: {
+            item_id: 20055
+            item_count: 1
+        }
+        award_rate: 290
+    }
+    info: {
+        prize_idx: 8
+	    item: {
+            item_id: 20071
+            item_count: 3
+        }
+        award_rate: 580
+    }
+}
+
+prize: {
+    prize_id: 60193
+	info: {
+        prize_idx: 1
+	    player_attr: {
+            coin: 500
+        }
+        award_rate: 2000
+    }
+	info: {
+        prize_idx: 2
+	    item: {
+            item_id: 20013
+            item_count: 2
+        }
+        award_rate: 2000
+    }	
+	info: {
+        prize_idx: 3
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+        award_rate: 1330
+    }	  
+	info: {
+        prize_idx: 4
+	    item: {
+            item_id: 20021
+            item_count: 1
+        }
+        award_rate: 670
+    }	
+	info: {
+        prize_idx: 5
+	    item: {
+            item_id: 20013
+            item_count: 2
+        }
+        award_rate: 670
+    }		   
+	info: {
+        prize_idx: 6
+	    item: {
+            item_id: 20014
+            item_count: 1
+        }
+        award_rate: 670
+    }	
+	info: {
+        prize_idx: 7
+	    item: {
+            item_id: 20031
+            item_count: 1
+        }
+        award_rate: 1330
+    }	
+	info: {
+        prize_idx: 8
+	    item: {
+            item_id: 20031
+            item_count: 1
+        }
+        award_rate: 270
+    }	
+	info: {
+        prize_idx: 9
+	    item: {
+            item_id: 20055
+            item_count: 1
+        }
+        award_rate: 1060
+    }
+}
+
+
+prize: {
+    prize_id: 60194
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+        award_rate: 1500
+    }
+    info: {
+        prize_idx: 2
+	    item: {
+            item_id: 20042
+            item_count: 1
+        }
+        award_rate: 500
+    }
+    info: {
+        prize_idx: 3
+	    item: {
+            item_id: 20043
+            item_count: 1
+        }
+        award_rate: 500
+    }	
+    info: {
+        prize_idx: 4
+	    item: {
+            item_id: 20044
+            item_count: 1
+        }
+        award_rate: 500
+    }	
+    info: {
+        prize_idx: 5
+	    item: {
+            item_id: 20045
+            item_count: 1
+        }
+        award_rate: 500
+    }	
+    info: {
+        prize_idx: 6
+	    item: {
+            item_id: 20072
+            item_count: 1
+        }
+        award_rate: 1000
+    }
+    info: {
+        prize_idx: 7
+	    item: {
+            item_id: 20031
+            item_count: 1
+        }
+        award_rate: 1000
+    }	
+    info: {
+        prize_idx: 8
+	    item: {
+            item_id: 35001
+            item_count: 1
+        }
+        award_rate: 900
+    }	
+    info: {
+        prize_idx: 9
+	    item: {
+            item_id: 35003
+            item_count: 1
+        }
+        award_rate: 900
+    }	
+    info: {
+        prize_idx: 10
+	    item: {
+            item_id: 35002
+            item_count: 1
+        }
+        award_rate: 900
+    }
+    info: {
+        prize_idx: 11
+	    item: {
+            item_id: 20123
+            item_count: 1
+        }
+        award_rate: 400
+    }
+    info: {
+        prize_idx: 12
+	    item: {
+            item_id: 28101
+            item_count: 5
+        }
+        award_rate: 900
+    }
+    info: {
+        prize_idx: 13
+	    item: {
+            item_id: 37001
+            item_count: 1
+        }
+        award_rate: 500
+    }		
+}
+
+prize: {
+    prize_id: 60196	
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 35101
+            item_count: 1
+        }
+        award_rate: 500
+    }	
+    info: {
+        prize_idx: 2
+	    item: {
+            item_id: 35102
+            item_count: 1
+        }
+        award_rate: 500
+    }		
+    info: {
+        prize_idx: 3
+	    item: {
+            item_id: 35103
+            item_count: 1
+        }
+        award_rate: 500
+    }		
+    info: {
+        prize_idx: 4
+	    item: {
+            item_id: 20023
+            item_count: 1
+        }
+        award_rate: 2000
+    }
+    info: {
+        prize_idx: 5
+	    player_attr: {
+            coin: 1000
+        }
+        award_rate: 2000
+    }
+    info: {
+        prize_idx: 6
+	    player_attr: {
+            coin: 5000
+        }
+        award_rate: 800
+    }
+    info: {
+        prize_idx: 7
+	    player_attr: {
+            coin: 10000
+        }
+        award_rate: 300
+    }
+    info: {
+        prize_idx: 8
+	    player_attr: {
+            gcoin: 5
+        }
+        award_rate: 500
+    }    
+    info: {
+        prize_idx: 9
+	    player_attr: {
+            gcoin: 10
+        }
+        award_rate: 300
+    } 
+    info: {
+        prize_idx: 10
+	    player_attr: {
+            gcoin: 20
+        }
+        award_rate: 100
+    }
+    info: {
+        prize_idx: 11
+	    item: {
+            item_id: 20122
+            item_count: 1
+        }
+        award_rate: 2000
+    }    
+    info: {
+        prize_idx: 12
+	    item: {
+            item_id: 37001
+            item_count: 1
+        }
+        award_rate: 500
+    }		
+}
+
+prize: {
+    prize_id: 60197
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20036
+            item_count: 1
+        }
+        award_rate: 1500
+    }	
+    info: {
+        prize_idx: 2
+	    item: {
+            item_id: 20016
+            item_count: 1
+        }
+        award_rate: 1500
+    }	
+    info: {
+        prize_idx: 3
+	    item: {
+            item_id: 20046
+            item_count: 1
+        }
+        award_rate: 1500
+    }	
+    info: {
+        prize_idx: 4
+	    item: {
+            item_id: 20047
+            item_count: 1
+        }
+        award_rate: 1500
+    }	
+    info: {
+        prize_idx: 5
+	    item: {
+            item_id: 25318
+            item_count: 1
+        }
+        award_rate: 2000
+    }
+    info: {
+        prize_idx: 6
+	    item: {
+            item_id: 25055
+            item_count: 1
+        }
+        award_rate: 2000
+    }
+}
+prize: {
+    prize_id: 60198
+    info: {
+    prize_idx: 1
+    item: {
+        item_id: 20013
+        item_count: 3
+    }
+    item: {
+        item_id: 20195
+        item_count: 1
+    }        
+    item: {
+        item_id: 20022
+        item_count: 1
+    }
+    item: {
+        item_id: 20122
+        item_count: 1
+    }
+    item: {
+        item_id: 40001
+        item_count: 1    
+    }        
+    player_attr: {
+        coin: 1000
+        gcoin: 20
+    }
+
+    award_rate: 10000
+    }
+}    
+prize: {
+    prize_id: 60199
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20015
+            item_count: 2
+        }    
+        item: {
+            item_id: 20195
+            item_count: 2
+        }
+        item: {      
+            item_id: 20031
+            item_count: 2
+        }
+        item: {     
+            item_id: 40002
+            item_count: 1            
+        }    
+        player_attr: {
+            coin: 2000
+            gcoin: 20
+        }
+        award_rate: 10000
+    }	
+} 
+prize: {
+    prize_id: 60200
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20015
+            item_count: 4
+	    }
+        item: {            
+            item_id: 20052
+            item_count: 2
+	    }
+        item: {            
+            item_id: 40003
+            item_count: 1  
+        }
+        player_attr: {
+            coin: 3000
+            gcoin: 20
+        }
+        award_rate: 10000
+    }	
+} 
+prize: {
+    prize_id: 60201
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20015
+            item_count: 6
+	    }
+        item: {            
+            item_id: 20041
+            item_count: 2
+ 	    }
+        player_attr: {
+            coin: 5000
+            gcoin: 20
+        }
+        award_rate: 10000
+    }	
+} 
+prize: {
+    prize_id: 70001
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 10
+            mon_lv: 10
+			drop_rate: 6820	
+        }
+        mon: {
+            mon_id: 49
+            mon_lv: 10
+			drop_rate: 910	
+        }
+        mon: {
+            mon_id: 51
+            mon_lv: 10
+			drop_rate: 2270	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70002
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 13
+            mon_lv: 10
+			drop_rate: 4550	
+        }
+        mon: {
+            mon_id: 18
+            mon_lv: 10
+			drop_rate: 4550	
+        }
+        mon: {
+            mon_id: 210
+            mon_lv: 10
+			drop_rate: 910	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70003
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 28
+            mon_lv: 10
+			drop_rate: 5000	
+        }
+        mon: {
+            mon_id: 41
+            mon_lv: 10
+			drop_rate: 4000	
+        }
+        mon: {
+            mon_id: 72
+            mon_lv: 10
+			drop_rate: 1000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70004
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770
+        }
+    }
+}
+
+prize: {
+    prize_id: 70005
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770
+        }
+    }
+}
+
+prize: {
+    prize_id: 70006
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770
+        }
+    }
+}
+
+prize: {
+    prize_id: 70007
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770
+        }
+    }
+}
+
+prize: {
+    prize_id: 70008
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770
+        }
+    }
+}
+
+prize: {
+    prize_id: 70009
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 86
+            mon_lv: 10
+			drop_rate: 5000	
+        }
+        mon: {
+            mon_id: 111
+            mon_lv: 10
+			drop_rate: 5000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70010
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 124
+            mon_lv: 10
+			drop_rate: 5560	
+        }
+        mon: {
+            mon_id: 138
+            mon_lv: 10
+			drop_rate: 4440	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70011
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 61
+            mon_lv: 10
+			drop_rate: 2500	
+        }
+        mon: {
+            mon_id: 117
+            mon_lv: 10
+			drop_rate: 7500	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70012
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 178
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70013
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70014
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 133
+            mon_lv: 10
+			drop_rate: 10000
+        }
+    }
+}
+
+prize: {
+    prize_id: 70015
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70016
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 67
+            mon_lv: 10
+			drop_rate: 5000	
+        }
+        mon: {
+            mon_id: 113
+            mon_lv: 10
+			drop_rate: 5000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70017
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70018
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 4620	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 770	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70019
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 10
+            mon_lv: 10
+			drop_rate: 1350	
+        }
+        mon: {
+            mon_id: 13
+            mon_lv: 10
+			drop_rate: 1350	
+        }
+        mon: {
+            mon_id: 18
+            mon_lv: 10
+			drop_rate: 1350	
+        }
+        mon: {
+            mon_id: 28
+            mon_lv: 10
+			drop_rate: 1350	
+        }
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 1080	
+        }
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 1080	
+        }
+        mon: {
+            mon_id: 41
+            mon_lv: 10
+			drop_rate: 1080	
+        }
+        mon: {
+            mon_id: 49
+            mon_lv: 10
+			drop_rate: 180	
+        }
+        mon: {
+            mon_id: 51
+            mon_lv: 10
+			drop_rate: 450	
+        }
+        mon: {
+            mon_id: 72
+            mon_lv: 10
+			drop_rate: 270	
+        }
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 180	
+        }
+	    mon: {
+            mon_id: 210
+            mon_lv: 10
+			drop_rate: 270	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70021
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 1
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70022
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 4
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70023
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 7
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70024
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 51
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70025
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 117
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70026
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 58
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70027
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 61
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70028
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 77
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70029
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 49
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70030
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 133
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70031
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 178
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70032
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 94
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70033
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 92
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70034
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 93
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70035
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 95
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70036
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 144
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70037
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 149
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70038
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 16
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70039
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 30
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70040
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 37
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70041
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 55
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70042
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 79
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70043
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 81
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70044
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 126
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70045
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 72
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70046
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 74
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70047
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 210
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70048
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 119
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70049
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 91
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70050
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 269
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70051
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 300
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70052
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 156
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70053
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 259
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70054
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 222
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70055
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 214
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70056
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 98
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70057
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 97
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70058
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 99
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70059
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 96
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70060
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 100
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70061
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 361
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70062
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 1000
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70301
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 32
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70302
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 67
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70303
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 86
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70304
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 111
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70305
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 113
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70306
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 124
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70307
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 138
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70308
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 198
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70309
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 13
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70310
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 18
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70311
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 10
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70312
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 28
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70313
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 41
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70314
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 34
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70315
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 194
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70316
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 212
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70317
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 208
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70318
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 204
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+
+prize: {
+    prize_id: 70319
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 364
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70320
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 142
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70321
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 404
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70322
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 495
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70324
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 379
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70325
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 245
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70326
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 90
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70327
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 402
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70328
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 262
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 70329
+    info: {
+        prize_idx: 1
+        mon: {
+            mon_id: 280
+            mon_lv: 10
+			drop_rate: 10000	
+        }
+    }
+}
+prize: {
+    prize_id: 80001	
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 25320
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80002
+	info: {
+        prize_idx: 1
+	    player_attr: {
+            coin: 200
+        }
+        award_rate: 2000
+    }
+	info: {
+        prize_idx: 2
+	    player_attr: {
+            coin: 300
+        }
+        award_rate: 3000
+    }	
+	info: {
+        prize_idx: 3
+	    player_attr: {
+            coin: 500
+        }
+        award_rate: 2000
+    }
+	info: {
+        prize_idx: 4
+	    player_attr: {
+            coin: 800
+        }
+        award_rate: 800
+    }   
+	info: {
+        prize_idx: 5
+	    player_attr: {
+            coin: 1000
+        }
+        award_rate: 200
+    }    
+	info: {
+        prize_idx: 6
+	    item: {
+            item_id: 25304
+            item_count: 1
+        }
+        award_rate: 700
+    }	 
+    info: {
+        prize_idx: 7
+	    item: {
+            item_id: 25312
+            item_count: 1
+        }
+        award_rate: 700
+    }	
+    info: {
+        prize_idx: 8
+	    item: {
+            item_id: 25313
+            item_count: 1
+        }
+        award_rate: 600
+    }		    
+}
+prize: {
+    prize_id: 80003
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 25302
+            item_count: 1
+        }
+        award_rate: 7000
+    }	
+    info: {
+        prize_idx: 2
+	    player_attr: {
+            coin: 200
+        }
+        award_rate: 1000
+    }
+	info: {
+        prize_idx: 3
+	    player_attr: {
+            coin: 300
+        }
+        award_rate: 1000
+    }	
+	info: {
+        prize_idx: 4
+	    player_attr: {
+            coin: 500
+        }
+        award_rate: 1000
+    }    
+}
+
+prize: {
+    prize_id: 80101
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 25062
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 80102
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20014
+            item_count: 10
+        }
+        item: {
+            item_id: 20031
+            item_count: 10
+        }
+        item: {
+            item_id: 20041
+            item_count: 5 
+        }        
+        item: {
+            item_id: 20054
+            item_count: 5
+        }
+        award_rate: 10000
+    }	
+    prize_name: "³É³¤Àñ°ü"
+    prize_icon: "code_exchange_2"   
+}
+
+prize: {
+    prize_id: 80103
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 30006
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80104
+    info: {
+        prize_idx: 1
+	    player_attr: {
+            coin: 1000
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80105
+    info: {
+        prize_idx: 1
+	    player_attr: {
+            gcoin: 10
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80106
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20013
+            item_count: 5
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80107
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20022
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80108
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20031
+            item_count: 5
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80109
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20041
+            item_count: 2
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80110
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20055
+            item_count: 2
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80111
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20072
+            item_count: 3
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80115
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20031
+            item_count: 5
+        }
+        item: {
+            item_id: 20041
+            item_count: 2
+        }
+        item: {
+            item_id: 20054
+            item_count: 2 
+        } 
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80116
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 25025
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80120
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20013
+            item_count: 10
+        }
+	    item: {
+            item_id: 20041
+            item_count: 2
+        }  
+	    item: {
+            item_id: 20195
+            item_count: 10
+        }   
+	    item: {
+            item_id: 20122
+            item_count: 5
+        }        
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 80130
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20014
+            item_count: 10
+        }
+        item: {
+            item_id: 20031
+            item_count: 10
+        }
+        item: {
+            item_id: 20041
+            item_count: 5 
+        }        
+        item: {
+            item_id: 20054
+            item_count: 5
+        }
+        award_rate: 10000
+    }	
+}
+prize: {
+    prize_id: 80131
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20014
+            item_count: 10
+        }
+        item: {
+            item_id: 20031
+            item_count: 10
+        }
+        item: {
+            item_id: 20041
+            item_count: 5 
+        }        
+        item: {
+            item_id: 20054
+            item_count: 5
+        }        
+        item: {
+            item_id: 25025
+            item_count: 1
+        }
+        award_rate: 10000
+    }	
+}
+prize: {
+    prize_id: 80140
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20013
+            item_count: 10
+        }
+	    item: {
+            item_id: 20041
+            item_count: 2
+        }    
+	    item: {
+            item_id: 20195
+            item_count: 6
+        }     
+	    item: {
+            item_id: 20122
+            item_count: 5
+        }        
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80150
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20013
+            item_count: 10
+        }
+        award_rate: 10000
+    }	
+}
+prize: {
+    prize_id: 80151
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20015
+            item_count: 2
+        }     
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 80152
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20022
+            item_count: 5
+        }     
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 100011
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20194
+            item_count: 1
+			drop_rate: 1000
+        }	
+		item: {
+            item_id: 37001
+            item_count: 1
+			drop_rate: 333
+        }	
+        award_rate: 10000              
+    }
+}
+prize: {
+    prize_id: 100012
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20194
+            item_count: 1
+            drop_rate: 1000
+        }
+		item: {
+            item_id: 37001
+            item_count: 1
+			drop_rate: 333
+        }	
+        award_rate: 10000             
+    }
+}
+prize: {
+    prize_id: 100021
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20194
+            item_count: 1
+			drop_rate: 1000
+        }
+		item: {
+            item_id: 37001
+            item_count: 1
+			drop_rate: 333
+        }	
+        award_rate: 10000             
+    }
+}
+
+prize: {
+    prize_id: 100022
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20194
+            item_count: 1
+			drop_rate: 1000
+        }
+    }
+}
+prize: {
+    prize_id: 100031
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20194
+            item_count: 1
+			drop_rate: 1000
+        }
+    }
+}
+prize: {
+    prize_id: 120011
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 2000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 3000           
+        }			
+        award_rate: 1000            
+    }   
+}
+prize: {
+    prize_id: 120012
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 3000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 4000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120013
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 5000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 6000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120021
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 2000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 3000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 4000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120022
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 5000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 6000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 7000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120031
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 3000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 4000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 5000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120032
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 6000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 7000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 8000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120041
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 4000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 5000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 6000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120042
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 7000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 8000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 9000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120050
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 5000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 6000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 7000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 120052
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 8000   
+        }			
+        award_rate: 5000   
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 9000   
+        }			
+        award_rate: 4000       
+    }
+    info: {
+        prize_idx: 2
+        player_attr: {
+		    mon_exp_allocator: 10000          
+        }			
+        award_rate: 1000            
+    }     
+}
+prize: {
+    prize_id: 101000
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 1000   
+        }
+    }    
+}
+prize: {
+    prize_id: 101001
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 10000   
+            coin: 1000
+        }
+    }    
+}
+prize: {
+    prize_id: 101002
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 15000   
+            coin: 1500
+        }
+    }    
+}
+prize: {
+    prize_id: 101003
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 20000   
+            coin: 2000
+        }
+    }    
+}
+prize: {
+    prize_id: 101004
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 30000   
+            coin: 3000    
+        }
+    }    
+}
+prize: {
+    prize_id: 101005
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 40000   
+            coin: 4000
+        }
+    }    
+}
+
+prize: {
+    prize_id: 100101
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20194
+            item_count: 1
+			drop_rate: 1000
+        }
+		item: {
+            item_id: 37001
+            item_count: 1
+			drop_rate: 333
+        }	
+        award_rate: 10000             
+    }
+}
+
+prize: {
+    prize_id: 102000
+    info: {
+        prize_idx: 1
+        player_attr: {
+		    mon_exp_allocator: 10000   
+            coin: 500
+        }
+    }    
+}
+prize: {
+    prize_id: 121000
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20195
+            item_count: 5
+        }		
+    }   
+}
+
+prize: {
+    prize_id: 100051
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20194
+            item_count: 1
+			drop_rate: 1000
+        }
+		item: {
+            item_id: 37001
+            item_count: 1
+			drop_rate: 333
+        }	
+        award_rate: 10000          
+    }
+}
+prize: {
+    prize_id: 100111
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20194
+            item_count: 1
+			drop_rate: 1000
+        }
+		item: {
+            item_id: 37001
+            item_count: 1
+			drop_rate: 333
+        }	
+        award_rate: 10000             
+    }
+}
+
+prize: {
+    prize_id: 200001      
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20194
+            item_count: 1
+        }
+    } 
+}
+
+prize: {
+    prize_id: 200002
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20194
+            item_count: 1
+        }
+    }
+}
+
+prize: {
+    prize_id: 200003
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20194
+            item_count: 1
+        }
+    }
+}
+
+prize: {
+    prize_id: 88001
+    is_login_prize: true
+    info: {
+        prize_idx: 1
+        award_rate: 3500
+        display_rate: 300
+	    player_attr: {
+            coin: 300
+        }
+    }
+    info: {
+        prize_idx: 2
+        award_rate: 2000
+        display_rate: 300
+	    player_attr: {
+            coin: 350
+        }
+    }
+    info: {
+        prize_idx: 3
+        award_rate: 1000
+        display_rate: 500
+	    player_attr: {
+            coin: 500
+        }
+    }
+    info: {
+        prize_idx: 4
+        award_rate: 300
+        display_rate: 700
+	    player_attr: {
+            gcoin: 3
+        }
+    }
+    info: {
+        prize_idx: 5
+        award_rate: 1000
+        display_rate: 400
+	    item: {
+            item_id: 28101
+            item_count: 2
+        }
+    }
+    info: {
+        prize_idx: 6
+        award_rate: 300
+        display_rate: 500
+	    item: {
+            item_id: 20012
+            item_count: 2
+        }
+    }
+    info: {
+        prize_idx: 7
+        award_rate: 300
+        display_rate: 800
+	    item: {
+            item_id: 20013
+            item_count: 1
+        }
+    }
+    info: {
+        prize_idx: 8
+        award_rate: 100
+		display_rate: 1000
+	    item: {
+            item_id: 20014
+            item_count: 1
+        }
+    }
+    info: {
+        prize_idx: 9
+	    award_rate: 100
+		display_rate: 500    
+	    item: {
+            item_id: 20021
+            item_count: 1
+        }
+    }    
+    info: {
+        prize_idx: 10
+        award_rate: 300
+        display_rate: 500
+        item: {
+            item_id: 20031
+            item_count: 1
+        }
+    }
+    info: {
+        prize_idx: 11
+	    award_rate: 300
+		display_rate: 500
+	    item: {
+            item_id: 20071
+            item_count: 1
+        }		
+    }
+    info: {
+        prize_idx: 12
+		award_rate: 100
+		display_rate: 1500
+        item: {
+            item_id: 20072
+            item_count: 1
+        }	
+    }
+    info: {
+        prize_idx: 13
+		award_rate: 200
+		display_rate: 1000
+        item: {
+            item_id: 20041
+            item_count: 1
+        }			
+    }
+    info: {
+        prize_idx: 14
+		award_rate: 0
+		display_rate: 1000
+        item: {
+            item_id: 20035
+            item_count: 1
+        }	
+    }
+    info: {
+        prize_idx: 15
+		award_rate: 500
+		display_rate: 500
+        item: {
+            item_id: 37001
+            item_count: 1
+        }	
+    }
+}
+
+prize: {
+    prize_id: 40001
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20003
+            item_count: 2
+        }
+        item: {
+            item_id: 20015
+            item_count: 10
+        }
+        item: {
+            item_id: 20122
+            item_count: 1
+        }        
+        item: {
+            item_id: 28101
+            item_count: 10
+        }
+        award_rate: 10000
+    }		    
+}
+prize: {
+    prize_id: 40002
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20022
+            item_count: 1
+	    }
+        item: {            
+            item_id: 20054
+            item_count: 1
+ 	    }
+		item: {            
+            item_id: 20041
+            item_count: 1
+ 	    }
+		item: {            
+            item_id: 20031
+            item_count: 2
+ 	    }
+		item: {            
+            item_id: 20015
+            item_count: 5
+ 	    }
+        player_attr: {
+            coin: 2000
+            gcoin: 60
+        }
+        award_rate: 10000
+    }	
+} 
+
+prize: {
+    prize_id: 40003
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 10000
+        }
+        award_rate: 10000
+    }	
+}
+
+prize: {
+    prize_id: 40004
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20022
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40005
+    info: {
+        prize_idx: 1
+        player_attr: {
+            gcoin: 20
+            coin: 5000
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40006
+    info: {
+        prize_idx: 1
+	    item: {
+            item_id: 20022
+            item_count: 5
+	    }
+		item: {            
+            item_id: 20015
+            item_count: 10
+ 	    }
+		item: {            
+            item_id: 20013
+            item_count: 30
+ 	    }
+        player_attr: {
+            coin: 20000
+            gcoin: 50
+        }
+        award_rate: 10000
+    }	
+} 
+
+prize: {
+    prize_id: 40007
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 25035
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40008
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 1000
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40009
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 10000
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40101
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 20015
+            item_count: 1
+        }
+	    item: {
+            item_id: 20071
+            item_count: 1
+		}
+        player_attr: {
+            coin: 500
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40102
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20015
+            item_count: 2
+        }
+		item: {
+            item_id: 20071
+            item_count: 2
+        }
+		item: {
+            item_id: 37001
+            item_count: 20
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40103
+    info: {
+        prize_idx: 1
+		item: {
+            item_id: 25048
+            item_count: 1
+        }
+	    item: {
+            item_id: 20072
+            item_count: 5
+        }
+		item: {
+            item_id: 37001
+            item_count: 40
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40104
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20031
+            item_count: 3
+        }
+        item: {
+            item_id: 20195
+            item_count: 3
+        }		
+        player_attr: {
+            coin: 5000
+		}
+		item: {
+            item_id: 37001
+            item_count: 100
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40201
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 28101
+            item_count: 5
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40202
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20013
+            item_count: 5
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40203
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20015
+            item_count: 5
+        }
+        award_rate: 10000
+    }		    
+}
+
+prize: {
+    prize_id: 40204
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 25034
+            item_count: 1
+        }
+        award_rate: 10000
+    }		    
+}
+
+
+prize: {
+    prize_id: 110001
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 5000
+        }
+        item: {
+            item_id: 20012
+            item_count: 3
+        }
+        item: {
+            item_id: 25033
+            item_count: 1
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110002	
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 5000
+        }
+        item: {
+            item_id: 20012
+            item_count: 3
+        }
+        item: {
+            item_id: 20031
+            item_count: 3
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110003    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 5000
+        }
+        item: {
+            item_id: 20041
+            item_count: 3
+        }
+        item: {
+            item_id: 30007
+            item_count: 1
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110004    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 8000
+        }
+        item: {
+            item_id: 20031
+            item_count: 3
+        }
+        item: {
+            item_id: 20003
+            item_count: 1
+        }
+        award_rate: 10000
+    }
+} 
+prize: {
+    prize_id: 110005   
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 10000
+        }
+        item: {
+            item_id: 20031
+            item_count: 3
+        }
+        item: {
+            item_id: 20003
+            item_count: 1
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110006    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 10000
+        }
+        item: {
+            item_id: 25032
+            item_count: 1
+        }
+        item: {
+            item_id: 20003
+            item_count: 1
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110007    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 10000
+        }
+        item: {
+            item_id: 20014
+            item_count: 9
+        }
+        item: {
+            item_id: 20003
+            item_count: 1
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110008    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 20000
+        }
+        item: {
+            item_id: 20003
+            item_count: 2
+        }
+        item: {
+            item_id: 30008
+            item_count: 1
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110009    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 30000
+        }
+        item: {
+            item_id: 20023
+            item_count: 5
+        }
+        item: {
+            item_id: 20003
+            item_count: 3
+        }
+        award_rate: 10000
+    }
+}
+prize: {
+    prize_id: 110010    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 50000
+        }
+        item: {
+            item_id: 20003
+            item_count: 3
+        }
+        item: {
+            item_id: 25051
+            item_count: 1
+        }
+        award_rate: 10000
+    } 
+}
+
+prize: {
+    prize_id: 110101    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 500
+        }
+        item: {
+            item_id: 20011
+            item_count: 1
+        }
+        item: {
+            item_id: 20051
+            item_count: 1
+        }
+        item: {
+            item_id: 20071
+            item_count: 1
+        }
+        award_rate: 10000
+    } 
+}
+
+prize: {
+    prize_id: 110201    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 5000
+        }
+        item: {
+            item_id: 20012
+            item_count: 3
+        }
+        item: {
+            item_id: 20072
+            item_count: 3
+        }
+        item: {
+            item_id: 20031
+            item_count: 3
+        }
+        item: {
+            item_id: 20054
+            item_count: 3
+        }
+        award_rate: 10000
+    } 
+}
+
+prize: {
+    prize_id: 120053
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 1920
+        }	
+        item: {
+            item_id: 20071
+            item_count: 2
+        }
+    }   
+}
+
+prize: {
+    prize_id: 120054
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 1920
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120055
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 5760
+        }	
+        item: {
+            item_id: 20015
+            item_count: 2
+        }
+    }   
+}
+
+prize: {
+    prize_id: 120056
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 5760
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120057
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 1495
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120058
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 2495
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120059
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 3495
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120060
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 4495
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120061
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 5495
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120062
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 6495
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120063
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 7495
+        }	
+    }   
+}
+
+prize: {
+    prize_id: 120064
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 8495
+        }	
+    }   
+}
+prize: {
+    prize_id: 130001    
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20071
+            item_count: 1
+        }
+    } 
+}
+prize: {
+    prize_id: 130002    
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 20013
+            item_count: 2
+        }
+    } 
+}
+prize: {
+    prize_id: 130003    
+    info: {
+        prize_idx: 1
+        player_attr: {
+            coin: 1000
+        }
+    } 
+}
+prize: {
+    prize_id: 130004    
+    info: {
+        prize_idx: 1
+        item: {
+            item_id: 37001
+            item_count: 1
+        }
+    } 
+}
+prize: {
+    prize_id: 130005   
+    info: {
+        prize_idx: 1
+        player_attr: {
+            gcoin: 2
+        }
+    } 
+}

@@ -1,0 +1,14 @@
+package ISeer20Conf;
+
+message train_t {
+    required uint32 mode_id = 1;
+    required int32 train_time = 2;
+    repeated float cala_exp_attr = 3;
+    required string train_cnt_limit = 4; 
+    optional uint32 cost_coin = 5;
+    optional uint32 cost_gcoin = 6;
+}
+
+message top_config_train_t {
+    repeated train_t train = 1;
+}

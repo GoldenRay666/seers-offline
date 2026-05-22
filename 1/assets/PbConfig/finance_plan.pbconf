@@ -1,0 +1,53 @@
+finance_plan: {
+	id: 1
+    type: LEIYI_LICAI_PLAN
+    name: "雷伊理财计划A"
+    need_gcoin: 300
+    periods: 4
+	period_day: 7
+    yield_rate: 160
+    total_revenue: "9600赛尔豆"
+	plyer_vip_level: 0
+    immediately_prize: 120053
+    follow_prize: 120054
+    follow_prize: 120054
+    follow_prize: 120054
+    follow_prize: 120054
+}
+
+finance_plan: {
+	id: 2
+    type: GAYA_LICAI_PLAN
+    name: "盖亚理财计划A"
+    need_gcoin: 800
+    periods: 4
+    period_day: 7
+    yield_rate: 180
+    total_revenue: "28800赛尔豆"
+	plyer_vip_level: 3
+    immediately_prize: 120055
+    follow_prize: 120056
+    follow_prize: 120056
+    follow_prize: 120056
+    follow_prize: 120056
+}
+
+finance_plan: {
+	id: 101
+    type: JIJIN_PLAN
+    name: "基金理财计划"
+    need_gcoin: 999
+    periods:  8
+    period_level: 10
+    yield_rate: 200
+    total_revenue: "39960赛尔豆"
+    max_mon_level: 35
+    follow_prize: 120057
+	follow_prize: 120058
+	follow_prize: 120059
+	follow_prize: 120060
+	follow_prize: 120061
+	follow_prize: 120062
+	follow_prize: 120063
+    follow_prize: 120064
+}

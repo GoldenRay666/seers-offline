@@ -1,0 +1,2030 @@
+//resources.h file - contains all the generated constants 
+#ifndef _RESOURCES_H 
+#define _RESOURCES_H 
+ 
+//************ Following: 10001.h file ********* 
+ 
+#define map_10001_NUM_MODULES				24
+#define map_10001_NUM_FRAMES				26
+#define map_10001_NUM_ANIMS				4
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10001_FRAME_0				0
+#define map_10001_FRAME_1				1
+#define map_10001_FRAME_2				2
+#define map_10001_FRAME_3				3
+#define map_10001_FRAME_4				4
+#define map_10001_FRAME_5				5
+#define map_10001_FRAME_6				6
+#define map_10001_FRAME_7				7
+#define map_10001_FRAME_8				8
+#define map_10001_FRAME_9				9
+#define map_10001_FRAME_10				10
+#define map_10001_FRAME_11				11
+#define map_10001_FRAME_12				12
+#define map_10001_FRAME_13				13
+#define map_10001_FRAME_14				14
+#define map_10001_FRAME_15				15
+#define map_10001_FRAME_16				16
+#define map_10001_FRAME_17				17
+#define map_10001_FRAME_18				18
+#define map_10001_FRAME_19				19
+#define map_10001_FRAME_20				20
+#define map_10001_FRAME_21				21
+#define map_10001_FRAME_22				22
+#define map_10001_FRAME_23				23
+#define map_10001_FRAME_24				24
+#define map_10001_FRAME_25				25
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10001_ANIM_ACTION_1_STOP				0
+#define map_10001_ANIM_ACTION_1				1
+#define map_10001_ANIM_ACTION_2_STOP				2
+#define map_10001_ANIM_ACTION_2				3
+ 
+//------------ End of: 10001.h file ----------- 
+ 
+ 
+//************ Following: 10002.h file ********* 
+ 
+#define map_10002_NUM_MODULES				32
+#define map_10002_NUM_FRAMES				21
+#define map_10002_NUM_ANIMS				6
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10002_FRAME_0				0
+#define map_10002_FRAME_1				1
+#define map_10002_FRAME_2				2
+#define map_10002_FRAME_3				3
+#define map_10002_FRAME_4				4
+#define map_10002_FRAME_5				5
+#define map_10002_FRAME_6				6
+#define map_10002_FRAME_7				7
+#define map_10002_FRAME_8				8
+#define map_10002_FRAME_9				9
+#define map_10002_FRAME_10				10
+#define map_10002_FRAME_11				11
+#define map_10002_FRAME_12				12
+#define map_10002_FRAME_13				13
+#define map_10002_FRAME_14				14
+#define map_10002_FRAME_15				15
+#define map_10002_FRAME_16				16
+#define map_10002_FRAME_17				17
+#define map_10002_FRAME_18				18
+#define map_10002_FRAME_19				19
+#define map_10002_FRAME_20				20
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10002_ANIM_ACTION_1_STOP				0
+#define map_10002_ANIM_ACTION_1				1
+#define map_10002_ANIM_ACTION_2_STOP				2
+#define map_10002_ANIM_ACTION_2				3
+#define map_10002_ANIM_ACTION_3_STOP				4
+#define map_10002_ANIM_ACTION_3				5
+ 
+//------------ End of: 10002.h file ----------- 
+ 
+ 
+//************ Following: 10003.h file ********* 
+ 
+#define map_10003_NUM_MODULES				25
+#define map_10003_NUM_FRAMES				34
+#define map_10003_NUM_ANIMS				8
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10003_FRAME_0				0
+#define map_10003_FRAME_1				1
+#define map_10003_FRAME_2				2
+#define map_10003_FRAME_3				3
+#define map_10003_FRAME_4				4
+#define map_10003_FRAME_5				5
+#define map_10003_FRAME_6				6
+#define map_10003_FRAME_7				7
+#define map_10003_FRAME_8				8
+#define map_10003_FRAME_9				9
+#define map_10003_FRAME_10				10
+#define map_10003_FRAME_11				11
+#define map_10003_FRAME_12				12
+#define map_10003_FRAME_13				13
+#define map_10003_FRAME_14				14
+#define map_10003_FRAME_15				15
+#define map_10003_FRAME_16				16
+#define map_10003_FRAME_17				17
+#define map_10003_FRAME_18				18
+#define map_10003_FRAME_19				19
+#define map_10003_FRAME_20				20
+#define map_10003_FRAME_21				21
+#define map_10003_FRAME_22				22
+#define map_10003_FRAME_23				23
+#define map_10003_FRAME_24				24
+#define map_10003_FRAME_25				25
+#define map_10003_FRAME_26				26
+#define map_10003_FRAME_27				27
+#define map_10003_FRAME_28				28
+#define map_10003_FRAME_29				29
+#define map_10003_FRAME_30				30
+#define map_10003_FRAME_31				31
+#define map_10003_FRAME_32				32
+#define map_10003_FRAME_33				33
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10003_ANIM_ACTION_1_STOP				0
+#define map_10003_ANIM_ACTION_1				1
+#define map_10003_ANIM_ACTION_2_STOP				2
+#define map_10003_ANIM_ACTION_2				3
+#define map_10003_ANIM_ACTION_3_STOP				4
+#define map_10003_ANIM_ACTION_3				5
+#define map_10003_ANIM_ACTION_4_STOP				6
+#define map_10003_ANIM_ACTION_4				7
+ 
+//------------ End of: 10003.h file ----------- 
+ 
+ 
+//************ Following: 10004.h file ********* 
+ 
+#define map_10004_NUM_MODULES				13
+#define map_10004_NUM_FRAMES				8
+#define map_10004_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10004_FRAME_0				0
+#define map_10004_FRAME_1				1
+#define map_10004_FRAME_2				2
+#define map_10004_FRAME_3				3
+#define map_10004_FRAME_4				4
+#define map_10004_FRAME_5				5
+#define map_10004_FRAME_6				6
+#define map_10004_FRAME_7				7
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10004_ANIM_ACTION_1_STOP				0
+#define map_10004_ANIM_ACTION_1				1
+ 
+//------------ End of: 10004.h file ----------- 
+ 
+ 
+//************ Following: 10005.h file ********* 
+ 
+#define map_10005_NUM_MODULES				3
+#define map_10005_NUM_FRAMES				3
+#define map_10005_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10005_FRAME_0				0
+#define map_10005_FRAME_1				1
+#define map_10005_FRAME_2				2
+ 
+//------------ End of: 10005.h file ----------- 
+ 
+ 
+//************ Following: 10006.h file ********* 
+ 
+#define map_10006_NUM_MODULES				60
+#define map_10006_NUM_FRAMES				35
+#define map_10006_NUM_ANIMS				4
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10006_FRAME_0				0
+#define map_10006_FRAME_1				1
+#define map_10006_FRAME_2				2
+#define map_10006_FRAME_3				3
+#define map_10006_FRAME_4				4
+#define map_10006_FRAME_5				5
+#define map_10006_FRAME_6				6
+#define map_10006_FRAME_7				7
+#define map_10006_FRAME_8				8
+#define map_10006_FRAME_9				9
+#define map_10006_FRAME_10				10
+#define map_10006_FRAME_11				11
+#define map_10006_FRAME_12				12
+#define map_10006_FRAME_13				13
+#define map_10006_FRAME_14				14
+#define map_10006_FRAME_15				15
+#define map_10006_FRAME_16				16
+#define map_10006_FRAME_17				17
+#define map_10006_FRAME_18				18
+#define map_10006_FRAME_19				19
+#define map_10006_FRAME_20				20
+#define map_10006_FRAME_21				21
+#define map_10006_FRAME_22				22
+#define map_10006_FRAME_23				23
+#define map_10006_FRAME_24				24
+#define map_10006_FRAME_25				25
+#define map_10006_FRAME_26				26
+#define map_10006_FRAME_27				27
+#define map_10006_FRAME_28				28
+#define map_10006_FRAME_29				29
+#define map_10006_FRAME_30				30
+#define map_10006_FRAME_31				31
+#define map_10006_FRAME_32				32
+#define map_10006_FRAME_33				33
+#define map_10006_FRAME_34				34
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10006_ANIM_ACTION_1_STOP				0
+#define map_10006_ANIM_ACTION_1				1
+//	final static int ANIM_ACTION_1_STOP					= 2;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 3;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10006.h file ----------- 
+ 
+ 
+//************ Following: 10007.h file ********* 
+ 
+#define map_10007_NUM_MODULES				21
+#define map_10007_NUM_FRAMES				20
+#define map_10007_NUM_ANIMS				4
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10007_FRAME_0				0
+#define map_10007_FRAME_1				1
+#define map_10007_FRAME_2				2
+#define map_10007_FRAME_3				3
+#define map_10007_FRAME_4				4
+#define map_10007_FRAME_5				5
+#define map_10007_FRAME_6				6
+#define map_10007_FRAME_7				7
+#define map_10007_FRAME_8				8
+#define map_10007_FRAME_9				9
+#define map_10007_FRAME_10				10
+#define map_10007_FRAME_11				11
+#define map_10007_FRAME_12				12
+#define map_10007_FRAME_13				13
+#define map_10007_FRAME_14				14
+#define map_10007_FRAME_15				15
+#define map_10007_FRAME_16				16
+#define map_10007_FRAME_17				17
+#define map_10007_FRAME_18				18
+#define map_10007_FRAME_19				19
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10007_ANIM_ACTION_1_STOP				0
+#define map_10007_ANIM_ACTION_1				1
+//	final static int ANIM_ACTION_1_STOP					= 2;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 3;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10007.h file ----------- 
+ 
+ 
+//************ Following: 10009.h file ********* 
+ 
+#define map_10009_NUM_MODULES				19
+#define map_10009_NUM_FRAMES				9
+#define map_10009_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10009_FRAME_0				0
+#define map_10009_FRAME_1				1
+#define map_10009_FRAME_2				2
+#define map_10009_FRAME_3				3
+#define map_10009_FRAME_4				4
+#define map_10009_FRAME_5				5
+#define map_10009_FRAME_6				6
+#define map_10009_FRAME_7				7
+#define map_10009_FRAME_8				8
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10009_ANIM_ACTION_1_STOP				0
+#define map_10009_ANIM_ACTION_1				1
+ 
+//------------ End of: 10009.h file ----------- 
+ 
+ 
+//************ Following: 10010.h file ********* 
+ 
+#define map_10010_NUM_MODULES				22
+#define map_10010_NUM_FRAMES				57
+#define map_10010_NUM_ANIMS				6
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10010_FRAME_0				0
+#define map_10010_FRAME_1				1
+#define map_10010_FRAME_2				2
+#define map_10010_FRAME_3				3
+#define map_10010_FRAME_4				4
+#define map_10010_FRAME_5				5
+#define map_10010_FRAME_6				6
+#define map_10010_FRAME_7				7
+#define map_10010_FRAME_8				8
+#define map_10010_FRAME_9				9
+#define map_10010_FRAME_10				10
+#define map_10010_FRAME_11				11
+#define map_10010_FRAME_12				12
+#define map_10010_FRAME_13				13
+#define map_10010_FRAME_14				14
+#define map_10010_FRAME_15				15
+#define map_10010_FRAME_16				16
+#define map_10010_FRAME_17				17
+#define map_10010_FRAME_18				18
+#define map_10010_FRAME_19				19
+#define map_10010_FRAME_20				20
+#define map_10010_FRAME_21				21
+#define map_10010_FRAME_22				22
+#define map_10010_FRAME_23				23
+#define map_10010_FRAME_24				24
+#define map_10010_FRAME_25				25
+#define map_10010_FRAME_26				26
+#define map_10010_FRAME_27				27
+#define map_10010_FRAME_28				28
+#define map_10010_FRAME_29				29
+#define map_10010_FRAME_30				30
+#define map_10010_FRAME_31				31
+#define map_10010_FRAME_32				32
+#define map_10010_FRAME_33				33
+#define map_10010_FRAME_34				34
+#define map_10010_FRAME_35				35
+#define map_10010_FRAME_36				36
+#define map_10010_FRAME_37				37
+#define map_10010_FRAME_38				38
+#define map_10010_FRAME_39				39
+#define map_10010_FRAME_40				40
+#define map_10010_FRAME_41				41
+#define map_10010_FRAME_42				42
+#define map_10010_FRAME_43				43
+#define map_10010_FRAME_44				44
+#define map_10010_FRAME_45				45
+#define map_10010_FRAME_46				46
+#define map_10010_FRAME_47				47
+#define map_10010_FRAME_48				48
+#define map_10010_FRAME_49				49
+#define map_10010_FRAME_50				50
+#define map_10010_FRAME_51				51
+#define map_10010_FRAME_52				52
+#define map_10010_FRAME_53				53
+#define map_10010_FRAME_54				54
+#define map_10010_FRAME_55				55
+#define map_10010_FRAME_56				56
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10010_ANIM_ACTION_1_STOP				0
+#define map_10010_ANIM_ACTION_1				1
+#define map_10010_ANIM_ACTION_2_STOP				2
+#define map_10010_ANIM_ACTION_2				3
+#define map_10010_ANIM_ACTION_3_STOP				4
+#define map_10010_ANIM_ACTION_3				5
+ 
+//------------ End of: 10010.h file ----------- 
+ 
+ 
+//************ Following: 10011.h file ********* 
+ 
+#define map_10011_NUM_MODULES				11
+#define map_10011_NUM_FRAMES				14
+#define map_10011_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10011_FRAME_0				0
+#define map_10011_FRAME_1				1
+#define map_10011_FRAME_2				2
+#define map_10011_FRAME_3				3
+#define map_10011_FRAME_4				4
+#define map_10011_FRAME_5				5
+#define map_10011_FRAME_6				6
+#define map_10011_FRAME_7				7
+#define map_10011_FRAME_8				8
+#define map_10011_FRAME_9				9
+#define map_10011_FRAME_10				10
+#define map_10011_FRAME_11				11
+#define map_10011_FRAME_12				12
+#define map_10011_FRAME_13				13
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10011_ANIM_ACTION_1_STOP				0
+#define map_10011_ANIM_ACTION_1				1
+ 
+//------------ End of: 10011.h file ----------- 
+ 
+ 
+//************ Following: 10012.h file ********* 
+ 
+#define map_10012_NUM_MODULES				8
+#define map_10012_NUM_FRAMES				12
+#define map_10012_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10012_FRAME_0				0
+#define map_10012_FRAME_1				1
+#define map_10012_FRAME_2				2
+#define map_10012_FRAME_3				3
+#define map_10012_FRAME_4				4
+#define map_10012_FRAME_5				5
+#define map_10012_FRAME_6				6
+#define map_10012_FRAME_7				7
+#define map_10012_FRAME_8				8
+#define map_10012_FRAME_9				9
+#define map_10012_FRAME_10				10
+#define map_10012_FRAME_11				11
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10012_ANIM_ACTION_1_STOP				0
+//	final static int ANIM_ACTION_1_STOP					= 1;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10012.h file ----------- 
+ 
+ 
+//************ Following: 10013.h file ********* 
+ 
+#define map_10013_NUM_MODULES				15
+#define map_10013_NUM_FRAMES				54
+#define map_10013_NUM_ANIMS				12
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10013_FRAME_0				0
+#define map_10013_FRAME_1				1
+#define map_10013_FRAME_2				2
+#define map_10013_FRAME_3				3
+#define map_10013_FRAME_4				4
+#define map_10013_FRAME_5				5
+#define map_10013_FRAME_6				6
+#define map_10013_FRAME_7				7
+#define map_10013_FRAME_8				8
+#define map_10013_FRAME_9				9
+#define map_10013_FRAME_10				10
+#define map_10013_FRAME_11				11
+#define map_10013_FRAME_12				12
+#define map_10013_FRAME_13				13
+#define map_10013_FRAME_14				14
+#define map_10013_FRAME_15				15
+#define map_10013_FRAME_16				16
+#define map_10013_FRAME_17				17
+#define map_10013_FRAME_18				18
+#define map_10013_FRAME_19				19
+#define map_10013_FRAME_20				20
+#define map_10013_FRAME_21				21
+#define map_10013_FRAME_22				22
+#define map_10013_FRAME_23				23
+#define map_10013_FRAME_24				24
+#define map_10013_FRAME_25				25
+#define map_10013_FRAME_26				26
+#define map_10013_FRAME_27				27
+#define map_10013_FRAME_28				28
+#define map_10013_FRAME_29				29
+#define map_10013_FRAME_30				30
+#define map_10013_FRAME_31				31
+#define map_10013_FRAME_32				32
+#define map_10013_FRAME_33				33
+#define map_10013_FRAME_34				34
+#define map_10013_FRAME_35				35
+#define map_10013_FRAME_36				36
+#define map_10013_FRAME_37				37
+#define map_10013_FRAME_38				38
+#define map_10013_FRAME_39				39
+#define map_10013_FRAME_40				40
+#define map_10013_FRAME_41				41
+#define map_10013_FRAME_42				42
+#define map_10013_FRAME_43				43
+#define map_10013_FRAME_44				44
+#define map_10013_FRAME_45				45
+#define map_10013_FRAME_46				46
+#define map_10013_FRAME_47				47
+#define map_10013_FRAME_48				48
+#define map_10013_FRAME_49				49
+#define map_10013_FRAME_50				50
+#define map_10013_FRAME_51				51
+#define map_10013_FRAME_52				52
+#define map_10013_FRAME_53				53
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10013_ANIM_ACTION_1_STOP				0
+#define map_10013_ANIM_ACTION_1				1
+//	final static int ANIM_ACTION_1_STOP					= 2;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 3;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1_STOP					= 4;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 5;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1_STOP					= 6;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 7;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1_STOP					= 8;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 9;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1_STOP					= 10;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 11;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10013.h file ----------- 
+ 
+ 
+//************ Following: 10014.h file ********* 
+ 
+#define map_10014_NUM_MODULES				37
+#define map_10014_NUM_FRAMES				10
+#define map_10014_NUM_ANIMS				4
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10014_FRAME_0				0
+#define map_10014_FRAME_1				1
+#define map_10014_FRAME_2				2
+#define map_10014_FRAME_3				3
+#define map_10014_FRAME_4				4
+#define map_10014_FRAME_5				5
+#define map_10014_FRAME_6				6
+#define map_10014_FRAME_7				7
+#define map_10014_FRAME_8				8
+#define map_10014_FRAME_9				9
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10014_ANIM_ACTION_1_STOP				0
+#define map_10014_ANIM_ACTION_1				1
+//	final static int ANIM_ACTION_1_STOP					= 2;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 3;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10014.h file ----------- 
+ 
+ 
+//************ Following: 10015.h file ********* 
+ 
+#define map_10015_NUM_MODULES				3
+#define map_10015_NUM_FRAMES				3
+#define map_10015_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10015_FRAME_0				0
+#define map_10015_FRAME_1				1
+#define map_10015_FRAME_2				2
+ 
+//------------ End of: 10015.h file ----------- 
+ 
+ 
+//************ Following: 10016.h file ********* 
+ 
+#define map_10016_NUM_MODULES				51
+#define map_10016_NUM_FRAMES				38
+#define map_10016_NUM_ANIMS				10
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10016_FRAME_0				0
+#define map_10016_FRAME_1				1
+#define map_10016_FRAME_2				2
+#define map_10016_FRAME_3				3
+#define map_10016_FRAME_4				4
+#define map_10016_FRAME_5				5
+#define map_10016_FRAME_6				6
+#define map_10016_FRAME_7				7
+#define map_10016_FRAME_8				8
+#define map_10016_FRAME_9				9
+#define map_10016_FRAME_10				10
+#define map_10016_FRAME_11				11
+#define map_10016_FRAME_12				12
+#define map_10016_FRAME_13				13
+#define map_10016_FRAME_14				14
+#define map_10016_FRAME_15				15
+#define map_10016_FRAME_16				16
+#define map_10016_FRAME_17				17
+#define map_10016_FRAME_18				18
+#define map_10016_FRAME_19				19
+#define map_10016_FRAME_20				20
+#define map_10016_FRAME_21				21
+#define map_10016_FRAME_22				22
+#define map_10016_FRAME_23				23
+#define map_10016_FRAME_24				24
+#define map_10016_FRAME_25				25
+#define map_10016_FRAME_26				26
+#define map_10016_FRAME_27				27
+#define map_10016_FRAME_28				28
+#define map_10016_FRAME_29				29
+#define map_10016_FRAME_30				30
+#define map_10016_FRAME_31				31
+#define map_10016_FRAME_32				32
+#define map_10016_FRAME_33				33
+#define map_10016_FRAME_34				34
+#define map_10016_FRAME_35				35
+#define map_10016_FRAME_36				36
+#define map_10016_FRAME_37				37
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10016_ANIM_ACTION_1_STOP				0
+#define map_10016_ANIM_ACTION_1				1
+#define map_10016_ANIM_ACTION_2_STOP				2
+#define map_10016_ANIM_ACTION_2				3
+#define map_10016_ANIM_ACTION_3_STOP				4
+#define map_10016_ANIM_ACTION_3				5
+#define map_10016_ANIM_ACTION_4_STOP				6
+#define map_10016_ANIM_ACTION_4				7
+#define map_10016_ANIM_ACTION_5_STOP				8
+#define map_10016_ANIM_ACTION_5				9
+ 
+//------------ End of: 10016.h file ----------- 
+ 
+ 
+//************ Following: 10017.h file ********* 
+ 
+#define map_10017_NUM_MODULES				7
+#define map_10017_NUM_FRAMES				11
+#define map_10017_NUM_ANIMS				8
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10017_FRAME_0				0
+#define map_10017_FRAME_1				1
+#define map_10017_FRAME_2				2
+#define map_10017_FRAME_3				3
+#define map_10017_FRAME_4				4
+#define map_10017_FRAME_5				5
+#define map_10017_FRAME_6				6
+#define map_10017_FRAME_7				7
+#define map_10017_FRAME_8				8
+#define map_10017_FRAME_9				9
+#define map_10017_FRAME_10				10
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10017_ANIM_ACTION_1_STOP				0
+#define map_10017_ANIM_ACTION_1				1
+#define map_10017_ANIM_ACTION_2_STOP				2
+#define map_10017_ANIM_ACTION_2				3
+#define map_10017_ANIM_ACTION_3_STOP				4
+#define map_10017_ANIM_ACTION_3				5
+#define map_10017_ANIM_ACTION_4_STOP				6
+#define map_10017_ANIM_ACTION_4				7
+ 
+//------------ End of: 10017.h file ----------- 
+ 
+ 
+//************ Following: 10018.h file ********* 
+ 
+#define map_10018_NUM_MODULES				33
+#define map_10018_NUM_FRAMES				23
+#define map_10018_NUM_ANIMS				6
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10018_FRAME_0				0
+#define map_10018_FRAME_1				1
+#define map_10018_FRAME_2				2
+#define map_10018_FRAME_3				3
+#define map_10018_FRAME_4				4
+#define map_10018_FRAME_5				5
+#define map_10018_FRAME_6				6
+#define map_10018_FRAME_7				7
+#define map_10018_FRAME_8				8
+#define map_10018_FRAME_9				9
+#define map_10018_FRAME_10				10
+#define map_10018_FRAME_11				11
+#define map_10018_FRAME_12				12
+#define map_10018_FRAME_13				13
+#define map_10018_FRAME_14				14
+#define map_10018_FRAME_15				15
+#define map_10018_FRAME_16				16
+#define map_10018_FRAME_17				17
+#define map_10018_FRAME_18				18
+#define map_10018_FRAME_19				19
+#define map_10018_FRAME_20				20
+#define map_10018_FRAME_21				21
+#define map_10018_FRAME_22				22
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10018_ANIM_ACTION_1_STOP				0
+#define map_10018_ANIM_ACTION_1				1
+#define map_10018_ANIM_ACTION_2_STOP				2
+#define map_10018_ANIM_ACTION_2				3
+#define map_10018_ANIM_ACTION_3_STOP				4
+#define map_10018_ANIM_ACTION_3				5
+ 
+//------------ End of: 10018.h file ----------- 
+ 
+ 
+//************ Following: 10019.h file ********* 
+ 
+#define map_10019_NUM_MODULES				43
+#define map_10019_NUM_FRAMES				29
+#define map_10019_NUM_ANIMS				4
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10019_FRAME_0				0
+#define map_10019_FRAME_1				1
+#define map_10019_FRAME_2				2
+#define map_10019_FRAME_3				3
+#define map_10019_FRAME_4				4
+#define map_10019_FRAME_5				5
+#define map_10019_FRAME_6				6
+#define map_10019_FRAME_7				7
+#define map_10019_FRAME_8				8
+#define map_10019_FRAME_9				9
+#define map_10019_FRAME_10				10
+#define map_10019_FRAME_11				11
+#define map_10019_FRAME_12				12
+#define map_10019_FRAME_13				13
+#define map_10019_FRAME_14				14
+#define map_10019_FRAME_15				15
+#define map_10019_FRAME_16				16
+#define map_10019_FRAME_17				17
+#define map_10019_FRAME_18				18
+#define map_10019_FRAME_19				19
+#define map_10019_FRAME_20				20
+#define map_10019_FRAME_21				21
+#define map_10019_FRAME_22				22
+#define map_10019_FRAME_23				23
+#define map_10019_FRAME_24				24
+#define map_10019_FRAME_25				25
+#define map_10019_FRAME_26				26
+#define map_10019_FRAME_27				27
+#define map_10019_FRAME_28				28
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10019_ANIM_ACTION_1_STOP				0
+#define map_10019_ANIM_ACTION_1				1
+#define map_10019_ANIM_ACTION_2_STOP				2
+#define map_10019_ANIM_ACTION_2				3
+ 
+//------------ End of: 10019.h file ----------- 
+ 
+ 
+//************ Following: 10020.h file ********* 
+ 
+#define map_10020_NUM_MODULES				8
+#define map_10020_NUM_FRAMES				8
+#define map_10020_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10020_FRAME_0				0
+#define map_10020_FRAME_1				1
+#define map_10020_FRAME_2				2
+#define map_10020_FRAME_3				3
+#define map_10020_FRAME_4				4
+#define map_10020_FRAME_5				5
+#define map_10020_FRAME_6				6
+#define map_10020_FRAME_7				7
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10020_ANIM_ACTION_1_STOP				0
+#define map_10020_ANIM_ACTION_1				1
+ 
+//------------ End of: 10020.h file ----------- 
+ 
+ 
+//************ Following: 10021.h file ********* 
+ 
+#define map_10021_NUM_MODULES				20
+#define map_10021_NUM_FRAMES				19
+#define map_10021_NUM_ANIMS				6
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10021_FRAME_0				0
+#define map_10021_FRAME_1				1
+#define map_10021_FRAME_2				2
+#define map_10021_FRAME_3				3
+#define map_10021_FRAME_4				4
+#define map_10021_FRAME_5				5
+#define map_10021_FRAME_6				6
+#define map_10021_FRAME_7				7
+#define map_10021_FRAME_8				8
+#define map_10021_FRAME_9				9
+#define map_10021_FRAME_10				10
+#define map_10021_FRAME_11				11
+#define map_10021_FRAME_12				12
+#define map_10021_FRAME_13				13
+#define map_10021_FRAME_14				14
+#define map_10021_FRAME_15				15
+#define map_10021_FRAME_16				16
+#define map_10021_FRAME_17				17
+#define map_10021_FRAME_18				18
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10021_ANIM_ACTION_1_STOP				0
+#define map_10021_ANIM_ACTION_1				1
+//	final static int ANIM_ACTION_1_STOP					= 2;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 3;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1_STOP					= 4;	WARNING: Duplicate ID name!
+
+//	final static int ANIM_ACTION_1						= 5;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10021.h file ----------- 
+ 
+ 
+//************ Following: 10022.h file ********* 
+ 
+#define map_10022_NUM_MODULES				3
+#define map_10022_NUM_FRAMES				3
+#define map_10022_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10022_FRAME_0				0
+#define map_10022_FRAME_1				1
+#define map_10022_FRAME_2				2
+ 
+//------------ End of: 10022.h file ----------- 
+ 
+ 
+//************ Following: 10023.h file ********* 
+ 
+#define map_10023_NUM_MODULES				17
+#define map_10023_NUM_FRAMES				3
+#define map_10023_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10023_FRAME_0				0
+#define map_10023_FRAME_1				1
+#define map_10023_FRAME_2				2
+ 
+//------------ End of: 10023.h file ----------- 
+ 
+ 
+//************ Following: 10024.h file ********* 
+ 
+#define map_10024_NUM_MODULES				5
+#define map_10024_NUM_FRAMES				3
+#define map_10024_NUM_ANIMS				4
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10024_FRAME_0				0
+#define map_10024_FRAME_1				1
+#define map_10024_FRAME_2				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10024_ANIM_0				0
+#define map_10024_ANIM_1				1
+#define map_10024_ANIM_2				2
+//	final static int ANIM_2								= 3;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10024.h file ----------- 
+ 
+ 
+//************ Following: 10024_iphone.h file ********* 
+ 
+#define map_10024_iphone_NUM_MODULES				3
+#define map_10024_iphone_NUM_FRAMES				1
+#define map_10024_iphone_NUM_ANIMS				4
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10024_iphone_FRAME_0				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10024_iphone_ANIM_0				0
+#define map_10024_iphone_ANIM_1				1
+#define map_10024_iphone_ANIM_2				2
+//	final static int ANIM_2								= 3;	WARNING: Duplicate ID name!
+
+ 
+//------------ End of: 10024_iphone.h file ----------- 
+ 
+ 
+//************ Following: 10024_iphone5.h file ********* 
+ 
+#define map_10024_iphone5_NUM_MODULES				5
+#define map_10024_iphone5_NUM_FRAMES				1
+#define map_10024_iphone5_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10024_iphone5_FRAME_0				0
+ 
+//------------ End of: 10024_iphone5.h file ----------- 
+ 
+ 
+//************ Following: 10025.h file ********* 
+ 
+#define map_10025_NUM_MODULES				3
+#define map_10025_NUM_FRAMES				3
+#define map_10025_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10025_FRAME_0				0
+#define map_10025_FRAME_1				1
+#define map_10025_FRAME_2				2
+ 
+//------------ End of: 10025.h file ----------- 
+ 
+ 
+//************ Following: 10026.h file ********* 
+ 
+#define map_10026_NUM_MODULES				10
+#define map_10026_NUM_FRAMES				12
+#define map_10026_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10026_FRAME_0				0
+#define map_10026_FRAME_1				1
+#define map_10026_FRAME_2				2
+#define map_10026_FRAME_3				3
+#define map_10026_FRAME_4				4
+#define map_10026_FRAME_5				5
+#define map_10026_FRAME_6				6
+#define map_10026_FRAME_7				7
+#define map_10026_FRAME_8				8
+#define map_10026_FRAME_9				9
+#define map_10026_FRAME_10				10
+#define map_10026_FRAME_11				11
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10026_ANIM_ACTION_1_STOP				0
+#define map_10026_ANIM_ACTION_1				1
+ 
+//------------ End of: 10026.h file ----------- 
+ 
+ 
+//************ Following: 10027.h file ********* 
+ 
+#define map_10027_NUM_MODULES				10
+#define map_10027_NUM_FRAMES				12
+#define map_10027_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10027_FRAME_0				0
+#define map_10027_FRAME_1				1
+#define map_10027_FRAME_2				2
+#define map_10027_FRAME_3				3
+#define map_10027_FRAME_4				4
+#define map_10027_FRAME_5				5
+#define map_10027_FRAME_6				6
+#define map_10027_FRAME_7				7
+#define map_10027_FRAME_8				8
+#define map_10027_FRAME_9				9
+#define map_10027_FRAME_10				10
+#define map_10027_FRAME_11				11
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10027_ANIM_ACTION_1_STOP				0
+#define map_10027_ANIM_ACTION_1				1
+ 
+//------------ End of: 10027.h file ----------- 
+ 
+ 
+//************ Following: 10028iPad.h file ********* 
+ 
+#define map_10028iPad_NUM_MODULES				10
+#define map_10028iPad_NUM_FRAMES				12
+#define map_10028iPad_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10028iPad_FRAME_0				0
+#define map_10028iPad_FRAME_1				1
+#define map_10028iPad_FRAME_2				2
+#define map_10028iPad_FRAME_3				3
+#define map_10028iPad_FRAME_4				4
+#define map_10028iPad_FRAME_5				5
+#define map_10028iPad_FRAME_6				6
+#define map_10028iPad_FRAME_7				7
+#define map_10028iPad_FRAME_8				8
+#define map_10028iPad_FRAME_9				9
+#define map_10028iPad_FRAME_10				10
+#define map_10028iPad_FRAME_11				11
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10028iPad_ANIM_ACTION_1_STOP				0
+#define map_10028iPad_ANIM_ACTION_1				1
+ 
+//------------ End of: 10028iPad.h file ----------- 
+ 
+ 
+//************ Following: 10029.h file ********* 
+ 
+#define map_10029_NUM_MODULES				9
+#define map_10029_NUM_FRAMES				16
+#define map_10029_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10029_FRAME_0				0
+#define map_10029_FRAME_1				1
+#define map_10029_FRAME_2				2
+#define map_10029_FRAME_3				3
+#define map_10029_FRAME_4				4
+#define map_10029_FRAME_5				5
+#define map_10029_FRAME_6				6
+#define map_10029_FRAME_7				7
+#define map_10029_FRAME_8				8
+#define map_10029_FRAME_9				9
+#define map_10029_FRAME_10				10
+#define map_10029_FRAME_11				11
+#define map_10029_FRAME_12				12
+#define map_10029_FRAME_13				13
+#define map_10029_FRAME_14				14
+#define map_10029_FRAME_15				15
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_10029_ANIM_ACTION_1_STOP				0
+#define map_10029_ANIM_ACTION_1				1
+ 
+//------------ End of: 10029.h file ----------- 
+ 
+ 
+//************ Following: 10030.h file ********* 
+ 
+#define map_10030_NUM_MODULES				3
+#define map_10030_NUM_FRAMES				3
+#define map_10030_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10030_FRAME_0				0
+#define map_10030_FRAME_1				1
+#define map_10030_FRAME_2				2
+ 
+//------------ End of: 10030.h file ----------- 
+ 
+ 
+//************ Following: 10031.h file ********* 
+ 
+#define map_10031_NUM_MODULES				3
+#define map_10031_NUM_FRAMES				3
+#define map_10031_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10031_FRAME_0				0
+#define map_10031_FRAME_1				1
+#define map_10031_FRAME_2				2
+ 
+//------------ End of: 10031.h file ----------- 
+ 
+ 
+//************ Following: 10032.h file ********* 
+ 
+#define map_10032_NUM_MODULES				3
+#define map_10032_NUM_FRAMES				3
+#define map_10032_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10032_FRAME_0				0
+#define map_10032_FRAME_1				1
+#define map_10032_FRAME_2				2
+ 
+//------------ End of: 10032.h file ----------- 
+ 
+ 
+//************ Following: 10041.h file ********* 
+ 
+#define map_10041_NUM_MODULES				10
+#define map_10041_NUM_FRAMES				3
+#define map_10041_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_10041_FRAME_0				0
+#define map_10041_FRAME_1				1
+#define map_10041_FRAME_2				2
+ 
+//------------ End of: 10041.h file ----------- 
+ 
+ 
+//************ Following: 11001.h file ********* 
+ 
+#define map_11001_NUM_MODULES				3
+#define map_11001_NUM_FRAMES				3
+#define map_11001_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11001_FRAME_0				0
+#define map_11001_FRAME_1				1
+#define map_11001_FRAME_2				2
+ 
+//------------ End of: 11001.h file ----------- 
+ 
+ 
+//************ Following: 11002.h file ********* 
+ 
+#define map_11002_NUM_MODULES				3
+#define map_11002_NUM_FRAMES				3
+#define map_11002_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11002_FRAME_0				0
+#define map_11002_FRAME_1				1
+#define map_11002_FRAME_2				2
+ 
+//------------ End of: 11002.h file ----------- 
+ 
+ 
+//************ Following: 11003.h file ********* 
+ 
+#define map_11003_NUM_MODULES				3
+#define map_11003_NUM_FRAMES				3
+#define map_11003_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11003_FRAME_0				0
+#define map_11003_FRAME_1				1
+#define map_11003_FRAME_2				2
+ 
+//------------ End of: 11003.h file ----------- 
+ 
+ 
+//************ Following: 11004.h file ********* 
+ 
+#define map_11004_NUM_MODULES				3
+#define map_11004_NUM_FRAMES				3
+#define map_11004_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11004_FRAME_0				0
+#define map_11004_FRAME_1				1
+#define map_11004_FRAME_2				2
+ 
+//------------ End of: 11004.h file ----------- 
+ 
+ 
+//************ Following: 11005.h file ********* 
+ 
+#define map_11005_NUM_MODULES				3
+#define map_11005_NUM_FRAMES				3
+#define map_11005_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11005_FRAME_0				0
+#define map_11005_FRAME_1				1
+#define map_11005_FRAME_2				2
+ 
+//------------ End of: 11005.h file ----------- 
+ 
+ 
+//************ Following: 11006.h file ********* 
+ 
+#define map_11006_NUM_MODULES				3
+#define map_11006_NUM_FRAMES				3
+#define map_11006_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11006_FRAME_0				0
+#define map_11006_FRAME_1				1
+#define map_11006_FRAME_2				2
+ 
+//------------ End of: 11006.h file ----------- 
+ 
+ 
+//************ Following: 11007.h file ********* 
+ 
+#define map_11007_NUM_MODULES				3
+#define map_11007_NUM_FRAMES				3
+#define map_11007_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11007_FRAME_0				0
+#define map_11007_FRAME_1				1
+#define map_11007_FRAME_2				2
+ 
+//------------ End of: 11007.h file ----------- 
+ 
+ 
+//************ Following: 11008.h file ********* 
+ 
+#define map_11008_NUM_MODULES				3
+#define map_11008_NUM_FRAMES				3
+#define map_11008_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_11008_FRAME_0				0
+#define map_11008_FRAME_1				1
+#define map_11008_FRAME_2				2
+ 
+//------------ End of: 11008.h file ----------- 
+ 
+ 
+//************ Following: 12001.h file ********* 
+ 
+#define map_12001_NUM_MODULES				3
+#define map_12001_NUM_FRAMES				1
+#define map_12001_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_12001_FRAME_0				0
+ 
+//------------ End of: 12001.h file ----------- 
+ 
+ 
+//************ Following: 12002.h file ********* 
+ 
+#define map_12002_NUM_MODULES				3
+#define map_12002_NUM_FRAMES				1
+#define map_12002_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_12002_FRAME_0				0
+ 
+//------------ End of: 12002.h file ----------- 
+ 
+ 
+//************ Following: 12003.h file ********* 
+ 
+#define map_12003_NUM_MODULES				3
+#define map_12003_NUM_FRAMES				1
+#define map_12003_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_12003_FRAME_0				0
+ 
+//------------ End of: 12003.h file ----------- 
+ 
+ 
+//************ Following: 12004.h file ********* 
+ 
+#define map_12004_NUM_MODULES				3
+#define map_12004_NUM_FRAMES				1
+#define map_12004_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_12004_FRAME_0				0
+ 
+//------------ End of: 12004.h file ----------- 
+ 
+ 
+//************ Following: 12005.h file ********* 
+ 
+#define map_12005_NUM_MODULES				3
+#define map_12005_NUM_FRAMES				1
+#define map_12005_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_12005_FRAME_0				0
+ 
+//------------ End of: 12005.h file ----------- 
+ 
+ 
+//************ Following: 12006.h file ********* 
+ 
+#define map_12006_NUM_MODULES				3
+#define map_12006_NUM_FRAMES				1
+#define map_12006_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_12006_FRAME_0				0
+ 
+//------------ End of: 12006.h file ----------- 
+ 
+ 
+//************ Following: 12008.h file ********* 
+ 
+#define map_12008_NUM_MODULES				3
+#define map_12008_NUM_FRAMES				1
+#define map_12008_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_12008_FRAME_0				0
+ 
+//------------ End of: 12008.h file ----------- 
+ 
+ 
+//************ Following: 90001.h file ********* 
+ 
+#define map_90001_NUM_MODULES				4
+#define map_90001_NUM_FRAMES				3
+#define map_90001_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_90001_FRAME_0				0
+#define map_90001_FRAME_1				1
+#define map_90001_FRAME_2				2
+ 
+//------------ End of: 90001.h file ----------- 
+ 
+ 
+//************ Following: resources.h file ********* 
+ 
+ 
+//------------ End of: resources.h file ----------- 
+ 
+ 
+ 
+//************ Following: 111.h file ********* 
+ 
+#define map_111_NUM_MODULES				36
+#define map_111_NUM_FRAMES				9
+#define map_111_NUM_ANIMS				1
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_111_FRAME_0				0
+#define map_111_FRAME_1				1
+#define map_111_FRAME_2				2
+#define map_111_FRAME_3				3
+#define map_111_FRAME_4				4
+#define map_111_FRAME_5				5
+#define map_111_FRAME_6				6
+#define map_111_FRAME_7				7
+#define map_111_FRAME_8				8
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_111_ANIM_ATK				0
+ 
+//------------ End of: 111.h file ----------- 
+ 
+ 
+//************ Following: 222.h file ********* 
+ 
+#define map_222_NUM_MODULES				15
+#define map_222_NUM_FRAMES				8
+#define map_222_NUM_ANIMS				1
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_222_FRAME_0				0
+#define map_222_FRAME_1				1
+#define map_222_FRAME_2				2
+#define map_222_FRAME_3				3
+#define map_222_FRAME_4				4
+#define map_222_FRAME_5				5
+#define map_222_FRAME_6				6
+#define map_222_FRAME_7				7
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_222_ANIM_ATK				0
+ 
+//------------ End of: 222.h file ----------- 
+ 
+ 
+//************ Following: resources.h file ********* 
+ 
+ 
+//------------ End of: resources.h file ----------- 
+ 
+ 
+//************ Following: ui_recover.h file ********* 
+ 
+#define map_ui_recover_NUM_MODULES				20
+#define map_ui_recover_NUM_FRAMES				50
+#define map_ui_recover_NUM_ANIMS				1
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_ui_recover_FRAME_0				0
+#define map_ui_recover_FRAME_1				1
+#define map_ui_recover_FRAME_2				2
+#define map_ui_recover_FRAME_3				3
+#define map_ui_recover_FRAME_4				4
+#define map_ui_recover_FRAME_5				5
+#define map_ui_recover_FRAME_6				6
+#define map_ui_recover_FRAME_7				7
+#define map_ui_recover_FRAME_8				8
+#define map_ui_recover_FRAME_9				9
+#define map_ui_recover_FRAME_10				10
+#define map_ui_recover_FRAME_11				11
+#define map_ui_recover_FRAME_12				12
+#define map_ui_recover_FRAME_13				13
+#define map_ui_recover_FRAME_14				14
+#define map_ui_recover_FRAME_15				15
+#define map_ui_recover_FRAME_16				16
+#define map_ui_recover_FRAME_17				17
+#define map_ui_recover_FRAME_18				18
+#define map_ui_recover_FRAME_19				19
+#define map_ui_recover_FRAME_20				20
+#define map_ui_recover_FRAME_21				21
+#define map_ui_recover_FRAME_22				22
+#define map_ui_recover_FRAME_23				23
+#define map_ui_recover_FRAME_24				24
+#define map_ui_recover_FRAME_25				25
+#define map_ui_recover_FRAME_26				26
+#define map_ui_recover_FRAME_27				27
+#define map_ui_recover_FRAME_28				28
+#define map_ui_recover_FRAME_29				29
+#define map_ui_recover_FRAME_30				30
+#define map_ui_recover_FRAME_31				31
+#define map_ui_recover_FRAME_32				32
+#define map_ui_recover_FRAME_33				33
+#define map_ui_recover_FRAME_34				34
+#define map_ui_recover_FRAME_35				35
+#define map_ui_recover_FRAME_36				36
+#define map_ui_recover_FRAME_37				37
+#define map_ui_recover_FRAME_38				38
+#define map_ui_recover_FRAME_39				39
+#define map_ui_recover_FRAME_40				40
+#define map_ui_recover_FRAME_41				41
+#define map_ui_recover_FRAME_42				42
+#define map_ui_recover_FRAME_43				43
+#define map_ui_recover_FRAME_44				44
+#define map_ui_recover_FRAME_45				45
+#define map_ui_recover_FRAME_46				46
+#define map_ui_recover_FRAME_47				47
+#define map_ui_recover_FRAME_48				48
+#define map_ui_recover_FRAME_49				49
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_ui_recover_ANIM_HP				0
+ 
+//------------ End of: ui_recover.h file ----------- 
+ 
+ 
+ 
+//************ Following: resources.h file ********* 
+ 
+ 
+//------------ End of: resources.h file ----------- 
+ 
+ 
+//************ Following: ui_com.h file ********* 
+ 
+#define map_ui_com_NUM_MODULES				82
+#define map_ui_com_NUM_FRAMES				195
+#define map_ui_com_NUM_ANIMS				11
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_ui_com_FRAME_C_CONFRIM_NORMAL				0
+#define map_ui_com_FRAME_C_CONFIRM_SELECTED				1
+#define map_ui_com_FRAME_C_LV_UP_FRAME				2
+#define map_ui_com_FRAME_C_LV_EXP_RATE				3
+#define map_ui_com_FRAME_C_ICON				4
+#define map_ui_com_FRAME_C_ICON_MASK				5
+#define map_ui_com_FRAME_C_TITLE_BG				6
+#define map_ui_com_FRAME_C_TITLE				7
+#define map_ui_com_FRAME_C_SKILL				8
+#define map_ui_com_FRAME_C_SKILL_TYPE				9
+#define map_ui_com_FRAME_C_LEVL_UP_WORLD				10
+#define map_ui_com_FRAME_C_WHITE_CIRCLE				11
+#define map_ui_com_FRAME_C_WHITE_RADIUS				12
+#define map_ui_com_FRAME_13				13
+#define map_ui_com_FRAME_14				14
+#define map_ui_com_FRAME_15				15
+#define map_ui_com_FRAME_16				16
+#define map_ui_com_FRAME_17				17
+#define map_ui_com_FRAME_18				18
+#define map_ui_com_FRAME_19				19
+#define map_ui_com_FRAME_20				20
+#define map_ui_com_FRAME_21				21
+#define map_ui_com_FRAME_22				22
+#define map_ui_com_FRAME_23				23
+#define map_ui_com_FRAME_24				24
+#define map_ui_com_FRAME_25				25
+#define map_ui_com_FRAME_26				26
+#define map_ui_com_FRAME_27				27
+#define map_ui_com_FRAME_28				28
+#define map_ui_com_FRAME_29				29
+#define map_ui_com_FRAME_30				30
+#define map_ui_com_FRAME_31				31
+#define map_ui_com_FRAME_32				32
+#define map_ui_com_FRAME_33				33
+#define map_ui_com_FRAME_34				34
+#define map_ui_com_FRAME_35				35
+#define map_ui_com_FRAME_36				36
+#define map_ui_com_FRAME_37				37
+#define map_ui_com_FRAME_38				38
+#define map_ui_com_FRAME_39				39
+#define map_ui_com_FRAME_40				40
+#define map_ui_com_FRAME_41				41
+#define map_ui_com_FRAME_42				42
+#define map_ui_com_FRAME_43				43
+#define map_ui_com_FRAME_44				44
+#define map_ui_com_FRAME_45				45
+#define map_ui_com_FRAME_46				46
+#define map_ui_com_FRAME_47				47
+#define map_ui_com_FRAME_48				48
+#define map_ui_com_FRAME_49				49
+#define map_ui_com_FRAME_50				50
+#define map_ui_com_FRAME_51				51
+#define map_ui_com_FRAME_52				52
+#define map_ui_com_FRAME_53				53
+#define map_ui_com_FRAME_54				54
+#define map_ui_com_FRAME_55				55
+#define map_ui_com_FRAME_56				56
+#define map_ui_com_FRAME_57				57
+#define map_ui_com_FRAME_58				58
+#define map_ui_com_FRAME_59				59
+#define map_ui_com_FRAME_60				60
+#define map_ui_com_FRAME_61				61
+#define map_ui_com_FRAME_62				62
+#define map_ui_com_FRAME_63				63
+#define map_ui_com_FRAME_64				64
+#define map_ui_com_FRAME_65				65
+#define map_ui_com_FRAME_66				66
+#define map_ui_com_FRAME_67				67
+#define map_ui_com_FRAME_68				68
+#define map_ui_com_FRAME_69				69
+#define map_ui_com_FRAME_70				70
+#define map_ui_com_FRAME_71				71
+#define map_ui_com_FRAME_72				72
+#define map_ui_com_FRAME_73				73
+#define map_ui_com_FRAME_74				74
+#define map_ui_com_FRAME_COM_FRAME				75
+#define map_ui_com_FRAME_GEM_BG				76
+#define map_ui_com_FRAME_COM_CANCEL_UNSELECTED_F				77
+#define map_ui_com_FRAME_COM_CANCEL_SELECTED_F				78
+#define map_ui_com_FRAME_COM_CONFIRM_SELECTED_F				79
+#define map_ui_com_FRAME_COM_CONFIRM_UNSELECTED_F				80
+#define map_ui_com_FRAME_ITEM_BOX				81
+//	final static int FRAME_ITEM_BOX						= 82;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 83;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 84;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 85;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 86;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 87;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 88;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 89;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 90;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 91;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX						= 92;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_ITEM_BOX_1				93
+//	final static int FRAME_ITEM_BOX_1					= 94;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 95;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 96;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 97;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 98;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 99;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 100;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 101;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 102;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 103;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_1					= 104;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_ITEM_BOX_2				105
+//	final static int FRAME_ITEM_BOX_2					= 106;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 107;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 108;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 109;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 110;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 111;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 112;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 113;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 114;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 115;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_2					= 116;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_ITEM_BOX_3				117
+//	final static int FRAME_ITEM_BOX_3					= 118;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 119;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 120;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 121;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 122;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 123;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 124;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 125;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 126;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 127;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_3					= 128;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_ITEM_BOX_4				129
+//	final static int FRAME_ITEM_BOX_4					= 130;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 131;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 132;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 133;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 134;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 135;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 136;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 137;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 138;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 139;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 140;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 141;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 142;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 143;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 144;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 145;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 146;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 147;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 148;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 149;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 150;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 151;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 152;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 153;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 154;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_4					= 155;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_ITEM_BOX_5				156
+//	final static int FRAME_ITEM_BOX_5					= 157;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 158;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 159;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 160;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 161;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 162;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 163;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 164;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 165;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 166;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_5					= 167;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_ITEM_BOX_6				168
+//	final static int FRAME_ITEM_BOX_6					= 169;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 170;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 171;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 172;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 173;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 174;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 175;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 176;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 177;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_6					= 178;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_ITEM_BOX_7				179
+//	final static int FRAME_ITEM_BOX_7					= 180;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 181;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 182;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 183;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 184;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 185;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 186;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 187;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 188;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 189;	WARNING: Duplicate ID name!
+
+//	final static int FRAME_ITEM_BOX_7					= 190;	WARNING: Duplicate ID name!
+
+#define map_ui_com_FRAME_191				191
+#define map_ui_com_FRAME_192				192
+#define map_ui_com_FRAME_193				193
+#define map_ui_com_FRAME_194				194
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_ui_com_ANIM_0				0
+#define map_ui_com_ANIM_1				1
+#define map_ui_com_ANIM_ITEM_BOX				2
+#define map_ui_com_ANIM_ITEM_BOX_1				3
+#define map_ui_com_ANIM_ITEM_BOX_2				4
+#define map_ui_com_ANIM_ITEM_BOX_3				5
+#define map_ui_com_ANIM_ITEM_BOX_4				6
+#define map_ui_com_ANIM_ITEM_BOX_5				7
+#define map_ui_com_ANIM_ITEM_BOX_6				8
+#define map_ui_com_ANIM_ITEM_BOX_7				9
+#define map_ui_com_ANIM_ITEM				10
+ 
+//------------ End of: ui_com.h file ----------- 
+ 
+ 
+//************ Following: ui_login_1.h file ********* 
+ 
+#define map_ui_login_1_NUM_MODULES				3
+#define map_ui_login_1_NUM_FRAMES				1
+#define map_ui_login_1_NUM_ANIMS				0
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_ui_login_1_FRAME_0				0
+ 
+//------------ End of: ui_login_1.h file ----------- 
+ 
+ 
+//************ Following: ui_ore.h file ********* 
+ 
+#define map_ui_ore_NUM_MODULES				55
+#define map_ui_ore_NUM_FRAMES				65
+#define map_ui_ore_NUM_ANIMS				9
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_ui_ore_FRAME_0				0
+#define map_ui_ore_FRAME_1				1
+#define map_ui_ore_FRAME_2				2
+#define map_ui_ore_FRAME_3				3
+#define map_ui_ore_FRAME_4				4
+#define map_ui_ore_FRAME_5				5
+#define map_ui_ore_FRAME_6				6
+#define map_ui_ore_FRAME_7				7
+#define map_ui_ore_FRAME_8				8
+#define map_ui_ore_FRAME_9				9
+#define map_ui_ore_FRAME_10				10
+#define map_ui_ore_FRAME_11				11
+#define map_ui_ore_FRAME_12				12
+#define map_ui_ore_FRAME_13				13
+#define map_ui_ore_FRAME_14				14
+#define map_ui_ore_FRAME_15				15
+#define map_ui_ore_FRAME_16				16
+#define map_ui_ore_FRAME_17				17
+#define map_ui_ore_FRAME_18				18
+#define map_ui_ore_FRAME_19				19
+#define map_ui_ore_FRAME_20				20
+#define map_ui_ore_FRAME_21				21
+#define map_ui_ore_FRAME_22				22
+#define map_ui_ore_FRAME_23				23
+#define map_ui_ore_FRAME_24				24
+#define map_ui_ore_FRAME_25				25
+#define map_ui_ore_FRAME_26				26
+#define map_ui_ore_FRAME_27				27
+#define map_ui_ore_FRAME_28				28
+#define map_ui_ore_FRAME_29				29
+#define map_ui_ore_FRAME_30				30
+#define map_ui_ore_FRAME_31				31
+#define map_ui_ore_FRAME_32				32
+#define map_ui_ore_FRAME_33				33
+#define map_ui_ore_FRAME_34				34
+#define map_ui_ore_FRAME_35				35
+#define map_ui_ore_FRAME_36				36
+#define map_ui_ore_FRAME_37				37
+#define map_ui_ore_FRAME_38				38
+#define map_ui_ore_FRAME_39				39
+#define map_ui_ore_FRAME_40				40
+#define map_ui_ore_FRAME_41				41
+#define map_ui_ore_FRAME_42				42
+#define map_ui_ore_FRAME_43				43
+#define map_ui_ore_FRAME_44				44
+#define map_ui_ore_FRAME_45				45
+#define map_ui_ore_FRAME_46				46
+#define map_ui_ore_FRAME_47				47
+#define map_ui_ore_FRAME_48				48
+#define map_ui_ore_FRAME_49				49
+#define map_ui_ore_FRAME_50				50
+#define map_ui_ore_FRAME_51				51
+#define map_ui_ore_FRAME_52				52
+#define map_ui_ore_FRAME_53				53
+#define map_ui_ore_FRAME_54				54
+#define map_ui_ore_FRAME_55				55
+#define map_ui_ore_FRAME_56				56
+#define map_ui_ore_FRAME_57				57
+#define map_ui_ore_FRAME_58				58
+#define map_ui_ore_FRAME_59				59
+#define map_ui_ore_FRAME_60				60
+#define map_ui_ore_FRAME_61				61
+#define map_ui_ore_FRAME_62				62
+#define map_ui_ore_FRAME_63				63
+#define map_ui_ore_FRAME_64				64
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_ui_ore_ANIM_DIG				0
+#define map_ui_ore_ANIM_TRANSMISSION				1
+#define map_ui_ore_ANIM_TIME				2
+#define map_ui_ore_ANIM_CLICK				3
+#define map_ui_ore_ANIM_TRANSMISSION_1				4
+#define map_ui_ore_ANIM_ORE1				5
+#define map_ui_ore_ANIM_ORE2				6
+#define map_ui_ore_ANIM_ORE3				7
+#define map_ui_ore_ANIM_ORE4				8
+ 
+//------------ End of: ui_ore.h file ----------- 
+ 
+ 
+//************ Following: ui_vs.h file ********* 
+ 
+#define map_ui_vs_NUM_MODULES				35
+#define map_ui_vs_NUM_FRAMES				12
+#define map_ui_vs_NUM_ANIMS				2
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Frames
+
+#define map_ui_vs_FRAME_0				0
+#define map_ui_vs_FRAME_1				1
+#define map_ui_vs_FRAME_2				2
+#define map_ui_vs_FRAME_3				3
+#define map_ui_vs_FRAME_4				4
+#define map_ui_vs_FRAME_5				5
+#define map_ui_vs_FRAME_6				6
+#define map_ui_vs_FRAME_7				7
+#define map_ui_vs_FRAME_8				8
+#define map_ui_vs_FRAME_9				9
+#define map_ui_vs_FRAME_10				10
+#define map_ui_vs_FRAME_11				11
+////////////////////////////////////////////////////////////////////////////////
+
+// Sprite Anims
+
+#define map_ui_vs_ANIM_1				0
+#define map_ui_vs_ANIM_2				1
+ 
+//------------ End of: ui_vs.h file ----------- 
+ 
+ 
+#endif // _RESOURCES_H 	

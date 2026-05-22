@@ -1,0 +1,128 @@
+package ISeer20Conf;
+
+message map_t {
+    // 地图上的战斗场景里的天气定义
+    enum btl_map_weather_t {
+        BATTLE_WEATHER_NONE                 = 0; // 无
+        BATTLE_WEATHER_SUN                  = 1; // 晴
+        BATTLE_WEATHER_RAIN                 = 2; // 雨
+        BATTLE_WEATHER_HOT                  = 3; // 炎热
+        BATTLE_WEATHER_BLIZZARD             = 4; // 暴风雪
+        BATTLE_WEATHER_SAND                 = 5; // 沙尘暴
+        BATTLE_WEATHER_QUAKE                = 6; // 地震
+        BATTLE_WEATHER_THUNDER              = 7; // 雷暴
+        BATTLE_WEATHER_TYPHOON              = 8; // 飓风
+        BATTLE_WEATHER_DARKNESS             = 9; // 夜幕
+    }
+
+    // 地图的类型
+    enum map_type_t {
+        MAP_TYPE_STAR       = 1; //星球
+        MAP_TYPE_CAP        = 2; //捕捉关卡
+        MAP_TYPE_STATION    = 3; //太空站
+        MAP_TYPE_HOME       = 3; //小屋
+        MAP_TYPE_GAIYA      = 4; //挑战盖亚(战神之塔)
+        MAP_TYPE_QIECUO     = 5; //切磋大厅
+    }
+
+	//对战类型1: 按是否有npc参与
+	enum btl_type1_t {
+		BTL_TYPE1_PVP 			= 1; //pvp
+		BTL_TYPE1_PVE 			= 2; //pve
+	}
+	//对战类型2: 按玩法分类
+	enum btl_type2_t {
+		BTL_TYPE2_WILD			= 1; //打野怪
+		BTL_TYPE2_BOSS			= 2; //打BOSS
+		BTL_TYPE2_MATCH			= 3; //匹配
+		BTL_TYPE2_LEIYI			= 4; //挑战雷伊
+    }
+	// 对战类型3: 按出战精灵数量
+	enum btl_type3_t {
+		BTL_TYPE3_SINGLE		= 1; // 单精灵出战
+		BTL_TYPE3_UNLIMITED		= 2; // 不限出战精灵数量
+		BTL_TYPE3_THREE			= 3; // 3精灵出战
+		BTL_TYPE3_BO3			= 4; // 三局两胜(best of three games)
+	}
+	// 对战类型4: 按是否是门战
+	enum btl_type4_t {
+		BTL_TYPE4_NON_GATE		= 1; // 不是门战
+		BTL_TYPE4_GATE			= 2; // 门战
+	}
+    
+    // 地图中随机事件类型
+    enum random_event_type_t {
+        RANDOM_EVENT_TYPE_PK_COMBAT = 1; // 比拼战斗力值
+        RANDOM_EVENT_TYPE_DROP_ITEM = 2; // 掉落物品
+        RANDOM_EVENT_TYPE_PVE = 3; // pve
+        RANDOM_EVENT_TYPE_YIELD_ACTION = 4; // 产出行动力
+        RANDOM_EVENT_TYPE_YIELD_COIN = 5; // 产出赛尔豆
+        RANDOM_EVENT_TYPE_YIELD_GCOIN = 6; // 产出金豆
+        RANDOM_EVENT_TYPE_SEC_KILL = 7; // 秒杀小怪
+        RANDOM_EVENT_TYPE_YIELD_EXP = 8; // 产出经验值
+        RANDOM_EVENT_TYPE_DROP_BOX = 9; // 掉落宝箱
+    }
+    
+	message npc_t {
+		required int32 id = 1; // NPC-ID
+		required int32 x = 2; // 位置(x)
+		required int32 y = 3; // 位置(y)
+		optional btl_type2_t type2 = 4 [default = BTL_TYPE2_WILD]; //对战类型2: 按玩法分类
+		optional btl_type3_t type3 = 5 [default = BTL_TYPE3_UNLIMITED]; //对战类型3: 按出战精灵数量
+		optional btl_type4_t type4 = 6 [default = BTL_TYPE4_NON_GATE]; //对战类型4: 按是否是门战
+		optional uint32 prize_id = 7;  //奖励配置 默认没有奖励
+	}
+    
+    message item_t {
+        required int32 item_id = 1;
+        required int32 item_count = 2;
+        optional int32 item_level = 3;
+    }
+    
+    message event_t {
+        message element_t {
+            required random_event_type_t type = 1; // 随机时间类型
+            optional int32 rate = 2 [default = 100]; // 该事件出现的概率
+            optional int32 yield_action = 3; // 产出行动力
+            optional int32 yield_coin = 4; // 产出的赛尔豆
+            optional int32 yield_gcoin = 5; // 产出的金豆
+            optional int32 yield_exp = 6; // 产出经验
+            optional item_t item = 7; // 地图中掉落的物品
+            optional npc_t npc = 8; // pve
+            optional int32 box_id = 9; // 掉落的宝箱
+
+            optional uint32 prize_id = 30; // 每个事件的奖励
+        }
+        repeated element_t element = 1;
+    } 
+	required int32 id = 1; // 地图ID
+	required string name = 2; // 地图名称(前端)
+    required map_type_t type = 3; // 地图类型(前端)
+	required int32 icon_id = 4; // 图标id(前端)
+    required int32 area_id = 5; // 所属的氏族ID(前端)
+    required int32 area_index = 6; // 氏族里的索引index(前端)
+	required int32 init_x = 7; // 出生点(x)
+	required int32 init_y = 8; // 出生点(y)
+
+    optional int32 battle_map_id = 9; // 战斗场景地图ID(前端)
+    optional btl_map_weather_t weather = 10; // 天气
+
+    optional int32 required_task = 11; // 进入地图的任务要求
+    optional int32 required_pre_map = 12; // 进入地图的前置地图要求
+    optional int32 mine_type = 14; // 地图上刷的矿物的资源类型(前端)
+
+	repeated npc_t npc = 15; // 地图上的npc, 注意: 遇到顺序跟配置顺序相同
+    repeated event_t event = 16; // 地图中出现的事件
+    optional int32 scene_id = 17; // 场景ID(前端)
+    repeated int32 award_item = 18; // 地图中可能奖励的物品清单(前端)
+    optional int32 award_gcoin = 19; // 地图中可能奖励的金豆数(前端)
+    optional int32 award_coin = 20; // 地图中可能奖励赛尔豆(前端)
+    optional int32 award_action = 21;  // 地图中可能奖励的行动力(前端) 
+    optional int32 award_exp = 22;   // 地图中可能奖励的经验(前端)
+
+    optional bytes chapter_name = 23; // 地图所属章节的名称
+}
+
+message top_config_map_t {
+	repeated map_t map = 1;
+}

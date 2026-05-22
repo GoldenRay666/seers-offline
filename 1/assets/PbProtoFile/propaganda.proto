@@ -1,0 +1,44 @@
+package ISeer20Conf;
+
+message mon_propaganda_t {
+
+    // 跳转链接的意图
+    enum link_intent_t {
+        LINK_INTENT_GET = 1; // 获取
+        LINK_INTENT_BUY = 2; // 购买
+        LINK_INTENT_EXCHANGE = 3; //兑换
+    }
+    enum link_type_t {
+        LINK_TYPE_MAP = 1; // 地图
+        LINK_TYPE_UI  = 2; // 其他UI
+    }
+
+    message time_t {
+        required string date = 1;    //某日至某日 
+        required string time = 2;    //某时至某时
+    }
+
+    message mon_t {
+        required int32 id = 1; // 精灵ID
+        required bytes name = 2; // 精灵名字
+        required int32 grade = 3; // 精灵等级
+        required bytes description = 4; // 精灵描述
+    }
+    message hyperlink_t {
+        required link_intent_t link_intent = 1; // 按钮的状态
+        required link_type_t link_type = 2; // 跳转类型
+        required uint32 hyperlink = 3; // 跳转链接
+        required time_t paritc_time = 4; // 按钮有效时间
+    }
+
+    required bytes title = 1; //宣传标题
+    required bytes icon  = 2; //入口的图标
+    required mon_t mon   = 3; //宣传精灵信息
+    required time_t show_time = 4; //显示活动的时间
+    repeated hyperlink_t hyperlink = 5; //跳转链接
+
+}
+
+message top_config_propaganda_t {
+    required mon_propaganda_t mon_propaganda = 1; // 精灵宣传活动
+}

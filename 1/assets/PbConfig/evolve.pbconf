@@ -1,0 +1,1411 @@
+evolve {
+    mon_id: 1
+    evolve_level: 20
+    evolve_branch {
+        evolve_to: 2
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 2
+    evolve_level: 40
+    evolve_branch {
+        evolve_to: 3
+		need_coin: 400
+    }
+}
+
+evolve {
+    mon_id: 4
+    evolve_level: 20
+    evolve_branch {
+        evolve_to: 5
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 5
+    evolve_level: 40
+    evolve_branch {
+        evolve_to: 6
+		need_coin: 400
+    }
+}
+
+evolve {
+    mon_id: 7
+    evolve_level: 20
+    evolve_branch {
+        evolve_to: 8
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 8
+    evolve_level: 40
+    evolve_branch {
+        evolve_to: 9
+		need_coin: 400
+    }
+}
+
+evolve {
+    mon_id: 10
+    evolve_level: 18
+    evolve_branch {
+        evolve_to: 11
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+		need_coin: 50
+    }
+}
+
+evolve {
+    mon_id: 11
+    evolve_level: 36
+    evolve_branch {
+        evolve_to: 12
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 13
+    evolve_level: 21
+    evolve_branch {
+        evolve_to: 14
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+		need_coin: 50
+    }
+}
+
+evolve {
+    mon_id: 14
+    evolve_level: 41
+    evolve_branch {
+        evolve_to: 15
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 16
+    evolve_level: 20
+    evolve_branch {
+        evolve_to: 17
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 18
+    evolve_level: 26
+    evolve_branch {
+        evolve_to: 19
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 28
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 29
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 30
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 31
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 32
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 33
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 34
+    evolve_level: 17
+    evolve_branch {
+        evolve_to: 35
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+		need_coin: 50
+    }
+}
+
+evolve {
+    mon_id: 35
+    evolve_level: 37
+    evolve_branch {
+        evolve_to: 36
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 37
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 38
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 41
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 42
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 49
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 50
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 51
+    evolve_level: 30
+    evolve_branch {
+        evolve_to: 52
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 55
+    evolve_level: 20
+    evolve_branch {
+        evolve_to: 56
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 56
+    evolve_level: 40
+    evolve_branch {
+        evolve_to: 57
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 58
+    evolve_level: 19
+    evolve_branch {
+        evolve_to: 59
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+		need_coin: 50
+    }
+}
+
+evolve {
+    mon_id: 59
+    evolve_level: 39
+    evolve_branch {
+        evolve_to: 60
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 61
+    evolve_level: 26
+    evolve_branch {
+        evolve_to: 62
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }          
+        evolve_item: {
+            id: 38019
+            cnt: 2
+          }          
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 67
+    evolve_level: 18
+    evolve_branch {
+        evolve_to: 68
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+		need_coin: 50
+    }
+}
+
+evolve {
+    mon_id: 68
+    evolve_level: 38
+    evolve_branch {
+        evolve_to: 69
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 72
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 73
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 74
+    evolve_level: 21
+    evolve_branch {
+        evolve_to: 75
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 75
+    evolve_level: 41
+    evolve_branch {
+        evolve_to: 76
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 77
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 78
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 79
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 80
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 81
+    evolve_level: 30
+    evolve_branch {
+        evolve_to: 82
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 86
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 87
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve: {
+    mon_id: 91
+    evolve_level: 24
+    evolve_branch: {
+        evolve_to: 92
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37504 
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 93
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37506
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 94
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37503
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 95
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37505
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 96
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37508
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 97
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37511
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 98
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37507
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 99
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37510
+            cnt: 2
+          }
+      }
+    evolve_branch: {
+        evolve_to: 100
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37509
+            cnt: 2
+          }
+      }
+}
+
+evolve {
+    mon_id: 111
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 112
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 113
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 114
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 117
+    evolve_level: 30
+    evolve_branch {
+        evolve_to: 118
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38025
+            cnt: 2
+          }          
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 119
+    evolve_level: 21
+    evolve_branch {
+        evolve_to: 120
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 120
+    evolve_level: 41
+    evolve_branch {
+        evolve_to: 121
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 124
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 125
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 126
+    evolve_level: 30
+    evolve_branch {
+        evolve_to: 127
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 133
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 134
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 138
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 139
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 144
+    evolve_level: 30
+    evolve_branch {
+        evolve_to: 145
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+		need_coin: 400
+    }
+}
+
+evolve {
+    mon_id: 149
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 150
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38018
+            cnt: 2
+          }
+		need_coin: 400
+    }
+}
+
+evolve {
+    mon_id: 156
+    evolve_level: 30
+    evolve_branch {
+        evolve_to: 157
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 194
+    evolve_level: 32
+    evolve_branch {
+        evolve_to: 195
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 198
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 199
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 210
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 211
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 212
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 213
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100
+    }
+}
+
+evolve {
+    mon_id: 222
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 223
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38015
+            cnt: 2
+          }
+		need_coin: 400
+    }
+}
+
+evolve {
+    mon_id: 259
+    evolve_level: 21
+    evolve_branch {
+        evolve_to: 260
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38014
+            cnt: 1
+          }
+        evolve_item: {
+            id: 37501
+            cnt: 1
+          }
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 260
+    evolve_level: 41
+    evolve_branch {
+        evolve_to: 261
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38014
+            cnt: 2
+          }        
+        evolve_item: {
+            id: 37501
+            cnt: 2
+          }
+	need_coin: 400
+    }
+}
+
+
+evolve {
+    mon_id: 269
+    evolve_level: 19
+    evolve_branch {
+        evolve_to: 270
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38014
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38024
+            cnt: 1
+          }          
+		need_coin: 200
+    }
+}
+
+evolve {
+    mon_id: 270
+    evolve_level: 39
+    evolve_branch {
+        evolve_to: 271
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38014
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38024
+            cnt: 2
+          }            
+		need_coin: 400
+    }
+}
+
+evolve {
+    mon_id: 300
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 301
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38014
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38017
+            cnt: 2
+          }
+		need_coin: 800
+    }
+}
+evolve {
+    mon_id: 361
+    evolve_level: 22
+    evolve_branch {
+        evolve_to: 362
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+		need_coin: 100		
+    }
+}
+evolve {
+    mon_id: 362
+    evolve_level: 42
+    evolve_branch {
+        evolve_to: 363
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+		need_coin: 200	
+    }
+}
+evolve {
+    mon_id: 142
+    evolve_level: 28
+    evolve_branch {
+        evolve_to: 143
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+		need_coin: 100	
+    }
+}
+
+evolve {
+    mon_id: 1000
+    evolve_level: 21
+    evolve_branch {
+        evolve_to: 1001
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 1
+          }
+		need_coin: 1000	
+    }
+}
+
+evolve {
+    mon_id: 1001
+    evolve_level: 41
+    evolve_branch {
+        evolve_to: 1002
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+		need_coin: 2000	
+    }     
+}
+evolve {
+    mon_id: 204
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 205
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38016
+            cnt: 2
+          }
+		need_coin: 400	
+    }
+}   
+evolve {
+    mon_id: 208
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 209
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38023
+            cnt: 2
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 404
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 405
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38026
+            cnt: 2
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 214
+    evolve_level: 30
+    evolve_branch {
+        evolve_to: 215
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 37502
+            cnt: 2
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 379
+    evolve_level: 22
+    evolve_branch {
+        evolve_to: 380
+        evolve_item: {
+            id: 38011
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 1
+          }
+        evolve_item: {
+            id: 38027
+            cnt: 1
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 380
+    evolve_level: 42
+    evolve_branch {
+        evolve_to: 381
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38027
+            cnt: 2
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 245
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 246
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 402
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 403
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 364
+    evolve_level: 29
+    evolve_branch {
+        evolve_to: 365
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 262
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 263
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38028
+            cnt: 2
+          }          
+        need_coin: 400	
+    }     
+}
+evolve {
+    mon_id: 280
+    evolve_level: 31
+    evolve_branch {
+        evolve_to: 281
+        evolve_item: {
+            id: 38011
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38012
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38013
+            cnt: 2
+          }
+        evolve_item: {
+            id: 38029
+            cnt: 2
+          }          
+        need_coin: 400	
+    }     
+}

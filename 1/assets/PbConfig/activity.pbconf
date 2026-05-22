@@ -1,0 +1,271 @@
+activity {
+    id: 4022
+    type: ACT_TYP_SHOW
+    row_pos: 1
+    row_des: "集龙珠唤神龙"
+    title: "战伊特限时特卖"
+    description: "来自远古的力量，神龙“英菲尼迪” 横空出世，赶快集齐999颗龙珠唤醒属于你的神龙迎战吧，！"
+    time: {
+        date: "2013.09.05-2013.09.12"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+}
+
+activity {
+    id: 2003
+    type: ACT_TYP_CHARGE
+    row_pos: 2
+    row_des: "累积充值赢龙珠"
+    title: "累积充值赢龙珠"
+    description: "9月5日-9月12日期间，累计充值达到一定数额，即可获得丰厚奖励，还有全新龙珠赠送哟！"
+    time: {
+        date: "2013.09.05-2013.9.12"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_TOTAL_CHARGE
+        value: 300
+        prize_id: 40101
+        hyperlink: "10001"
+    }
+    cond: {
+        seq: 2
+        cond_type: COND_TYPE_TOTAL_CHARGE
+        value: 600
+        prize_id: 40102
+        hyperlink: "10001"
+    }
+    cond: {
+        seq: 3
+        cond_type: COND_TYPE_TOTAL_CHARGE
+        value: 1200
+        prize_id: 40103
+        hyperlink: "10001"
+    }
+    cond: {
+        seq: 4
+        cond_type: COND_TYPE_TOTAL_CHARGE
+        value: 3000
+        prize_id: 40104
+        hyperlink: "10001"
+    }
+}
+
+activity {
+    id: 4008
+    type: ACT_TYP_SHOW
+    row_pos: 3
+    row_des: "库贝萨的赛尔豆"
+    title: "库贝萨的赛尔豆"
+    description: "8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！8月1日至8月5日期间，商城限时抢购库贝萨的赛尔豆，抢得越多，优惠越多！！"
+    time: {
+        date: "2013.8.1-2013.8.05"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_SHOW
+        value: 0
+        prize_id: 40008
+    }
+}
+
+activity {
+    id: 5001
+    type: ACT_TYP_GCOIN_CONSUME
+    row_pos: 4
+    row_des: "消费金豆领奖1"
+    title: "消费金豆领奖1"
+    description: "8月1日至8月10日期间，单笔消费金豆满50就能领10000赛尔豆！！"
+    time: {
+        date: "2013.8.1-2013.8.10"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+	parti_date: "2013.8.01-2013.8.10"
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_SINGLE_CONSUME
+		key: "2"
+		key: "50"
+        value: 0
+        prize_id: 40009
+    }
+}
+
+activity {
+    id: 5002
+    type: ACT_TYP_GCOIN_CONSUME
+    row_pos: 5
+    row_des: "消费金豆领奖2"
+    title: "消费金豆领奖2"
+    description: "8月1日至8月10日期间，累积消费500赛尔豆就能领10000赛尔豆！！"
+    time: {
+        date: "2013.8.1-2013.8.10"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+	parti_date: "2013.8.01-2013.8.10"
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_TOTAL_CONSUME
+		key: "1"
+        value: 500
+        prize_id: 40009
+    }
+}
+
+activity {
+    id: 6001
+    type: ACT_TYP_SYS_CONST
+    row_pos: 6
+    row_des: "周末双倍经验"
+    title: "周末双倍经验"
+    description: "8月3日至8月5日期间，打怪可获得双倍经验。雷伊赛尔豆翻倍，雷伊宝箱翻倍。雷伊宝箱翻倍"
+    time: {
+        date: "2013.8.01-2013.8.05"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+	parti_date: "2013.8.03-2013.8.05"
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    sys_const: {
+        type: PVP_POINT_COEFF
+        value: 2
+    }
+    sys_const: {
+        type: PVE_EXP_COEFF
+        value: 1
+    }
+    sys_const: {
+        type: LEIYI_COIN_DROP_RATE
+        value: 2
+    }
+    sys_const: {
+        type: LEIYI_ENERGY_DROP_RATE
+        value: 2
+    }
+    sys_const: {
+        type: LEIYI_BOX_DROP_RATE
+        value: 2
+    }
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_SHOW
+        value: 0
+        prize_id: 40007
+
+    }
+}
+
+activity {
+    id: 2001
+    type: ACT_TYP_CHARGE
+    row_pos: 7
+    row_des: "首充大礼包"
+    title: "充1元，得百元礼包"
+    description: "开服当天起，充值任意数额金豆即可获得价值百元礼包（内含10万经验、至尊乐透券2张及其他奖励），每人仅限领取一次!"
+    time: {
+        date: "2013.07.19-2020.7.31"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_FIRST_CHARGE
+        value: 0
+        prize_id: 40001
+        hyperlink: "10001"
+    }
+}
+
+
+
+activity {
+    id: 3001
+    type: ACT_TYP_SIGN_IN
+    row_pos: 8
+    row_des: "8月签到赢神宠"
+    title: "8月签到赢神宠"
+    description: "累积签到达指定天数即可领奖。补签优惠售20金豆/次"
+    time: {
+        date: "2013.08.01-2013.09.05"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+    parti_date: "2013.08.01-2013.08.31"
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_SIGN_IN
+		key: "2013.08.01"
+		key: "2013.08.31"
+        value: 3
+        prize_id: 40201
+    }
+    cond: {
+        seq: 2
+        cond_type: COND_TYPE_SIGN_IN
+		key: "2013.08.01"
+		key: "2013.08.31"
+        value: 7
+        prize_id: 40202
+    }
+    cond: {
+        seq: 3
+        cond_type: COND_TYPE_SIGN_IN
+		key: "2013.08.01"
+		key: "2013.08.31"
+        value: 15
+        prize_id: 40203
+    }
+   cond: {
+        seq: 4
+        cond_type: COND_TYPE_SIGN_IN
+		key: "2013.08.01"
+		key: "2013.08.31"
+        value: 31
+        prize_id: 40204
+    }
+	act_const: {
+	    sign_momey: 20
+	}
+	
+}
+activity {
+    id: 4001
+    type: ACT_TYP_FESTIVAL
+    row_pos: 9
+    row_des: "先驱者礼包II"
+    title: "先驱者礼包II"
+    description: "即日起，凡注册并成功登录赛尔号：战神联盟即可进入活动中心领取价值188元的先驱者礼包II"
+    time: {
+        date: "2013.8.1-2013.8.31"
+        time: "00:00-24:00"
+        type: TIME_TYPE_1
+    }
+    is_new: 1
+    loop: UN_LOOP_ABLE
+    cond: {
+        seq: 1
+        cond_type: COND_TYPE_FIRST_CHARGE
+        value: 0
+        prize_id: 40006
+    }	
+}

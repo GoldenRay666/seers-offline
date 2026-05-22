@@ -1,0 +1,67 @@
+privilege {
+    type: 1
+    name:"领取VIP每日小礼包"
+    description:"可领取每日VIP小礼包"
+}
+
+privilege {
+    type: 2
+    name:"领取VIP每周大礼包"
+    description:"可领取每周VIP大礼包"
+}
+
+privilege {
+    type: 3
+    name:"解锁特训仓"
+    description:"解锁第%d个特训仓"
+    vip_info:"0,5,5,6,6,6,6,6,6,6,6"
+}
+
+privilege {
+    type: 4
+    name:"急速特训模式次数"
+    description:"每天可进行%d次急速特训"
+    vip_info:"1,2,3,4,5,5,5,5,5,5,5"
+}
+
+privilege {
+    type: 5
+    name:"购买体力次数"
+    description:"每天最多可补充%d次赛尔电量"
+    vip_info:"1,2,3,3,4,4,5,5,6,6,7"
+}
+
+privilege {
+    type: 6
+    name:"每日免费PVP次数"
+    description:"每天可免费PVP对战%d次"
+    vip_info:"5,10,12,14,16,18,20,22,24,26,28"
+}
+
+privilege {
+    type: 7
+    name:"战斗经验加成"
+    description:"战斗经验值奖励加成%d%%"
+    vip_info:"0,24,28,32,36,40,44,48,52,56,60"
+}
+
+privilege {
+    type: 8
+    name:"战斗学习力加成"
+    description:"战斗学习力奖励加成%d%%"
+    vip_info:"0,100,100,100,200,200,200,300,300,300,400"
+}
+
+privilege {
+    type: 9
+    name:"购买行动力次数"
+    description:"每天最多可补充%d次行动力"
+    vip_info:"1,2,3,3,4,4,5,5,6,6,7"
+}
+privilege {
+    type: 10
+    name:"清资质增幅CD次数"
+    description:"每天可以清除资质增幅仪CD时间%d次"
+    vip_info:"1,2,3,3,4,4,5,5,6,6,7"
+}
+

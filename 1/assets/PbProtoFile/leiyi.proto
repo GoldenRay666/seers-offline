@@ -1,0 +1,39 @@
+package ISeer20Conf;
+
+message leiyi_guwu_t {
+	required int32 guwu_times = 1;
+	required int32 coins = 2;
+	required int32 gcoins = 3;
+	required double guwu = 4;
+}
+
+message leiyi_cd_t {
+	required int32 coins = 1;
+	required int32 gcoins = 2;
+}
+
+message leiyi_time_t {
+    required string clear_data_time = 1;
+    required string start_time = 2;
+    required string end_time = 3;
+}
+
+message leiyi_hp_t {
+	required int32 min_hp = 1;
+	required int32 max_hp = 2;
+}
+
+message leiyi_notice_t {
+    required bytes almost_start = 1;
+    required bytes start = 2;
+    required bytes end = 3;
+    required bytes dead = 4;
+}
+
+message top_config_leiyi_t {
+	repeated leiyi_guwu_t guwu = 1;
+	required leiyi_cd_t cd = 2;
+    required leiyi_hp_t hp = 3;
+    repeated leiyi_time_t time = 4;
+    required leiyi_notice_t notice = 5;
+}

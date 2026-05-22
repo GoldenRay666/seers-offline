@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>type</key>
+		<string>UILayout</string>
+		<key>tag</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>CaptureEndLayer</string>
+		<key>luaScript</key>
+		<string></string>
+		<key>transform</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+			<key>z</key>
+			<integer>0</integer>
+		</dict>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>UIContainer</string>
+				<key>tag</key>
+				<integer>0</integer>
+				<key>name</key>
+				<string>backContainer</string>
+				<key>transform</key>
+				<dict>
+					<key>x</key>
+					<integer>0</integer>
+					<key>y</key>
+					<integer>0</integer>
+					<key>z</key>
+					<integer>0</integer>
+				</dict>
+				<key>refMode</key>
+				<integer>1</integer>
+				<key>refPointMode</key>
+				<integer>5</integer>
+				<key>widthScale</key>
+				<integer>5000</integer>
+				<key>widthOffset</key>
+				<integer>0</integer>
+				<key>heightScale</key>
+				<integer>5000</integer>
+				<key>heightOffset</key>
+				<integer>0</integer>
+				<key>width</key>
+				<integer>1024</integer>
+				<key>height</key>
+				<integer>768</integer>
+				<key>children</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

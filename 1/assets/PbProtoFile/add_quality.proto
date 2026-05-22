@@ -1,0 +1,39 @@
+package ISeer20Conf;
+
+message egg_energy_t {
+    enum quality_t {
+        QUALITY_WHITE       = 0; // 白
+        QUALITY_GREEN       = 1; // 绿
+        QUALITY_BLUE        = 2; // 蓝
+        QUALITY_PURPLE      = 3; // 紫
+        QUALITY_ORANGE      = 4; // 橙
+    }
+
+    required quality_t quality = 1;
+    required int32 energy = 2;
+}
+
+message quality_up_rate_t {
+    required int32 energy = 1;
+    optional int32 up_0_rate = 2 [default = 0];
+    optional int32 up_1_rate = 3 [default = 0];
+    optional int32 up_2_rate = 4 [default = 0];
+    optional int32 up_3_rate = 5 [default = 0];
+}
+
+message quality_cost_t {
+    required int32 beg_quality = 1;
+    required int32 end_quality = 2;
+    optional int32 coin = 3 [default = 0];
+    optional int32 gcoin = 4 [default = 0];
+}
+
+message top_config_add_quality_t {
+    repeated egg_energy_t egg_energy = 1;
+    repeated quality_up_rate_t up_rate = 2;
+    repeated quality_cost_t cost = 3;
+
+    required int32 clean_cd_cost = 50;  //清除资质增幅仪CD所需要的花费
+    required int32 add_quality_cd_dur = 51; //资质增幅仪的cd时长(单位:秒)
+    required int32 buy_quality_cost = 52; //购买资质所需要的花费(每提升1点)
+}

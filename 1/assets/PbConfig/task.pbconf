@@ -1,0 +1,5694 @@
+task {
+  id: 1
+  name: "矿石采集"
+  info: "采集一次矿石"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10001
+  commit_map_id: 10001
+  obtain_npc_id: 3
+  commit_npc_id: 3
+  obtain_dialog: 100
+  progress_dialog: 105
+  finish_dialog: 107
+  area_id: 1
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MINING
+    value: 1
+    target: "采矿"
+    link: 10001
+  }
+  prize_id: 50001
+}
+task {
+  id: 2
+  name: "当地生物"
+  info: "打败2只法拉"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10001
+  commit_map_id: 10001
+  obtain_npc_id: 3
+  commit_npc_id: 3
+  obtain_dialog: 109
+  progress_dialog: 115
+  finish_dialog: 117
+  area_id: 1
+  pre_task: 1
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 10
+    key: 0
+    value: 2
+    target: "打败法拉"
+    link: 10001
+  }
+  prize_id: 50002
+}
+task {
+  id: 3
+  name: "挑战多罗"
+  info: "打败多罗"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10001
+  commit_map_id: 10001
+  obtain_npc_id: 3
+  commit_npc_id: 3
+  obtain_dialog: 121
+  progress_dialog: 129
+  finish_dialog: 131
+  area_id: 1
+  pre_task: 2
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 3
+    value: 1
+    target: "打败多罗"
+    link: 10001
+  }
+  prize_id: 50003
+}
+task {
+  id: 4
+  name: "访问当地人"
+  info: "向当地人询问情况"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 19
+  commit_npc_id: 19
+  obtain_dialog: 136
+  area_id: 1 
+  progress_dialog: 136
+  finish_dialog: 140
+  pre_task: 3   
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 19
+    value: 1
+    target: "与琪琪对话"
+    link: 10002
+  }
+  prize_id: 50004
+}
+task {
+  id: 5
+  name: "光能粒子"
+  info: "打败小小葵收集1颗光能粒子"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 19
+  commit_npc_id: 19
+  obtain_dialog: 151
+  area_id: 1
+  progress_dialog: 158
+  finish_dialog: 160
+  pre_task: 4
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100021
+    key: 20207
+    value: 1
+    target: "收集光能粒子"
+    link: 10002
+  }
+  prize_id: 50005
+}
+task {
+  id: 6
+  name: "光能晶体"
+  info: "让伊娃博士看看光能粒子"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10023
+  obtain_npc_id: 19
+  commit_npc_id: 1
+  area_id: 1
+  obtain_dialog: 162
+  progress_dialog: 162
+  finish_dialog: 166
+  pre_task: 5
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50006
+}
+
+task {
+  id: 9
+  name: "捕捉小小葵"
+  info: "捕捉1只小小葵"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 19
+  commit_npc_id: 19
+  area_id: 1
+  obtain_dialog: 192
+  progress_dialog: 201
+  finish_dialog: 203
+  pre_task: 14
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 5
+    key: 0
+    value: 1
+    target: "捕捉小小葵"
+    link: 10002
+  }
+  prize_id: 50009
+}
+task {
+  id: 10
+  name: "培养小小葵"
+  info: "将小小葵提升到8级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 19
+  commit_npc_id: 19
+  area_id: 1
+  obtain_dialog: 209
+  progress_dialog: 216
+  finish_dialog: 219
+  pre_task: 9
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_SPECIAL_MONSTER_LEVEL_REACH
+    key: 5
+    key: 8
+    value: 1
+    target: "小小葵达到8级"
+  }
+  prize_id: 50010
+}
+task {
+  id: 11
+  name: "小小葵的努力"
+  info: "精灵背包中把小小葵设为首发并与法拉战斗"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 19
+  commit_npc_id: 19
+  area_id: 1
+  obtain_dialog: 224
+  progress_dialog: 230
+  finish_dialog: 232
+  pre_task: 10
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 5
+    key: 10
+    value: 1
+    target: "用小小葵和法拉战斗一次"
+    link: 10001
+  }
+  prize_id: 50011
+}
+task {
+  id: 12
+  name: "法拉的变异"
+  info: "了解法拉的变异"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 12
+  commit_npc_id: 12
+  area_id: 1
+  obtain_dialog: 238
+  progress_dialog: 238
+  finish_dialog: 243
+  pre_task: 4
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 12
+    value: 1
+    target: "与法伊娜对话"
+    link: 10002
+  }
+  prize_id: 50012
+}
+task {
+  id: 13
+  name: "收集眼泪"
+  info: "打败法拉收集3个法拉之泪"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 12
+  commit_npc_id: 12
+  area_id: 1
+  obtain_dialog: 247
+  progress_dialog: 253
+  finish_dialog: 255
+  pre_task: 12
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100011
+    key: 20215
+    value: 3
+    target: "收集法拉之泪"
+    link: 10001
+  }
+  prize_id: 50013
+}
+task {
+  id: 14
+  name: "法拉的痛楚"
+  info: "了解法拉的痛楚"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 12
+  commit_npc_id: 12
+  area_id: 1
+  obtain_dialog: 260
+  progress_dialog: 260
+  finish_dialog: 263
+  pre_task: 13
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 12
+    value: 1
+    target: "与法伊娜对话"
+    link: 10002
+  }
+  prize_id: 50014
+}
+task {
+  id: 15
+  name: "挑战琪琪"
+  info: "打败琪琪"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10002
+  commit_map_id: 10002
+  obtain_npc_id: 19
+  commit_npc_id: 19
+  area_id: 1
+  obtain_dialog: 272
+  progress_dialog: 280
+  finish_dialog: 282
+  pre_task: 9
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 19
+    value: 1
+    target: "打败琪琪"
+    link: 10002
+  }
+  prize_id: 50015
+}
+task {
+  id: 16
+  name: "酋长的委托"
+  info: "与神目酋长对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 1
+  obtain_dialog: 289
+  progress_dialog: 289
+  finish_dialog: 297
+  pre_task: 15
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "与神目酋长对话"
+    link: 10003
+  }
+  prize_id: 50016
+}
+task {
+  id: 17
+  name: "星球异变"
+  info: "了解星球变异的情况"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 1
+  obtain_dialog: 307
+  progress_dialog: 307
+  finish_dialog: 313
+  pre_task: 16
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "与神目酋长对话"
+    link: 10003
+  }
+  prize_id: 50017
+}
+task {
+  id: 18
+  name: "受伤的小树根"
+  info: "捕捉1只小树根"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 1
+  obtain_dialog: 319
+  progress_dialog: 322
+  finish_dialog: 324
+  pre_task: 17
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 7
+    key: 0
+    value: 1
+    target: "捕捉小树根"
+    link: 10003
+  }
+  prize_id: 50018
+}
+
+task {
+  id: 21
+  name: "小树根的意志"
+  info: "将小树根提升到11级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 1
+  obtain_dialog: 340
+  progress_dialog: 344
+  finish_dialog: 346
+  pre_task: 18
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_SPECIAL_MONSTER_LEVEL_REACH
+    key: 7
+    key: 11
+    value: 1
+    target: "小树根达到11级"
+  }
+  prize_id: 50021
+}
+task {
+  id: 22
+  name: "横行霸道"
+  info: "了解布鲁托的事情"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 1
+  obtain_dialog: 350
+  progress_dialog: 350
+  finish_dialog: 355
+  pre_task: 18
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "与神目酋长对话"
+    link: 10003
+  }
+  prize_id: 50022
+}
+task {
+  id: 23
+  name: "唤醒斯利普"
+  info: "打败小树根收集1根树根之须"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 1
+  obtain_dialog: 363
+  progress_dialog: 371
+  finish_dialog: 373
+  pre_task: 22
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100031
+    key: 20216
+    value: 1
+    target: "收集树根之须"
+    link: 10003
+  }
+  prize_id: 50023
+}
+task {
+  id: 24
+  name: "斯利普的挑战"
+  info: "打败斯利普"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 18
+  commit_npc_id: 18
+  area_id: 1
+  obtain_dialog: 375
+  progress_dialog: 391
+  finish_dialog: 393
+  pre_task: 23
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 18
+    value: 1
+    target: "打败斯利普"
+    link: 10003
+  }
+  prize_id: 50024
+}
+task {
+  id: 25
+  name: "斯利普的忠告"
+  info: "听取斯利普的忠告"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 18
+  commit_npc_id: 18
+  area_id: 1
+  obtain_dialog: 396
+  progress_dialog: 396
+  finish_dialog: 399
+  pre_task: 24
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 18
+    value: 1
+    target: "与斯利普对话"
+    link: 10003
+  }
+  prize_id: 50025
+}
+task {
+  id: 26
+  name: "【挑战】布鲁托"
+  info: "打败布鲁托"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 18
+  commit_npc_id: 18
+  area_id: 1
+  obtain_dialog: 405
+  progress_dialog: 410
+  finish_dialog: 412
+  pre_task: 24
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90017
+    value: 1
+    target: "打败布鲁托"
+    link: 10003
+  }
+  prize_id: 50026
+}
+task {
+  id: 27
+  name: "蓝色冲击波"
+  info: "击退来犯的3只水墨点点"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 4
+  commit_npc_id: 4
+  area_id: 0
+  obtain_dialog: 431
+  progress_dialog: 440
+  finish_dialog: 442
+  pre_task: 26  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 41
+    key: 0
+    value: 3
+    target: "打败水墨点点"
+    link: 10010
+  }
+  prize_id: 50027
+}
+task {
+  id: 28
+  name: "捕捉水墨点点"
+  info: "捕捉1只水墨点点"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 4
+  commit_npc_id: 4
+  area_id: 0
+  obtain_dialog: 446
+  progress_dialog: 452
+  finish_dialog: 454
+  pre_task: 27
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 17
+    key: 0
+    value: 1
+    target: "捕捉水墨点点"
+    link: 10010
+  }
+  prize_id: 50028
+}
+task {
+  id: 29
+  name: "被攻击的缘由"
+  info: "了解被攻击的缘由"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 4
+  commit_npc_id: 4
+  area_id: 0
+  obtain_dialog: 457
+  progress_dialog: 457
+  finish_dialog: 466
+  pre_task: 28
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 4
+    value: 1
+    target: "与巴蒂对话"
+    link: 10010
+  }
+  prize_id: 50029
+}
+task {
+  id: 30
+  name: "萨伦帝国粉墨登场"
+  info: "了解萨伦帝国的来头，接受萨伦士兵的挑战"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 208
+  commit_npc_id: 208
+  area_id: 0
+  obtain_dialog: 476
+  progress_dialog: 483
+  finish_dialog: 485
+  pre_task: 29
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 208
+    value: 1
+    target: "打败萨伦士兵"
+    link: 10010
+  }
+  prize_id: 50030
+}
+task {
+  id: 31
+  name: "拯救小海马"
+  info: "打败萨伦士兵释放水墨点点们"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 208
+  commit_npc_id: 208
+  area_id: 0
+  obtain_dialog: 492
+  progress_dialog: 497
+  finish_dialog: 499
+  pre_task: 30
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 208
+    value: 1
+    target: "打败萨伦士兵"
+    link: 10010
+  }
+  prize_id: 50031
+}
+task {
+  id: 32
+  name: "水墨的感谢状"
+  info: "与巴蒂对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 4
+  commit_npc_id: 4
+  area_id: 0
+  obtain_dialog: 504
+  progress_dialog: 504
+  finish_dialog: 505
+  pre_task: 31
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 4
+    value: 1
+    target: "与巴蒂对话"
+    link: 10010
+  }
+  prize_id: 50032
+}
+task {
+  id: 33
+  name: "我要变强"
+  info: "将水墨点点提升到11级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 4
+  commit_npc_id: 4
+  area_id: 0
+  obtain_dialog: 511
+  progress_dialog: 516
+  finish_dialog: 518
+  pre_task: 30
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_SPECIAL_MONSTER_LEVEL_REACH
+    key: 17
+    key: 11
+    value: 1
+    target: "水墨点点达到11级"
+  }
+  prize_id: 50033
+}
+task {
+  id: 35
+  name: "净化装置"
+  info: "打败小小葵收集3颗光能粒子"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10010
+  commit_map_id: 10010
+  obtain_npc_id: 4
+  commit_npc_id: 4
+  area_id: 0
+  obtain_dialog: 536
+  progress_dialog: 544
+  finish_dialog: 546
+  pre_task: 32
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100021
+    key: 20207
+    value: 3
+    target: "收集光能粒子"
+    link: 10002
+  }
+  prize_id: 50035
+}
+
+task {
+  id: 37
+  name: "冲动的莱斯"
+  info: "打败莱斯"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 25
+  commit_npc_id: 25
+  area_id: 0
+  obtain_dialog: 559
+  progress_dialog: 562
+  finish_dialog: 564
+  pre_task: 35  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 25
+    value: 1
+    target: "打败莱斯"
+    link: 10016
+  }
+  prize_id: 50037
+}
+task {
+  id: 38
+  name: "解释缘由"
+  info: "听尼尔森解释缘由"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 26
+  commit_npc_id: 26
+  area_id: 0
+  obtain_dialog: 569
+  progress_dialog: 569
+  finish_dialog: 574
+  pre_task: 37
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 26
+    value: 1
+    target: "与尼尔森对话"
+    link: 10016
+  }
+  prize_id: 50038
+}
+task {
+  id: 39
+  name: "构建结界"
+  info: "打败蓝喵收集结界开关"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 26
+  commit_npc_id: 26
+  area_id: 0
+  obtain_dialog: 578
+  progress_dialog: 586
+  finish_dialog: 589
+  pre_task: 45
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100161
+    key: 20217
+    value: 1
+    target: "收集结界开关"
+    link: 10016
+  }
+  prize_id: 50039
+}
+task {
+  id: 40
+  name: "遗失的结界增幅器"
+  info: "打败草目氏族的古老精灵（法拉）收集结界增幅器"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 26
+  commit_npc_id: 26
+  area_id: 0
+  obtain_dialog: 592
+  progress_dialog: 600
+  finish_dialog: 602
+  pre_task: 39
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100011
+    key: 20218
+    value: 1
+    target: "打败法拉收集结界增幅器"
+    link: 10001
+  }
+  prize_id: 50040
+}
+task {
+  id: 41
+  name: "萨伦先遣队"
+  info: "打败萨伦帝国的先遣队"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 26
+  commit_npc_id: 26
+  area_id: 0
+  obtain_dialog: 614
+  progress_dialog: 620
+  finish_dialog: 623
+  pre_task: 39
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 208
+    value: 1
+    target: "打败萨伦士兵"
+    link: 10010
+  }
+  prize_id: 50041
+}
+
+task {
+  id: 43
+  name: "调皮的蓝喵"
+  info: "捕捉1只蓝喵"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 25
+  commit_npc_id: 25
+  area_id: 0
+  obtain_dialog: 636
+  progress_dialog: 640
+  finish_dialog: 642
+  pre_task: 38
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 11
+    key: 0
+    value: 1
+    target: "捕捉蓝喵"
+    link: 10016
+  }
+  prize_id: 50043
+}
+task {
+  id: 44
+  name: "蓝喵的逆袭"
+  info: "用蓝喵和小树根战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 25
+  commit_npc_id: 25
+  area_id: 0
+  obtain_dialog: 644
+  progress_dialog: 650
+  finish_dialog: 652
+  pre_task: 43
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 11
+    key: 18
+    value: 1
+    target: "用蓝喵和小树根战斗一次"
+    link: 10003
+  }
+  prize_id: 50044
+}
+task {
+  id: 45
+  name: "一击必杀"
+  info: "一回合内打败蓝喵"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 25
+  commit_npc_id: 25
+  area_id: 0
+  obtain_dialog: 656
+  progress_dialog: 660
+  finish_dialog: 663
+  pre_task: 44
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 28
+    key: 1
+    value: 1
+    target: "一回合内打败蓝喵"
+    link: 10016
+  }
+  prize_id: 50045
+}
+task {
+  id: 46
+  name: "挑战尼尔森"
+  info: "打败尼尔森"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10016
+  commit_map_id: 10016
+  obtain_npc_id: 26
+  commit_npc_id: 26
+  area_id: 0
+  obtain_dialog: 605
+  progress_dialog: 609
+  finish_dialog: 611
+  pre_task: 41
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 26
+    value: 1
+    target: "打败尼尔森"
+    link: 10016
+  }
+  prize_id: 50046
+}
+task {
+  id: 47
+  name: "星际使者"
+  info: "了解星际使者的传说"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 23
+  commit_npc_id: 23
+  area_id: 0
+  obtain_dialog: 668
+  progress_dialog: 668
+  finish_dialog: 672
+  pre_task: 46  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 23
+    value: 1
+    target: "与爱丽丝公主对话"
+    link: 10017
+  }
+  prize_id: 50047
+}
+task {
+  id: 48
+  name: "占卜仪式"
+  info: "打败水墨点点收集4个钻石贝壳"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 27
+  commit_npc_id: 27
+  area_id: 0
+  obtain_dialog: 679
+  progress_dialog: 684
+  finish_dialog: 685
+  pre_task: 47
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100101
+    key: 20219
+    value: 4
+    target: "收集钻石贝壳"
+    link: 10010
+  }
+  prize_id: 50048
+}
+task {
+  id: 49
+  name: "预知未来"
+  info: "听取占卜结果"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 27
+  commit_npc_id: 27
+  area_id: 0
+  obtain_dialog: 687
+  progress_dialog: 687
+  finish_dialog: 689
+  pre_task: 48
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 27
+    value: 1
+    target: "与占卜婆婆对话"
+    link: 10017
+  }
+  prize_id: 50049
+}
+task {
+  id: 50
+  name: "公主的馈赠"
+  info: "接受公主的馈赠"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 23
+  commit_npc_id: 23
+  area_id: 0
+  obtain_dialog: 713
+  progress_dialog: 713
+  finish_dialog: 717
+  pre_task: 49
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 23
+    value: 1
+    target: "与爱丽丝公主对话"
+    link: 10017
+  }
+  prize_id: 50050
+}
+
+task {
+  id: 53
+  name: "戎装公主"
+  info: "打败爱丽丝公主"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 23
+  commit_npc_id: 23
+  area_id: 0
+  obtain_dialog: 743
+  progress_dialog: 750
+  finish_dialog: 752
+  pre_task: 55
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 23
+    value: 1
+    target: "打败爱丽丝公主"
+    link: 10017
+  }
+  prize_id: 50053
+}
+task {
+  id: 54
+  name: "【挑战】阿卡纳斯"
+  info: "打败阿卡纳斯"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 23
+  commit_npc_id: 23
+  area_id: 0
+  obtain_dialog: 697
+  progress_dialog: 706
+  finish_dialog: 708
+  pre_task: 49
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90031
+    value: 1
+    target: "打败阿卡纳斯"
+    link: 10017
+  }
+  prize_id: 50054
+}
+task {
+  id: 55
+  name: "守护之心"
+  info: "了解守护之心的传说"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 27
+  commit_npc_id: 27
+  area_id: 0
+  obtain_dialog: 755
+  progress_dialog: 755
+  finish_dialog: 758
+  pre_task: 54
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 27
+    value: 1
+    target: "与占卜婆婆对话"
+    link: 10017
+  }
+  prize_id: 50055
+}
+task {
+  id: 200
+  name: "拯救马丁"
+  info: "战胜挟持马丁的萨伦士兵"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 207
+  commit_npc_id: 207
+  area_id: 7
+  obtain_dialog: 4000
+  progress_dialog: 4007
+  finish_dialog: 4008
+  pre_task: 53  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 207
+    value: 1
+    target: "战胜萨伦士兵"
+    link: 10013
+  }
+  prize_id: 50200
+}
+task {
+  id: 201
+  name: "火族内战"
+  info: "战胜3只尤尼"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 34
+  commit_npc_id: 34
+  area_id: 7
+  obtain_dialog: 4010
+  progress_dialog: 4023
+  finish_dialog: 4025
+  pre_task: 200
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 32
+    key: 0
+    value: 3
+    target: "战胜3只尤尼"
+    link: 10013
+  }
+  prize_id: 50201
+}
+task {
+  id: 202
+  name: "神奇火焰"
+  info: "捕捉一只尤尼，研究它的火焰，用于装备铸造"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 34
+  commit_npc_id: 34
+  area_id: 7
+  obtain_dialog: 4027
+  progress_dialog: 4036
+  finish_dialog: 4038
+  pre_task: 201
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 13
+    key: 0
+    value: 1
+    target: "捕捉一只尤尼"
+    link: 10013
+  }
+  prize_id: 50202
+}
+task {
+  id: 205
+  name: "强化火焰"
+  info: "尤尼的火焰需要强化，将尤尼提升至15级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 34
+  commit_npc_id: 34
+  area_id: 7
+  obtain_dialog: 4056
+  progress_dialog: 4063
+  finish_dialog: 4065
+  pre_task: 202
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_SPECIAL_MONSTER_LEVEL_REACH
+    key: 13
+    key: 15
+    value: 1
+    target: "尤尼提升至15级"
+  }
+  prize_id: 50205
+}
+task {
+  id: 206
+  name: "水晶能量"
+  info: "装备的铸造还需要水晶的能量，打蓝喵收集小水晶"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 34
+  commit_npc_id: 34
+  area_id: 7
+  obtain_dialog: 4067
+  progress_dialog: 4074
+  finish_dialog: 4076
+  pre_task: 205
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100161
+    key: 20222
+    value: 5
+    target: "收集5块小水晶"
+    link: 10016
+  }
+  prize_id: 50206
+}
+task {
+  id: 207
+  name: "考验"
+  info: "用水墨点点和尤尼战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 34
+  commit_npc_id: 34
+  area_id: 7
+  obtain_dialog: 4080
+  progress_dialog: 4088
+  finish_dialog: 4090
+  pre_task: 200
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 17
+    key: 32
+    value: 1
+    target: "用水墨点点和尤尼战斗一次"
+    link: 10013
+  }
+  prize_id: 50207
+}
+task {
+  id: 208
+  name: "烦恼"
+  info: "打尤尼收集火苗，换取仓库扩展卡"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 34
+  commit_npc_id: 34
+  area_id: 7
+  obtain_dialog: 4092
+  progress_dialog: 4102
+  finish_dialog: 4104
+  pre_task: 207
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100131
+    key: 20203
+    value: 3
+    target: "收集3个火苗"
+    link: 10013
+  }
+  prize_id: 50208
+}
+
+task {
+  id: 210
+  name: "看望博士"
+  info: "去和博士对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10023
+  obtain_npc_id: 34
+  commit_npc_id: 1
+  area_id: 7
+  obtain_dialog: 4117
+  progress_dialog: 4123
+  finish_dialog: 4125
+  pre_task: 211
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50210
+}
+task {
+  id: 211
+  name: "挑战马丁"
+  info: "打败马丁"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10013
+  obtain_npc_id: 34
+  commit_npc_id: 34
+  area_id: 7
+  obtain_dialog: 4132
+  progress_dialog: 4141
+  finish_dialog: 4143
+  pre_task: 206
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 34
+    value: 1
+    target: "打败马丁"
+    link: 10013
+  }
+  prize_id: 50211
+}
+task {
+  id: 212
+  name: "开导巴尔卡1"
+  info: "找神目酋长开导巴尔卡"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10003
+  obtain_npc_id: 31
+  commit_npc_id: 16
+  area_id: 7
+  obtain_dialog: 4149
+  progress_dialog: 4165
+  finish_dialog: 4167
+  pre_task: 210  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "找神目酋长开导巴尔卡"
+    link: 10003
+  }
+  prize_id: 50212
+}
+task {
+  id: 213
+  name: "开导巴尔卡2"
+  info: "将神目酋长的信给巴尔卡"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4175
+  progress_dialog: 4175
+  finish_dialog: 4178
+  pre_task: 212
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 31
+    value: 1
+    target: "将神目酋长的信给巴尔卡"
+    link: 10014
+  }
+  prize_id: 50213
+}
+task {
+  id: 214
+  name: "了解大角岩浮"
+  info: "战胜3只大角岩浮"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4181
+  progress_dialog: 4185
+  finish_dialog: 4187
+  pre_task: 213
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 35
+    key: 0
+    value: 3
+    target: "战胜3只大角岩浮"
+    link: 10014
+  }
+  prize_id: 50214
+}
+task {
+  id: 215
+  name: "寂寞的巴尔卡"
+  info: "捕捉一只大角岩浮"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4189
+  progress_dialog: 4195
+  finish_dialog: 4197
+  pre_task: 213
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 14
+    key: 0
+    value: 1
+    target: "捕捉一只大角岩浮"
+    link: 10014
+  }
+  prize_id: 50215
+}
+task {
+  id: 216
+  name: "在逆境中成长"
+  info: "用大角岩浮和水墨点点战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4199
+  progress_dialog: 4210
+  finish_dialog: 4212
+  pre_task: 223
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 14
+    key: 41
+    value: 1
+    target: "用大角岩浮和水墨点点战斗一次"
+    link: 10010
+  }
+  prize_id: 50216
+}
+task {
+  id: 217
+  name: "性格的特性"
+  info: "收集红宝石交换关于性格的信息"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4214
+  progress_dialog: 4219
+  finish_dialog: 4221
+  pre_task: 216
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100141
+    key: 20223
+    value: 1
+    target: "打败大角岩浮收集1颗红宝石"
+    link: 10014
+  }
+  prize_id: 50217
+}
+
+task {
+  id: 219
+  name: "权利腰带"
+  info: "打败大角岩浮收集3个岩浮甲"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4237
+  progress_dialog: 4247
+  finish_dialog: 4249
+  pre_task: 215
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100141
+    key: 20224
+    value: 3
+    target: "收集岩浮甲"
+    link: 10014
+  }
+  prize_id: 50219
+}
+task {
+  id: 220
+  name: "腰带的特效"
+  info: "打败小小葵收集5片生命叶片"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4251
+  progress_dialog: 4258
+  finish_dialog: 4260
+  pre_task: 219
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100021
+    key: 20201
+    value: 5
+    target: "收集生命叶片"
+    link: 10002
+  }
+  prize_id: 50220
+}
+task {
+  id: 221
+  name: "了解学习力"
+  info: "了解到学习力的作用"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4262
+  progress_dialog: 4262
+  finish_dialog: 4272
+  pre_task: 220
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 31
+    value: 1
+    target: "与巴尔卡对话"
+    link: 10014
+  }
+  prize_id: 50221
+}
+
+task {
+  id: 223
+  name: "挑战巴尔卡"
+  info: "挑战巴尔卡进入下一张地图"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10014
+  obtain_npc_id: 31
+  commit_npc_id: 31
+  area_id: 7
+  obtain_dialog: 4281
+  progress_dialog: 4285
+  finish_dialog: 4287
+  pre_task: 220
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 31
+    value: 1
+    target: "挑战巴尔卡"
+    link: 10014
+  }
+  prize_id: 50223
+}
+task {
+  id: 224
+  name: "被迷惑的洛克"
+  info: "打败洛克的手下"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10015
+  commit_map_id: 10015
+  obtain_npc_id: 32
+  commit_npc_id: 32
+  area_id: 7
+  obtain_dialog: 4291
+  progress_dialog: 4302
+  finish_dialog: 4304
+  pre_task: 217  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 32
+    value: 1
+    target: "打败洛克的手下"
+    link: 10015
+  }
+  prize_id: 50224
+}
+task {
+  id: 225
+  name: "阴谋"
+  info: "找博士做一个辩识仪"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10015
+  commit_map_id: 10023
+  obtain_npc_id: 32
+  commit_npc_id: 1
+  area_id: 7
+  obtain_dialog: 4315
+  progress_dialog: 4315
+  finish_dialog: 4321
+  pre_task: 224
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "找博士对话"
+    link: 10023
+  }
+  prize_id: 50225
+}
+task {
+  id: 226
+  name: "洛克的要求"
+  info: "使用尤尼和大角岩浮战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10015
+  commit_map_id: 10015
+  obtain_npc_id: 32
+  commit_npc_id: 32
+  area_id: 7
+  obtain_dialog: 4328
+  progress_dialog: 4335
+  finish_dialog: 4337
+  pre_task: 217  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 13
+    key: 35
+    value: 1
+    target: "使用尤尼和大角岩浮战斗一次"
+    link: 10014
+  }
+  prize_id: 50226
+}
+task {
+  id: 227
+  name: "战斗历练"
+  info: "最高级精灵要到达35级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10015
+  commit_map_id: 10015
+  obtain_npc_id: 32
+  commit_npc_id: 32
+  area_id: 7
+  obtain_dialog: 4340
+  progress_dialog: 4351
+  finish_dialog: 4353
+  pre_task: 225
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MONSTER_LEVEL_REACH
+    key: 35
+    value: 1
+    target: "最高精灵等级达到35级"
+  }
+  prize_id: 50227
+}
+
+task {
+  id: 229
+  name: "烈焰之战"
+  info: "战胜洛克"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10015
+  commit_map_id: 10015
+  obtain_npc_id: 32
+  commit_npc_id: 32
+  area_id: 7
+  obtain_dialog: 4364
+  progress_dialog: 4366
+  finish_dialog: 4367
+  pre_task: 227
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 32
+    value: 1
+    target: "战胜洛克"
+    link: 10015
+  }
+  prize_id: 50229
+}
+task {
+  id: 230
+  name: "霍克努尔的苦衷"
+  info: "打败霍克努尔"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10015
+  commit_map_id: 10015
+  obtain_npc_id: 209
+  commit_npc_id: 209
+  area_id: 7
+  obtain_dialog: 4376
+  progress_dialog: 4382
+  finish_dialog: 4383
+  pre_task: 229
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90038
+    value: 1
+    target: "打败霍克努尔"
+    link: 10015
+  }
+  prize_id: 50230
+}
+task {
+  id: 231
+  name: "罪魁祸首"
+  info: "打败萨伦军官"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10015
+  commit_map_id: 10015
+  obtain_npc_id: 209
+  commit_npc_id: 209
+  area_id: 7
+  obtain_dialog: 4393
+  progress_dialog: 4396
+  finish_dialog: 4398
+  pre_task: 230
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 209
+    value: 1
+    target: "打败萨伦军官"
+    link: 10015
+  }
+  prize_id: 50231
+}
+task {
+  id: 232
+  name: "麦麦迪的故事"
+  info: "和麦麦迪对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 7
+  obtain_dialog: 4405
+  progress_dialog: 4405
+  finish_dialog: 4408
+  pre_task: 231
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 90057
+    value: 1
+    target: "和麦麦迪对话"
+    link: 10019
+  }
+  prize_id: 50232
+}
+task {
+  id: 233
+  name: "勇气的历练"
+  info: "打败坏小子(噩梦之影)"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 7
+  obtain_dialog: 4413
+  progress_dialog: 4417
+  finish_dialog: 4418
+  pre_task: 232
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 212
+    value: 1
+    target: "打败坏小子（噩梦之影）"
+    link: 10019
+  }
+  prize_id: 50233
+}
+task {
+  id: 234
+  name: "破除噩梦"
+  info: "帮助麦麦迪解除噩梦"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 7
+  obtain_dialog: 4421
+  progress_dialog: 4427
+  finish_dialog: 4428
+  pre_task: 233
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 212
+    value: 1
+    target: "打败噩梦精灵"
+    link: 10019
+  }
+  prize_id: 50234
+}
+task {
+  id: 235
+  name: "小小葵的故事"
+  info: "和麦麦迪对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 7
+  obtain_dialog: 4431
+  progress_dialog: 4431
+  finish_dialog: 4434
+  pre_task: 231  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 90057
+    value: 1
+    target: "和麦麦迪对话"
+    link: 10019
+  }
+  prize_id: 50235
+}
+task {
+  id: 236
+  name: "小小葵的战斗"
+  info: "用小小葵和蓝喵战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 7
+  obtain_dialog: 4438
+  progress_dialog: 4443
+  finish_dialog: 4445
+  pre_task: 235
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 5
+    key: 28
+    value: 1
+    target: "用小小葵和蓝喵战斗一次"
+    link: 10016
+  }
+  prize_id: 50236
+}
+task {
+  id: 237
+  name: "小小葵的奋斗"
+  info: "用小小葵和大角岩浮战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 7
+  obtain_dialog: 4447
+  progress_dialog: 4452
+  finish_dialog: 4453
+  pre_task: 236
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 5
+    key: 35
+    value: 1
+    target: "用小小葵和大角岩浮战斗一次"
+    link: 10014
+  }
+  prize_id: 50237
+}
+task {
+  id: 238
+  name: "【挑战】麦麦迪"
+  info: "打败麦麦迪"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 7
+  obtain_dialog: 4455
+  progress_dialog: 4463
+  finish_dialog: 4465
+  pre_task: 234
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90057
+    value: 1
+    target: "打败麦麦迪"
+    link: 10019
+  }
+  prize_id: 50238
+}
+task {
+  id: 300
+  name: "地月冲突"
+  info: "了解地月冲突"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10009
+  commit_map_id: 10009
+  obtain_npc_id: 46
+  commit_npc_id: 46
+  area_id: 2
+  obtain_dialog: 765
+  progress_dialog: 765
+  finish_dialog: 772
+  pre_task: 238  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 46
+    value: 1
+    target: "与地月先知对话"
+    link: 10009
+  }
+  prize_id: 50300
+}
+task {
+  id: 301
+  name: "沙爪的刺客"
+  info: "保护地月先知，打败刺客"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10009
+  commit_map_id: 10009
+  obtain_npc_id: 46
+  commit_npc_id: 46
+  area_id: 2
+  obtain_dialog: 780
+  progress_dialog: 791
+  finish_dialog: 795
+  pre_task: 300
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 46
+    value: 1
+    target: "保护地月先知，打败刺客"
+    link: 10009
+  }
+  prize_id: 50301
+}
+task {
+  id: 302
+  name: "刺客的毒药"
+  info: "打败砂吉塔收集3个蛇毒血清"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10009
+  commit_map_id: 10009
+  obtain_npc_id: 46
+  commit_npc_id: 46
+  area_id: 2
+  obtain_dialog: 802
+  progress_dialog: 809
+  finish_dialog: 812
+  pre_task: 301
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100091
+    key: 20220
+    value: 3
+    target: "收集蛇毒血清"
+    link: 10009
+  }
+  prize_id: 50302
+}
+task {
+  id: 303
+  name: "占卜的金针"
+  info: "打败麦麦迪收集1个麦麦迪的金针"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10009
+  commit_map_id: 10009
+  obtain_npc_id: 46
+  commit_npc_id: 46
+  area_id: 2
+  obtain_dialog: 817
+  progress_dialog: 826
+  finish_dialog: 829
+  pre_task: 302
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 90057
+    key: 20221
+    value: 1
+    target: "收集麦麦迪的金针"
+    link: 10019
+  }
+  prize_id: 50303
+}
+task {
+  id: 304
+  name: "觐见族长"
+  info: "觐见霍加"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 47
+  commit_npc_id: 47
+  area_id: 2
+  obtain_dialog: 833
+  progress_dialog: 833
+  finish_dialog: 837
+  pre_task: 303  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 47
+    value: 1
+    target: "与霍加对话"
+    link: 10021
+  }
+  prize_id: 50304
+}
+task {
+  id: 305
+  name: "备战进度"
+  info: "把石蝎秘药带给地月先知"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10009
+  obtain_npc_id: 47
+  commit_npc_id: 46
+  area_id: 2
+  obtain_dialog: 842
+  progress_dialog: 842
+  finish_dialog: 848
+  pre_task: 304
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 46
+    value: 1
+    target: "与地月先知对话"
+    link: 10009
+  }
+  prize_id: 50305
+}
+task {
+  id: 306
+  name: "石蝎的晚餐"
+  info: "打败尤尼收集5个热源石"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 47
+  commit_npc_id: 47
+  area_id: 2
+  obtain_dialog: 855
+  progress_dialog: 864
+  finish_dialog: 867
+  pre_task: 304
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100131
+    key: 20204
+    value: 5
+    target: "收集热源石"
+    link: 10013
+  }
+  prize_id: 50306
+}
+task {
+  id: 307
+  name: "吓人的伙伴"
+  info: "捕捉1只三眼石蝎"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 47
+  commit_npc_id: 47
+  area_id: 2
+  obtain_dialog: 871
+  progress_dialog: 875
+  finish_dialog: 879
+  pre_task: 306
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 36
+    key: 0
+    value: 1
+    target: "捕捉三眼石蝎"
+    link: 10021
+  }
+  prize_id: 50307
+}
+task {
+  id: 308
+  name: "训练军队"
+  info: "训练军队，打败5只三眼石蝎"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 47
+  commit_npc_id: 47
+  area_id: 2
+  obtain_dialog: 884
+  progress_dialog: 890
+  finish_dialog: 892
+  pre_task: 304
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 87
+    key: 0
+    value: 5
+    target: "打败三眼石蝎"
+    link: 10021
+  }
+  prize_id: 50308
+}
+task {
+  id: 309
+  name: "全民皆兵"
+  info: "打败吉吉参谋"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 47
+  commit_npc_id: 47
+  area_id: 2
+  obtain_dialog: 896
+  progress_dialog: 896
+  finish_dialog: 902
+  pre_task: 308
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 45
+    value: 1
+    target: "打败吉吉参谋"
+    link: 10021
+  }
+  prize_id: 50309
+}
+task {
+  id: 310
+  name: "吉吉的怀疑"
+  info: "了解吉吉参谋的怀疑"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 45
+  commit_npc_id: 45
+  area_id: 2
+  obtain_dialog: 904
+  progress_dialog: 904
+  finish_dialog: 908
+  pre_task: 309
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 45
+    value: 1
+    target: "与吉吉参谋对话"
+    link: 10021
+  }
+  prize_id: 50310
+}
+task {
+  id: 311
+  name: "另有蹊跷"
+  info: "捕捉1只砂吉塔"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 45
+  commit_npc_id: 45
+  area_id: 2
+  obtain_dialog: 915
+  progress_dialog: 191
+  finish_dialog: 921
+  pre_task: 310
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 58
+    key: 0
+    value: 1
+    target: "捕捉砂吉塔"
+    link: 10009
+  }
+  prize_id: 50311
+}
+task {
+  id: 312
+  name: "和平大使"
+  info: "打败霍加证明实力"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10021
+  obtain_npc_id: 45
+  commit_npc_id: 47
+  area_id: 2
+  obtain_dialog: 926
+  progress_dialog: 934
+  finish_dialog: 936
+  pre_task: 311
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 47
+    value: 1
+    target: "打败霍加"
+    link: 10021
+  }
+  prize_id: 50312
+}
+task {
+  id: 314
+  name: "愤怒将军"
+  info: "打败大牙平息他的怒火"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 42
+  commit_npc_id: 42
+  area_id: 2
+  obtain_dialog: 1083
+  progress_dialog: 1089
+  finish_dialog: 1091
+  pre_task: 312  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 42
+    value: 1
+    target: "打败大牙"
+    link: 10004
+  }
+  prize_id: 50314
+}
+task {
+  id: 315
+  name: "大牙的挑战状"
+  info: "打败大牙"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 42
+  commit_npc_id: 42
+  area_id: 2
+  obtain_dialog: 1094
+  progress_dialog: 1099
+  finish_dialog: 1101
+  pre_task: 314
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 42
+    value: 1
+    target: "打败大牙"
+    link: 10004
+  }
+  prize_id: 50315
+}
+task {
+  id: 316
+  name: "不认账的大牙"
+  info: "打败麦麦迪赢得挑战"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 42
+  commit_npc_id: 42
+  area_id: 2
+  obtain_dialog: 1105
+  progress_dialog: 1115
+  finish_dialog: 1117
+  pre_task: 315
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 57
+    key: 0
+    value: 1
+    target: "打败麦麦迪"
+    link: 10019
+  }
+  prize_id: 50316
+}
+task {
+  id: 317
+  name: "悲惨将军"
+  info: "了解大牙的悲伤往事"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 42
+  commit_npc_id: 42
+  area_id: 2
+  obtain_dialog: 1123
+  progress_dialog: 1123
+  finish_dialog: 1126
+  pre_task: 314
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 42
+    value: 1
+    target: "与大牙对话"
+    link: 10004
+  }
+  prize_id: 50317
+}
+task {
+  id: 318
+  name: "寻找小牙"
+  info: "寻找小牙"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 42
+  commit_npc_id: 90080
+  area_id: 2
+  obtain_dialog: 1133
+  progress_dialog: 1133
+  finish_dialog: 1142
+  pre_task: 317
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 90080
+    value: 1
+    target: "在巨石洞穴寻找线索"
+    link: 10004
+  }
+  prize_id: 50318
+}
+task {
+  id: 319
+  name: "巨锤莫古的考验"
+  info: "一回合内打败大角岩浮"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 90080
+  commit_npc_id: 90080
+  area_id: 2
+  obtain_dialog: 1147
+  progress_dialog: 1152
+  finish_dialog: 1154
+  pre_task: 318
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 35
+    key: 1
+    value: 1
+    target: "一回合内打败大角岩浮"
+    link: 10014
+  }
+  prize_id: 50319
+}
+task {
+  id: 320
+  name: "救出小牙"
+  info: "救出小牙"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 90080
+  commit_npc_id: 42
+  area_id: 2
+  obtain_dialog: 1160
+  progress_dialog: 1160
+  finish_dialog: 1163
+  pre_task: 319
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 42
+    value: 1
+    target: "与大牙对话"
+    link: 10004
+  }
+  prize_id: 50320
+}
+task {
+  id: 321
+  name: "【挑战】巨锤莫古"
+  info: "打败巨锤莫古"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10004
+  commit_map_id: 10004
+  obtain_npc_id: 90080
+  commit_npc_id: 90080
+  area_id: 2
+  obtain_dialog: 1171
+  progress_dialog: 1178
+  finish_dialog: 1180
+  pre_task: 320
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90080
+    value: 1
+    target: "打败巨锤莫古"
+    link: 10004
+  }
+  prize_id: 50321
+}
+task {
+  id: 322
+  name: "真正的先知"
+  info: "与阿凡提族长对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10005
+  obtain_npc_id: 55
+  commit_npc_id: 55
+  area_id: 3
+  obtain_dialog: 950
+  progress_dialog: 950
+  finish_dialog: 953
+  pre_task: 321  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 55
+    value: 1
+    target: "与阿凡提族长对话"
+    link: 10005
+  }
+  prize_id: 50322
+}
+task {
+  id: 323
+  name: "谨防假冒"
+  info: "揭穿假先知"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10009
+  obtain_npc_id: 48
+  commit_npc_id: 46
+  area_id: 3
+  obtain_dialog: 958
+  progress_dialog: 958
+  finish_dialog: 963
+  pre_task: 322
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 46
+    value: 1
+    target: "去地下黑市与地月先知对话"
+    link: 10009
+  }
+  prize_id: 50323
+}
+task {
+  id: 324
+  name: "揭穿冒牌货"
+  info: "打败假先知"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10009
+  commit_map_id: 10009
+  obtain_npc_id: 46
+  commit_npc_id: 46
+  area_id: 3
+  obtain_dialog: 971
+  progress_dialog: 974
+  finish_dialog: 976
+  pre_task: 323
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 46
+    value: 1
+    target: "打败地月先知"
+    link: 10009
+  }
+  prize_id: 50324
+}
+task {
+  id: 325
+  name: "和平的曙光"
+  info: "团结地月和沙爪两大氏族"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10021
+  commit_map_id: 10005
+  obtain_npc_id: 47
+  commit_npc_id: 55
+  area_id: 3
+  obtain_dialog: 986
+  progress_dialog: 986
+  finish_dialog: 991
+  pre_task: 324
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 55
+    value: 1
+    target: "与阿凡提族长对话"
+    link: 10005
+  }
+  prize_id: 50325
+}
+task {
+  id: 326
+  name: "团结互助"
+  info: "打败蹦蹦鼠收集速度之靴"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10021
+  obtain_npc_id: 55
+  commit_npc_id: 47
+  area_id: 3
+  obtain_dialog: 996
+  progress_dialog: 1004
+  finish_dialog: 1007
+  pre_task: 325
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100051
+    key: 20213
+    value: 1
+    target: "收集速度之靴"
+    link: 10005
+  }
+  prize_id: 50326
+}
+task {
+  id: 327
+  name: "星球的秘密"
+  info: "了解星球的秘密"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10005
+  obtain_npc_id: 48
+  commit_npc_id: 48
+  area_id: 3
+  obtain_dialog: 1014
+  progress_dialog: 1014
+  finish_dialog: 1017
+  pre_task: 331
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 48
+    value: 1
+    target: "与先知对话"
+    link: 10005
+  }
+  prize_id: 50327
+}
+task {
+  id: 328
+  name: "沙漠骑士"
+  info: "捕捉一只蹦蹦鼠"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10005
+  obtain_npc_id: 48
+  commit_npc_id: 48
+  area_id: 3
+  obtain_dialog: 1038
+  progress_dialog: 1044
+  finish_dialog: 1046
+  pre_task: 327
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 59
+    key: 0
+    value: 1
+    target: "捕捉蹦蹦鼠"
+    link: 10005
+  }
+  prize_id: 50328
+}
+task {
+  id: 329
+  name: "面对沙暴的勇气"
+  info: "打败先知"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10005
+  obtain_npc_id: 48
+  commit_npc_id: 48
+  area_id: 3
+  obtain_dialog: 1317
+  progress_dialog: 1324
+  finish_dialog: 1326
+  pre_task: 328
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 48
+    value: 1
+    target: "打败先知"
+    link: 10005
+  }
+  prize_id: 50329
+}
+task {
+  id: 330
+  name: "上古传说"
+  info: "了解上古传说"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10005
+  obtain_npc_id: 48
+  commit_npc_id: 48
+  area_id: 3
+  obtain_dialog: 1059
+  progress_dialog: 1059
+  finish_dialog: 1066
+  pre_task: 324
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 48
+    value: 1
+    target: "与先知对话"
+    link: 10005
+  }
+  prize_id: 50330
+}
+task {
+  id: 331
+  name: "精灵王之战"
+  info: "了解精灵王之战的传说"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10005
+  obtain_npc_id: 48
+  commit_npc_id: 48
+  area_id: 3
+  obtain_dialog: 1072
+  progress_dialog: 1072
+  finish_dialog: 1074
+  pre_task: 330
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 48
+    value: 1
+    target: "与先知对话"
+    link: 10005
+  }
+  prize_id: 50331
+}
+task {
+  id: 332
+  name: "宝藏猎人参见"
+  info: "向宝藏猎人打听上古神庙的事"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1191
+  progress_dialog: 1191
+  finish_dialog: 1201
+  pre_task: 329  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 56
+    value: 1
+    target: "与扎克对话"
+    link: 10006
+  }
+  prize_id: 50332
+}
+task {
+  id: 333
+  name: "芝麻开门"
+  info: "打败5只酷壳鸡"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1213
+  progress_dialog: 1225
+  finish_dialog: 1227
+  pre_task: 332
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 68
+    key: 0
+    value: 5
+    target: "打败酷壳鸡"
+    link: 10006
+  }
+  prize_id: 50333
+}
+task {
+  id: 334
+  name: "芝麻再开门"
+  info: "用小小葵和酷壳鸡战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1230
+  progress_dialog: 1232
+  finish_dialog: 1234
+  pre_task: 333
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 5
+    key: 68
+    value: 1
+    target: "用小小葵和酷壳鸡战斗一次"
+    link: 10006
+  }
+  prize_id: 50334
+}
+task {
+  id: 335
+  name: "再来！芝麻又开门"
+  info: "用霍克/霍克努尔（在魅罗门可捕捉）和酷壳鸡战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1237
+  progress_dialog: 1242
+  finish_dialog: 1244
+  pre_task: 334
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 15
+    key: 68
+    value: 1
+    target: "用霍克/霍克努尔和酷壳鸡战斗一次"
+    link: 10006
+  }
+  prize_id: 50335
+}
+task {
+  id: 336
+  name: "锻炼莫古"
+  info: "用莫古战斗3次并胜利"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1252
+  progress_dialog: 1259
+  finish_dialog: 1261
+  pre_task: 335
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_WIN_WITH_MONSTER_FAMILY
+    key: 33
+    key: 0
+    value: 3
+    target: "用莫古战斗并胜利"
+  }
+  prize_id: 50336
+}
+task {
+  id: 337
+  name: "更强的莫古"
+  info: "将莫古升到15级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1263
+  progress_dialog: 1267
+  finish_dialog: 1269
+  pre_task: 336
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_SPECIAL_MONSTER_LEVEL_REACH
+    key: 33
+    key: 15
+    value: 1
+    target: "莫古达到15级"
+  }
+  prize_id: 50337
+}
+task {
+  id: 338
+  name: "上古卷轴"
+  info: "探寻神庙"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1273
+  progress_dialog: 1273
+  finish_dialog: 1275
+  pre_task: 335
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 56
+    value: 1
+    target: "与扎克对话"
+    link: 10006
+  }
+  prize_id: 50338
+}
+task {
+  id: 339
+  name: "神明的指引"
+  info: "了解上古神明的指引"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1282
+  progress_dialog: 1282
+  finish_dialog: 1286
+  pre_task: 338
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 56
+    value: 1
+    target: "与扎克对话"
+    link: 10006
+  }
+  prize_id: 50339
+}
+task {
+  id: 340
+  name: "不速之客"
+  info: "跟随扎克打败偷走上古卷轴的小偷"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10006
+  commit_map_id: 10006
+  obtain_npc_id: 56
+  commit_npc_id: 56
+  area_id: 3
+  obtain_dialog: 1299
+  progress_dialog: 1308
+  finish_dialog: 1309
+  pre_task: 339
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 56
+    value: 1
+    target: "打败小偷"
+    link: 10006
+  }
+  prize_id: 50340
+}
+task {
+  id: 239
+  name: "海市蜃楼"
+  info: "向老战士了解海市蜃楼的情况"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 58
+  commit_npc_id: 58
+  area_id: 3
+  obtain_dialog: 4467
+  progress_dialog: 4467
+  finish_dialog: 4473
+  pre_task: 340
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 58
+    value: 1
+    target: "和卓戈对话"
+    link: 10007
+  }
+  prize_id: 50239
+}
+task {
+  id: 240
+  name: "重建海市蜃楼"
+  info: "打酷壳鸡收集5个大漠沙土"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 58
+  commit_npc_id: 58
+  area_id: 3
+  obtain_dialog: 4482
+  progress_dialog: 4495
+  finish_dialog: 4497
+  pre_task: 239
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100061
+    key: 20212
+    value: 5
+    target: "打败酷壳鸡收集大漠沙土"
+    link: 10006
+  }
+  prize_id: 50240
+}
+task {
+  id: 241
+  name: "强化海市蜃楼"
+  info: "打败蹦蹦鼠收集1滴沙漠之水"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 58
+  commit_npc_id: 58
+  area_id: 3
+  obtain_dialog: 4501
+  progress_dialog: 4510
+  finish_dialog: 4512
+  pre_task: 240
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100051
+    key: 20211
+    value: 1
+    target: "打败蹦蹦鼠收集沙漠之水"
+    link: 10005
+  }
+  prize_id: 50241
+}
+task {
+  id: 242
+  name: "夺回卷轴"
+  info: "挑战萨伦士兵夺回神秘卷轴"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 202
+  commit_npc_id: 202
+  area_id: 3
+  obtain_dialog: 4517
+  progress_dialog: 4524
+  finish_dialog: 4525
+  pre_task: 241
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 202
+    value: 1
+    target: "打败萨伦士兵"
+    link: 10007
+  }
+  prize_id: 50242
+}
+task {
+  id: 243
+  name: "自恋的沙皇鸟"
+  info: "用蹦蹦鼠和尤尼战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 90082
+  commit_npc_id: 90082
+  area_id: 3
+  obtain_dialog: 4531
+  progress_dialog: 4539
+  finish_dialog: 4541
+  pre_task: 242
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 59
+    key: 32
+    value: 1
+    target: "用蹦蹦鼠和尤尼战斗一次"
+    link: 10013
+  }
+  prize_id: 50243
+}
+task {
+  id: 244
+  name: "沙之舞"
+  info: "两回合内战胜酷壳鸡"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 90082
+  commit_npc_id: 90082
+  area_id: 3
+  obtain_dialog: 4543
+  progress_dialog: 4549
+  finish_dialog: 4551
+  pre_task: 242
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 68
+    key: 2
+    value: 1
+    target: "两回合内战胜酷壳鸡"
+    link: 10006
+  }
+  prize_id: 50244
+}
+task {
+  id: 245
+  name: "傲气的沙皇鸟"
+  info: "沙皇鸟要求玩家最高精灵达到50级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 90082
+  commit_npc_id: 90082
+  area_id: 3
+  obtain_dialog: 4554
+  progress_dialog: 4564
+  finish_dialog: 4565
+  pre_task: 242
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MONSTER_LEVEL_REACH
+    key: 50
+    value: 1
+    target: "最高精灵达到50级"
+  }
+  prize_id: 50245
+}
+task {
+  id: 397
+  name: "与沙共舞"
+  info: "挑战沙皇鸟"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10007
+  commit_map_id: 10007
+  obtain_npc_id: 90082
+  commit_npc_id: 90082
+  area_id: 3
+  obtain_dialog: 4567
+  progress_dialog: 4572
+  finish_dialog: 4573
+  pre_task: 245
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90082
+    value: 1
+    target: "挑战沙皇鸟"
+    link: 10007
+  }
+  prize_id: 50397
+}
+task {
+  id: 247
+  name: "冰沁危机"
+  info: "向雪诺了解到冰沁族的危机"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 49
+  commit_npc_id: 49
+  area_id: 8
+  obtain_dialog: 4579
+  progress_dialog: 4579
+  finish_dialog: 4592
+  pre_task: 397  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 49
+    value: 1
+    target: "和雪诺对话"
+    link: 10011
+  }
+  prize_id: 50247
+}
+task {
+  id: 248
+  name: "拔刀相助"
+  info: "解救被萨伦帝国挟持的卓戈"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 204
+  commit_npc_id: 204
+  area_id: 8
+  obtain_dialog: 4599
+  progress_dialog: 4607
+  finish_dialog: 4609
+  pre_task: 247
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 204
+    value: 1
+    target: "挑战萨伦士兵"
+    link: 10011
+  }
+  prize_id: 50248
+}
+task {
+  id: 249
+  name: "老战士的故事"
+  info: "和老战士卓戈对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 205
+  commit_npc_id: 205
+  area_id: 8
+  obtain_dialog: 4611
+  progress_dialog: 4611
+  finish_dialog: 4613
+  pre_task: 248
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 205
+    value: 1
+    target: "和老战士卓戈对话"
+    link: 10011
+  }
+  prize_id: 50249
+}
+task {
+  id: 250
+  name: "治疗老战士"
+  info: "打败多普利收集3冰晶体"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 205
+  commit_npc_id: 205
+  area_id: 8
+  obtain_dialog: 4619
+  progress_dialog: 4627
+  finish_dialog: 4629
+  pre_task: 249
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100111
+    key: 20225
+    value: 3
+    target: "打败多普利收集3冰晶体"
+    link: 10011
+  }
+  prize_id: 50250
+}
+task {
+  id: 251
+  name: "雪诺的请求"
+  info: "捕捉一只多普利"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 49
+  commit_npc_id: 49
+  area_id: 8
+  obtain_dialog: 4632
+  progress_dialog: 4642
+  finish_dialog: 4644
+  pre_task: 247
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 70
+    key: 0
+    value: 1
+    target: "捕捉一只多普利"
+    link: 10011
+  }
+  prize_id: 50251
+}
+task {
+  id: 252
+  name: "纳贤令"
+  info: "打败5只多普利"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 49
+  commit_npc_id: 49
+  area_id: 8
+  obtain_dialog: 4646
+  progress_dialog: 4656
+  finish_dialog: 4657
+  pre_task: 248
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 139
+    key: 0
+    value: 5
+    target: "打败5只多普利"
+    link: 10011
+  }
+  prize_id: 50252
+}
+task {
+  id: 253
+  name: "冰筑长城"
+  info: "打败多普利收集5个冰砖"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 49
+  commit_npc_id: 49
+  area_id: 8
+  obtain_dialog: 4659
+  progress_dialog: 4669
+  finish_dialog: 4670
+  pre_task: 250
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100111
+    key: 20226
+    value: 5
+    target: "打败多普利收集冰砖"
+    link: 10011
+  }
+  prize_id: 50253
+}
+task {
+  id: 254
+  name: "炼化真善之心"
+  info: "用多普利和酷壳鸡战斗一次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 205
+  commit_npc_id: 205
+  area_id: 8
+  obtain_dialog: 4672
+  progress_dialog: 4680
+  finish_dialog: 4682
+  pre_task: 251
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 70
+    key: 68
+    value: 1
+    target: "用多普利和酷壳鸡战斗一次"
+    link: 10006
+  }
+  prize_id: 50254
+}
+task {
+  id: 255
+  name: "复兴计划"
+  info: "和雪诺对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 49
+  commit_npc_id: 49
+  area_id: 8
+  obtain_dialog: 4685
+  progress_dialog: 4685
+  finish_dialog: 4690
+  pre_task: 253
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 49
+    value: 1
+    target: "和雪诺对话"
+    link: 10011
+  }
+  prize_id: 50255
+}
+task {
+  id: 398
+  name: "真假卓戈"
+  info: "打败伪装成卓戈的萨伦士兵"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10011
+  commit_map_id: 10011
+  obtain_npc_id: 205
+  commit_npc_id: 205
+  area_id: 8
+  obtain_dialog: 4694
+  progress_dialog: 4713
+  finish_dialog: 4714
+  pre_task: 255
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 205
+    value: 1
+    target: "打败伪装成卓戈的萨伦士兵"
+    link: 10011
+  }
+  prize_id: 50398
+}
+task {
+  id: 257
+  name: "村长的号召"
+  info: "和村长对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4716
+  progress_dialog: 4716
+  finish_dialog: 4728
+  pre_task: 398  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 50
+    value: 1
+    target: "和村长对话"
+    link: 10020
+  }
+  prize_id: 50257
+}
+task {
+  id: 258
+  name: "重铸家园"
+  info: "打败5只伊露辛"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4729
+  progress_dialog: 4735
+  finish_dialog: 4737
+  pre_task: 257
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 125
+    key: 0
+    value: 5
+    target: "打败5只伊露辛"
+    link: 10020
+  }
+  prize_id: 50258
+}
+task {
+  id: 259
+  name: "冰园材料"
+  info: "打败伊露辛收集3冰柱子"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4739
+  progress_dialog: 4745
+  finish_dialog: 4747
+  pre_task: 257
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100201
+    key: 20227
+    value: 3
+    target: "打败伊露辛收集3冰柱子"
+    link: 10020
+  }
+  prize_id: 50259
+}
+task {
+  id: 260
+  name: "冰园材料2"
+  info: "捕捉一只酷壳鸡"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4748
+  progress_dialog: 4756
+  finish_dialog: 4757
+  pre_task: 259
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 28
+    key: 0
+    value: 1
+    target: "捕捉一只酷壳鸡"
+    link: 10006
+  }
+  prize_id: 50260
+}
+task {
+  id: 261
+  name: "冰园材料3"
+  info: "打败三眼石蝎收集5个石头"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4759
+  progress_dialog: 4765
+  finish_dialog: 4767
+  pre_task: 260
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100211
+    key: 20228
+    value: 5
+    target: "打败三眼石蝎收集5个石头"
+    link: 10021
+  }
+  prize_id: 50261
+}
+task {
+  id: 262
+  name: "冰园材料4"
+  info: "找酋长对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10003
+  obtain_npc_id: 50
+  commit_npc_id: 16
+  area_id: 8
+  obtain_dialog: 4769
+  progress_dialog: 4774
+  finish_dialog: 4776
+  pre_task: 261
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "找酋长对话"
+    link: 10003
+  }
+  prize_id: 50262
+}
+task {
+  id: 263
+  name: "镇守家园"
+  info: "捕捉一只伊露辛"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4781
+  progress_dialog: 4785
+  finish_dialog: 4786
+  pre_task: 258
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 64
+    key: 0
+    value: 1
+    target: "捕捉一只伊露辛"
+    link: 10020
+  }
+  prize_id: 50263
+}
+task {
+  id: 264
+  name: "村长的历练"
+  info: "最高精灵达到60级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4788
+  progress_dialog: 4794
+  finish_dialog: 4795
+  pre_task: 262
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MONSTER_LEVEL_REACH
+    key: 60
+    value: 1
+    target: "最高精灵达到60级"
+  }
+  prize_id: 50264
+}
+task {
+  id: 399
+  name: "入侵的士兵"
+  info: "挑战萨伦士兵"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 211
+  commit_npc_id: 211
+  area_id: 8
+  obtain_dialog: 4806
+  progress_dialog: 4814
+  finish_dialog: 4815
+  pre_task: 264
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 211
+    value: 1
+    target: "挑战萨伦士兵"
+    link: 10020
+  }
+  prize_id: 50399
+}
+task {
+  id: 267
+  name: "打倒入侵者"
+  info: "赶走士兵"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10012
+  commit_map_id: 10012
+  obtain_npc_id: 206
+  commit_npc_id: 206
+  area_id: 8
+  obtain_dialog: 4823
+  progress_dialog: 4829
+  finish_dialog: 4831
+  pre_task: 399  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 206
+    value: 1
+    target: "挑战萨伦士兵"
+    link: 10012
+  }
+  prize_id: 50267
+}
+task {
+  id: 268
+  name: "策略"
+  info: "与伊娃博士对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10023
+  obtain_npc_id: 50
+  commit_npc_id: 1
+  area_id: 8
+  obtain_dialog: 4841
+  progress_dialog: 4841
+  finish_dialog: 4848
+  pre_task: 267
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50268
+}
+task {
+  id: 269
+  name: "建造投石机1"
+  info: "与神目酋长对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10003
+  obtain_npc_id: 50
+  commit_npc_id: 16
+  area_id: 8
+  obtain_dialog: 4857
+  progress_dialog: 4857
+  finish_dialog: 4865
+  pre_task: 268
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "与神目酋长对话"
+    link: 10003
+  }
+  prize_id: 50269
+}
+task {
+  id: 278
+  name: "建造投石机2"
+  info: "了解沉香木"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10019
+  obtain_npc_id: 50
+  commit_npc_id: 90057
+  area_id: 8
+  obtain_dialog: 4965
+  progress_dialog: 4965
+  finish_dialog: 4970
+  pre_task: 269
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 90057
+    value: 1
+    target: "与麦麦迪对话"
+    link: 10019
+  }
+  prize_id: 50278
+}
+task {
+  id: 270
+  name: "以物换物"
+  info: "帮麦麦迪捉法拉换取沉香木"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10019
+  commit_map_id: 10019
+  obtain_npc_id: 90057
+  commit_npc_id: 90057
+  area_id: 8
+  obtain_dialog: 4871
+  progress_dialog: 4876
+  finish_dialog: 4878
+  pre_task: 278
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 4
+    key: 0
+    value: 1
+    target: "捕捉一只法拉"
+    link: 10001
+  }
+  prize_id: 50270
+}
+task {
+  id: 271
+  name: "建造投石机3"
+  info: "两回合之内打败三眼石蝎"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4887
+  progress_dialog: 4895
+  finish_dialog: 4897
+  pre_task: 270
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 87
+    key: 2
+    value: 1
+    target: "两回合之内打败三眼石蝎"
+    link: 10021
+  }
+  prize_id: 50271
+}
+task {
+  id: 272
+  name: "摧毁传送站"
+  info: "和萨伦士兵对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10012
+  commit_map_id: 10012
+  obtain_npc_id: 206
+  commit_npc_id: 206
+  area_id: 8
+  obtain_dialog: 4899
+  progress_dialog: 4899
+  finish_dialog: 4904
+  pre_task: 271
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 206
+    value: 1
+    target: "和萨伦士兵对话"
+    link: 10012
+  }
+  prize_id: 50272
+}
+task {
+  id: 273
+  name: "打败守将"
+  info: "打败守将"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10012
+  commit_map_id: 10012
+  obtain_npc_id: 203
+  commit_npc_id: 203
+  area_id: 8
+  obtain_dialog: 4908
+  progress_dialog: 4913
+  finish_dialog: 4914
+  pre_task: 267
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 203
+    value: 1
+    target: "打败守将"
+    link: 10012
+  }
+  prize_id: 50273
+}
+task {
+  id: 274
+  name: "卡尼娅的愿望"
+  info: "将伊露辛提升至20级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10012
+  commit_map_id: 10012
+  obtain_npc_id: 90127
+  commit_npc_id: 90127
+  area_id: 8
+  obtain_dialog: 4922
+  progress_dialog: 4937
+  finish_dialog: 4938
+  pre_task: 273
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_SPECIAL_MONSTER_LEVEL_REACH
+    key: 64
+    key: 20
+    value: 1
+    target: "将伊露辛提升至20级"
+  }
+  prize_id: 50274
+}
+task {
+  id: 400
+  name: "卡尼娅的挑战"
+  info: "挑战卡尼娅"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10012
+  commit_map_id: 10012
+  obtain_npc_id: 90127
+  commit_npc_id: 90127
+  area_id: 8
+  obtain_dialog: 4941
+  progress_dialog: 4946
+  finish_dialog: 4948
+  pre_task: 274
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90127
+    value: 1
+    target: "挑战卡尼娅"
+    link: 10012
+  }
+  prize_id: 50400
+}
+task {
+  id: 276
+  name: "繁荣"
+  info: "和吉米村长对话了解下一步"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10020
+  obtain_npc_id: 50
+  commit_npc_id: 50
+  area_id: 8
+  obtain_dialog: 4950
+  progress_dialog: 4950
+  finish_dialog: 4954
+  pre_task: 400
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 50
+    value: 1
+    target: "和吉米村长对话"
+    link: 10020
+  }
+  prize_id: 50276
+}
+task {
+  id: 292
+  name: "吉米村长的召唤"
+  info: "去和吉米村长对话了解重建任务"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10020
+  obtain_npc_id: 1
+  commit_npc_id: 50
+  area_id: 9
+  obtain_dialog: 4980
+  progress_dialog: 4980
+  finish_dialog: 4982
+  pre_task: 276
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 50
+    value: 1
+    target: "和吉米村长对话"
+    link: 10020
+  }
+  prize_id: 50292
+}
+task {
+  id: 277
+  name: "重建飞船"
+  info: "找神目酋长对话寻求建造飞船材料"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10020
+  commit_map_id: 10003
+  obtain_npc_id: 50
+  commit_npc_id: 16
+  area_id: 9
+  obtain_dialog: 5000
+  progress_dialog: 5000
+  finish_dialog: 5016
+  pre_task: 276
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "与神目酋长对话"
+    link: 10003
+  }
+  prize_id: 50277
+}
+task {
+  id: 291
+  name: "飞船部件"
+  info: "打败5只伊露辛得到凝聚飞船的材料"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10013
+  obtain_npc_id: 16
+  commit_npc_id: 34
+  area_id: 9
+  obtain_dialog: 5028
+  progress_dialog: 5035
+  finish_dialog: 5039
+  pre_task: 277
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 125
+    key: 0
+    value: 5
+    target: "打败5只伊露辛再找马丁对话"
+    link: 10020
+  }
+  prize_id: 50291
+}
+task {
+  id: 279
+  name: "寻找能源"
+  info: "找爱丽丝公主对话询问能源情况"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10013
+  commit_map_id: 10017
+  obtain_npc_id: 34
+  commit_npc_id: 23
+  area_id: 9
+  obtain_dialog: 5048
+  progress_dialog: 5048
+  finish_dialog: 5055
+  pre_task: 291
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 23
+    value: 1
+    target: "与爱丽丝公主对话"
+    link: 10017
+  }
+  prize_id: 50279
+}
+task {
+  id: 280
+  name: "聚集能源"
+  info: "按爱丽丝公主的要求采集矿石1次"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10017
+  obtain_npc_id: 23
+  commit_npc_id: 23
+  area_id: 9
+  obtain_dialog: 5062
+  progress_dialog: 5068
+  finish_dialog: 5070
+  pre_task: 279
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MINING
+    value: 1
+    target: "采矿1次"
+	link: 10001
+  }
+  prize_id: 50280
+}
+task {
+  id: 281
+  name: "启动飞船"
+  info: "2回合内打败尤尼收集启动飞船火焰"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10017
+  commit_map_id: 10014
+  obtain_npc_id: 23
+  commit_npc_id: 31
+  area_id: 9
+  obtain_dialog: 5073
+  progress_dialog: 5092
+  finish_dialog: 5096
+  pre_task: 280
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 32
+    key: 2
+    value: 1
+    target: "2回合内打败尤尼再找巴尔卡对话"
+    link: 10013
+  }
+  prize_id: 50281
+}
+task {
+  id: 401
+  name: "大功告成"
+  info: "找到博士准备启动飞船"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10014
+  commit_map_id: 10023
+  obtain_npc_id: 31
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 5105
+  progress_dialog: 5105
+  finish_dialog: 5109
+  pre_task: 281
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与博士对话"
+    link: 10023
+  }
+  prize_id: 50401
+}
+task {
+  id: 283
+  name: "初到飞翼"
+  info: "与葛雷芬军团长对话给他看真善之心"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5114
+  progress_dialog: 5114
+  finish_dialog: 5122
+  pre_task: 401  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 70
+    value: 1
+    target: "与葛雷芬军团长对话"
+    link: 10025
+  }
+  prize_id: 50283
+}
+task {
+  id: 284
+  name: "严厉的团长"
+  info: "与严厉的葛雷芬军团长对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5124
+  progress_dialog: 5124
+  finish_dialog: 5129
+  pre_task: 283
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 70
+    value: 1
+    target: "与葛雷芬军团长对话"
+    link: 10025
+  }
+  prize_id: 50284
+}
+task {
+  id: 285
+  name: "训练泰姆尔"
+  info: "做苦力为葛雷芬军团长训练3只泰姆尔"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5134
+  progress_dialog: 5140
+  finish_dialog: 5142
+  pre_task: 284
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 199
+    key: 0
+    value: 3
+    target: "战胜3只泰姆尔"
+	link: 10025
+  }
+  prize_id: 50285
+}
+task {
+  id: 286
+  name: "安慰泰姆尔"
+  info: "做苦力替葛雷芬军团长捉1只泰姆尔"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5144
+  progress_dialog: 5149
+  finish_dialog: 5150
+  pre_task: 284
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 98
+    key: 0
+    value: 1
+    target: "捕捉一只泰姆尔"
+    link: 10025
+  }
+  prize_id: 50286
+}
+task {
+  id: 287
+  name: "泰姆尔的修炼"
+  info: "做苦力用泰姆与泰姆尔进行1次对战"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5152
+  progress_dialog: 5160
+  finish_dialog: 5161
+  pre_task: 284
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_MONSTER_FAMILY
+    key: 98
+    key: 199
+    value: 1
+    target: "用泰姆与泰姆尔进行1次对战"
+    link: 10025
+  }
+  prize_id: 50287
+}
+task {
+  id: 288
+  name: "调皮的小萨"
+  info: "遇到调皮的小萨，战胜他"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 71
+  commit_npc_id: 71
+  area_id: 9
+  obtain_dialog: 5163
+  progress_dialog: 5180
+  finish_dialog: 5181
+  pre_task: 286
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 71
+    value: 1
+    target: "挑战小萨"
+    link: 10025
+  }
+  prize_id: 50288
+}
+task {
+  id: 289
+  name: "封印传说"
+  info: "与小萨对话了解封印的传说"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 71
+  commit_npc_id: 71
+  area_id: 9
+  obtain_dialog: 5183
+  progress_dialog: 5183
+  finish_dialog: 5191
+  pre_task: 288
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 71
+    value: 1
+    target: "与小萨对话"
+    link: 10025
+  }
+  prize_id: 50289
+}
+task {
+  id: 290
+  name: "实力历练"
+  info: "最高等级精灵提升至65级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5203
+  progress_dialog: 5214
+  finish_dialog: 5216
+  pre_task: 289
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MONSTER_LEVEL_REACH
+    key: 65
+    value: 1
+    target: "最高等级精灵到65级"
+  }
+  prize_id: 50290
+}
+task {
+  id: 402
+  name: "挑战团长梦境"
+  info: "战胜梦境证明自己太空使者的身份"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5219
+  progress_dialog: 5234
+  finish_dialog: 5235
+  pre_task: 290
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 70
+    value: 1
+    target: "战胜葛雷芬军团长"
+    link: 10025
+  }
+  prize_id: 50402
+}
+task {
+  id: 341
+  name: "飞翼王廷"
+  info: "找到神目酋长取得星际使者身份证明"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10003
+  obtain_npc_id: 72
+  commit_npc_id: 16
+  area_id: 9
+  obtain_dialog: 5500
+  progress_dialog: 5500
+  finish_dialog: 5512
+  pre_task: 402
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "与神目酋长对话"
+    link: 10003
+  }
+  prize_id: 50341
+}
+task {
+  id: 342
+  name: "如假包换"
+  info: "将神目酋长写的信交给飞翼之王"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10026
+  obtain_npc_id: 16
+  commit_npc_id: 73
+  area_id: 9
+  obtain_dialog: 5516
+  progress_dialog: 5520
+  finish_dialog: 5522
+  pre_task: 341
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 73
+    value: 1
+    target: "与飞翼之王对话"
+    link: 10026
+  }
+  prize_id: 50342
+}
+task {
+  id: 343
+  name: "克里普特"
+  info: "战胜4只克里普特"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10026
+  obtain_npc_id: 73
+  commit_npc_id: 73
+  area_id: 9
+  obtain_dialog: 5530
+  progress_dialog: 5533
+  finish_dialog: 5535
+  pre_task: 342
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 195
+    key: 0
+    value: 4
+    target: "去飞翼王庭郊外战胜4只克里普特"
+    link: 10027
+  }
+  prize_id: 50343
+}
+task {
+  id: 344
+  name: "乡亲们，缴税了"
+  info: "帮财政官完成征税"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10027
+  commit_map_id: 10026
+  obtain_npc_id: 74
+  commit_npc_id: 72
+  area_id: 9
+  obtain_dialog: 5540
+  progress_dialog: 5540
+  finish_dialog: 5550
+  pre_task: 343
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 72
+    value: 1
+    target: "与执政官对话"
+    link: 10026
+  }
+  prize_id: 50344
+}
+task {
+  id: 345
+  name: "值钱的账簿"
+  info: "把账簿给财政官看"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10027
+  obtain_npc_id: 72
+  commit_npc_id: 74
+  area_id: 9
+  obtain_dialog: 5560
+  progress_dialog: 5560
+  finish_dialog: 5563
+  pre_task: 344
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 74
+    value: 1
+    target: "与财政官对话"
+    link: 10027
+  }
+  prize_id: 50345
+}
+task {
+  id: 346
+  name: "增加军备"
+  info: "向铁匠马丁讨要一些军备"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10013
+  obtain_npc_id: 72
+  commit_npc_id: 34
+  area_id: 9
+  obtain_dialog: 5570
+  progress_dialog: 5570
+  finish_dialog: 5572
+  pre_task: 345
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 34
+    value: 1
+    target: "与铁匠马丁对话"
+    link: 10013
+  }
+  prize_id: 50346
+}
+task {
+  id: 347
+  name: "卫队长的试炼"
+  info: "战胜队长，取得卫队长信任"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10026
+  obtain_npc_id: 75
+  commit_npc_id: 75
+  area_id: 9
+  obtain_dialog: 5590
+  progress_dialog: 5596
+  finish_dialog: 5598
+  pre_task: 346
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 75
+    value: 1
+    target: "战胜卫队长"
+    link: 10026
+  }
+  prize_id: 50347
+}
+task {
+  id: 348
+  name: "军令状"
+  info: "最高精灵等级提升至70级"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10026
+  obtain_npc_id: 73
+  commit_npc_id: 73
+  area_id: 9
+  obtain_dialog: 5610
+  progress_dialog: 5618
+  finish_dialog: 5620
+  pre_task: 347
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MONSTER_LEVEL_REACH
+    key: 70
+    value: 1
+    target: "最高精灵等级到70级"
+  }
+  prize_id: 50348
+}
+task {
+  id: 349
+  name: "时不我待"
+  info: "即刻带着飞翼之王的开战命令到前线参加战斗"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10025
+  obtain_npc_id: 73
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5630
+  progress_dialog: 5637
+  finish_dialog: 5639
+  pre_task: 348
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 70
+    value: 1
+    target: "和葛雷芬团长一起打败敌人"
+    link: 10025
+  }
+  prize_id: 50349
+}
+task {
+  id: 380
+  name: "调虎离山"
+  info: "赶往飞翼之核巡逻"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10025
+  commit_map_id: 10025
+  obtain_npc_id: 70
+  commit_npc_id: 70
+  area_id: 9
+  obtain_dialog: 5650
+  progress_dialog: 5650
+  finish_dialog: 5654
+  pre_task: 349
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 70
+    value: 1
+    target: "与军团长对话"
+    link: 10025
+  }
+  prize_id: 50380
+}
+task {
+  id: 381
+  name: "卫队长的直觉"
+  info: "打败克里普特获得“萨伦帝国的信物”"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10026
+  obtain_npc_id: 75
+  commit_npc_id: 75
+  area_id: 9
+  obtain_dialog: 5660
+  progress_dialog: 5663
+  finish_dialog: 5665
+  pre_task: 343
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100271
+    key: 20229
+    value: 3
+    target: "搜寻“萨伦帝国的信物”"
+    link: 10027
+  }
+  prize_id: 50381
+}
+task {
+  id: 382
+  name: "保护执政官"
+  info: "保护执政官的安全"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10026
+  commit_map_id: 10026
+  obtain_npc_id: 72
+  commit_npc_id: 72
+  area_id: 9
+  obtain_dialog: 5681
+  progress_dialog: 5685
+  finish_dialog: 5687
+  pre_task: 346
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 72
+    value: 1
+    target: "战胜刺客"
+    link: 10026
+  }
+  prize_id: 50382
+}
+task {
+  id: 403
+  name: "财政官的心魔"
+  info: "战胜财政官，帮助他驱除心魔"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10027
+  commit_map_id: 10027
+  obtain_npc_id: 74
+  commit_npc_id: 74
+  area_id: 9
+  obtain_dialog: 5700
+  progress_dialog: 5710
+  finish_dialog: 5712
+  pre_task: 380
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 74
+    value: 1
+    target: "战胜财政官"
+    link: 10027
+  }
+  prize_id: 50403
+}
+task {
+  id: 356
+  name: "再遇小萨"
+  info: "与小萨对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 78
+  commit_npc_id: 78
+  area_id: 9
+  obtain_dialog: 1331
+  progress_dialog: 1331
+  finish_dialog: 1334
+  pre_task: 403  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 78
+    value: 1
+    target: "与小萨对话"
+    link: 10029
+  }
+  prize_id: 50356
+}
+task {
+  id: 357
+  name: "神秘博士"
+  info: "打败萨伦帝国的神秘博士"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 78
+  commit_npc_id: 76
+  area_id: 9
+  obtain_dialog: 1347
+  progress_dialog: 1357
+  finish_dialog: 1359
+  pre_task: 356
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 76
+    value: 1
+    target: "打败斯坦因博士"
+    link: 10029
+  }
+  prize_id: 50357
+}
+task {
+  id: 358
+  name: "火线求援"
+  info: "向伊娃博士求助"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10023
+  obtain_npc_id: 76
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 1373
+  progress_dialog: 1376
+  finish_dialog: 1379
+  pre_task: 357
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50358
+}
+task {
+  id: 56
+  name: "敌人？故人？"
+  info: "打听斯坦因博士的真实身份"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10029
+  obtain_npc_id: 1
+  commit_npc_id: 76
+  area_id: 9
+  obtain_dialog: 1598
+  progress_dialog: 1601
+  finish_dialog: 1604
+  pre_task: 358
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 76
+    value: 1
+    target: "与斯坦因博士对话"
+    link: 10029
+  }
+  prize_id: 50056
+}
+task {
+  id: 57
+  name: "逝去的故人"
+  info: "听取伊娃博士的故事"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 1580
+  progress_dialog: 1580
+  finish_dialog: 1583
+  pre_task: 56
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50057
+}
+task {
+  id: 359
+  name: "探测仪的危机"
+  info: "打败3只暴走的石像魔"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 78
+  commit_npc_id: 78
+  area_id: 9
+  obtain_dialog: 1391
+  progress_dialog: 1403
+  finish_dialog: 1406
+  pre_task: 56
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_DEFEAT_MONSTER
+    key: 213
+    key: 0
+    value: 3
+    target: "打败3只石像魔"
+    link: 10029
+  }
+  prize_id: 50359
+}
+task {
+  id: 360
+  name: "暴走的石像魔"
+  info: "与小萨合力击退石像魔军团"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 78
+  commit_npc_id: 78
+  area_id: 9
+  obtain_dialog: 1411
+  progress_dialog: 1417
+  finish_dialog: 1421
+  pre_task: 359
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 78
+    value: 1
+    target: "与小萨对话，击败石像魔军团"
+    link: 10029
+  }
+  prize_id: 50360
+}
+task {
+  id: 361
+  name: "决战斯坦因"
+  info: "破坏斯坦因博士的磁能立场"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 78
+  commit_npc_id: 76
+  area_id: 9
+  obtain_dialog: 1447
+  progress_dialog: 1455
+  finish_dialog: 1459
+  pre_task: 360
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC_3V3
+    key: 76
+    value: 1
+    target: "打败斯坦因博士"
+    link: 10029
+  }
+  prize_id: 50361
+}
+task {
+  id: 362
+  name: "雷神降临"
+  info: "与异界的雷神对话"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 76
+  commit_npc_id: 151
+  area_id: 9
+  obtain_dialog: 1504
+  progress_dialog: 1504
+  finish_dialog: 1510
+  pre_task: 361
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 151
+    value: 1
+    target: "与雷神-雷伊对话"
+    link: 10029
+  }
+  prize_id: 50362
+}
+task {
+  id: 363
+  name: "绝缘体大作战"
+  info: "打败石像魔收集5块魔石"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 151
+  commit_npc_id: 78
+  area_id: 9
+  obtain_dialog: 1519
+  progress_dialog: 1531
+  finish_dialog: 1533
+  pre_task: 362
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100291
+    key: 20230
+    value: 5
+    target: "收集5块魔石"
+    link: 10029
+  }
+  prize_id: 50363
+}
+task {
+  id: 364
+  name: "与神为战"
+  info: "挑战雷神-雷伊"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 151
+  commit_npc_id: 151
+  area_id: 9
+  obtain_dialog: 1539
+  progress_dialog: 1549
+  finish_dialog: 1551
+  pre_task: 363
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_NPC
+    key: 151
+    value: 1
+    target: "打败雷神-雷伊"
+    link: 10029
+  }
+  prize_id: 50364
+}
+task {
+  id: 404
+  name: "渡过危机"
+  info: "向飞翼主城的国王报告战况"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10026
+  obtain_npc_id: 78
+  commit_npc_id: 73
+  area_id: 9
+  obtain_dialog: 1559
+  progress_dialog: 1559
+  finish_dialog: 1564
+  pre_task: 363
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 73
+    value: 1
+    target: "与国王对话"
+    link: 10026
+  }
+  prize_id: 50404
+}
+task {
+  id: 366
+  name: "封印的线索1"
+  info: "对话桑铎，询问封印的线索"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10030
+  obtain_npc_id: 77
+  commit_npc_id: 77
+  area_id: 9
+  obtain_dialog: 6000
+  progress_dialog: 6000
+  finish_dialog: 6003
+  pre_task: 404  
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 77
+    value: 1
+    target: "和桑铎对话"
+    link: 10030
+  }
+  prize_id: 50366
+}
+task {
+  id: 367
+  name: "封印的线索2"
+  info: "回到沙爪氏族找阿凡提族长了解封印的线索"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10005
+  obtain_npc_id: 77
+  commit_npc_id: 55
+  area_id: 9
+  obtain_dialog: 6006
+  progress_dialog: 6006
+  finish_dialog: 6009
+  pre_task: 366
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 55
+    value: 1
+    target: "与阿凡提族长对话"
+    link: 10005
+  }
+  prize_id: 50367
+}
+task {
+  id: 368
+  name: "飞翼英雄"
+  info: "小萨心目中的偶像，知晓桑铎的英雄事迹"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10029
+  commit_map_id: 10029
+  obtain_npc_id: 78
+  commit_npc_id: 78
+  area_id: 9
+  obtain_dialog: 6022
+  progress_dialog: 6022
+  finish_dialog: 6029
+  pre_task: 367
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 78
+    value: 1
+    target: "和小萨对话，了解桑铎"
+    link: 10029
+  }
+  prize_id: 50368
+}
+task {
+  id: 370
+  name: "封印的线索3"
+  info: "到遗忘之岛找到桑铎，询问封印的线索"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10005
+  commit_map_id: 10030
+  obtain_npc_id: 55
+  commit_npc_id: 77
+  area_id: 9
+  obtain_dialog: 6020
+  progress_dialog: 6020
+  finish_dialog: 6030
+  pre_task: 367
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 77
+    value: 1
+    target: "找到桑铎和他对话"
+    link: 10030
+  }
+  prize_id: 50370
+}
+task {
+  id: 371
+  name: "诚意的证明"
+  info: "到冰沁氏族寻找诚挚之石（采矿）"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10030
+  obtain_npc_id: 77
+  commit_npc_id: 77
+  area_id: 9
+  obtain_dialog: 6034
+  progress_dialog: 6200
+  finish_dialog: 6041
+  pre_task: 370
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_MINING
+    value: 1
+    target: "找到诚挚之石"
+    link: 10011
+  }
+  prize_id: 50371
+}
+task {
+  id: 372
+  name: "拜师学艺"
+  info: "拜桑铎为师，成为自己人"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10030
+  obtain_npc_id: 77
+  commit_npc_id: 77
+  area_id: 9
+  obtain_dialog: 6053
+  progress_dialog: 6053
+  finish_dialog: 6060
+  pre_task: 371
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 77
+    value: 1
+    target: "拜桑铎为师"
+    link: 10030
+  }
+  prize_id: 50372
+}
+task {
+  id: 373
+  name: "实力的试炼"
+  info: "去挑战冰系守护神卡尼娅"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10030
+  obtain_npc_id: 77
+  commit_npc_id: 77
+  area_id: 9
+  obtain_dialog: 6066
+  progress_dialog: 6078
+  finish_dialog: 6076
+  pre_task: 372
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90127
+    value: 1
+    target: "打败卡尼娅"
+    link: 10012
+  }
+  prize_id: 50373
+}
+task {
+  id: 375
+  name: "收集秘籍"
+  info: "打败飞翼氏族泰姆尔，收集秘籍碎片"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10030
+  obtain_npc_id: 77
+  commit_npc_id: 77
+  area_id: 9
+  obtain_dialog: 6081
+  progress_dialog: 6091
+  finish_dialog: 6087
+  pre_task: 372
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_VIRTUAL_ITEM_COLLECTION
+    key: 100251
+    key: 20231
+    value: 3
+    target: "打败泰姆尔收集3个秘籍碎片"
+    link: 10025
+  }
+  prize_id: 50375
+}
+task {
+  id: 377
+  name: "终极PK"
+  info: "回到遗忘之岛挑战菲亚斯"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10030
+  obtain_npc_id: 77
+  commit_npc_id: 77
+  area_id: 9
+  obtain_dialog: 6108
+  progress_dialog: 6117
+  finish_dialog: 6120
+  pre_task: 375
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90157
+    value: 1
+    target: "战胜菲亚斯"
+    link: 10030
+  }
+  prize_id: 50377
+}
+task {
+  id: 405
+  name: "王国的勇士"
+  info: "去飞翼王庭接受奖赏"
+  task_type: TASK_TYPE_MAIN
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10026
+  obtain_npc_id: 77
+  commit_npc_id: 73
+  area_id: 9
+  obtain_dialog: 6123
+  progress_dialog: 6202
+  finish_dialog: 6130
+  pre_task: 377
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 73
+    value: 1
+    target: "接受国王的嘉奖"
+    link: 10026
+  }
+  prize_id: 50405
+}
+task {
+  id: 406
+  name: "恶狼传说"
+  info: "来自恶狼的威胁，探险路上的一座大山"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10030
+  commit_map_id: 10032
+  obtain_npc_id: 77
+  commit_npc_id: 90271
+  area_id: 9
+  obtain_dialog: 9100
+  progress_dialog: 9109
+  finish_dialog: 9114
+  pre_task: 405
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_SPT
+    key: 90271
+    value: 1
+    target: "战胜莱卡斯昂"
+    link: 10032
+  }
+  prize_id: 50377
+}
+task {
+  id: 351
+  name: "博士的研究成果1"
+  info: "与伊娃博士对话领取最新研制出来的装备"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 1910
+  progress_dialog: 1913
+  finish_dialog: 1914
+  pre_task: 3
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50351
+}
+task {
+  id: 352
+  name: "博士的研究成果2"
+  info: "与多罗对话领取最新研制出来的装备"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10001
+  obtain_npc_id: 1
+  commit_npc_id: 3
+  area_id: 9
+  obtain_dialog: 1917
+  progress_dialog: 1919
+  finish_dialog: 1920
+  pre_task: 351
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 3
+    value: 1
+    target: "与多罗对话"
+    link: 10001
+  }
+  prize_id: 50352
+}
+task {
+  id: 353
+  name: "博士的研究成果3"
+  info: "与伊娃博士对话领取最新研制出来的装备"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10001
+  commit_map_id: 10023
+  obtain_npc_id: 3
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 1926
+  progress_dialog: 1931
+  finish_dialog: 1933
+  pre_task: 352
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "与伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50353
+}
+
+task {
+  id: 500
+  name: "邪神降临"
+  info: "和多罗一起去草木氏族调查情况"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10003
+  obtain_npc_id: 1
+  commit_npc_id: 16
+  area_id: 9
+  obtain_dialog: 9020
+  progress_dialog: 9024
+  finish_dialog: 9026
+  pre_task: 15
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "和神目酋长对话"
+    link: 10003
+  }
+  prize_id: 50500
+}
+task {
+  id: 501
+  name: "初战邪神"
+  info: "和邪神库贝萨战斗"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 9
+  obtain_dialog: 9031
+  progress_dialog: 9036
+  finish_dialog: 9041
+  pre_task: 500
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_NPC 
+    key: 201
+    value: 1
+    target: "和邪神库贝萨战斗"
+    link: 10003
+  }
+  prize_id: 50500
+}
+task {
+  id: 502
+  name: "氏族危机"
+  info: "各个氏族均发来求助信息--氏族危机蔓延"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10023
+  obtain_npc_id: 16
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9044
+  progress_dialog: 9044
+  finish_dialog: 9046
+  pre_task: 501
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "和伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50500
+}
+task {
+  id: 503
+  name: "身世之谜"
+  info: "协助伊娃博士寻找邪神的身世之谜"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9049
+  progress_dialog: 9049
+  finish_dialog: 9052
+  pre_task: 502
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "和伊娃博士对话"
+    link: 10023
+  }
+  prize_id: 50500
+}
+task {
+  id: 504
+  name: "召唤战神"
+  info: "向战神联盟发送求助信息"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9056
+  progress_dialog: 9056
+  finish_dialog: 9058
+  pre_task: 503
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "和战神联盟对话"
+    link: 10023
+  }
+  prize_id: 50500
+}
+task {
+  id: 505
+  name: "全力奋战"
+  info: "和战神联盟一起对抗库贝萨"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10003
+  obtain_npc_id: 1
+  commit_npc_id: 201
+  area_id: 9
+  obtain_dialog: 9061
+  progress_dialog: 9064
+  finish_dialog: 9065
+  pre_task: 504
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BATTLE_WITH_NPC
+    key: 201
+    value: 1
+    target: "和库贝萨战斗"
+    link: 10003
+  }
+  prize_id: 50500
+}
+task {
+  id: 506
+  name: "封印邪神"
+  info: "和众队友一起封印库贝萨"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10003
+  commit_map_id: 10003
+  obtain_npc_id: 16
+  commit_npc_id: 16
+  area_id: 9
+  obtain_dialog: 9068
+  progress_dialog: 9068
+  finish_dialog: 9071
+  pre_task: 505
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 16
+    value: 1
+    target: "封印库贝萨"
+    link: 10003
+  }
+  prize_id: 50506
+}
+task {
+  id: 9001
+  name: "主宠的试炼"
+  info: "使用主宠挑战法拉"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9001
+  progress_dialog: 9001
+  finish_dialog: 9005
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CHALLENGE_MONSTER
+    key: 10
+    key: 0
+    value: 1
+    target: "使用主宠挑战法拉"
+  }
+  prize_id: 59001
+}
+
+task {
+  id: 9002
+  name: "商城购买"
+  info: "在商城中购买大果实"
+  task_type: TASK_TYPE_BRANCH
+  pre_task: 9001
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9001
+  progress_dialog: 9001
+  finish_dialog: 9005
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_BUY_ITEM  
+    key: 20013
+    value: 1
+    target: "购买大果实"
+  }
+}
+
+task {
+  id: 9003
+  name: "使用大果实"
+  info: "使用大果实"
+  task_type: TASK_TYPE_BRANCH
+  pre_task: 9002
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9001
+  progress_dialog: 9001
+  finish_dialog: 9005
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_USE_ITEM  
+    key: 20013
+    value: 1
+    target: "使用大果实"
+  }
+}
+
+task {
+  id: 9004
+  name: "感应陀螺"
+  info: "和博士对话获得感应陀螺"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  pre_task: 9003
+  obtain_dialog: 9008
+  progress_dialog: 9008
+  finish_dialog: 9011
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_TALK_TO_NPC
+    key: 1
+    value: 1
+    target: "和博士对话"
+    link: 10023
+  }
+  prize_id: 59004
+}
+
+task {
+  id: 9005
+  name: "精灵的主人"
+  info: "捕捉一只法拉"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9013
+  progress_dialog: 9013
+  finish_dialog: 9017
+  pre_task: 9004
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CAPTURE_MONSTER
+    key: 4
+    key: 0
+    value: 1
+    target: "捕捉一只法拉"
+    link: 10001
+  }
+  prize_id: 59005
+}
+
+task {
+  id: 9006
+  name: "关闭陀螺"
+  info: "关闭陀螺"
+  task_type: TASK_TYPE_BRANCH
+  need_level: 0
+  obtain_map_id: 10023
+  commit_map_id: 10023
+  obtain_npc_id: 1
+  commit_npc_id: 1
+  area_id: 9
+  obtain_dialog: 9013
+  progress_dialog: 9013
+  finish_dialog: 9017
+  pre_task: 9005
+  step {
+    seq: 1
+    step_type: TASK_STEP_TYPE_CLOSE_TOP_CONNECTION
+    value: 1
+    target: "关闭陀螺"
+  }
+}
+

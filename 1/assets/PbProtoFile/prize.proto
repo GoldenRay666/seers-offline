@@ -1,0 +1,97 @@
+package ISeer20Conf;
+
+message prize_info_t {
+    //奖励物品, 包括 普通物品+精灵物品+普通装备+精灵装备
+    message item_t {
+        //-------------------------基本配置
+        //物品id
+        required uint32 item_id                 = 1;
+        //奖励数量
+        required uint32 item_count              = 2;
+
+        //-------------------------装备特有属性
+        //装备(赛尔+精灵)的其他属性(指挥力、反应力、攻击、防御...)都由等级决定
+        optional int32 item_level               = 3; //只有装备才有等级
+
+        //-------------------------新加配置(掉落概率)
+        optional uint32 drop_rate = 4 [default = 10000]; //掉落概率用4位表示(0-10000)
+    }
+
+    //奖励精灵
+    message mon_t {
+        //-------------------------基本配置
+        //精灵id
+        required uint32 mon_id = 1;
+        //精灵等级
+        required uint32 mon_lv = 2;
+        
+        optional uint32 drop_rate = 3 [default = 10000]; //精灵掉落概率(0-10000)
+        //-------------------------精灵其他属性...
+        //资质
+        optional uint32 quality = 9;
+        //其他...
+    }
+
+    //奖励赛尔的属性值加成
+    message player_attr_t {
+        //奖励经验
+        optional uint32 exp = 1;
+        //奖励vip经验
+        optional uint32 vip_exp = 2;
+        //奖励电量
+        optional uint32 energy = 3;
+        //奖励成长点
+        optional uint32 growth_point = 4;
+        //奖励双倍经验次数
+        optional uint32 double_exp_count = 5;
+        //奖励新增物品背包格子数
+        optional uint32 add_item_bag = 6;
+        //奖励新增精灵背包格子数
+        optional uint32 add_mon_bag = 7;
+        //奖励新增精灵仓库格子数
+        optional uint32 add_mon_store = 8;
+        //奖励解锁的特训仓数
+        optional uint32 add_mon_train_room = 9;
+        //奖励seer豆
+        optional uint32 coin = 10;
+        //赛尔豆的掉落概率(为宝箱配置增加)
+        optional uint32 coin_drop_rate = 11 [default = 10000];
+        //奖励金豆
+        optional uint32 gcoin = 14;
+        //金豆的掉落概率
+        optional uint32 gcoin_drop_rate = 15 [default= 10000];
+        //奖励精灵经验到精灵的经验分配器
+        optional uint32 mon_exp_allocator = 18;
+    }
+    
+    //奖励index 一个奖励ID下所属的细分奖励ID
+    required uint32 prize_idx = 1;
+    repeated item_t item = 2;
+    //目前后台逻辑一个奖励只支持增加一个精灵,现在配置repeated方便以后扩展
+    repeated mon_t mon = 3;
+    optional player_attr_t player_attr = 4;
+
+    //如果lower_bound == upper_bound 且小于item.size() 那固定得到xxx_bound个
+    optional uint32 item_lower_bound = 5 [default = 0]; //可以一个也得不到
+    optional uint32 item_upper_bound = 6 [default = 10000000]; //可以全部得到
+
+    //对于一个大的奖励里要获得多个idx奖励的award_rate表示获得这个idx的概率 所有的award_rate应该是1
+    optional uint32 award_rate = 7 [default = 10000];
+    //对于登录奖励来讲 需要附带显示 其display_rate加起来应该是1
+    optional uint32 display_rate = 8 [default = 0];
+}
+
+message prize_t {
+    //奖励大类ID
+    required uint32 prize_id = 1;
+    //是否登录奖励
+    optional bool is_login_prize = 2 [default = false];
+    //奖励ID下的具体各种奖励(默认奖励第一个)
+    repeated prize_info_t info = 3;
+    optional bytes prize_name = 4; //奖励名称
+    optional bytes prize_icon = 5; //奖励显示的图标
+}
+
+message top_config_prize_t {
+    repeated prize_t prize = 1;
+}

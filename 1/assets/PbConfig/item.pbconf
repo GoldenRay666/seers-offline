@@ -1,0 +1,5313 @@
+item: {
+	name: "至尊乐透券"
+	description: "用来参与至尊乐透抽奖，可通过充值活动获得。"
+	id: 20003
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 1000000
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_33_LOTTO
+	}
+}
+
+item: {
+	name: "小果实"
+	description: "使用后增加精灵500经验值。"
+	id: 20011
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_3_ADD_MON_EXP
+		incr_mon_exp: 500
+	}
+}
+
+item: {
+	name: "普通果实"
+	description: "使用后增加精灵1000经验值。"
+	id: 20012
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_3_ADD_MON_EXP
+		incr_mon_exp: 1000
+	}
+}
+
+item: {
+	name: "大果实"
+	description: "使用后增加精灵2000经验值。"
+	id: 20013
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_3_ADD_MON_EXP
+		incr_mon_exp: 2000
+	}
+}
+
+item: {
+	name: "饱满的果实"
+	description: "使用后提高精灵等级1级。"
+	id: 20014
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_4_ADD_MON_LEVEL
+		incr_mon_level: 1
+	}
+}
+
+item: {
+	name: "沉甸的果实"
+	description: "使用后增加精灵10000经验值。"
+	id: 20015
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_3_ADD_MON_EXP
+		incr_mon_exp: 10000
+	}
+}
+
+item: {
+	name: "五彩棒棒糖"
+	description: "使用后增加精灵5000经验值。"
+	id: 20016
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_3_ADD_MON_EXP
+		incr_mon_exp: 5000
+	}
+}
+
+item: {
+	name: "双倍经验10"
+	description: "使用后在战斗中获得双倍经验奖励，共10次。"
+	id: 20021
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_5_DOUBLE_EXP
+		double_exp_times: 10
+	}
+}
+
+item: {
+	name: "双倍经验20"
+	description: "使用后在战斗中获得双倍经验奖励，共20次。"
+	id: 20022
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_5_DOUBLE_EXP
+		double_exp_times: 20
+	}
+}
+
+item: {
+	name: "双倍经验50"
+	description: "使用后在战斗中获得双倍经验奖励，共50次。"
+	id: 20023
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_5_DOUBLE_EXP
+		double_exp_times: 50
+	}
+}
+
+item: {
+	name: "双倍经验100"
+	description: "使用后在战斗中获得双倍经验奖励，共100次。"
+	id: 20024
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_5_DOUBLE_EXP
+		double_exp_times: 100
+	}
+}
+
+item: {
+	name: "资质果实"
+	description: "随机改变精灵的资质，最高可增加到31点。"
+	id: 20031
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_29_ADD_MON_QUALITY   
+		add_mon_quality_value_min: -2
+		add_mon_quality_value_max: 5
+	}
+}
+
+item: {
+	name: "中级资质果"
+	description: "使用后改变精灵资质，中等几率出现极品资质，最高可增加到31点。"
+	id: 20032
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_6_RESET_MON_QUALITY
+		reset_mon_quality_value_min: 15
+		reset_mon_quality_value_max: 31
+	}
+}
+
+item: {
+	name: "高级资质果"
+	description: "使用后改变精灵资质，大几率出现极品资质，最高可增加到31点。"
+	id: 20033
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_6_RESET_MON_QUALITY
+		reset_mon_quality_value_min: 25
+		reset_mon_quality_value_max: 31
+	}
+}
+
+item: {
+	name: "超级资质果"
+	description: "使用后改变精灵资质，极大几率出现极品资质，最高可增加到31点。"
+	id: 20034
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_6_RESET_MON_QUALITY
+		reset_mon_quality_value_min: 26
+		reset_mon_quality_value_max: 31
+	}
+}
+
+item: {
+	name: "至尊资质果"
+	description: "使用后精灵资质+1，最高可增加到31点。"
+	id: 20035
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_29_ADD_MON_QUALITY
+        add_mon_quality_value_min: 1
+        add_mon_quality_value_max: 1
+	}
+}
+
+item: {
+	name: "欢乐气球"
+	description: "改变精灵资质，中等几率出现极品资质。"
+	id: 20036
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_6_RESET_MON_QUALITY
+		reset_mon_quality_value_min: 15
+		reset_mon_quality_value_max: 31
+	}
+}
+
+item: {
+	name: "性格重置药"
+	description: "使用后随机改变精灵的性格。"
+	id: 20041
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR
+		reset_mon_char_value_vec: 0
+		reset_mon_char_value_vec: 1
+		reset_mon_char_value_vec: 2
+		reset_mon_char_value_vec: 3
+		reset_mon_char_value_vec: 4
+		reset_mon_char_value_vec: 5
+		reset_mon_char_value_vec: 6
+		reset_mon_char_value_vec: 7
+		reset_mon_char_value_vec: 8
+		reset_mon_char_value_vec: 9
+		reset_mon_char_value_vec: 10
+		reset_mon_char_value_vec: 11
+		reset_mon_char_value_vec: 12
+		reset_mon_char_value_vec: 13
+		reset_mon_char_value_vec: 14
+		reset_mon_char_value_vec: 15
+		reset_mon_char_value_vec: 16
+		reset_mon_char_value_vec: 17
+		reset_mon_char_value_vec: 18
+		reset_mon_char_value_vec: 19
+		reset_mon_char_value_vec: 20
+		reset_mon_char_value_vec: 21
+		reset_mon_char_value_vec: 22
+		reset_mon_char_value_vec: 23
+		reset_mon_char_value_vec: 24
+	}
+}
+
+item: {
+	name: "性格重置A型"
+	description: "使用后随机将精灵性格变为孤独、大胆、保守、沉着、胆小、害羞或认真。"
+	id: 20042
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR
+		reset_mon_char_value_vec: 0
+		reset_mon_char_value_vec: 4
+		reset_mon_char_value_vec: 8
+		reset_mon_char_value_vec: 12
+		reset_mon_char_value_vec: 16
+		reset_mon_char_value_vec: 20
+		reset_mon_char_value_vec: 24
+	}
+}
+
+item: {
+	name: "性格重置B型"
+	description: "使用后随机将精灵性格变为固执、顽皮、稳重、温顺、急躁或实干。"
+	id: 20043
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR
+		reset_mon_char_value_vec: 1
+		reset_mon_char_value_vec: 5
+		reset_mon_char_value_vec: 9
+		reset_mon_char_value_vec: 13
+		reset_mon_char_value_vec: 17
+		reset_mon_char_value_vec: 21
+	}
+}
+
+item: {
+	name: "性格重置C型"
+	description: "使用后随机将精灵性格变为调皮、无虑、马虎、慎重、开朗或坦率。"
+	id: 20044
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR
+		reset_mon_char_value_vec: 2
+		reset_mon_char_value_vec: 6
+		reset_mon_char_value_vec: 10
+		reset_mon_char_value_vec: 14
+		reset_mon_char_value_vec: 18
+		reset_mon_char_value_vec: 22
+	}
+}
+
+item: {
+	name: "性格重置D型"
+	description: "使用后随机将精灵性格变为勇敢、悠闲、冷静、狂妄、天真或浮躁。"
+	id: 20045
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR
+		reset_mon_char_value_vec: 3
+		reset_mon_char_value_vec: 7
+		reset_mon_char_value_vec: 11
+		reset_mon_char_value_vec: 15
+		reset_mon_char_value_vec: 19
+		reset_mon_char_value_vec: 23
+	}
+}
+
+item: {
+	name: "精致弹弓"
+	description: "使用后随机将精灵性格变为孤独、固执、调皮、勇敢。"
+	id: 20046
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR
+		reset_mon_char_value_vec: 0
+		reset_mon_char_value_vec: 1
+		reset_mon_char_value_vec: 2
+		reset_mon_char_value_vec: 3
+	}
+}
+
+item: {
+	name: "玩具气枪"
+	description: "使用后随机将精灵性格变为保守、稳重、马虎、冷静。"
+	id: 20047
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_7_RESET_MON_CHAR
+		reset_mon_char_value_vec: 8
+		reset_mon_char_value_vec: 9
+		reset_mon_char_value_vec: 10
+		reset_mon_char_value_vec: 11
+	}
+}
+
+
+item: {
+	name: "小学习胶囊"
+	description: "使用后增加精灵10点学习力。"
+	id: 20051
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_8_ADD_MON_LEARN
+		incr_learn: 10
+	}
+}
+
+item: {
+	name: "中学习胶囊"
+	description: "使用后增加精灵20点学习力。"
+	id: 20052
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_8_ADD_MON_LEARN
+		incr_learn: 20
+	}
+}
+
+item: {
+	name: "大学习胶囊"
+	description: "使用后增加精灵50点学习力。"
+	id: 20053
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_8_ADD_MON_LEARN
+		incr_learn: 50
+	}
+}
+
+item: {
+	name: "学习胶囊"
+	description: "使用后增加精灵100点学习力。"
+	id: 20054
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_8_ADD_MON_LEARN
+		incr_learn: 100
+	}
+}
+
+item: {
+	name: "学习力重置"
+	description: "使用后将精灵的学习力变为未分配状态。"
+	id: 20055
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_9_RESET_MON_LEARN
+	}
+}
+
+item: {
+	name: "超学习胶囊"
+	description: "使用后增加精灵510点学习力。"
+	id: 20056
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_8_ADD_MON_LEARN
+		incr_learn: 510
+	}
+}
+
+item: {
+	name: "感应陀螺"
+	description: "最普通的陀螺,可以捕捉野生精灵,但威力和陀螺能量较弱"
+	id: 20071
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_12_TOP
+		tuoluo_power: 10
+		tuoluo_hp: 3
+	}
+}
+
+item: {
+	name: "精良陀螺"
+	description: "精良材质的陀螺,可以捕捉野生精灵,有着更强的威力和陀螺能量"
+	id: 20072
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_12_TOP
+		tuoluo_power: 20
+		tuoluo_hp: 5
+	}
+}
+
+item: {
+	name: "黄金陀螺"
+	description: "跳过手动捕捉，有概率直接捕获精灵"
+	id: 20073
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 200
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_12_TOP
+		tuoluo_power: 30
+		tuoluo_hp: 10
+	}
+}
+
+item: {
+	name: "普通炸弹"
+	description: "最普通的炸弹,用于精灵捕捉,直接对捕捉精灵造成伤害"
+	id: 20076
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_27_CATCH_ITEM
+		capture_power: 150
+	}
+}
+
+item: {
+	name: "超能闪电"
+	description: "超能量闪电,用于精灵捕捉,直接对捕捉精灵造成大量伤害"
+	id: 20077
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 250
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_27_CATCH_ITEM
+		capture_power: 350
+	}
+}
+
+item: {
+	name: "黄铁矿"
+	description: "黄色的精铁矿石,可以直接出售获得赛尔豆"
+	id: 20081
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP
+	}
+}
+
+item: {
+	name: "赤晶矿"
+	description: "闪着红色光芒的矿石,可以直接出售获得赛尔豆"
+	id: 20082
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP
+	}
+}
+
+item: {
+	name: "绿碧石"
+	description: "绿色的神秘矿石,可以直接出售获得赛尔豆"
+	id: 20083
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP
+	}
+}
+
+item: {
+	name: "青玉石"
+	description: "充满青色光泽的稀有矿石,可以直接出售获得赛尔豆"
+	id: 20084
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP
+	}
+}
+
+item: {
+	name: "白坚石"
+	description: "非常坚硬的白色矿石,可以直接出售获得赛尔豆"
+	id: 20085
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP
+	}
+}
+
+item: {
+	name: "体力药剂1"
+	description: "战斗中使用后恢复精灵20体力。"
+	id: 20101
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_16_ADD_MON_HP
+		recover_mon_hp: 20
+	}
+}
+
+item: {
+	name: "体力药剂2"
+	description: "战斗中使用后恢复精灵50体力。"
+	id: 20102
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_16_ADD_MON_HP
+		recover_mon_hp: 50
+	}
+}
+
+item: {
+	name: "体力药剂"
+	description: "战斗中使用后恢复精灵100体力。"
+	id: 20103
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_16_ADD_MON_HP
+		recover_mon_hp: 100
+	}
+}
+
+item: {
+	name: "中级体力药"
+	description: "战斗中使用后恢复精灵200体力。"
+	id: 20104
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_16_ADD_MON_HP
+		recover_mon_hp: 200
+	}
+}
+
+item: {
+	name: "高级体力药"
+	description: "战斗中使用后恢复精灵300体力。"
+	id: 20105
+	host_type: MONSTER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_16_ADD_MON_HP
+		recover_mon_hp: 300
+	}
+}
+
+item: {
+	name: "仓库扩展卡"
+	description: "使用后可增加精灵仓库3格（仓库上限为99格）。"
+	id: 20122
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 30
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_19_ADD_MON_STORE
+		incr_mon_store: 3
+	}
+}
+
+item: {
+	name: "改名芯片"
+	description: "一次性道具,可以修改玩家昵称"
+	id: 20123
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 200
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_26_CHANGE_NICK
+	}
+}
+
+item: {
+	name: "青铜宝箱"
+	description: "使用后能随机获得物品奖励。"
+	id: 20190
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60190
+	}
+}
+
+item: {
+	name: "白银宝箱"
+	description: "使用后能随机获得物品奖励。"
+	id: 20191
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60191
+	}
+}
+
+item: {
+	name: "黄金宝箱"
+	description: "使用后能随机获得物品奖励。"
+	id: 20192
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60192
+	}
+}
+
+item: {
+	name: "登录宝箱"
+	description: "使用后能随机获得物品奖励。"
+	id: 20193
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60193
+	}
+}
+
+item: {
+	name: "伊娃工具箱"
+	description: "使用后能随机获得物品奖励。"
+	id: 20194
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+        type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+        treasure_chest_prize_id: 60194
+	}
+}
+
+item: {
+	name: "解锁芯片"
+	description: "用来开启伊娃工具箱。"
+	id: 20195
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+        type: MATERIAL_ATTR_TYPE_15_PICK_UP 
+	}
+}
+
+item: {
+	name: "雷伊宝箱"
+	description: "使用后能随机获得物品奖励。"
+	id: 20196
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60196
+	}
+}
+
+item: {
+	name: "捣蛋鬼礼盒"
+	description: "使用后能随机获得物品奖励。"
+	id: 20197
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60197
+	}
+}
+item: {
+	name: "10级克劳资助"
+	description: "10级成长礼包：大果实*3，赛尔豆1000，解锁芯片*1，双倍经验20，仓库扩展卡，金豆20，30级克劳资助"
+	id: 40000
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 10
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60198
+	}
+}
+item: {
+	name: "30级克劳资助"
+	description: "30级成长礼包：沉甸的果实*2，赛尔豆2000，解锁芯片*2，资质果实*2，金豆20，50级克劳资助"
+	id: 40001
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 30
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60199
+	}
+}
+item: {
+	name: "50级克劳资助"
+	description: "50级成长礼包：沉甸的果实*4，赛尔豆3000，学习力胶囊*2，金豆20，70级克劳资助"
+	id: 40002
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 50
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60200
+	}
+}
+item: {
+	name: "70级克劳资助"
+	description: "70级成长礼包：沉甸的果实*6，赛尔豆5000，性格重置药*2，金豆20"
+	id: 40003
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 70
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_22_TREASURE_CHEST
+		treasure_chest_prize_id: 60201
+	}
+}
+
+item: {
+	name: "生命叶片"
+	description: "任务物品。"
+	id: 20201
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "水泡"
+	description: "任务物品。"
+	id: 20202
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "火苗"
+	description: "任务物品。"
+	id: 20203
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "热源石"
+	description: "任务物品。"
+	id: 20204
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "果实"
+	description: "任务物品。"
+	id: 20205
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "雪球"
+	description: "任务物品。"
+	id: 20206
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "光能粒子"
+	description: "任务物品。"
+	id: 20207
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "祭司的包裹"
+	description: "任务物品。"
+	id: 20208
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "水流精华"
+	description: "任务物品。"
+	id: 20209
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "鞋子"
+	description: "任务物品。"
+	id: 20210
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "沙漠之水"
+	description: "任务物品。"
+	id: 20211
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "大漠沙土"
+	description: "任务物品。"
+	id: 20212
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "速度之靴"
+	description: "任务物品。"
+	id: 20213
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "石蝎秘药"
+	description: "任务物品。"
+	id: 20214
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "法拉之泪"
+	description: "任务物品。"
+	id: 20215
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "树根之须"
+	description: "任务物品。"
+	id: 20216
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "结界开关"
+	description: "任务物品。"
+	id: 20217
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "增幅器"
+	description: "任务物品。"
+	id: 20218
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "钻石贝壳"
+	description: "任务物品。"
+	id: 20219
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "蛇毒血清"
+	description: "任务物品。"
+	id: 20220
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "麦麦迪的金针"
+	description: "任务物品。"
+	id: 20221
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "小水晶"
+	description: "任务物品。"
+	id: 20222
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "红宝石"
+	description: "任务物品。"
+	id: 20223
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "岩浮甲"
+	description: "任务物品。"
+	id: 20224
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "冰晶体"
+	description: "任务物品。"
+	id: 20225
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "冰砖"
+	description: "任务物品。"
+	id: 20226
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "冰柱子"
+	description: "任务物品。"
+	id: 20227
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "石头"
+	description: "任务物品。"
+	id: 20228
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "萨伦帝国的信物"
+	description: "任务物品。"
+	id: 20229
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "魔石"
+	description: "任务物品。"
+	id: 20230
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "秘籍碎片"
+	description: "任务物品。"
+	id: 20231
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_20_TASK_DROP
+	}
+}
+
+item: {
+	name: "友爱之心"
+	description: "任务道具。\n由友爱之力汇聚而成的神秘宝石"
+	id: 20301
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_21_STORY
+	}
+}
+
+item: {
+	name: "守护之心"
+	description: "任务道具。\n阿卡纳斯的守护之力演化而成的神秘宝石"
+	id: 20302
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_21_STORY
+	}
+}
+
+item: {
+	name: "勇气之心"
+	description: "任务道具。\n充满勇气之人孕育而生的神秘宝石"
+	id: 20303
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_21_STORY
+	}
+}
+
+item: {
+	name: "生命之心"
+	description: "任务道具。\n代表着生命生生不息的神秘宝石"
+	id: 20304
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_21_STORY
+	}
+}
+
+item: {
+	name: "团结之心"
+	description: "任务道具。\n族人一心,其利断金.代表团结的神秘宝石"
+	id: 20305
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_21_STORY
+	}
+}
+
+item: {
+	name: "自由之心"
+	description: "任务道具。\n为了追求自由而不断努力孕育而生的神秘宝石"
+	id: 20306
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_21_STORY
+	}
+}
+
+item: {
+	name: "宁静之心"
+	description: "任务道具。\n超凡脱俗的卡尼娅风暴之力锻炼的神秘宝石"
+	id: 20307
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 0
+	base_sell_price: -1
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_21_STORY
+	}
+}
+
+item: {
+	name: "白色晶钻"
+	description: "神秘的白色晶钻，相传可在9月6日这天在雷伊兑换处兑换神秘节日礼物！"
+	id: 27003
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "绿色晶钻"
+	description: "神秘的绿色晶钻，相传可在9月6日这天在雷伊兑换处兑换神秘节日礼物！"
+	id: 27004
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "蓝色晶钻"
+	description: "神秘的蓝色晶钻，相传可在9月6日这天在雷伊兑换处兑换神秘节日礼物！"
+	id: 27005
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "紫色晶钻"
+	description: "神秘的紫色晶钻，相传可在9月6日这天在雷伊兑换处兑换神秘节日礼物！"
+	id: 27006
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "普通精灵蛋"
+	description: "使用后可随机获得普通系精灵"
+	id: 25001
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70001
+	}
+}
+
+item: {
+	name: "草系精灵蛋"
+	description: "使用后可随机获得草系精灵"
+	id: 25002
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70002
+	}
+}
+
+item: {
+	name: "水系精灵蛋"
+	description: "使用后可随机获得水系精灵"
+	id: 25003
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70003
+	}
+}
+
+item: {
+	name: "火系精灵蛋"
+	description: "使用后可随机获得火系精灵"
+	id: 25004
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70004
+	}
+}
+
+item: {
+	name: "风系精灵蛋"
+	description: "使用后可随机获得风系精灵"
+	id: 25005
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70005
+	}
+}
+
+item: {
+	name: "虫系精灵蛋"
+	description: "使用后可随机获得虫系精灵"
+	id: 25006
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70006
+	}
+}
+
+item: {
+	name: "飞行精灵蛋"
+	description: "使用后可随机获得飞行系精灵"
+	id: 25007
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70007
+	}
+}
+
+item: {
+	name: "电系精灵蛋"
+	description: "使用后可随机获得电系精灵"
+	id: 25008
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70008
+	}
+}
+
+item: {
+	name: "地面精灵蛋"
+	description: "使用后可随机获得地面系精灵"
+	id: 25009
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70009
+	}
+}
+
+item: {
+	name: "冰系精灵蛋"
+	description: "使用后可随机获得冰系精灵"
+	id: 25010
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70010
+	}
+}
+
+item: {
+	name: "超能精灵蛋"
+	description: "使用后可随机获得超能系精灵"
+	id: 25011
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70011
+	}
+}
+
+item: {
+	name: "光系精灵蛋"
+	description: "使用后可随机获得光系精灵"
+	id: 25012
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70012
+	}
+}
+
+item: {
+	name: "暗影精灵蛋"
+	description: "使用后可随机获得暗影系精灵"
+	id: 25013
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70013
+	}
+}
+
+item: {
+	name: "格斗精灵蛋"
+	description: "使用后可随机获得格斗系精灵"
+	id: 25014
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70014
+	}
+}
+
+item: {
+	name: "龙系精灵蛋"
+	description: "使用后可随机获得龙系精灵"
+	id: 25015
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70015
+	}
+}
+
+item: {
+	name: "沙漠精灵蛋"
+	description: "使用后可随机获得沙漠系精灵"
+	id: 25016
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70016
+	}
+}
+
+item: {
+	name: "神秘精灵蛋"
+	description: "使用后可随机获得神秘系精灵"
+	id: 25017
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70017
+	}
+}
+
+item: {
+	name: "特质精灵蛋"
+	description: "使用后可随机获得特质系精灵"
+	id: 25018
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70018
+	}
+}
+
+item: {
+	name: "全系精灵蛋"
+	description: "使用后可随机获得精灵"
+	id: 25019
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70019
+	}
+}
+
+item: {
+	name: "迪兰蛋"
+	description: "使用后可获得精灵迪兰"
+	id: 25021
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 1
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70021
+        egg_quality: QUALITY_BLUE 	        
+	}
+    
+}
+
+item: {
+	name: "休咻蛋"
+	description: "使用后可获得精灵休咻"
+	id: 25022
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 1
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70022
+        egg_quality: QUALITY_BLUE 	
+    }
+}
+
+item: {
+	name: "拉奥蛋"
+	description: "使用后可获得精灵拉奥"
+	id: 25023
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 1
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70023
+        egg_quality: QUALITY_BLUE 	        
+	}
+}
+
+item: {
+	name: "阿宝蛋"
+	description: "使用后可获得精灵阿宝"
+	id: 25024
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70024
+        egg_quality: QUALITY_GREEN 	        
+	}
+}
+
+item: {
+	name: "阿布蛋"
+	description: "使用后可获得精灵阿布"
+	id: 25025
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70025
+        egg_quality: QUALITY_BLUE 	        
+	}
+}
+
+item: {
+	name: "大耳猴蛋"
+	description: "使用后可获得精灵大耳猴"
+	id: 25026
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70026
+        egg_quality: QUALITY_BLUE 	    
+	}
+}
+
+item: {
+	name: "晓月兔蛋"
+	description: "使用后可获得精灵晓月兔"
+	id: 25027
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70027
+        egg_quality: QUALITY_BLUE         
+	}
+}
+
+item: {
+	name: "齿轮鹰蛋"
+	description: "使用后可获得精灵齿轮鹰"
+	id: 25028
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70028
+        egg_quality: QUALITY_GREEN         
+	}
+}
+
+item: {
+	name: "多摩蛋"
+	description: "使用后可获得精灵多摩"
+	id: 25029
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70029
+        egg_quality: QUALITY_GREEN         
+	}
+}
+
+item: {
+	name: "小结蛋"
+	description: "使用后可获得精灵小结"
+	id: 25030
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70030
+        egg_quality: QUALITY_GREEN        
+	}
+}
+
+item: {
+	name: "米咔蛋"
+	description: "使用后可获得精灵米咔"
+	id: 25031
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70031
+        egg_quality: QUALITY_PURPLE         
+	}
+}
+
+item: {
+	name: "冰伊特蛋"
+	description: "使用后可获得精灵冰伊特"
+	id: 25032
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70032
+        egg_quality: QUALITY_BLUE         
+	}
+}
+
+item: {
+	name: "风伊特蛋"
+	description: "使用后可获得精灵风伊特"
+	id: 25033
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70033
+        egg_quality: QUALITY_BLUE          
+	}
+}
+
+item: {
+	name: "电伊特蛋"
+	description: "使用后可获得精灵电伊特"
+	id: 25034
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70034
+        egg_quality: QUALITY_BLUE          
+	}
+}
+
+item: {
+	name: "暗伊特蛋"
+	description: "使用后可获得精灵暗伊特"
+	id: 25035
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70035
+        egg_quality: QUALITY_BLUE          
+	}
+}
+
+item: {
+	name: "乔巴蛋"
+	description: "使用后可获得精灵乔巴"
+	id: 25036
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70036
+        egg_quality: QUALITY_BLUE          
+	}
+}
+
+item: {
+	name: "小巴蛋"
+	description: "使用后可获得精灵小巴"
+	id: 25037
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70037
+        egg_quality: QUALITY_BLUE          
+	}
+}
+
+item: {
+	name: "布尔蛋"
+	description: "使用后可获得精灵布尔"
+	id: 25038
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70038
+        egg_quality: QUALITY_GREEN          
+
+	}
+}
+
+item: {
+	name: "阿卡蛋"
+	description: "使用后可获得精灵阿卡"
+	id: 25039
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70039
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "霍克蛋"
+	description: "使用后可获得精灵霍克"
+	id: 25040
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70040
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "麦麦籽蛋"
+	description: "使用后可获得精灵麦麦籽"
+	id: 25041
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70041
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "莫古蛋"
+	description: "使用后可获得精灵莫古"
+	id: 25042
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70042
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "沙之鹤蛋"
+	description: "使用后可获得精灵沙之鹤"
+	id: 25043
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70043
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "尼娅蛋"
+	description: "使用后可获得精灵尼娅"
+	id: 25044
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70044
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "乌达蛋"
+	description: "使用后可获得精灵乌达"
+	id: 25045
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70045
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "达达蛋"
+	description: "使用后可获得精灵达达"
+	id: 25046
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70046
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "弗格蛋"
+	description: "使用后可获得精灵弗格"
+	id: 25047
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70047
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "豚豚蛋"
+	description: "使用后可获得精灵豚豚"
+	id: 25048
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70048
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "伊特蛋"
+	description: "使用后可获得精灵伊特"
+	id: 25049
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70049
+        egg_quality: QUALITY_BLUE              
+	}
+}
+
+item: {
+	name: "莱卡蛋"
+	description: "使用后可获得精灵莱卡"
+	id: 25050
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70050
+        egg_quality: QUALITY_PURPLE              
+	}
+}
+
+item: {
+	name: "小金蛋"
+	description: "使用后可获得精灵小金"
+	id: 25051
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 800
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70051
+        egg_quality: QUALITY_PURPLE              
+	}
+}
+
+item: {
+	name: "菲亚蛋"
+	description: "使用后可获得精灵菲亚"
+	id: 25052
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70052
+        egg_quality: QUALITY_GREEN              
+	}
+}
+
+item: {
+	name: "英菲蛋"
+	description: "使用后可获得精灵英菲"
+	id: 25053
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 800
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70053
+        egg_quality: QUALITY_PURPLE              
+	}
+}
+
+item: {
+	name: "维维蛋"
+	description: "使用后可获得精灵维维"
+	id: 25054
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70054
+        egg_quality: QUALITY_BLUE              
+	}
+}
+
+item: {
+	name: "艾希蛋"
+	description: "使用后可获得精灵艾希"
+	id: 25055
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70055
+        egg_quality: QUALITY_BLUE              
+	}
+}
+
+item: {
+	name: "沙伊特蛋"
+	description: "使用后可获得精灵沙伊特"
+	id: 25056
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70056
+        egg_quality: QUALITY_BLUE        
+	}
+}
+
+item: {
+	name: "飞伊特蛋"
+	description: "使用后可获得精灵飞伊特"
+	id: 25057
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70057
+        egg_quality: QUALITY_BLUE        
+	}
+}
+
+item: {
+	name: "虫伊特蛋"
+	description: "使用后可获得精灵虫伊特"
+	id: 25058
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70058
+        egg_quality: QUALITY_BLUE           
+	}
+}
+
+item: {
+	name: "光伊特蛋"
+	description: "使用后可获得精灵光伊特"
+	id: 25059
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70059
+        egg_quality: QUALITY_BLUE           
+	}
+}
+
+item: {
+	name: "战伊特蛋"
+	description: "使用后可获得精灵战伊特"
+	id: 25060
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70060
+        egg_quality: QUALITY_BLUE           
+	}
+}
+
+item: {
+	name: "泰格蛋"
+	description: "使用后可获得精灵泰格"
+	id: 25061
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70061
+        egg_quality: QUALITY_GREEN           
+	}
+}
+
+item: {
+	name: "库贝多蛋"
+	description: "使用后可获得战斗系精灵库贝多，可进化为邪神库贝萨"
+	id: 25062
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70062
+        egg_quality: QUALITY_BLUE           
+	}
+}
+
+item: {
+	name: "尤尼蛋"
+	description: "使用后可获得精灵尤尼"
+	id: 25301
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70301
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "稚壳鸡蛋"
+	description: "使用后可获得精灵稚壳鸡"
+	id: 25302
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70302
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "三眼蝎蛋"
+	description: "使用后可获得精灵三眼蝎"
+	id: 25303
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70303
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "砂砂蛋"
+	description: "使用后可获得精灵砂砂"
+	id: 25304
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70304
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "跳跳鼠蛋"
+	description: "使用后可获得精灵跳跳鼠"
+	id: 25305
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70305
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "伊露蛋"
+	description: "使用后可获得精灵伊露"
+	id: 25306
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70306
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "多利蛋"
+	description: "使用后可获得精灵多利"
+	id: 25307
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70307
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "泰姆蛋"
+	description: "使用后可获得精灵泰姆"
+	id: 25308
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70308
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "小小葵蛋"
+	description: "使用后可获得精灵小小葵"
+	id: 25309
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70309
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "小树根蛋"
+	description: "使用后可获得精灵小树根"
+	id: 25310
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70310
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "法拉蛋"
+	description: "使用后可获得精灵法拉"
+	id: 25311
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70311
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "蓝喵蛋"
+	description: "使用后可获得精灵蓝喵"
+	id: 25312
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70312
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "水墨蛋"
+	description: "使用后可获得精灵水墨"
+	id: 25313
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70313
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "小岩浮蛋"
+	description: "使用后可获得精灵小岩浮"
+	id: 25314
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70314
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "克里普蛋"
+	description: "使用后可获得精灵克里普"
+	id: 25315
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70315
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "石像鬼蛋"
+	description: "使用后可获得精灵石像鬼"
+	id: 25316
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70316
+        egg_quality: QUALITY_WHITE           
+	}
+}
+
+item: {
+	name: "安吉蛋"
+	description: "使用后可获得精灵安吉"
+	id: 25317
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70317
+        egg_quality: QUALITY_BLUE           
+	}
+}
+
+item: {
+	name: "芙拉蛋"
+	description: "使用后可获得精灵芙拉"
+	id: 25318
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70318
+        egg_quality: QUALITY_BLUE           
+	}
+}
+
+item: {
+	name: "锦鲤蛋"
+	description: "使用后可获得精灵锦鲤"
+	id: 25319
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70319
+        egg_quality: QUALITY_GREEN           
+	}
+}
+item: {
+	name: "荷玛蛋"
+	description: "使用后可获得精灵荷玛"
+	id: 25320
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70320
+        egg_quality: QUALITY_WHITE           
+	}
+}
+item: {
+	name: "萌犸蛋"
+	description: "使用后可获得精灵萌犸"
+	id: 25321
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70321
+        egg_quality: QUALITY_BLUE           
+	}
+}
+item: {
+	name: "盖亚蛋"
+	description: "使用后可获得战神盖亚"
+	id: 25322
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70322
+        egg_quality: QUALITY_ORANGE           
+	}
+}
+item: {
+	name: "萨菲蛋"
+	description: "使用后可获得稀有精灵萨菲"
+	id: 25324
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70324
+        egg_quality: QUALITY_BLUE           
+	}
+}
+item: {
+	name: "缇姆蛋"
+	description: "使用后可获得优质精灵缇姆。"
+	id: 25325
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70325
+        egg_quality: QUALITY_GREEN           
+	}
+}
+item: {
+	name: "雷伊蛋"
+	description: "使用后可获得战神雷伊。"
+	id: 25326
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70326
+        egg_quality: QUALITY_ORANGE           
+	}
+}
+item: {
+	name: "小绿蜓蛋"
+	description: "使用后可获得优质精灵小绿蜓。"
+	id: 25327
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70327
+        egg_quality: QUALITY_GREEN           
+	}
+}
+item: {
+	name: "卜古蛋"
+	description: "使用后可获得稀有精灵卜古"
+	id: 25328
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70328
+        egg_quality: QUALITY_BLUE           
+	}
+}
+item: {
+	name: "南瓜蛋"
+	description: "使用后可获得稀有精灵南瓜"
+	id: 25329
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 150
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_23_MON_EGG
+		egg_prize_id: 70329
+        egg_quality: QUALITY_BLUE           
+	}
+}
+item: {
+	name: "闪光雪球"
+	description: "闪耀着神奇光芒的雪球，可用于兑换物品"
+	id: 27001
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP
+	}
+}
+
+item: {
+	name: "无尽能源"
+	description: "雷伊守护的能源晶体，可用于兑换物品"
+	id: 27002
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP
+	}
+}
+
+item: {
+	name: "小喇叭"
+	description: "向世界玩家发送祝福消息的小喇叭"
+	id: 28101
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_30_TRUMPET
+	}
+}
+
+item: {
+	name: "合金侠装扮"
+	description: "传说中一位米国英雄使用过的机甲"
+	id: 30001
+	host_type: SEER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: 100
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_WHITE
+	max_level: 20
+	seer_pos: SEER_EQUIP_POS_SUIT
+	seer_equipment_attr: {
+		type: SEER_EQUIPMENT_ATTR_ZHIHUI
+		init_value: 0
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_24_SEER_EQUIP
+	}
+}
+
+item: {
+	name: "探月者装扮"
+	description: "经典宇宙探险者机甲，最早的登月者曾经使用"
+	id: 30003
+	host_type: SEER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: 200
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_WHITE
+	max_level: 20
+	seer_pos: SEER_EQUIP_POS_SUIT
+	seer_equipment_attr: {
+		type: SEER_EQUIPMENT_ATTR_ZHIHUI
+		init_value: 0
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_24_SEER_EQUIP
+	}
+}
+
+item: {
+	name: "圣诞小鹿装扮"
+	description: "圣诞麋鹿精灵的化身"
+	id: 30004
+	host_type: SEER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: 250
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_GREEN
+	max_level: 20
+	seer_pos: SEER_EQUIP_POS_SUIT
+	seer_equipment_attr: {
+		type: SEER_EQUIPMENT_ATTR_ZHIHUI
+		init_value: 0
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_24_SEER_EQUIP
+	}
+}
+
+item: {
+	name: "冰雪骑士装扮"
+	description: "冰雪中的王者，冷酷的象征"
+	id: 30005
+	host_type: SEER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 20
+	seer_pos: SEER_EQUIP_POS_SUIT
+	seer_equipment_attr: {
+		type: SEER_EQUIPMENT_ATTR_ZHIHUI
+		init_value: 0
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_24_SEER_EQUIP
+	}
+}
+item: {
+	name: "雷神套装"
+	description: "雷神的超级神装，勇气与力量的象征"
+	id: 30006
+	host_type: SEER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: 300
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 20
+	seer_pos: SEER_EQUIP_POS_SUIT
+	seer_equipment_attr: {
+		type: SEER_EQUIPMENT_ATTR_ZHIHUI
+		init_value: 0
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_24_SEER_EQUIP
+	}
+}
+item: {
+	name: "光翼黑魔套装"
+	description: "光翼黑魔法师套装。"
+	id: 30007
+	host_type: SEER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: 3000
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 20
+	seer_pos: SEER_EQUIP_POS_SUIT
+	seer_equipment_attr: {
+		type: SEER_EQUIPMENT_ATTR_ZHIHUI
+		init_value: 0
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_24_SEER_EQUIP
+	}
+}
+item: {
+	name: "赫本银羽套装"
+	description: "传说中天使赫本所穿的战甲。"
+	id: 30008
+	host_type: SEER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 1
+	base_sell_price: 3000
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 20
+	seer_pos: SEER_EQUIP_POS_SUIT
+	seer_equipment_attr: {
+		type: SEER_EQUIPMENT_ATTR_ZHIHUI
+		init_value: 0
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_24_SEER_EQUIP
+	}
+}
+item: {
+	name: "合金匕首"
+	description: "物攻+5 每强化一级+1~+3\n特攻+5 每强化一级+1~+3"
+	id: 35001
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_WHITE
+	max_level: 20
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_ATK
+		init_value: 5
+		level_increment: 1.12
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_ATK
+		init_value: 5
+		level_increment: 1.12
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "时空蚌壳"
+	description: "物防+4 每强化一级+1~+3\n特防+4 每强化一级+1~+3"
+	id: 35002
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_WHITE
+	max_level: 20
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_DEF
+		init_value: 4
+		level_increment: 1.05
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_DEF
+		init_value: 4
+		level_increment: 1.05
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "合金铃铛"
+	description: "速度+5 每强化一级+1~+3 "
+	id: 35003
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_WHITE
+	max_level: 20
+	mon_pos: MON_EQUIP_POS_SPE
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SPD
+		init_value: 5
+		level_increment: 1
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "超合金匕首"
+	description: "物攻+10 每强化一级+2~+4\n特攻+10 每强化一级+2~+4"
+	id: 35101
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_GREEN
+	max_level: 30
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_ATK
+		init_value: 10
+		level_increment: 2.24
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_ATK
+		init_value: 10
+		level_increment: 2.24
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "超合金装甲"
+	description: "物防+8 每强化一级+1~+3\n特防+8 每强化一级+1~+3"
+	id: 35102
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_GREEN
+	max_level: 30
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_DEF
+		init_value: 8
+		level_increment: 1.68
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_DEF
+		init_value: 8
+		level_increment: 1.68
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "星钻"
+	description: "速度+10 每强化一级+2~+4 "
+	id: 35103
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_GREEN
+	max_level: 30
+	mon_pos: MON_EQUIP_POS_SPE
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SPD
+		init_value: 10
+		level_increment: 2
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "裂空利爪"
+	description: "物攻+15 每强化一级+2~+4\n特攻+15 每强化一级+3~+5"
+	id: 35201
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_ATK
+		init_value: 15
+		level_increment: 3.36
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_ATK
+		init_value: 15
+		level_increment: 3.36
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "裂空星盾"
+	description: "物防+12 每强化一级+2~+4\n特防+12 每强化一级+2~+4"
+	id: 35202
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_DEF
+		init_value: 12
+		level_increment: 2.52
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_DEF
+		init_value: 12
+		level_increment: 2.52
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "裂空宝石"
+	description: "速度+15 每强化一级+2~+4"
+	id: 35203
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_SPE
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SPD
+		init_value: 15
+		level_increment: 3
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "银色獠牙"
+	description: "物攻+15 每强化一级+3~+5"
+	id: 35204
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_ATK
+		init_value: 15
+		level_increment: 3.36
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "荆棘盾牌"
+	description: "物防+12 每强化一级+2~+4"
+	id: 35205
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_DEF
+		init_value: 12
+		level_increment: 2.52
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "狮心石"
+	description: "速度+15 每强化一级+2~+4"
+	id: 35206
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_SPE
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SPD
+		init_value: 15
+		level_increment: 3
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "钨钢长剑"
+	description: "特攻+15 每强化一级+3~+5"
+	id: 35207
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_ATK
+		init_value: 15
+		level_increment: 3.36
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "风林盾"
+	description: "特防+12 每强化一级+2~+4"
+	id: 35208
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_BLUE
+	max_level: 40
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_DEF
+		init_value: 12
+		level_increment: 2.52
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "雷鸣之力"
+	description: "物攻+20 每强化一级+4~+6\n特攻+20 每强化一级+4~+6"
+	id: 35301
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_ATK
+		init_value: 20
+		level_increment: 4.2
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_ATK
+		init_value: 20
+		level_increment: 4.2
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "雷神之盾"
+	description: "物防+16 每强化一级+4~+6\n特防+16 每强化一级+4~+6"
+	id: 35302
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_DEF
+		init_value: 16
+		level_increment: 3.36
+	}
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_DEF
+		init_value: 16
+		level_increment: 3.36
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "雷光之链"
+	description: "速度+20  每强化一级+3~+5"
+	id: 35303
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_SPE
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SPD
+		init_value: 20
+		level_increment: 4
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "微光之刃"
+	description: "物攻+18 每强化一级+4~+6"
+	id: 35304
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_ATK
+		init_value: 18
+		level_increment: 4.2
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "暗月盾牌"
+	description: "物防+14 每强化一级+4~+6"
+	id: 35305
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_DEF
+		init_value: 14
+		level_increment: 3.36
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "时光结语"
+	description: "速度+18 每强化一级+4~+6"
+	id: 35306
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_SPE
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SPD
+		init_value: 18
+		level_increment: 4
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "灼热冲击"
+	description: "特攻+18 每强化一级+4~+6"
+	id: 35307
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_ATK
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_ATK
+		init_value: 18
+		level_increment: 4.2
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "日精盾牌"
+	description: "特防+14 每强化一级+4~+6"
+	id: 35308
+	host_type: MONSTER_HOST
+	category: EQUIPMENT
+	overlap: UN_OVERLAP_ABLE
+	one_grid_max: 1
+	max_own: 999
+	base_sell_price: 0
+	player_level_limit: 0
+	mon_level_limit: 0
+	quality: QUALITY_PURPLE
+	max_level: 50
+	mon_pos: MON_EQUIP_POS_DEF
+	mon_equipment_attr: {
+		type: MON_EQUIPMENT_ATTR_SP_DEF
+		init_value: 14
+		level_increment: 3.36
+	}
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_25_MON_EQUIP
+	}
+}
+
+item: {
+	name: "银色獠牙碎片"
+	description: "银色獠牙碎片\n物攻+15 每强化一级+3~+5"
+	id: 36001
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35204
+		piece_grade: 2
+		piece_compose_need_count: 25
+	}
+}
+
+item: {
+	name: "荆棘盾牌碎片"
+	description: "荆棘盾牌碎片\n物防+12 每强化一级+2~+4"
+	id: 36002
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35205
+		piece_grade: 2
+		piece_compose_need_count: 25
+	}
+}
+
+item: {
+	name: "狮心石碎片"
+	description: "狮心石碎片\n速度+15 每强化一级+3~+5"
+	id: 36003
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35206
+		piece_grade: 2
+		piece_compose_need_count: 25
+	}
+}
+
+item: {
+	name: "钨钢长剑碎片"
+	description: "钨钢长剑碎片\n特攻+15 每强化一级+3~+5"
+	id: 36004
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35207
+		piece_grade: 2
+		piece_compose_need_count: 25
+	}
+}
+
+item: {
+	name: "风林盾碎片"
+	description: "风林盾碎片\n特防+12 每强化一级+2~+4"
+	id: 36005
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35208
+		piece_grade: 2
+		piece_compose_need_count: 25
+	}
+}
+
+item: {
+	name: "微光之刃碎片"
+	description: "微光之刃碎片\n物攻+18 每强化一级+4~+6"
+	id: 36006
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35304
+		piece_grade: 3
+		piece_compose_need_count: 40
+	}
+}
+
+item: {
+	name: "暗月盾牌碎片"
+	description: "暗月盾牌碎片\n物防+14 每强化一级+4~+6"
+	id: 36007
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35305
+		piece_grade: 3
+		piece_compose_need_count: 40
+	}
+}
+
+item: {
+	name: "时光结语碎片"
+	description: "时光结语碎片\n速度+18 每强化一级+4~+6"
+	id: 36008
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35306
+		piece_grade: 3
+		piece_compose_need_count: 40
+	}
+}
+
+item: {
+	name: "灼热冲击碎片"
+	description: "灼热冲击碎片\n特攻+18 每强化一级+4~+6"
+	id: 36009
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35307
+		piece_grade: 3
+		piece_compose_need_count: 40
+	}
+}
+
+item: {
+	name: "日精盾牌碎片"
+	description: "日精盾牌碎片\n特防+14 每强化一级+4~+6"
+	id: 36010
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35308
+		piece_grade: 3
+		piece_compose_need_count: 40
+	}
+}
+
+item: {
+	name: "超合金匕首碎片"
+	description: "超合金匕首碎片\n物攻+10 每强化一级+2~+4\n特攻+10 每强化一级+2~+4"
+	id: 36011
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35101
+		piece_grade: 1
+		piece_compose_need_count: 15
+	}
+}
+
+item: {
+	name: "超合金装甲碎片"
+	description: "超合金装甲碎片\n物防+8 每强化一级+1~+3\n特防+8 每强化一级+1~+3"
+	id: 36012
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35102
+		piece_grade: 1
+		piece_compose_need_count: 15
+	}
+}
+
+item: {
+	name: "星钻碎片"
+	description: "星钻碎片\n速度+10 每强化一级+2~+4 "
+	id: 36013
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 35103
+		piece_grade: 1
+		piece_compose_need_count: 15
+	}
+}
+
+item: {
+	name: "龙珠"
+	description: "合成龙系极品精灵英菲精灵蛋"
+	id: 37001
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 9999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "维维蛋碎片"
+	description: "合成超能系稀有精灵维维精灵蛋"
+	id: 37002
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 25054
+		piece_grade: 2
+		piece_compose_need_count: 99
+	}
+}
+
+item: {
+	name: "艾希蛋碎片"
+	description: "合成光系稀有精灵艾希精灵蛋"
+	id: 37003
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 25055
+		piece_grade: 2
+		piece_compose_need_count: 99
+	}
+}
+
+item: {
+	name: "沙伊特蛋碎片"
+	description: "合成沙漠系稀有精灵沙伊特精灵蛋"
+	id: 37004
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 25056
+		piece_grade: 2
+		piece_compose_need_count: 99
+	}
+}
+
+item: {
+	name: "伊特蛋碎片"
+	description: "合成稀有精灵伊特蛋"
+	id: 37005
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 10
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_32_PIECE
+		piece_target_item_id: 25049
+		piece_grade: 2
+		piece_compose_need_count: 99
+	}
+}
+
+item: {
+	name: "英菲之光"
+	description: "战神之塔第四章中产出，为龙系极品精灵英菲迪进化所需材料。"
+	id: 37501
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "艾希之光"
+	description: "战神之塔第四章中产出，为稀有精灵艾希进化所需材料。"
+	id: 37502
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "冰之契约"
+	description: "伊特的进化道具，等级达到24级时可进化冰伊特"
+	id: 37503
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "风之契约"
+	description: "伊特的进化道具，等级达到24级时可进化风伊特"
+	id: 37504
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "暗之契约"
+	description: "伊特的进化道具，等级达到24级时可进化暗伊特"
+	id: 37505
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "电之契约"
+	description: "伊特的进化道具，等级达到24级时可进化电伊特"
+	id: 37506
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "沙之契约"
+	description: "伊特的进化道具，等级达到24级时可进化沙伊特"
+	id: 37507
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "光之契约"
+	description: "伊特的进化道具，等级达到24级时可进化光伊特"
+	id: 37508
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "战之契约"
+	description: "伊特的进化道具，等级达到24级时可进化战伊特"
+	id: 37509
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "虫之契约"
+	description: "伊特的进化道具，等级达到24级时可进化虫伊特"
+	id: 37510
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "飞之契约"
+	description: "伊特的进化道具，等级达到24级时可进化飞伊特"
+	id: 37511
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "契约之书"
+	description: "在活动NPC处兑换伊特进化所需的契约"
+	id: 38001
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "冰之魂"
+	description: "在活动NPC处兑换进化成冰伊特所需的冰之契约"
+	id: 38002
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "风之魂"
+	description: "在活动NPC处兑换进化成风伊特所需的风之契约"
+	id: 38003
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "暗之魂"
+	description: "在活动NPC处兑换进化成暗伊特所需的暗之契约"
+	id: 38004
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "电之魂"
+	description: "在活动NPC处兑换进化成电伊特所需的电之契约"
+	id: 38005
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "沙之魂"
+	description: "在活动NPC处兑换进化成沙伊特所需的沙之契约"
+	id: 38006
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "光之魂"
+	description: "在活动NPC处兑换进化成光伊特所需的光之契约"
+	id: 38007
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "战之魂"
+	description: "在活动NPC处兑换进化成战伊特所需的战之契约"
+	id: 38008
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "虫之魂"
+	description: "在活动NPC处兑换进化成虫伊特所需的虫之契约"
+	id: 38009
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "飞之魂"
+	description: "在活动NPC处兑换进化成飞伊特所需的飞之契约"
+	id: 38010
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+item: {
+	name: "白色水晶"
+	description: "在战神之塔第1-2章中产出，为普通精灵进化所需材料"
+	id: 38011
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 20
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+} 
+item: {
+	name: "绿色水晶"
+	description: "在战神之塔第2-3章中产出，为优质精灵进化所需材料"
+	id: 38012
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 30
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "蓝色水晶"
+	description: "在战神之塔第2-3章中产出，为稀有精灵进化所需材料"
+	id: 38013
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "紫色水晶"
+	description: "在战神之塔第3章中产出，为极品精灵进化所需材料"
+	id: 38014
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 50
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "维维之光"
+	description: "在战神之塔中产出，为稀有精灵维维进化所需材料"
+	id: 38015
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "芙拉之光"
+	description: "在战神之塔中产出，为稀有精灵芙拉进化所需材料"
+	id: 38016
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "金鳞之光"
+	description: "在战神之塔中产出，为极品精灵金鳞进化所需材料"
+	id: 38017
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "小巴之光"
+	description: "在战神之塔中产出，为稀有精灵小巴进化所需材料"
+	id: 38018
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "月兔之光"
+	description: "在战神之塔中产出，为稀有精灵晓月兔进化所需材料"
+	id: 38019
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "迪兰之光"
+	description: "在战神之塔中产出，为稀有精灵迪兰进化所需材料"
+	id: 38020
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "休咻之光"
+	description: "在战神之塔中产出，为稀有精灵休咻进化所需材料"
+	id: 38021
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "拉奥之光"
+	description: "在战神之塔中产出，为稀有精灵拉奥进化所需材料"
+	id: 38022
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "安吉之光"
+	description: "在战神之塔中产出，为稀有精灵安吉进化所需材料"
+	id: 38023
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "莱卡之光"
+	description: "在战神之塔中产出，为极品精灵莱卡进化所需材料"
+	id: 38024
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "阿布之光"
+	description: "在战神之塔中产出，为稀有精灵阿布进化所需材料"
+	id: 38025
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "萌犸之光"
+	description: "在战神之塔中产出，为稀有精灵猛犸象进化所需材料"
+	id: 38026
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "萨菲之光"
+	description: "在战神之塔第四章中产出，为稀有精灵萨菲进化所需材料"
+	id: 38027
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "卜古之光"
+	description: "在战神之塔中产出，为稀有精灵卜古进化所需材料"
+	id: 38028
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999 
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+item: {
+	name: "南瓜之光"
+	description: "在战神之塔中产出，为稀有精灵南瓜进化所需材料"
+	id: 38029
+	host_type: SEER_HOST
+	category: MATERIAL
+	overlap: OVERLAP_ABLE
+	one_grid_max: 999
+	max_own: 999
+	base_sell_price: 40
+	player_level_limit: 0
+	mon_level_limit: 0
+	material_attr: {
+		type: MATERIAL_ATTR_TYPE_15_PICK_UP   
+	}
+}
+
+
