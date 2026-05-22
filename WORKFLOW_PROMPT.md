@@ -168,10 +168,18 @@ python -c "import hashlib; print(hashlib.md5(open('local.so','rb').read()).hexdi
 
 ## 已知后续阻塞清单（写本提示词时未解决）
 
-- 选宠界面文本错乱（用户已自己修复）
-- 伊娃博士对话内容是 `哈哈哈哈啊` 占位文本——`assets/Data/dialog.plist`（GBK 编码）里被插了 23 处 UTF-8 `e5 93 88` 占位符，`clean_haha.py` 可清理，但需要重打包 APK 才生效
-- 伊娃对话框无法互动——已通过 patch `showDialogNode` v2 让对话不出现来绕过，最终是否 work 需用户测
-- 后续可能还会卡在其它 GuideLayer 衍生流程；备选 patch 候选见 `patch_guidelayer_v2.py` 顶部注释（`clearContentNode`、`moveDialogNodeToTop/Center/Bottom` 等）
+- ~~选宠界面文本错乱~~（用户已自己修复）
+- ~~伊娃博士对话内容 `哈哈哈哈啊` 占位文本~~（ARM 上 GuideLayer 完整运行后文本正常）
+- ~~伊娃对话框无法互动~~ **→ 已解决：ARM 真机 + patch `GameGuideManager::guideWalkToEva @ 0x46f97c` → BX LR**
+- **MuMu x86_64 永远无法走过 Eva 对话**（Houdini 翻译层 bug 导致 GuideLayer 触摸路由永久损坏，v2-v10 共 9 个 patch 版本均失败）
+- 后续可能还会有其他 GuideLayer 相关阻塞；但 ARM 真机路线是最可靠的解法
+
+## ARM 真机工作版本
+
+- APK: `1_offline_arm_eva2.apk`
+- 唯一 patch: `GameGuideManager::guideWalkToEva @ 0x46f97c` → BX LR（跳过寻路，引导直接进入 Eva 对话）
+- 原始 GuideLayer 所有函数**均未 patch**（ARM 原生执行无 Houdini 崩溃）
+- 脚本: `patch_arm_eva.py`
 
 ---
 
