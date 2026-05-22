@@ -759,18 +759,8 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Get Items (Inventory) ----
     if (cmd.includes('get_item') && !cmd.includes('get_item_')) {
-        const ps = getPlayerState(socket._uid || 1);
-        let itemList = Buffer.alloc(0);
-        for (const item of ps.items) {
-            const itemMsg = Buffer.concat([
-                encodeUint32(1, item.item_id),
-                encodeUint32(2, item.item_count || 1),
-            ]);
-            itemList = Buffer.concat([itemList, encodeMessage(1, itemMsg)]);
-        }
-        if (itemList.length === 0) itemList = Buffer.from([0x0a, 0x00]); // empty repeated
-        console.log(`[ITEM] get_item: ${ps.items.length} items`);
-        return Buffer.concat([itemList, encodeUint32(2, 0)]);
+        // Return empty item list + ret=0 — backpack init only
+        return Buffer.from([0x0a, 0x00, 0x10, 0x00]);
     }
 
     // ---- Submit Map Mine (Ore) ----
@@ -936,7 +926,7 @@ function buildResponse(cmd, fields, socket) {
     // 2-byte body breaks the client (it errors with "invalid message body length: -2").
     // The empty placeholder triggers a non-fatal "decode message buffer error" but the game continues.
     const genericEmptyList = [
-        'get_item', 'get_friend_list', 'get_mail_list',
+        'get_friend_list', 'get_mail_list',
         'get_mail_head', 'get_activity_list', 'get_shop_info',
         'get_task_buff', 'get_task_flag', 'get_config',
         'get_finance_plan', 'get_lottery_info', 'get_lottery',
