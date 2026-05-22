@@ -262,7 +262,7 @@
     if-eqz p5, :cond_0
 
     .line 43
-    const-string v0, "http://10.1.1.27/ammy_project/new_wire/account_service.php"
+    const-string v0, "http://127.0.0.1:8000/account_service.php"
 
     sput-object v0, Lcom/taomee/pwdlogin/common/GlobalVars;->LOGIN_URL:Ljava/lang/String;
 
