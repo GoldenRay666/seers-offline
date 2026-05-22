@@ -172,14 +172,14 @@ python -c "import hashlib; print(hashlib.md5(open('local.so','rb').read()).hexdi
 - ~~伊娃博士对话内容 `哈哈哈哈啊` 占位文本~~（ARM 上 GuideLayer 完整运行后文本正常）
 - ~~伊娃对话框无法互动~~ **→ 已解决：ARM 真机 + patch `GameGuideManager::guideWalkToEva @ 0x46f97c` → BX LR**
 - **MuMu x86_64 永远无法走过 Eva 对话**（Houdini 翻译层 bug 导致 GuideLayer 触摸路由永久损坏）
-- **接任务后灰屏** → 已通过 logcat 定位：`EventSwallowLayer` + `showMaskLayer` + `isInGuide` 三重阻滞。EventSwallowLayer+mask 可通过 patch 解决，但 isInGuide 禁用移动无法单独绕过。**需要 root + Frida trace 精确定位**，禁止继续猜 patch
+- ~~接任务后灰屏~~ **→ 已解决（2026-05-23）**：根因是引导系统在接任务后未调用 `endGuide()` 清理状态，导致 input/movement 残留锁。Frida trace 确认 EventSwallowLayer 已正确 remove、showMaskLayer 已 patch 为 no-op、isInGuide 返回 0——灰屏是网络等待遮罩，下面的游戏因 guide 未结束而拒绝交互。**修复：`guideWalkToEva @ 0x46f97c` 从单纯 BX LR 改为 `PUSH {R4, LR}; BL endGuide; POP {R4, PC}`**
 
-## ARM 真机工作版本（2026-05-22）
+## ARM 真机工作版本（2026-05-23）
 
-**可用 APK**: `1_offline_arm_w2.apk`（基于 `arm_working`）
-- 二进制 patch: `guideWalkToEva @ 0x46f97c` → BX LR（跳过寻路）
+**可用 APK**: `1_offline_arm_fix.apk`（基于 `arm_working`，gray screen fixed）
+- 二进制 patch: `guideWalkToEva @ 0x46f97c` → PUSH LR; BL endGuide; POP PC（跳过寻路 + 调用 endGuide 清理引导状态）
 - 所有 GuideLayer 函数**均未 patch**（ARM 原生执行）
-- 脚本: `patch_arm_eva.py`
+- 脚本: `patch_arm_eva.py`（需更新为新的 8 字节 patch）
 
 ### 已解决的 ARM 问题
 
