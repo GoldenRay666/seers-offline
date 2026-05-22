@@ -814,11 +814,16 @@ function buildResponse(cmd, fields, socket) {
         const msgBody = encodeString(1, '采集成功！获得矿石x1');
         pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msgBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
-        // Mining response: use 4-byte placeholder (Frida autofix handles item data)
-        // Proto fields are extension-based (12=varint, 26=fixed32) which don't
-        // write to the fixed offsets (+8, +12) where the game reads them.
-        // frida_mine_autofix.js intercepts Merge and injects correct values.
-        return Buffer.from([0x0a, 0x00, 0x10, 0x00]);
+        // Field 2 = ore index (1-5, single-byte varint → msg+12 in Frida)
+        // Frida autofix reads index from msg+12, maps to real item ID
+        const oreIndexMap = {10001: 1, 10023: 2}; // map_id → ore index
+        const oreIndex = oreIndexMap[mineId] || 1;
+        console.log(`[MINE] mine_id=${mineId} → ore_index=${oreIndex}`);
+
+        return Buffer.concat([
+            Buffer.from([0x0a, 0x00]),       // field 1: empty placeholder
+            encodeUint32(2, oreIndex),       // field 2: ore index → msg+12
+        ]);
     }
 
     // ---- Submit Map Event (NPC Interaction) ----
