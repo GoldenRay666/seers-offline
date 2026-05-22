@@ -776,6 +776,8 @@ function buildResponse(cmd, fields, socket) {
         }
         console.log(`[TASK] obtain_task id=${taskId}`);
         const detail = taskDef ? buildPbTaskInfo(taskDef) : Buffer.alloc(0);
+        // Push set_task_step to auto-advance guide
+        pushMessage(socket, 'ISeer20CSProto.set_task_step_out', Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]), socket._lastF3 || 1, socket._lastF4, socket._lastF5);
         return Buffer.concat([encodeUint32(1, taskId), encodeMessage(2, detail)]);
     }
     if (cmd.includes('finish_task')) {
