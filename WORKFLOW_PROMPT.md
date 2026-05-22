@@ -71,7 +71,9 @@ MSYS_NO_PATHCONV=1 adb -s 127.0.0.1:7555 shell 'head -120 /data/tombstones/tombs
 |------|------|------|
 | ADB | `C:/Users/23287/AppData/Local/Android/Sdk/platform-tools/adb.exe` | 设备 `127.0.0.1:7555` |
 | Python | `C:/Users/23287/AppData/Local/Programs/Python/Python313/python.exe` | 用来跑 patch 脚本和 ELF 解析 |
-| Frida | `C:/Users/23287/AppData/Local/Programs/Python/Python313/Scripts/frida.exe` | 17.x。**注意**：MuMu x86_64 上 Frida 默认 realm 看不到 ARM 库，`realm='emulated'` 又会超时——基本走不通，**优先选静态二进制 patch** |
+| Frida | `C:/Users/23287/AppData/Local/Programs/Python/Python313/Scripts/frida.exe` | 17.x。ARM 真机通过 Gadget（APK 注入）无 root 使用：`adb forward tcp:27042 tcp:27042` → `frida -H 127.0.0.1:27042`。**Gadget 模式 `Module.findExportByName` 不可用**，用 `enumerateExports` 替代；高频 `send()` 需限流避免崩溃 |
+| Frida Gadget | `1/lib/armeabi/libfrida-gadget.so` + `.config.so` | listen 模式 0.0.0.0:27042, on_load=resume |
+| Autofix | `1/frida_mine_autofix.js` | 挖矿道具+背包修复，每游戏进程启动后需执行一次 |
 | Java JDK | `C:/Program Files/Java/jdk-23/bin/jarsigner.exe` | 重打包 APK 时签名用 |
 | apktool | `C:/javatools/apktool.jar` | `java -jar apktool.jar b 1 -o 1_offline.apk` |
 | IDA 输出 | `C:/javatools/1/ida_*.txt` | 已有的反编译产物，**优先翻这些**而不是重新跑 IDA |
@@ -176,31 +178,73 @@ python -c "import hashlib; print(hashlib.md5(open('local.so','rb').read()).hexdi
 
 ## ARM 真机工作版本（2026-05-23）
 
-**可用 APK**: `1_offline_arm_fix.apk`（基于 `arm_working`，gray screen fixed）
-- 二进制 patch: `guideWalkToEva @ 0x46f97c` → PUSH LR; BL endGuide; POP PC（跳过寻路 + 调用 endGuide 清理引导状态）
+**可用 APK**: `1_seers_final.apk`（基于 `arm_fixgray`，gray screen + push frame fixed）
+- 二进制 patch: `guideWalkToEva @ 0x46f97c` → PUSH LR; BL endGuide; POP PC（8 字节）
 - 所有 GuideLayer 函数**均未 patch**（ARM 原生执行）
-- 脚本: `patch_arm_eva.py`（需更新为新的 8 字节 patch）
+- **push 帧格式已修复**：`mock_server.js` 中 `pushMessage` 的 `headerLen = headerProto.length`（不是 `4 + protoLen`）
+- .so 基线: `libgame_logic.so.arm_fixgray`
+
+### Frida 运行时修复（每次游戏启动后执行一次）
+
+```bash
+frida -H 127.0.0.1:27042 -l 1/frida_mine_autofix.js Gadget
+```
+
+autofix 做了：
+1. 劫持 `submit_map_mine_info_out` Merge → 写入 item_id/count 到 msg+8/+12（挖矿 UI 显示）
+2. 劫持 `one_t::IsInitialized` → 强制返回 true（绕过 proto 版本不匹配）
+3. 劫持 `cli_get_item_out` Merge → 强制返回 true
+4. 背包打开时调用 `removeEventSwallowLayer`（尝试修复退出按钮）
+5. 挖矿后调用 `QuestManager::setProgress(10002, step=1)`
+
+### Mock 服务器关键修复
+
+- **push 帧**：`headerLen = headerProto.length`（行 408）
+- **挖矿响应 body**：`[0a 00] + encodeUint32(2, oreIndex)` → Frida 读 oreIndex 映射真实 ID
+- **矿石映射**：`oreIndexMap = {10001: 1(黄铁矿), 10023: 2(赤晶矿)}`
+- **get_item 返回 null**（不发送响应，避免覆盖背包数据）
+- **smali URL**：`http://127.0.0.1:8000/account_service.php`（真实设备 adb reverse）
 
 ### 已解决的 ARM 问题
 
 | 问题 | 方案 |
 |------|------|
-| 伊娃对话阻塞 | `guideWalkToEva` → BX LR |
+| 伊娃对话阻塞 | `guideWalkToEva` → BL endGuide |
 | 挖矿网络超时 | mock 回复 ≥ 4 字节 |
 | `obtain_task` 缺失 | TASK_DEFS 添加 id=1 |
 | `recheck_session` 角色丢失 | 返回已有角色 |
+| 接任务后灰屏 | guideWalkToEva → BL endGuide 清理引导状态 |
+| 挖矿 UI 无道具 | Frida 劫持 Merge 写入 msg+8/+12 |
+| push 全部失败 | headerLen 多算 4 字节 → 修正为 protoLen |
 
-### 待 root 后解决的阻塞
+### Proto 字段映射速查（编译后代码 vs Descriptor）
 
-**接任务后灰屏** → logcat 显示 `Event Swallows By EventSwallowLayer`。已尝试 10+ 个 patch 组合均失败。**等 ARM 设备 Bootloader 解锁（小米 7 天）+ Magisk root + Frida trace。**
+**`submit_map_mine_info_out`**: msg+8=mine_item_id, msg+12=mine_item_count
+**`cli_notify_item_bag_updates_out`**: capacity(1), del_grid(2), new_grid(3), update_grid(4)
+**`one_t`** (实测编译后映射): wire field1→compiled field2(item_id@msg+8), wire field2→compiled field3(count@msg+12), 编译后 field1(required)无 wire 映射 → IsInitialized=false
+
+### 待解决的阻塞（2026-05-23 更新）
+
+**挖矿后道具不入背包** → 根因已定位：
+1. push 帧格式 bug（`headerLen = 4 + protoLen` 应为 `headerLen = protoLen`）→ **已修复**，所有 push merge 现在成功
+2. `cli_notify_item_bag_updates_out` push 的 body 格式——proto descriptor 与编译后代码字段号偏移不一致
+   - Descriptor: `new_grid=field3`, `one_t: grid_id=1, item_id=2, count=3`
+   - 编译代码实际映射：wire field1→compiled field2(item_id), wire field2→compiled field3(count)
+   - `one_t::IsInitialized()` 返回 false（编译后 required field1 无 wire 映射）→ **Frida 劫持 IsInitialized 返回 true**
+3. `cli_get_item_out` 响应 body 格式不匹配 → 覆盖了 push 写入的正确数据 → 背包显示垃圾道具
+4. 背包 UI 有 bug（退出按钮不响应，可能是独立问题）
+
+**道具入包链路已完全打通**：挖矿 → mock push bag update → merge 成功 → handler → `updateItemInBag` 被调用 → 道具写入背包。数据格式还需微调。
 
 ## 关键 .so 版本
 
 | 文件 | 用途 |
 |------|------|
-| `libgame_logic.so.prepatch_guide_v3` | **干净基线**（从此派生所有 patch） |
-| `libgame_logic.so.arm_working` | ARM 工作版（仅 walkToEva） |
-| `magisk_patched_boot.img` | 已 patch 待刷入的 Magisk boot |
+| `libgame_logic.so.prepatch_guide_v3` | **干净基线**（MuMu x86，GuideLayer 已 patch） |
+| `libgame_logic.so.arm_working` | ARM 工作版（仅 walkToEva patch） |
+| `libgame_logic.so.arm_fixgray` | **当前 APK 基线**（walkToEva→BL endGuide, 8 字节） |
+| `libgame_logic.so.arm_fixtouch` | BattleFinishedLayer touch fix（**已回退**，系误报） |
+| `magisk_patched_boot.img` | 已 patch 待刷入的 Magisk boot（未使用） |
 
 ---
 
