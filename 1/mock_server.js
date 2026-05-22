@@ -759,8 +759,12 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Get Items (Inventory) ----
     if (cmd.includes('get_item') && !cmd.includes('get_item_')) {
-        // Return empty item list + ret=0 — backpack init only
-        return Buffer.from([0x0a, 0x00, 0x10, 0x00]);
+        // Include capacity to unlock backpack slots
+        return Buffer.concat([
+            Buffer.from([0x0a, 0x00]),  // empty items (field 1)
+            encodeUint32(2, 0),         // ret code (field 2)
+            encodeUint32(3, 999),       // capacity (field 3?)
+        ]);
     }
 
     // ---- Submit Map Mine (Ore) ----
