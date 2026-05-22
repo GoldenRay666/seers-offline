@@ -130,18 +130,25 @@ function buildServerListResponse() {
     ]);
 }
 
-function buildCheckSessionResponse() {
-    // cli_check_session_out: field 1 = server_role_list (repeated server_role_t)
-    // server_role_t: field 1 = server_info (server_info_t), field 2 = role_info (optional)
-    // server_info_t per KNOWN_INFO §八: 1=server_id, 2=server_name (string), 3=server_status
+function buildCheckSessionResponse(withRole) {
     const serverInfo = Buffer.concat([
         encodeUint32(1, 1),
         encodeString(2, "Offline Server"),
         encodeUint32(3, 1),
     ]);
-    // Wrap server_info inside server_role_t (field 1 = server_info)
-    const serverRole = encodeMessage(1, serverInfo);
-    // Wrap server_role inside repeated field 1 of check_session_out
+    let serverRole = encodeMessage(1, serverInfo);
+    if (withRole) {
+        const role = getLastRole(1);
+        if (role) {
+            const roleInfo = Buffer.concat([
+                encodeUint32(1, role.uid || 1),
+                encodeUint32(2, role.roleTm),
+                encodeString(3, role.nick),
+                encodeUint32(6, role.gender || 1),
+            ]);
+            serverRole = Buffer.concat([serverRole, encodeMessage(2, roleInfo)]);
+        }
+    }
     return encodeMessage(1, serverRole);
 }
 
@@ -300,6 +307,15 @@ function buildMonInfo(monId, level, nickname) {
 
 // Task system
 const TASK_DEFS = [
+    {
+        id: 1, name: '初到异蘑世界', info: '与多罗对话',
+        task_type: 2, need_level: 0,
+        obtain_map_id: 10001, commit_map_id: 10001,
+        obtain_npc_id: 3, commit_npc_id: 3,
+        obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
+        prize_id: 50001, area_id: 1,
+        steps: [{seq: 1, step_type: 5, value: 3, target: '3', link: [10001]}],
+    },
     {
         id: 10001, name: '初到异蘑世界', info: '与多罗对话',
         task_type: 2, need_level: 0,
@@ -635,7 +651,9 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Auth & Session ----
     if (cmd.includes('check_session') || cmd.includes('recheck_session')) {
-        return buildCheckSessionResponse();
+        // For recheck: include existing role so game knows character exists
+        const withRole = cmd.includes('recheck') && STATE.roles[1] && STATE.roles[1].length > 0;
+        return buildCheckSessionResponse(withRole);
     }
 
     // ---- Login & Create Role ----
@@ -720,24 +738,21 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Map Walk ----
     if (cmd.includes('map_player_walk')) {
-        // Push NPC dialog trigger after walk completes (guide expects this)
-        const x = fields[1] || 0;
-        const y = fields[2] || 0;
-        console.log(`[WALK] Player walked to (${x}, ${y})`);
-        // Trigger NPC 3 (Eva/多罗) dialog via text_msg_out
-        const textBody = Buffer.concat([
-            encodeUint32(1, 3),    // npc_id = 3
-            encodeString(2, '欢迎来到异蘑世界！'),
-        ]);
-        pushMessage(socket, 'ISeer20CSProto.text_msg_out', textBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
-        return Buffer.alloc(0);
+        console.log(`[WALK] fields=${JSON.stringify(fields)}`);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
     // ---- Submit Map Mine (Ore) ----
     if (cmd.includes('submit_map_mine')) {
         const mineId = fields[1] || 0;
-        console.log(`[MINE] Mining at ${mineId}`);
-        return encodeUint32(1, 0); // result = success
+        console.log(`[MINE] mine_id=${mineId}`);
+        const msgBody = encodeString(1, '采集成功！');
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msgBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        return Buffer.concat([
+            encodeUint32(1, 0),
+            encodeUint32(2, 1),
+            encodeUint32(3, 5),
+        ]);
     }
 
     // ---- Submit Map Event (NPC Interaction) ----
@@ -745,7 +760,7 @@ function buildResponse(cmd, fields, socket) {
         const eventType = fields[1] || 0;
         const npcId = fields[2] || 0;
         console.log(`[EVENT] type=${eventType} npc=${npcId}`);
-        return encodeUint32(1, 0); // result = success
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
     // ---- Tasks ----
@@ -759,10 +774,9 @@ function buildResponse(cmd, fields, socket) {
             const ps = getPlayerState(socket._uid || 1);
             if (!ps.tasks.find(t => t.id === taskId)) ps.tasks.push({...taskDef});
         }
-        return Buffer.concat([
-            encodeUint32(1, taskId),
-            encodeUint32(2, taskDef ? 0 : 1),
-        ]);
+        console.log(`[TASK] obtain_task id=${taskId}`);
+        const detail = taskDef ? buildPbTaskInfo(taskDef) : Buffer.alloc(0);
+        return Buffer.concat([encodeUint32(1, taskId), encodeMessage(2, detail)]);
     }
     if (cmd.includes('finish_task')) {
         const taskId = fields[1] || 0;
@@ -771,10 +785,10 @@ function buildResponse(cmd, fields, socket) {
         return Buffer.concat([encodeUint32(1, taskId), encodeUint32(2, 0)]);
     }
     if (cmd.includes('set_task_step')) {
-        return encodeUint32(1, 0);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
     if (cmd.includes('pb_cs_task')) {
-        return encodeUint32(1, 0);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
     // ---- PVP Data ----
@@ -785,7 +799,7 @@ function buildResponse(cmd, fields, socket) {
     // ---- Player Ready ----
     if (cmd.includes('player_ready')) {
         console.log('[READY] Player ready signal');
-        return Buffer.alloc(0);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
     // ---- Player Simple/Detail Info ----
@@ -854,17 +868,17 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Text Message ----
     if (cmd.includes('text_msg')) {
-        return Buffer.alloc(0);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
     // ---- Pass Do Action ----
     if (cmd.includes('pass_do_action')) {
-        return encodeUint32(1, 0);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
     // ---- Notification acks ----
     if (cmd.includes('notify_in') || cmd.includes('notify_mon_in') || cmd.includes('notify_player_in')) {
-        return Buffer.alloc(0);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
     // ---- Fallback ----

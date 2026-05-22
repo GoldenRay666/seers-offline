@@ -233,7 +233,7 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 4
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
@@ -242,6 +242,9 @@
 
     .line 80
     sput-object p0, Lcom/taomee/seer2/seer2;->actInstance:Lcom/taomee/seer2/seer2;
+
+    const-string v2, "frida-gadget"
+    invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
     .line 82
     const/4 v1, 0x1
