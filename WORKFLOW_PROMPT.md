@@ -171,15 +171,36 @@ python -c "import hashlib; print(hashlib.md5(open('local.so','rb').read()).hexdi
 - ~~选宠界面文本错乱~~（用户已自己修复）
 - ~~伊娃博士对话内容 `哈哈哈哈啊` 占位文本~~（ARM 上 GuideLayer 完整运行后文本正常）
 - ~~伊娃对话框无法互动~~ **→ 已解决：ARM 真机 + patch `GameGuideManager::guideWalkToEva @ 0x46f97c` → BX LR**
-- **MuMu x86_64 永远无法走过 Eva 对话**（Houdini 翻译层 bug 导致 GuideLayer 触摸路由永久损坏，v2-v10 共 9 个 patch 版本均失败）
-- 后续可能还会有其他 GuideLayer 相关阻塞；但 ARM 真机路线是最可靠的解法
+- **MuMu x86_64 永远无法走过 Eva 对话**（Houdini 翻译层 bug 导致 GuideLayer 触摸路由永久损坏）
+- **接任务后灰屏** → 已通过 logcat 定位：`EventSwallowLayer` + `showMaskLayer` + `isInGuide` 三重阻滞。EventSwallowLayer+mask 可通过 patch 解决，但 isInGuide 禁用移动无法单独绕过。**需要 root + Frida trace 精确定位**，禁止继续猜 patch
 
-## ARM 真机工作版本
+## ARM 真机工作版本（2026-05-22）
 
-- APK: `1_offline_arm_eva2.apk`
-- 唯一 patch: `GameGuideManager::guideWalkToEva @ 0x46f97c` → BX LR（跳过寻路，引导直接进入 Eva 对话）
-- 原始 GuideLayer 所有函数**均未 patch**（ARM 原生执行无 Houdini 崩溃）
+**可用 APK**: `1_offline_arm_w2.apk`（基于 `arm_working`）
+- 二进制 patch: `guideWalkToEva @ 0x46f97c` → BX LR（跳过寻路）
+- 所有 GuideLayer 函数**均未 patch**（ARM 原生执行）
 - 脚本: `patch_arm_eva.py`
+
+### 已解决的 ARM 问题
+
+| 问题 | 方案 |
+|------|------|
+| 伊娃对话阻塞 | `guideWalkToEva` → BX LR |
+| 挖矿网络超时 | mock 回复 ≥ 4 字节 |
+| `obtain_task` 缺失 | TASK_DEFS 添加 id=1 |
+| `recheck_session` 角色丢失 | 返回已有角色 |
+
+### 待 root 后解决的阻塞
+
+**接任务后灰屏** → logcat 显示 `Event Swallows By EventSwallowLayer`。已尝试 10+ 个 patch 组合均失败。**等 ARM 设备 Bootloader 解锁（小米 7 天）+ Magisk root + Frida trace。**
+
+## 关键 .so 版本
+
+| 文件 | 用途 |
+|------|------|
+| `libgame_logic.so.prepatch_guide_v3` | **干净基线**（从此派生所有 patch） |
+| `libgame_logic.so.arm_working` | ARM 工作版（仅 walkToEva） |
+| `magisk_patched_boot.img` | 已 patch 待刷入的 Magisk boot |
 
 ---
 
@@ -190,6 +211,8 @@ python -c "import hashlib; print(hashlib.md5(open('local.so','rb').read()).hexdi
 > 角色创建后断连 → 90% 是 mock 回包格式问题；查最近改了什么 4-byte body
 > 一启动就崩 → 大概率 .so 被 patch 坏了，回滚到 `prepatch_guide_v3` 重做
 > mock 行为反常 → 检查是不是有多个 node 进程，`tasklist | grep node`，killall 后重启
+> **所有消息回复 body 必须 ≥ 4 字节**，0 或 2 字节导致 `invalid message body length: -2`
+> **接任务后灰屏** → 等 root + Frida trace，**不要猜 patch**
 
 ---
 
