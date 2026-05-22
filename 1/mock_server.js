@@ -405,8 +405,8 @@ function pushMessage(socket, cmd, body, f3, f4, f5) {
         encodeUint32(4, f4 || 0),
         encodeUint32(5, f5 || 0),
     ]);
-    const headerLen = 4 + headerProto.length;
-    const totalLen = 8 + headerProto.length + body.length;
+    const headerLen = headerProto.length;  // raw header length (game reads it directly)
+    const totalLen = 4 + headerLen + body.length;  // 4 (totalLen) + header + body
     const packet = Buffer.alloc(totalLen);
     packet.writeUInt32BE(totalLen, 0);
     packet.writeUInt32BE(headerLen, 4);
@@ -687,6 +687,12 @@ function buildResponse(cmd, fields, socket) {
              obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
              prize_id: 50001, area_id: 1,
              steps: [{seq: 1, step_type: 5, value: 3, target: '3', link: [10001]}]},
+            {id: 10002, name: '矿石采集', info: '采集矿石1次', task_type: 2, need_level: 0,
+             obtain_map_id: 10001, commit_map_id: 10001,
+             obtain_npc_id: 3, commit_npc_id: 3,
+             obtain_dialog: 200, progress_dialog: 205, finish_dialog: 210,
+             prize_id: 50002, area_id: 1,
+             steps: [{seq: 1, step_type: 6, value: 1, target: '采矿', link: [10001]}]},
         ];
         // Track which uid this socket is connected to
         socket._uid = uid;
@@ -799,16 +805,24 @@ function buildResponse(cmd, fields, socket) {
         ]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', prizeMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
-        // Also push bag update notification
-        const itemUpdate = Buffer.concat([
+        // Also push bag update: one_t in new_grid (field 1?)
+        // one_t has: item_id(1), count(2), grid_id(3)
+        const oneT = Buffer.concat([
             encodeUint32(1, itemId),
             encodeUint32(2, 1),
         ]);
+        // Try different field numbers for new_grid
         const bagUpdate = Buffer.concat([
-            encodeMessage(1, itemUpdate),
-            encodeUint32(2, 0),
+            encodeMessage(1, oneT),  // new_grid = field 1
         ]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+
+        // Push task step update for mining quest (id=10002, step=1 completed)
+        const stepUpdate = Buffer.concat([
+            encodeUint32(1, 10002),  // task_id
+            encodeUint32(2, 1),      // step seq
+        ]);
+        pushMessage(socket, 'ISeer20CSProto.set_task_step_out', stepUpdate, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
         // Also push text message
         const msgBody = encodeString(1, '采集成功！获得矿石x1');
