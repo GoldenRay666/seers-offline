@@ -759,12 +759,10 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Get Items (Inventory) ----
     if (cmd.includes('get_item') && !cmd.includes('get_item_')) {
-        // Include capacity to unlock backpack slots
-        return Buffer.concat([
-            Buffer.from([0x0a, 0x00]),  // empty items (field 1)
-            encodeUint32(2, 0),         // ret code (field 2)
-            encodeUint32(3, 999),       // capacity (field 3?)
-        ]);
+        // Brute-force capacity: set ALL fields 1-10 to 999
+        const parts=[Buffer.from([0x0a, 0x00])]; // empty items
+        for(let i=1;i<=10;i++) parts.push(encodeUint32(i, 999));
+        return Buffer.concat(parts);
     }
 
     // ---- Submit Map Mine (Ore) ----
