@@ -636,6 +636,15 @@ function handleGameClient(socket) {
                 respHeader.copy(packet, 8);
                 respBody.copy(packet, 8 + respHeader.length);
                 socket.write(packet);
+
+                // Dump full packet for mine-related and a sample walk message
+                if (respCmd.includes('mine') || respCmd.includes('walk')) {
+                    const hex = packet.toString('hex');
+                    const hdrHex = respHeader.toString('hex');
+                    const bodyHex = respBody.toString('hex');
+                    console.log(`[FRAME] ${respCmd}: total=${totalMsgLen} hdrLen=${respHeaderLen} hdr=${hdrHex} body=${bodyHex}`);
+                    console.log(`[FRAME] full packet: ${hex}`);
+                }
                 console.log(`[TCP] Sent: ${respCmd} (${respBody.length} bytes)`);
             }
         }
@@ -742,17 +751,74 @@ function buildResponse(cmd, fields, socket) {
         return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
+    // ---- Get Items (Inventory) ----
+    if (cmd.includes('get_item') && !cmd.includes('get_item_')) {
+        const ps = getPlayerState(socket._uid || 1);
+        let itemList = Buffer.alloc(0);
+        for (const item of ps.items) {
+            const itemMsg = Buffer.concat([
+                encodeUint32(1, item.item_id),
+                encodeUint32(2, item.item_count || 1),
+            ]);
+            itemList = Buffer.concat([itemList, encodeMessage(1, itemMsg)]);
+        }
+        if (itemList.length === 0) itemList = Buffer.from([0x0a, 0x00]); // empty repeated
+        console.log(`[ITEM] get_item: ${ps.items.length} items`);
+        return Buffer.concat([itemList, encodeUint32(2, 0)]);
+    }
+
     // ---- Submit Map Mine (Ore) ----
     if (cmd.includes('submit_map_mine')) {
         const mineId = fields[1] || 0;
         console.log(`[MINE] mine_id=${mineId}`);
-        const msgBody = encodeString(1, '采集成功！');
-        pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msgBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
-        return Buffer.concat([
-            encodeUint32(1, 0),
+
+        // Give player an ore item
+        const ps = getPlayerState(socket._uid || 1);
+        const itemId = 20081;  // 黄铁矿 (real item ID from item.pbconf)
+        const existingItem = ps.items.find(i => i.item_id === itemId);
+        if (existingItem) {
+            existingItem.item_count = (existingItem.item_count || 1) + 1;
+        } else {
+            ps.items.push({item_id: itemId, item_count: 1});
+        }
+        console.log(`[MINE] Awarded item ${itemId}, now have ${ps.items.length} items`);
+
+        // Correct push format for cli_notify_gain_prize_out:
+        // prize (field 1, repeated prize_t)
+        //   └ item (field 6, repeated item_t)
+        //        ├ item_id (field 1, int32)
+        //        └ item_count (field 2, int32)
+        const itemData = Buffer.concat([
+            encodeUint32(1, itemId),
             encodeUint32(2, 1),
-            encodeUint32(3, 5),
         ]);
+        const prizeMsg = Buffer.concat([
+            encodeMessage(1,  // prize (field 1, repeated)
+                encodeMessage(6, itemData)  // item (field 6, repeated)
+            ),
+        ]);
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', prizeMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+
+        // Also push bag update notification
+        const itemUpdate = Buffer.concat([
+            encodeUint32(1, itemId),
+            encodeUint32(2, 1),
+        ]);
+        const bagUpdate = Buffer.concat([
+            encodeMessage(1, itemUpdate),
+            encodeUint32(2, 0),
+        ]);
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+
+        // Also push text message
+        const msgBody = encodeString(1, '采集成功！获得矿石x1');
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msgBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+
+        // Mining response: use 4-byte placeholder (Frida autofix handles item data)
+        // Proto fields are extension-based (12=varint, 26=fixed32) which don't
+        // write to the fixed offsets (+8, +12) where the game reads them.
+        // frida_mine_autofix.js intercepts Merge and injects correct values.
+        return Buffer.from([0x0a, 0x00, 0x10, 0x00]);
     }
 
     // ---- Submit Map Event (NPC Interaction) ----
