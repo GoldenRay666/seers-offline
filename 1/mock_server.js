@@ -211,18 +211,18 @@ function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
         encodeMessage(3, Buffer.concat([encodeUint32(1, 100011)])),
     ]);
 
-    // Mine info (ore spots)
-    const mineInfo = Buffer.concat([
-        encodeUint32(1, mapId),
-        encodeUint32(2, 5),
-        encodeUint32(3, Math.floor(Date.now() / 1000)),
+    // Mine info (ore spots) - repeated entries, one per ore type
+    const now = Math.floor(Date.now() / 1000);
+    const mineList = Buffer.concat([
+        encodeMessage(4, Buffer.concat([encodeUint32(1, 10001), encodeUint32(2, 5), encodeUint32(3, now)])),
+        encodeMessage(4, Buffer.concat([encodeUint32(1, 10023), encodeUint32(2, 5), encodeUint32(3, now)])),
     ]);
 
     return Buffer.concat([
         encodeUint32(1, mapId),
         encodeMessage(2, playerEntry),
         npcs,
-        encodeMessage(4, mineInfo),
+        mineList,
     ]);
 }
 
@@ -781,23 +781,7 @@ function buildResponse(cmd, fields, socket) {
         }
         console.log(`[MINE] Awarded item ${itemId}, now have ${ps.items.length} items`);
 
-        // Correct push format for cli_notify_gain_prize_out:
-        // prize (field 1, repeated prize_t)
-        //   └ item (field 6, repeated item_t)
-        //        ├ item_id (field 1, int32)
-        //        └ item_count (field 2, int32)
-        const itemData = Buffer.concat([
-            encodeUint32(1, itemId),
-            encodeUint32(2, 1),
-        ]);
-        const prizeMsg = Buffer.concat([
-            encodeMessage(1,  // prize (field 1, repeated)
-                encodeMessage(6, itemData)  // item (field 6, repeated)
-            ),
-        ]);
-        pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', prizeMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
-
-        // Also push bag update: one_t in new_grid (field 1?)
+        // Push bag update: one_t in new_grid (field 1)
         // one_t has: item_id(1), count(2), grid_id(3)
         const oneT = Buffer.concat([
             encodeUint32(1, itemId),

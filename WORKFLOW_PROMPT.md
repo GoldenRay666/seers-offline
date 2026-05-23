@@ -25,7 +25,70 @@
 
 ---
 
-## 三层故障定位框架
+## 协议分析三步法（核心方法论）
+
+**每次遇到 proto 格式/字段映射问题，依次执行这三步，不要跳过：**
+
+### 第一步：分析 mock 日志
+
+`mock.log.new` 是黄金数据源，直接读：
+- 客户端发了什么 CMD？字段列表是什么？
+- mock 回了多少字节 body？body 的 hex dump 是什么？
+- 客户端收到后断连了还是继续发了下一条消息？
+- **关键信号**：返回 null → 客户端超时断连（2 字节 body → `invalid message body length: -2` → 必须 ≥4 字节）
+
+此步产出：确定问题出在哪个消息，当前发送的 body hex 是什么。
+
+### 第二步：Frida 监控二进制函数
+
+写 Frida 脚本 hook 相关函数的 `MergePartialFromCodedStream` 和 `IsInitialized`：
+
+```javascript
+Interceptor.attach(mergeAddr, {
+    onEnter(args) { this.msg = args[0]; },
+    onLeave(retval) {
+        // retval=0 → merge 失败（字段不匹配/IsInitialized 失败）
+        // retval=1 → merge 成功
+        // dump msg 内存看哪些字段有值
+    }
+});
+```
+
+- 挖矿/打开背包触发目标消息
+- 看 `ret=0` 还是 `ret=1`
+- 看 msg dump 中哪些 offset 有值（对比 IDA 验证）
+
+此步产出：确定 merge 是否成功，哪些字段被写入，哪个 IsInitialized 返回 false。
+
+### 第三步：IDA 反编译确认字段映射
+
+跑 IDA 脚本反编译目标消息的 `MergePartialFromCodedStream`：
+
+```python
+idaapi.auto_wait()
+for ea in idautils.Functions():
+    name = idc.get_func_name(ea)
+    if target in name and "MergePartialFromCodedStream" in name:
+        # disassemble full function
+```
+
+从 ARM 汇编中提取：
+- switch case 的 field number
+- `ReadPrimitive` 的 target offset（如 `ADDS R1, #8` = msg+8）
+- `ReadMessageNoVirtual` 的 vector offset
+- mask 的 offset 和 bit 位
+- `IsInitialized` 检查哪个 mask bit
+
+此步产出：精确的 `wire field → compiled offset` 映射表，**直接作为 mock 编码依据**。
+
+### 三步法示例（本次会话）
+
+- **Step 1** mock.log：`cli_get_item_out` 只发了 2 字节 → 客户端断连 → 改为 ≥4 字节后通过
+- **Step 2** Frida：`bag_updates_out` merge ret=1，msg+0x68=30(capacity)，mask+0x70=1 → 父消息格式正确
+- **Step 3** IDA：`get_item_out_one_t` f1→msg+8(item_id REQUIRED), f2→msg+0xC(grid_id); `bag_updates_out_one_t` f1→msg+8(grid_id REQUIRED), f2→msg+0xC(item_id) → **两个 one_t 字段 1 含义不同**，mock 需区分编码
+
+---
+## 三层故障定位框架（旧版，保留用于非 proto 问题）
 
 每次"游戏不工作"都按三层依次排除，**不要跳层**：
 
@@ -221,20 +284,26 @@ autofix 做了：
 
 **`submit_map_mine_info_out`**: msg+8=mine_item_id, msg+12=mine_item_count
 **`cli_notify_item_bag_updates_out`**: capacity(1), del_grid(2), new_grid(3), update_grid(4)
+**`cli_notify_item_bag_updates_out_one_t`** (descriptor): grid_id(1), item_id(2), count(3), level(4), get_time(5), wearing(6), mon_uuid(7), prefix_id(8)
+**`cli_get_item_out`**: capacity(1), one(2)  ← one_t: item_id(1), grid_id(2), count(3), level(4), get_time(5), wearing(6), mon_uuid(7), prefix_id(8)
+**注意**: bag_updates 的 one_t 和 get_item_out 的 one_t 字段号不同！bag_updates_one_t 的 field1=grid_id，get_item_out_one_t 的 field1=item_id
 **`one_t`** (实测编译后映射): wire field1→compiled field2(item_id@msg+8), wire field2→compiled field3(count@msg+12), 编译后 field1(required)无 wire 映射 → IsInitialized=false
 
 ### 待解决的阻塞（2026-05-23 更新）
 
-**挖矿后道具不入背包** → 根因已定位：
-1. push 帧格式 bug（`headerLen = 4 + protoLen` 应为 `headerLen = protoLen`）→ **已修复**，所有 push merge 现在成功
-2. `cli_notify_item_bag_updates_out` push 的 body 格式——proto descriptor 与编译后代码字段号偏移不一致
-   - Descriptor: `new_grid=field3`, `one_t: grid_id=1, item_id=2, count=3`
-   - 编译代码实际映射：wire field1→compiled field2(item_id), wire field2→compiled field3(count)
-   - `one_t::IsInitialized()` 返回 false（编译后 required field1 无 wire 映射）→ **Frida 劫持 IsInitialized 返回 true**
-3. `cli_get_item_out` 响应 body 格式不匹配 → 覆盖了 push 写入的正确数据 → 背包显示垃圾道具
-4. 背包 UI 有 bug（退出按钮不响应，可能是独立问题）
+**挖矿后道具不入背包** → 大部分已解决：
+1. push 帧格式 bug（`headerLen = 4 + protoLen` 应为 `headerLen = protoLen`）→ **已修复**
+2. `cli_notify_item_bag_updates_out` push 的 body 格式：
+   - 父消息: capacity(field1), del_grid(field2), new_grid(field3, repeated one_t), update_grid(field4) → **已修复，mock 发送 capacity=999 + new_grid=field3**
+   - one_t: 使用编译后映射 wire f1=item_id, wire f2=count（非 descriptor 的 grid_id/field1 → item_id/field2）
+   - `one_t::IsInitialized()` 返回 false → **Frida 劫持 IsInitialized 返回 true**
+3. `cli_get_item_out` 响应 **已禁用（return null）**，避免覆盖 push 写入的正确数据
+4. **初始容量推送**：select_main_mon 时推送 capacity=999（`cli_notify_item_bag_updates_out` field1）
+5. 背包 UI 退出按钮不响应（`frida_fix_bag.js` 或 autofix 中 removeEventSwallowLayer 已处理）
 
-**道具入包链路已完全打通**：挖矿 → mock push bag update → merge 成功 → handler → `updateItemInBag` 被调用 → 道具写入背包。数据格式还需微调。
+**道具入包链路已完全打通**：挖矿 → mock push bag update → merge 成功 → handler → `updateItemInBag` 被调用 → 道具写入背包。
+
+**Capacity=0 问题**：可能是 UI 从非 proto 路径读取容量（如 UserData 静态成员或 Lua config），如果 proto push 不生效需 Frida 直接写内存。
 
 ## 关键 .so 版本
 
