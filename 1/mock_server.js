@@ -405,13 +405,15 @@ function pushMessage(socket, cmd, body, f3, f4, f5) {
         encodeUint32(4, f4 || 0),
         encodeUint32(5, f5 || 0),
     ]);
-    const headerLen = headerProto.length;  // raw header length (game reads it directly)
-    const totalLen = 4 + headerLen + body.length;  // 4 (totalLen) + header + body
+    // headerLen = protoLen. Game reads body at msgData[headerLen:]
+    // This includes 4 header tail bytes before the actual body.
+    const headerLen = headerProto.length;
+    const totalLen = 12 + headerLen + body.length;
     const packet = Buffer.alloc(totalLen);
     packet.writeUInt32BE(totalLen, 0);
     packet.writeUInt32BE(headerLen, 4);
     headerProto.copy(packet, 8);
-    body.copy(packet, 8 + headerProto.length);
+    body.copy(packet, 8 + headerLen);
     socket.write(packet);
     console.log(`[PUSH] CMD: ${cmd} seq=${socket._pushSeq} body=${body.length} bytes total=${totalLen}`);
 }
@@ -789,7 +791,8 @@ function buildResponse(cmd, fields, socket) {
         ]);
         // Try different field numbers for new_grid
         const bagUpdate = Buffer.concat([
-            encodeMessage(1, oneT),  // new_grid = field 1
+            encodeUint32(1, 30),        // capacity (REQUIRED for IsInitialized)
+            encodeMessage(3, oneT),     // new_grid
         ]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
