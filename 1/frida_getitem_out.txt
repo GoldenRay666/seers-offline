@@ -1,0 +1,22 @@
+     ____
+    / _  |   Frida 17.9.10 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message: {'type': 'send', 'payload': '[HOOK] Parent merge @ 0xc104fef5 name=_ZN14ISeer20CSProto16cli_get_item_out27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE'} data: None
+message: {'type': 'send', 'payload': '[HOOK] Parent IsInitialized @ 0xc0ff42d5'} data: None
+message: {'type': 'send', 'payload': '[HOOK] one_t merge @ 0xc100f115'} data: None
+message: {'type': 'send', 'payload': '[HOOK] one_t IsInitialized @ 0xc0fec3d9'} data: None
+message: {'type': 'send', 'payload': '[***] Ready'} [Remote::Gadget ]-> data: None
+message: {'type': 'send', 'payload': '[ONE_MERGE] ret=1 id@+8=20082 grid@+C=0 cnt@+10=0 mask@+2C=1'} data: None
+message: {'type': 'send', 'payload': '[PARENT_MERGE] ret=1'} data: None
+message: {'type': 'send', 'payload': '[PARENT] cap@+28=30 mask@+30=1 vec_begin@+8=4028918752'} data: None
+message: {'type': 'send', 'payload': '[ONE_INIT] ret=0'} data: None
+message: {'type': 'send', 'payload': '[PARENT_INIT] ret=0 cap@+28=30 mask@+30=1'} data: None

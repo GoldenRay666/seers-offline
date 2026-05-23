@@ -1,0 +1,17 @@
+     ____
+    / _  |   Frida 17.9.10 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message: {'type': 'send', 'payload': '[seers-fix] Mining merge hooked'} data: None
+message: {'type': 'send', 'payload': '[seers-fix] get_item_out merge hooked'} data: None
+message: {'type': 'send', 'payload': '[seers-fix] addItemFn=true mgrFn=true getInfoFn=true questSetProgress=true questShared=true'} data: None
+message: {'type': 'send', 'payload': '[seers-fix] Bag fix hooked'} data: None
+[Remote::Gadget ]-> 

@@ -1,0 +1,30 @@
+     ____
+    / _  |   Frida 17.9.10 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message: {'type': 'send', 'payload': '[HOOK] get_item_out merge'}[Remote::Gadget ]->  data: None
+message: {'type': 'send', 'payload': '[HOOK] get_item_out_one_t merge'} data: None
+message: {'type': 'send', 'payload': '[HOOK] bag_updates_out merge'} data: None
+message: {'type': 'send', 'payload': '[HOOK] bag_updates_out_one_t merge'} data: None
+message: {'type': 'send', 'payload': '[HOOK] submit_map_mine_info_out merge'} data: None
+message: {'type': 'send', 'payload': '[***] All hooks installed. Mine now.'} data: None
+message: {'type': 'send', 'payload': '[BAG_ONE_MERGE] ret=1'} data: None
+message: {'type': 'send', 'payload': '[BAG_ONE] [+0]=3243083360, [+32]=3243330912, [+48]=3164056704'} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] ret=1'} data: None
+message: {'type': 'send', 'payload': '[BAG_MSG] [+0]=3243083448, [+4]=3168572208, [+8]=4006174104, [+20]=4, [+24]=1936942445, [+28]=543516513, [+32]=1948280431, [+36]=543518841, [+40]=4006174136, [+44]=1, [+48]=1, [+52]=4, [+56]=3187241376, [+60]=1751082867, [+64]=1600414053, [+68]=1646273140, [+72]=4006174168, [+84]=4, [+88]=1735289203, [+92]=1902473760, [+96]=1701996917, [+100]=1768300644, [+104]=30, [+112]=1, [+116]=1101004800, [+124]=1'} data: None
+message: {'type': 'send', 'payload': '[ISINIT] notify_item_bag_updates_out_one_t = 0'} data: None
+message: {'type': 'send', 'payload': '[ISINIT] notify_item_bag_updates_out = 0'} data: None
+message: {'type': 'send', 'payload': '[ISINIT] notify_item_bag_updates_out = 0'} data: None
+message: {'type': 'send', 'payload': '[MINE_MERGE] ret=0'} data: None
+message: {'type': 'send', 'payload': '[MINE_MSG] [+0]=3243080984, [+12]=1, [+24]=3994755428, [+28]=5, [+32]=8, [+40]=3168576448, [+44]=3185135628, [+48]=3994755396, [+56]=8'} data: None
+Connection terminated
+
+Thank you for using Frida!

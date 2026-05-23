@@ -1,0 +1,17 @@
+     ____
+    / _  |   Frida 17.9.10 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message: [Remote::Gadget ]-> {'type': 'send', 'payload': '[HOOK] @ 0xc101057f'} data: None
+message: {'type': 'send', 'payload': '[***] Mine now.'} data: None
+Connection terminated
+
+Thank you for using Frida!

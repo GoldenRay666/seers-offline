@@ -1,69 +1,49 @@
-// Deeper trace: hook the actual body bytes and field reads
+// Scan CodedInputStream for buffer pointers
 'use strict';
 
 const mod = Process.findModuleByName("libgame_logic.so");
 
-// Hook the merge function and dump the body bytes
 for (const exp of mod.enumerateExports()) {
-    if (exp.name.includes("submit_map_mine_info_out") &&
-        exp.name.includes("MergePartialFromCodedStream")) {
+    if (!exp.name.includes("submit_map_mine_info_out")) continue;
+    if (!exp.name.includes("MergePartialFromCodedStream")) continue;
 
-        Interceptor.attach(exp.address, {
-            onEnter(args) {
-                // args[1] is CodedInputStream*
-                const input = args[1];
-                // Try to read available data
-                send(`[MERGE] this=${args[0]} input=${input}`);
+    Interceptor.attach(exp.address, {
+        onEnter(args) {
+            this.msg = args[0];
+            const stream = args[1];
 
-                // Read the bytes from the input stream
-                // CodedInputStream has internal buffer
-                try {
-                    // Try to read the first bytes from input
-                    const ptr = input.add(0x10); // might be buffer pointer at offset 0x10
-                    const len = input.add(0x18).readU32(); // might be limit at offset 0x18
-                    send(`[MERGE] input buffer ptr=${ptr} len=${len}`);
-
-                    if (ptr && !ptr.isNull() && len > 0 && len < 200) {
-                        const bytes = ptr.readByteArray(len);
-                        if (bytes) {
-                            const arr = new Uint8Array(bytes);
-                            let hex = '';
-                            for (let i = 0; i < arr.length; i++) {
-                                hex += arr[i].toString(16).padStart(2, '0') + ' ';
-                            }
-                            send(`[MERGE] body bytes: ${hex}`);
-                        }
-                    }
-                } catch(e) {
-                    send(`[MERGE] Error reading input: ${e.message}`);
-                }
-            },
-            onLeave(retval) {
-                send(`[MERGE] Result: ${retval}`);
+            // Dump stream object: 0x40 bytes
+            let streamDump = '';
+            for (let off = 0; off < 0x40; off += 4) {
+                try { streamDump += ` +${off}=${stream.add(off).readU32()}`; } catch(e) {}
             }
-        });
-        send(`Hooked MergePartialFromCodedStream`);
-    }
-}
+            send(`[MINE] stream dump:${streamDump}`);
 
-// Also hook ReadTag to see which fields are read
-for (const exp of mod.enumerateExports()) {
-    // Find ReadTag in the google::protobuf::io namespace
-    if (exp.name.includes("ReadTag") && exp.name.includes("CodedInputStream")) {
-        send(`ReadTag @ ${exp.address}`);
-        try {
-            Interceptor.attach(exp.address, {
-                onLeave(retval) {
-                    if (retval.toInt32() !== 0) {
-                        const tag = retval.toInt32();
-                        const fieldNum = tag >>> 3;
-                        const wireType = tag & 7;
-                        send(`[READ] tag=${tag} field=${fieldNum} wire=${wireType}`);
+            // Try all offsets for buffer ptr
+            for (let off = 0; off < 0x30; off += 4) {
+                try {
+                    const ptr = stream.add(off).readPointer();
+                    const endPtr = stream.add(off+4).readPointer();
+                    const diff = endPtr.sub(ptr).toInt32();
+                    if (diff > 0 && diff < 200) {
+                        send(`[MINE] off=${off}: ptr_off=${off} end_off=${off+4} diff=${diff}`);
+                        try {
+                            const raw = ptr.readByteArray(Math.min(diff, 64));
+                            const arr = new Uint8Array(raw);
+                            let hex = '';
+                            for (let i = 0; i < arr.length; i++) hex += arr[i].toString(16).padStart(2,'0');
+                            send(`[MINE]   RAW: ${hex}`);
+                        } catch(e) {}
                     }
-                }
-            });
-        } catch(e) {}
-    }
+                } catch(e) {}
+            }
+        },
+        onLeave(retval) {
+            const m = this.msg;
+            send(`[MINE] ret=${retval.toInt32()} +8=${m.add(8).readU32()} +12=${m.add(12).readU32()} mask+14=${m.add(0x14).readU32()}`);
+        }
+    });
+    send(`[HOOK] @ ${exp.address}`);
+    break;
 }
-
-send(`[+] Hooks active. Go mine!`);
+send('[***] Mine now.');

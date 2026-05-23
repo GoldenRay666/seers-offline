@@ -1,0 +1,54 @@
+     ____
+    / _  |   Frida 17.9.10 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://frida.re/docs/home/
+   . . . .
+   . . . .   Connected to 127.0.0.1:27042 (id=socket@127.0.0.1:27042)
+Attaching...
+message:[Remote::Gadget ]->  {'type': 'send', 'payload': '[BAG_INIT] Hooked @ 0xc0ff5301'} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] Hooked @ 0xc1051165'} data: None
+message: {'type': 'send', 'payload': '[UPDATE] Hooked @ 0xc0f9507d'} data: None
+message: {'type': 'send', 'payload': '\n=== NetWorkUtil ==='} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil14onSockectErrorE12KSocketErrori @ 0xc107f04d'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtilD2Ev @ 0xc107f0a5'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil9onTimeOutESsi @ 0xc107fd31'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil18cleanServerConnectEb @ 0xc107fd89'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtilC2Ev @ 0xc1080149'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil14connect2ServerEPKcifi @ 0xc107f645'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil11sendMessageEPN6google8protobuf7MessageEfibb @ 0xc107f9f9'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil15onConnectResultE13KSocketStatusi @ 0xc107f05d'} data: None
+message: {'type': 'send', 'payload': '  _ZTI11NetWorkUtil @ 0xc14db9a0'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil6updateEf @ 0xc107ff21'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil16reconnect2ServerEfi @ 0xc107f0f9'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil17scheduleReconnectEf @ 0xc107f01d'} data: None
+message: {'type': 'send', 'payload': '  _ZTV11NetWorkUtil @ 0xc14db9b0'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtilD0Ev @ 0xc107f0e5'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtilD1Ev @ 0xc107f0a5'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil13decodeMessageEPciRS0_RiS1_S2_S2_ @ 0xc107f2fd'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil19encodeMessageHeaderEji @ 0xc107f3b5'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil15dispatchMessageEPciS0_ii @ 0xc107f479'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil14tickRepeatSendEfb @ 0xc107f5fd'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil22sendTestLogEchoMessageEPKc @ 0xc107facd'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil12resetTimeOutEv @ 0xc107fd05'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtil6filterEv @ 0xc107fe49'} data: None
+message: {'type': 'send', 'payload': '  _ZTS11NetWorkUtil @ 0xc142a6aa'} data: None
+message: {'type': 'send', 'payload': '  _ZN11NetWorkUtilC1Ev @ 0xc1080149'} data: None
+message: {'type': 'send', 'payload': '[CHAIN] Ready. Mine now.'} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] BODY(14b): 20002800081e1a0608f29c011005'} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] ret=1'} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] +20=4 +44=1 +48=1 +52=4 +84=4 +104=30 +112=1 +116=9 +120=12 +124=28544'} data: None
+message: {'type': 'send', 'payload': '[BAG_INIT] ret=1 mask+70=1'} data: None
+message: {'type': 'send', 'payload': '[UPDATE] updateItemInBag! '} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] BODY(14b): 20002800081e1a0608f19c01100a'} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] ret=1'} data: None
+message: {'type': 'send', 'payload': '[BAG_MERGE] +20=4 +44=1 +48=1 +52=4 +84=4 +104=30 +112=1 +116=9 +120=12 +124=28544'} data: None
+message: {'type': 'send', 'payload': '[BAG_INIT] ret=1 mask+70=1'} data: None
+message: {'type': 'send', 'payload': '[UPDATE] updateItemInBag! '} data: None
+Connection terminated
+
+Thank you for using Frida!

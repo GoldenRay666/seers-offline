@@ -640,7 +640,7 @@ function handleGameClient(socket) {
                 socket.write(packet);
 
                 // Dump full packet for mine-related and a sample walk message
-                if (respCmd.includes('mine') || respCmd.includes('walk')) {
+                if (respCmd.includes('mine') || respCmd.includes('walk') || respCmd.includes('get_item')) {
                     const hex = packet.toString('hex');
                     const hdrHex = respHeader.toString('hex');
                     const bodyHex = respBody.toString('hex');
@@ -696,6 +696,13 @@ function buildResponse(cmd, fields, socket) {
              prize_id: 50002, area_id: 1,
              steps: [{seq: 1, step_type: 6, value: 1, target: '采矿', link: [10001]}]},
         ];
+        // Starter items - swap order to test
+        ps.items = [
+            {item_id: 20082, item_count: 5, grid_id: 1},
+            {item_id: 20081, item_count: 10, grid_id: 2},
+        ];
+        console.log(`[ROLE] Starter items: ${ps.items.length} types`);
+
         // Track which uid this socket is connected to
         socket._uid = uid;
         console.log(`[ROLE] Created: ${nick} uid=${uid}`);
@@ -738,6 +745,20 @@ function buildResponse(cmd, fields, socket) {
         if (role) {
             const mapBody = buildPlayerEnterMapOut(10001, role.nick, role.roleTm, role.gender);
             pushMessage(socket, 'ISeer20CSProto.player_enter_map_out', mapBody, socket._lastF3 || 1, 0, 0);
+
+            // Sync items to game m_itemBag via bag update push
+            const ps = getPlayerState(socket._uid || 1);
+            for (const item of ps.items) {
+                const oneT = Buffer.concat([
+                    encodeUint32(1, item.item_id),
+                    encodeUint32(2, item.item_count),
+                ]);
+                const bagUpdate = Buffer.concat([
+                    encodeUint32(1, 30),
+                    encodeMessage(3, oneT),
+                ]);
+                pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
+            }
         }
         const monInfo = buildMonInfo(monId, 5, null);
         return encodeMessage(1, monInfo);
@@ -760,10 +781,24 @@ function buildResponse(cmd, fields, socket) {
     }
 
     // ---- Get Items (Inventory) ----
-    if (cmd.includes('get_item') && !cmd.includes('get_item_')) {
-        // Brute-force capacity: set ALL fields 1-10 to 999
-        const parts=[Buffer.from([0x0a, 0x00])]; // empty items
-        for(let i=1;i<=10;i++) parts.push(encodeUint32(i, 999));
+    if (cmd.includes('cli_get_item_in')) {
+        // Only 1 item per get_item due to ReadMessageNoVirtual sub-stream limit bug
+        // Additional items synced via bag_update pushes
+        const ps = getPlayerState(socket._uid || 1);
+        const parts = [];
+        parts.push(encodeUint32(1, 30)); // capacity
+        if (ps.items.length > 0) {
+            const item = ps.items[0]; // only first item
+            const oneT = Buffer.concat([
+                encodeUint32(1, item.item_id),
+                encodeUint32(2, item.grid_id || 1),
+                encodeUint32(3, item.item_count),
+            ]);
+            parts.push(encodeMessage(2, oneT));
+        } else {
+            parts.push(Buffer.from([0x12, 0x00]));
+        }
+        console.log(`[GETITEM] capacity=30, showing 1 of ${ps.items.length} items`);
         return Buffer.concat(parts);
     }
 
