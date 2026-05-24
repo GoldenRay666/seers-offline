@@ -788,6 +788,8 @@ function buildResponse(cmd, fields, socket) {
         parts.push(encodeUint32(1, 30)); // capacity
         if (ps.items.length > 0) {
             const item = ps.items[0]; // only first item
+            // one_t: f1=item_id, f2=grid_id (maps to compiled count@+12), f3=count
+            // grid_id must be >0 for handler to process
             const oneT = Buffer.concat([
                 encodeUint32(1, item.item_id),
                 encodeUint32(2, item.grid_id || 1),
