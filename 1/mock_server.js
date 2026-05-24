@@ -698,8 +698,7 @@ function buildResponse(cmd, fields, socket) {
         ];
         // Starter items - swap order to test
         ps.items = [
-            {item_id: 20082, item_count: 5, grid_id: 1},
-            {item_id: 20081, item_count: 10, grid_id: 2},
+            {item_id: 20081, item_count: 10, grid_id: 1},  // 黄铁矿 x10
         ];
         console.log(`[ROLE] Starter items: ${ps.items.length} types`);
 

@@ -20,3 +20,6 @@ message: {'type': 'send', 'payload': '[PARENT_MERGE] ret=1'} data: None
 message: {'type': 'send', 'payload': '[PARENT] cap@+28=30 mask@+30=1 vec_begin@+8=4028918752'} data: None
 message: {'type': 'send', 'payload': '[ONE_INIT] ret=0'} data: None
 message: {'type': 'send', 'payload': '[PARENT_INIT] ret=0 cap@+28=30 mask@+30=1'} data: None
+Connection terminated
+
+Thank you for using Frida!
