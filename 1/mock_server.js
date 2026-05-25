@@ -831,9 +831,11 @@ function buildResponse(cmd, fields, socket) {
         console.log(`[MINE] Awarded item ${itemId}, now have ${ps.items.length} items`);
 
         // one_t: f1-6,f8=INT32 (varint, no zigzag), f7=STRING
+        const exist = ps.items.find(i => i.item_id === itemId);
+        const totalCount = exist ? exist.item_count : 1;
         const oneT = Buffer.concat([
             encodeUint32(1, itemId),            // f1: item_id
-            encodeUint32(2, 1),                 // f2: count
+            encodeUint32(2, totalCount),        // f2: TOTAL count
             encodeUint32(3, ps.items.length),    // f3: grid_id
             encodeUint32(4, 0),                 // f4: mon_uuid
             encodeUint32(5, 0),                 // f5: get_time
@@ -883,7 +885,7 @@ function buildResponse(cmd, fields, socket) {
             item.item_count = Math.max(0, (item.item_count || 0) - count);
             console.log(`[SELL] item ${itemId} count reduced to ${item.item_count}`);
         }
-        // Push bag_update + sell_item_out via pushMessage (avoids frame CodedInputStream bug)
+        // Push bag_update with TOTAL count (field 4 = updateGrid)
         const oneT = Buffer.concat([
             encodeUint32(1, itemId),
             encodeUint32(2, item ? item.item_count : 0),
@@ -894,8 +896,11 @@ function buildResponse(cmd, fields, socket) {
             encodeMessage(4, oneT),
         ]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
-        pushMessage(socket, 'ISeer20CSProto.sell_item_out', encodeUint32(1, 0), socket._lastF3 || 1, 0, 0);
-        return Buffer.alloc(0);
+        // sell_item_out: f1=0 + padding for CS_FIX (need >=6 bytes body)
+        return Buffer.concat([
+            encodeUint32(1, 0),                   // field 1: result=0 (success)
+            Buffer.from([0x18, 0x00, 0x20, 0x00]),  // dummy f3:0,f4:0 for padding
+        ]);
     }
 
     // ---- Submit Map Event (NPC Interaction) ----
