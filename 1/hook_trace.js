@@ -71,6 +71,81 @@ function install() {
         break;
     }
 
+    // === updateItemInBag — fix layout + accumulate count ===
+    let _bagTable = null;
+    for (const e of mod.enumerateExports()) {
+        if (e.name === "_ZN8UserData9m_itemBagE") {
+            _bagTable = e.address; // pointer to m_itemBag vector
+            break;
+        }
+    }
+    for (const exp of mod.enumerateExports()) {
+        if (exp.name !== "_ZN8UserData15updateItemInBagERK8SaveItemPKc") continue;
+        Interceptor.attach(exp.address, {
+            onEnter(args) {
+                const si = args[0];
+                const handlerCount = si.add(0).readU32();
+                const handlerGrid  = si.add(4).readU32();
+                const itemId = si.add(0x1C).readU32();
+                if (!(itemId > 0 && itemId < 100000 && handlerCount > 0 && handlerCount < 10000)) return;
+
+                // Fix layout: itemId→+0, count→+4, grid→+8
+                si.add(0).writeU32(itemId);
+                si.add(4).writeU32(handlerCount);
+                const grid = handlerGrid < 1 ? 1 : handlerGrid;
+                si.add(8).writeU32(grid);
+
+                // Smart accumulate: if handlerCount < oldCount → update; else add
+                if (_bagTable && !_bagTable.isNull()) {
+                    try {
+                        const begin = _bagTable.readPointer();
+                        const end = _bagTable.add(4).readPointer();
+                        const curN = end.sub(begin).toInt32() / 0x11;
+                        let found = false;
+                        for (let i = 0; i < curN; i++) {
+                            const entry = begin.add(i * 0x11);
+                            if (entry.add(0).readU32() === itemId) {
+                                const oldCnt = entry.add(4).readU32();
+                                if (handlerCount < oldCnt) {
+                                    // UPDATE: use handler's count directly (it's the new total)
+                                    send(`[BAG_FIX] id=${itemId} UPDATE ${oldCnt}→${handlerCount}`);
+                                } else {
+                                    // ADD: handler count is the increment
+                                    const newCnt = oldCnt + handlerCount;
+                                    si.add(4).writeU32(newCnt);
+                                    send(`[BAG_FIX] id=${itemId} ADD ${oldCnt}+${handlerCount}=${newCnt}`);
+                                }
+                                found = true; break;
+                            }
+                        }
+                        if (!found) send(`[BAG_FIX] id=${itemId} NEW cnt=${handlerCount}`);
+                    } catch(e) {}
+                }
+            }
+        });
+        send(`[HOOK] updateItemInBag (layout+accumulate)`);
+        break;
+    }
+
+    // === Sell trace ===
+    for (const exp of mod.enumerateExports()) {
+        if (exp.name === "_ZN20OnlineNetworkManager19sendSellItemMessageEjjj") {
+            Interceptor.attach(exp.address, {
+                onEnter(a) { send(`[SELL_SEND] itemId=${a[1]} count=${a[2]} grid=${a[3]}`); }
+            });
+            send(`[HOOK] sendSellItemMessage`); break;
+        }
+    }
+    for (const exp of mod.enumerateExports()) {
+        if (exp.name === "_ZN14MessageHandler20handleAckMsgSellItemEv") {
+            Interceptor.attach(exp.address, {
+                onEnter(a) { send(`[SELL_ACK] called`); },
+                onLeave(r) { send(`[SELL_ACK] ret=${r}`); }
+            });
+            send(`[HOOK] handleAckMsgSellItem`); break;
+        }
+    }
+
     installed = true;
     send(`\n[READY]`);
 }

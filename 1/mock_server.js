@@ -872,6 +872,32 @@ function buildResponse(cmd, fields, socket) {
         ]);
     }
 
+    // ---- Sell Item ----
+    if (cmd.includes('sell_item')) {
+        const itemId = fields[1] || 0;
+        const count = fields[2] || 0;
+        console.log(`[SELL] itemId=${itemId} count=${count}`);
+        const ps = getPlayerState(socket._uid || 1);
+        const item = ps.items.find(i => i.item_id === itemId);
+        if (item) {
+            item.item_count = Math.max(0, (item.item_count || 0) - count);
+            console.log(`[SELL] item ${itemId} count reduced to ${item.item_count}`);
+        }
+        // Push bag_update + sell_item_out via pushMessage (avoids frame CodedInputStream bug)
+        const oneT = Buffer.concat([
+            encodeUint32(1, itemId),
+            encodeUint32(2, item ? item.item_count : 0),
+            encodeUint32(3, gridId),
+        ]);
+        const bagUpdate = Buffer.concat([
+            encodeUint32(1, 30),
+            encodeMessage(4, oneT),
+        ]);
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
+        pushMessage(socket, 'ISeer20CSProto.sell_item_out', encodeUint32(1, 0), socket._lastF3 || 1, 0, 0);
+        return Buffer.alloc(0);
+    }
+
     // ---- Submit Map Event (NPC Interaction) ----
     if (cmd.includes('submit_map_event')) {
         const eventType = fields[1] || 0;
