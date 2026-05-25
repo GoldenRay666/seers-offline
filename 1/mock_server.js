@@ -756,19 +756,7 @@ function buildResponse(cmd, fields, socket) {
             const mapBody = buildPlayerEnterMapOut(10001, role.nick, role.roleTm, role.gender);
             pushMessage(socket, 'ISeer20CSProto.player_enter_map_out', mapBody, socket._lastF3 || 1, 0, 0);
 
-            // Sync items to game m_itemBag via bag update push
-            const ps = getPlayerState(socket._uid || 1);
-            for (const item of ps.items) {
-                const oneT = Buffer.concat([
-                    encodeUint32(1, item.item_id),
-                    encodeUint32(2, item.item_count),
-                ]);
-                const bagUpdate = Buffer.concat([
-                    encodeUint32(1, 30),
-                    encodeMessage(3, oneT),
-                ]);
-                pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
-            }
+            // No initial items — items come from mining only
         }
         const monInfo = buildMonInfo(monId, 5, null);
         return encodeMessage(1, monInfo);
@@ -830,18 +818,21 @@ function buildResponse(cmd, fields, socket) {
         }
         console.log(`[MINE] Awarded item ${itemId}, now have ${ps.items.length} items`);
 
-        // one_t: f1-6,f8=INT32 (varint, no zigzag), f7=STRING
+        const oreIndexMap = {10001: 1, 10023: 2}; // map_id → ore slot
+
+        // VERIFIED: f1→SaveItem+8, f2→+0, f3→+4
+        // f1=ore_slot(grid), f2=item_id, f3=totalCount
         const exist = ps.items.find(i => i.item_id === itemId);
         const totalCount = exist ? exist.item_count : 1;
+        const oreSlot = oreIndexMap[mineId] || 1;
         const oneT = Buffer.concat([
-            encodeUint32(1, itemId),            // f1: item_id
-            encodeUint32(2, totalCount),        // f2: TOTAL count
-            encodeUint32(3, ps.items.length),    // f3: grid_id
-            encodeUint32(4, 0),                 // f4: mon_uuid
-            encodeUint32(5, 0),                 // f5: get_time
-            encodeUint32(6, 0),                 // f6: wearing
-            encodeString(7, "1"),               // f7: level (STRING)
-            encodeUint32(8, 0),                 // f8: prefix_id
+            encodeUint32(1, oreSlot),           // f1 → SaveItem+8 = grid slot
+            encodeUint32(2, itemId),            // f2 → SaveItem+0 = item_id
+            encodeUint32(3, totalCount),        // f3 → SaveItem+4 = count
+            encodeUint32(4, 0),
+            encodeUint32(5, 0), encodeUint32(6, 0),
+            encodeString(7, "1"),
+            encodeUint32(8, 0),
         ]);
         // Try different field numbers for new_grid
         const bagUpdate = Buffer.concat([
@@ -861,9 +852,6 @@ function buildResponse(cmd, fields, socket) {
         const msgBody = encodeString(1, '采集成功！获得矿石x1');
         pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msgBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
-        // Field 2 = ore index (1-5, single-byte varint → msg+12 in Frida)
-        // Frida autofix reads index from msg+12, maps to real item ID
-        const oreIndexMap = {10001: 1, 10023: 2}; // map_id → ore index
         const oreIndex = oreIndexMap[mineId] || 1;
         console.log(`[MINE] mine_id=${mineId} → ore_index=${oreIndex}`);
 
