@@ -27,6 +27,16 @@ const net = require('net');
 // Protobuf helpers
 // =============================================================================
 
+// zigzag-encoded varint for SINT32 fields (IDA verified)
+function zigzagVarint(n) {
+    const z = ((n << 1) ^ (n >> 31)) >>> 0;
+    const bytes = [];
+    let v = z;
+    while (v > 0x7f) { bytes.push((v & 0x7f) | 0x80); v >>>= 7; }
+    bytes.push(v & 0x7f);
+    return Buffer.from(bytes);
+}
+
 function encodeVarint(value) {
     if (value < 0) value = (value >>> 0); // convert to unsigned
     const result = [];
@@ -408,6 +418,7 @@ function pushMessage(socket, cmd, body, f3, f4, f5) {
     // headerLen = protoLen. Game reads body at msgData[headerLen:]
     // This includes 4 header tail bytes before the actual body.
     const headerLen = headerProto.length;
+    // +4 compensates for dispatch's body offset calc
     const totalLen = 12 + headerLen + body.length;
     const packet = Buffer.alloc(totalLen);
     packet.writeUInt32BE(totalLen, 0);
@@ -630,7 +641,7 @@ function handleGameClient(socket) {
                     encodeUint32(4, header.f4 || 0),
                     encodeUint32(5, header.f5 || 0),
                 ]);
-                const respHeaderLen = 4 + respHeader.length;
+                const respHeaderLen = respHeader.length;
                 const totalMsgLen = 8 + respHeader.length + respBody.length;
                 const packet = Buffer.alloc(totalMsgLen);
                 packet.writeUInt32BE(totalMsgLen, 0);
@@ -789,11 +800,11 @@ function buildResponse(cmd, fields, socket) {
         if (ps.items.length > 0) {
             const item = ps.items[0]; // only first item
             // one_t: f1=item_id, f2=grid_id (maps to compiled count@+12), f3=count
-            // grid_id must be >0 for handler to process
+            // cli_get_item_out_one_t: f1=item_id, f2=grid_id, f3=count
             const oneT = Buffer.concat([
                 encodeUint32(1, item.item_id),
                 encodeUint32(2, item.grid_id || 1),
-                encodeUint32(3, item.item_count),
+                encodeUint32(3, item.item_count || 1),
             ]);
             parts.push(encodeMessage(2, oneT));
         } else {
@@ -819,11 +830,16 @@ function buildResponse(cmd, fields, socket) {
         }
         console.log(`[MINE] Awarded item ${itemId}, now have ${ps.items.length} items`);
 
-        // Push bag update: one_t in new_grid (field 1)
-        // one_t has: item_id(1), count(2), grid_id(3)
+        // one_t: f1-6,f8=INT32 (varint, no zigzag), f7=STRING
         const oneT = Buffer.concat([
-            encodeUint32(1, itemId),
-            encodeUint32(2, 1),
+            encodeUint32(1, itemId),            // f1: item_id
+            encodeUint32(2, 1),                 // f2: count
+            encodeUint32(3, ps.items.length),    // f3: grid_id
+            encodeUint32(4, 0),                 // f4: mon_uuid
+            encodeUint32(5, 0),                 // f5: get_time
+            encodeUint32(6, 0),                 // f6: wearing
+            encodeString(7, "1"),               // f7: level (STRING)
+            encodeUint32(8, 0),                 // f8: prefix_id
         ]);
         // Try different field numbers for new_grid
         const bagUpdate = Buffer.concat([
@@ -849,9 +865,10 @@ function buildResponse(cmd, fields, socket) {
         const oreIndex = oreIndexMap[mineId] || 1;
         console.log(`[MINE] mine_id=${mineId} → ore_index=${oreIndex}`);
 
+        // f1=INT32(item_id)→msg+8, f2=INT32(ore_index)→msg+12
         return Buffer.concat([
-            Buffer.from([0x0a, 0x00]),       // field 1: empty placeholder
-            encodeUint32(2, oreIndex),       // field 2: ore index → msg+12
+            encodeUint32(1, itemId),
+            encodeUint32(2, oreIndex),
         ]);
     }
 
