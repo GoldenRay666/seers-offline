@@ -68,6 +68,10 @@ function install() {
                     }
                 });
             }
+            // Battle end merge trace
+            if ((nm.includes("battle_end")||nm.includes("btl_notify_battle_end")) && nm.includes("MergePartial") && nm.length<120) {
+                Interceptor.attach(exp.address, {onEnter(a){send(`[BTL-END] ${nm.split("::").pop()}`);}});
+            }
             // finish_task_out merge — trace fields
             if (nm.includes("finish_task_out") && nm.includes("MergePartial") && nm.length<120) {
                 Interceptor.attach(exp.address, {
@@ -105,6 +109,17 @@ function install() {
             if (nm.includes("handleErrMapTask") || nm.includes("getQuestInfoByQuestId") ||
                 nm.includes("isHaveQuestByQuestID") || nm.includes("isTaskStepByQuestID")) {
                 if (nm.length<100) Interceptor.attach(exp.address, {onEnter(a){send(`[T] ${nm.split("::").pop()}`);}});
+            }
+            // Battle side matching
+            if (nm.includes("addWaitingSprites") && nm.length < 80) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) { send(`[BTLSIDE] addWaitingSprites — uid MATCHED`); }
+                });
+            }
+            if (nm.includes("setAttackee") && nm.length < 80) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) { send(`[BTLSIDE] setAttackee — uid MISMATCH → enemy`); }
+                });
             }
             if (nm.includes("checkAction") && nm.length < 80) {
                 Interceptor.attach(exp.address, {

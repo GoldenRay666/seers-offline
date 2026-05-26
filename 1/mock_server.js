@@ -982,8 +982,20 @@ function buildResponse(cmd, fields, socket) {
             encodeMessage(3, playerInfo),         // player_info
             encodeMessage(3, enemyInfo),          // enemy info as 2nd entry
         ]);
-        // Push as btl_notify_battle_start_out
+        // Push battle start
         pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_start_out', btlNotifyMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+
+        // Push battle end (player wins immediately)
+        const endInfo = Buffer.concat([encodeUint32(1, 1)]);  // field1=win
+        const btlEndMsg = Buffer.concat([
+            encodeUint32(1, 1),              // result (1=win)
+            encodeUint32(2, 0),              // field 2
+            encodeUint32(3, 0),              // field 3 (INT32)
+            encodeMessage(4, endInfo),        // invitor_info
+            encodeMessage(5, endInfo),        // invitee_info
+        ]);
+        pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_end_out', btlEndMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+
         // Also respond to start_battle_pve_in request
         const btlAck = Buffer.concat([encodeUint32(1, 1)]);
         return Buffer.concat([encodeMessage(1, btlAck)]);
