@@ -275,28 +275,29 @@ function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
 
 function buildMonInfo(monId, level, nickname) {
     const now = Math.floor(Date.now() / 1000);
-    const MON_NAMES = {1: '迪兰', 4: '休咻', 5: '精灵王', 7: '小小葵'};
+    const MON_NAMES = {1: '迪兰', 4: '休咻', 5: '迪兰', 7: '小小葵'};
     const monName = nickname || MON_NAMES[monId] || ('Mon_' + monId);
 
-    // mon_basic_info_t (23 fields) — set all to 1 for pack routing test
+    // mon_basic_info_t — try field3=1(family), all others=1
+    // IDA merge confirms fields 1-6,8-12,14-23
     const basicInfo = Buffer.concat([
         encodeString(1, monName),       // 1: name
-        encodeUint32(2, monId),         // 2: mon_id
-        encodeUint32(3, monId),         // 3
-        encodeInt32(4, 1),              // 4: signed int
+        encodeUint32(2, 1),             // 2: mon_id (instance)
+        encodeUint32(3, 1),             // 3: family/species (1=迪兰)
+        encodeInt32(4, 1),              // 4
         encodeUint32(5, level || 5),    // 5: level
-        encodeUint32(6, 1),             // 6: exp
-        encodeUint32(8, 1),             // 8: quality
+        encodeUint32(6, 1),             // 6
+        encodeUint32(8, 1),             // 8
         encodeUint32(9, 1),             // 9
         encodeUint32(10, 1),            // 10
         encodeUint32(11, 1),            // 11
-        encodeInt32(12, 1),             // 12: signed int
-        encodeUint32(14, 1),            // 14: in fight party
-        encodeUint32(15, 1),            // 15: party slot
+        encodeInt32(12, 1),             // 12
+        encodeUint32(14, 1),            // 14
+        encodeUint32(15, 1),            // 15
         encodeUint32(16, 1),            // 16
-        encodeUint32(17, monId),         // 17: template_id = family
-        encodeUint32(18, now),          // 18: born_time
-        encodeUint32(19, 1),            // 19: form
+        encodeUint32(17, 1),            // 17: template_id (1=迪兰)
+        encodeUint32(18, now),          // 18
+        encodeUint32(19, 1),            // 19
         encodeUint32(20, 1),            // 20
         encodeUint32(21, 1),            // 21
         encodeUint32(22, 1),            // 22
@@ -737,7 +738,7 @@ function buildResponse(cmd, fields, socket) {
         // Give the player a starter monster to skip pet selection crash
         const ps = getPlayerState(uid);
         // Give starter monster (GuideLayer crash patched via Houdini BX LR)
-        ps.bagMon = [{monId: 1, level: 5, nick: '迪兰'}];
+        ps.bagMon = [{monId: 1, level: 5}];
         ps.mainMon = 1;
         ps.level = 20;
         // Pre-assign tutorial tasks
