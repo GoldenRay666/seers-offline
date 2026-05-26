@@ -622,7 +622,7 @@ const CMD_MAP = {};
     'get_unlocked_map_id_list', 'get_pvp_data', 'get_player_simple_info',
     'get_player_detail_info', 'get_config', 'select_main_mon',
     'player_enter_map', 'map_player_walk', 'player_ready',
-    'submit_map_event', 'submit_map_mine', 'submit_map_mine_info',
+    'submit_map_event', 'submit_map_mine', 'submit_map_mine_info', 'use_item',
     'obtain_task', 'finish_task', 'cancel_task', 'set_task_step',
     'get_task_buff_list', 'get_task_flag_list',
     'get_sys_cur_time', 'text_msg', 'pb_cs_task', 'pass_do_action',
@@ -828,6 +828,12 @@ function buildResponse(cmd, fields, socket) {
                 ]);
                 pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
             }
+            // Sync items to ps.items for sell/use tracking
+            for (const it of starterItems) {
+                const exist = ps.items.find(i => i.item_id === it.id);
+                if (exist) exist.item_count += it.cnt;
+                else ps.items.push({item_id: it.id, item_count: it.cnt, grid_id: it.grid});
+            }
         }
         const level = (ps.bagMon && ps.bagMon[0]) ? ps.bagMon[0].level : 1;
         const monInfo = buildMonInfo(monId, level, null);
@@ -883,9 +889,10 @@ function buildResponse(cmd, fields, socket) {
         const mineId = fields[1] || 0;
         console.log(`[MINE] mine_id=${mineId}`);
 
-        // Give player an ore item
+        // Dynamic ore based on mine_id
         const ps = getPlayerState(socket._uid || 1);
-        const itemId = 20081;  // 黄铁矿
+        const MINE_ORES = {10001: 20081, 10023: 20082, 10002: 20083, 10003: 20081};
+        const itemId = MINE_ORES[mineId] || 20081;
         const existingItem = ps.items.find(i => i.item_id === itemId);
         if (existingItem) {
             existingItem.item_count = (existingItem.item_count || 1) + 1;
@@ -894,13 +901,13 @@ function buildResponse(cmd, fields, socket) {
         }
         console.log(`[MINE] Awarded item ${itemId}, now have ${ps.items.length} items`);
 
-        const oreIndexMap = {10001: 1, 10023: 2}; // map_id → ore slot
+        const ORE_INDEX = {10001: 1, 10023: 2, 10002: 3, 10003: 1};
 
         // VERIFIED: f1→SaveItem+8, f2→+0, f3→+4
         // f1=ore_slot(grid), f2=item_id, f3=totalCount
         const exist = ps.items.find(i => i.item_id === itemId);
         const totalCount = exist ? exist.item_count : 1;
-        const oreSlot = oreIndexMap[mineId] || 1;
+        const oreSlot = ORE_INDEX[mineId] || 1;
         const oneT = Buffer.concat([
             encodeUint32(1, oreSlot),           // f1 → SaveItem+8 = grid slot
             encodeUint32(2, itemId),            // f2 → SaveItem+0 = item_id
@@ -931,13 +938,15 @@ function buildResponse(cmd, fields, socket) {
         const msgBody = encodeString(1, '采集成功！获得矿石x1');
         pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', msgBody, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
-        const oreIndex = oreIndexMap[mineId] || 1;
+        const oreIndex = ORE_INDEX[mineId] || 1;
         console.log(`[MINE] mine_id=${mineId} → ore_index=${oreIndex}`);
 
-        // f1=INT32(item_id)→msg+8, f2=INT32(ore_index)→msg+12
+        // f1=item_id, f2=ore_index, f3=count
+        const minedCount = (ps.items.find(i => i.item_id === itemId) || {}).item_count || 1;
         return Buffer.concat([
             encodeUint32(1, itemId),
             encodeUint32(2, oreIndex),
+            encodeUint32(3, minedCount),
         ]);
     }
 
@@ -1015,33 +1024,56 @@ function buildResponse(cmd, fields, socket) {
         return Buffer.concat([encodeMessage(1, btlAck)]);
     }
 
+    // ---- Use Item ----
+    if (cmd.includes('use_item')) {
+        const itemId = fields[1] || 0;
+        const count = fields[2] || 1;
+        const targetMon = fields[3] || 0;
+        console.log(`[USE] item=${itemId} count=${count} mon=${targetMon}`);
+        const ps = getPlayerState(socket._uid || 1);
+        // Direct mon EXP items (果实)
+        const MON_EXP = {20011:500, 20012:1000, 20013:2000, 20015:10000, 20016:5000};
+        // Battle buffs (双倍经验等)
+        const BUFFS = {20021: 'double_exp', 20022: 'double_exp2'};
+        if (MON_EXP[itemId] && ps.bagMon[0]) {
+            ps.bagMon[0].exp = (ps.bagMon[0].exp || 0) + MON_EXP[itemId] * count;
+            console.log(`[USE] mon +${MON_EXP[itemId]*count} EXP, total=${ps.bagMon[0].exp}`);
+        } else if (BUFFS[itemId]) {
+            ps[BUFFS[itemId]] = (ps[BUFFS[itemId]] || 0) + count;
+            console.log(`[USE] buff ${BUFFS[itemId]} x${count}`);
+        }
+        return Buffer.concat([encodeUint32(1, 0)]); // result=ok
+    }
+
     // ---- Sell Item ----
     if (cmd.includes('sell_item')) {
         const itemId = fields[1] || 0;
         const count = fields[2] || 0;
-        console.log(`[SELL] itemId=${itemId} count=${count}`);
+        const gridId = fields[3] || 0;
+        console.log(`[SELL] itemId=${itemId} count=${count} grid=${gridId}`);
         const ps = getPlayerState(socket._uid || 1);
+        // Track item and add coins
+        let remaining = 0;
         const item = ps.items.find(i => i.item_id === itemId);
         if (item) {
             item.item_count = Math.max(0, (item.item_count || 0) - count);
-            console.log(`[SELL] item ${itemId} count reduced to ${item.item_count}`);
+            remaining = item.item_count;
         }
-        // Push bag_update with TOTAL count (field 4 = updateGrid)
+        ps.coin = (ps.coin || 0) + 10 * count; // 10 coins per item
+        console.log(`[SELL] remaining=${remaining} coins=${ps.coin}`);
+        // Push bag update: f1=grid, f2=itemId, f3=count (verified by handler)
         const oneT = Buffer.concat([
-            encodeUint32(1, itemId),
-            encodeUint32(2, item ? item.item_count : 0),
-            encodeUint32(3, gridId),
+            encodeUint32(1, gridId),      // grid_id
+            encodeUint32(2, itemId),      // item_id
+            encodeUint32(3, remaining),   // count
         ]);
+        const fieldNum = remaining > 0 ? 4 : 2; // updateGrid or delGrid
         const bagUpdate = Buffer.concat([
             encodeUint32(1, 30),
-            encodeMessage(4, oneT),
+            encodeMessage(fieldNum, oneT),
         ]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
-        // sell_item_out: f1=0 + padding for CS_FIX (need >=6 bytes body)
-        return Buffer.concat([
-            encodeUint32(1, 0),                   // field 1: result=0 (success)
-            Buffer.from([0x18, 0x00, 0x20, 0x00]),  // dummy f3:0,f4:0 for padding
-        ]);
+        return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, ps.coin)]);
     }
 
     // ---- Submit Map Event (NPC Interaction) ----
