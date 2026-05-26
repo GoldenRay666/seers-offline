@@ -214,18 +214,49 @@ function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
     ]);
 
     // NPCs on the map
+    const mon1 = encodeMessage(2, Buffer.concat([
+        encodeUint32(1, 4),    // mon_id = 休咻
+        encodeUint32(2, 3),    // level
+    ]));
     const npcs = Buffer.concat([
         // NPC 3: 多罗 (tutorial NPC)
         encodeMessage(3, Buffer.concat([encodeUint32(1, 3)])),
-        // NPC 100011: Wild 法拉
-        encodeMessage(3, Buffer.concat([encodeUint32(1, 100011)])),
+        // NPC 100011: Wild 法拉 with monster
+        encodeMessage(3, Buffer.concat([
+            encodeUint32(1, 100011),
+            mon1,
+        ])),
     ]);
 
-    // Mine info (ore spots) - repeated entries, one per ore type
+    // Mine info (ore spots)
     const now = Math.floor(Date.now() / 1000);
     const mineList = Buffer.concat([
         encodeMessage(4, Buffer.concat([encodeUint32(1, 10001), encodeUint32(2, 5), encodeUint32(3, now)])),
         encodeMessage(4, Buffer.concat([encodeUint32(1, 10023), encodeUint32(2, 5), encodeUint32(3, now)])),
+    ]);
+
+    // Events: NPC 100011 wild battle
+    const battleMon = Buffer.concat([
+        encodeUint32(1, 4),    // mon_id = 休咻
+        encodeUint32(2, 3),    // level
+    ]);
+    const pkCombat = encodeMessage(9, Buffer.concat([
+        encodeUint32(1, 999),               // uid
+        encodeUint32(2, 1),                 // role_tm
+        encodeString(3, '休咻'),             // nick
+        encodeUint32(4, 1),                 // gender
+        encodeMessage(6, battleMon),         // mons
+        encodeUint32(7, 50),                 // max_hp
+        encodeUint32(8, 20),                 // total_atk
+        encodeUint32(9, 15),                 // total_def
+        encodeUint32(10, 10),                // total_spd
+    ]));
+    const events = Buffer.concat([
+        encodeMessage(5, Buffer.concat([
+            encodeUint32(1, 3),        // event type = battle
+            encodeUint32(8, 100011),    // npc reference
+            pkCombat,
+        ])),
     ]);
 
     return Buffer.concat([
@@ -233,6 +264,7 @@ function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
         encodeMessage(2, playerEntry),
         npcs,
         mineList,
+        events,
     ]);
 }
 
@@ -324,7 +356,8 @@ const TASK_DEFS = [
         obtain_npc_id: 3, commit_npc_id: 3,
         obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
         prize_id: 50001, area_id: 1,
-        steps: [{seq: 1, step_type: 5, value: 3, target: '3', link: [10001]}],
+        steps: [{seq: 1, step_type: 5, value: 1, target: '3', link: [10001]}],
+        flag: 1,
     },
     {
         id: 10001, name: '初到异蘑世界', info: '与多罗对话',
@@ -333,7 +366,7 @@ const TASK_DEFS = [
         obtain_npc_id: 3, commit_npc_id: 3,
         obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
         prize_id: 50001, area_id: 1,
-        steps: [{seq: 1, step_type: 5, value: 3, target: '3', link: [10001]}],
+        steps: [{seq: 1, step_type: 5, value: 1, target: '3', link: [10001]}],
         // step_type 5 = talk to NPC
     },
     {
@@ -354,12 +387,17 @@ function buildPbTaskInfo(taskDef) {
         for (const s of taskDef.steps) {
             let keys = Buffer.alloc(0);
             if (s.link) for (const k of s.link) keys = Buffer.concat([keys, encodeUint32(3, k)]);
+            const progress = s.progress !== undefined ? s.progress : 0;
             const step = Buffer.concat([
-                encodeUint32(1, s.seq),
-                encodeUint32(2, s.step_type),
-                encodeUint32(4, s.value || 1),
-                encodeString(5, s.target || ''),
-                keys,
+                encodeUint32(1, s.seq),          // kSeq
+                encodeUint32(2, s.step_type),    // kStepType
+                encodeUint32(4, s.value || 1),   // kValue
+                encodeString(5, s.target || ''), // kTarget
+                keys,                            // kKey (field 3)
+                encodeString(6, s.info || ''),   // kInfo
+                encodeUint32(7, 0),              // kLink
+                encodeUint32(8, 0),              // kPreStep
+                encodeUint32(9, 1),              // kIsAnd
             ]);
             stepList = Buffer.concat([stepList, encodeMessage(15, step)]);
         }
@@ -384,7 +422,7 @@ function buildPbTaskInfo(taskDef) {
     return Buffer.concat([
         encodeUint32(1, taskDef.id),
         encodeUint32(2, taskDef.task_type || 2),
-        encodeUint32(3, 0), // task_flag
+        encodeUint32(3, taskDef.flag || 0), // task_flag
         encodeMessage(4, detail),
     ]);
 }
@@ -578,7 +616,7 @@ const CMD_MAP = {};
     'obtain_task', 'finish_task', 'cancel_task', 'set_task_step',
     'get_task_buff_list', 'get_task_flag_list',
     'get_sys_cur_time', 'text_msg', 'pb_cs_task', 'pass_do_action',
-    'get_lottery_prize', 'get_reward', 'get_lottery',
+    'get_lottery_prize', 'get_reward', 'get_lottery', 'start_battle_pve',
     'get_lbs_prize', 'get_mail_body', 'get_mail_enclosure',
     'get_finance_plan', 'get_lottery_info', 'get_shop',
     'get_ranking_list', 'get_self_ranking', 'get_lbs_notice',
@@ -689,18 +727,19 @@ function buildResponse(cmd, fields, socket) {
         STATE.roles[serverId].push({roleTm, nick, gender, uid, level: 20});
         // Give the player a starter monster to skip pet selection crash
         const ps = getPlayerState(uid);
-        // NO pre-assigned monster — let game show pet selection normally (GuideLayer crash already patched)
-        ps.bagMon = [];
+        // Give starter monster (GuideLayer crash patched via Houdini BX LR)
+        ps.bagMon = [{monId: 1, level: 5, nick: '迪兰'}];
+        ps.mainMon = 1;
         ps.level = 20;
         // Pre-assign tutorial tasks
         ps.tasks = [
-            {id: 10001, name: '初到异蘑世界', info: '与多罗对话', task_type: 2, need_level: 0,
+            {id: 1, name: '初到异蘑世界', info: '与多罗对话', task_type: 2, need_level: 0, flag: 1,
              obtain_map_id: 10001, commit_map_id: 10001,
              obtain_npc_id: 3, commit_npc_id: 3,
              obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
              prize_id: 50001, area_id: 1,
-             steps: [{seq: 1, step_type: 5, value: 3, target: '3', link: [10001]}]},
-            {id: 10002, name: '矿石采集', info: '采集矿石1次', task_type: 2, need_level: 0,
+             steps: [{seq: 1, step_type: 5, value: 1, target: '3', link: [10001]}]},
+            {id: 10002, name: '矿石采集', info: '采集矿石1次', task_type: 2, need_level: 0, flag: 1,
              obtain_map_id: 10001, commit_map_id: 10001,
              obtain_npc_id: 3, commit_npc_id: 3,
              obtain_dialog: 200, progress_dialog: 205, finish_dialog: 210,
@@ -756,7 +795,28 @@ function buildResponse(cmd, fields, socket) {
             const mapBody = buildPlayerEnterMapOut(10001, role.nick, role.roleTm, role.gender);
             pushMessage(socket, 'ISeer20CSProto.player_enter_map_out', mapBody, socket._lastF3 || 1, 0, 0);
 
-            // No initial items — items come from mining only
+            // Push starter items: f1=grid, f2=item_id, f3=count
+            const starterItems = [
+                {id: 20081, cnt: 5,  grid: 1},   // 黄铁矿
+                {id: 20082, cnt: 3,  grid: 2},   // 黑铁矿
+                {id: 20083, cnt: 2,  grid: 3},   // 赤铁矿
+                {id: 20011, cnt: 10, grid: 4},   // 小果实
+                {id: 20012, cnt: 8,  grid: 5},   // 普通果实
+                {id: 20021, cnt: 1,  grid: 6},   // 双倍经验10
+                {id: 20101, cnt: 5,  grid: 7},   // 体力药剂
+            ];
+            for (const it of starterItems) {
+                const oneT = Buffer.concat([
+                    encodeUint32(1, it.grid),    // f1 → SaveItem+8 = grid
+                    encodeUint32(2, it.id),      // f2 → SaveItem+0 = item_id
+                    encodeUint32(3, it.cnt),     // f3 → SaveItem+4 = count
+                ]);
+                const bagUpdate = Buffer.concat([
+                    encodeUint32(1, 30),
+                    encodeMessage(3, oneT),       // field 3 = newGrid
+                ]);
+                pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
+            }
         }
         const monInfo = buildMonInfo(monId, 5, null);
         return encodeMessage(1, monInfo);
@@ -809,7 +869,7 @@ function buildResponse(cmd, fields, socket) {
 
         // Give player an ore item
         const ps = getPlayerState(socket._uid || 1);
-        const itemId = 20081;  // 黄铁矿 (real item ID from item.pbconf)
+        const itemId = 20081;  // 黄铁矿
         const existingItem = ps.items.find(i => i.item_id === itemId);
         if (existingItem) {
             existingItem.item_count = (existingItem.item_count || 1) + 1;
@@ -841,12 +901,15 @@ function buildResponse(cmd, fields, socket) {
         ]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
-        // Push task step update for mining quest (id=10002, step=1 completed)
-        const stepUpdate = Buffer.concat([
-            encodeUint32(1, 10002),  // task_id
-            encodeUint32(2, 1),      // step seq
-        ]);
-        pushMessage(socket, 'ISeer20CSProto.set_task_step_out', stepUpdate, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        // Push obtain_task_out for quest 10002 to activate it as completable
+        const task10002 = TASK_DEFS.find(t => t.id === 10002);
+        if (task10002) {
+            const taskOut = Buffer.concat([
+                encodeUint32(1, 10002),
+                encodeMessage(2, buildPbTaskInfo(task10002)),
+            ]);
+            pushMessage(socket, 'ISeer20CSProto.obtain_task_out', taskOut, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        }
 
         // Also push text message
         const msgBody = encodeString(1, '采集成功！获得矿石x1');
@@ -860,6 +923,17 @@ function buildResponse(cmd, fields, socket) {
             encodeUint32(1, itemId),
             encodeUint32(2, oreIndex),
         ]);
+    }
+
+    // ---- Start Battle PVE ----
+    if (cmd.includes('start_battle_pve')) {
+        const npcId = fields[1] || 0;
+        const taskId = fields[2] || 0;
+        const npcLv = fields[3] || 1;
+        console.log(`[BATTLE] start pve npc=${npcId} task=${taskId} lv=${npcLv}`);
+        // Simple ack — battle init from event data
+        const btlAck = Buffer.concat([encodeUint32(1, 1)]);
+        return Buffer.concat([encodeMessage(1, btlAck)]);
     }
 
     // ---- Sell Item ----
@@ -908,12 +982,16 @@ function buildResponse(cmd, fields, socket) {
         const taskDef = TASK_DEFS.find(t => t.id === taskId);
         if (taskDef) {
             const ps = getPlayerState(socket._uid || 1);
-            if (!ps.tasks.find(t => t.id === taskId)) ps.tasks.push({...taskDef});
+            if (!ps.tasks.find(t => t.id === taskId)) {
+                ps.tasks.push({...taskDef});
+                console.log(`[TASK] obtain_task id=${taskId} — added to player`);
+            } else {
+                console.log(`[TASK] obtain_task id=${taskId} — already owned`);
+            }
+        } else {
+            console.log(`[TASK] obtain_task id=${taskId} — UNKNOWN, empty detail`);
         }
-        console.log(`[TASK] obtain_task id=${taskId}`);
         const detail = taskDef ? buildPbTaskInfo(taskDef) : Buffer.alloc(0);
-        // Push set_task_step to auto-advance guide (DISABLED for gray screen test)
-        // pushMessage(socket, 'ISeer20CSProto.set_task_step_out', Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]), socket._lastF3 || 1, socket._lastF4, socket._lastF5);
         return Buffer.concat([encodeUint32(1, taskId), encodeMessage(2, detail)]);
     }
     if (cmd.includes('finish_task')) {

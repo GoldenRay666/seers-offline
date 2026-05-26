@@ -7,24 +7,7 @@ function install() {
     const mod = Process.findModuleByName(MODULE);
     if (!mod) return;
 
-    // Guide bypass
-    let _gm, _end, _proc;
-    for (const e of mod.enumerateExports()) {
-        if (e.name.includes("GameGuideManager") && e.name.endsWith("sharedManagerEv")) _gm = new NativeFunction(e.address, 'pointer', []);
-        if (e.name.includes("GameGuideManager") && e.name.endsWith("8endGuideEv")) _end = new NativeFunction(e.address, 'void', ['pointer']);
-        if (e.name.includes("GameGuideManager") && e.name.endsWith("12processGuideEv")) _proc = new NativeFunction(e.address, 'void', ['pointer']);
-    }
-    let _gc = false;
-    for (const e of mod.enumerateExports()) {
-        if (e.name.includes("player_enter_map_out") && e.name.includes("MergePartial")) {
-            Interceptor.attach(e.address, { onLeave(r) {
-                if (_gc || !_gm || !_end) return; _gc = true;
-                setTimeout(() => { const m = _gm(); if(m&&!m.isNull()){_end(m);_proc(m);} }, 2000);
-            }}); break;
-        }
-    }
-
-    // Mining merge + CS_FIX
+    // Mining CS_FIX
     const ORE_MAP = {1:20081, 2:20082};
     for (const exp of mod.enumerateExports()) {
         if (!exp.name.includes("submit_map_mine_info_out")) continue;
@@ -45,10 +28,11 @@ function install() {
                     r.replace(ptr(1));
                 }
             }
-        }); break;
+        });
+        break;
     }
 
-    // Bag trace only — mock now sends f1=grid natively
+    // Bag trace
     for (const exp of mod.enumerateExports()) {
         if (exp.name !== "_ZN8UserData15updateItemInBagERK8SaveItemPKc") continue;
         Interceptor.attach(exp.address, {
@@ -56,11 +40,128 @@ function install() {
                 const si = args[0];
                 send(`[BAG] id=${si.add(0).readU32()} cnt=${si.add(4).readU32()} grid=${si.add(8).readU32()}`);
             }
-        }); break;
+        });
+        break;
+    }
+
+    // Task traces — read-only
+    for (const exp of mod.enumerateExports()) {
+        const nm = exp.name;
+        try {
+            if ((nm.includes("task")||nm.includes("Task")||nm.includes("finish_task")) && nm.includes("MergePartial") && nm.length<120 && !nm.includes("set_task_step")) {
+                Interceptor.attach(exp.address, {onEnter(a){send(`[T] ${nm.split("::").pop()}`);}});
+            }
+            // set_task_step_out merge — trace what fields are parsed
+            if (nm.includes("set_task_step_out") && nm.includes("MergePartial") && nm.length<120) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) {
+                        this.msg = args[0];
+                        const cis = args[1];
+                        const buf = cis.add(4).readPointer();
+                        const end = cis.add(8).readPointer();
+                        this.preLen = end.sub(buf).toInt32();
+                        send(`[SSO] merge enter buf=${buf} len=${this.preLen}`);
+                    },
+                    onLeave(retval) {
+                        const m = this.msg;
+                        send(`[SSO] done ret=${retval} +0=${m.add(0).readU32()} +4=${m.add(4).readU32()} +8=${m.add(8).readU32()} +12=${m.add(12).readU32()} +16=${m.add(16).readU32()}`);
+                    }
+                });
+            }
+            // finish_task_out merge — trace fields
+            if (nm.includes("finish_task_out") && nm.includes("MergePartial") && nm.length<120) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) {
+                        this.fm = args[0];
+                        const cis = args[1];
+                        const buf = cis.add(4).readPointer();
+                        const end = cis.add(8).readPointer();
+                        this.preLen = end.sub(buf).toInt32();
+                        send(`[FTO] merge enter buf=${buf} len=${this.preLen}`);
+                    },
+                    onLeave(retval) {
+                        const m = this.fm;
+                        send(`[FTO] merge done ret=${retval} +4=${m.add(4).readU32()} +8=${m.add(8).readU32()} +12=${m.add(12).readU32()}`);
+                    }
+                });
+            }
+            if (nm.includes("addNewQuestInfo") && nm.length<80) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) {
+                        const p = args[1];
+                        // ARM C++ object: offset 0=vtable, offset 4=id(uint32)
+                        const id4 = p.add(4).readU32();
+                        const id0 = p.add(0).readU16();
+                        send(`[Q] addNew info id@4=${id4} vtable@0=${id0}`);
+                    }
+                });
+            }
+            if (nm.includes("isQuestFinished") && nm.length<80) {
+                Interceptor.attach(exp.address, {
+                    onEnter(a){send(`[Q] isQuestFinished a1=${a[1]} a2=${a[2]}`);},
+                    onLeave(r){send(`[Q] isQuestFinished ret=${r}`);}
+                });
+            }
+            if (nm.includes("handleErrMapTask") || nm.includes("getQuestInfoByQuestId") ||
+                nm.includes("isHaveQuestByQuestID") || nm.includes("isTaskStepByQuestID")) {
+                if (nm.length<100) Interceptor.attach(exp.address, {onEnter(a){send(`[T] ${nm.split("::").pop()}`);}});
+            }
+            if (nm.includes("checkAction") && nm.length < 80) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) { send(`[Q] checkAction(${args[1]})`); },
+                    onLeave(r) { send(`[Q] checkAction ret=${r}`); }
+                });
+            }
+            if (nm.includes("getQuestState") && nm.length < 80) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) { send(`[Q] getQuestState(qid=${args[1]})`); },
+                    onLeave(r) { send(`[Q] getQuestState ret=${r}`); }
+                });
+            }
+        } catch(ex) {}
+    }
+
+    // Dump field numbers + find handlers once
+    if (!installed) {
+        for (const e of mod.enumerateExports()) {
+            try {
+                const nm = e.name;
+                if (nm.includes("FieldNumber") && (nm.includes("npc") || nm.includes("player_enter_map") || nm.includes("start_battle"))) {
+                    send(`[FIELD] ${nm}=${e.address.readU32()}`);
+                }
+                // Hook start_battle_pve_out merge to trace parsed fields
+                if (nm.includes("start_battle_pve_out") && nm.includes("MergePartial") && nm.includes("CSProto")) {
+                    Interceptor.attach(e.address, {
+                        onEnter(args) {
+                            this.bm = args[0];
+                            const cis = args[1];
+                            const buf = cis.add(4).readPointer();
+                            const end = cis.add(8).readPointer();
+                            this.blen = end.sub(buf).toInt32();
+                            send(`[BTL] merge enter buf=${buf} len=${this.blen}`);
+                        },
+                        onLeave(retval) {
+                            const m = this.bm;
+                            send(`[BTL] done ret=${retval} +0=${m.add(0).readU32()} +4=${m.add(4).readU32()} +8=${m.add(8).readU32()} +12=${m.add(12).readU32()} +16=${m.add(16).readU32()} +20=${m.add(20).readU32()}`);
+                        }
+                    });
+                }
+                // Hook finish_task handler
+                if (nm.includes("finish_task") && nm.includes("handler") && nm.length<100) {
+                    Interceptor.attach(e.address, {
+                        onEnter(args) {
+                            send(`[FTH] finish_task handler called this=${args[0]} msg=${args[1]}`);
+                            if(args[1]){const m=args[1];send(`[FTH] msg +4=${m.add(4).readU32()} +8=${m.add(8).readU32()} +12=${m.add(12).readU32()}`);}
+                        }
+                    });
+                    send(`[FIELD] Hooked finish_task handler: ${nm}`);
+                }
+            } catch(ex) {}
+        }
     }
 
     installed = true;
-    send(`\n[READY]`);
+    send(`[READY]`);
 }
-setInterval(install, 2000);
+setInterval(install, 500);
 install();
