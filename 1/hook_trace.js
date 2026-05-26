@@ -126,7 +126,7 @@ function install() {
         for (const e of mod.enumerateExports()) {
             try {
                 const nm = e.name;
-                if (nm.includes("FieldNumber") && (nm.includes("npc") || nm.includes("player_enter_map") || nm.includes("start_battle"))) {
+                if (nm.includes("FieldNumber") && (nm.includes("npc") || nm.includes("player_enter_map") || nm.includes("battle") || nm.includes("btl_"))) {
                     send(`[FIELD] ${nm}=${e.address.readU32()}`);
                 }
                 // Hook start_battle_pve_out merge to trace parsed fields

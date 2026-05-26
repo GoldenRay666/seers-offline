@@ -933,8 +933,60 @@ function buildResponse(cmd, fields, socket) {
         const taskId = fields[2] || 0;
         const npcLv = fields[3] || 1;
         console.log(`[BATTLE] start pve npc=${npcId} task=${taskId} lv=${npcLv}`);
-        // Return BTLProto directly (not CSProto wrapper)
-        return Buffer.concat([encodeUint32(1, 1)]);
+        // Respond with btl_notify_battle_start_out push
+        const btlType = Buffer.concat([encodeUint32(1, 1)]); // btl_type=1 (wild)
+
+        // Player side info — uid from session
+        // btl_mon_simple_info_t: all fields 1-9 required (mask 0x1FF)
+        const emptyMsg = Buffer.from([0x08, 0x00]); // field 1=0
+        const playerMon = Buffer.concat([
+            encodeUint32(1, 1),    // 1: mon_id
+            encodeMessage(2, emptyMsg),  // 2: sub-msg required
+            encodeUint32(3, 5),    // 3: level
+            encodeUint32(4, 0),    // 4
+            encodeUint32(5, 0),    // 5: INT32
+            encodeUint32(6, 0),    // 6: INT32
+            encodeUint32(7, 0),    // 7
+            encodeUint32(8, 0),    // 8
+            encodeMessage(9, emptyMsg),  // 9: btl_attr_level
+        ]);
+        const enemyMon = Buffer.concat([
+            encodeUint32(1, 4),    // 1: mon_id = 休咻
+            encodeMessage(2, emptyMsg),  // 2
+            encodeUint32(3, 3),    // 3: level
+            encodeUint32(4, 0),    // 4
+            encodeUint32(5, 0),    // 5
+            encodeUint32(6, 0),    // 6
+            encodeUint32(7, 0),    // 7
+            encodeUint32(8, 0),    // 8
+            encodeMessage(9, emptyMsg),  // 9
+        ]);
+        const playerInfo = Buffer.concat([
+            encodeUint32(1, 0),                  // uid = 0 (try to match local)
+            encodeUint32(2, 1),                  // role_tm
+            encodeString(3, '赛尔勇士'),          // nick
+            encodeUint32(4, 1),                  // gender
+            encodeMessage(8, playerMon),          // mons (field 8!)
+        ]);
+
+        // Enemy side info — use fake uid
+        const enemyInfo = Buffer.concat([
+            encodeUint32(1, 999),               // uid (fake, won't match player)
+            encodeString(3, '休咻'),             // nick
+            encodeMessage(8, enemyMon),          // mons (reuse 9-field mon)
+        ]);
+
+        const btlNotifyMsg = Buffer.concat([
+            encodeUint32(1, 10001),              // weather/map_id
+            encodeMessage(2, btlType),            // btl_type
+            encodeMessage(3, playerInfo),         // player_info
+            encodeMessage(3, enemyInfo),          // enemy info as 2nd entry
+        ]);
+        // Push as btl_notify_battle_start_out
+        pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_start_out', btlNotifyMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        // Also respond to start_battle_pve_in request
+        const btlAck = Buffer.concat([encodeUint32(1, 1)]);
+        return Buffer.concat([encodeMessage(1, btlAck)]);
     }
 
     // ---- Sell Item ----
