@@ -991,9 +991,8 @@ function buildResponse(cmd, fields, socket) {
             encodeUint32(8, 0),    // 8
             encodeMessage(9, emptyMsg),  // 9
         ]);
-        const playerUid = 1;
         const playerInfo = Buffer.concat([
-            encodeUint32(1, playerUid),           // uid
+            encodeUint32(1, 0),                  // uid=0 — test matching
             encodeUint32(2, 1),                  // role_tm
             encodeString(3, '赛尔勇士'),          // nick
             encodeUint32(4, 1),                  // gender
@@ -1002,7 +1001,7 @@ function buildResponse(cmd, fields, socket) {
 
         // Enemy side info — use fake uid
         const enemyInfo = Buffer.concat([
-            encodeUint32(1, 999),               // uid (fake, won't match player)
+            encodeUint32(1, 0),                 // uid=0 — both match or both mismatch
             encodeString(3, '休咻'),             // nick
             encodeMessage(8, enemyMon),          // mons (reuse 9-field mon)
         ]);
