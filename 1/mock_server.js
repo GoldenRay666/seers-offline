@@ -277,31 +277,29 @@ function buildMonInfo(monId, level, nickname) {
     const MON_NAMES = {1: '迪兰', 4: '休咻', 7: '小小葵'};
     const monName = nickname || MON_NAMES[monId] || ('Mon_' + monId);
 
-    // mon_basic_info_t (23 fields, mask 0xF7F59)
+    // mon_basic_info_t (23 fields) — set all to 1 for pack routing test
     const basicInfo = Buffer.concat([
-        encodeString(1, monName),       // 1: name (required)
-        encodeUint32(2, monId),         // 2: mon_id (optional)
-        encodeUint32(3, monId),         // 3: (optional)
-        encodeInt32(4, 0),              // 4: signed int (required)
-        encodeUint32(5, level || 5),    // 5: level (required)
-        encodeUint32(6, 0),             // 6: exp (optional)
-        // field 7: SkipField
-        encodeUint32(8, 1),             // 8: quality? (required)
-        encodeUint32(9, 0),             // 9: (required)
-        encodeUint32(10, 0),            // 10: (required)
-        encodeUint32(11, 0),            // 11: (required)
-        encodeInt32(12, 0),             // 12: signed int (required)
-        // field 13: SkipField
+        encodeString(1, monName),       // 1: name
+        encodeUint32(2, monId),         // 2: mon_id
+        encodeUint32(3, monId),         // 3
+        encodeInt32(4, 1),              // 4: signed int
+        encodeUint32(5, level || 5),    // 5: level
+        encodeUint32(6, 1),             // 6: exp
+        encodeUint32(8, 1),             // 8: quality
+        encodeUint32(9, 1),             // 9
+        encodeUint32(10, 1),            // 10
+        encodeUint32(11, 1),            // 11
+        encodeInt32(12, 1),             // 12: signed int
         encodeUint32(14, 1),            // 14: in fight party
-        encodeUint32(15, 1),            // 15: party slot = 1
-        encodeUint32(16, 0),            // 16: (optional)
-        encodeUint32(17, monId),        // 17: template_id (required)
-        encodeUint32(18, now),          // 18: born_time (required)
-        encodeUint32(19, 1),            // 19: form (required)
-        encodeUint32(20, 0),            // 20: (required)
-        encodeUint32(21, 0),            // 21: (required)
-        encodeUint32(22, 0),            // 22: (required, mask bit 19)
-        encodeUint32(23, 0),            // 23: (optional)
+        encodeUint32(15, 1),            // 15: party slot
+        encodeUint32(16, 1),            // 16
+        encodeUint32(17, monId),        // 17: template_id
+        encodeUint32(18, now),          // 18: born_time
+        encodeUint32(19, 1),            // 19: form
+        encodeUint32(20, 1),            // 20
+        encodeUint32(21, 1),            // 21
+        encodeUint32(22, 1),            // 22
+        encodeUint32(23, 1),            // 23
     ]);
 
     // mon_btl_attr_t (6 fields, mask 0x3F)
@@ -334,9 +332,13 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(4, 0), encodeUint32(5, 0), encodeUint32(6, 0),
     ]);
 
-    // mon_moves_info_t (complex, minimum)
+    // mon_moves_info_t: field 1=sub-msg, fields 2-4=varint
+    const moveEntry = Buffer.concat([encodeUint32(1, 1), encodeUint32(2, 0)]);
     const movesInfo = Buffer.concat([
-        encodeUint32(2, 0), encodeUint32(3, 0), encodeUint32(4, 0),
+        encodeMessage(1, moveEntry),  // field 1: move sub-message
+        encodeUint32(2, 1),           // field 2
+        encodeUint32(3, 1),           // field 3
+        encodeUint32(4, 1),           // field 4
     ]);
 
     // mon_info_t (7 fields, mask 0x79: 1,4,5,6,7 required)
