@@ -253,8 +253,10 @@ function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
     ]));
     const events = Buffer.concat([
         encodeMessage(5, Buffer.concat([
-            encodeUint32(1, 3),        // event type = battle
-            encodeUint32(8, 100011),    // npc reference
+            encodeUint32(1, 1),        // event type = battle
+            encodeMessage(8, Buffer.concat([  // npc sub-message
+                encodeUint32(1, 100011),       // npc_id
+            ])),
             pkCombat,
         ])),
     ]);
@@ -931,9 +933,8 @@ function buildResponse(cmd, fields, socket) {
         const taskId = fields[2] || 0;
         const npcLv = fields[3] || 1;
         console.log(`[BATTLE] start pve npc=${npcId} task=${taskId} lv=${npcLv}`);
-        // Simple ack — battle init from event data
-        const btlAck = Buffer.concat([encodeUint32(1, 1)]);
-        return Buffer.concat([encodeMessage(1, btlAck)]);
+        // Return BTLProto directly (not CSProto wrapper)
+        return Buffer.concat([encodeUint32(1, 1)]);
     }
 
     // ---- Sell Item ----
