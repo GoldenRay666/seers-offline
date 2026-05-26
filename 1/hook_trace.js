@@ -217,6 +217,16 @@ function install() {
         }
     }); } catch(ex){}
 
+    // Hook addSpriteToPack and addSpriteToStorage to see which is called
+    const hAddPack = mod.base.add(0x5513e8).or(1);
+    try { Interceptor.attach(hAddPack, {
+        onEnter(args) { send(`[ROUTE] addSpriteToPack CALLED → PACK!`); }
+    }); } catch(ex){}
+    const hAddStore = mod.base.add(0x5515a0).or(1);
+    try { Interceptor.attach(hAddStore, {
+        onEnter(args) { send(`[ROUTE] addSpriteToStorage CALLED → STORAGE`); }
+    }); } catch(ex){}
+
     installed = true;
     send(`[READY]`);
 }

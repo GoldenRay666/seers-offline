@@ -275,7 +275,7 @@ function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
 
 function buildMonInfo(monId, level, nickname) {
     const now = Math.floor(Date.now() / 1000);
-    const MON_NAMES = {1: '迪兰', 4: '休咻', 7: '小小葵'};
+    const MON_NAMES = {1: '迪兰', 4: '休咻', 5: '精灵王', 7: '小小葵'};
     const monName = nickname || MON_NAMES[monId] || ('Mon_' + monId);
 
     // mon_basic_info_t (23 fields) — set all to 1 for pack routing test
@@ -333,13 +333,18 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(4, 0), encodeUint32(5, 0), encodeUint32(6, 0),
     ]);
 
-    // mon_moves_info_t: fields 1-5 are REPEATED uint32
-    // generateSpriteInfoByMessage reads ~12 values from f1, ~4 from f2
-    let f1 = Buffer.alloc(0);
-    for (let i = 0; i < 12; i++) f1 = Buffer.concat([f1, encodeUint32(1, 1)]);
-    let f2 = Buffer.alloc(0);
-    for (let i = 0; i < 4; i++) f2 = Buffer.concat([f2, encodeUint32(2, 1)]);
-    const movesInfo = Buffer.concat([f1, f2]);
+    // mon_moves_info_t: field1=learned moves (repeated uint32 move IDs)
+    // Provide valid move IDs: 1=撞击, 2=强化, 3=气合, 4=猛击
+    let movesParts = Buffer.alloc(0);
+    for (let i = 0; i < 4; i++)
+        movesParts = Buffer.concat([movesParts, encodeUint32(1, i+1)]);
+    // field 2 = PP values
+    for (let i = 0; i < 4; i++)
+        movesParts = Buffer.concat([movesParts, encodeUint32(2, 10)]);
+    // field 3 = max PP
+    for (let i = 0; i < 4; i++)
+        movesParts = Buffer.concat([movesParts, encodeUint32(3, 10)]);
+    const movesInfo = movesParts;
 
     // mon_info_t (7 fields, mask 0x79: 1,4,5,6,7 required)
     return Buffer.concat([
@@ -826,7 +831,8 @@ function buildResponse(cmd, fields, socket) {
         }
         const monInfo = buildMonInfo(monId, 5, null);
         // Push notify_gain_new_mon_out → handleNtfMsgGainNewMon → addSpriteToPack
-        const gainMsg = Buffer.concat([encodeMessage(1, monInfo)]);
+        // field 2 = kMonInfoFieldNumber (verified by IDA merge)
+        const gainMsg = Buffer.concat([encodeMessage(2, monInfo)]);
         pushMessage(socket, 'ISeer20CSProto.notify_gain_new_mon_out', gainMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
         return encodeMessage(1, monInfo);
     }
