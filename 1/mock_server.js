@@ -294,7 +294,7 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(14, 1),            // 14: in fight party
         encodeUint32(15, 1),            // 15: party slot
         encodeUint32(16, 1),            // 16
-        encodeUint32(17, monId),        // 17: template_id
+        encodeUint32(17, monId),         // 17: template_id = family
         encodeUint32(18, now),          // 18: born_time
         encodeUint32(19, 1),            // 19: form
         encodeUint32(20, 1),            // 20
@@ -333,16 +333,14 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(4, 0), encodeUint32(5, 0), encodeUint32(6, 0),
     ]);
 
-    // mon_moves_info_t: field1=learned moves (repeated uint32 move IDs)
-    // Provide valid move IDs: 1=撞击, 2=强化, 3=气合, 4=猛击
+    // mon_moves_info_t: fill 12 slots to cover all test skills
+    const MOVE_IDS = [10001,10002,10003,10004,10005,10006,10007,10008,10009,10010,10011,10012];
     let movesParts = Buffer.alloc(0);
-    for (let i = 0; i < 4; i++)
-        movesParts = Buffer.concat([movesParts, encodeUint32(1, i+1)]);
-    // field 2 = PP values
-    for (let i = 0; i < 4; i++)
+    for (const mid of MOVE_IDS)
+        movesParts = Buffer.concat([movesParts, encodeUint32(1, mid)]);
+    for (let i = 0; i < 12; i++)
         movesParts = Buffer.concat([movesParts, encodeUint32(2, 10)]);
-    // field 3 = max PP
-    for (let i = 0; i < 4; i++)
+    for (let i = 0; i < 12; i++)
         movesParts = Buffer.concat([movesParts, encodeUint32(3, 10)]);
     const movesInfo = movesParts;
 
