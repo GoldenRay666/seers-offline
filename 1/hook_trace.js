@@ -227,6 +227,12 @@ function install() {
         onEnter(args) { send(`[ROUTE] addSpriteToStorage CALLED → STORAGE`); }
     }); } catch(ex){}
 
+    // Hook BattleManager::start to see if callback fires
+    const hBtlStart = mod.base.add(0x465c54).or(1);
+    try { Interceptor.attach(hBtlStart, {
+        onEnter(args) { send(`[BTL-START] BattleManager::start called!`); }
+    }); } catch(ex){}
+
     installed = true;
     send(`[READY]`);
 }
