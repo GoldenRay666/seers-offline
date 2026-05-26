@@ -963,58 +963,96 @@ function buildResponse(cmd, fields, socket) {
         const npcLv = fields[3] || 1;
         console.log(`[BATTLE] start pve npc=${npcId} task=${taskId} lv=${npcLv}`);
         const ps = getPlayerState(socket._uid || 1);
-        // Respond with btl_notify_battle_start_out push
-        const btlType = Buffer.concat([encodeUint32(1, 1)]); // btl_type=1 (wild)
 
-        // Player side info — uid from session
-        // btl_mon_simple_info_t: all fields 1-9 required (mask 0x1FF)
-        const emptyMsg = Buffer.from([0x08, 0x00]); // field 1=0
+        // Get player's real uid from stored role (m_userInfo = player_basic_info_t field 3 = roleTm)
+        const role = getLastRole(1);
+        const playerUid = role ? role.roleTm : (socket._uid || 1);
+        const playerNick = role ? role.nick : '赛尔勇士';
+        console.log(`[BATTLE] playerUid=${playerUid} nick=${playerNick}`);
+
+        // btl_mon_simple_info_t fields (IDA verified, mask 0x1FF = 9 required fields):
+        //   f1: uint32 mon_id (+0xC)
+        //   f2: STRING mon_name (+0x8)  — CORRECTED from sub-msg to string
+        //   f3: uint32 level (+0x10)
+        //   f4: uint32 (+0x14)
+        //   f5: INT32 (+0x18)
+        //   f6: INT32 (+0x1C)
+        //   f7: uint32 (+0x20)
+        //   f8: uint32 (+0x48)
+        //   f9: mon_btl_attr_level_t sub-message (+0x24)
+        // mon_btl_attr_level_t: 6 INT32 fields, mask 0x3F (IDA verified)
+        //   f1: hp, f2: atk, f3: def, f4: spd, f5: ?, f6: ?
+        function buildBtlAttrLevel(hp, atk, def, spd) {
+            return Buffer.concat([
+                encodeInt32(1, hp),
+                encodeInt32(2, atk),
+                encodeInt32(3, def),
+                encodeInt32(4, spd),
+                encodeInt32(5, 0),
+                encodeInt32(6, 0),
+            ]);
+        }
+
+        const playerBtlAttr = buildBtlAttrLevel(130, 30, 30, 30);
+        const enemyBtlAttr = buildBtlAttrLevel(110, 26, 26, 26);
+
         const playerMon = Buffer.concat([
-            encodeUint32(1, 1),    // 1: mon_id
-            encodeMessage(2, emptyMsg),  // 2: sub-msg required
-            encodeUint32(3, 5),    // 3: level
-            encodeUint32(4, 0),    // 4
-            encodeUint32(5, 0),    // 5: INT32
-            encodeUint32(6, 0),    // 6: INT32
-            encodeUint32(7, 0),    // 7
-            encodeUint32(8, 0),    // 8
-            encodeMessage(9, emptyMsg),  // 9: btl_attr_level
+            encodeUint32(1, 1),              // 1: mon_id
+            encodeString(2, '迪兰'),          // 2: mon_name (STRING, not message!)
+            encodeUint32(3, 5),              // 3: level
+            encodeUint32(4, 0),              // 4
+            encodeInt32(5, 0),               // 5: INT32
+            encodeInt32(6, 0),               // 6: INT32
+            encodeUint32(7, 0),              // 7
+            encodeUint32(8, 0),              // 8
+            encodeMessage(9, playerBtlAttr), // 9: mon_btl_attr_level_t (6 INT32)
         ]);
         const enemyMon = Buffer.concat([
-            encodeUint32(1, 4),    // 1: mon_id = 休咻
-            encodeMessage(2, emptyMsg),  // 2
-            encodeUint32(3, 3),    // 3: level
-            encodeUint32(4, 0),    // 4
-            encodeUint32(5, 0),    // 5
-            encodeUint32(6, 0),    // 6
-            encodeUint32(7, 0),    // 7
-            encodeUint32(8, 0),    // 8
-            encodeMessage(9, emptyMsg),  // 9
+            encodeUint32(1, 4),              // 1: mon_id = 休咻
+            encodeString(2, '休咻'),          // 2: mon_name (STRING)
+            encodeUint32(3, 3),              // 3: level
+            encodeUint32(4, 0),              // 4
+            encodeInt32(5, 0),               // 5: INT32
+            encodeInt32(6, 0),               // 6: INT32
+            encodeUint32(7, 0),              // 7
+            encodeUint32(8, 0),              // 8
+            encodeMessage(9, enemyBtlAttr),  // 9: mon_btl_attr_level_t (6 INT32)
         ]);
+
+        // btl_player_simple_info_t fields (IDA verified, mask 0x7F = 7 required fields):
+        //   f1: uint32 uid (+0x8) — MUST match m_userInfo for "self" routing
+        //   f2: int32 (+0xC)
+        //   f3: string nick (+0x10)
+        //   f4: uint32 (+0x14)
+        //   f5: uint32 (+0x18)
+        //   f6: uint32 (+0x1C)
+        //   f7: uint32 (+0x20)
+        //   f8: repeated btl_mon_simple_info_t (+0x24)
         const playerInfo = Buffer.concat([
-            encodeUint32(1, 0),                  // uid=0 — test matching
+            encodeUint32(1, playerUid),          // uid = roleTm → matches m_userInfo
             encodeUint32(2, 1),                  // role_tm
-            encodeString(3, '赛尔勇士'),          // nick
+            encodeString(3, playerNick),         // nick
             encodeUint32(4, 1),                  // gender
-            encodeMessage(8, playerMon),          // mons
+            encodeUint32(5, 0),                  // f5 required
+            encodeUint32(6, 0),                  // f6 required
+            encodeUint32(7, 0),                  // f7 required
+            encodeMessage(8, playerMon),         // mons (repeated field 8)
         ]);
 
-        // Enemy side info — use fake uid
+        // Enemy: use fake uid that NEVER matches m_userInfo
         const enemyInfo = Buffer.concat([
-            encodeUint32(1, 0),                 // uid=0 — both match or both mismatch
-            encodeString(3, '休咻'),             // nick
-            encodeMessage(8, enemyMon),          // mons (reuse 9-field mon)
+            encodeUint32(1, 999999),             // uid = fake, won't match m_userInfo
+            encodeUint32(2, 1),                  // f2 required
+            encodeString(3, '休咻'),              // nick
+            encodeUint32(4, 0),                  // f4 required
+            encodeUint32(5, 0),                  // f5 required
+            encodeUint32(6, 0),                  // f6 required
+            encodeUint32(7, 0),                  // f7 required
+            encodeMessage(8, enemyMon),          // mons (repeated field 8)
         ]);
 
-        const btlNotifyMsg = Buffer.concat([
-            encodeUint32(1, 10001),              // weather/map_id
-            encodeMessage(2, btlType),            // btl_type
-            encodeMessage(3, playerInfo),         // player_info
-            encodeMessage(3, enemyInfo),          // enemy info as 2nd entry
-        ]);
-        // Push battle start
-        pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_start_out', btlNotifyMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
-
+        // BTL proto: btl_notify_battle_start_out (IDA verified)
+        //   f1: int32 at +0x2C
         // Award battle rewards (ps already declared above)
         const btlExp = 50 + (npcLv || 1) * 10;
         const btlCoin = 20 + (npcLv || 1) * 5;
@@ -1025,35 +1063,75 @@ function buildResponse(cmd, fields, socket) {
         }
         console.log(`[BATTLE] Rewards: +${btlExp}EXP +${btlCoin}Coins`);
 
-        // Push battle end with rewards
-        const endInfo = Buffer.concat([
-            encodeUint32(1, btlExp),         // gain_score = EXP
+        // Step 3: wrapped format + mon data for both sides
+        const btlType = Buffer.concat([encodeUint32(1, 1)]);
+        // btl_mon_simple_info_t: fields 1-9 required. We send minimal valid data.
+        // field 2 = STRING (mon name, IDA verified!)
+        function buildBtlMon(monId, name, level) {
+            var btlAttr = Buffer.concat([
+                encodeInt32(1, 80 + level * 10),  // hp
+                encodeInt32(2, 20 + level * 2),   // atk
+                encodeInt32(3, 20 + level * 2),   // def
+                encodeInt32(4, 20 + level * 2),   // spd
+                encodeInt32(5, 0),
+                encodeInt32(6, 0),
+            ]);
+            return Buffer.concat([
+                encodeUint32(1, monId),
+                encodeString(2, name),
+                encodeUint32(3, level),
+                encodeUint32(4, 0),
+                encodeInt32(5, 0),
+                encodeInt32(6, 0),
+                encodeUint32(7, 0),
+                encodeUint32(8, 0),
+                encodeMessage(9, btlAttr),
+            ]);
+        }
+        const playerMon = buildBtlMon(1, '迪兰', 5);
+        const enemyMon = buildBtlMon(4, '休咻', 3);
+
+        const playerInfo = Buffer.concat([
+            encodeUint32(1, playerUid), encodeUint32(2, 1),
+            encodeString(3, playerNick), encodeUint32(4, 1),
+            encodeUint32(5, 0), encodeUint32(6, 0), encodeUint32(7, 0),
+            encodeMessage(8, playerMon),
         ]);
-        const btlEndMsg = Buffer.concat([
-            encodeUint32(1, 1),              // result (1=win)
-            encodeUint32(2, 0),              // field 2
-            encodeUint32(3, btlCoin),         // coins earned
-            encodeMessage(4, endInfo),        // invitor_info
-            encodeMessage(5, endInfo),        // invitee_info
+        const enemyInfo = Buffer.concat([
+            encodeUint32(1, 999999), encodeUint32(2, 1),
+            encodeString(3, '休咻'), encodeUint32(4, 0),
+            encodeUint32(5, 0), encodeUint32(6, 0), encodeUint32(7, 0),
+            encodeMessage(8, enemyMon),
+        ]);
+        const btlProto = Buffer.concat([
+            encodeUint32(1, 10001),
+            encodeMessage(2, btlType),
+            encodeMessage(3, playerInfo),
+            encodeMessage(3, enemyInfo),
+        ]);
+        const wrapped = encodeMessage(1, btlProto);
+        console.log("[BATTLE] Wrapped + mons, body=", wrapped.length);
+        pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_start_out', wrapped, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        console.log("[BATTLE] Battle start push done");
+
+        var endInfo = Buffer.concat([encodeUint32(1, btlExp)]);
+        var btlEndMsg = Buffer.concat([
+            encodeUint32(1, 1),
+            encodeUint32(2, 0),
+            encodeUint32(3, btlCoin),
+            encodeMessage(4, endInfo),
+            encodeMessage(5, endInfo),
         ]);
         pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_end_out', btlEndMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        console.log("[BATTLE] Battle end push done");
 
-        // Push cli_notify_gain_prize_out with prize_t sub-message
-        // prize_t: f1=prize_id, f2=items, f3=mons, f4=player_attr
-        // player_attr_t: f1=EXP, f10=coin (verified by Frida field dump)
-        const playerAttr = Buffer.concat([
-            encodeUint32(1, btlExp),    // f1 = kExpFieldNumber
-            encodeUint32(10, btlCoin),  // f10 = kCoinFieldNumber
-        ]);
-        const prizeT = Buffer.concat([
-            encodeUint32(1, 80001),           // prize_id
-            encodeMessage(4, playerAttr),      // player_attr
-        ]);
-        // Top-level: f1 = repeated prize_t
-        const prizeMsg = Buffer.concat([encodeMessage(1, prizeT)]);
+        var playerAttr = Buffer.concat([encodeUint32(1, btlExp), encodeUint32(10, btlCoin)]);
+        var prizeT = Buffer.concat([encodeUint32(1, 80001), encodeMessage(4, playerAttr)]);
+        var prizeMsg = Buffer.concat([encodeMessage(1, prizeT)]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', prizeMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        console.log("[BATTLE] Prize push done");
 
-        // Also respond to start_battle_pve_in request
+        // Respond to start_battle_pve_in
         const btlAck = Buffer.concat([encodeUint32(1, 1)]);
         return Buffer.concat([encodeMessage(1, btlAck)]);
     }
