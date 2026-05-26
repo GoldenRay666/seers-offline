@@ -738,7 +738,11 @@ function buildResponse(cmd, fields, socket) {
         // Give the player a starter monster to skip pet selection crash
         const ps = getPlayerState(uid);
         // Give starter monster (GuideLayer crash patched via Houdini BX LR)
-        ps.bagMon = [{monId: 1, level: 1}];
+        ps.bagMon = [
+            {monId: 1, level: 1},
+            {monId: 4, level: 1},
+            {monId: 7, level: 1},
+        ];
         ps.mainMon = 1;
         ps.level = 20;
         // Pre-assign tutorial tasks
@@ -835,12 +839,14 @@ function buildResponse(cmd, fields, socket) {
                 else ps.items.push({item_id: it.id, item_count: it.cnt, grid_id: it.grid});
             }
         }
+        // Push notify_gain_new_mon_out for ALL bag monsters
+        for (const m of ps.bagMon) {
+            const mi = buildMonInfo(m.monId, m.level, null);
+            const gm = Buffer.concat([encodeMessage(2, mi)]);
+            pushMessage(socket, 'ISeer20CSProto.notify_gain_new_mon_out', gm, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        }
         const level = (ps.bagMon && ps.bagMon[0]) ? ps.bagMon[0].level : 1;
         const monInfo = buildMonInfo(monId, level, null);
-        // Push notify_gain_new_mon_out → handleNtfMsgGainNewMon → addSpriteToPack
-        // field 2 = kMonInfoFieldNumber (verified by IDA merge)
-        const gainMsg = Buffer.concat([encodeMessage(2, monInfo)]);
-        pushMessage(socket, 'ISeer20CSProto.notify_gain_new_mon_out', gainMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
         return encodeMessage(1, monInfo);
     }
 
@@ -985,12 +991,14 @@ function buildResponse(cmd, fields, socket) {
             encodeUint32(8, 0),    // 8
             encodeMessage(9, emptyMsg),  // 9
         ]);
+        const role = getLastRole(1);
+        const playerUid = role ? role.roleTm : 1;
         const playerInfo = Buffer.concat([
-            encodeUint32(1, 0),                  // uid = 0 (try to match local)
-            encodeUint32(2, 1),                  // role_tm
+            encodeUint32(1, playerUid),           // uid = roleTm (match m_userInfo)
+            encodeUint32(2, playerUid),           // role_tm
             encodeString(3, '赛尔勇士'),          // nick
             encodeUint32(4, 1),                  // gender
-            encodeMessage(8, playerMon),          // mons (field 8!)
+            encodeMessage(8, playerMon),          // mons
         ]);
 
         // Enemy side info — use fake uid
@@ -1032,9 +1040,20 @@ function buildResponse(cmd, fields, socket) {
         ]);
         pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_end_out', btlEndMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
-        // Reward text
-        const rewardMsg = encodeString(1, `战斗胜利！+${btlExp}经验 +${btlCoin}金币`);
-        pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', rewardMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        // Push cli_notify_gain_prize_out with prize_t sub-message
+        // prize_t: f1=prize_id, f2=items, f3=mons, f4=player_attr
+        // player_attr_t: f1=EXP, f10=coin (verified by Frida field dump)
+        const playerAttr = Buffer.concat([
+            encodeUint32(1, btlExp),    // f1 = kExpFieldNumber
+            encodeUint32(10, btlCoin),  // f10 = kCoinFieldNumber
+        ]);
+        const prizeT = Buffer.concat([
+            encodeUint32(1, 80001),           // prize_id
+            encodeMessage(4, playerAttr),      // player_attr
+        ]);
+        // Top-level: f1 = repeated prize_t
+        const prizeMsg = Buffer.concat([encodeMessage(1, prizeT)]);
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', prizeMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
         // Also respond to start_battle_pve_in request
         const btlAck = Buffer.concat([encodeUint32(1, 1)]);
