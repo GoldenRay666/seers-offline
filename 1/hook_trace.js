@@ -130,11 +130,19 @@ function install() {
             if (nm.includes("addMon") || nm.includes("setMon") || nm.includes("updateMon") || nm.includes("initMon")) {
                 if (nm.length < 100) Interceptor.attach(exp.address, { onEnter(a){ send(`[MON-FN] ${nm.split("::").pop()}`); } });
             }
-            // UserData sprite/mon hooks — find read/write
-            if (nm.includes("UserData") && (nm.includes("Sprite") || nm.includes("Mon") || nm.includes("sprite") || nm.includes("mon")) && nm.length < 80) {
+            // All mon sub-type IsInitialized checks
+            if (nm.includes("ISeer20Comm") && nm.includes("mon_") && nm.includes("IsInitialized")) {
                 Interceptor.attach(exp.address, {
-                    onEnter(args) { send(`[UD-SPR] ${nm.split("::").pop()} a1=${args[1]}`); },
-                    onLeave(r) { send(`[UD-SPR] ret=${r}`); }
+                    onEnter(a) { this.m = a[0]; },
+                    onLeave(r) {
+                        send(`[MON-INIT] ${nm.split("::").pop()} ret=${r}`);
+                    }
+                });
+            }
+            // UserData sprite/mon hooks
+            if (nm.includes("UserData") && (nm.includes("Sprite")||nm.includes("addSprite")||nm.includes("Mon")||nm.includes("addObtained")||nm.includes("Follow")) && nm.length < 100) {
+                Interceptor.attach(exp.address, {
+                    onEnter(args) { send(`[UD-SPR] ${nm.split("::").pop()} a1=${args[1]}`); }
                 });
             }
             if (nm.includes("checkAction") && nm.length < 80) {
