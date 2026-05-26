@@ -167,6 +167,7 @@ function buildPlayerBasicInfo(nick, roleTm, gender, level) {
     return Buffer.concat([
         encodeString(1, nick || "Player"),
         encodeUint32(2, roleTm),
+        encodeUint32(3, roleTm),         // uid = roleTm
         encodeUint32(4, now - 60),
         encodeUint32(5, level || 1),
         encodeUint32(6, 999999),
@@ -178,6 +179,7 @@ function buildPlayerBasicInfo(nick, roleTm, gender, level) {
         encodeUint32(12, 999),
         encodeUint32(13, 999),
         encodeUint32(14, 999),
+        encodeUint32(42, 6),              // mon bag size = 6 slots
     ]);
 }
 
@@ -290,8 +292,8 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(11, 0),            // 11: (required)
         encodeInt32(12, 0),             // 12: signed int (required)
         // field 13: SkipField
-        encodeUint32(14, 0),            // 14: in fight party? (required, 0=no)
-        encodeUint32(15, 0),            // 15: party slot (required, 0=none)
+        encodeUint32(14, 1),            // 14: in fight party
+        encodeUint32(15, 1),            // 15: party slot = 1
         encodeUint32(16, 0),            // 16: (optional)
         encodeUint32(17, monId),        // 17: template_id (required)
         encodeUint32(18, now),          // 18: born_time (required)
@@ -1092,7 +1094,18 @@ function buildResponse(cmd, fields, socket) {
             role ? role.gender : 1,
             1
         );
-        return encodeMessage(1, info);
+        const ps = getPlayerState(socket._uid || 1);
+        let monList = Buffer.alloc(0);
+        if (ps.bagMon) {
+            for (const m of ps.bagMon) {
+                monList = Buffer.concat([monList, encodeMessage(1, buildMonInfo(m.monId, m.level || 5, m.nick))]);
+            }
+        }
+        const fullInfo = Buffer.concat([
+            encodeMessage(1, info),        // basic_info
+            encodeMessage(3, monList),      // bag_mon_list (field 3)
+        ]);
+        return fullInfo;
     }
 
     // ---- Unlocked Maps ----

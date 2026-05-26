@@ -110,15 +110,31 @@ function install() {
                 nm.includes("isHaveQuestByQuestID") || nm.includes("isTaskStepByQuestID")) {
                 if (nm.length<100) Interceptor.attach(exp.address, {onEnter(a){send(`[T] ${nm.split("::").pop()}`);}});
             }
-            // Battle side matching
-            if (nm.includes("addWaitingSprites") && nm.length < 80) {
-                Interceptor.attach(exp.address, {
-                    onEnter(args) { send(`[BTLSIDE] addWaitingSprites — uid MATCHED`); }
-                });
+    // Battle side matching — hook by name (confirmed exports)
+    if (nm.includes("setAttackee") && nm.length < 100) {
+        Interceptor.attach(exp.address, {
+            onEnter(args) { send(`[BTLSIDE] setAttackee — uid MISMATCH`); }
+        });
+        send(`[HOOK] setAttackee installed: ${nm}`);
+    }
+    if (nm.includes("addWaiting") && nm.length < 100) {
+        Interceptor.attach(exp.address, {
+            onEnter(args) { send(`[BTLSIDE] addWaiting — uid MATCHES`); }
+        });
+        send(`[HOOK] addWaiting installed: ${nm}`);
+    }
+            // Monster flow hooks
+            if ((nm.includes("get_bag_mon") || nm.includes("select_main_mon") || nm.includes("mon_info_t") || nm.includes("MonInfo") || nm.includes("mon_basic")) && nm.includes("MergePartial") && nm.length < 120) {
+                Interceptor.attach(exp.address, { onEnter(a){ send(`[MON-MERGE] ${nm.split("::").pop()}`); } });
             }
-            if (nm.includes("setAttackee") && nm.length < 80) {
+            if (nm.includes("addMon") || nm.includes("setMon") || nm.includes("updateMon") || nm.includes("initMon")) {
+                if (nm.length < 100) Interceptor.attach(exp.address, { onEnter(a){ send(`[MON-FN] ${nm.split("::").pop()}`); } });
+            }
+            // UserData sprite/mon hooks — find read/write
+            if (nm.includes("UserData") && (nm.includes("Sprite") || nm.includes("Mon") || nm.includes("sprite") || nm.includes("mon")) && nm.length < 80) {
                 Interceptor.attach(exp.address, {
-                    onEnter(args) { send(`[BTLSIDE] setAttackee — uid MISMATCH → enemy`); }
+                    onEnter(args) { send(`[UD-SPR] ${nm.split("::").pop()} a1=${args[1]}`); },
+                    onLeave(r) { send(`[UD-SPR] ret=${r}`); }
                 });
             }
             if (nm.includes("checkAction") && nm.length < 80) {
@@ -136,14 +152,11 @@ function install() {
         } catch(ex) {}
     }
 
-    // Dump field numbers + find handlers once
+    // No field dump — too much output
     if (!installed) {
         for (const e of mod.enumerateExports()) {
             try {
                 const nm = e.name;
-                if (nm.includes("FieldNumber") && (nm.includes("npc") || nm.includes("player_enter_map") || nm.includes("battle") || nm.includes("btl_"))) {
-                    send(`[FIELD] ${nm}=${e.address.readU32()}`);
-                }
                 // Hook start_battle_pve_out merge to trace parsed fields
                 if (nm.includes("start_battle_pve_out") && nm.includes("MergePartial") && nm.includes("CSProto")) {
                     Interceptor.attach(e.address, {
