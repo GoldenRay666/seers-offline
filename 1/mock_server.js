@@ -991,11 +991,10 @@ function buildResponse(cmd, fields, socket) {
             encodeUint32(8, 0),    // 8
             encodeMessage(9, emptyMsg),  // 9
         ]);
-        const role = getLastRole(1);
-        const playerUid = role ? role.roleTm : 1;
+        const playerUid = 1;
         const playerInfo = Buffer.concat([
-            encodeUint32(1, playerUid),           // uid = roleTm (match m_userInfo)
-            encodeUint32(2, playerUid),           // role_tm
+            encodeUint32(1, playerUid),           // uid
+            encodeUint32(2, 1),                  // role_tm
             encodeString(3, '赛尔勇士'),          // nick
             encodeUint32(4, 1),                  // gender
             encodeMessage(8, playerMon),          // mons
