@@ -285,8 +285,8 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(2, 1),             // 2: mon_id (instance)
         encodeUint32(3, 1),             // 3: family/species (1=迪兰)
         encodeInt32(4, 1),              // 4
-        encodeUint32(5, level || 5),    // 5: level
-        encodeUint32(6, 1),             // 6
+        encodeUint32(5, monId),         // 5: family (species ID!)
+        encodeUint32(6, level || 5),    // 6: level
         encodeUint32(8, 1),             // 8
         encodeUint32(9, 1),             // 9
         encodeUint32(10, 1),            // 10
@@ -334,15 +334,15 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(4, 0), encodeUint32(5, 0), encodeUint32(6, 0),
     ]);
 
-    // mon_moves_info_t: fill 12 slots to cover all test skills
-    const MOVE_IDS = [10001,10002,10003,10004,10005,10006,10007,10008,10009,10010,10011,10012];
+    // Level-based skills for 迪兰 (family=1)
+    const lv = level || 1;
+    let skillCount = lv >= 10 ? 4 : lv >= 5 ? 3 : 2;
     let movesParts = Buffer.alloc(0);
-    for (const mid of MOVE_IDS)
-        movesParts = Buffer.concat([movesParts, encodeUint32(1, mid)]);
-    for (let i = 0; i < 12; i++)
+    for (let i = 0; i < skillCount; i++) {
+        movesParts = Buffer.concat([movesParts, encodeUint32(1, 10001 + i)]);
         movesParts = Buffer.concat([movesParts, encodeUint32(2, 10)]);
-    for (let i = 0; i < 12; i++)
         movesParts = Buffer.concat([movesParts, encodeUint32(3, 10)]);
+    }
     const movesInfo = movesParts;
 
     // mon_info_t (7 fields, mask 0x79: 1,4,5,6,7 required)
@@ -797,8 +797,9 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Select Main Mon ----
     if (cmd.includes('select_main_mon')) {
-        const monId = fields[1] || 1;
-        console.log(`[MON] Selected starter: ${monId}`);
+        const ps = getPlayerState(socket._uid || 1);
+        const monId = (ps.bagMon && ps.bagMon[0]) ? ps.bagMon[0].monId : (fields[1] || 1);
+        console.log(`[MON] Selected starter: using bagMon=${monId} (client sent ${fields[1]})`);
         const role = getLastRole(1);
         // Push player_enter_map_out BEFORE the select_main_mon response (matching old server behavior)
         if (role) {
@@ -828,7 +829,6 @@ function buildResponse(cmd, fields, socket) {
                 pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
             }
         }
-        const ps = getPlayerState(socket._uid || 1);
         const level = (ps.bagMon && ps.bagMon[0]) ? ps.bagMon[0].level : 1;
         const monInfo = buildMonInfo(monId, level, null);
         // Push notify_gain_new_mon_out → handleNtfMsgGainNewMon → addSpriteToPack
