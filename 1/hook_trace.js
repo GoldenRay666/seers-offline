@@ -196,17 +196,12 @@ function install() {
         }
     }
 
-    // Hook the get_bag_mon callback handler
-    const hPackList = mod.base.add(0x6323e0).or(1);
-    try { Interceptor.attach(hPackList, {
-        onEnter(args) {
-            send(`[PACK-HANDLER] handleAckMsgGetPackSpriteList CALLED!`);
-            this.handler = args[0];
-        },
-        onLeave(r) {
-            send(`[PACK-HANDLER] done`);
-        }
-    }); send(`[HOOK] handleAckMsgGetPackSpriteList installed`); } catch(ex){send(`[ERR] PackHandler: ${ex}`);}
+    // Hook the gain new mon handler — THIS should call addSpriteToPack
+    const hGainMon = mod.base.add(0x6322f4).or(1);
+    try { Interceptor.attach(hGainMon, {
+        onEnter(args) { send(`[GAIN-MON] handleNtfMsgGainNewMon CALLED!`); },
+        onLeave(r) { send(`[GAIN-MON] done`); }
+    }); send(`[HOOK] handleNtfMsgGainNewMon installed`); } catch(ex){send(`[ERR] GainMon: ${ex}`);}
 
     installed = true;
     send(`[READY]`);

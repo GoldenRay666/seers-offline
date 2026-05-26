@@ -823,6 +823,9 @@ function buildResponse(cmd, fields, socket) {
             }
         }
         const monInfo = buildMonInfo(monId, 5, null);
+        // Push notify_gain_new_mon_out → handleNtfMsgGainNewMon → addSpriteToPack
+        const gainMsg = Buffer.concat([encodeMessage(1, monInfo)]);
+        pushMessage(socket, 'ISeer20CSProto.notify_gain_new_mon_out', gainMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
         return encodeMessage(1, monInfo);
     }
 
