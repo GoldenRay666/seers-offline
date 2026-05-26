@@ -203,6 +203,20 @@ function install() {
         onLeave(r) { send(`[GAIN-MON] done`); }
     }); send(`[HOOK] handleNtfMsgGainNewMon installed`); } catch(ex){send(`[ERR] GainMon: ${ex}`);}
 
+    // GenSprite hook — dump SpriteInfo nonzero fields
+    const hGenSprite = mod.base.add(0x631ecc).or(1);
+    try { Interceptor.attach(hGenSprite, {
+        onEnter(args) { this.si = args[1]; },
+        onLeave(r) {
+            let nz = [];
+            for (let off = 0; off < 0x110; off += 4) {
+                const v = this.si.add(off).readU32();
+                if (v > 0 && v < 10000) nz.push(`${off.toString(16)}=${v}`);
+            }
+            send(`[GEN] nonzero: ${nz.join(' ')}`);
+        }
+    }); } catch(ex){}
+
     installed = true;
     send(`[READY]`);
 }

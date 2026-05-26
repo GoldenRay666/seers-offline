@@ -180,6 +180,7 @@ function buildPlayerBasicInfo(nick, roleTm, gender, level) {
         encodeUint32(13, 999),
         encodeUint32(14, 999),
         encodeUint32(42, 6),              // mon bag size = 6 slots
+        encodeUint32(43, 6),              // mon storage size? try
     ]);
 }
 
@@ -332,14 +333,13 @@ function buildMonInfo(monId, level, nickname) {
         encodeUint32(4, 0), encodeUint32(5, 0), encodeUint32(6, 0),
     ]);
 
-    // mon_moves_info_t: field 1=sub-msg, fields 2-4=varint
-    const moveEntry = Buffer.concat([encodeUint32(1, 1), encodeUint32(2, 0)]);
-    const movesInfo = Buffer.concat([
-        encodeMessage(1, moveEntry),  // field 1: move sub-message
-        encodeUint32(2, 1),           // field 2
-        encodeUint32(3, 1),           // field 3
-        encodeUint32(4, 1),           // field 4
-    ]);
+    // mon_moves_info_t: fields 1-5 are REPEATED uint32
+    // generateSpriteInfoByMessage reads ~12 values from f1, ~4 from f2
+    let f1 = Buffer.alloc(0);
+    for (let i = 0; i < 12; i++) f1 = Buffer.concat([f1, encodeUint32(1, 1)]);
+    let f2 = Buffer.alloc(0);
+    for (let i = 0; i < 4; i++) f2 = Buffer.concat([f2, encodeUint32(2, 1)]);
+    const movesInfo = Buffer.concat([f1, f2]);
 
     // mon_info_t (7 fields, mask 0x79: 1,4,5,6,7 required)
     return Buffer.concat([
