@@ -738,7 +738,7 @@ function buildResponse(cmd, fields, socket) {
         // Give the player a starter monster to skip pet selection crash
         const ps = getPlayerState(uid);
         // Give starter monster (GuideLayer crash patched via Houdini BX LR)
-        ps.bagMon = [{monId: 1, level: 5}];
+        ps.bagMon = [{monId: 1, level: 1}];
         ps.mainMon = 1;
         ps.level = 20;
         // Pre-assign tutorial tasks
@@ -828,7 +828,9 @@ function buildResponse(cmd, fields, socket) {
                 pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
             }
         }
-        const monInfo = buildMonInfo(monId, 5, null);
+        const ps = getPlayerState(socket._uid || 1);
+        const level = (ps.bagMon && ps.bagMon[0]) ? ps.bagMon[0].level : 1;
+        const monInfo = buildMonInfo(monId, level, null);
         // Push notify_gain_new_mon_out → handleNtfMsgGainNewMon → addSpriteToPack
         // field 2 = kMonInfoFieldNumber (verified by IDA merge)
         const gainMsg = Buffer.concat([encodeMessage(2, monInfo)]);
