@@ -956,6 +956,7 @@ function buildResponse(cmd, fields, socket) {
         const taskId = fields[2] || 0;
         const npcLv = fields[3] || 1;
         console.log(`[BATTLE] start pve npc=${npcId} task=${taskId} lv=${npcLv}`);
+        const ps = getPlayerState(socket._uid || 1);
         // Respond with btl_notify_battle_start_out push
         const btlType = Buffer.concat([encodeUint32(1, 1)]); // btl_type=1 (wild)
 
@@ -1008,16 +1009,32 @@ function buildResponse(cmd, fields, socket) {
         // Push battle start
         pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_start_out', btlNotifyMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
-        // Push battle end (player wins immediately)
-        const endInfo = Buffer.concat([encodeUint32(1, 1)]);  // field1=win
+        // Award battle rewards (ps already declared above)
+        const btlExp = 50 + (npcLv || 1) * 10;
+        const btlCoin = 20 + (npcLv || 1) * 5;
+        ps.exp = (ps.exp || 0) + btlExp;
+        ps.coin = (ps.coin || 0) + btlCoin;
+        if (ps.bagMon && ps.bagMon[0]) {
+            ps.bagMon[0].exp = (ps.bagMon[0].exp || 0) + btlExp;
+        }
+        console.log(`[BATTLE] Rewards: +${btlExp}EXP +${btlCoin}Coins`);
+
+        // Push battle end with rewards
+        const endInfo = Buffer.concat([
+            encodeUint32(1, btlExp),         // gain_score = EXP
+        ]);
         const btlEndMsg = Buffer.concat([
             encodeUint32(1, 1),              // result (1=win)
             encodeUint32(2, 0),              // field 2
-            encodeUint32(3, 0),              // field 3 (INT32)
+            encodeUint32(3, btlCoin),         // coins earned
             encodeMessage(4, endInfo),        // invitor_info
             encodeMessage(5, endInfo),        // invitee_info
         ]);
         pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_end_out', btlEndMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+
+        // Reward text
+        const rewardMsg = encodeString(1, `战斗胜利！+${btlExp}经验 +${btlCoin}金币`);
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_text_msg_out', rewardMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
 
         // Also respond to start_battle_pve_in request
         const btlAck = Buffer.concat([encodeUint32(1, 1)]);
