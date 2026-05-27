@@ -1,0 +1,198 @@
+// handleAckMsgCheckSession starts at 0x62f0b4, size=458
+
+0x62f0b4: PUSH    {R4-R7,LR}
+0x62f0b6: SUB     SP, SP, #0xF4
+0x62f0b8: MOVS    R4, R0
+0x62f0ba: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+0x62f0be: BL      _ZN11GameManager13getSceneLayerEv; GameManager::getSceneLayer(void)
+0x62f0c2: BL      _ZN10SceneLayer23removeEventSwallowLayerEv; SceneLayer::removeEventSwallowLayer(void)
+0x62f0c6: LDR     R3, [R4,#4]
+0x62f0c8: LDR     R5, =(_GLOBAL_OFFSET_TABLE_ - 0x62F0D0)
+0x62f0ca: LDR     R4, [R3]
+0x62f0cc: ADD     R5, PC; _GLOBAL_OFFSET_TABLE_
+0x62f0ce: CMP     R4, #0
+0x62f0d0: BEQ     loc_62F0E4
+0x62f0d2: LDR     R3, =(_ZTIN6google8protobuf7MessageE_ptr - 0xAB7A98)
+0x62f0d4: MOVS    R0, R4; lpsrc
+0x62f0d6: LDR     R1, [R5,R3]; _ZTIN6google8protobuf7MessageE_ptr ; lpstype
+0x62f0d8: LDR     R3, =(_ZTIN14ISeer20CSProto21cli_check_session_outE_ptr - 0xAB7A98)
+0x62f0da: LDR     R2, [R5,R3]; _ZTIN14ISeer20CSProto21cli_check_session_outE_ptr ; lpdtype
+0x62f0dc: MOVS    R3, #0; s2d
+0x62f0de: BLX     __dynamic_cast
+0x62f0e2: MOVS    R4, R0
+0x62f0e4: LDR     R3, [R4,#0xC]
+0x62f0e6: MOVS    R6, #0
+0x62f0e8: STR     R3, [SP,#0x108+var_EC]
+0x62f0ea: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+0x62f0ee: BL      _ZN11GameManager15getLastServerIdEv; GameManager::getLastServerId(void)
+0x62f0f2: MOVS    R7, R0
+0x62f0f4: B       loc_62F1F2
+0x62f0f6: LDR     R3, [R4,#8]
+0x62f0f8: LSLS    R2, R6, #2
+0x62f0fa: ADD     R0, SP, #0x108+var_A8; this
+0x62f0fc: LDR     R1, [R2,R3]; ISeer20Comm::server_role_t *
+0x62f0fe: BL      _ZN11ISeer20Comm13server_role_tC2ERKS0_; ISeer20Comm::server_role_t::server_role_t(ISeer20Comm::server_role_t const&)
+0x62f102: LDR     R1, [SP,#0x108+var_A0]
+0x62f104: CMP     R1, #0
+0x62f106: BNE     loc_62F110
+0x62f108: LDR     R3, =(_ZN11ISeer20Comm13server_role_t17default_instance_E_ptr - 0xAB7A98)
+0x62f10a: LDR     R3, [R5,R3]; _ZN11ISeer20Comm13server_role_t17default_instance_E_ptr
+0x62f10c: LDR     R3, [R3]; ISeer20Comm::server_role_t::default_instance_
+0x62f10e: LDR     R1, [R3,#8]; ISeer20Comm::server_info_t *
+0x62f110: ADD     R0, SP, #0x108+var_D8; this
+0x62f112: BL      _ZN11ISeer20Comm13server_info_tC2ERKS0_; ISeer20Comm::server_info_t::server_info_t(ISeer20Comm::server_info_t const&)
+0x62f116: LDR     R3, [SP,#0x108+var_D0]
+0x62f118: CMP     R7, R3
+0x62f11a: BNE     loc_62F1C6
+0x62f11c: LDR     R3, [SP,#0x108+var_B4]
+0x62f11e: CMP     R3, #4
+0x62f120: BEQ     loc_62F1CE
+0x62f122: LDR     R3, [SP,#0x108+var_98]
+0x62f124: CMP     R3, #0
+0x62f126: BLE     loc_62F1A0
+0x62f128: LDR     R3, [SP,#0x108+var_9C]
+0x62f12a: ADD     R4, SP, #0x108+var_74
+0x62f12c: MOVS    R0, R4; this
+0x62f12e: LDR     R1, [R3]; ISeer20Comm::player_info_t *
+0x62f130: BL      _ZN11ISeer20Comm13player_info_tC2ERKS0_; ISeer20Comm::player_info_t::player_info_t(ISeer20Comm::player_info_t const&)
+0x62f134: LDR     R3, =(_ZN8UserData10m_userInfoE_ptr - 0xAB7A98)
+0x62f136: LDRB    R1, [R4,#0xC]
+0x62f138: LDR     R3, [R5,R3]; _ZN8UserData10m_userInfoE_ptr
+0x62f13a: MOVS    R2, R3
+0x62f13c: ADDS    R2, #0x7A ; 'z'
+0x62f13e: STRB    R1, [R2]
+0x62f140: LDRB    R1, [R4,#0xD]
+0x62f142: MOVS    R2, R3
+0x62f144: ADDS    R2, #0x7B ; '{'
+0x62f146: STRB    R1, [R2]
+0x62f148: LDRB    R1, [R4,#0xE]
+0x62f14a: MOVS    R2, R3
+0x62f14c: ADDS    R2, #0x7C ; '|'
+0x62f14e: STRB    R1, [R2]
+0x62f150: LDRB    R1, [R4,#0xF]
+0x62f152: MOVS    R2, R3
+0x62f154: ADDS    R2, #0x7D ; '}'
+0x62f156: STRB    R1, [R2]
+0x62f158: LDR     R1, [R4,#0x18]
+0x62f15a: MOVS    R2, R3
+0x62f15c: ADDS    R2, #0x79 ; 'y'
+0x62f15e: STRB    R1, [R2]
+0x62f160: LDR     R2, [R4,#0x14]
+0x62f162: MOVS    R1, R3
+0x62f164: ADDS    R1, #0x2D ; '-'
+0x62f166: STRB    R2, [R1]
+0x62f168: ADDS    R3, #0x2E ; '.'
+0x62f16a: LSRS    R2, R2, #8
+0x62f16c: STRB    R2, [R3]
+0x62f16e: BL      _ZN20OnlineNetworkManager14sShareInstanceEv; OnlineNetworkManager::sShareInstance(void)
+0x62f172: LDR     R3, [R0]
+0x62f174: MOVS    R1, #0
+0x62f176: MOVS    R4, R0
+0x62f178: LDR     R3, [R3,#0x1C]
+0x62f17a: BLX     R3
+0x62f17c: LDR     R1, [SP,#0x108+in]; in
+0x62f17e: MOVS    R0, R4; this
+0x62f180: BL      _ZN20OnlineNetworkManager11setServerIPEj; OnlineNetworkManager::setServerIP(uint)
+0x62f184: LDR     R1, [SP,#0x108+var_C8]; unsigned int
+0x62f186: MOVS    R0, R4; this
+0x62f188: BL      _ZN20OnlineNetworkManager13setServerPortEj; OnlineNetworkManager::setServerPort(uint)
+0x62f18c: MOVS    R0, R4; this
+0x62f18e: BL      _ZN20OnlineNetworkManager12startConnectEv; OnlineNetworkManager::startConnect(void)
+0x62f192: MOVS    R0, R4; this
+0x62f194: BL      _ZN20OnlineNetworkManager16sendLoginMessageEv; OnlineNetworkManager::sendLoginMessage(void)
+0x62f198: ADD     R0, SP, #0x108+var_74; this
+0x62f19a: BL      _ZN11ISeer20Comm13player_info_tD2Ev; ISeer20Comm::player_info_t::~player_info_t()
+0x62f19e: B       loc_62F1BE
+0x62f1a0: BL      _ZN17CreatePlayerLayer15createByCCBFileEv; CreatePlayerLayer::createByCCBFile(void)
+0x62f1a4: LDR     R1, [SP,#0x108+var_D0]; unsigned int
+0x62f1a6: LDR     R2, [SP,#0x108+in]; unsigned int
+0x62f1a8: LDR     R3, [SP,#0x108+var_C8]; int
+0x62f1aa: MOVS    R4, R0
+0x62f1ac: BL      _ZN17CreatePlayerLayer17setTargetServerIDEjji; CreatePlayerLayer::setTargetServerID(uint,uint,int)
+0x62f1b0: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+0x62f1b4: MOVS    R1, R4; cocos2d::CCLayer *
+0x62f1b6: LDR     R2, =0x41200000; float
+0x62f1b8: MOVS    R3, #0xA; int
+0x62f1ba: BL      _ZN11GameManager10addUiLayerEPN7cocos2d7CCLayerEfi; GameManager::addUiLayer(cocos2d::CCLayer *,float,int)
+0x62f1be: MOVS    R0, #(dword_0+1); this
+0x62f1c0: BL      _ZN12LoginManager12setIsLoginedEb; LoginManager::setIsLogined(bool)
+0x62f1c4: B       loc_62F1D2
+0x62f1c6: ADD     R0, SP, #0x108+var_D8; this
+0x62f1c8: BL      _ZN11ISeer20Comm13server_info_tD2Ev; ISeer20Comm::server_info_t::~server_info_t()
+0x62f1cc: B       loc_62F1DC
+0x62f1ce: MOVS    R4, #0
+0x62f1d0: B       loc_62F1D4
+0x62f1d2: MOVS    R4, #1
+0x62f1d4: ADD     R0, SP, #0x108+var_D8; this
+0x62f1d6: BL      _ZN11ISeer20Comm13server_info_tD2Ev; ISeer20Comm::server_info_t::~server_info_t()
+0x62f1da: B       loc_62F1E6
+0x62f1dc: ADD     R0, SP, #0x108+var_A8; this
+0x62f1de: BL      _ZN11ISeer20Comm13server_role_tD2Ev; ISeer20Comm::server_role_t::~server_role_t()
+0x62f1e2: ADDS    R6, #1
+0x62f1e4: B       loc_62F1F2
+0x62f1e6: ADD     R0, SP, #0x108+var_A8; this
+0x62f1e8: BL      _ZN11ISeer20Comm13server_role_tD2Ev; ISeer20Comm::server_role_t::~server_role_t()
+0x62f1ec: CMP     R4, #0
+0x62f1ee: BNE     loc_62F27A
+0x62f1f0: B       loc_62F1FA
+0x62f1f2: LDR     R3, [SP,#0x108+var_EC]
+0x62f1f4: CMP     R6, R3
+0x62f1f6: BEQ     loc_62F1FA
+0x62f1f8: B       loc_62F0F6
+0x62f1fa: BL      _ZN20OnlineNetworkManager14sShareInstanceEv; OnlineNetworkManager::sShareInstance(void)
+0x62f1fe: LDR     R3, [R0]
+0x62f200: MOVS    R1, #0
+0x62f202: LDR     R4, =(byte_991002 - 0x62F214)
+0x62f204: LDR     R3, [R3,#0x1C]
+0x62f206: BLX     R3
+0x62f208: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+0x62f20c: MOVS    R7, R0
+0x62f20e: LDR     R0, =(aServerCantEnte - 0x62F218); "SERVER_CANT_ENTER"
+0x62f210: ADD     R4, PC; byte_991002
+0x62f212: MOVS    R1, R4; char *
+0x62f214: ADD     R0, PC; "SERVER_CANT_ENTER"
+0x62f216: BL      _Z17CCLocalizedStringPKcS0_; CCLocalizedString(char const*,char const*)
+0x62f21a: STR     R0, [SP,#0x108+var_EC]
+0x62f21c: BL      _ZN15MessageBoxLayer15createByCCBFileEv; MessageBoxLayer::createByCCBFile(void)
+0x62f220: LDR     R3, =(_ZN11GameManager8exitGameEv_ptr - 0xAB7A98)
+0x62f222: MOVS    R1, #2
+0x62f224: MOVS    R6, R0
+0x62f226: LDR     R2, [R5,R3]; GameManager::exitGame(void)
+0x62f228: MOVS    R3, #0
+0x62f22a: STR     R3, [SP,#0x108+var_E4]
+0x62f22c: STR     R2, [SP,#0x108+var_E8]
+0x62f22e: STR     R3, [SP,#0x108+var_E0]
+0x62f230: STR     R3, [SP,#0x108+var_DC]
+0x62f232: STR     R1, [SP,#0x108+var_108]
+0x62f234: STR     R2, [SP,#0x108+var_100]
+0x62f236: MOVS    R1, R4
+0x62f238: LDR     R2, [SP,#0x108+var_EC]
+0x62f23a: STR     R3, [SP,#0x108+var_FC]
+0x62f23c: STR     R3, [SP,#0x108+var_F8]
+0x62f23e: STR     R3, [SP,#0x108+var_F4]
+0x62f240: MOVS    R3, #1
+0x62f242: STR     R7, [SP,#0x108+var_104]
+0x62f244: BL      _ZN15MessageBoxLayer4showEPKcS1_biPN7cocos2d8CCObjectEMS3_FvvES6_; MessageBoxLayer::show(char const*,char const*,bool,int,cocos2d::CCObject *,void (cocos2d::CCObject::*)(void),void (cocos2d::CCObject::*)(void))
+0x62f248: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+0x62f24c: BL      _ZN11GameManager13getSceneLayerEv; GameManager::getSceneLayer(void)
+0x62f250: LDR     R3, [R0]
+0x62f252: LDR     R2, =0x4B2
+0x62f254: MOVS    R1, R6
+0x62f256: ADDS    R3, #0xE4
+0x62f258: LDR     R4, [R3]
+0x62f25a: MOVS    R3, R2
+0x62f25c: BLX     R4
+0x62f25e: B       loc_62F27A
+0x62f260: ADD     R0, SP, #0x108+var_74; this
+0x62f262: BL      _ZN11ISeer20Comm13player_info_tD2Ev; ISeer20Comm::player_info_t::~player_info_t()
+0x62f266: B       loc_62F268
+0x62f268: ADD     R0, SP, #0x108+var_D8; this
+0x62f26a: BL      _ZN11ISeer20Comm13server_info_tD2Ev; ISeer20Comm::server_info_t::~server_info_t()
+0x62f26e: B       loc_62F270
+0x62f270: ADD     R0, SP, #0x108+var_A8; this
+0x62f272: BL      _ZN11ISeer20Comm13server_role_tD2Ev; ISeer20Comm::server_role_t::~server_role_t()
+0x62f276: BLX     __cxa_end_cleanup
+0x62f27a: ADD     SP, SP, #0xF4
+0x62f27c: POP     {R4-R7,PC}
+
+// END at 0x62f27e

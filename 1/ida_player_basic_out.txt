@@ -1,0 +1,98 @@
+============================================================
+
+============================================================
+// _ZN11ISeer20Comm19player_basic_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE @ 0x59f4a4 (size=18)
+============================================================
+// _ZN11ISeer20Comm19player_basic_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE @ 0x59f4a4
+int __fastcall ISeer20Comm	:		:	player_basic_info_t	:		:	MergePartialFromCodedStream	(	
+(40000000        ISeer20Comm	:		:	player_basic_info_t *this	,	
+(40000001        google	:		:	protobuf	:		:	io	:		:	CodedInputStream *a2	,	
+(40000002        int a3	,	
+(40000003        int a4	,	
+(40000004        int a5	,	
+(40000005        int a6	,	
+(40000006        int a7	,	
+(40000007        int a8	,	
+(40000008        unsigned int a9	,	
+(40000009        int a10	)	
+	{	(00000000
+  (4000000A!__int64 v10!	;	 // r0
+  (4000000Bint v11	;	 // r2
+  (4000000Cint v12	;	 // r3
+(80000000(00000000
+(00000000(00000001  (00000003v10 (00000002	=	 (00000005sub_5A098E(00000004	(		)		;	(00000001
+(00000006   return  (00000008sub_59F4B6(00000007	(	(00000009v10	,	 (0000000BSHIDWORD(0000000A	(	(0000000Cv10	)		,	 (0000000Dv11	,	 (0000000Ev12	,	 (0000000Fa5	,	 (00000010a6	,	 (00000011a7	,	 (00000012a8	,	 (00000013a9	,	 (00000014a10	)		;	(00000000
+	}	(00000000
+
+============================================================
+// _ZN11ISeer20Comm19player_basic_info_t9MergeFromERKN6google8protobuf7MessageE @ 0x59e214 (size=114)
+============================================================
+// _ZN11ISeer20Comm19player_basic_info_t9MergeFromERKN6google8protobuf7MessageE @ 0x59e214
+int __fastcall ISeer20Comm	:		:	player_basic_info_t	:		:	MergeFrom	(	
+(40000000        ISeer20Comm	:		:	player_basic_info_t *this	,	
+(40000001        const google	:		:	protobuf	:		:	Message *lpsrc	,	
+(40000002        google	:		:	protobuf	:		:	Message *a3	)	
+	{	(00000000
+  (40000005!google	:		:	protobuf	:		:	internal	:		:	LogMessage *v5!	;	 // r0
+  (40000006!const ISeer20Comm	:		:	player_basic_info_t *v6!	;	 // r1
+  (40000008char v8	[	4	]		;	 // [sp+4h] [bp-24h] BYREF
+  (40000009char v9	[	32	]		;	 // [sp+8h] [bp-20h] BYREF
+(80000000(00000000
+(00000000(00000001   if  	(	 (0000001Elpsrc (0000001D	==	 (0000001Fthis 	)	(00000001
+  	{	(00000002
+(00000002(00000003    (00000005google::protobuf::internal::LogMessage::LogMessage(00000004	(	(00000004
+      (00000006v9	,	(80000001(00000004
+      (00000007 3 	,	(80000002(00000004
+      (00000008"jni/../../iSeer/Classes/NetWorkManager/iseer20.comm.pb.cc"	,	(80000003(00000004
+      (00000009 13670 	)		;	(00000003
+(0000000A    (0000000Cv5 (0000000B	=	 (0000000D	(	google	:		:	protobuf	:		:	internal	:		:	LogMessage *	)	(0000000Fgoogle::protobuf::internal::LogMessage::operator<<(0000000E	(	(0000000E
+                                                     (00000010v9	,	(80000001(0000000E
+                                                     (00000011"CHECK failed: (&from) != (this): "	)		;	(0000000A
+(00000012    (00000014google::protobuf::internal::LogFinisher::operator=(00000013	(	(00000015	(	int	)	(00000016v8	,	 (00000017v5	)		;	(00000012
+(00000018    (0000001Agoogle::protobuf::internal::LogMessage::~LogMessage(00000019	(	(0000001B	(	google	:		:	protobuf	:		:	internal	:		:	LogMessage *	)	(0000001Cv9	)		;	(00000018
+  	}	(00000002
+(00000020   if  	(	 (0000002Flpsrc(80000000(0000002E
+    (0000002E	&&	 	(	(00000032v6 (00000031	=	 (00000033	(	const ISeer20Comm	:		:	player_basic_info_t *	)	(00000035_dynamic_cast(00000034	(	(00000034
+                                                         (00000036lpsrc	,	(80000001(00000034
+                                                         (00000037	(	const struct __class_type_info *	)	(00000038	&	(00000039`typeinfo for'google::protobuf::Message	,	(80000002(00000034
+                                                         (0000003A	(	const struct __class_type_info *	)	(0000003B	&	(0000003C`typeinfo for'ISeer20Comm::player_basic_info_t	,	(80000003(00000034
+                                                         (0000003D 0 	)		)	 (00000030	!=	 (0000003E 0  	)	(00000020
+  	{	(00000021
+(00000021(00000022     return  (00000024ISeer20Comm::player_basic_info_t::MergeFrom(00000023	(	(00000025this	,	 (00000026v6	)		;	(00000022
+  	}	(00000021
+   else (00000020
+  	{	(00000027
+(00000027(00000028     return  (0000002Agoogle::protobuf::internal::ReflectionOps::Merge(00000029	(	(0000002Blpsrc	,	 (0000002Cthis	,	 (0000002Da3	)		;	(00000028
+  	}	(00000027
+	}	(00000000
+
+============================================================
+// _ZN11ISeer20Comm19player_basic_info_t9MergeFromERKS0_ @ 0x59d994 (size=52)
+============================================================
+// _ZN11ISeer20Comm19player_basic_info_t9MergeFromERKS0_ @ 0x59d994
+int __fastcall ISeer20Comm	:		:	player_basic_info_t	:		:	MergeFrom	(	
+(40000000        ISeer20Comm	:		:	player_basic_info_t *this	,	
+(40000001        const ISeer20Comm	:		:	player_basic_info_t *a2	)	
+	{	(00000000
+  (40000003!google	:		:	protobuf	:		:	internal	:		:	LogMessage *v3!	;	 // r0
+  (40000004!int v4!	;	 // r0
+  (40000005char v5	[	4	]		;	 // [sp+Ch] [bp-2Ch] BYREF
+  (40000006char v6	[	40	]		;	 // [sp+10h] [bp-28h] BYREF
+(80000000(00000000
+(00000000(00000001   if  	(	 (0000001Fa2 (0000001E	==	 (00000020this 	)	(00000001
+  	{	(00000002
+(00000002(00000003    (00000005google::protobuf::internal::LogMessage::LogMessage(00000004	(	(00000004
+      (00000006v6	,	(80000001(00000004
+      (00000007 3 	,	(80000002(00000004
+      (00000008"jni/../../iSeer/Classes/NetWorkManager/iseer20.comm.pb.cc"	,	(80000003(00000004
+      (00000009 13682 	)		;	(00000003
+(0000000A    (0000000Cv3 (0000000B	=	 (0000000D	(	google	:		:	protobuf	:		:	internal	:		:	LogMessage *	)	(0000000Fgoogle::protobuf::internal::LogMessage::operator<<(0000000E	(	(0000000E
+                                                     (00000010v6	,	(80000001(0000000E
+                                                     (00000011"CHECK failed: (&from) != (this): "	)		;	(0000000A
+(00000012    (00000014v4 (00000013	=	 (00000016google::protobuf::internal::LogFinisher::operator=(00000015	(	(00000017	(	int	)	(00000018v5	,	 (00000019v3	)		;	(00000012
+(0000001A    (0000001Csub_59E1E4(0000001B	(	(0000001Dv4	)		;	(0000001A
+  	}	(00000002
+(00000021   return  (00000023sub_59D9D8(00000022	(		)		;	(00000000
+	}	(00000000
+
+// DONE

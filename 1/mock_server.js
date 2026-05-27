@@ -87,12 +87,32 @@ function emptyRepeated(fieldNumber) {
 // Game State
 // =============================================================================
 
+const fs = require('fs');
+const SAVE_FILE = './save.json';
+
 const STATE = {
     roles: {},          // serverId -> [{roleTm, nick, gender, uid, level}]
     playerData: {},     // uid -> {tasks, bagMon, items, level, exp, coin, etc}
     sessions: {},       // serverId -> [{uid, session}]
     nextUid: 1,
 };
+
+// === Save/Load ===
+function saveState() {
+    try {
+        fs.writeFileSync(SAVE_FILE, JSON.stringify(STATE, null, 2));
+    } catch(e) { console.log("[SAVE] Error:", e.message); }
+}
+function loadState() {
+    try {
+        if (fs.existsSync(SAVE_FILE)) {
+            const data = JSON.parse(fs.readFileSync(SAVE_FILE, 'utf8'));
+            Object.assign(STATE, data);
+            console.log(`[SAVE] Loaded: ${Object.keys(STATE.playerData).length} players, ${Object.keys(STATE.roles).reduce((a,k)=>a+STATE.roles[k].length,0)} roles`);
+        }
+    } catch(e) { console.log("[SAVE] Load error:", e.message); }
+}
+loadState();
 
 function getPlayerState(uid) {
     if (!STATE.playerData[uid]) {
@@ -141,6 +161,12 @@ function buildServerListResponse() {
 }
 
 function buildCheckSessionResponse(withRole) {
+    // cli_check_session_out {
+    //   f1: {
+    //     f1: server_info_t { f1:id, f2:name, f3:status }
+    //     f2: role_info? { ... }
+    //   }
+    // }
     const serverInfo = Buffer.concat([
         encodeUint32(1, 1),
         encodeString(2, "Offline Server"),
@@ -674,7 +700,7 @@ function handleGameClient(socket) {
 
             // Build response
             let respCmd = CMD_MAP[header.cmd] || header.cmd.replace(/_in$/, '_out');
-            // create_role must return login_out (game expects full login data)
+            // create_role returns login_out to trigger handleMsgLoginIn → sets m_userInfo[0..3]
             if (header.cmd.includes('create_role')) {
                 respCmd = 'ISeer20CSProto.login_out';
             }
@@ -721,9 +747,11 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Auth & Session ----
     if (cmd.includes('check_session') || cmd.includes('recheck_session')) {
-        // For recheck: include existing role so game knows character exists
+        // Only recheck includes role info (todo: fix check_session role format for direct login)
         const withRole = cmd.includes('recheck') && STATE.roles[1] && STATE.roles[1].length > 0;
-        return buildCheckSessionResponse(withRole);
+        const resp = buildCheckSessionResponse(withRole);
+        console.log(`[SESSION] ${cmd.includes('recheck')?'recheck':'check'} withRole=${withRole} body=${resp.length}B`);
+        return resp;
     }
 
     // ---- Login & Create Role ----
@@ -732,44 +760,50 @@ function buildResponse(cmd, fields, socket) {
         const gender = fields[3] || 1;
         const serverId = fields[1] || 1;
         const roleTm = now;
-        const uid = STATE.nextUid++;
+        const uid = 1; // Always uid=1 for save consistency
+        STATE.nextUid = Math.max(STATE.nextUid, 2);
         if (!STATE.roles[serverId]) STATE.roles[serverId] = [];
-        STATE.roles[serverId].push({roleTm, nick, gender, uid, level: 20});
-        // Give the player a starter monster to skip pet selection crash
+        // Only add role if not already present
+        if (!STATE.roles[serverId].find(r => r.uid === uid)) {
+            STATE.roles[serverId].push({roleTm, nick, gender, uid, level: 20});
+        }
         const ps = getPlayerState(uid);
-        // Give starter monster (GuideLayer crash patched via Houdini BX LR)
-        ps.bagMon = [
-            {monId: 1, level: 1},
-            {monId: 4, level: 1},
-            {monId: 7, level: 1},
-        ];
-        ps.mainMon = 1;
-        ps.level = 20;
-        // Pre-assign tutorial tasks
-        ps.tasks = [
-            {id: 1, name: '初到异蘑世界', info: '与多罗对话', task_type: 2, need_level: 0, flag: 1,
-             obtain_map_id: 10001, commit_map_id: 10001,
-             obtain_npc_id: 3, commit_npc_id: 3,
-             obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
-             prize_id: 50001, area_id: 1,
-             steps: [{seq: 1, step_type: 5, value: 1, target: '3', link: [10001]}]},
-            {id: 10002, name: '矿石采集', info: '采集矿石1次', task_type: 2, need_level: 0, flag: 1,
-             obtain_map_id: 10001, commit_map_id: 10001,
-             obtain_npc_id: 3, commit_npc_id: 3,
-             obtain_dialog: 200, progress_dialog: 205, finish_dialog: 210,
-             prize_id: 50002, area_id: 1,
-             steps: [{seq: 1, step_type: 6, value: 1, target: '采矿', link: [10001]}]},
-        ];
-        // Starter items - swap order to test
-        ps.items = [
-            {item_id: 20081, item_count: 10, grid_id: 1},  // 黄铁矿 x10
-        ];
-        console.log(`[ROLE] Starter items: ${ps.items.length} types`);
+        // First login: set starter data. Subsequent logins: keep saved data.
+        if (!ps.bagMon || ps.bagMon.length === 0) {
+            ps.bagMon = [
+                {monId: 1, level: 1},
+                {monId: 4, level: 1},
+                {monId: 7, level: 1},
+            ];
+            ps.mainMon = 1;
+            ps.level = 20;
+            ps.tasks = [
+                {id: 1, name: '初到异蘑世界', info: '与多罗对话', task_type: 2, need_level: 0, flag: 1,
+                 obtain_map_id: 10001, commit_map_id: 10001,
+                 obtain_npc_id: 3, commit_npc_id: 3,
+                 obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
+                 prize_id: 50001, area_id: 1,
+                 steps: [{seq: 1, step_type: 5, value: 1, target: '3', link: [10001]}]},
+                {id: 10002, name: '矿石采集', info: '采集矿石1次', task_type: 2, need_level: 0, flag: 1,
+                 obtain_map_id: 10001, commit_map_id: 10001,
+                 obtain_npc_id: 3, commit_npc_id: 3,
+                 obtain_dialog: 200, progress_dialog: 205, finish_dialog: 210,
+                 prize_id: 50002, area_id: 1,
+                 steps: [{seq: 1, step_type: 6, value: 1, target: '采矿', link: [10001]}]},
+            ];
+            ps.items = [
+                {item_id: 20081, item_count: 10, grid_id: 1},
+            ];
+            console.log(`[ROLE] New player: starter items+mooks+tasks created`);
+        } else {
+            console.log(`[ROLE] Existing player: restored items=${ps.items.length} mons=${ps.bagMon.length}`);
+        }
 
         // Track which uid this socket is connected to
         socket._uid = uid;
         console.log(`[ROLE] Created: ${nick} uid=${uid}`);
-        // Return full login data (game expects this, not just result code)
+        saveState();
+        // Return login_out to trigger handleMsgLoginIn → sets m_userInfo[0..3] for battle UID match
         return buildLoginResponse();
     }
 
@@ -804,39 +838,37 @@ function buildResponse(cmd, fields, socket) {
         const ps = getPlayerState(socket._uid || 1);
         const monId = (ps.bagMon && ps.bagMon[0]) ? ps.bagMon[0].monId : (fields[1] || 1);
         console.log(`[MON] Selected starter: using bagMon=${monId} (client sent ${fields[1]})`);
+        saveState();
         const role = getLastRole(1);
         // Push player_enter_map_out BEFORE the select_main_mon response (matching old server behavior)
         if (role) {
             const mapBody = buildPlayerEnterMapOut(10001, role.nick, role.roleTm, role.gender);
             pushMessage(socket, 'ISeer20CSProto.player_enter_map_out', mapBody, socket._lastF3 || 1, 0, 0);
 
-            // Push starter items: f1=grid, f2=item_id, f3=count
-            const starterItems = [
-                {id: 20081, cnt: 5,  grid: 1},   // 黄铁矿
-                {id: 20082, cnt: 3,  grid: 2},   // 黑铁矿
-                {id: 20083, cnt: 2,  grid: 3},   // 赤铁矿
-                {id: 20011, cnt: 10, grid: 4},   // 小果实
-                {id: 20012, cnt: 8,  grid: 5},   // 普通果实
-                {id: 20021, cnt: 1,  grid: 6},   // 双倍经验10
-                {id: 20101, cnt: 5,  grid: 7},   // 体力药剂
-            ];
-            for (const it of starterItems) {
+            // Push saved items from ps.items (or use starter items if empty)
+            if (ps.items.length === 0) {
+                ps.items = [
+                    {item_id: 20081, item_count: 5,  grid_id: 1},
+                    {item_id: 20082, item_count: 3,  grid_id: 2},
+                    {item_id: 20083, item_count: 2,  grid_id: 3},
+                    {item_id: 20011, item_count: 10, grid_id: 4},
+                    {item_id: 20012, item_count: 8,  grid_id: 5},
+                    {item_id: 20021, item_count: 1,  grid_id: 6},
+                    {item_id: 20101, item_count: 5,  grid_id: 7},
+                ];
+            }
+            console.log(`[MON] Pushing ${ps.items.length} saved items`);
+            for (const it of ps.items) {
                 const oneT = Buffer.concat([
-                    encodeUint32(1, it.grid),    // f1 → SaveItem+8 = grid
-                    encodeUint32(2, it.id),      // f2 → SaveItem+0 = item_id
-                    encodeUint32(3, it.cnt),     // f3 → SaveItem+4 = count
+                    encodeUint32(1, it.grid_id),
+                    encodeUint32(2, it.item_id),
+                    encodeUint32(3, it.item_count),
                 ]);
                 const bagUpdate = Buffer.concat([
                     encodeUint32(1, 30),
-                    encodeMessage(3, oneT),       // field 3 = newGrid
+                    encodeMessage(3, oneT),
                 ]);
                 pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
-            }
-            // Sync items to ps.items for sell/use tracking
-            for (const it of starterItems) {
-                const exist = ps.items.find(i => i.item_id === it.id);
-                if (exist) exist.item_count += it.cnt;
-                else ps.items.push({item_id: it.id, item_count: it.cnt, grid_id: it.grid});
             }
         }
         // Push notify_gain_new_mon_out for ALL bag monsters
@@ -863,6 +895,10 @@ function buildResponse(cmd, fields, socket) {
     // ---- Map Walk ----
     if (cmd.includes('map_player_walk')) {
         console.log(`[WALK] fields=${JSON.stringify(fields)}`);
+        const ps = getPlayerState(socket._uid || 1);
+        if (fields[1]) ps.x = fields[1];
+        if (fields[2]) ps.y = fields[2];
+        saveState();
         return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
@@ -993,64 +1029,6 @@ function buildResponse(cmd, fields, socket) {
             ]);
         }
 
-        const playerBtlAttr = buildBtlAttrLevel(130, 30, 30, 30);
-        const enemyBtlAttr = buildBtlAttrLevel(110, 26, 26, 26);
-
-        const playerMon = Buffer.concat([
-            encodeUint32(1, 1),              // 1: mon_id
-            encodeString(2, '迪兰'),          // 2: mon_name (STRING, not message!)
-            encodeUint32(3, 5),              // 3: level
-            encodeUint32(4, 0),              // 4
-            encodeInt32(5, 0),               // 5: INT32
-            encodeInt32(6, 0),               // 6: INT32
-            encodeUint32(7, 0),              // 7
-            encodeUint32(8, 0),              // 8
-            encodeMessage(9, playerBtlAttr), // 9: mon_btl_attr_level_t (6 INT32)
-        ]);
-        const enemyMon = Buffer.concat([
-            encodeUint32(1, 4),              // 1: mon_id = 休咻
-            encodeString(2, '休咻'),          // 2: mon_name (STRING)
-            encodeUint32(3, 3),              // 3: level
-            encodeUint32(4, 0),              // 4
-            encodeInt32(5, 0),               // 5: INT32
-            encodeInt32(6, 0),               // 6: INT32
-            encodeUint32(7, 0),              // 7
-            encodeUint32(8, 0),              // 8
-            encodeMessage(9, enemyBtlAttr),  // 9: mon_btl_attr_level_t (6 INT32)
-        ]);
-
-        // btl_player_simple_info_t fields (IDA verified, mask 0x7F = 7 required fields):
-        //   f1: uint32 uid (+0x8) — MUST match m_userInfo for "self" routing
-        //   f2: int32 (+0xC)
-        //   f3: string nick (+0x10)
-        //   f4: uint32 (+0x14)
-        //   f5: uint32 (+0x18)
-        //   f6: uint32 (+0x1C)
-        //   f7: uint32 (+0x20)
-        //   f8: repeated btl_mon_simple_info_t (+0x24)
-        const playerInfo = Buffer.concat([
-            encodeUint32(1, playerUid),          // uid = roleTm → matches m_userInfo
-            encodeUint32(2, 1),                  // role_tm
-            encodeString(3, playerNick),         // nick
-            encodeUint32(4, 1),                  // gender
-            encodeUint32(5, 0),                  // f5 required
-            encodeUint32(6, 0),                  // f6 required
-            encodeUint32(7, 0),                  // f7 required
-            encodeMessage(8, playerMon),         // mons (repeated field 8)
-        ]);
-
-        // Enemy: use fake uid that NEVER matches m_userInfo
-        const enemyInfo = Buffer.concat([
-            encodeUint32(1, 999999),             // uid = fake, won't match m_userInfo
-            encodeUint32(2, 1),                  // f2 required
-            encodeString(3, '休咻'),              // nick
-            encodeUint32(4, 0),                  // f4 required
-            encodeUint32(5, 0),                  // f5 required
-            encodeUint32(6, 0),                  // f6 required
-            encodeUint32(7, 0),                  // f7 required
-            encodeMessage(8, enemyMon),          // mons (repeated field 8)
-        ]);
-
         // BTL proto: btl_notify_battle_start_out (IDA verified)
         //   f1: int32 at +0x2C
         // Award battle rewards (ps already declared above)
@@ -1091,8 +1069,9 @@ function buildResponse(cmd, fields, socket) {
         const playerMon = buildBtlMon(1, '迪兰', 5);
         const enemyMon = buildBtlMon(4, '休咻', 3);
 
+        // Player uid=0 matches m_userInfo=0 in battle comparison → addWaitingSprites path
         const playerInfo = Buffer.concat([
-            encodeUint32(1, playerUid), encodeUint32(2, 1),
+            encodeUint32(1, 0), encodeUint32(2, 1),
             encodeString(3, playerNick), encodeUint32(4, 1),
             encodeUint32(5, 0), encodeUint32(6, 0), encodeUint32(7, 0),
             encodeMessage(8, playerMon),
@@ -1103,35 +1082,20 @@ function buildResponse(cmd, fields, socket) {
             encodeUint32(5, 0), encodeUint32(6, 0), encodeUint32(7, 0),
             encodeMessage(8, enemyMon),
         ]);
+        // Push battle start + end + prize for reverse engineering
         const btlProto = Buffer.concat([
             encodeUint32(1, 10001),
             encodeMessage(2, btlType),
             encodeMessage(3, playerInfo),
             encodeMessage(3, enemyInfo),
         ]);
-        const wrapped = encodeMessage(1, btlProto);
-        console.log("[BATTLE] Wrapped + mons, body=", wrapped.length);
-        pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_start_out', wrapped, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
-        console.log("[BATTLE] Battle start push done");
-
-        var endInfo = Buffer.concat([encodeUint32(1, btlExp)]);
-        var btlEndMsg = Buffer.concat([
-            encodeUint32(1, 1),
-            encodeUint32(2, 0),
-            encodeUint32(3, btlCoin),
-            encodeMessage(4, endInfo),
-            encodeMessage(5, endInfo),
-        ]);
-        pushMessage(socket, 'ISeer20CSProto.btl_notify_battle_end_out', btlEndMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
-        console.log("[BATTLE] Battle end push done");
-
+        // Skip battle scene — prize only
+        // TODO: fix check_session for direct login, then fix battle end transition
         var playerAttr = Buffer.concat([encodeUint32(1, btlExp), encodeUint32(10, btlCoin)]);
         var prizeT = Buffer.concat([encodeUint32(1, 80001), encodeMessage(4, playerAttr)]);
-        var prizeMsg = Buffer.concat([encodeMessage(1, prizeT)]);
-        pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', prizeMsg, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
-        console.log("[BATTLE] Prize push done");
+        pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', encodeMessage(1, prizeT), socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        console.log("[BATTLE] Prize push");
 
-        // Respond to start_battle_pve_in
         const btlAck = Buffer.concat([encodeUint32(1, 1)]);
         return Buffer.concat([encodeMessage(1, btlAck)]);
     }
@@ -1154,6 +1118,7 @@ function buildResponse(cmd, fields, socket) {
             ps[BUFFS[itemId]] = (ps[BUFFS[itemId]] || 0) + count;
             console.log(`[USE] buff ${BUFFS[itemId]} x${count}`);
         }
+        saveState();
         return Buffer.concat([encodeUint32(1, 0)]); // result=ok
     }
 
@@ -1185,6 +1150,7 @@ function buildResponse(cmd, fields, socket) {
             encodeMessage(fieldNum, oneT),
         ]);
         pushMessage(socket, 'ISeer20CSProto.cli_notify_item_bag_updates_out', bagUpdate, socket._lastF3 || 1, 0, 0);
+        saveState();
         return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, ps.coin)]);
     }
 

@@ -113,13 +113,6 @@ adb -s 127.0.0.1:7555 logcat -d 2>&1 | grep -E "cocos2d-x debug|signal" | tail -
 - `add other seer X` / `the player has added before` ——成功进入地图
 - `Error! Quest Not Exists!` / `quest XXXXX added` ——任务系统跑通
 
-### 第三层：Houdini 翻译层（最难）
-当 logcat 出现 `Fatal signal 11 (SIGSEGV)` 时立刻看 tombstone：
-```bash
-MSYS_NO_PATHCONV=1 adb -s 127.0.0.1:7555 shell 'ls -la /data/tombstones/'
-MSYS_NO_PATHCONV=1 adb -s 127.0.0.1:7555 shell 'head -120 /data/tombstones/tombstone_XX'
-```
-**Tombstone 的 stack: 段才是黄金**。`backtrace` 段往往只显示 `libhoudini.so` 内部偏移；真正的崩溃源头在 `stack:` 段里 `_ZN10... +N` 的符号——那是 Houdini 翻译时正在处理的 ARM 函数。
 
 判定要点：
 - 如果 backtrace 全在 `libhoudini.so` 而 stack 里指向 libgame_logic.so 的具体 C++ 函数，那是 **Houdini 翻译该 ARM 函数时崩了**，不是该函数本身的逻辑 bug

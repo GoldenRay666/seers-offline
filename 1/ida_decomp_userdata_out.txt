@@ -1,0 +1,1946 @@
+============================================================
+UserData Function Decompilations
+============================================================
+
+
+============================================================
+// DATA:_ZN8UserData10m_userInfoE @ 0xac4094
+// Size: 1 bytes
+// Value (byte): 0xff
+// Xrefs:
+//   from 0x9184 ()
+//   from 0x45a2fa (_ZN14CaptureManager15afterCaptureEndEb)
+//   from 0x4623fa (_ZN11SpinningTop17setRestraintCoeffEv)
+//   from 0x463d68 (_ZN20BattleCompeteManager20processCompeteInviteEPN14ISeer20CSProto21notify_invite_pvp_outE)
+//   from 0x463d6c (_ZN20BattleCompeteManager20processCompeteInviteEPN14ISeer20CSProto21notify_invite_pvp_outE)
+//   from 0x469a60 (_ZN30GameBattleSkillSequenceManager4loadEv)
+//   from 0x469a64 (_ZN30GameBattleSkillSequenceManager4loadEv)
+//   from 0x469cb2 (_ZN15GameChatManager23getCreateTimeByPlayerIDEj)
+//   from 0x469cb6 (_ZN15GameChatManager23getCreateTimeByPlayerIDEj)
+//   from 0x469d16 (_ZN15GameChatManager17getPlayerVipLevelEj)
+//   from 0x469d1a (_ZN15GameChatManager17getPlayerVipLevelEj)
+//   from 0x469d60 (_ZN15GameChatManager18getPlayerNameByUIDEj)
+//   from 0x469d64 (_ZN15GameChatManager18getPlayerNameByUIDEj)
+//   from 0x469de2 (_ZN15GameChatManager19popChatChannelCacheEi)
+//   from 0x469de6 (_ZN15GameChatManager19popChatChannelCacheEi)
+//   from 0x46a99a (_ZN15GameChatManager15sendChatContentEiPKcj)
+//   from 0x46a99e (_ZN15GameChatManager15sendChatContentEiPKcj)
+//   from 0x46a9f8 (_ZN15GameChatManager15sendChatContentEiPKcj)
+//   from 0x46ab3e (_ZN15GameChatManager17onChatSendSuccessEiPKci)
+//   from 0x46ab42 (_ZN15GameChatManager17onChatSendSuccessEiPKci)
+//   from 0x46abba (_ZN15GameChatManager18receiveChatContentEiPKcyiyiS1_i)
+//   from 0x46abbe (_ZN15GameChatManager18receiveChatContentEiPKcyiyiS1_i)
+//   from 0x46c850 (_ZN19GameDataManager4Lua25getSpriteStoragePageCountEv)
+//   from 0x46c87a (_ZN19GameDataManager4Lua9getLinkSpEv)
+//   from 0x46e656 (_ZN16GameGuideManager12initProgressEv)
+//   from 0x46e846 (_ZN16GameGuideManager12updateDialogEv)
+//   from 0x472fdc (_ZN11GameManager9startGameEv)
+//   from 0x476a3a (_ZN29GameOpenAssignFunctionManager8endGuideEv)
+//   from 0x476d26 (_ZN29GameOpenAssignFunctionManager12isNeedUnlockEv)
+//   from 0x480c26 (_Z6addExpiP10SpriteInfoP17SpriteUpgradeInfo)
+//   from 0x4972e8 (_ZN23ActivityCenterSignLayer21onPatchSignInSelectedEv)
+//   from 0x49c784 (_ZN14AssignExpLayer8loadDataEPKc)
+//   from 0x49ce46 (_ZNK14AssignExpLayer24getValidDistributableExpEv)
+//   from 0x49ce94 (_ZN14AssignExpLayer39updateDataByAssignedExpSliderBarPercentEf)
+//   from 0x49cf96 (_ZN14AssignExpLayer19onPlusButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x4a0c4c (_ZN20AwardElectricityNode23setAwardEnergyDisenableEv)
+//   from 0x4a0cca (_ZN20AwardElectricityNode17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a1714 (_ZN20AwardElectricityNode10updateViewEv)
+//   from 0x4a2b1a (_ZN17BattleCenterLayer10initailizeEv)
+//   from 0x4a464c (_ZN25BattleKingTowerSceneLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a51b8 (_ZN25BattleKingTowerSceneLayer21updateSeerActionPointEv)
+//   from 0x4a5990 (_ZN25BattleKingTowerSceneLayer11addSelfSeerEv)
+//   from 0x4a6d46 (_ZN25BattleKingTowerSceneLayer12onGoSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4aaecc (_ZN21BattlePvpCompeteLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4ac23c (_ZN14BattlePvpLayer10initializeEv)
+//   from 0x4ac5b6 (_ZN14BattlePvpLayer15closeFromServerEv)
+//   from 0x4ac73a (_ZN14BattlePvpLayer16onBattleSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4b1620 (_ZN22BattleTowerSelectLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4b292c (_ZN22BattleTowerSelectLayer8updateHpEv)
+//   from 0x4b2a90 (_ZN22BattleTowerSelectLayer18updateCurChapterIDEi)
+//   from 0x4b2abe (_ZN22BattleTowerSelectLayer18updateCurChapterIDEi)
+//   from 0x4b318a (_ZN22BattleTowerSelectLayer18updateChapterLevelEv)
+//   from 0x4b3206 (_ZN22BattleTowerSelectLayer18updateChapterLevelEv)
+//   from 0x4b329a (_ZN22BattleTowerSelectLayer13updateChapterEv)
+//   from 0x4b32e4 (_ZN22BattleTowerSelectLayer16updateAfterGuideEv)
+//   from 0x4b3d8c (_ZN22BattleTowerSelectLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4b47c2 (_ZN21BattleTowerSweepLayer8canSweepEi)
+//   from 0x4b802a (_ZN20ChallengeResultLayer14setMessageTextEiiiiiiii)
+//   from 0x4b8cac (_ZN23ChallengeCenterItemNode11setleftTimeEv)
+//   from 0x4b9316 (_ZN20ChallengeCenterLayer10initailizeEv)
+//   from 0x4bd1f2 (_ZN22CharacterBasicInfoNode8loadDataEv)
+//   from 0x4bd21a (_ZN22CharacterBasicInfoNode8loadDataEv)
+//   from 0x4be9a2 (_ZN18CharacterMainLayer10updateViewEv)
+//   from 0x4bf712 (_ZN20CharacterPVPInfoNode8loadDataEv)
+//   from 0x4c14b0 (_ZN9ChatLayer11privateChatEj)
+//   from 0x4c14b4 (_ZN9ChatLayer11privateChatEj)
+//   from 0x4c55ee (_ZN27EquipmentIncreaseLevelLayer16getEquipmentDataEv)
+//   from 0x4c7722 (_ZN23EquipmentSelectionLayer8loadDataEiijPKc)
+//   from 0x4c994a (_ZN30EquipmentSelectionListItemNode8loadDataEijPKc)
+//   from 0x4ca85a (_ZN21EquipmentUpgradeLayer10updateCostEv)
+//   from 0x4ca8f2 (_ZN21EquipmentUpgradeLayer10updateCostEv)
+//   from 0x4ccfe2 (_ZN18FoodSelectionLayer8loadDataEiPKc)
+//   from 0x4ce42c (_ZN30FoodSelectionLayerListItemNode8loadDataEijPKc)
+//   from 0x4cf1e6 (_ZN19FunctionUnlockLayer15updateCostLabelERK8GameCost)
+//   from 0x4cf238 (_ZN19FunctionUnlockLayer15updateCostLabelERK8GameCost)
+//   from 0x4cf54a (_ZN19FunctionUnlockLayer18setUnlockBuyPvpCntEv)
+//   from 0x4cf6b2 (_ZN19FunctionUnlockLayer16setUnlockItemBagEv)
+//   from 0x4d3f46 (_ZN35HiddenSkillSelectionMessageBoxLayer22onConfirmButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x4d5e6a (_ZN12ItemBagLayer16onUnlockSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4d62d6 (_ZN12ItemBagLayer15updateItemCountEv)
+//   from 0x4d6356 (_ZN12ItemBagLayer19updateSeerBeanCountEv)
+//   from 0x4d801a (_ZN12ItemBagLayer14getItemBagDumpEv)
+//   from 0x4d8590 (_ZN12ItemBagLayer12loadItemInfoEj)
+//   from 0x4d88a8 (_ZN12ItemBagLayer20createItemScrollPageERKSt6vectorI8SaveItemSaIS1_EEbb)
+//   from 0x4dbade (_ZN8LBSLayer14setLastLBSTimeEv)
+//   from 0x4dc5a0 (_ZN8LBSLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4dcc2c (_ZN15LoginBonusLayer10initializeEv)
+//   from 0x4e0848 (_ZN13MainMenuLayer14onShopSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e2268 (_ZN13MainMenuLayer21onElectricitySelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e283a (_ZN13MainMenuLayer15updateAwardViewEv)
+//   from 0x4e2888 (_ZN13MainMenuLayer24setChallengeLightVisibleEb)
+//   from 0x4e3b5a (_ZN13MainMenuLayer17updateElectricityEv)
+//   from 0x4e3cb2 (_ZN13MainMenuLayer15updateDoubleExpEv)
+//   from 0x4e3fbe (_ZN13MainMenuLayer10updateViewEv)
+//   from 0x4e66dc (_ZN13MainMenuLayer14setMenuVisibleEb)
+//   from 0x4e7682 (_ZN19NotifyGetPrizeLayer14showNextNotifyEv)
+//   from 0x4e8b6a (_ZN12NPCTalkLayer13updateNPCInfoEj)
+//   from 0x4e8fd8 (_ZN12NPCTalkLayer13getDialogByIDEj)
+//   from 0x4e9f00 (_ZN15OnlineAwardNode19onGetButtonSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4ea95a (_ZN15OnlineAwardNode14updateTimeInfoEi)
+//   from 0x4eab0e (_ZN15OnlineAwardNode11timeToAwardEv)
+//   from 0x4eaeba (_ZN15OnlineAwardNode11getLeftTimeEv)
+//   from 0x4eca40 (_ZN12PVPRankLayer11setSelfInfoEiiii)
+//   from 0x4f0002 (_ZN9RankLayer18initializeUserInfoEv)
+//   from 0x4f31f6 (_ZN20SeerFinanceItemLayer18onGetPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f32cc (_ZN13SeerFundLayer19onFundPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f34da (_ZN13SeerFundLayer18initializeUserInfoEv)
+//   from 0x4f72e6 (_ZN17ShopBuyGoodsLayer15updateCostLabelEv)
+//   from 0x4f918a (_ZN17PVPScoreShopLayer15onCloseSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f98c8 (_ZN9ShopLayer18updateUserCurrencyEv)
+//   from 0x4fa124 (_ZN17PVPScoreShopLayer18updateUserCurrencyEv)
+//   from 0x4feb7a (_ZN19SpriteAptitudeLayer17onConfirmSelectedEv)
+//   from 0x500228 (_ZN21SpriteAptitudeCDLayer15onStartSelectedEv)
+//   from 0x500590 (_ZN19SpriteAptitudeLayer16initializeCDTimeEv)
+//   from 0x50070c (_ZN19SpriteAptitudeLayer21onAddAptitudeSelectedEv)
+//   from 0x500838 (_ZN19SpriteAptitudeLayer21onAddAptitudeSelectedEv)
+//   from 0x500b54 (_ZN22SpriteAptitudeBuyLayer17onConfirmSelectedEv)
+//   from 0x506be6 (_ZN18SpriteLotteryLayer14updateUserInfoEv)
+//   from 0x50712c (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x507160 (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x507190 (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x507244 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x507278 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x5072a8 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x5076fe (_ZN18SpriteLotteryLayer28onSingleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x50789c (_ZN18SpriteLotteryLayer30onMultipleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x50956a (_ZN15SpriteMainLayer29onAddStorageSizeButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x50996e (_ZN15SpriteMainLayer10updateViewEv)
+//   from 0x50cb46 (sub_50CB40)
+//   from 0x50d076 (_ZN23SpriteMainPackListLayer10updateViewEb)
+//   from 0x5108be (_ZN26SpriteMainStoragePageLayer21onBattleButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x511b9e (_ZNK26SpriteMainStoragePageLayer11getPageSizeEv)
+//   from 0x512876 (_ZN26SpriteMainStoragePageLayer8loadDataERKSs)
+//   from 0x512ff6 (_ZN21SpritePropagandaLayer17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x518a6c (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518a96 (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518b8c (_ZN34SpriteStatusEvolvementPropertyNode10updateViewEv)
+//   from 0x51e13c (_ZN24SpriteStatusPropertyNode10updateViewEv)
+//   from 0x529c64 (_ZN28SpriteTopLevelCultivateLayer14updateCurrencyEv)
+//   from 0x52b246 (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeIndividualEPKc)
+//   from 0x52b602 (_ZN28SpriteTopLevelCultivateLayer25setCultivateTypeCharacterEPKc)
+//   from 0x52b9d8 (_ZN28SpriteTopLevelCultivateLayer21setCultivateTypeLevelEPKc)
+//   from 0x52bf6e (_ZN28SpriteTopLevelCultivateLayer19setCultivateTypeAllEPKc)
+//   from 0x52c690 (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeLearnPointEPKc)
+//   from 0x532252 (_ZN16SpriteTrainLayer18initializeUserInfoEv)
+//   from 0x538142 (_ZN12VIPInfoLayer20initializeDetailInfoEv)
+//   from 0x5382a4 (_ZN12VIPInfoLayer14initializeInfoEv)
+//   from 0x53d7bc (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53d8e6 (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53d93e (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x540044 (_ZNK5Quest14progressStringEi)
+//   from 0x5405e6 (_ZN12QuestManager32isQuestLevelRequirementFulfilledEt)
+//   from 0x540fa4 (_ZN12QuestManager12doQuickCheckEP5Quest)
+//   from 0x54eac0 (_ZN8UserData15isSptBossBeatenEi)
+//   from 0x54eb00 (_ZN8UserData17isSptBossCapturedEi)
+//   from 0x54eb56 (_ZN8UserData14captureSptBossEi)
+//   from 0x54ebac (_ZN8UserData23getUserRegisterTimeYearEv)
+//   from 0x54ebf0 (_ZN8UserData24getUserRegisterTimeMonthEv)
+//   from 0x54ec2c (_ZN8UserData22getUserRegisterTimeDayEv)
+//   from 0x54ec68 (_ZN8UserData23getUserRegisterTimeHourEv)
+//   from 0x54eca4 (_ZN8UserData25getUserRegisterTimeMinuteEv)
+//   from 0x54ece0 (_ZN8UserData25getUserRegisterTimeSecondEv)
+//   from 0x54ed2a (_ZN8UserData19getUserRegisterDateEv)
+//   from 0x54edc8 (_ZN8UserData10isUserMaleEv)
+//   from 0x54ef7c (_ZN8UserData17getLinkSpriteUUIDEv)
+//   from 0x54ef92 (_ZN8UserData17setLinkSpriteUUIDEPKc)
+//   from 0x54efc6 (_ZN8UserData14updateUserInfoEv)
+//   from 0x54f156 (_ZN8UserData16isSpritePackFullEv)
+//   from 0x54f192 (_ZN8UserData19isSpriteStorageFullEv)
+//   from 0x54f79e (_ZN8UserData7addGoldEj)
+//   from 0x54f7de (_ZN8UserData7useGoldEj)
+//   from 0x54f82a (_ZN8UserData10addVipGoldEj)
+//   from 0x54f86a (_ZN8UserData10useVipGoldEj)
+//   from 0x54fa0c (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fa40 (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fac6 (_ZN8UserData17getItemWithGridIDEj)
+//   from 0x54fb12 (_ZN8UserData23getEquipedCostumeItemIDEv)
+//   from 0x54fc4e (_ZN8UserData16beforeRemoveItemEj)
+//   from 0x54fd0a (_ZN8UserData15afterUpdateItemEj)
+//   from 0x54fd32 (_ZN8UserData13swapItemInBagEjj)
+//   from 0x54fece (_ZN8UserData28updateSeerEquipmentItemInBagERK8SaveItem)
+//   from 0x54ff60 (_ZN8UserData33removeSeerEquipmentItemWithGridIDEj)
+//   from 0x5503b4 (_ZN8UserData13setServerTimeEi)
+//   from 0x5503f4 (_ZN8UserData23setCurrentChallengeTimeEi)
+//   from 0x550424 (_ZN8UserData23getCurrentChallengeTimeEv)
+//   from 0x550458 (_ZN8UserData19setCurrentAwardTimeEi)
+//   from 0x550488 (_ZN8UserData19getCurrentAwardTimeEv)
+//   from 0x5504c0 (_ZN8UserData13getServerTimeEv)
+//   from 0x55050e (_ZN8UserData22getEnergyBackwardsTimeEv)
+//   from 0x55055e (_ZN8UserData22getActionBackwardsTimeEv)
+//   from 0x5505b6 (_ZN8UserData24getChampionBackwardsTimeEi)
+//   from 0x550748 (_ZN8UserData22isShopFunctionUnlockedEv)
+//   from 0x550784 (_ZN8UserData22isTaskFunctionUnlockedEv)
+//   from 0x5507c0 (_ZN8UserData22isMailFunctionUnlockedEv)
+//   from 0x5507fc (_ZN8UserData23isArenaFunctionUnlockedEv)
+//   from 0x550838 (_ZN8UserData25isLotteryFunctionUnlockedEv)
+//   from 0x550874 (_ZN8UserData23isTrainFunctionUnlockedEv)
+//   from 0x5508b0 (_ZN8UserData27isAssignexpFunctionUnlockedEv)
+//   from 0x5508ec (_ZN8UserData24isEvolveFunctionUnlockedEv)
+//   from 0x550928 (_ZN8UserData26isActivityFunctionUnlockedEv)
+//   from 0x550964 (_ZN8UserData32isChallengeleiyiFunctionUnlockedEv)
+//   from 0x5509a0 (_ZN8UserData21isSptFunctionUnlockedEv)
+//   from 0x5509dc (_ZN8UserData28isBravetowerFunctionUnlockedEv)
+//   from 0x550a18 (_ZN8UserData27isAssignLrnFunctionUnlockedEv)
+//   from 0x550a54 (_ZN8UserData26isAptitudeFunctionUnlockedEv)
+//   from 0x550ae4 (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550b2c (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550b74 (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550bd0 (_ZN8UserData19getBuyAptitudeCountEv)
+//   from 0x550c08 (_ZN8UserData17getBuyActionCountEv)
+//   from 0x550c40 (_ZN8UserData17getBuyEnergyCountEv)
+//   from 0x55101a (_ZN8UserData21getGoodMaxCanBuyCountEx)
+//   from 0x5519ae (_ZN8UserData16spriteLearnSkillEP10SpriteInfoi)
+//   from 0x5519b2 (_ZN8UserData16spriteLearnSkillEP10SpriteInfoi)
+//   from 0x5519ce (_ZN8UserData16spriteLearnSkillEP10SpriteInfoi)
+//   from 0x551af2 (_ZN8UserData14addUnlockedMapEib)
+//   from 0x551b82 (_ZN8UserData14addUnlockedMapEib)
+//   from 0x5520fa (_ZN8UserData13createNewDataEv)
+//   from 0x552828 (_ZN8UserData25unwearEquipmentFromSpriteERK8SaveItem)
+//   from 0x55299e (_ZN8UserData35removeSpriteEquipmentItemWithGridIDEj)
+//   from 0x552cc6 (_ZN8UserData21wearEquipmentToSpriteERK8SaveItemPKc)
+//   from 0x552f66 (_ZN8UserData30updateSpriteEquipmentItemInBagERK8SaveItemPKc)
+//   from 0x5570d8 (_ZN12LoginManager5loginEPKcS1_)
+//   from 0x5570da (_ZN12LoginManager5loginEPKcS1_)
+//   from 0x5591e4 (_ZN16GameAudioManager13setSpinSwitchEb)
+//   from 0x55930a (_ZN16GameAudioManager13getSpinSwitchEv)
+//   from 0x5615fe (_ZN16BaseLevelBuilder10createSeerEv)
+//   from 0x629526 (_ZN19MessageErrorHandler29handleErrLoginPrizeAlreadyGotEv)
+//   from 0x62b736 (_ZN14MessageHandler24handleAckChampionCleanCDEv)
+//   from 0x62b75e (_ZN14MessageHandler24handleAckChampionCleanCDEv)
+//   from 0x62b7d6 (_ZN14MessageHandler21handleAckChampionGiftEv)
+//   from 0x62b7fe (_ZN14MessageHandler21handleAckChampionGiftEv)
+//   from 0x62bd04 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd30 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd5c (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd88 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bdb4 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bde0 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be0c (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be40 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be70 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bea2 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bed4 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf06 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf3a (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf6a (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62c2ba (_ZN14MessageHandler31handleCleanSpriteAptitudeCDTimeEv)
+//   from 0x62c390 (_ZN14MessageHandler23handleAddSpriteAptitudeEv)
+//   from 0x62da64 (_ZN14MessageHandler23handleNtfMsgStartBattleEv)
+//   from 0x62da68 (_ZN14MessageHandler23handleNtfMsgStartBattleEv)
+//   from 0x62dd22 (_ZN14MessageHandler29handleAckMsgUnlockMonPackGridEv)
+//   from 0x62de6c (_ZN14MessageHandler24handleAckMsgChangeMonPosEv)
+//   from 0x62de70 (_ZN14MessageHandler24handleAckMsgChangeMonPosEv)
+//   from 0x62e994 (_ZN14MessageHandler23handleNtfMsgReceiveChatEv)
+//   from 0x62eaa2 (_ZN14MessageHandler23handleNtfMsgReceiveChatEv)
+//   from 0x62ed28 (_ZN14MessageHandler32handleAckMsgGetStorageSpriteListEv)
+//   from 0x62ef08 (_ZN14MessageHandler22handleAckMsgCreateRoleEv)
+//   from 0x62effa (_ZN14MessageHandler28handleAckMsgPlayerChangeNickEv)
+//   from 0x62f138 (_ZN14MessageHandler24handleAckMsgCheckSessionEv)
+//   from 0x62f920 (_ZN14MessageHandler28handleNtfMsgCliItemBagUpdateEv)
+//   from 0x62fbb0 (_ZN14MessageHandler22handleAckMsgCliGetItemEv)
+//   from 0x62fc8a (_ZN14MessageHandler24handleMsgOtherPlayerWalkEv)
+//   from 0x62fc90 (_ZN14MessageHandler24handleMsgOtherPlayerWalkEv)
+//   from 0x62fd16 (_ZN14MessageHandler26handleNtfMsgPlayerLeaveMapEv)
+//   from 0x62fd1a (_ZN14MessageHandler26handleNtfMsgPlayerLeaveMapEv)
+//   from 0x62fdb6 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63037c (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6303e4 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63040a (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630434 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6304b6 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6304ee (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63052e (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63056a (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6305bc (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6305e0 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630606 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63062c (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630652 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630678 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63069e (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6306d2 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630702 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630734 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630766 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630798 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6307cc (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6307fc (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630832 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6308f2 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6308f6 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630ac2 (_ZN14MessageHandler17handleOnlineAwardEv)
+//   from 0x630b04 (_ZN14MessageHandler17handleOnlineAwardEv)
+//   from 0x6313e8 (_ZN14MessageHandler30handleAckMsgGetMapUnlockedListEv)
+//   from 0x63178e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6317b4 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6317da (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631800 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631818 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63187c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6318e0 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631952 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63197e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a56 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a6c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a8a (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ac6 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631afc (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631b3c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631b70 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ba0 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631bd2 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c0c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c46 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c7e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c98 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631cb8 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ce8 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d12 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d3c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d6c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631dc8 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x632572 (_ZN14MessageHandler17updateUserPVPDataERKN11ISeer20Comm15pvp_data_info_tE)
+//   from 0x634864 (_ZN14MessageHandler26handleNtfMsgPlayerEnterMapEv)
+//   from 0x634868 (_ZN14MessageHandler26handleNtfMsgPlayerEnterMapEv)
+//   from 0x634aec (_ZN14MessageHandler23handleMsgPlayerEnterMapEv)
+//   from 0x634af0 (_ZN14MessageHandler23handleMsgPlayerEnterMapEv)
+//   from 0x634d64 (_ZN14MessageHandler26handleAckMsgAllocateMonExpEv)
+//   from 0x635b90 (_ZN14MessageHandler26handleAckMsgMonUpdateSkillEv)
+//   from 0x635b94 (_ZN14MessageHandler26handleAckMsgMonUpdateSkillEv)
+//   from 0x635bb0 (_ZN14MessageHandler26handleAckMsgMonUpdateSkillEv)
+//   from 0x63da14 (_ZN11NetWorkUtil11sendMessageEPN6google8protobuf7MessageEfibb)
+//   from 0x63da18 (_ZN11NetWorkUtil11sendMessageEPN6google8protobuf7MessageEfibb)
+//   from 0x63db30 (_ZN11NetWorkUtil22sendTestLogEchoMessageEPKc)
+//   from 0x63db34 (_ZN11NetWorkUtil22sendTestLogEchoMessageEPKc)
+//   from 0xab3028 ()
+
+
+============================================================
+// DATA:_ZN8UserData10m_userInfoE_ptr @ 0xab3028
+// Size: 4 bytes
+// Value (dword): 0xac4094
+// Value (word): 0x4094
+// Value (byte): 0x94
+// Xrefs:
+//   from 0x45a2f4 (_ZN14CaptureManager15afterCaptureEndEb)
+//   from 0x45a2f8 (_ZN14CaptureManager15afterCaptureEndEb)
+//   from 0x45a2fa (_ZN14CaptureManager15afterCaptureEndEb)
+//   from 0x45a380 ()
+//   from 0x4623f2 (_ZN11SpinningTop17setRestraintCoeffEv)
+//   from 0x4623f8 (_ZN11SpinningTop17setRestraintCoeffEv)
+//   from 0x4623fa (_ZN11SpinningTop17setRestraintCoeffEv)
+//   from 0x462450 ()
+//   from 0x463d66 (_ZN20BattleCompeteManager20processCompeteInviteEPN14ISeer20CSProto21notify_invite_pvp_outE)
+//   from 0x463d68 (_ZN20BattleCompeteManager20processCompeteInviteEPN14ISeer20CSProto21notify_invite_pvp_outE)
+//   from 0x463ecc ()
+//   from 0x469a5a (_ZN30GameBattleSkillSequenceManager4loadEv)
+//   from 0x469a5e (_ZN30GameBattleSkillSequenceManager4loadEv)
+//   from 0x469a60 (_ZN30GameBattleSkillSequenceManager4loadEv)
+//   from 0x469aac ()
+//   from 0x469cae (_ZN15GameChatManager23getCreateTimeByPlayerIDEj)
+//   from 0x469cb0 (_ZN15GameChatManager23getCreateTimeByPlayerIDEj)
+//   from 0x469cb2 (_ZN15GameChatManager23getCreateTimeByPlayerIDEj)
+//   from 0x469cf4 ()
+//   from 0x469d10 (_ZN15GameChatManager17getPlayerVipLevelEj)
+//   from 0x469d14 (_ZN15GameChatManager17getPlayerVipLevelEj)
+//   from 0x469d16 (_ZN15GameChatManager17getPlayerVipLevelEj)
+//   from 0x469d44 ()
+//   from 0x469d5c (_ZN15GameChatManager18getPlayerNameByUIDEj)
+//   from 0x469d5e (_ZN15GameChatManager18getPlayerNameByUIDEj)
+//   from 0x469d60 (_ZN15GameChatManager18getPlayerNameByUIDEj)
+//   from 0x469d88 ()
+//   from 0x469dde (_ZN15GameChatManager19popChatChannelCacheEi)
+//   from 0x469de0 (_ZN15GameChatManager19popChatChannelCacheEi)
+//   from 0x469de2 (_ZN15GameChatManager19popChatChannelCacheEi)
+//   from 0x469e3c ()
+//   from 0x46a994 (_ZN15GameChatManager15sendChatContentEiPKcj)
+//   from 0x46a998 (_ZN15GameChatManager15sendChatContentEiPKcj)
+//   from 0x46a99a (_ZN15GameChatManager15sendChatContentEiPKcj)
+//   from 0x46aab4 ()
+//   from 0x46ab3a (_ZN15GameChatManager17onChatSendSuccessEiPKci)
+//   from 0x46ab3c (_ZN15GameChatManager17onChatSendSuccessEiPKci)
+//   from 0x46ab3e (_ZN15GameChatManager17onChatSendSuccessEiPKci)
+//   from 0x46ab98 ()
+//   from 0x46abb6 (_ZN15GameChatManager18receiveChatContentEiPKcyiyiS1_i)
+//   from 0x46abb8 (_ZN15GameChatManager18receiveChatContentEiPKcyiyiS1_i)
+//   from 0x46abba (_ZN15GameChatManager18receiveChatContentEiPKcyiyiS1_i)
+//   from 0x46ad44 ()
+//   from 0x46c848 (_ZN19GameDataManager4Lua25getSpriteStoragePageCountEv)
+//   from 0x46c84e (_ZN19GameDataManager4Lua25getSpriteStoragePageCountEv)
+//   from 0x46c850 (_ZN19GameDataManager4Lua25getSpriteStoragePageCountEv)
+//   from 0x46c858 ()
+//   from 0x46c874 (_ZN19GameDataManager4Lua9getLinkSpEv)
+//   from 0x46c878 (_ZN19GameDataManager4Lua9getLinkSpEv)
+//   from 0x46c87a (_ZN19GameDataManager4Lua9getLinkSpEv)
+//   from 0x46c880 ()
+//   from 0x46e64e (_ZN16GameGuideManager12initProgressEv)
+//   from 0x46e654 (_ZN16GameGuideManager12initProgressEv)
+//   from 0x46e656 (_ZN16GameGuideManager12initProgressEv)
+//   from 0x46e6e4 ()
+//   from 0x46e83e (_ZN16GameGuideManager12updateDialogEv)
+//   from 0x46e844 (_ZN16GameGuideManager12updateDialogEv)
+//   from 0x46e846 (_ZN16GameGuideManager12updateDialogEv)
+//   from 0x46e874 ()
+//   from 0x472fd6 (_ZN11GameManager9startGameEv)
+//   from 0x472fda (_ZN11GameManager9startGameEv)
+//   from 0x472fdc (_ZN11GameManager9startGameEv)
+//   from 0x473008 ()
+//   from 0x476a32 (_ZN29GameOpenAssignFunctionManager8endGuideEv)
+//   from 0x476a38 (_ZN29GameOpenAssignFunctionManager8endGuideEv)
+//   from 0x476a3a (_ZN29GameOpenAssignFunctionManager8endGuideEv)
+//   from 0x476ca4 ()
+//   from 0x476d1a (_ZN29GameOpenAssignFunctionManager12isNeedUnlockEv)
+//   from 0x476d22 (_ZN29GameOpenAssignFunctionManager12isNeedUnlockEv)
+//   from 0x476d26 (_ZN29GameOpenAssignFunctionManager12isNeedUnlockEv)
+//   from 0x476f88 ()
+//   from 0x480c22 (_Z6addExpiP10SpriteInfoP17SpriteUpgradeInfo)
+//   from 0x480c24 (_Z6addExpiP10SpriteInfoP17SpriteUpgradeInfo)
+//   from 0x480c26 (_Z6addExpiP10SpriteInfoP17SpriteUpgradeInfo)
+//   from 0x480ccc ()
+//   from 0x4972e4 (_ZN23ActivityCenterSignLayer21onPatchSignInSelectedEv)
+//   from 0x4972e8 (_ZN23ActivityCenterSignLayer21onPatchSignInSelectedEv)
+//   from 0x4973dc ()
+//   from 0x49c780 (_ZN14AssignExpLayer8loadDataEPKc)
+//   from 0x49c782 (_ZN14AssignExpLayer8loadDataEPKc)
+//   from 0x49c784 (_ZN14AssignExpLayer8loadDataEPKc)
+//   from 0x49c7ec ()
+//   from 0x49ce40 (_ZNK14AssignExpLayer24getValidDistributableExpEv)
+//   from 0x49ce44 (_ZNK14AssignExpLayer24getValidDistributableExpEv)
+//   from 0x49ce46 (_ZNK14AssignExpLayer24getValidDistributableExpEv)
+//   from 0x49ce74 ()
+//   from 0x49ce8c (_ZN14AssignExpLayer39updateDataByAssignedExpSliderBarPercentEf)
+//   from 0x49ce92 (_ZN14AssignExpLayer39updateDataByAssignedExpSliderBarPercentEf)
+//   from 0x49ce94 (_ZN14AssignExpLayer39updateDataByAssignedExpSliderBarPercentEf)
+//   from 0x49cf38 ()
+//   from 0x49cf8e (_ZN14AssignExpLayer19onPlusButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x49cf94 (_ZN14AssignExpLayer19onPlusButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x49cf96 (_ZN14AssignExpLayer19onPlusButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x49d090 ()
+//   from 0x4a0c46 (_ZN20AwardElectricityNode23setAwardEnergyDisenableEv)
+//   from 0x4a0c4a (_ZN20AwardElectricityNode23setAwardEnergyDisenableEv)
+//   from 0x4a0c4c (_ZN20AwardElectricityNode23setAwardEnergyDisenableEv)
+//   from 0x4a0ca4 ()
+//   from 0x4a0cc2 (_ZN20AwardElectricityNode17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a0cc8 (_ZN20AwardElectricityNode17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a0cca (_ZN20AwardElectricityNode17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a0d04 ()
+//   from 0x4a1710 (_ZN20AwardElectricityNode10updateViewEv)
+//   from 0x4a1714 (_ZN20AwardElectricityNode10updateViewEv)
+//   from 0x4a17e0 ()
+//   from 0x4a2b14 (_ZN17BattleCenterLayer10initailizeEv)
+//   from 0x4a2b18 (_ZN17BattleCenterLayer10initailizeEv)
+//   from 0x4a2b1a (_ZN17BattleCenterLayer10initailizeEv)
+//   from 0x4a2d04 ()
+//   from 0x4a4642 (_ZN25BattleKingTowerSceneLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a464a (_ZN25BattleKingTowerSceneLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a464c (_ZN25BattleKingTowerSceneLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a46d4 ()
+//   from 0x4a51b2 (_ZN25BattleKingTowerSceneLayer21updateSeerActionPointEv)
+//   from 0x4a51b6 (_ZN25BattleKingTowerSceneLayer21updateSeerActionPointEv)
+//   from 0x4a51b8 (_ZN25BattleKingTowerSceneLayer21updateSeerActionPointEv)
+//   from 0x4a52dc ()
+//   from 0x4a598a (_ZN25BattleKingTowerSceneLayer11addSelfSeerEv)
+//   from 0x4a598e (_ZN25BattleKingTowerSceneLayer11addSelfSeerEv)
+//   from 0x4a5990 (_ZN25BattleKingTowerSceneLayer11addSelfSeerEv)
+//   from 0x4a59e4 ()
+//   from 0x4a6d42 (_ZN25BattleKingTowerSceneLayer12onGoSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a6d44 (_ZN25BattleKingTowerSceneLayer12onGoSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a6d46 (_ZN25BattleKingTowerSceneLayer12onGoSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4a6df0 ()
+//   from 0x4aaec4 (_ZN21BattlePvpCompeteLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4aaeca (_ZN21BattlePvpCompeteLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4aaecc (_ZN21BattlePvpCompeteLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4aaf60 ()
+//   from 0x4ac222 (_ZN14BattlePvpLayer10initializeEv)
+//   from 0x4ac228 (_ZN14BattlePvpLayer10initializeEv)
+//   from 0x4ac23c (_ZN14BattlePvpLayer10initializeEv)
+//   from 0x4ac344 ()
+//   from 0x4ac5a0 (_ZN14BattlePvpLayer15closeFromServerEv)
+//   from 0x4ac5a6 (_ZN14BattlePvpLayer15closeFromServerEv)
+//   from 0x4ac5b6 (_ZN14BattlePvpLayer15closeFromServerEv)
+//   from 0x4ac648 ()
+//   from 0x4ac734 (_ZN14BattlePvpLayer16onBattleSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4ac738 (_ZN14BattlePvpLayer16onBattleSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4ac73a (_ZN14BattlePvpLayer16onBattleSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4ac7a4 ()
+//   from 0x4b1616 (_ZN22BattleTowerSelectLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4b161e (_ZN22BattleTowerSelectLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4b1620 (_ZN22BattleTowerSelectLayer29onPurchaseActionPointSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4b16a8 ()
+//   from 0x4b291e (_ZN22BattleTowerSelectLayer8updateHpEv)
+//   from 0x4b2926 (_ZN22BattleTowerSelectLayer8updateHpEv)
+//   from 0x4b292c (_ZN22BattleTowerSelectLayer8updateHpEv)
+//   from 0x4b2a74 ()
+//   from 0x4b2a8e (_ZN22BattleTowerSelectLayer18updateCurChapterIDEi)
+//   from 0x4b2a90 (_ZN22BattleTowerSelectLayer18updateCurChapterIDEi)
+//   from 0x4b2abc (_ZN22BattleTowerSelectLayer18updateCurChapterIDEi)
+//   from 0x4b2abe (_ZN22BattleTowerSelectLayer18updateCurChapterIDEi)
+//   from 0x4b2af8 ()
+//   from 0x4b3186 (_ZN22BattleTowerSelectLayer18updateChapterLevelEv)
+//   from 0x4b318a (_ZN22BattleTowerSelectLayer18updateChapterLevelEv)
+//   from 0x4b3202 (_ZN22BattleTowerSelectLayer18updateChapterLevelEv)
+//   from 0x4b3206 (_ZN22BattleTowerSelectLayer18updateChapterLevelEv)
+//   from 0x4b3278 ()
+//   from 0x4b3294 (_ZN22BattleTowerSelectLayer13updateChapterEv)
+//   from 0x4b3298 (_ZN22BattleTowerSelectLayer13updateChapterEv)
+//   from 0x4b329a (_ZN22BattleTowerSelectLayer13updateChapterEv)
+//   from 0x4b32d4 ()
+//   from 0x4b32de (_ZN22BattleTowerSelectLayer16updateAfterGuideEv)
+//   from 0x4b32e2 (_ZN22BattleTowerSelectLayer16updateAfterGuideEv)
+//   from 0x4b32e4 (_ZN22BattleTowerSelectLayer16updateAfterGuideEv)
+//   from 0x4b3328 ()
+//   from 0x4b3d88 (_ZN22BattleTowerSelectLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4b3d8a (_ZN22BattleTowerSelectLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4b3d8c (_ZN22BattleTowerSelectLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4b3e44 ()
+//   from 0x4b47bc (_ZN21BattleTowerSweepLayer8canSweepEi)
+//   from 0x4b47c0 (_ZN21BattleTowerSweepLayer8canSweepEi)
+//   from 0x4b47c2 (_ZN21BattleTowerSweepLayer8canSweepEi)
+//   from 0x4b47fc ()
+//   from 0x4b8026 (_ZN20ChallengeResultLayer14setMessageTextEiiiiiiii)
+//   from 0x4b8028 (_ZN20ChallengeResultLayer14setMessageTextEiiiiiiii)
+//   from 0x4b802a (_ZN20ChallengeResultLayer14setMessageTextEiiiiiiii)
+//   from 0x4b80c0 ()
+//   from 0x4b8ca4 (_ZN23ChallengeCenterItemNode11setleftTimeEv)
+//   from 0x4b8caa (_ZN23ChallengeCenterItemNode11setleftTimeEv)
+//   from 0x4b8cac (_ZN23ChallengeCenterItemNode11setleftTimeEv)
+//   from 0x4b8ce8 ()
+//   from 0x4b9312 (_ZN20ChallengeCenterLayer10initailizeEv)
+//   from 0x4b9314 (_ZN20ChallengeCenterLayer10initailizeEv)
+//   from 0x4b9316 (_ZN20ChallengeCenterLayer10initailizeEv)
+//   from 0x4b93d4 ()
+//   from 0x4bd1ea (_ZN22CharacterBasicInfoNode8loadDataEv)
+//   from 0x4bd1f0 (_ZN22CharacterBasicInfoNode8loadDataEv)
+//   from 0x4bd1f2 (_ZN22CharacterBasicInfoNode8loadDataEv)
+//   from 0x4bd2dc ()
+//   from 0x4be99a (_ZN18CharacterMainLayer10updateViewEv)
+//   from 0x4be9a0 (_ZN18CharacterMainLayer10updateViewEv)
+//   from 0x4be9a2 (_ZN18CharacterMainLayer10updateViewEv)
+//   from 0x4beab4 ()
+//   from 0x4bf70a (_ZN20CharacterPVPInfoNode8loadDataEv)
+//   from 0x4bf710 (_ZN20CharacterPVPInfoNode8loadDataEv)
+//   from 0x4bf712 (_ZN20CharacterPVPInfoNode8loadDataEv)
+//   from 0x4bf86c ()
+//   from 0x4c14ac (_ZN9ChatLayer11privateChatEj)
+//   from 0x4c14ae (_ZN9ChatLayer11privateChatEj)
+//   from 0x4c14b0 (_ZN9ChatLayer11privateChatEj)
+//   from 0x4c1504 ()
+//   from 0x4c55ea (_ZN27EquipmentIncreaseLevelLayer16getEquipmentDataEv)
+//   from 0x4c55ec (_ZN27EquipmentIncreaseLevelLayer16getEquipmentDataEv)
+//   from 0x4c55ee (_ZN27EquipmentIncreaseLevelLayer16getEquipmentDataEv)
+//   from 0x4c567c ()
+//   from 0x4c771a (_ZN23EquipmentSelectionLayer8loadDataEiijPKc)
+//   from 0x4c7720 (_ZN23EquipmentSelectionLayer8loadDataEiijPKc)
+//   from 0x4c7722 (_ZN23EquipmentSelectionLayer8loadDataEiijPKc)
+//   from 0x4c7810 ()
+//   from 0x4c9942 (_ZN30EquipmentSelectionListItemNode8loadDataEijPKc)
+//   from 0x4c9948 (_ZN30EquipmentSelectionListItemNode8loadDataEijPKc)
+//   from 0x4c994a (_ZN30EquipmentSelectionListItemNode8loadDataEijPKc)
+//   from 0x4c9abc (_ZN30EquipmentSelectionListItemNode8loadDataEijPKc)
+//   from 0x4ca856 (_ZN21EquipmentUpgradeLayer10updateCostEv)
+//   from 0x4ca85a (_ZN21EquipmentUpgradeLayer10updateCostEv)
+//   from 0x4ca8ee (_ZN21EquipmentUpgradeLayer10updateCostEv)
+//   from 0x4ca8f2 (_ZN21EquipmentUpgradeLayer10updateCostEv)
+//   from 0x4ca980 ()
+//   from 0x4ccfdc (_ZN18FoodSelectionLayer8loadDataEiPKc)
+//   from 0x4ccfe0 (_ZN18FoodSelectionLayer8loadDataEiPKc)
+//   from 0x4ccfe2 (_ZN18FoodSelectionLayer8loadDataEiPKc)
+//   from 0x4cd0f4 ()
+//   from 0x4ce424 (_ZN30FoodSelectionLayerListItemNode8loadDataEijPKc)
+//   from 0x4ce42a (_ZN30FoodSelectionLayerListItemNode8loadDataEijPKc)
+//   from 0x4ce42c (_ZN30FoodSelectionLayerListItemNode8loadDataEijPKc)
+//   from 0x4ce5a4 (_ZN30FoodSelectionLayerListItemNode8loadDataEijPKc)
+//   from 0x4cf1e4 (_ZN19FunctionUnlockLayer15updateCostLabelERK8GameCost)
+//   from 0x4cf1e6 (_ZN19FunctionUnlockLayer15updateCostLabelERK8GameCost)
+//   from 0x4cf236 (_ZN19FunctionUnlockLayer15updateCostLabelERK8GameCost)
+//   from 0x4cf238 (_ZN19FunctionUnlockLayer15updateCostLabelERK8GameCost)
+//   from 0x4cf334 ()
+//   from 0x4cf542 (_ZN19FunctionUnlockLayer18setUnlockBuyPvpCntEv)
+//   from 0x4cf548 (_ZN19FunctionUnlockLayer18setUnlockBuyPvpCntEv)
+//   from 0x4cf54a (_ZN19FunctionUnlockLayer18setUnlockBuyPvpCntEv)
+//   from 0x4cf5d4 ()
+//   from 0x4cf6aa (_ZN19FunctionUnlockLayer16setUnlockItemBagEv)
+//   from 0x4cf6b0 (_ZN19FunctionUnlockLayer16setUnlockItemBagEv)
+//   from 0x4cf6b2 (_ZN19FunctionUnlockLayer16setUnlockItemBagEv)
+//   from 0x4cf6f0 ()
+//   from 0x4d3f3e (_ZN35HiddenSkillSelectionMessageBoxLayer22onConfirmButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x4d3f44 (_ZN35HiddenSkillSelectionMessageBoxLayer22onConfirmButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x4d3f46 (_ZN35HiddenSkillSelectionMessageBoxLayer22onConfirmButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x4d3fa8 ()
+//   from 0x4d5e66 (_ZN12ItemBagLayer16onUnlockSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4d5e68 (_ZN12ItemBagLayer16onUnlockSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4d5e6a (_ZN12ItemBagLayer16onUnlockSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4d5eb0 ()
+//   from 0x4d62ce (_ZN12ItemBagLayer15updateItemCountEv)
+//   from 0x4d62d4 (_ZN12ItemBagLayer15updateItemCountEv)
+//   from 0x4d62d6 (_ZN12ItemBagLayer15updateItemCountEv)
+//   from 0x4d6334 ()
+//   from 0x4d6352 (_ZN12ItemBagLayer19updateSeerBeanCountEv)
+//   from 0x4d6354 (_ZN12ItemBagLayer19updateSeerBeanCountEv)
+//   from 0x4d6356 (_ZN12ItemBagLayer19updateSeerBeanCountEv)
+//   from 0x4d63fc ()
+//   from 0x4d8016 (_ZN12ItemBagLayer14getItemBagDumpEv)
+//   from 0x4d8018 (_ZN12ItemBagLayer14getItemBagDumpEv)
+//   from 0x4d801a (_ZN12ItemBagLayer14getItemBagDumpEv)
+//   from 0x4d8084 ()
+//   from 0x4d858c (_ZN12ItemBagLayer12loadItemInfoEj)
+//   from 0x4d858e (_ZN12ItemBagLayer12loadItemInfoEj)
+//   from 0x4d8590 (_ZN12ItemBagLayer12loadItemInfoEj)
+//   from 0x4d8694 ()
+//   from 0x4d88a4 (_ZN12ItemBagLayer20createItemScrollPageERKSt6vectorI8SaveItemSaIS1_EEbb)
+//   from 0x4d88a6 (_ZN12ItemBagLayer20createItemScrollPageERKSt6vectorI8SaveItemSaIS1_EEbb)
+//   from 0x4d88a8 (_ZN12ItemBagLayer20createItemScrollPageERKSt6vectorI8SaveItemSaIS1_EEbb)
+//   from 0x4d8ad4 (_ZN12ItemBagLayer20createItemScrollPageERKSt6vectorI8SaveItemSaIS1_EEbb)
+//   from 0x4dbad6 (_ZN8LBSLayer14setLastLBSTimeEv)
+//   from 0x4dbadc (_ZN8LBSLayer14setLastLBSTimeEv)
+//   from 0x4dbade (_ZN8LBSLayer14setLastLBSTimeEv)
+//   from 0x4dbb0c ()
+//   from 0x4dc598 (_ZN8LBSLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4dc59e (_ZN8LBSLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4dc5a0 (_ZN8LBSLayer12onNodeLoadedEPN7cocos2d6CCNodeEPNS0_9extension12CCNodeLoaderE)
+//   from 0x4dc5dc ()
+//   from 0x4dcc24 (_ZN15LoginBonusLayer10initializeEv)
+//   from 0x4dcc2a (_ZN15LoginBonusLayer10initializeEv)
+//   from 0x4dcc2c (_ZN15LoginBonusLayer10initializeEv)
+//   from 0x4dccbc ()
+//   from 0x4e0844 (_ZN13MainMenuLayer14onShopSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e0846 (_ZN13MainMenuLayer14onShopSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e0848 (_ZN13MainMenuLayer14onShopSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e093c ()
+//   from 0x4e2262 (_ZN13MainMenuLayer21onElectricitySelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e2266 (_ZN13MainMenuLayer21onElectricitySelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e2268 (_ZN13MainMenuLayer21onElectricitySelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e2314 ()
+//   from 0x4e2832 (_ZN13MainMenuLayer15updateAwardViewEv)
+//   from 0x4e2838 (_ZN13MainMenuLayer15updateAwardViewEv)
+//   from 0x4e283a (_ZN13MainMenuLayer15updateAwardViewEv)
+//   from 0x4e2864 ()
+//   from 0x4e2882 (_ZN13MainMenuLayer24setChallengeLightVisibleEb)
+//   from 0x4e2886 (_ZN13MainMenuLayer24setChallengeLightVisibleEb)
+//   from 0x4e2888 (_ZN13MainMenuLayer24setChallengeLightVisibleEb)
+//   from 0x4e2974 ()
+//   from 0x4e3b40 (_ZN13MainMenuLayer17updateElectricityEv)
+//   from 0x4e3b52 (_ZN13MainMenuLayer17updateElectricityEv)
+//   from 0x4e3b5a (_ZN13MainMenuLayer17updateElectricityEv)
+//   from 0x4e3c98 ()
+//   from 0x4e3ca8 (_ZN13MainMenuLayer15updateDoubleExpEv)
+//   from 0x4e3cb0 (_ZN13MainMenuLayer15updateDoubleExpEv)
+//   from 0x4e3cb2 (_ZN13MainMenuLayer15updateDoubleExpEv)
+//   from 0x4e3dac ()
+//   from 0x4e3fb6 (_ZN13MainMenuLayer10updateViewEv)
+//   from 0x4e3fbc (_ZN13MainMenuLayer10updateViewEv)
+//   from 0x4e3fbe (_ZN13MainMenuLayer10updateViewEv)
+//   from 0x4e4228 ()
+//   from 0x4e66d4 (_ZN13MainMenuLayer14setMenuVisibleEb)
+//   from 0x4e66da (_ZN13MainMenuLayer14setMenuVisibleEb)
+//   from 0x4e66dc (_ZN13MainMenuLayer14setMenuVisibleEb)
+//   from 0x4e6788 ()
+//   from 0x4e767c (_ZN19NotifyGetPrizeLayer14showNextNotifyEv)
+//   from 0x4e7680 (_ZN19NotifyGetPrizeLayer14showNextNotifyEv)
+//   from 0x4e7682 (_ZN19NotifyGetPrizeLayer14showNextNotifyEv)
+//   from 0x4e7700 ()
+//   from 0x4e8b62 (_ZN12NPCTalkLayer13updateNPCInfoEj)
+//   from 0x4e8b68 (_ZN12NPCTalkLayer13updateNPCInfoEj)
+//   from 0x4e8b6a (_ZN12NPCTalkLayer13updateNPCInfoEj)
+//   from 0x4e8c70 ()
+//   from 0x4e8fd0 (_ZN12NPCTalkLayer13getDialogByIDEj)
+//   from 0x4e8fd6 (_ZN12NPCTalkLayer13getDialogByIDEj)
+//   from 0x4e8fd8 (_ZN12NPCTalkLayer13getDialogByIDEj)
+//   from 0x4e9014 ()
+//   from 0x4e9efc (_ZN15OnlineAwardNode19onGetButtonSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e9efe (_ZN15OnlineAwardNode19onGetButtonSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4e9f00 (_ZN15OnlineAwardNode19onGetButtonSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4ea004 ()
+//   from 0x4ea952 (_ZN15OnlineAwardNode14updateTimeInfoEi)
+//   from 0x4ea958 (_ZN15OnlineAwardNode14updateTimeInfoEi)
+//   from 0x4ea95a (_ZN15OnlineAwardNode14updateTimeInfoEi)
+//   from 0x4eaad4 ()
+//   from 0x4eab06 (_ZN15OnlineAwardNode11timeToAwardEv)
+//   from 0x4eab0c (_ZN15OnlineAwardNode11timeToAwardEv)
+//   from 0x4eab0e (_ZN15OnlineAwardNode11timeToAwardEv)
+//   from 0x4eab74 ()
+//   from 0x4eaeb2 (_ZN15OnlineAwardNode11getLeftTimeEv)
+//   from 0x4eaeb8 (_ZN15OnlineAwardNode11getLeftTimeEv)
+//   from 0x4eaeba (_ZN15OnlineAwardNode11getLeftTimeEv)
+//   from 0x4eaf38 ()
+//   from 0x4eca3a (_ZN12PVPRankLayer11setSelfInfoEiiii)
+//   from 0x4eca3e (_ZN12PVPRankLayer11setSelfInfoEiiii)
+//   from 0x4eca40 (_ZN12PVPRankLayer11setSelfInfoEiiii)
+//   from 0x4eca8c ()
+//   from 0x4efffa (_ZN9RankLayer18initializeUserInfoEv)
+//   from 0x4f0000 (_ZN9RankLayer18initializeUserInfoEv)
+//   from 0x4f0002 (_ZN9RankLayer18initializeUserInfoEv)
+//   from 0x4f0128 ()
+//   from 0x4f31f2 (_ZN20SeerFinanceItemLayer18onGetPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f31f4 (_ZN20SeerFinanceItemLayer18onGetPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f31f6 (_ZN20SeerFinanceItemLayer18onGetPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f3280 ()
+//   from 0x4f32c4 (_ZN13SeerFundLayer19onFundPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f32ca (_ZN13SeerFundLayer19onFundPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f32cc (_ZN13SeerFundLayer19onFundPrizeSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f3364 ()
+//   from 0x4f34d0 (_ZN13SeerFundLayer18initializeUserInfoEv)
+//   from 0x4f34d8 (_ZN13SeerFundLayer18initializeUserInfoEv)
+//   from 0x4f34da (_ZN13SeerFundLayer18initializeUserInfoEv)
+//   from 0x4f3570 ()
+//   from 0x4f72e4 (_ZN17ShopBuyGoodsLayer15updateCostLabelEv)
+//   from 0x4f72e6 (_ZN17ShopBuyGoodsLayer15updateCostLabelEv)
+//   from 0x4f7306 (_ZN17ShopBuyGoodsLayer15updateCostLabelEv)
+//   from 0x4f732e (_ZN17ShopBuyGoodsLayer15updateCostLabelEv)
+//   from 0x4f7450 ()
+//   from 0x4f9182 (_ZN17PVPScoreShopLayer15onCloseSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f9188 (_ZN17PVPScoreShopLayer15onCloseSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f918a (_ZN17PVPScoreShopLayer15onCloseSelectedEPN7cocos2d8CCObjectE)
+//   from 0x4f91b8 ()
+//   from 0x4f98a4 (_ZN9ShopLayer18updateUserCurrencyEv)
+//   from 0x4f98b8 (_ZN9ShopLayer18updateUserCurrencyEv)
+//   from 0x4f98c8 (_ZN9ShopLayer18updateUserCurrencyEv)
+//   from 0x4f9960 ()
+//   from 0x4fa11e (_ZN17PVPScoreShopLayer18updateUserCurrencyEv)
+//   from 0x4fa122 (_ZN17PVPScoreShopLayer18updateUserCurrencyEv)
+//   from 0x4fa124 (_ZN17PVPScoreShopLayer18updateUserCurrencyEv)
+//   from 0x4fa174 ()
+//   from 0x4feb74 (_ZN19SpriteAptitudeLayer17onConfirmSelectedEv)
+//   from 0x4feb78 (_ZN19SpriteAptitudeLayer17onConfirmSelectedEv)
+//   from 0x4feb7a (_ZN19SpriteAptitudeLayer17onConfirmSelectedEv)
+//   from 0x4febc0 ()
+//   from 0x500214 (_ZN21SpriteAptitudeCDLayer15onStartSelectedEv)
+//   from 0x50021c (_ZN21SpriteAptitudeCDLayer15onStartSelectedEv)
+//   from 0x500228 (_ZN21SpriteAptitudeCDLayer15onStartSelectedEv)
+//   from 0x5002f4 ()
+//   from 0x500582 (_ZN19SpriteAptitudeLayer16initializeCDTimeEv)
+//   from 0x500588 (_ZN19SpriteAptitudeLayer16initializeCDTimeEv)
+//   from 0x500590 (_ZN19SpriteAptitudeLayer16initializeCDTimeEv)
+//   from 0x500698 ()
+//   from 0x50070a (_ZN19SpriteAptitudeLayer21onAddAptitudeSelectedEv)
+//   from 0x50070c (_ZN19SpriteAptitudeLayer21onAddAptitudeSelectedEv)
+//   from 0x500834 (_ZN19SpriteAptitudeLayer21onAddAptitudeSelectedEv)
+//   from 0x500838 (_ZN19SpriteAptitudeLayer21onAddAptitudeSelectedEv)
+//   from 0x500984 ()
+//   from 0x500b50 (_ZN22SpriteAptitudeBuyLayer17onConfirmSelectedEv)
+//   from 0x500b52 (_ZN22SpriteAptitudeBuyLayer17onConfirmSelectedEv)
+//   from 0x500b54 (_ZN22SpriteAptitudeBuyLayer17onConfirmSelectedEv)
+//   from 0x500c04 ()
+//   from 0x506bcc (_ZN18SpriteLotteryLayer14updateUserInfoEv)
+//   from 0x506bde (_ZN18SpriteLotteryLayer14updateUserInfoEv)
+//   from 0x506be6 (_ZN18SpriteLotteryLayer14updateUserInfoEv)
+//   from 0x506cd4 ()
+//   from 0x507128 (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x50712c (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x50715c (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x507160 (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x50718c (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x507190 (_ZNK18SpriteLotteryLayer22canPlaySingleGameAgainEv)
+//   from 0x5071c4 ()
+//   from 0x507240 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x507244 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x507274 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x507278 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x5072a4 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x5072a8 (_ZNK18SpriteLotteryLayer24canPlayMultipleGameAgainEv)
+//   from 0x5072dc ()
+//   from 0x5076fa (_ZN18SpriteLotteryLayer28onSingleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x5076fc (_ZN18SpriteLotteryLayer28onSingleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x5076fe (_ZN18SpriteLotteryLayer28onSingleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x5077fc ()
+//   from 0x507898 (_ZN18SpriteLotteryLayer30onMultipleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x50789a (_ZN18SpriteLotteryLayer30onMultipleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x50789c (_ZN18SpriteLotteryLayer30onMultipleLotteryButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x5079b0 ()
+//   from 0x509566 (_ZN15SpriteMainLayer29onAddStorageSizeButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x509568 (_ZN15SpriteMainLayer29onAddStorageSizeButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x50956a (_ZN15SpriteMainLayer29onAddStorageSizeButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x5095d4 ()
+//   from 0x509966 (_ZN15SpriteMainLayer10updateViewEv)
+//   from 0x50996c (_ZN15SpriteMainLayer10updateViewEv)
+//   from 0x50996e (_ZN15SpriteMainLayer10updateViewEv)
+//   from 0x509a70 ()
+//   from 0x50cb42 (sub_50CB40)
+//   from 0x50cb44 (sub_50CB40)
+//   from 0x50cb46 (sub_50CB40)
+//   from 0x50cb90 ()
+//   from 0x50d070 (_ZN23SpriteMainPackListLayer10updateViewEb)
+//   from 0x50d074 (_ZN23SpriteMainPackListLayer10updateViewEb)
+//   from 0x50d076 (_ZN23SpriteMainPackListLayer10updateViewEb)
+//   from 0x50d3b8 (_ZN23SpriteMainPackListLayer10updateViewEb)
+//   from 0x5108ba (_ZN26SpriteMainStoragePageLayer21onBattleButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x5108bc (_ZN26SpriteMainStoragePageLayer21onBattleButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x5108be (_ZN26SpriteMainStoragePageLayer21onBattleButtonClickedEPN7cocos2d8CCObjectE)
+//   from 0x51094c ()
+//   from 0x511b9a (_ZNK26SpriteMainStoragePageLayer11getPageSizeEv)
+//   from 0x511b9c (_ZNK26SpriteMainStoragePageLayer11getPageSizeEv)
+//   from 0x511b9e (_ZNK26SpriteMainStoragePageLayer11getPageSizeEv)
+//   from 0x511bd4 ()
+//   from 0x512870 (_ZN26SpriteMainStoragePageLayer8loadDataERKSs)
+//   from 0x512874 (_ZN26SpriteMainStoragePageLayer8loadDataERKSs)
+//   from 0x512876 (_ZN26SpriteMainStoragePageLayer8loadDataERKSs)
+//   from 0x512a8c ()
+//   from 0x512fee (_ZN21SpritePropagandaLayer17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x512ff4 (_ZN21SpritePropagandaLayer17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x512ff6 (_ZN21SpritePropagandaLayer17onConfirmSelectedEPN7cocos2d8CCObjectE)
+//   from 0x5130d8 ()
+//   from 0x518a68 (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518a6a (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518a6c (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518a92 (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518a94 (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518a96 (_ZN34SpriteStatusEvolvementPropertyNode8loadDataEPKc)
+//   from 0x518b50 ()
+//   from 0x518b58 ()
+//   from 0x518b88 (_ZN34SpriteStatusEvolvementPropertyNode10updateViewEv)
+//   from 0x518b8a (_ZN34SpriteStatusEvolvementPropertyNode10updateViewEv)
+//   from 0x518b8c (_ZN34SpriteStatusEvolvementPropertyNode10updateViewEv)
+//   from 0x518bc0 ()
+//   from 0x51e0be (_ZN24SpriteStatusPropertyNode10updateViewEv)
+//   from 0x51e0c2 (_ZN24SpriteStatusPropertyNode10updateViewEv)
+//   from 0x51e13c (_ZN24SpriteStatusPropertyNode10updateViewEv)
+//   from 0x51e1d4 ()
+//   from 0x529c5e (_ZN28SpriteTopLevelCultivateLayer14updateCurrencyEv)
+//   from 0x529c62 (_ZN28SpriteTopLevelCultivateLayer14updateCurrencyEv)
+//   from 0x529c64 (_ZN28SpriteTopLevelCultivateLayer14updateCurrencyEv)
+//   from 0x529cb8 ()
+//   from 0x52b23e (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeIndividualEPKc)
+//   from 0x52b244 (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeIndividualEPKc)
+//   from 0x52b246 (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeIndividualEPKc)
+//   from 0x52b304 ()
+//   from 0x52b5fa (_ZN28SpriteTopLevelCultivateLayer25setCultivateTypeCharacterEPKc)
+//   from 0x52b600 (_ZN28SpriteTopLevelCultivateLayer25setCultivateTypeCharacterEPKc)
+//   from 0x52b602 (_ZN28SpriteTopLevelCultivateLayer25setCultivateTypeCharacterEPKc)
+//   from 0x52b69c ()
+//   from 0x52b9d0 (_ZN28SpriteTopLevelCultivateLayer21setCultivateTypeLevelEPKc)
+//   from 0x52b9d6 (_ZN28SpriteTopLevelCultivateLayer21setCultivateTypeLevelEPKc)
+//   from 0x52b9d8 (_ZN28SpriteTopLevelCultivateLayer21setCultivateTypeLevelEPKc)
+//   from 0x52ba9c ()
+//   from 0x52bf66 (_ZN28SpriteTopLevelCultivateLayer19setCultivateTypeAllEPKc)
+//   from 0x52bf6c (_ZN28SpriteTopLevelCultivateLayer19setCultivateTypeAllEPKc)
+//   from 0x52bf6e (_ZN28SpriteTopLevelCultivateLayer19setCultivateTypeAllEPKc)
+//   from 0x52c024 ()
+//   from 0x52c688 (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeLearnPointEPKc)
+//   from 0x52c68e (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeLearnPointEPKc)
+//   from 0x52c690 (_ZN28SpriteTopLevelCultivateLayer26setCultivateTypeLearnPointEPKc)
+//   from 0x52c748 ()
+//   from 0x53224a (_ZN16SpriteTrainLayer18initializeUserInfoEv)
+//   from 0x532250 (_ZN16SpriteTrainLayer18initializeUserInfoEv)
+//   from 0x532252 (_ZN16SpriteTrainLayer18initializeUserInfoEv)
+//   from 0x5322c4 ()
+//   from 0x53813e (_ZN12VIPInfoLayer20initializeDetailInfoEv)
+//   from 0x538140 (_ZN12VIPInfoLayer20initializeDetailInfoEv)
+//   from 0x538142 (_ZN12VIPInfoLayer20initializeDetailInfoEv)
+//   from 0x538288 ()
+//   from 0x5382a0 (_ZN12VIPInfoLayer14initializeInfoEv)
+//   from 0x5382a2 (_ZN12VIPInfoLayer14initializeInfoEv)
+//   from 0x5382a4 (_ZN12VIPInfoLayer14initializeInfoEv)
+//   from 0x5384a0 ()
+//   from 0x53d7ba (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53d7bc (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53d8e4 (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53d8e6 (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53d93c (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53d93e (_ZN3NPC16checkFunctionNPCEv)
+//   from 0x53da90 ()
+//   from 0x54003c (_ZNK5Quest14progressStringEi)
+//   from 0x540042 (_ZNK5Quest14progressStringEi)
+//   from 0x540044 (_ZNK5Quest14progressStringEi)
+//   from 0x5400b8 ()
+//   from 0x5405e2 (_ZN12QuestManager32isQuestLevelRequirementFulfilledEt)
+//   from 0x5405e4 (_ZN12QuestManager32isQuestLevelRequirementFulfilledEt)
+//   from 0x5405e6 (_ZN12QuestManager32isQuestLevelRequirementFulfilledEt)
+//   from 0x540600 ()
+//   from 0x540fa0 (_ZN12QuestManager12doQuickCheckEP5Quest)
+//   from 0x540fa2 (_ZN12QuestManager12doQuickCheckEP5Quest)
+//   from 0x540fa4 (_ZN12QuestManager12doQuickCheckEP5Quest)
+//   from 0x541070 ()
+//   from 0x54eab8 (_ZN8UserData15isSptBossBeatenEi)
+//   from 0x54eabe (_ZN8UserData15isSptBossBeatenEi)
+//   from 0x54eac0 (_ZN8UserData15isSptBossBeatenEi)
+//   from 0x54eae0 ()
+//   from 0x54eaf8 (_ZN8UserData17isSptBossCapturedEi)
+//   from 0x54eafe (_ZN8UserData17isSptBossCapturedEi)
+//   from 0x54eb00 (_ZN8UserData17isSptBossCapturedEi)
+//   from 0x54eb34 ()
+//   from 0x54eb4e (_ZN8UserData14captureSptBossEi)
+//   from 0x54eb54 (_ZN8UserData14captureSptBossEi)
+//   from 0x54eb56 (_ZN8UserData14captureSptBossEi)
+//   from 0x54eb98 ()
+//   from 0x54eba6 (_ZN8UserData23getUserRegisterTimeYearEv)
+//   from 0x54ebaa (_ZN8UserData23getUserRegisterTimeYearEv)
+//   from 0x54ebac (_ZN8UserData23getUserRegisterTimeYearEv)
+//   from 0x54ebe0 ()
+//   from 0x54ebea (_ZN8UserData24getUserRegisterTimeMonthEv)
+//   from 0x54ebee (_ZN8UserData24getUserRegisterTimeMonthEv)
+//   from 0x54ebf0 (_ZN8UserData24getUserRegisterTimeMonthEv)
+//   from 0x54ec20 ()
+//   from 0x54ec26 (_ZN8UserData22getUserRegisterTimeDayEv)
+//   from 0x54ec2a (_ZN8UserData22getUserRegisterTimeDayEv)
+//   from 0x54ec2c (_ZN8UserData22getUserRegisterTimeDayEv)
+//   from 0x54ec5c ()
+//   from 0x54ec62 (_ZN8UserData23getUserRegisterTimeHourEv)
+//   from 0x54ec66 (_ZN8UserData23getUserRegisterTimeHourEv)
+//   from 0x54ec68 (_ZN8UserData23getUserRegisterTimeHourEv)
+//   from 0x54ec98 ()
+//   from 0x54ec9e (_ZN8UserData25getUserRegisterTimeMinuteEv)
+//   from 0x54eca2 (_ZN8UserData25getUserRegisterTimeMinuteEv)
+//   from 0x54eca4 (_ZN8UserData25getUserRegisterTimeMinuteEv)
+//   from 0x54ecd4 ()
+//   from 0x54ecda (_ZN8UserData25getUserRegisterTimeSecondEv)
+//   from 0x54ecde (_ZN8UserData25getUserRegisterTimeSecondEv)
+//   from 0x54ece0 (_ZN8UserData25getUserRegisterTimeSecondEv)
+//   from 0x54ed10 ()
+//   from 0x54ed26 (_ZN8UserData19getUserRegisterDateEv)
+//   from 0x54ed28 (_ZN8UserData19getUserRegisterDateEv)
+//   from 0x54ed2a (_ZN8UserData19getUserRegisterDateEv)
+//   from 0x54edb8 ()
+//   from 0x54edc4 (_ZN8UserData10isUserMaleEv)
+//   from 0x54edc6 (_ZN8UserData10isUserMaleEv)
+//   from 0x54edc8 (_ZN8UserData10isUserMaleEv)
+//   from 0x54edd8 ()
+//   from 0x54ef78 (_ZN8UserData17getLinkSpriteUUIDEv)
+//   from 0x54ef7a (_ZN8UserData17getLinkSpriteUUIDEv)
+//   from 0x54ef7c (_ZN8UserData17getLinkSpriteUUIDEv)
+//   from 0x54ef84 ()
+//   from 0x54ef8c (_ZN8UserData17setLinkSpriteUUIDEPKc)
+//   from 0x54ef90 (_ZN8UserData17setLinkSpriteUUIDEPKc)
+//   from 0x54ef92 (_ZN8UserData17setLinkSpriteUUIDEPKc)
+//   from 0x54ef9c ()
+//   from 0x54efc0 (_ZN8UserData14updateUserInfoEv)
+//   from 0x54efc6 (_ZN8UserData14updateUserInfoEv)
+//   from 0x54f08c ()
+//   from 0x54f152 (_ZN8UserData16isSpritePackFullEv)
+//   from 0x54f154 (_ZN8UserData16isSpritePackFullEv)
+//   from 0x54f156 (_ZN8UserData16isSpritePackFullEv)
+//   from 0x54f184 ()
+//   from 0x54f18e (_ZN8UserData19isSpriteStorageFullEv)
+//   from 0x54f190 (_ZN8UserData19isSpriteStorageFullEv)
+//   from 0x54f192 (_ZN8UserData19isSpriteStorageFullEv)
+//   from 0x54f1c0 ()
+//   from 0x54f79a (_ZN8UserData7addGoldEj)
+//   from 0x54f79c (_ZN8UserData7addGoldEj)
+//   from 0x54f79e (_ZN8UserData7addGoldEj)
+//   from 0x54f7d4 ()
+//   from 0x54f7da (_ZN8UserData7useGoldEj)
+//   from 0x54f7dc (_ZN8UserData7useGoldEj)
+//   from 0x54f7de (_ZN8UserData7useGoldEj)
+//   from 0x54f820 ()
+//   from 0x54f826 (_ZN8UserData10addVipGoldEj)
+//   from 0x54f828 (_ZN8UserData10addVipGoldEj)
+//   from 0x54f82a (_ZN8UserData10addVipGoldEj)
+//   from 0x54f860 ()
+//   from 0x54f866 (_ZN8UserData10useVipGoldEj)
+//   from 0x54f868 (_ZN8UserData10useVipGoldEj)
+//   from 0x54f86a (_ZN8UserData10useVipGoldEj)
+//   from 0x54f8ac ()
+//   from 0x54fa08 (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fa0a (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fa0c (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fa3c (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fa3e (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fa40 (_ZN8UserData9canEvolveEPKc)
+//   from 0x54fab8 ()
+//   from 0x54fabc ()
+//   from 0x54fac0 (_ZN8UserData17getItemWithGridIDEj)
+//   from 0x54fac4 (_ZN8UserData17getItemWithGridIDEj)
+//   from 0x54fac6 (_ZN8UserData17getItemWithGridIDEj)
+//   from 0x54fb04 ()
+//   from 0x54fb0e (_ZN8UserData23getEquipedCostumeItemIDEv)
+//   from 0x54fb10 (_ZN8UserData23getEquipedCostumeItemIDEv)
+//   from 0x54fb12 (_ZN8UserData23getEquipedCostumeItemIDEv)
+//   from 0x54fb58 ()
+//   from 0x54fc46 (_ZN8UserData16beforeRemoveItemEj)
+//   from 0x54fc4c (_ZN8UserData16beforeRemoveItemEj)
+//   from 0x54fc4e (_ZN8UserData16beforeRemoveItemEj)
+//   from 0x54fc7c ()
+//   from 0x54fd02 (_ZN8UserData15afterUpdateItemEj)
+//   from 0x54fd08 (_ZN8UserData15afterUpdateItemEj)
+//   from 0x54fd0a (_ZN8UserData15afterUpdateItemEj)
+//   from 0x54fd24 ()
+//   from 0x54fd2a (_ZN8UserData13swapItemInBagEjj)
+//   from 0x54fd30 (_ZN8UserData13swapItemInBagEjj)
+//   from 0x54fd32 (_ZN8UserData13swapItemInBagEjj)
+//   from 0x54fe78 ()
+//   from 0x54feca (_ZN8UserData28updateSeerEquipmentItemInBagERK8SaveItem)
+//   from 0x54fecc (_ZN8UserData28updateSeerEquipmentItemInBagERK8SaveItem)
+//   from 0x54fece (_ZN8UserData28updateSeerEquipmentItemInBagERK8SaveItem)
+//   from 0x54ff4c ()
+//   from 0x54ff5a (_ZN8UserData33removeSeerEquipmentItemWithGridIDEj)
+//   from 0x54ff5e (_ZN8UserData33removeSeerEquipmentItemWithGridIDEj)
+//   from 0x54ff60 (_ZN8UserData33removeSeerEquipmentItemWithGridIDEj)
+//   from 0x54ffcc ()
+//   from 0x5503ae (_ZN8UserData13setServerTimeEi)
+//   from 0x5503b2 (_ZN8UserData13setServerTimeEi)
+//   from 0x5503b4 (_ZN8UserData13setServerTimeEi)
+//   from 0x5503e4 ()
+//   from 0x5503ec (_ZN8UserData23setCurrentChallengeTimeEi)
+//   from 0x5503f2 (_ZN8UserData23setCurrentChallengeTimeEi)
+//   from 0x5503f4 (_ZN8UserData23setCurrentChallengeTimeEi)
+//   from 0x550410 ()
+//   from 0x55041c (_ZN8UserData23getCurrentChallengeTimeEv)
+//   from 0x550422 (_ZN8UserData23getCurrentChallengeTimeEv)
+//   from 0x550424 (_ZN8UserData23getCurrentChallengeTimeEv)
+//   from 0x550444 ()
+//   from 0x550450 (_ZN8UserData19setCurrentAwardTimeEi)
+//   from 0x550456 (_ZN8UserData19setCurrentAwardTimeEi)
+//   from 0x550458 (_ZN8UserData19setCurrentAwardTimeEi)
+//   from 0x550474 ()
+//   from 0x550480 (_ZN8UserData19getCurrentAwardTimeEv)
+//   from 0x550486 (_ZN8UserData19getCurrentAwardTimeEv)
+//   from 0x550488 (_ZN8UserData19getCurrentAwardTimeEv)
+//   from 0x5504a8 ()
+//   from 0x5504bc (_ZN8UserData13getServerTimeEv)
+//   from 0x5504be (_ZN8UserData13getServerTimeEv)
+//   from 0x5504c0 (_ZN8UserData13getServerTimeEv)
+//   from 0x5504fc ()
+//   from 0x55050a (_ZN8UserData22getEnergyBackwardsTimeEv)
+//   from 0x55050c (_ZN8UserData22getEnergyBackwardsTimeEv)
+//   from 0x55050e (_ZN8UserData22getEnergyBackwardsTimeEv)
+//   from 0x55054c ()
+//   from 0x55055a (_ZN8UserData22getActionBackwardsTimeEv)
+//   from 0x55055c (_ZN8UserData22getActionBackwardsTimeEv)
+//   from 0x55055e (_ZN8UserData22getActionBackwardsTimeEv)
+//   from 0x55059c ()
+//   from 0x5505b2 (_ZN8UserData24getChampionBackwardsTimeEi)
+//   from 0x5505b4 (_ZN8UserData24getChampionBackwardsTimeEi)
+//   from 0x5505b6 (_ZN8UserData24getChampionBackwardsTimeEi)
+//   from 0x550614 ()
+//   from 0x550740 (_ZN8UserData22isShopFunctionUnlockedEv)
+//   from 0x550746 (_ZN8UserData22isShopFunctionUnlockedEv)
+//   from 0x550748 (_ZN8UserData22isShopFunctionUnlockedEv)
+//   from 0x550770 ()
+//   from 0x55077c (_ZN8UserData22isTaskFunctionUnlockedEv)
+//   from 0x550782 (_ZN8UserData22isTaskFunctionUnlockedEv)
+//   from 0x550784 (_ZN8UserData22isTaskFunctionUnlockedEv)
+//   from 0x5507ac ()
+//   from 0x5507b8 (_ZN8UserData22isMailFunctionUnlockedEv)
+//   from 0x5507be (_ZN8UserData22isMailFunctionUnlockedEv)
+//   from 0x5507c0 (_ZN8UserData22isMailFunctionUnlockedEv)
+//   from 0x5507e8 ()
+//   from 0x5507f4 (_ZN8UserData23isArenaFunctionUnlockedEv)
+//   from 0x5507fa (_ZN8UserData23isArenaFunctionUnlockedEv)
+//   from 0x5507fc (_ZN8UserData23isArenaFunctionUnlockedEv)
+//   from 0x550824 ()
+//   from 0x550830 (_ZN8UserData25isLotteryFunctionUnlockedEv)
+//   from 0x550836 (_ZN8UserData25isLotteryFunctionUnlockedEv)
+//   from 0x550838 (_ZN8UserData25isLotteryFunctionUnlockedEv)
+//   from 0x550860 ()
+//   from 0x55086c (_ZN8UserData23isTrainFunctionUnlockedEv)
+//   from 0x550872 (_ZN8UserData23isTrainFunctionUnlockedEv)
+//   from 0x550874 (_ZN8UserData23isTrainFunctionUnlockedEv)
+//   from 0x55089c ()
+//   from 0x5508a8 (_ZN8UserData27isAssignexpFunctionUnlockedEv)
+//   from 0x5508ae (_ZN8UserData27isAssignexpFunctionUnlockedEv)
+//   from 0x5508b0 (_ZN8UserData27isAssignexpFunctionUnlockedEv)
+//   from 0x5508d8 ()
+//   from 0x5508e4 (_ZN8UserData24isEvolveFunctionUnlockedEv)
+//   from 0x5508ea (_ZN8UserData24isEvolveFunctionUnlockedEv)
+//   from 0x5508ec (_ZN8UserData24isEvolveFunctionUnlockedEv)
+//   from 0x550914 ()
+//   from 0x550920 (_ZN8UserData26isActivityFunctionUnlockedEv)
+//   from 0x550926 (_ZN8UserData26isActivityFunctionUnlockedEv)
+//   from 0x550928 (_ZN8UserData26isActivityFunctionUnlockedEv)
+//   from 0x550950 ()
+//   from 0x55095c (_ZN8UserData32isChallengeleiyiFunctionUnlockedEv)
+//   from 0x550962 (_ZN8UserData32isChallengeleiyiFunctionUnlockedEv)
+//   from 0x550964 (_ZN8UserData32isChallengeleiyiFunctionUnlockedEv)
+//   from 0x55098c ()
+//   from 0x550998 (_ZN8UserData21isSptFunctionUnlockedEv)
+//   from 0x55099e (_ZN8UserData21isSptFunctionUnlockedEv)
+//   from 0x5509a0 (_ZN8UserData21isSptFunctionUnlockedEv)
+//   from 0x5509c8 ()
+//   from 0x5509d4 (_ZN8UserData28isBravetowerFunctionUnlockedEv)
+//   from 0x5509da (_ZN8UserData28isBravetowerFunctionUnlockedEv)
+//   from 0x5509dc (_ZN8UserData28isBravetowerFunctionUnlockedEv)
+//   from 0x550a04 ()
+//   from 0x550a10 (_ZN8UserData27isAssignLrnFunctionUnlockedEv)
+//   from 0x550a16 (_ZN8UserData27isAssignLrnFunctionUnlockedEv)
+//   from 0x550a18 (_ZN8UserData27isAssignLrnFunctionUnlockedEv)
+//   from 0x550a40 ()
+//   from 0x550a4c (_ZN8UserData26isAptitudeFunctionUnlockedEv)
+//   from 0x550a52 (_ZN8UserData26isAptitudeFunctionUnlockedEv)
+//   from 0x550a54 (_ZN8UserData26isAptitudeFunctionUnlockedEv)
+//   from 0x550a7c ()
+//   from 0x550ae2 (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550ae4 (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550b2a (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550b2c (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550b72 (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550b74 (_ZN8UserData19updateTodayVipCountE17kVipPrivilegeType)
+//   from 0x550bc0 ()
+//   from 0x550bcc (_ZN8UserData19getBuyAptitudeCountEv)
+//   from 0x550bce (_ZN8UserData19getBuyAptitudeCountEv)
+//   from 0x550bd0 (_ZN8UserData19getBuyAptitudeCountEv)
+//   from 0x550bf8 ()
+//   from 0x550c04 (_ZN8UserData17getBuyActionCountEv)
+//   from 0x550c06 (_ZN8UserData17getBuyActionCountEv)
+//   from 0x550c08 (_ZN8UserData17getBuyActionCountEv)
+//   from 0x550c30 ()
+//   from 0x550c3c (_ZN8UserData17getBuyEnergyCountEv)
+//   from 0x550c3e (_ZN8UserData17getBuyEnergyCountEv)
+//   from 0x550c40 (_ZN8UserData17getBuyEnergyCountEv)
+//   from 0x550c68 ()
+//   from 0x551014 (_ZN8UserData21getGoodMaxCanBuyCountEx)
+//   from 0x551018 (_ZN8UserData21getGoodMaxCanBuyCountEx)
+//   from 0x55101a (_ZN8UserData21getGoodMaxCanBuyCountEx)
+//   from 0x5510e0 ()
+//   from 0x5519aa (_ZN8UserData16spriteLearnSkillEP10SpriteInfoi)
+//   from 0x5519ac (_ZN8UserData16spriteLearnSkillEP10SpriteInfoi)
+//   from 0x5519ae (_ZN8UserData16spriteLearnSkillEP10SpriteInfoi)
+//   from 0x551a00 ()
+//   from 0x551af0 (_ZN8UserData14addUnlockedMapEib)
+//   from 0x551af2 (_ZN8UserData14addUnlockedMapEib)
+//   from 0x551b80 (_ZN8UserData14addUnlockedMapEib)
+//   from 0x551b82 (_ZN8UserData14addUnlockedMapEib)
+//   from 0x551c50 ()
+//   from 0x5520f4 (_ZN8UserData13createNewDataEv)
+//   from 0x5520fa (_ZN8UserData13createNewDataEv)
+//   from 0x552210 ()
+//   from 0x552824 (_ZN8UserData25unwearEquipmentFromSpriteERK8SaveItem)
+//   from 0x552826 (_ZN8UserData25unwearEquipmentFromSpriteERK8SaveItem)
+//   from 0x552828 (_ZN8UserData25unwearEquipmentFromSpriteERK8SaveItem)
+//   from 0x552984 ()
+//   from 0x55299a (_ZN8UserData35removeSpriteEquipmentItemWithGridIDEj)
+//   from 0x55299c (_ZN8UserData35removeSpriteEquipmentItemWithGridIDEj)
+//   from 0x55299e (_ZN8UserData35removeSpriteEquipmentItemWithGridIDEj)
+//   from 0x552a10 ()
+//   from 0x552cc2 (_ZN8UserData21wearEquipmentToSpriteERK8SaveItemPKc)
+//   from 0x552cc4 (_ZN8UserData21wearEquipmentToSpriteERK8SaveItemPKc)
+//   from 0x552cc6 (_ZN8UserData21wearEquipmentToSpriteERK8SaveItemPKc)
+//   from 0x552f28 ()
+//   from 0x552f62 (_ZN8UserData30updateSpriteEquipmentItemInBagERK8SaveItemPKc)
+//   from 0x552f64 (_ZN8UserData30updateSpriteEquipmentItemInBagERK8SaveItemPKc)
+//   from 0x552f66 (_ZN8UserData30updateSpriteEquipmentItemInBagERK8SaveItemPKc)
+//   from 0x55305c ()
+//   from 0x5570d0 (_ZN12LoginManager5loginEPKcS1_)
+//   from 0x5570d6 (_ZN12LoginManager5loginEPKcS1_)
+//   from 0x5570d8 (_ZN12LoginManager5loginEPKcS1_)
+//   from 0x557128 ()
+//   from 0x5591de (_ZN16GameAudioManager13setSpinSwitchEb)
+//   from 0x5591e2 (_ZN16GameAudioManager13setSpinSwitchEb)
+//   from 0x5591e4 (_ZN16GameAudioManager13setSpinSwitchEb)
+//   from 0x559240 ()
+//   from 0x559304 (_ZN16GameAudioManager13getSpinSwitchEv)
+//   from 0x559308 (_ZN16GameAudioManager13getSpinSwitchEv)
+//   from 0x55930a (_ZN16GameAudioManager13getSpinSwitchEv)
+//   from 0x559358 ()
+//   from 0x5615fa (_ZN16BaseLevelBuilder10createSeerEv)
+//   from 0x5615fc (_ZN16BaseLevelBuilder10createSeerEv)
+//   from 0x5615fe (_ZN16BaseLevelBuilder10createSeerEv)
+//   from 0x56167c ()
+//   from 0x629520 (_ZN19MessageErrorHandler29handleErrLoginPrizeAlreadyGotEv)
+//   from 0x629524 (_ZN19MessageErrorHandler29handleErrLoginPrizeAlreadyGotEv)
+//   from 0x629526 (_ZN19MessageErrorHandler29handleErrLoginPrizeAlreadyGotEv)
+//   from 0x629560 ()
+//   from 0x62b732 (_ZN14MessageHandler24handleAckChampionCleanCDEv)
+//   from 0x62b736 (_ZN14MessageHandler24handleAckChampionCleanCDEv)
+//   from 0x62b75a (_ZN14MessageHandler24handleAckChampionCleanCDEv)
+//   from 0x62b75e (_ZN14MessageHandler24handleAckChampionCleanCDEv)
+//   from 0x62b7a8 ()
+//   from 0x62b7d2 (_ZN14MessageHandler21handleAckChampionGiftEv)
+//   from 0x62b7d6 (_ZN14MessageHandler21handleAckChampionGiftEv)
+//   from 0x62b7fa (_ZN14MessageHandler21handleAckChampionGiftEv)
+//   from 0x62b7fe (_ZN14MessageHandler21handleAckChampionGiftEv)
+//   from 0x62b864 ()
+//   from 0x62bcfe (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd04 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd2a (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd30 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd56 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd5c (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd82 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bd88 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bdae (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bdb4 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bdda (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bde0 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be06 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be0c (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be38 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be40 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be6a (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be70 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62be9c (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bea2 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bece (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bed4 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf00 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf06 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf32 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf3a (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf64 (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bf6a (_ZN14MessageHandler20handleFunctionUnlockEv)
+//   from 0x62bfe8 ()
+//   from 0x62c2b6 (_ZN14MessageHandler31handleCleanSpriteAptitudeCDTimeEv)
+//   from 0x62c2ba (_ZN14MessageHandler31handleCleanSpriteAptitudeCDTimeEv)
+//   from 0x62c32c ()
+//   from 0x62c38c (_ZN14MessageHandler23handleAddSpriteAptitudeEv)
+//   from 0x62c390 (_ZN14MessageHandler23handleAddSpriteAptitudeEv)
+//   from 0x62c3c4 ()
+//   from 0x62da62 (_ZN14MessageHandler23handleNtfMsgStartBattleEv)
+//   from 0x62da64 (_ZN14MessageHandler23handleNtfMsgStartBattleEv)
+//   from 0x62db08 ()
+//   from 0x62dd1e (_ZN14MessageHandler29handleAckMsgUnlockMonPackGridEv)
+//   from 0x62dd22 (_ZN14MessageHandler29handleAckMsgUnlockMonPackGridEv)
+//   from 0x62dde0 ()
+//   from 0x62de6a (_ZN14MessageHandler24handleAckMsgChangeMonPosEv)
+//   from 0x62de6c (_ZN14MessageHandler24handleAckMsgChangeMonPosEv)
+//   from 0x62e058 ()
+//   from 0x62e98e (_ZN14MessageHandler23handleNtfMsgReceiveChatEv)
+//   from 0x62e994 (_ZN14MessageHandler23handleNtfMsgReceiveChatEv)
+//   from 0x62ea9e (_ZN14MessageHandler23handleNtfMsgReceiveChatEv)
+//   from 0x62eaa2 (_ZN14MessageHandler23handleNtfMsgReceiveChatEv)
+//   from 0x62ebc0 ()
+//   from 0x62ed26 (_ZN14MessageHandler32handleAckMsgGetStorageSpriteListEv)
+//   from 0x62ed28 (_ZN14MessageHandler32handleAckMsgGetStorageSpriteListEv)
+//   from 0x62ed74 ()
+//   from 0x62ef06 (_ZN14MessageHandler22handleAckMsgCreateRoleEv)
+//   from 0x62ef08 (_ZN14MessageHandler22handleAckMsgCreateRoleEv)
+//   from 0x62efa4 ()
+//   from 0x62eff6 (_ZN14MessageHandler28handleAckMsgPlayerChangeNickEv)
+//   from 0x62effa (_ZN14MessageHandler28handleAckMsgPlayerChangeNickEv)
+//   from 0x62f09c ()
+//   from 0x62f134 (_ZN14MessageHandler24handleAckMsgCheckSessionEv)
+//   from 0x62f138 (_ZN14MessageHandler24handleAckMsgCheckSessionEv)
+//   from 0x62f290 ()
+//   from 0x62f91a (_ZN14MessageHandler28handleNtfMsgCliItemBagUpdateEv)
+//   from 0x62f920 (_ZN14MessageHandler28handleNtfMsgCliItemBagUpdateEv)
+//   from 0x62fb58 ()
+//   from 0x62fba8 (_ZN14MessageHandler22handleAckMsgCliGetItemEv)
+//   from 0x62fbae (_ZN14MessageHandler22handleAckMsgCliGetItemEv)
+//   from 0x62fbb0 (_ZN14MessageHandler22handleAckMsgCliGetItemEv)
+//   from 0x62fc60 ()
+//   from 0x62fc82 (_ZN14MessageHandler24handleMsgOtherPlayerWalkEv)
+//   from 0x62fc88 (_ZN14MessageHandler24handleMsgOtherPlayerWalkEv)
+//   from 0x62fc8a (_ZN14MessageHandler24handleMsgOtherPlayerWalkEv)
+//   from 0x62fcf0 ()
+//   from 0x62fd10 (_ZN14MessageHandler26handleNtfMsgPlayerLeaveMapEv)
+//   from 0x62fd14 (_ZN14MessageHandler26handleNtfMsgPlayerLeaveMapEv)
+//   from 0x62fd16 (_ZN14MessageHandler26handleNtfMsgPlayerLeaveMapEv)
+//   from 0x62fd54 ()
+//   from 0x62fdb4 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x62fdb6 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6300ec (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630376 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63037c (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6303de (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6303e4 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630404 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63040a (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63042e (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630434 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630470 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6304b0 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6304b6 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6304e8 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6304ee (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630528 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63052e (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630564 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63056a (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6305b6 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6305bc (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6305da (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6305e0 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630600 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630606 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630626 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63062c (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63064c (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630652 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630672 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630678 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630698 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63069e (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6306ca (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6306d2 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6306fc (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630702 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63072e (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630734 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630760 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630766 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630792 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630798 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6307c4 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6307cc (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6307f6 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6307fc (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63082c (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x630832 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x63083c (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6308f0 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6308f2 (_ZN14MessageHandler16handleMsgLoginInEv)
+//   from 0x6309f0 ()
+//   from 0x630abc (_ZN14MessageHandler17handleOnlineAwardEv)
+//   from 0x630ac2 (_ZN14MessageHandler17handleOnlineAwardEv)
+//   from 0x630afe (_ZN14MessageHandler17handleOnlineAwardEv)
+//   from 0x630b04 (_ZN14MessageHandler17handleOnlineAwardEv)
+//   from 0x630b70 ()
+//   from 0x6313e2 (_ZN14MessageHandler30handleAckMsgGetMapUnlockedListEv)
+//   from 0x6313e6 (_ZN14MessageHandler30handleAckMsgGetMapUnlockedListEv)
+//   from 0x6313e8 (_ZN14MessageHandler30handleAckMsgGetMapUnlockedListEv)
+//   from 0x631460 ()
+//   from 0x63178a (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63178e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6317b0 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6317b4 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6317d6 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6317da (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6317fc (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631800 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631816 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631818 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63187a (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63187c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6318dc (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6318e0 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63194e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631952 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63197a (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63197e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x6319f8 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a52 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a56 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a68 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a6c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a84 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631a8a (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ac0 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ac6 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631af6 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631afc (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631b36 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631b3c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631b6a (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631b70 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631b9a (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ba0 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631bca (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631bd2 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c04 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c0c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c3e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c46 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c78 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c7e (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c92 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631c98 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631cb2 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631cb8 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ce2 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631ce8 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d0c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d12 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d36 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d3c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d64 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d6c (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631d98 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631da0 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x631dc8 (_ZN14MessageHandler28handleNtfMsgPlayerAttrChangeEv)
+//   from 0x63256c (_ZN14MessageHandler17updateUserPVPDataERKN11ISeer20Comm15pvp_data_info_tE)
+//   from 0x632570 (_ZN14MessageHandler17updateUserPVPDataERKN11ISeer20Comm15pvp_data_info_tE)
+//   from 0x632572 (_ZN14MessageHandler17updateUserPVPDataERKN11ISeer20Comm15pvp_data_info_tE)
+//   from 0x63270c ()
+//   from 0x634860 (_ZN14MessageHandler26handleNtfMsgPlayerEnterMapEv)
+//   from 0x634862 (_ZN14MessageHandler26handleNtfMsgPlayerEnterMapEv)
+//   from 0x634864 (_ZN14MessageHandler26handleNtfMsgPlayerEnterMapEv)
+//   from 0x63491c ()
+//   from 0x634ae8 (_ZN14MessageHandler23handleMsgPlayerEnterMapEv)
+//   from 0x634aea (_ZN14MessageHandler23handleMsgPlayerEnterMapEv)
+//   from 0x634aec (_ZN14MessageHandler23handleMsgPlayerEnterMapEv)
+//   from 0x634c48 ()
+//   from 0x634d5e (_ZN14MessageHandler26handleAckMsgAllocateMonExpEv)
+//   from 0x634d64 (_ZN14MessageHandler26handleAckMsgAllocateMonExpEv)
+//   from 0x634e80 ()
+//   from 0x635b8e (_ZN14MessageHandler26handleAckMsgMonUpdateSkillEv)
+//   from 0x635b90 (_ZN14MessageHandler26handleAckMsgMonUpdateSkillEv)
+//   from 0x635db0 ()
+//   from 0x63da10 (_ZN11NetWorkUtil11sendMessageEPN6google8protobuf7MessageEfibb)
+//   from 0x63da12 (_ZN11NetWorkUtil11sendMessageEPN6google8protobuf7MessageEfibb)
+//   from 0x63da14 (_ZN11NetWorkUtil11sendMessageEPN6google8protobuf7MessageEfibb)
+//   from 0x63daa8 ()
+//   from 0x63db2e (_ZN11NetWorkUtil22sendTestLogEchoMessageEPKc)
+//   from 0x63db30 (_ZN11NetWorkUtil22sendTestLogEchoMessageEPKc)
+//   from 0x63dcc0 ()
+
+
+============================================================
+// _ZN8UserData14updateUserInfoEv @ 0x54efbc (size=204)
+============================================================
+// _ZN8UserData14updateUserInfoEv @ 0x54efbc
+__int64 __fastcall UserData	:		:	updateUserInfo	(	UserData *this	)	
+	{	(00000000
+  (40000001!int v1!	;	 // r5
+  (40000002!int i!	;	 // r5
+  (40000003!TalkingDataManager *v3!	;	 // r0
+  (40000005__int64 v5	;	 // [sp+0h] [bp-20h]
+(80000000(00000000
+(00000000(00000001  (00000004LODWORD(00000003	(	(00000005v5	)	 (00000002	=	 (00000006this	;	(00000001
+(00000007  (00000009v1 (00000008	=	 (0000000A 0 	;	(00000007
+(0000000B  (0000000EHIDWORD(0000000D	(	(0000000Fv5	)	 (0000000C	=	 (00000010	(	unsigned __int8	)	(00000011byte_AC4174	;	(0000000B
+(00000012   while  	(	 (0000004C 1  	)	(00000012
+  	{	(00000013
+(00000013(00000014    (00000016this (00000015	=	 (00000017	(	UserData *	)	(00000019UserData::getSpriteInPackCount(00000018	(	(0000001Athis	)		;	(00000014
+(0000001B     if  	(	 (0000001Fv1 (0000001E	>=	 (00000020	(	int	)	(00000021this 	)	(0000001B
+(0000001C(0000001D       break 	;	(0000001D
+(00000022     if  	(	 (00000031	(	unsigned __int8	)	(00000032byte_AC4174 (00000030	<	 	(		(	(00000035	*	(00000036	(	unsigned __int8 *	)		(	(00000039UserData::m_spritePack (00000038	+	 (0000003B 268  (0000003A	*	 (0000003Cv1 (00000037	+	 (0000003D 203 	)	 (00000034	<<	 (0000003E 8 	)	 (00000033	|	 (0000003F	(	unsigned int	)	(00000040	*	(00000041	(	unsigned __int8 *	)		(	(00000044UserData::m_spritePack (00000043	+	 (00000046 268  (00000045	*	 (00000047v1 (00000042	+	 (00000048 202 	)		)	 	)	(00000022
+(00000023(00000024      (00000026byte_AC4174 (00000025	=	 (00000027	*	(00000028	(	_BYTE *	)		(	(0000002BUserData::m_spritePack (0000002A	+	 (0000002D 268  (0000002C	*	 (0000002Ev1 (00000029	+	 (0000002F 202 	)		;	(00000024
+(00000049    (0000004A	++	(0000004Bv1	;	(00000049
+  	}	(00000013
+(0000004D   for  	(	 (0000004Fi (0000004E	=	 (00000050 0 	;	 	;	 (00000051	++	(00000052i 	)	(0000004D
+  	{	(00000053
+(00000053(00000054    (00000056this (00000055	=	 (00000057	(	UserData *	)	(00000059UserData::getSpriteInStorageCount(00000058	(	(0000005Athis	)		;	(00000054
+(0000005B     if  	(	 (0000005Fi (0000005E	>=	 (00000060	(	int	)	(00000061this 	)	(0000005B
+(0000005C(0000005D       break 	;	(0000005D
+(00000062     if  	(	 	(		(	(00000073	*	(00000074	(	unsigned __int8 *	)		(	(00000077UserData::m_spriteStorage (00000076	+	 (00000079 57  (00000078	*	 (0000007Ai (00000075	+	 (0000007B 44 	)	 (00000072	<<	 (0000007C 24 	)	 (00000071	|	 	(	(00000080	*	(00000081	(	unsigned __int8 *	)		(	(00000084UserData::m_spriteStorage (00000083	+	 (00000086 57  (00000085	*	 (00000087i (00000082	+	 (00000088 42 	)	 (0000007F	<<	 (00000089 8 	)	 (0000007E	|	 (0000008A	*	(0000008B	(	unsigned __int8 *	)		(	(0000008EUserData::m_spriteStorage (0000008D	+	 (00000090 57  (0000008F	*	 (00000091i (0000008C	+	 (00000092 41 	)	 (0000007D	|	 	(	(00000094	*	(00000095	(	unsigned __int8 *	)		(	(00000098UserData::m_spriteStorage (00000097	+	 (0000009A 57  (00000099	*	 (0000009Bi (00000096	+	 (0000009C 43 	)	 (00000093	<<	 (0000009D 16 	)		)	 (00000070	>	 (0000009E	(	unsigned int	)	(0000009F	(	unsigned __int8	)	(000000A0byte_AC4174 	)	(00000062
+(00000063(00000064      (00000066byte_AC4174 (00000065	=	 (00000067	*	(00000068	(	_BYTE *	)		(	(0000006BUserData::m_spriteStorage (0000006A	+	 (0000006D 57  (0000006C	*	 (0000006Ei (00000069	+	 (0000006F 41 	)		;	(00000064
+  	}	(00000053
+(000000A2  (000000A4unk_AC4202 (000000A3	=	 (000000A7 -4599  (000000A6	*	 	(	(000000A9dword_AC4080 (000000A8	-	 (000000AAUserData::m_spriteStorage	)	(000000A5
+             (000000A5	+	 (000000AC 19563  (000000AB	*	 	(		(	(000000AFdword_AC408C (000000AE	-	 (000000B0UserData::m_spritePack	)	 (000000AD	>>	 (000000B1 2 	)		;	(000000A2
+(000000B2   if  	(	 (000000C3	(	unsigned int	)	(000000C4	(	unsigned __int8	)	(000000C5byte_AC4174 (000000C2	>	 (000000C7HIDWORD(000000C6	(	(000000C8v5	)	 	)	(000000B2
+  	{	(000000B3
+(000000B3(000000B4    (000000B6v3 (000000B5	=	 (000000B7	(	TalkingDataManager *	)	(000000B9TalkingDataManager::sharedInstance(000000B8	(	(000000BA	(	TalkingDataManager *	)	(000000BBdword_AC408C	)		;	(000000B4
+(000000BC    (000000BETalkingDataManager::setLevel(000000BD	(	(000000BFv3	,	 (000000C0	(	unsigned __int8	)	(000000C1byte_AC4174	)		;	(000000BC
+  	}	(000000B3
+(000000C9   return  (000000CAv5	;	(000000C9
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData15addSpriteToPackERK10SpriteInfob @ 0x5513e8 (size=34)
+============================================================
+// _ZN8UserData15addSpriteToPackERK10SpriteInfob @ 0x5513e8
+__int64 __fastcall UserData	:		:	addSpriteToPack	(	void *src	,	 int a2	)	
+	{	(00000000
+  (40000002!UserData *v2!	;	 // r0
+(80000000(00000000
+(00000000(00000001   if  	(	 (0000001Aa2 	)	(00000001
+(00000002(00000003    (00000005v2 (00000004	=	 (00000006	(	UserData *	)	(00000008std::vector<SpriteInfo>::insert(00000007	(	(00000009	(	int	)	(0000000A	&	(0000000BUserData::m_spritePack	,	 (0000000C	(	void *	)	(0000000DUserData::m_spritePack	,	 (0000000Esrc	)		;	(00000003
+   else (00000001
+(0000000F(00000010    (00000012v2 (00000011	=	 (00000013	(	UserData *	)	(00000015std::vector<SpriteInfo>::push_back(00000014	(	(00000016	(	int	)	(00000017	&	(00000018UserData::m_spritePack	,	 (00000019src	)		;	(00000010
+(0000001B   return  (0000001DUserData::updateUserInfo(0000001C	(	(0000001Ev2	)		;	(0000001B
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData16spriteLearnSkillEP10SpriteInfoi @ 0x5516a0 (size=856)
+============================================================
+// _ZN8UserData16spriteLearnSkillEP10SpriteInfoi @ 0x5516a0
+GameSpriteDataManager *__fastcall UserData	:		:	spriteLearnSkill	(	
+(40000000        GameSpriteDataManager *result	,	
+(40000001        char *a2	,	
+(40000002        int a3	,	
+(40000003        int a4	,	
+(40000004        int a5	,	
+(40000005        int a6	,	
+(40000006        int a7	,	
+(40000007        int a8	,	
+(40000008        int a9	,	
+(40000009        int a10	,	
+(4000000A        char a11	,	
+(4000000B        char a12	,	
+(4000000C        int a13	,	
+(4000000D        int a14	,	
+(4000000E        char a15	,	
+(4000000F        void *a16	)	
+	{	(00000000
+  (40000010!unsigned __int8 *v16!	;	 // r5
+  (40000011int v17	;	 // r3
+  (40000012!GameSkillDataManager *v18!	;	 // r0
+  (40000013!int i!	;	 // r4
+  (40000014!GameSpriteDataManager *v20!	;	 // r0
+  (40000015int MonsterById	;	 // r0
+  (40000016int v22	;	 // r7
+  (40000017!GameBattleSkillSequenceManager *v23!	;	 // r0
+  (40000018!GameBattleSkillSequenceManager *v24!	;	 // r0
+  (40000019!GameSkillDataManager *v25!	;	 // r0
+  (4000001Aint v26	;	 // r1
+  (4000001Bint v27	;	 // r0
+  (4000001C!int v28!	;	 // r3
+  (4000001Dchar *v29	;	 // r3
+  (4000001E!unsigned __int8 v30!	;	 // r4
+  (4000001F!unsigned __int8 v31!	;	 // r0
+  (40000020!unsigned __int8 v32!	;	 // r2
+  (40000021int v33	;	 // r2
+  (40000022!int v34!	;	 // r0
+  (40000023!unsigned __int8 *v35!	;	 // r3
+  (40000024int v36	;	 // r4
+  (40000025!GameBattleSkillSequenceManager *inserted!	;	 // r0
+  (40000026!int j!	;	 // r4
+  (40000027!unsigned __int8 *v39!	;	 // r3
+  (40000028!int v40!	;	 // r2
+  (40000029int v41	;	 // r1
+  (4000002Aint v42	;	 // r3
+  (4000002B!int v43!	;	 // r3
+  (4000002C!int *v44!	;	 // r1
+  (4000002D!GameBattleSkillSequenceManager *v45!	;	 // r0
+  (4000002E!GameBattleSkillSequenceManager *v46!	;	 // r0
+  (4000002F!GameBattleSkillSequenceManager *v47!	;	 // r0
+  (40000030!int v48!	;	 // r4
+  (40000031!int hasSequence!	;	 // [sp+0h] [bp-50h]
+  (40000032int v50	;	 // [sp+0h] [bp-50h]
+  (40000033!int v51!	;	 // [sp+4h] [bp-4Ch]
+  (40000034!GameSkillDataManager *v52!	;	 // [sp+8h] [bp-48h]
+  (40000035!char *v53!	;	 // [sp+Ch] [bp-44h] BYREF
+  (40000036char v54	[	4	]		;	 // [sp+10h] [bp-40h] BYREF
+  (40000037char v55	[	4	]		;	 // [sp+14h] [bp-3Ch] BYREF
+  (40000038char v56	[	4	]		;	 // [sp+18h] [bp-38h] BYREF
+  (40000039char v57	[	4	]		;	 // [sp+1Ch] [bp-34h] BYREF
+  (4000003Aint v58	;	 // [sp+20h] [bp-30h]
+  (4000003Bint v59	;	 // [sp+24h] [bp-2Ch]
+  (4000003Cvoid *v60	;	 // [sp+28h] [bp-28h] BYREF
+  (4000003D!void *v61!	;	 // [sp+2Ch] [bp-24h] BYREF
+  (4000003E!int *v62!	;	 // [sp+30h] [bp-20h]
+  (4000003F!int *v63!	;	 // [sp+34h] [bp-1Ch]
+(80000000(00000000
+(00000000(00000001  (00000003v16 (00000002	=	 (00000004	(	unsigned __int8 *	)	(00000005result	;	(00000001
+(00000006  (00000008v53 (00000007	=	 (00000009a2	;	(00000006
+(0000000A   if  	(	 (00000360result 	)	(0000000A
+  	{	(0000000B
+(0000000B(0000000C    (0000000Eresult (0000000D	=	 (0000000F	(	GameSpriteDataManager *	)	(00000010a2	;	(0000000C
+(00000011     if  	(	 (0000035Fa2 	)	(00000011
+    	{	(00000012
+(00000012(00000013      (00000015v17 (00000014	=	 (00000016 0 	;	(00000013
+(00000017       while  	(	 (00000332	(	char *	)		(		(	(00000336v16(00000335	[	(00000339 4  (00000338	*	 (0000033Av17 (00000337	+	 (0000033B 44 	]	 (00000334	<<	 (0000033C 24 	)	 (00000333	|	 	(	(00000341v16(00000340	[	(00000344 4  (00000343	*	 (00000345v17 (00000342	+	 (00000346 42 	]	 (0000033F	<<	 (00000347 8 	)	 (0000033E	|	 (00000349v16(00000348	[	(0000034C 4  (0000034B	*	 (0000034Dv17 (0000034A	+	 (0000034E 41 	]	 (0000033D	|	 	(	(00000351v16(00000350	[	(00000354 4  (00000353	*	 (00000355v17 (00000352	+	 (00000356 43 	]	 (0000034F	<<	 (00000357 16 	)		)	 (00000331	!=	 (00000358a2 	)	(00000017
+      	{	(00000018
+(00000018(00000019         if  	(	 (0000032E	++	(0000032Fv17 (0000032D	==	 (00000330 17  	)	(00000019
+        	{	(0000001A
+(0000001A(0000001B          (0000001Dv18 (0000001C	=	 (0000001E	(	GameSkillDataManager *	)	(00000020GameSkillDataManager::sharedManager(0000001F	(	(00000021	(	GameSkillDataManager *	)	(00000022a2	)		;	(0000001B
+(00000023          (00000025result (00000024	=	 (00000026	(	GameSpriteDataManager *	)	(00000028GameSkillDataManager::isHaveMove(00000027	(	(00000029v18	,	 (0000002A	(	int	)	(0000002Bv53	)		;	(00000023
+(0000002C           if  	(	 (00000030	!	(00000031result 	)	(0000002C
+(0000002D(0000002E             return  (0000002Fresult	;	(0000002E
+(00000032           for  	(	 (00000034i (00000033	=	 	(	(00000038v16(00000037	[	(00000039 1 	]	 (00000036	<<	 (0000003A 8 	)	 (00000035	|	 (0000003B	*	(0000003Cv16	;	 	;	 (0000003Ei (0000003D	=	 (0000003F	*	(00000040	(	unsigned __int16 *	)		(	(00000042v22 (00000041	+	 (00000043 24 	)	 	)	(00000032
+          	{	(00000044
+(00000044(00000045             if  	(	 (00000050	!	(00000051i(80000000(0000004F
+              (0000004F	||	 	(	(00000054v20 (00000053	=	 (00000055	(	GameSpriteDataManager *	)	(00000057GameSpriteDataManager::sharedManager(00000056	(	(00000058result	)	,(80000000(00000052
+                  (00000052(0000005BMonsterById (0000005A	=	 (0000005DGameSpriteDataManager::getMonsterById(0000005C	(	(0000005Ev20	,	 (0000005Fi	)	,(80000000(00000059
+                  (00000059	(	(00000062v22 (00000061	=	 (00000063MonsterById	)	 (00000060	==	 (00000064 0 	)	 	)	(00000045
+            	{	(00000046
+(00000046(00000047              (00000049cocos2d::CCLog(00000048	(	(0000004A	(	cocos2d *	)	(0000004B"Cannot Find Skill %d Learnable Info!"	,	 (0000004Cv53	)		;	(00000047
+(0000004D               return  (0000004E 0 	;	(0000004D
+            	}	(00000046
+(00000065            (00000067result (00000066	=	 (00000068	(	GameSpriteDataManager *	)	(0000006Astd::map<int,LearnableMoves_t>::find(00000069	(	(0000006CMonsterById (0000006B	+	 (0000006D 48 	,	 (0000006E	&	(0000006Fv53	)		;	(00000065
+(00000070             if  	(	 (00000074	(	GameSpriteDataManager *	)		(	(00000076v22 (00000075	+	 (00000077 52 	)	 (00000073	!=	 (00000078result 	)	(00000070
+(00000071(00000072               break 	;	(00000072
+          	}	(00000044
+(0000007A          (0000007Cv51 (0000007B	=	 	(	(0000007F	(	unsigned __int8	)	(00000080byte_AC4097 (0000007E	<<	 (00000081 24 	)	 (0000007D	|	 	(	(00000085	(	unsigned __int8	)	(00000086byte_AC4095 (00000084	<<	 (00000087 8 	)	 (00000083	|	 (00000088	(	unsigned __int8	)	(00000089UserData::m_userInfo (00000082	|	 	(	(0000008B	(	unsigned __int8	)	(0000008Cbyte_AC4096 (0000008A	<<	 (0000008D 16 	)		;	(0000007A
+(0000008E          (00000090v50 (0000008F	=	 (00000092GameBattleSkillSequenceManager::sharedManager(00000091	(	(00000093result	)		;	(0000008E
+(00000094          (00000096v48 (00000095	=	 	(	(0000009B	(	unsigned __int8	)	(0000009Cbyte_AC4095 (0000009A	<<	 (0000009D 8 	)	 (00000099	|	 (0000009E	(	unsigned __int8	)	(0000009FUserData::m_userInfo (00000098	|	 	(	(000000A1	(	unsigned __int8	)	(000000A2byte_AC4096 (000000A0	<<	 (000000A3 16 	)	 (00000097	|	 	(	(000000A5	(	unsigned __int8	)	(000000A6byte_AC4097 (000000A4	<<	 (000000A7 24 	)		;	(00000094
+(000000A8          (000000AAsub_8E11F0(000000A9	(	(000000ABv56	,	 (000000ADv16 (000000AC	+	 (000000AE 4 	,	 (000000AFv54	)		;	(000000A8
+(000000B0          (000000B2hasSequence (000000B1	=	 (000000B4GameBattleSkillSequenceManager::hasSequence(000000B3	(	(000000B5v50	,	 (000000B6v48	,	 (000000B7v56	)		;	(000000B0
+(000000B8          (000000BAv23 (000000B9	=	 (000000BB	(	GameBattleSkillSequenceManager *	)	(000000BDsub_8DFCF8(000000BC	(	(000000BEv56	)		;	(000000B8
+(000000BF           if  	(	 (000000D1hasSequence 	)	(000000BF
+          	{	(000000C0
+(000000C0(000000C1            (000000C3v24 (000000C2	=	 (000000C4	(	GameBattleSkillSequenceManager *	)	(000000C6GameBattleSkillSequenceManager::sharedManager(000000C5	(	(000000C7v23	)		;	(000000C1
+(000000C8            (000000CAGameBattleSkillSequenceManager::syncSequenceForSprite(000000C9	(	(000000CBv24	,	 (000000CCv51	,	 (000000CD	(	UserData *	)		(	(000000CFv16 (000000CE	+	 (000000D0 4 	)		)		;	(000000C8
+          	}	(000000C0
+(000000D2          (000000D4v52 (000000D3	=	 (000000D5	(	GameSkillDataManager *	)	(000000D7std::map<int,LearnableMoves_t>::find(000000D6	(	(000000D9v22 (000000D8	+	 (000000DA 48 	,	 (000000DB	&	(000000DCv53	)		;	(000000D2
+(000000DD          (000000DFv25 (000000DE	=	 (000000E0	(	GameSkillDataManager *	)	(000000E2GameSkillDataManager::sharedManager(000000E1	(	(000000E3v52	)		;	(000000DD
+(000000E4          (000000E6v26 (000000E5	=	 (000000E7	*	(000000E8	(	_DWORD *	)		(	(000000EBGameSkillDataManager::getMove(000000EA	(	(000000ECv25	,	 (000000ED	(	int	)	(000000EEv53	)	 (000000E9	+	 (000000EF 4 	)		;	(000000E4
+(000000F0          (000000F2v27 (000000F1	=	 (000000F3 0 	;	(000000F0
+(000000F4           while  	(	 	(	(00000106v16(00000105	[	(00000109 4  (00000108	*	 (0000010Av27 (00000107	+	 (0000010B 42 	]	 (00000104	<<	 (0000010C 8 	)	 (00000103	|	 (0000010Ev16(0000010D	[	(00000111 4  (00000110	*	 (00000112v27 (0000010F	+	 (00000113 41 	]	 (00000102	|	 	(	(00000116v16(00000115	[	(00000119 4  (00000118	*	 (0000011Av27 (00000117	+	 (0000011B 43 	]	 (00000114	<<	 (0000011C 16 	)	 (00000101	|	 	(	(0000011Fv16(0000011E	[	(00000122 4  (00000121	*	 (00000123v27 (00000120	+	 (00000124 44 	]	 (0000011D	<<	 (00000125 24 	)	 	)	(000000F4
+          	{	(000000F5
+(000000F5(000000F6             if  	(	 (000000FE	++	(000000FFv27 (000000FD	==	 (00000100 12  	)	(000000F6
+            	{	(000000F7
+(000000F7(000000F8              (000000FAv27 (000000F9	=	 (000000FB 0 	;	(000000F8
+(000000FC               break 	;	(000000FC
+            	}	(000000F7
+          	}	(000000F5
+(00000126          (00000128v28 (00000127	=	 (00000129 13 	;	(00000126
+(0000012A           while  	(	 	(	(0000013Cv16(0000013B	[	(0000013F 4  (0000013E	*	 (00000140v28 (0000013D	+	 (00000141 42 	]	 (0000013A	<<	 (00000142 8 	)	 (00000139	|	 (00000144v16(00000143	[	(00000147 4  (00000146	*	 (00000148v28 (00000145	+	 (00000149 41 	]	 (00000138	|	 	(	(0000014Cv16(0000014B	[	(0000014F 4  (0000014E	*	 (00000150v28 (0000014D	+	 (00000151 43 	]	 (0000014A	<<	 (00000152 16 	)	 (00000137	|	 	(	(00000155v16(00000154	[	(00000158 4  (00000157	*	 (00000159v28 (00000156	+	 (0000015A 44 	]	 (00000153	<<	 (0000015B 24 	)	 	)	(0000012A
+          	{	(0000012B
+(0000012B(0000012C             if  	(	 (00000134	++	(00000135v28 (00000133	==	 (00000136 17  	)	(0000012C
+            	{	(0000012D
+(0000012D(0000012E              (00000130v28 (0000012F	=	 (00000131 0 	;	(0000012E
+(00000132               break 	;	(00000132
+            	}	(0000012D
+          	}	(0000012B
+(0000015C           if  	(	 (000001D4v26 (000001D3	==	 (000001D5 80  	)	(0000015C
+          	{	(0000015D
+(0000015D(0000015E            (00000160v29 (0000015F	=	 (00000161v53	;	(0000015E
+(00000162            (00000164v30 (00000163	=	 (00000165	(	unsigned __int8	)	(00000166v53	;	(00000162
+(00000167            (0000016Av16(00000169	[	(0000016B 89 	]	 (00000168	=	 (0000016C	(	unsigned __int8	)	(0000016Dv53	;	(00000167
+(0000016E            (00000170v31 (0000016F	=	 (00000172BYTE1(00000171	(	(00000173v29	)		;	(0000016E
+(00000174            (00000177v16(00000176	[	(00000178 90 	]	 (00000175	=	 (0000017ABYTE1(00000179	(	(0000017Bv29	)		;	(00000174
+(0000017C            (0000017Ev32 (0000017D	=	 (00000180BYTE2(0000017F	(	(00000181v29	)		;	(0000017C
+(00000182            (00000184v29 (00000183	=	 (00000185	(	char *	)		(	(00000187	(	unsigned int	)	(00000188v29 (00000186	>>	 (00000189 0x18 	)		;	(00000182
+(0000018A            (0000018Dv16(0000018C	[	(0000018E 91 	]	 (0000018B	=	 (0000018Fv32	;	(0000018A
+(00000190            (00000193v16(00000192	[	(00000194 92 	]	 (00000191	=	 (00000195	(	unsigned __int8	)	(00000196v29	;	(00000190
+(00000197            (0000019Av16(00000199	[	(0000019B 197 	]	 (00000198	=	 (0000019Cv30	;	(00000197
+(0000019D            (000001A0v16(0000019F	[	(000001A1 198 	]	 (0000019E	=	 (000001A2v31	;	(0000019D
+(000001A3            (000001A6v16(000001A5	[	(000001A7 199 	]	 (000001A4	=	 (000001A8v32	;	(000001A3
+(000001A9            (000001ACv16(000001AB	[	(000001AD 200 	]	 (000001AA	=	 (000001AE	(	unsigned __int8	)	(000001AFv29	;	(000001A9
+          	}	(0000015D
+(000001B1           else   if  	(	 (000001CE	*		(	(000001D0	(	_BYTE *	)	(000001D1v52 (000001CF	+	 (000001D2 28 	)	 	)	(000001B1
+          	{	(000001B2
+(000001B2(000001B3            (000001B5	*	(000001B6	(	_DWORD *	)	(000001B7	&	(000001B9v16(000001B8	[	(000001BC 4  (000001BB	*	 (000001BDv28 (000001BA	+	 (000001BE 41 	]	 (000001B4	=	 (000001BFv53	;	(000001B3
+          	}	(000001B2
+           else (000001B1
+          	{	(000001C0
+(000001C0(000001C1            (000001C3	*	(000001C4	(	_DWORD *	)	(000001C5	&	(000001C7v16(000001C6	[	(000001CA 4  (000001C9	*	 (000001CBv27 (000001C8	+	 (000001CC 41 	]	 (000001C2	=	 (000001CDv53	;	(000001C1
+          	}	(000001C0
+(000001D6          (000001D8v33 (000001D7	=	 (000001D9 0 	;	(000001D6
+(000001DA          (000001DCv61 (000001DB	=	 (000001DD 0 	;	(000001DA
+(000001DE          (000001E0v62 (000001DF	=	 (000001E1 0 	;	(000001DE
+(000001E2          (000001E4v60 (000001E3	=	 (000001E5	&	(000001E6unk_AD13C0	;	(000001E2
+(000001E7          (000001E9v63 (000001E8	=	 (000001EA 0 	;	(000001E7
+(000001EB           if  	(	 (0000026B	(	unsigned int	)		(	(0000026Dv26 (0000026C	-	 (0000026E 80 	)	 (0000026A	>	 (0000026F 1  	)	(000001EB
+          	{	(000001EC
+(000001EC(000001ED             while  	(	 (0000021E 1  	)	(000001ED
+            	{	(000001EE
+(000001EE(000001EF              (000001F1v35 (000001F0	=	 (000001F2	&	(000001F4v16(000001F3	[	(000001F7 4  (000001F6	*	 (000001F8v33 (000001F5	+	 (000001F9 176 	]		;	(000001EF
+(000001FA              (000001FCv34 (000001FB	=	 (000001FFv35(000001FE	[	(00000200 8 	]	 (000001FD	<<	 (00000201 24 	;	(000001FA
+(00000202               if  	(	 (00000205	!		(		(	(0000020Bv35(0000020A	[	(0000020C 6 	]	 (00000209	<<	 (0000020D 8 	)	 (00000208	|	 (0000020Fv35(0000020E	[	(00000210 5 	]	 (00000207	|	 	(	(00000213v35(00000212	[	(00000214 7 	]	 (00000211	<<	 (00000215 16 	)	 (00000206	|	 (00000216v34	)	 	)	(00000202
+(00000203(00000204                 break 	;	(00000204
+(00000217               if  	(	 (0000021B	++	(0000021Cv33 (0000021A	==	 (0000021D 4  	)	(00000217
+(00000218(00000219                 goto   LABEL_35 	;	(00000219
+            	}	(000001EE
+(0000021F            (00000221	*	(00000222	(	_DWORD *	)		(	(00000224v35 (00000223	+	 (00000225 5 	)	 (00000220	=	 (00000226v53	;	(0000021F
+          	}	(000001EC
+           else (000001EB
+          	{	(00000227
+(00000227(00000228            (0000022Av34 (00000229	=	 (0000022B	(	int	)		(	(0000022Dv16 (0000022C	+	 (0000022E 197 	)		;	(00000228
+(0000022F             if  	(	 (00000254	!		(		(	(0000025Av16(00000259	[	(0000025B 198 	]	 (00000258	<<	 (0000025C 8 	)	 (00000257	|	 (0000025Ev16(0000025D	[	(0000025F 197 	]	 (00000256	|	 	(	(00000262v16(00000261	[	(00000263 199 	]	 (00000260	<<	 (00000264 16 	)	 (00000255	|	 	(	(00000267v16(00000266	[	(00000268 200 	]	 (00000265	<<	 (00000269 24 	)		)	 	)	(0000022F
+            	{	(00000230
+(00000230(00000231              (00000233	*	(00000234	(	_BYTE *	)	(00000235v34 (00000232	=	 (00000236	(	_BYTE	)	(00000237v53	;	(00000231
+(00000238              (0000023Av34 (00000239	=	 (0000023CBYTE1(0000023B	(	(0000023Dv53	)		;	(00000238
+(0000023E              (00000240	*		(	(00000242	(	_WORD *	)	(00000243v16 (00000241	+	 (00000244 99 	)	 (0000023F	=	 (00000245	*	(00000246	(	_WORD *	)		(	(00000248	(	char *	)	(00000249	&	(0000024Av53 (00000247	+	 (0000024B 1 	)		;	(0000023E
+(0000024C              (0000024Fv16(0000024E	[	(00000250 200 	]	 (0000024D	=	 (00000252HIBYTE(00000251	(	(00000253v53	)		;	(0000024C
+            	}	(00000230
+          	}	(00000227
+ (00000270LABEL_35 	:	(00000270
+(00000270           if  	(	 (0000028BhasSequence 	)	(00000270
+          	{	(00000271
+(00000271(00000272            (00000274v36 (00000273	=	 (00000276GameBattleSkillSequenceManager::sharedManager(00000275	(	(00000277	(	GameBattleSkillSequenceManager *	)	(00000278v34	)		;	(00000272
+(00000279            (0000027Bsub_8E11F0(0000027A	(	(0000027Cv57	,	 (0000027Ev16 (0000027D	+	 (0000027F 4 	,	 (00000280v55	)		;	(00000279
+(00000281            (00000283GameBattleSkillSequenceManager::removeSequence(00000282	(	(00000284v36	,	 (00000285v51	,	 (00000286v57	)		;	(00000281
+(00000287            (00000289sub_8DFCF8(00000288	(	(0000028Av57	)		;	(00000287
+          	}	(00000271
+(0000028C          (0000028Einserted (0000028D	=	 (0000028F	(	GameBattleSkillSequenceManager *	)	(00000291sub_8E001C(00000290	(	(00000292	(	int	)	(00000293	&	(00000294v60	,	 (00000296	(	char *	)	(00000297v16 (00000295	+	 (00000298 4 	)		;	(0000028C
+(00000299           for  	(	 (0000029Bj (0000029A	=	 (0000029C 0 	;	 (000002FCj (000002FB	!=	 (000002FD 4 	;	 (0000029D	++	(0000029Ej 	)	(00000299
+          	{	(0000029F
+(0000029F(000002A0            (000002A2v39 (000002A1	=	 (000002A3	&	(000002A5v16(000002A4	[	(000002A8 4  (000002A7	*	 (000002A9j (000002A6	+	 (000002AA 176 	]		;	(000002A0
+(000002AB            (000002ADv40 (000002AC	=	 	(	(000002B1v39(000002B0	[	(000002B2 6 	]	 (000002AF	<<	 (000002B3 8 	)	 (000002AE	|	 (000002B5v39(000002B4	[	(000002B6 5 	]		;	(000002AB
+(000002B7            (000002B9v41 (000002B8	=	 (000002BBv39(000002BA	[	(000002BC 7 	]		;	(000002B7
+(000002BD            (000002BFv42 (000002BE	=	 (000002C1v39(000002C0	[	(000002C2 8 	]		;	(000002BD
+(000002C3            (000002C5v59 (000002C4	=	 (000002C6j	;	(000002C3
+(000002C7            (000002C9v43 (000002C8	=	 	(	(000002CCv42 (000002CB	<<	 (000002CD 24 	)	 (000002CA	|	 (000002CFv40 (000002CE	|	 	(	(000002D1v41 (000002D0	<<	 (000002D2 16 	)		;	(000002C7
+(000002D3            (000002D5v44 (000002D4	=	 (000002D6v62	;	(000002D3
+(000002D7            (000002D9v58 (000002D8	=	 (000002DAv43	;	(000002D7
+(000002DB             if  	(	 (000002F9v62 (000002F8	==	 (000002FAv63 	)	(000002DB
+            	{	(000002DC
+(000002DC(000002DD              (000002DFinserted (000002DE	=	 (000002E0	(	GameBattleSkillSequenceManager *	)	(000002E2std::vector<GameBattleSkillSequenceManager::SpriteSkillSequence>::_M_insert_aux(000002E1	(	(000002E3	&	(000002E4v61	)		;	(000002DD
+            	}	(000002DC
+             else (000002DB
+            	{	(000002E5
+(000002E5(000002E6               if  	(	 (000002F3v62 	)	(000002E6
+              	{	(000002E7
+(000002E7(000002E8                (000002EA	*	(000002EBv62 (000002E9	=	 (000002ECv43	;	(000002E8
+(000002ED                (000002F0v44(000002EF	[	(000002F1 1 	]	 (000002EE	=	 (000002F2v59	;	(000002ED
+              	}	(000002E7
+(000002F4              (000002F6v62 (000002F5	+=	 (000002F7 2 	;	(000002F4
+            	}	(000002E5
+          	}	(0000029F
+(000002FE          (00000300v45 (000002FF	=	 (00000301	(	GameBattleSkillSequenceManager *	)	(00000303GameBattleSkillSequenceManager::sharedManager(00000302	(	(00000304inserted	)		;	(000002FE
+(00000305          (00000307v46 (00000306	=	 (00000308	(	GameBattleSkillSequenceManager *	)	(0000030AGameBattleSkillSequenceManager::addSequence(00000309	(	(00000309
+                                                    (0000030Bv45	,	(80000001(00000309
+                                                    (0000030Cv51	,	(80000002(00000309
+                                                    (0000030D	(	const GameBattleSkillSequenceManager	:		:	XmlSpriteData *	)	(0000030E	&	(0000030Fv60	)		;	(00000305
+(00000310          (00000312v47 (00000311	=	 (00000313	(	GameBattleSkillSequenceManager *	)	(00000315GameBattleSkillSequenceManager::sharedManager(00000314	(	(00000316v46	)		;	(00000310
+(00000317          (00000319GameBattleSkillSequenceManager::saveBattleSkillSequenceFile(00000318	(	(0000031Av47	)		;	(00000317
+(0000031B           if  	(	 (00000321v61 	)	(0000031B
+(0000031C(0000031D            (0000031Foperator delete(0000031E	(	(00000320v61	)		;	(0000031D
+(00000322          (00000324sub_8DFCF8(00000323	(	(00000325	&	(00000326v60	)		;	(00000322
+(00000327           return  (00000328	(	GameSpriteDataManager *	)		(	(0000032A	&	(0000032Bdword_0 (00000329	+	 (0000032C 1 	)		;	(00000327
+        	}	(0000001A
+      	}	(00000018
+(00000359       return  (0000035A	(	GameSpriteDataManager *	)		(	(0000035C	&	(0000035Ddword_0 (0000035B	+	 (0000035E 1 	)		;	(00000359
+    	}	(00000012
+  	}	(0000000B
+(00000361   return  (00000362result	;	(00000361
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData17getItemWithGridIDEj @ 0x54fac0 (size=66)
+============================================================
+// _ZN8UserData17getItemWithGridIDEj @ 0x54fac0
+unsigned int __fastcall UserData	:		:	getItemWithGridID	(	UserData *this	,	 unsigned int a2	)	
+	{	(00000000
+  (40000003!unsigned int result!	;	 // r0
+(80000000(00000000
+(00000000(00000001  (00000003result (00000002	=	 (00000004 0 	;	(00000001
+(00000005   if  	(	 (00000011	(	unsigned int	)	(00000012this (00000010	<=	 	(		(	(00000015	(	unsigned __int8	)	(00000016byte_AC415A (00000014	<<	 (00000017 24 	)	 (00000013	|	 	(	(0000001B	(	unsigned __int8	)	(0000001Cbyte_AC4158 (0000001A	<<	 (0000001D 8 	)	 (00000019	|	 (0000001E	(	unsigned __int8	)	(0000001Fbyte_AC4157 (00000018	|	 	(	(00000021	(	unsigned __int8	)	(00000022byte_AC4159 (00000020	<<	 (00000023 16 	)		)	 	)	(00000005
+(00000006(00000007     return  (00000009UserData::m_itemBag (00000008	+	 (0000000B 17  (0000000A	*	 	(	(0000000D	(	_DWORD	)	(0000000Ethis (0000000C	+	 (0000000F -0x1 	)		;	(00000007
+(00000024   return  (00000025result	;	(00000024
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData18addSpriteToStorageERK10SpriteInfo @ 0x5515a0 (size=54)
+============================================================
+// _ZN8UserData18addSpriteToStorageERK10SpriteInfo @ 0x5515a0
+__int64 __fastcall UserData	:		:	addSpriteToStorage	(	int a1	)	
+	{	(00000000
+  (40000001!UserData *v1!	;	 // r0
+  (40000003_BYTE v3	[	60	]		;	 // [sp+0h] [bp-48h] BYREF
+(80000000(00000000
+(00000000(00000001  (00000003UserData::generateSpriteBriefInfo(00000002	(	(00000004v3	,	 (00000005a1	)		;	(00000001
+(00000006  (00000008v1 (00000007	=	 (00000009	(	UserData *	)	(0000000Bstd::vector<SpriteBriefInfo>::push_back(0000000A	(	(0000000C	(	int	)	(0000000D	&	(0000000EUserData::m_spriteStorage	,	 (0000000Fv3	)		;	(00000006
+(00000010   return  (00000012UserData::updateUserInfo(00000011	(	(00000013v1	)		;	(00000010
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData18addSpriteToStorageERK15SpriteBriefInfo @ 0x551688 (size=20)
+============================================================
+// _ZN8UserData18addSpriteToStorageERK15SpriteBriefInfo @ 0x551688
+__int64 __fastcall UserData	:		:	addSpriteToStorage	(	void *src	)	
+	{	(00000000
+  (40000001!UserData *v1!	;	 // r0
+(80000000(00000000
+(00000000(00000001  (00000003v1 (00000002	=	 (00000004	(	UserData *	)	(00000006std::vector<SpriteBriefInfo>::push_back(00000005	(	(00000007	(	int	)	(00000008	&	(00000009UserData::m_spriteStorage	,	 (0000000Asrc	)		;	(00000001
+(0000000B   return  (0000000DUserData::updateUserInfo(0000000C	(	(0000000Ev1	)		;	(0000000B
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData19getSpriteInfoByUUIDEPKc @ 0x54eefc (size=64)
+============================================================
+// _ZN8UserData19getSpriteInfoByUUIDEPKc @ 0x54eefc
+int __fastcall UserData	:		:	getSpriteInfoByUUID	(	UserData *this	,	 const char *a2	)	
+	{	(00000000
+  (40000003!int v3!	;	 // r5
+  (40000004!int v4!	;	 // r4
+  (40000005!int v5!	;	 // r0
+  (40000006!int v6!	;	 // r6
+  (40000008!int v8!	;	 // [sp+4h] [bp-1Ch]
+(80000000(00000000
+(00000000(00000001  (00000003v3 (00000002	=	 (00000004 0 	;	(00000001
+(00000005  (00000007v4 (00000006	=	 (00000008UserData::m_spritePack	;	(00000005
+(00000009  (0000000Bv8 (0000000A	=	 (0000000D 128207979  (0000000C	*	 	(		(	(00000010dword_AC408C (0000000F	-	 (00000011UserData::m_spritePack	)	 (0000000E	>>	 (00000012 2 	)		;	(00000009
+(00000013   while  	(	 (00000033v3 (00000032	<	 (00000034v8 	)	(00000013
+  	{	(00000014
+(00000014(00000015    (00000017v5 (00000016	=	 (00000019strncmp(00000018	(	(0000001A	(	const char *	)		(	(0000001Cv4 (0000001B	+	 (0000001D 4 	)		,	 (0000001E	(	const char *	)	(0000001Fthis	,	 (00000020 0x24u 	)		;	(00000015
+(00000021    (00000023v6 (00000022	=	 (00000024v4	;	(00000021
+(00000025    (00000027v4 (00000026	+=	 (00000028 268 	;	(00000025
+(00000029     if  	(	 (0000002D	!	(0000002Ev5 	)	(00000029
+(0000002A(0000002B       return  (0000002Cv6	;	(0000002B
+(0000002F    (00000030	++	(00000031v3	;	(0000002F
+  	}	(00000014
+(00000035   return  (00000036 0 	;	(00000035
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData20setFollowSpriteIndexEi @ 0x54f45c (size=70)
+============================================================
+// _ZN8UserData20setFollowSpriteIndexEi @ 0x54f45c
+UserData *__fastcall UserData	:		:	setFollowSpriteIndex	(	UserData *this	,	 int a2	)	
+	{	(00000000
+  (40000002!int v2!	;	 // r4
+(80000000(00000000
+(00000000(00000001  (00000003v2 (00000002	=	 (00000004	(	int	)	(00000005this	;	(00000001
+(00000006   if  	(	 (00000041	(	int	)	(00000042this (00000040	>=	 (00000043 0  	)	(00000006
+  	{	(00000007
+(00000007(00000008    (0000000Athis (00000009	=	 (0000000B	(	UserData *	)	(0000000DUserData::getSpriteInPackCount(0000000C	(	(0000000Ethis	)		;	(00000008
+(0000000F     if  	(	 (0000003Dv2 (0000003C	<	 (0000003E	(	int	)	(0000003Fthis 	)	(0000000F
+    	{	(00000010
+(00000010(00000011      (00000013this (00000012	=	 (00000014	(	UserData *	)	(00000016UserData::getFollowSpriteIndex(00000015	(	(00000017this	)		;	(00000011
+(00000018       if  	(	 (00000028this (00000027	==	 (00000029	(	UserData *	)	(0000002A -0x1 (80000000(00000026
+        (00000026	||	 	(	(0000002D	*	(0000002E	(	_BYTE *	)		(	(00000031UserData::m_spritePack (00000030	+	 (00000033 268  (00000032	*	 (00000034	(	_DWORD	)	(00000035this (0000002F	+	 (00000036 201 	)	 (0000002C	=	 (00000037 0 (0000002B	,	 (00000039this (00000038	!=	 (0000003A	(	UserData *	)	(0000003Bv2	)	 	)	(00000018
+      	{	(00000019
+(00000019(0000001A        (0000001C	*	(0000001D	(	_BYTE *	)		(	(00000020UserData::m_spritePack (0000001F	+	 (00000022 268  (00000021	*	 (00000023v2 (0000001E	+	 (00000024 201 	)	 (0000001B	=	 (00000025 1 	;	(0000001A
+      	}	(00000019
+    	}	(00000010
+  	}	(00000007
+(00000044   return  (00000045this	;	(00000044
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData21setFollowSpriteByUUIDEPKc @ 0x54f4c0 (size=38)
+============================================================
+// _ZN8UserData21setFollowSpriteByUUIDEPKc @ 0x54f4c0
+_BYTE *__fastcall UserData	:		:	setFollowSpriteByUUID	(	UserData *this	,	 const char *a2	)	
+	{	(00000000
+  (40000003_BYTE *result	;	 // r0
+  (40000004!const char *v4!	;	 // r1
+(80000000(00000000
+(00000000(00000001  (00000003result (00000002	=	 (00000004	(	_BYTE *	)		(	(00000007UserData::getFollowSprite(00000006	(	(00000008this	)	 (00000005	+	 (00000009 201 	)		;	(00000001
+(0000000A  (0000000C	*	(0000000Dresult (0000000B	=	 (0000000E 0 	;	(0000000A
+(0000000F   if  	(	 (00000025	*	(00000026	(	_BYTE *	)	(00000027this 	)	(0000000F
+  	{	(00000010
+(00000010(00000011    (00000013result (00000012	=	 (00000014	(	_BYTE *	)	(00000016UserData::getSpriteInfoByUUID(00000015	(	(00000017this	,	 (00000018v4	)		;	(00000011
+(00000019     if  	(	 (00000024result 	)	(00000019
+    	{	(0000001A
+(0000001A(0000001B      (0000001Dresult (0000001C	+=	 (0000001E 201 	;	(0000001B
+(0000001F      (00000021	*	(00000022result (00000020	=	 (00000023 1 	;	(0000001F
+    	}	(0000001A
+  	}	(00000010
+(00000028   return  (00000029result	;	(00000028
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData23generateSpriteBriefInfoERK10SpriteInfo @ 0x54f244 (size=204)
+============================================================
+// _ZN8UserData23generateSpriteBriefInfoERK10SpriteInfo @ 0x54f244
+int __fastcall UserData	:		:	generateSpriteBriefInfo	(	int a1	,	 const char *a2	)	
+	{	(00000000
+  (40000004!int v4!	;	 // r2
+  (40000005!int v5!	;	 // r2
+  (40000006int result	;	 // r0
+  (40000007!unsigned __int8 v7!	;	 // r3
+(80000000(00000000
+(00000000(00000001  (00000003memset(00000002	(	(00000004	(	void *	)	(00000005a1	,	 (00000006 0 	,	 (00000007 0x39u 	)		;	(00000001
+(00000008  (0000000Astrncpy(00000009	(	(0000000B	(	char *	)	(0000000Ca1	,	 (0000000Ea2 (0000000D	+	 (0000000F 4 	,	 (00000010 0x24u 	)		;	(00000008
+(00000011  (00000013v4 (00000012	=	 	(	(00000018	*		(	(0000001A	(	unsigned __int8 *	)	(0000001Ba2 (00000019	+	 (0000001C 1 	)	 (00000017	<<	 (0000001D 8 	)	 (00000016	|	 (0000001E	*	(0000001F	(	unsigned __int8 *	)	(00000020a2 (00000015	|	 	(	(00000022	*		(	(00000024	(	unsigned __int8 *	)	(00000025a2 (00000023	+	 (00000026 2 	)	 (00000021	<<	 (00000027 16 	)	 (00000014	|	 	(	(00000029	*		(	(0000002B	(	unsigned __int8 *	)	(0000002Ca2 (0000002A	+	 (0000002D 3 	)	 (00000028	<<	 (0000002E 24 	)		;	(00000011
+(0000002F  (00000031	*	(00000032	(	_BYTE *	)		(	(00000034a1 (00000033	+	 (00000035 37 	)	 (00000030	=	 (00000036	*	(00000037a2	;	(0000002F
+(00000038  (0000003A	*	(0000003B	(	_BYTE *	)		(	(0000003Da1 (0000003C	+	 (0000003E 38 	)	 (00000039	=	 (00000040BYTE1(0000003F	(	(00000041v4	)		;	(00000038
+(00000042  (00000044	*	(00000045	(	_BYTE *	)		(	(00000047a1 (00000046	+	 (00000048 39 	)	 (00000043	=	 (0000004ABYTE2(00000049	(	(0000004Bv4	)		;	(00000042
+(0000004C  (0000004E	*	(0000004F	(	_BYTE *	)		(	(00000051a1 (00000050	+	 (00000052 40 	)	 (0000004D	=	 (00000054HIBYTE(00000053	(	(00000055v4	)		;	(0000004C
+(00000056  (00000059LOWORD(00000058	(	(0000005Av4	)	 (00000057	=	 	(	(0000005D	*		(	(0000005F	(	unsigned __int8 *	)	(00000060a2 (0000005E	+	 (00000061 203 	)	 (0000005C	<<	 (00000062 8 	)	 (0000005B	|	 (00000063	*		(	(00000065	(	unsigned __int8 *	)	(00000066a2 (00000064	+	 (00000067 202 	)		;	(00000056
+(00000068  (0000006A	*	(0000006B	(	_BYTE *	)		(	(0000006Da1 (0000006C	+	 (0000006E 41 	)	 (00000069	=	 (00000070a2(0000006F	[	(00000071 202 	]		;	(00000068
+(00000072  (00000074	*	(00000075	(	_BYTE *	)		(	(00000077a1 (00000076	+	 (00000078 42 	)	 (00000073	=	 (0000007ABYTE1(00000079	(	(0000007Bv4	)		;	(00000072
+(0000007C  (0000007E	*	(0000007F	(	_BYTE *	)		(	(00000081a1 (00000080	+	 (00000082 43 	)	 (0000007D	=	 (00000083 0 	;	(0000007C
+(00000084  (00000086	*	(00000087	(	_BYTE *	)		(	(00000089a1 (00000088	+	 (0000008A 44 	)	 (00000085	=	 (0000008B 0 	;	(00000084
+(0000008C  (0000008Ev5 (0000008D	=	 	(	(00000093	*		(	(00000095	(	unsigned __int8 *	)	(00000096a2 (00000094	+	 (00000097 253 	)	 (00000092	<<	 (00000098 8 	)	 (00000091	|	 (00000099	*		(	(0000009B	(	unsigned __int8 *	)	(0000009Ca2 (0000009A	+	 (0000009D 252 	)	 (00000090	|	 	(	(0000009F	*		(	(000000A1	(	unsigned __int8 *	)	(000000A2a2 (000000A0	+	 (000000A3 254 	)	 (0000009E	<<	 (000000A4 16 	)	 (0000008F	|	 	(	(000000A6	*		(	(000000A8	(	unsigned __int8 *	)	(000000A9a2 (000000A7	+	 (000000AA 255 	)	 (000000A5	<<	 (000000AB 24 	)		;	(0000008C
+(000000AC  (000000AE	*	(000000AF	(	_BYTE *	)		(	(000000B1a1 (000000B0	+	 (000000B2 45 	)	 (000000AD	=	 (000000B4a2(000000B3	[	(000000B5 252 	]		;	(000000AC
+(000000B6  (000000B8	*	(000000B9	(	_BYTE *	)		(	(000000BBa1 (000000BA	+	 (000000BC 46 	)	 (000000B7	=	 (000000BEBYTE1(000000BD	(	(000000BFv5	)		;	(000000B6
+(000000C0  (000000C2	*	(000000C3	(	_BYTE *	)		(	(000000C5a1 (000000C4	+	 (000000C6 48 	)	 (000000C1	=	 (000000C8HIBYTE(000000C7	(	(000000C9v5	)		;	(000000C0
+(000000CA  (000000CC	*	(000000CD	(	_BYTE *	)		(	(000000CFa1 (000000CE	+	 (000000D0 47 	)	 (000000CB	=	 (000000D2BYTE2(000000D1	(	(000000D3v5	)		;	(000000CA
+(000000D4  (000000D6result (000000D5	=	 (000000D7a1	;	(000000D4
+(000000D8  (000000DA	*	(000000DB	(	_WORD *	)		(	(000000DDa1 (000000DC	+	 (000000DE 49 	)	 (000000D9	=	 	(	(000000E1	*		(	(000000E3	(	unsigned __int8 *	)	(000000E4a2 (000000E2	+	 (000000E5 251 	)	 (000000E0	<<	 (000000E6 8 	)	 (000000DF	|	 (000000E7	*		(	(000000E9	(	unsigned __int8 *	)	(000000EAa2 (000000E8	+	 (000000EB 250 	)		;	(000000D8
+(000000EC  (000000EE	*	(000000EF	(	_BYTE *	)		(	(000000F1a1 (000000F0	+	 (000000F2 51 	)	 (000000ED	=	 (000000F3 0 	;	(000000EC
+(000000F4  (000000F6	*	(000000F7	(	_BYTE *	)		(	(000000F9a1 (000000F8	+	 (000000FA 52 	)	 (000000F5	=	 (000000FB 0 	;	(000000F4
+(000000FC  (000000FEv7 (000000FD	=	 (00000100a2(000000FF	[	(00000101 209 	]		;	(000000FC
+(00000102  (00000104	*	(00000105	(	_BYTE *	)		(	(00000107a1 (00000106	+	 (00000108 54 	)	 (00000103	=	 (00000109 0 	;	(00000102
+(0000010A  (0000010C	*	(0000010D	(	_BYTE *	)		(	(0000010Fa1 (0000010E	+	 (00000110 53 	)	 (0000010B	=	 (00000111v7	;	(0000010A
+(00000112  (00000114	*	(00000115	(	_BYTE *	)		(	(00000117a1 (00000116	+	 (00000118 55 	)	 (00000113	=	 (00000119 0 	;	(00000112
+(0000011A  (0000011C	*	(0000011D	(	_BYTE *	)		(	(0000011Fa1 (0000011E	+	 (00000120 56 	)	 (0000011B	=	 (00000121 0 	;	(0000011A
+(00000122   return  (00000123result	;	(00000122
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData24getSpriteInfoByCatchTimeEm @ 0x54eea4 (size=78)
+============================================================
+// _ZN8UserData24getSpriteInfoByCatchTimeEm @ 0x54eea4
+int __fastcall UserData	:		:	getSpriteInfoByCatchTime	(	UserData *this	,	 unsigned int a2	)	
+	{	(00000000
+  (40000002!int v2!	;	 // r2
+  (40000003!int v3!	;	 // r1
+  (40000004!int v4!	;	 // r3
+  (40000005int v5	;	 // r6
+  (40000006int v6	;	 // r5
+(80000000(00000000
+(00000000(00000001  (00000003v2 (00000002	=	 (00000004 0 	;	(00000001
+(00000005  (00000007v3 (00000006	=	 (00000008UserData::m_spritePack	;	(00000005
+(00000009   while  	(	 (00000043v2 (00000042	<	 (00000045 128207979  (00000044	*	 	(		(	(00000048dword_AC408C (00000047	-	 (00000049UserData::m_spritePack	)	 (00000046	>>	 (0000004A 2 	)	 	)	(00000009
+  	{	(0000000A
+(0000000A(0000000B    (0000000Dv4 (0000000C	=	 (0000000Ev3	;	(0000000B
+(0000000F    (00000011v5 (00000010	=	 (00000012	*	(00000013	(	unsigned __int8 *	)		(	(00000015v3 (00000014	+	 (00000016 252 	)		;	(0000000F
+(00000017    (00000019v6 (00000018	=	 (0000001A	*	(0000001B	(	unsigned __int8 *	)		(	(0000001Dv3 (0000001C	+	 (0000001E 253 	)		;	(00000017
+(0000001F    (00000021v3 (00000020	+=	 (00000022 268 	;	(0000001F
+(00000023     if  	(	 (00000028	(	UserData *	)		(		(	(0000002Dv6 (0000002C	<<	 (0000002E 8 	)	 (0000002B	|	 (0000002Fv5 (0000002A	|	 	(	(00000031	*	(00000032	(	unsigned __int8 *	)		(	(00000034v4 (00000033	+	 (00000035 254 	)	 (00000030	<<	 (00000036 16 	)	 (00000029	|	 	(	(00000038	*	(00000039	(	unsigned __int8 *	)		(	(0000003Bv4 (0000003A	+	 (0000003C 255 	)	 (00000037	<<	 (0000003D 24 	)		)	 (00000027	==	 (0000003Ethis 	)	(00000023
+(00000024(00000025       return  (00000026v4	;	(00000025
+(0000003F    (00000040	++	(00000041v2	;	(0000003F
+  	}	(0000000A
+(0000004B   return  (0000004C 0 	;	(0000004B
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData26addSpriteToStorageFromPackEPKc @ 0x5515e0 (size=106)
+============================================================
+// _ZN8UserData26addSpriteToStorageFromPackEPKc @ 0x5515e0
+int __fastcall UserData	:		:	addSpriteToStorageFromPack	(	UserData *this	,	 const char *a2	)	
+	{	(00000000
+  (40000003!const char *v3!	;	 // r1
+  (40000005!const char *v5!	;	 // r1
+  (40000006!int SpriteInfoByUUID!	;	 // r5
+  (40000007!char *v7!	;	 // r0
+  (40000008!const char *LinkSpriteUUID!	;	 // r0
+  (40000009!const char *v9!	;	 // r1
+  (4000000A!__int64 v10!	;	 // r0
+(80000000(00000000
+(00000000(00000001   if  	(	 (0000000AUserData::isSpriteStorageFull(00000009	(	(0000000Bthis	)	 	)	(00000001
+(00000002(00000003     return  (00000005cocos2d::CCLog(00000004	(	(00000006	(	cocos2d *	)	(00000007"sprite storage is full!"	,	 (00000008v3	)		;	(00000003
+(0000000C  (0000000ESpriteInfoByUUID (0000000D	=	 (00000010UserData::getSpriteInfoByUUID(0000000F	(	(00000011this	,	 (00000012v3	)		;	(0000000C
+(00000013   if  	(	 (00000020	!	(00000021SpriteInfoByUUID 	)	(00000013
+  	{	(00000014
+(00000014(00000015    (00000017v7 (00000016	=	 (00000018"sprite %s is not found!"	;	(00000015
+(00000019     return  (0000001Bcocos2d::CCLog(0000001A	(	(0000001C	(	cocos2d *	)	(0000001Dv7	,	 (0000001E	(	const char *	)	(0000001Fthis	)		;	(00000019
+  	}	(00000014
+(00000022   if  	(	 (00000030UserData::isSpriteInStorage(0000002F	(	(00000031this	,	 (00000032v5	)	 	)	(00000022
+  	{	(00000023
+(00000023(00000024    (00000026v7 (00000025	=	 (00000027"sprite %s is already in storage!"	;	(00000024
+(00000028     return  (0000002Acocos2d::CCLog(00000029	(	(0000002B	(	cocos2d *	)	(0000002Cv7	,	 (0000002D	(	const char *	)	(0000002Ethis	)		;	(00000028
+  	}	(00000023
+(00000033  (00000035LinkSpriteUUID (00000034	=	 (00000036	(	const char *	)	(00000038UserData::getLinkSpriteUUID(00000037	(	(00000039 0 	)		;	(00000033
+(0000003A   if  	(	 (00000043	!	(00000045strncmp(00000044	(	(00000046LinkSpriteUUID	,	 (00000047	(	const char *	)	(00000048this	,	 (00000049 0x24u 	)	 	)	(0000003A
+(0000003B(0000003C    (0000003EUserData::setLinkSpriteUUID(0000003D	(	(0000003F	(	UserData *	)	(00000040	&	(00000041byte_991002	,	 (00000042v9	)		;	(0000003C
+(0000004A  (0000004C	*	(0000004D	(	_BYTE *	)		(	(0000004FSpriteInfoByUUID (0000004E	+	 (00000050 201 	)	 (0000004B	=	 (00000051 0 	;	(0000004A
+(00000052  (00000054v10 (00000053	=	 (00000056UserData::addSpriteToStorage(00000055	(	(00000057SpriteInfoByUUID	)		;	(00000052
+(00000058   return  (0000005AUserData::removeFromPackByUUID(00000059	(	(0000005Bthis	,	 (0000005C	(	const char *	)	(0000005EHIDWORD(0000005D	(	(0000005Fv10	)		)		;	(00000058
+	}	(00000000
+
+
+============================================================
+// _ZN8UserData9addSpriteER10SpriteInfo @ 0x55165c (size=42)
+============================================================
+// _ZN8UserData9addSpriteER10SpriteInfo @ 0x55165c
+int __fastcall UserData	:		:	addSprite	(	UserData *a1	)	
+	{	(00000000
+  (40000002!UserData *isSpritePackFull!	;	 // r0
+  (40000003int isSpriteStorageFull	;	 // r0
+  (40000004int v4	;	 // r3
+(80000000(00000000
+(00000000(00000001  (00000003isSpritePackFull (00000002	=	 (00000004	(	UserData *	)	(00000006UserData::isSpritePackFull(00000005	(	(00000007a1	)		;	(00000001
+(00000008   if  	(	 (00000011	!	(00000012isSpritePackFull 	)	(00000008
+  	{	(00000009
+(00000009(0000000A    (0000000CUserData::addSpriteToPack(0000000B	(	(0000000Da1	,	 (0000000E 0 	)		;	(0000000A
+(0000000F     return  (00000010 1 	;	(0000000F
+  	}	(00000009
+(00000013  (00000015isSpriteStorageFull (00000014	=	 (00000017UserData::isSpriteStorageFull(00000016	(	(00000018isSpritePackFull	)		;	(00000013
+(00000019  (0000001Bv4 (0000001A	=	 (0000001C 0 	;	(00000019
+(0000001D   if  	(	 (00000026	!	(00000027isSpriteStorageFull 	)	(0000001D
+  	{	(0000001E
+(0000001E(0000001F    (00000021UserData::addSpriteToStorage(00000020	(	(00000022	(	int	)	(00000023a1	)		;	(0000001F
+(00000024     return  (00000025 1 	;	(00000024
+  	}	(0000001E
+(00000028   return  (00000029v4	;	(00000028
+	}	(00000000
+
+
+// DONE
