@@ -1,0 +1,11 @@
+// Xrefs TO setLastServerId @ 0x473384
+// Called from 0x48928e in _ZN17AccountLoginLayer20setServerNameVisableEb
+// Called from 0x489358 in _ZN17AccountLoginLayer18finishSelectServerEi
+// Called from 0x489c9e in _ZN17AccountLoginLayer13setServerListERSt6vectorI16ServerListInfo_tSaIS1_EE
+
+// Xrefs TO getLastServerId @ 0x4733a4
+// Called from 0x467ce0 in _ZN23GameActivityDataManager19getActivityInfoByIDEj
+// Called from 0x489bac in _ZN17AccountLoginLayer13setServerListERSt6vectorI16ServerListInfo_tSaIS1_EE
+// Called from 0x4914c0 in _ZN17SelectServerLayer12addSeverListERKSt6vectorI16ServerListInfo_tSaIS1_EE
+// Called from 0x62f0ee in _ZN14MessageHandler24handleAckMsgCheckSessionEv
+// Called from 0x630916 in _ZN14MessageHandler16handleMsgLoginInEv

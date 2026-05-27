@@ -1,0 +1,263 @@
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto37btl_notify_load_res_out_player_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57921c
+// size=72
+
+  0x57921c: PUSH    {R0,R1,R4-R6,LR}
+  0x57921e: MOVS    R5, R1
+  0x579220: ADD     R1, SP, #0x18+var_14; unsigned int *
+  0x579222: MOVS    R4, R0
+  0x579224: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x579228: CMP     R0, #0
+  0x57922a: BEQ     locret_579262
+  0x57922c: MOVS    R0, R4; this
+  0x57922e: BL      _ZN6google8protobuf2io16CodedInputStream23IncrementRecursionDepthEv; google::protobuf::io::CodedInputStream::IncrementRecursionDepth(void)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream23IncrementRecursionDepthEv
+  0x579232: CMP     R0, #0
+  0x579234: BEQ     locret_579262
+  0x579236: LDR     R1, [SP,#0x18+var_14]; int
+  0x579238: MOVS    R0, R4; this
+  0x57923a: BL      _ZN6google8protobuf2io16CodedInputStream9PushLimitEi; google::protobuf::io::CodedInputStream::PushLimit(int)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream9PushLimitEi
+  0x57923e: MOVS    R1, R4; google::protobuf::io::CodedInputStream *
+  0x579240: MOVS    R6, R0
+  0x579242: MOVS    R0, R5; this
+  0x579244: BL      _ZN15ISeer20BTLProto37btl_notify_load_res_out_player_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE; ISeer20BTLProto::btl_notify_load_res_out_player_info_t::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream *)
+     ¡ú _ZN15ISeer20BTLProto37btl_notify_load_res_out_player_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE
+  0x579248: CMP     R0, #0
+  0x57924a: BEQ     locret_579262
+  0x57924c: LDRB    R0, [R4,#0x18]
+  0x57924e: CMP     R0, #0
+  0x579250: BEQ     locret_579262
+  0x579252: MOVS    R0, R4; this
+  0x579254: MOVS    R1, R6; int
+  0x579256: BL      _ZN6google8protobuf2io16CodedInputStream8PopLimitEi; google::protobuf::io::CodedInputStream::PopLimit(int)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream8PopLimitEi
+  0x57925a: MOVS    R0, R4; this
+  0x57925c: BL      _ZN6google8protobuf2io16CodedInputStream23DecrementRecursionDepthEv; google::protobuf::io::CodedInputStream::DecrementRecursionDepth(void)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream23DecrementRecursionDepthEv
+  0x579260: MOVS    R0, #1
+  0x579262: POP     {R1,R2,R4-R6,PC}
+
+// === PSEUDOCODE ===
+int __fastcall google	:		:	protobuf	:		:	internal	:		:	WireFormatLite	:		:	ReadMessageNoVirtual<ISeer20BTLProto	:		:	btl_notify_load_res_out_player_info_t>	(	
+(40000000        unsigned __int8 *a1	,	
+(40000001        ISeer20BTLProto	:		:	btl_notify_load_res_out_player_info_t *a2	)	
+	{	(00000000
+  (40000004!int result!	;	 // r0
+  (40000005!int v5!	;	 // r6
+  (40000006!unsigned int v6!	;	 // [sp+4h] [bp-14h] BYREF
+(80000000(00000000
+(00000000(00000001  (00000003v6 (00000002	=	 (00000004	(	unsigned int	)	(00000005a2	;	(00000001
+(00000006  (00000008result (00000007	=	 (0000000Agoogle::protobuf::io::CodedInputStream::ReadVarint32(00000009	(	(0000000B	(	google	:		:	protobuf	:		:	io	:		:	CodedInputStream *	)	(0000000Ca1	,	 (0000000D	&	(0000000Ev6	)		;	(00000006
+(0000000F   if  	(	 (00000046result 	)	(0000000F
+  	{	(00000010
+(00000010(00000011    (00000013result (00000012	=	 (00000015google::protobuf::io::CodedInputStream::IncrementRecursionDepth(00000014	(	(00000016	(	google	:		:	protobuf	:		:	io	:		:	CodedInputStream *	)	(00000017a1	)		;	(00000011
+(00000018     if  	(	 (00000045result 	)	(00000018
+    	{	(00000019
+(00000019(0000001A      (0000001Cv5 (0000001B	=	 (0000001Egoogle::protobuf::io::CodedInputStream::PushLimit(0000001D	(	(0000001F	(	google	:		:	protobuf	:		:	io	:		:	CodedInputStream *	)	(00000020a1	,	 (00000021v6	)		;	(0000001A
+(00000022      (00000024result (00000023	=	 (00000026ISeer20BTLProto::btl_notify_load_res_out_player_info_t::MergePartialFromCodedStream(00000025	(	(00000025
+                 (00000027a2	,	(80000001(00000025
+                 (00000028	(	google	:		:	protobuf	:		:	io	:		:	CodedInputStream *	)	(00000029a1	)		;	(00000022
+(0000002A       if  	(	 (00000044result 	)	(0000002A
+      	{	(0000002B
+(0000002B(0000002C        (0000002Eresult (0000002D	=	 (00000030a1(0000002F	[	(00000031 24 	]		;	(0000002C
+(00000032         if  	(	 (00000042a1(00000041	[	(00000043 24 	]	 	)	(00000032
+        	{	(00000033
+(00000033(00000034          (00000036google::protobuf::io::CodedInputStream::PopLimit(00000035	(	(00000037	(	google	:		:	protobuf	:		:	io	:		:	CodedInputStream *	)	(00000038a1	,	 (00000039v5	)		;	(00000034
+(0000003A          (0000003Cgoogle::protobuf::io::CodedInputStream::DecrementRecursionDepth(0000003B	(	(0000003D	(	google	:		:	protobuf	:		:	io	:		:	CodedInputStream *	)	(0000003Ea1	)		;	(0000003A
+(0000003F           return  (00000040 1 	;	(0000003F
+        	}	(00000033
+      	}	(0000002B
+    	}	(00000019
+  	}	(00000010
+(00000047   return  (00000048result	;	(00000047
+	}	(00000000
+
+// === ALL ReadMessageNoVirtual instances ===
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto17btl_mon_ev_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x5788ba
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto18btl_mon_btl_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x578902
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto18btl_player_basic_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57894a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto10btl_type_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x578992
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto34chg_fight_mon_basic_info_in_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x578eac
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm20mon_btl_attr_level_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57918c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto22mon_buff_simple_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x5791d4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto37btl_notify_load_res_out_player_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57921c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm17battle_end_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x579264
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto20btl_mon_moves_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x579d9c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto14btl_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57a228
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto17btl_player_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57abf6
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto39btl_notify_battle_effect1_out_effect1_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57b34c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto31btl_notify_turn_over_out_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57bc2c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto21btl_mon_simple_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57bf1c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto24btl_player_simple_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x57dec8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13mon_ev_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59b890
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm20mon_character_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59b8d8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm15mon_grow_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59b920
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm14mon_btl_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59b968
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm35battle_end_info_t_enemy_dead_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59b9b0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm12talent_lvl_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59b9f8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13server_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59ba40
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm10one_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59ba88
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm22player_new_item_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59bad0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13good_t_cost_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59bb18
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13good_t_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59bb60
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm14good_t_money_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59bba8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm39lottery_prize_limit_info_t_prize_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59bbf0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm34text_msg_qiecuo_content_t_player_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59bc38
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm28pbbuf_activity_t_cond_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59bdb4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm16mon_moves_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59c8d2
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm9own_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59caf4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm17activity_detali_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59e9f0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm21player_in_rank_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59ee90
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm18player_rank_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59f074
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13player_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x59f45c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm16mon_basic_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x5a0f9c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm28battle_end_info_t_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x5a1708
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm26lottery_prize_limit_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x5a2922
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13server_role_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x602868
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto37cli_get_server_list_out_server_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6028b0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm19player_basic_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x602a90
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm24functional_switch_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x602ad8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto26player_enter_map_out_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603b02
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto27player_enter_map_out_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603b4a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm15map_mine_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603b92
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm16map_event_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603bda
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto19pk_combat_out_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603c22
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto19pk_combat_out_eff_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603c6a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto21cli_get_item_in_one_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603e70
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto22cli_get_item_out_one_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603eb8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto37cli_notify_item_bag_updates_out_one_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603f00
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm16mail_enclosure_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x603f48
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm11mail_head_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604244
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto11task_flag_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604c02
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto11task_buff_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604c4a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto17pb_cs_task_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604c92
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto32notify_task_drop_out_drop_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604cda
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto40cli_notify_gain_prize_out_prize_t_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604d22
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto39cli_notify_gain_prize_out_prize_t_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604d6a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto47cli_notify_gain_prize_out_prize_t_player_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x604db2
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto42flush_qiecuo_on_sight_players_out_player_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x605cd8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto26battle_use_item_out_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x605d20
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto27btl_notify_battle_start_outEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x605d68
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm15pvp_data_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x605e2c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto27leiyi_get_config_out_guwu_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x605f98
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto25leiyi_get_config_out_cd_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x605fe0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm10mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x606028
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto16mon_in_bag_pos_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60647c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm17store_mon_index_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6064c4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto18capture_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60650c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto30allocate_mon_ev_out_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60664c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm21train_store_cd_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60673c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm23train_store_mode_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x606784
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto21add_quality_in_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6067cc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13player_list_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x606814
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm6good_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607aba
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto32buy_good_in_apple_receipt_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607b02
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto34get_lottery_info_out_cost_t_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607c22
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto28get_lottery_info_out_prize_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607c6a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto29get_lottery_prize_out_prize_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607cb2
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto37get_activity_list_out_condtion_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607cfa
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm11rank_list_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607d42
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto32get_player_simple_info_out_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607d8a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto34get_player_simple_info_out_equip_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607dd2
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto45get_finance_plan_info_out_finance_plan_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607e1a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN15ISeer20BTLProto25btl_notify_battle_end_outEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x607e62
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto25mon_evolve_out_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6092b0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto41notify_mon_absorb_gain_exp_out_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60990c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto31allocate_mon_exp_out_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60bf8c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto32get_champion_data_out_champion_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60c36c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto29player_enter_map_out_player_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60c8e0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto26player_enter_map_out_npc_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60d98c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto32player_enter_map_out_pk_combat_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60dffc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto22pk_combat_out_player_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60e880
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto33cli_notify_gain_prize_out_prize_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x60fec4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto27get_lottery_info_out_cost_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6118c2
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto32get_activity_list_out_activity_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x611ff2
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto37get_player_simple_info_out_mon_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6126ba
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto28player_enter_map_out_event_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6135f0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN14ISeer20CSProto30get_lottery_info_out_lottery_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x616830
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN6common12text_message5proto11TextMessageEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6432cc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf17activity_t_time_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6456da
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf30activity_t_activity_constant_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64572a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf28activity_t_system_constant_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64577a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf22activity_t_condition_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x645bb0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf10activity_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6463c4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf12egg_energy_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x648334
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf17quality_up_rate_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x648384
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf14quality_cost_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6483d4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf22evolve_t_evolve_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x649ab0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf20evolve_t_evolve_to_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x649c7c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf8evolve_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64a052
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf15exchange_code_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64b92c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf14finance_plan_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64cf3c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf14online_prize_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64e678
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf13free_energy_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64e6c8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf19online_prize_list_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x64e7fa
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf27item_t_prefix_attr_t_node_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6526fa
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf28item_t_seer_equipment_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x652746
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf27item_t_mon_equipment_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x652792
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf20item_t_growth_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6527de
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf22item_t_material_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6537da
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf6item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x654774
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf12leiyi_guwu_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6577b8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf10leiyi_cd_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x657808
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf10leiyi_hp_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x657858
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf12leiyi_time_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6578a8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf14leiyi_notice_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6578f8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf23lottery_t_cost_t_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65aa70
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf16lottery_t_time_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65aabc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf15lottery_t_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65ab08
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf25lottery_t_lottery_prize_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65ab54
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf16lottery_t_cost_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65ad12
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf24lottery_t_lottery_play_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65b38c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf9lottery_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65b9dc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf12map_t_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65e908
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf11map_t_npc_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65e958
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf23map_t_event_t_element_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65ec4e
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf13map_t_event_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65ee6c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf5map_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x65fc84
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf20identify_t_best_ev_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x661694
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf10identify_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x661b20
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf6news_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x662fdc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf16npc_t_btl_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6650b4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf11npc_t_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6657c6
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf17npc_t_task_drop_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x665b60
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf5npc_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x666784
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf19prize_info_t_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6697ec
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf18prize_info_t_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66983c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf26prize_info_t_player_attr_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66988c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf12prize_info_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x669b78
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf7prize_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66a2a4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf23mon_propaganda_t_time_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66c76a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf22mon_propaganda_t_mon_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66c900
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf28mon_propaganda_t_hyperlink_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66c950
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf16mon_propaganda_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66cd68
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf16recommendation_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66df20
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf17restrain_sprite_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66e07e
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf13good_t_item_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x66fff0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf14good_t_money_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x670040
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf13good_t_cost_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x67026a
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf6good_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x670dac
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf13task_t_step_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x672bdc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf6task_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x6734dc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf7train_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x674984
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Conf15vip_privilege_tEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x67591c
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_30DescriptorProto_ExtensionRangeEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x8992e2
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_28UninterpretedOption_NamePartEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x899b80
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_19UninterpretedOptionEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x899e20
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_13MethodOptionsEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x899f24
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_21MethodDescriptorProtoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a0ec
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_14ServiceOptionsEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a1f0
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_22ServiceDescriptorProtoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a370
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_16EnumValueOptionsEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a474
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_24EnumValueDescriptorProtoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a5d4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_11EnumOptionsEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a6d8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_19EnumDescriptorProtoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a858
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_14MessageOptionsEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89a9c8
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_12FieldOptionsEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89abfc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_20FieldDescriptorProtoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89af14
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_15DescriptorProtoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89b1dc
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_11FileOptionsEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89b548
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_23SourceCodeInfo_LocationEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89b8e4
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_14SourceCodeInfoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89b9ce
+// _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualINS0_19FileDescriptorProtoEEEbPNS0_2io16CodedInputStreamEPT_ @ 0x89bd68

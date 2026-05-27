@@ -1,0 +1,109 @@
+// _ZN6google8protobuf2io16CodedInputStream21RecomputeBufferLimitsEv @ 0x888824
+  0x888824: PUSH    {R4,LR}
+  0x888826: LDR     R2, [R0,#8]
+  0x888828: LDR     R3, [R0,#0x20]
+  0x88882a: LDR     R4, [R0,#0x24]
+  0x88882c: LDR     R1, [R0,#0x1C]
+  0x88882e: ADDS    R2, R2, R3
+  0x888830: MOVS    R3, R0
+  0x888832: STR     R2, [R0,#8]
+  0x888834: ADDS    R3, #0x1C
+  0x888836: CMP     R4, R1
+  0x888838: BGE     loc_88883C
+  0x88883a: ADDS    R3, #8
+  0x88883c: LDR     R3, [R3]
+  0x88883e: LDR     R1, [R0,#0xC]
+  0x888840: CMP     R3, R1
+  0x888842: BGE     loc_88884E
+  0x888844: SUBS    R3, R1, R3
+  0x888846: STR     R3, [R0,#0x20]
+  0x888848: SUBS    R3, R2, R3
+  0x88884a: STR     R3, [R0,#8]
+  0x88884c: B       locret_888852
+  0x88884e: MOVS    R3, #0
+  0x888850: STR     R3, [R0,#0x20]
+  0x888852: POP     {R4,PC}
+  0x888854: PUSH    {R3-R7,LR}
+  0x888856: LDR     R5, [R0,#0xC]
+  0x888858: LDR     R7, [R0,#8]
+  0x88885a: LDR     R2, [R0,#4]
+  0x88885c: LDR     R6, [R0,#0x20]
+  0x88885e: LDR     R4, [R0,#0x1C]
+  0x888860: LDR     R3, =0x7FFFFFFF
+  0x888862: CMP     R1, #0
+  0x888864: BLT     loc_888878
+  0x888866: SUBS    R2, R7, R2
+  0x888868: ADDS    R2, R2, R6
+  0x88886a: SUBS    R2, R5, R2
+  0x88886c: SUBS    R5, R3, R2
+  0x88886e: CMP     R1, R5
+  0x888870: BGT     loc_888878
+  0x888872: ADDS    R1, R2, R1
+  0x888874: STR     R1, [R0,#0x1C]
+  0x888876: B       loc_88887A
+  0x888878: STR     R3, [R0,#0x1C]
+  0x88887a: LDR     R3, [R0,#0x1C]
+  0x88887c: CMP     R3, R4
+  0x88887e: BLE     loc_888882
+  0x888880: MOVS    R3, R4
+  0x888882: STR     R3, [R0,#0x1C]
+  0x888884: BL      _ZN6google8protobuf2io16CodedInputStream21RecomputeBufferLimitsEv; google::protobuf::io::CodedInputStream::RecomputeBufferLimits(void)
+  0x888888: MOVS    R0, R4
+  0x88888a: POP     {R3-R7,PC}
+  0x88888c: DCD 0x7FFFFFFF
+  0x888890: PUSH    {R4,LR}
+  0x888892: STR     R1, [R0,#0x1C]
+  0x888894: MOVS    R4, R0
+  0x888896: BL      _ZN6google8protobuf2io16CodedInputStream21RecomputeBufferLimitsEv; google::protobuf::io::CodedInputStream::RecomputeBufferLimits(void)
+  0x88889a: MOVS    R3, #0
+  0x88889c: STRB    R3, [R4,#0x18]
+  0x88889e: POP     {R4,PC}
+  0x8888a0: LDR     R3, [R0,#0x1C]
+  0x8888a2: LDR     R2, =0x7FFFFFFF
+  0x8888a4: CMP     R3, R2
+  0x8888a6: BEQ     loc_8888BA
+  0x8888a8: LDR     R1, [R0,#8]
+  0x8888aa: LDR     R2, [R0,#4]
+  0x8888ac: SUBS    R2, R1, R2
+  0x8888ae: LDR     R1, [R0,#0x20]
+  0x8888b0: LDR     R0, [R0,#0xC]
+  0x8888b2: ADDS    R2, R2, R1
+  0x8888b4: SUBS    R0, R0, R2
+  0x8888b6: SUBS    R0, R3, R0
+  0x8888b8: B       locret_8888BE
+  0x8888ba: MOVS    R0, #1
+  0x8888bc: NEGS    R0, R0
+  0x8888be: BX      LR
+  0x8888c0: DCD 0x7FFFFFFF
+  0x8888c4: PUSH    {R4,LR}
+  0x8888c6: LDR     R4, [R0,#8]
+  0x8888c8: LDR     R3, [R0,#4]
+  0x8888ca: SUBS    R3, R4, R3
+
+// _ZN6google8protobuf2io16CodedInputStream8PopLimitEi @ 0x888890
+  0x888890: PUSH    {R4,LR}
+  0x888892: STR     R1, [R0,#0x1C]
+  0x888894: MOVS    R4, R0
+  0x888896: BL      _ZN6google8protobuf2io16CodedInputStream21RecomputeBufferLimitsEv; google::protobuf::io::CodedInputStream::RecomputeBufferLimits(void)
+  0x88889a: MOVS    R3, #0
+  0x88889c: STRB    R3, [R4,#0x18]
+  0x88889e: POP     {R4,PC}
+  0x8888a0: LDR     R3, [R0,#0x1C]
+  0x8888a2: LDR     R2, =0x7FFFFFFF
+  0x8888a4: CMP     R3, R2
+  0x8888a6: BEQ     loc_8888BA
+  0x8888a8: LDR     R1, [R0,#8]
+  0x8888aa: LDR     R2, [R0,#4]
+  0x8888ac: SUBS    R2, R1, R2
+  0x8888ae: LDR     R1, [R0,#0x20]
+  0x8888b0: LDR     R0, [R0,#0xC]
+  0x8888b2: ADDS    R2, R2, R1
+  0x8888b4: SUBS    R0, R0, R2
+  0x8888b6: SUBS    R0, R3, R0
+  0x8888b8: B       locret_8888BE
+  0x8888ba: MOVS    R0, #1
+  0x8888bc: NEGS    R0, R0
+  0x8888be: BX      LR
+  0x8888c0: DCD 0x7FFFFFFF
+  0x8888c4: PUSH    {R4,LR}
+

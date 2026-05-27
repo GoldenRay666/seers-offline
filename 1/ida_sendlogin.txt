@@ -1,0 +1,70 @@
+// _ZN20OnlineNetworkManager16sendLoginMessageEv @ 0x63e520
+  0x63e520: PUSH    {R4-R7,LR}
+  0x63e522: LDR     R3, =(__stack_chk_guard_ptr - 0x63E52C)
+  0x63e524: SUB     SP, SP, #0x24
+  0x63e526: ADD     R7, SP, #8
+  0x63e528: ADD     R3, PC; __stack_chk_guard_ptr
+  0x63e52a: LDR     R3, [R3]; __stack_chk_guard
+  0x63e52c: STR     R0, [R7,#0x1C+var_18]
+  0x63e52e: LDR     R2, [R3]
+  0x63e530: STR     R3, [R7,#0x1C+dest]
+  0x63e532: STR     R2, [R7,#0x1C+var_8]
+  0x63e534: BL      _ZN11MessageUtil14sShareInstanceEv; MessageUtil::sShareInstance(void)
+     => _ZN11MessageUtil14sShareInstanceEv
+  0x63e538: LDR     R1, =(aIseer20csproto_3 - 0x63E544); "ISeer20CSProto.login_in"
+  0x63e53a: MOVS    R4, R0
+  0x63e53c: MOVS    R2, R7
+  0x63e53e: MOVS    R0, R7
+  0x63e540: ADD     R1, PC; "ISeer20CSProto.login_in"
+  0x63e542: ADDS    R0, #0x10
+  0x63e544: ADDS    R2, #0xC
+  0x63e546: BLX     sub_8E11F0
+     => sub_8E11F0
+  0x63e54a: MOVS    R1, R7
+  0x63e54c: MOVS    R0, R4
+  0x63e54e: ADDS    R1, #0x10
+  0x63e550: BL      _ZN11MessageUtil21createMessageInstanceESs; MessageUtil::createMessageInstance(std::string)
+     => _ZN11MessageUtil21createMessageInstanceESs
+  0x63e554: MOVS    R4, R0
+  0x63e556: MOVS    R0, R7
+  0x63e558: ADDS    R0, #0x10
+  0x63e55a: BLX     sub_8DFCF8
+     => sub_8DFCF8
+  0x63e55e: LDR     R3, =(_ZN8UserData18userNineOneSessionE_ptr - 0x63E564)
+  0x63e560: ADD     R3, PC; _ZN8UserData18userNineOneSessionE_ptr
+  0x63e562: LDR     R3, [R3]; UserData::userNineOneSession
+  0x63e564: LDR     R5, [R3]; UserData::userNineOneSession
+  0x63e566: MOVS    R0, R5; s
+  0x63e568: BLX     strlen
+     => strlen
+  0x63e56c: ADDS    R0, #0xE
+  0x63e56e: LSRS    R0, R0, #3
+  0x63e570: LSLS    R0, R0, #3
+  0x63e572: MOV     R1, SP
+  0x63e574: SUBS    R1, R1, R0
+  0x63e576: MOV     SP, R1
+  0x63e578: MOVS    R0, R5; s
+  0x63e57a: BLX     strlen
+     => strlen
+  0x63e57e: ADD     R6, SP, #0x24+dest
+  0x63e580: MOVS    R2, R0; n
+  0x63e582: MOVS    R1, R5; src
+  0x63e584: MOVS    R0, R6; dest
+  0x63e586: BLX     memcpy
+     => memcpy
+  0x63e58a: MOVS    R0, R5; s
+  0x63e58c: BLX     strlen
+     => strlen
+  0x63e590: LDR     R3, [R4,#0x14]
+  0x63e592: MOVS    R2, #1
+  0x63e594: MOVS    R5, R0
+  0x63e596: ORRS    R3, R2
+  0x63e598: STR     R3, [R4,#0x14]
+  0x63e59a: LDR     R3, =(_ZN6google8protobuf8internal12kEmptyStringE_ptr - 0x63E5A2)
+  0x63e59c: LDR     R2, [R4,#8]
+  0x63e59e: ADD     R3, PC; _ZN6google8protobuf8internal12kEmptyStringE_ptr
+  0x63e5a0: LDR     R3, [R3]; google::protobuf::internal::kEmptyString
+  0x63e5a2: CMP     R2, R3
+  0x63e5a4: BNE     loc_63E5B8
+  0x63e5a6: MOVS    R0, #4; unsigned int
+

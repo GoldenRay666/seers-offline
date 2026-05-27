@@ -1,0 +1,336 @@
+// _ZNK11ISeer20Comm13player_info_t13IsInitializedEv @ 0x5866b4
+  0x5866b4: LDR     R0, [R0,#0x58]
+  0x5866b6: MOVS    R3, #3
+  0x5866b8: ANDS    R0, R3
+  0x5866ba: SUBS    R0, #3
+  0x5866bc: NEGS    R3, R0
+  0x5866be: ADCS    R0, R3
+  0x5866c0: BX      LR
+  0x5866c2: STR     R1, [R0,#0x28]
+  0x5866c4: BX      LR
+  0x5866c6: PUSH    {R3-R5,LR}
+  0x5866c8: MOVS    R4, R0
+  0x5866ca: MOVS    R5, R1
+  0x5866cc: CMP     R1, R0
+  0x5866ce: BEQ     locret_5866E0
+  0x5866d0: LDR     R3, [R0]
+  0x5866d2: LDR     R3, [R3,#0x10]
+  0x5866d4: BLX     R3
+  0x5866d6: LDR     R3, [R4]
+  0x5866d8: MOVS    R0, R4
+  0x5866da: MOVS    R1, R5
+  0x5866dc: LDR     R3, [R3,#0x38]
+  0x5866de: BLX     R3
+  0x5866e0: POP     {R3-R5,PC}
+  0x5866e2: LDR     R0, [R0,#0x2C]
+  0x5866e4: MOVS    R3, #7
+  0x5866e6: ANDS    R0, R3
+  0x5866e8: SUBS    R0, #7
+  0x5866ea: NEGS    R3, R0
+  0x5866ec: ADCS    R0, R3
+  0x5866ee: BX      LR
+  0x5866f0: STR     R1, [R0,#0x2C]
+  0x5866f2: BX      LR
+  0x5866f4: PUSH    {R3-R5,LR}
+  0x5866f6: MOVS    R4, R0
+  0x5866f8: MOVS    R5, R1
+  0x5866fa: CMP     R1, R0
+  0x5866fc: BEQ     locret_58670E
+  0x5866fe: LDR     R3, [R0]
+  0x586700: LDR     R3, [R3,#0x10]
+  0x586702: BLX     R3
+  0x586704: LDR     R3, [R4]
+  0x586706: MOVS    R0, R4
+  0x586708: MOVS    R1, R5
+  0x58670a: LDR     R3, [R3,#0x38]
+  0x58670c: BLX     R3
+  0x58670e: POP     {R3-R5,PC}
+  0x586710: STR     R1, [R0,#0x10]
+  0x586712: BX      LR
+  0x586714: PUSH    {R3-R5,LR}
+  0x586716: MOVS    R4, R0
+
+
+// === player_info_t Merge: full case list ===
+  0x59f0bc: PUSH    {R4-R7,LR}
+  0x59f0be: SUB     SP, SP, #0x14
+  0x59f0c0: ADDS    R3, R0, #4
+  0x59f0c2: MOVS    R5, R0
+  0x59f0c4: MOVS    R4, R1
+  0x59f0c6: MOVS    R6, #7
+  0x59f0c8: STR     R3, [SP,#0x28+var_24]
+  0x59f0ca: B       loc_59F426
+  0x59f0cc: LSRS    R0, R1, #3
+  0x59f0ce: SUBS    R0, #1; switch 13 cases
+  0x59f0d0: CMP     R0, #0xC  ;; compare
+  0x59f0d2: BLS     loc_59F0D6
+  0x59f0d4: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f0d6: BL      __gnu_thumb1_case_uhi; switch jump
+  0x59f0da: DCW 0xD; jump table for switch statement
+  0x59f0dc: DCW 0x28
+  0x59f0de: DCW 0x43
+  0x59f0e0: DCW 0x6D
+  0x59f0e2: DCW 0x88
+  0x59f0e4: DCW 0xA1
+  0x59f0e6: DCW 0xEC
+  0x59f0e8: DCW 0x10C
+  0x59f0ea: DCW 0x127
+  0x59f0ec: DCW 0x140
+  0x59f0ee: DCW 0x158
+  0x59f0f0: DCW 0x170
+  0x59f0f2: DCW 0x188
+  0x59f0f4: TST     R1, R6; jumptable 0059F0D6 case 1
+  0x59f0f6: BEQ     loc_59F0FA
+  0x59f0f8: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f0fa: MOVS    R1, R5
+  0x59f0fc: ADDS    R1, #8; unsigned int *
+  0x59f0fe: MOVS    R0, R4; this
+  0x59f100: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+  0x59f104: CMP     R0, #0  ;; compare
+  0x59f106: BNE     loc_59F10A
+  0x59f108: B       loc_59F44E
+  0x59f10a: LDR     R3, [R5,#0x58]
+  0x59f10c: MOVS    R2, #1
+  0x59f10e: ORRS    R3, R2
+  0x59f110: STR     R3, [R5,#0x58]
+  0x59f112: LDR     R3, [R4,#4]
+  0x59f114: LDR     R2, [R4,#8]
+  0x59f116: CMP     R3, R2  ;; compare
+  0x59f118: BCC     loc_59F11C
+  0x59f11a: B       loc_59F426
+  0x59f11c: LDRB    R2, [R3]
+  0x59f11e: CMP     R2, #0x10
+  0x59f120: BEQ     loc_59F124
+  0x59f122: B       loc_59F426
+  0x59f124: ADDS    R3, #1
+  0x59f126: STR     R3, [R4,#4]
+  0x59f128: B       loc_59F130
+  0x59f12a: TST     R1, R6; jumptable 0059F0D6 case 2
+  0x59f12c: BEQ     loc_59F130
+  0x59f12e: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f130: MOVS    R1, R5
+  0x59f132: ADDS    R1, #0xC
+  0x59f134: MOVS    R0, R4
+  0x59f136: BL      _ZN6google8protobuf8internal14WireFormatLite13ReadPrimitiveIiLNS2_9FieldTypeE5EEEbPNS0_2io16CodedInputStreamEPT_; google::protobuf::internal::WireFormatLite::ReadPrimitive<int,(google::protobuf::internal::WireFormatLite::FieldType)5>(google::protobuf::io::CodedInputStream *,int *)
+  0x59f13a: CMP     R0, #0  ;; compare
+  0x59f13c: BNE     loc_59F140
+  0x59f13e: B       loc_59F44E
+  0x59f140: LDR     R3, [R5,#0x58]
+  0x59f142: MOVS    R2, #2
+  0x59f144: ORRS    R3, R2
+  0x59f146: STR     R3, [R5,#0x58]
+  0x59f148: LDR     R3, [R4,#4]
+  0x59f14a: LDR     R2, [R4,#8]
+  0x59f14c: CMP     R3, R2  ;; compare
+  0x59f14e: BCC     loc_59F152
+  0x59f150: B       loc_59F426
+  0x59f152: LDRB    R2, [R3]
+  0x59f154: CMP     R2, #0x1A
+  0x59f156: BEQ     loc_59F15A
+  0x59f158: B       loc_59F426
+  0x59f15a: ADDS    R3, #1
+  0x59f15c: STR     R3, [R4,#4]
+  0x59f15e: B       loc_59F16A
+  0x59f160: MOVS    R3, R1; jumptable 0059F0D6 case 3
+  0x59f162: ANDS    R3, R6  ;; wire type check
+  0x59f164: CMP     R3, #2  ;; compare
+  0x59f166: BEQ     loc_59F16A
+  0x59f168: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f16a: LDR     R3, [R5,#0x58]
+  0x59f16c: MOVS    R0, #4; unsigned int
+  0x59f16e: LDR     R2, [R5,#0x10]
+  0x59f170: ORRS    R3, R0
+  0x59f172: STR     R3, [R5,#0x58]
+  0x59f174: LDR     R3, =(_ZN6google8protobuf8internal12kEmptyStringE_ptr - 0x59F17A)
+  0x59f176: ADD     R3, PC; _ZN6google8protobuf8internal12kEmptyStringE_ptr
+  0x59f178: LDR     R3, [R3]; google::protobuf::internal::kEmptyString
+  0x59f17a: CMP     R2, R3  ;; compare
+  0x59f17c: BNE     loc_59F18E
+  0x59f17e: BLX     _Znwj; operator new(uint)
+  0x59f182: LDR     R3, =(off_AB2E84 - 0x59F188)
+  0x59f184: ADD     R3, PC; off_AB2E84
+  0x59f186: LDR     R3, [R3]; dword_AD13B4
+  0x59f188: ADDS    R3, #0xC
+  0x59f18a: STR     R3, [R0]
+  0x59f18c: STR     R0, [R5,#0x10]
+  0x59f18e: LDR     R1, [R5,#0x10]
+  0x59f190: MOVS    R0, R4
+  0x59f192: BL      _ZN6google8protobuf8internal14WireFormatLite9ReadBytesEPNS0_2io16CodedInputStreamEPSs; google::protobuf::internal::WireFormatLite::ReadBytes(google::protobuf::io::CodedInputStream *,std::string *)
+  0x59f196: CMP     R0, #0  ;; compare
+  0x59f198: BNE     loc_59F19C
+  0x59f19a: B       loc_59F44E
+  0x59f19c: LDR     R3, [R4,#4]
+  0x59f19e: LDR     R2, [R4,#8]
+  0x59f1a0: CMP     R3, R2  ;; compare
+  0x59f1a2: BCC     loc_59F1A6
+  0x59f1a4: B       loc_59F426
+  0x59f1a6: LDRB    R2, [R3]
+  0x59f1a8: CMP     R2, #0x20 ; ' '
+  0x59f1aa: BEQ     loc_59F1AE
+  0x59f1ac: B       loc_59F426
+  0x59f1ae: ADDS    R3, #1
+  0x59f1b0: STR     R3, [R4,#4]
+  0x59f1b2: B       loc_59F1BA
+  0x59f1b4: TST     R1, R6; jumptable 0059F0D6 case 4
+  0x59f1b6: BEQ     loc_59F1BA
+  0x59f1b8: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f1ba: MOVS    R1, R5
+  0x59f1bc: ADDS    R1, #0x14
+  0x59f1be: MOVS    R0, R4
+  0x59f1c0: BL      _ZN6google8protobuf8internal14WireFormatLite13ReadPrimitiveIiLNS2_9FieldTypeE5EEEbPNS0_2io16CodedInputStreamEPT_; google::protobuf::internal::WireFormatLite::ReadPrimitive<int,(google::protobuf::internal::WireFormatLite::FieldType)5>(google::protobuf::io::CodedInputStream *,int *)
+  0x59f1c4: CMP     R0, #0  ;; compare
+  0x59f1c6: BNE     loc_59F1CA
+  0x59f1c8: B       loc_59F44E
+  0x59f1ca: LDR     R3, [R5,#0x58]
+  0x59f1cc: MOVS    R2, #8
+  0x59f1ce: ORRS    R3, R2
+  0x59f1d0: STR     R3, [R5,#0x58]
+  0x59f1d2: LDR     R3, [R4,#4]
+  0x59f1d4: LDR     R2, [R4,#8]
+  0x59f1d6: CMP     R3, R2  ;; compare
+  0x59f1d8: BCC     loc_59F1DC
+  0x59f1da: B       loc_59F426
+  0x59f1dc: LDRB    R2, [R3]
+  0x59f1de: CMP     R2, #0x28 ; '('
+  0x59f1e0: BEQ     loc_59F1E4
+  0x59f1e2: B       loc_59F426
+  0x59f1e4: ADDS    R3, #1
+  0x59f1e6: STR     R3, [R4,#4]
+  0x59f1e8: B       loc_59F1F0
+  0x59f1ea: TST     R1, R6; jumptable 0059F0D6 case 5
+  0x59f1ec: BEQ     loc_59F1F0
+  0x59f1ee: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f1f0: MOVS    R1, R5
+  0x59f1f2: ADDS    R1, #0x18; unsigned int *
+  0x59f1f4: MOVS    R0, R4; this
+  0x59f1f6: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+  0x59f1fa: CMP     R0, #0  ;; compare
+  0x59f1fc: BNE     loc_59F200
+  0x59f1fe: B       loc_59F44E
+  0x59f200: LDR     R3, [R5,#0x58]
+  0x59f202: MOVS    R2, #0x10
+  0x59f204: ORRS    R3, R2
+  0x59f206: STR     R3, [R5,#0x58]
+  0x59f208: LDR     R3, [R4,#4]
+  0x59f20a: LDR     R2, [R4,#8]
+  0x59f20c: CMP     R3, R2  ;; compare
+  0x59f20e: BCC     loc_59F212
+  0x59f210: B       loc_59F426
+  0x59f212: LDRB    R2, [R3]
+  0x59f214: CMP     R2, #0x30 ; '0'
+  0x59f216: BEQ     loc_59F21A
+  0x59f218: B       loc_59F426
+  0x59f21a: B       loc_59F2A0
+  0x59f21c: MOVS    R3, R1; jumptable 0059F0D6 case 6
+  0x59f21e: ANDS    R3, R6  ;; wire type check
+  0x59f220: BNE     loc_59F27A
+  0x59f222: ADD     R3, SP, #0x28+var_1C
+  0x59f224: MOVS    R0, R4
+  0x59f226: MOVS    R1, R3
+  0x59f228: STR     R3, [SP,#0x28+var_28]
+  0x59f22a: BL      _ZN6google8protobuf8internal14WireFormatLite13ReadPrimitiveIiLNS2_9FieldTypeE5EEEbPNS0_2io16CodedInputStreamEPT_; google::protobuf::internal::WireFormatLite::ReadPrimitive<int,(google::protobuf::internal::WireFormatLite::FieldType)5>(google::protobuf::io::CodedInputStream *,int *)
+  0x59f22e: CMP     R0, #0  ;; compare
+  0x59f230: BNE     loc_59F234
+  0x59f232: B       loc_59F44E
+  0x59f234: MOVS    R0, R5
+  0x59f236: ADDS    R0, #0x1C
+  0x59f238: ADD     R1, SP, #0x28+var_1C
+  0x59f23a: BL      _ZN6google8protobuf13RepeatedFieldIiE3AddERKi; google::protobuf::RepeatedField<int>::Add(int const&)
+  0x59f23e: LDR     R7, [R5,#0x24]
+  0x59f240: LDR     R3, [R5,#0x20]
+  0x59f242: SUBS    R7, R7, R3
+  0x59f244: B       loc_59F256
+  0x59f246: LDR     R3, [R5,#0x20]
+  0x59f248: LDR     R2, [R5,#0x1C]
+  0x59f24a: LDR     R0, [SP,#0x28+var_1C]
+  0x59f24c: LSLS    R1, R3, #2
+  0x59f24e: ADDS    R3, #1
+  0x59f250: STR     R0, [R1,R2]
+  0x59f252: SUBS    R7, #1
+  0x59f254: STR     R3, [R5,#0x20]
+  0x59f256: CMP     R7, #0
+  0x59f258: BLE     loc_59F290
+  0x59f25a: LDR     R3, [R4,#4]
+  0x59f25c: LDR     R2, [R4,#8]
+  0x59f25e: CMP     R3, R2  ;; compare
+  0x59f260: BCS     loc_59F290
+  0x59f262: LDRB    R2, [R3]
+  0x59f264: CMP     R2, #0x30 ; '0'
+  0x59f266: BNE     loc_59F290
+  0x59f268: ADDS    R3, #1
+  0x59f26a: STR     R3, [R4,#4]
+  0x59f26c: MOVS    R0, R4
+  0x59f26e: ADD     R1, SP, #0x28+var_1C
+  0x59f270: BL      _ZN6google8protobuf8internal14WireFormatLite13ReadPrimitiveIiLNS2_9FieldTypeE5EEEbPNS0_2io16CodedInputStreamEPT_; google::protobuf::internal::WireFormatLite::ReadPrimitive<int,(google::protobuf::internal::WireFormatLite::FieldType)5>(google::protobuf::io::CodedInputStream *,int *)
+  0x59f274: CMP     R0, #0  ;; compare
+  0x59f276: BNE     loc_59F246
+  0x59f278: B       loc_59F44E
+  0x59f27a: CMP     R3, #2  ;; compare
+  0x59f27c: BEQ     loc_59F280
+  0x59f27e: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f280: MOVS    R1, R5
+  0x59f282: ADDS    R1, #0x1C
+  0x59f284: MOVS    R0, R4
+  0x59f286: BL      _ZN6google8protobuf8internal14WireFormatLite27ReadPackedPrimitiveNoInlineIiLNS2_9FieldTypeE5EEEbPNS0_2io16CodedInputStreamEPNS0_13RepeatedFieldIT_EE; google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<int,(google::protobuf::internal::WireFormatLite::FieldType)5>(google::protobuf::io::CodedInputStream *,google::protobuf::RepeatedField<int> *)
+  0x59f28a: CMP     R0, #0  ;; compare
+  0x59f28c: BNE     loc_59F290
+  0x59f28e: B       loc_59F44E
+  0x59f290: LDR     R3, [R4,#4]
+  0x59f292: LDR     R2, [R4,#8]
+  0x59f294: CMP     R3, R2  ;; compare
+  0x59f296: BCC     loc_59F29A
+  0x59f298: B       loc_59F426
+  0x59f29a: LDRB    R2, [R3]
+  0x59f29c: CMP     R2, #0x30 ; '0'
+  0x59f29e: BNE     loc_59F2A6
+  0x59f2a0: ADDS    R3, #1
+  0x59f2a2: STR     R3, [R4,#4]
+  0x59f2a4: B       loc_59F222
+  0x59f2a6: CMP     R2, #0x38 ; '8'
+  0x59f2a8: BEQ     loc_59F2AC
+  0x59f2aa: B       loc_59F426
+  0x59f2ac: ADDS    R3, #1
+  0x59f2ae: STR     R3, [R4,#4]
+  0x59f2b0: B       loc_59F2B8
+  0x59f2b2: TST     R1, R6; jumptable 0059F0D6 case 7
+  0x59f2b4: BEQ     loc_59F2B8
+  0x59f2b6: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f2b8: MOVS    R0, R4; this
+  0x59f2ba: ADD     R1, SP, #0x28+var_1C; unsigned int *
+  0x59f2bc: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+  0x59f2c0: CMP     R0, #0  ;; compare
+  0x59f2c2: BNE     loc_59F2C6
+  0x59f2c4: B       loc_59F44E
+  0x59f2c6: LDR     R2, [SP,#0x28+var_1C]
+  0x59f2c8: MOVS    R3, R5
+  0x59f2ca: ADDS    R3, #0x38 ; '8'
+  0x59f2cc: SUBS    R1, R2, #1
+  0x59f2ce: SBCS    R2, R1
+  0x59f2d0: STRB    R2, [R3]
+  0x59f2d2: LDR     R3, [R5,#0x58]
+  0x59f2d4: MOVS    R2, #0x40 ; '@'
+  0x59f2d6: ORRS    R3, R2
+  0x59f2d8: STR     R3, [R5,#0x58]
+  0x59f2da: LDR     R3, [R4,#4]
+  0x59f2dc: LDR     R2, [R4,#8]
+  0x59f2de: CMP     R3, R2  ;; compare
+  0x59f2e0: BCC     loc_59F2E4
+  0x59f2e2: B       loc_59F426
+  0x59f2e4: LDRB    R2, [R3]
+  0x59f2e6: CMP     R2, #0x40 ; '@'
+  0x59f2e8: BEQ     loc_59F2EC
+  0x59f2ea: B       loc_59F426
+  0x59f2ec: ADDS    R3, #1
+  0x59f2ee: STR     R3, [R4,#4]
+  0x59f2f0: B       loc_59F2F8
+  0x59f2f2: TST     R1, R6; jumptable 0059F0D6 case 8
+  0x59f2f4: BEQ     loc_59F2F8
+  0x59f2f6: B       def_59F0D6; jumptable 0059F0D6 default case
+  0x59f2f8: MOVS    R1, R5
+  0x59f2fa: ADDS    R1, #0x3C ; '<'; unsigned int *
+  0x59f2fc: MOVS    R0, R4; this
+  0x59f2fe: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+  0x59f302: CMP     R0, #0  ;; compare
+  0x59f304: BNE     loc_59F308
+  0x59f306: B       loc_59F44E
+  0x59f308: LDR     R3, [R5,#0x58]

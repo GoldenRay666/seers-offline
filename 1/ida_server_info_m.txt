@@ -1,0 +1,166 @@
+// _ZN11ISeer20Comm13server_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE @ 0x5886bc
+  0x5886bc: PUSH    {R3-R7,LR}
+  0x5886be: MOVS    R5, R0
+  0x5886c0: MOVS    R4, R1
+  0x5886c2: MOVS    R6, #7
+  0x5886c4: ADDS    R7, R0, #4
+  0x5886c6: B       loc_588894
+  0x5886c8: LSRS    R0, R1, #3
+  0x5886ca: SUBS    R0, #1; switch 8 cases
+  0x5886cc: CMP     R0, #7
+  0x5886ce: BLS     loc_5886D2
+     ¡ú loc_5886D2
+  0x5886d0: B       def_5886D2; jumptable 005886D2 default case
+  0x5886d2: BL      __gnu_thumb1_case_uqi; switch jump
+     ¡ú __gnu_thumb1_case_uqi
+  0x5886d6: DCB 4; jump table for switch statement
+  0x5886d7: DCB 0x1F
+  0x5886d8: DCB 0x3A
+  0x5886d9: DCB 0x55
+  0x5886da: DCB 0x6D
+  0x5886db: DCB 0x84
+  0x5886dc: DCB 0x9B
+  0x5886dd: DCB 0xB2
+  0x5886de: TST     R1, R6; jumptable 005886D2 case 1
+  0x5886e0: BEQ     loc_5886E4
+  0x5886e2: B       def_5886D2; jumptable 005886D2 default case
+  0x5886e4: MOVS    R1, R5
+  0x5886e6: ADDS    R1, #8; unsigned int *
+     ;; target offset: +0x-1
+  0x5886e8: MOVS    R0, R4; this
+  0x5886ea: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x5886ee: CMP     R0, #0
+  0x5886f0: BNE     loc_5886F4
+  0x5886f2: B       locret_5888BC
+  0x5886f4: LDR     R3, [R5,#0x2C]
+  0x5886f6: MOVS    R2, #1
+  0x5886f8: ORRS    R3, R2
+  0x5886fa: STR     R3, [R5,#0x2C]
+  0x5886fc: LDR     R3, [R4,#4]
+  0x5886fe: LDR     R2, [R4,#8]
+  0x588700: CMP     R3, R2
+  0x588702: BCC     loc_588706
+  0x588704: B       loc_588894
+  0x588706: LDRB    R2, [R3]
+  0x588708: CMP     R2, #0x10
+  0x58870a: BEQ     loc_58870E
+  0x58870c: B       loc_588894
+  0x58870e: ADDS    R3, #1
+  0x588710: STR     R3, [R4,#4]
+  0x588712: B       loc_58871A
+  0x588714: TST     R1, R6; jumptable 005886D2 case 2
+  0x588716: BEQ     loc_58871A
+  0x588718: B       def_5886D2; jumptable 005886D2 default case
+  0x58871a: MOVS    R1, R5
+  0x58871c: ADDS    R1, #0xC; unsigned int *
+     ;; target offset: +0x-1
+  0x58871e: MOVS    R0, R4; this
+  0x588720: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x588724: CMP     R0, #0
+  0x588726: BNE     loc_58872A
+  0x588728: B       locret_5888BC
+  0x58872a: LDR     R3, [R5,#0x2C]
+  0x58872c: MOVS    R2, #2
+  0x58872e: ORRS    R3, R2
+  0x588730: STR     R3, [R5,#0x2C]
+  0x588732: LDR     R3, [R4,#4]
+  0x588734: LDR     R2, [R4,#8]
+  0x588736: CMP     R3, R2
+  0x588738: BCC     loc_58873C
+  0x58873a: B       loc_588894
+  0x58873c: LDRB    R2, [R3]
+  0x58873e: CMP     R2, #0x18
+  0x588740: BEQ     loc_588744
+  0x588742: B       loc_588894
+  0x588744: ADDS    R3, #1
+  0x588746: STR     R3, [R4,#4]
+  0x588748: B       loc_588750
+  0x58874a: TST     R1, R6; jumptable 005886D2 case 3
+  0x58874c: BEQ     loc_588750
+  0x58874e: B       def_5886D2; jumptable 005886D2 default case
+  0x588750: MOVS    R1, R5
+  0x588752: ADDS    R1, #0x10; unsigned int *
+     ;; target offset: +0x-1
+  0x588754: MOVS    R0, R4; this
+  0x588756: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x58875a: CMP     R0, #0
+  0x58875c: BNE     loc_588760
+  0x58875e: B       locret_5888BC
+  0x588760: LDR     R3, [R5,#0x2C]
+  0x588762: MOVS    R2, #4
+  0x588764: ORRS    R3, R2
+  0x588766: STR     R3, [R5,#0x2C]
+  0x588768: LDR     R3, [R4,#4]
+  0x58876a: LDR     R2, [R4,#8]
+  0x58876c: CMP     R3, R2
+  0x58876e: BCC     loc_588772
+  0x588770: B       loc_588894
+  0x588772: LDRB    R2, [R3]
+  0x588774: CMP     R2, #0x20 ; ' '
+  0x588776: BEQ     loc_58877A
+  0x588778: B       loc_588894
+  0x58877a: ADDS    R3, #1
+  0x58877c: STR     R3, [R4,#4]
+  0x58877e: B       loc_588784
+  0x588780: TST     R1, R6; jumptable 005886D2 case 4
+  0x588782: BNE     def_5886D2; jumptable 005886D2 default case
+  0x588784: MOVS    R1, R5
+  0x588786: ADDS    R1, #0x14; unsigned int *
+     ;; target offset: +0x-1
+  0x588788: MOVS    R0, R4; this
+  0x58878a: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x58878e: CMP     R0, #0
+  0x588790: BNE     loc_588794
+  0x588792: B       locret_5888BC
+  0x588794: LDR     R3, [R5,#0x2C]
+  0x588796: MOVS    R2, #8
+  0x588798: ORRS    R3, R2
+  0x58879a: STR     R3, [R5,#0x2C]
+  0x58879c: LDR     R3, [R4,#4]
+  0x58879e: LDR     R2, [R4,#8]
+  0x5887a0: CMP     R3, R2
+  0x5887a2: BCS     loc_588894
+  0x5887a4: LDRB    R2, [R3]
+  0x5887a6: CMP     R2, #0x28 ; '('
+  0x5887a8: BNE     loc_588894
+  0x5887aa: ADDS    R3, #1
+  0x5887ac: STR     R3, [R4,#4]
+  0x5887ae: B       loc_5887B4
+  0x5887b0: TST     R1, R6; jumptable 005886D2 case 5
+  0x5887b2: BNE     def_5886D2; jumptable 005886D2 default case
+  0x5887b4: MOVS    R1, R5
+  0x5887b6: ADDS    R1, #0x18; unsigned int *
+     ;; target offset: +0x-1
+  0x5887b8: MOVS    R0, R4; this
+  0x5887ba: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x5887be: CMP     R0, #0
+  0x5887c0: BEQ     locret_5888BC
+  0x5887c2: LDR     R3, [R5,#0x2C]
+  0x5887c4: MOVS    R2, #0x10
+  0x5887c6: ORRS    R3, R2
+  0x5887c8: STR     R3, [R5,#0x2C]
+  0x5887ca: LDR     R3, [R4,#4]
+  0x5887cc: LDR     R2, [R4,#8]
+  0x5887ce: CMP     R3, R2
+  0x5887d0: BCS     loc_588894
+  0x5887d2: LDRB    R2, [R3]
+  0x5887d4: CMP     R2, #0x30 ; '0'
+  0x5887d6: BNE     loc_588894
+  0x5887d8: ADDS    R3, #1
+  0x5887da: STR     R3, [R4,#4]
+  0x5887dc: B       loc_5887E2
+  0x5887de: TST     R1, R6; jumptable 005886D2 case 6
+  0x5887e0: BNE     def_5886D2; jumptable 005886D2 default case
+  0x5887e2: MOVS    R1, R5
+  0x5887e4: ADDS    R1, #0x1C; unsigned int *
+     ;; target offset: +0x-1
+  0x5887e6: MOVS    R0, R4; this
+  0x5887e8: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x5887ec: CMP     R0, #0
+

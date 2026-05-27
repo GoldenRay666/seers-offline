@@ -1,0 +1,168 @@
+// _ZN11ISeer20Comm13server_role_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE @ 0x5a1a96
+  0x5a1a96: PUSH    {R3-R7,LR}
+  0x5a1a98: MOVS    R7, R0
+  0x5a1a9a: MOVS    R6, R0
+  0x5a1a9c: MOVS    R4, R1
+  0x5a1a9e: MOVS    R5, #7
+  0x5a1aa0: ADDS    R7, #0xC
+  0x5a1aa2: B       loc_5A1B28
+  0x5a1aa4: LSRS    R3, R1, #3
+  0x5a1aa6: CMP     R3, #1
+  0x5a1aa8: BEQ     loc_5A1AB0
+  0x5a1aaa: CMP     R3, #2
+  0x5a1aac: BNE     loc_5A1B14
+  0x5a1aae: B       loc_5A1ADA
+  0x5a1ab0: MOVS    R3, R1
+  0x5a1ab2: ANDS    R3, R5
+  0x5a1ab4: CMP     R3, #2
+  0x5a1ab6: BNE     loc_5A1B14
+  0x5a1ab8: MOVS    R0, R6; this
+  0x5a1aba: BL      _ZN11ISeer20Comm13server_role_t19mutable_server_infoEv; ISeer20Comm::server_role_t::mutable_server_info(void)
+     ¡ú _ZN11ISeer20Comm13server_role_t19mutable_server_infoEv
+  0x5a1abe: MOVS    R1, R0
+  0x5a1ac0: MOVS    R0, R4
+  0x5a1ac2: BL      _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13server_info_tEEEbPNS0_2io16CodedInputStreamEPT_; google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual<ISeer20Comm::server_info_t>(google::protobuf::io::CodedInputStream *,ISeer20Comm::server_info_t *)
+     ¡ú _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13server_info_tEEEbPNS0_2io16CodedInputStreamEPT_
+  0x5a1ac6: CMP     R0, #0
+  0x5a1ac8: BEQ     locret_5A1B4E
+  0x5a1aca: LDR     R3, [R4,#4]
+  0x5a1acc: LDR     R2, [R4,#8]
+  0x5a1ace: CMP     R3, R2
+  0x5a1ad0: BCS     loc_5A1B28
+  0x5a1ad2: LDRB    R2, [R3]
+  0x5a1ad4: CMP     R2, #0x12
+  0x5a1ad6: BNE     loc_5A1B28
+  0x5a1ad8: B       loc_5A1B02
+  0x5a1ada: MOVS    R3, R1
+  0x5a1adc: ANDS    R3, R5
+  0x5a1ade: CMP     R3, #2
+  0x5a1ae0: BNE     loc_5A1B14
+  0x5a1ae2: MOVS    R0, R7
+  0x5a1ae4: BL      _ZN6google8protobuf8internal20RepeatedPtrFieldBase3AddINS0_16RepeatedPtrFieldIN11ISeer20Comm13player_info_tEE11TypeHandlerEEEPNT_4TypeEv; google::protobuf::internal::RepeatedPtrFieldBase::Add<google::protobuf::RepeatedPtrField<ISeer20Comm::player_info_t>::TypeHandler>(void)
+     ¡ú _ZN6google8protobuf8internal20RepeatedPtrFieldBase3AddINS0_16RepeatedPtrFieldIN11ISeer20Comm13player_info_tEE11TypeHandlerEEEPNT_4TypeEv
+  0x5a1ae8: MOVS    R1, R0
+  0x5a1aea: MOVS    R0, R4
+  0x5a1aec: BL      _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13player_info_tEEEbPNS0_2io16CodedInputStreamEPT_; google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual<ISeer20Comm::player_info_t>(google::protobuf::io::CodedInputStream *,ISeer20Comm::player_info_t *)
+     ¡ú _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13player_info_tEEEbPNS0_2io16CodedInputStreamEPT_
+  0x5a1af0: CMP     R0, #0
+  0x5a1af2: BEQ     locret_5A1B4E
+  0x5a1af4: LDR     R3, [R4,#4]
+  0x5a1af6: LDR     R2, [R4,#8]
+  0x5a1af8: CMP     R3, R2
+  0x5a1afa: BCS     loc_5A1B08
+  0x5a1afc: LDRB    R2, [R3]
+  0x5a1afe: CMP     R2, #0x12
+  0x5a1b00: BNE     loc_5A1B08
+  0x5a1b02: ADDS    R3, #1
+  0x5a1b04: STR     R3, [R4,#4]
+  0x5a1b06: B       loc_5A1AE2
+  0x5a1b08: MOVS    R0, R4; this
+  0x5a1b0a: BL      _ZN6google8protobuf2io16CodedInputStream11ExpectAtEndEv; google::protobuf::io::CodedInputStream::ExpectAtEnd(void)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream11ExpectAtEndEv
+  0x5a1b0e: CMP     R0, #0
+  0x5a1b10: BEQ     loc_5A1B28
+  0x5a1b12: B       loc_5A1B4C
+  0x5a1b14: MOVS    R3, R1
+  0x5a1b16: ANDS    R3, R5; google::protobuf::UnknownFieldSet *
+  0x5a1b18: CMP     R3, #4
+  0x5a1b1a: BEQ     loc_5A1B4C
+  0x5a1b1c: ADDS    R2, R6, #4; google::protobuf::UnknownFieldSet *
+  0x5a1b1e: MOVS    R0, R4; this
+  0x5a1b20: BL      _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE; google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream *,uint,google::protobuf::UnknownFieldSet *)
+     ¡ú _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE
+  0x5a1b24: CMP     R0, #0
+  0x5a1b26: BEQ     locret_5A1B4E
+  0x5a1b28: LDR     R3, [R4,#4]
+  0x5a1b2a: LDR     R2, [R4,#8]
+  0x5a1b2c: CMP     R3, R2
+  0x5a1b2e: BCS     loc_5A1B3E
+  0x5a1b30: LDRB    R1, [R3]
+  0x5a1b32: LSLS    R2, R1, #0x18
+  0x5a1b34: BMI     loc_5A1B3E
+  0x5a1b36: ADDS    R3, #1
+  0x5a1b38: STR     R1, [R4,#0x14]
+  0x5a1b3a: STR     R3, [R4,#4]
+  0x5a1b3c: B       loc_5A1B48
+  0x5a1b3e: MOVS    R0, R4; this
+  0x5a1b40: BL      _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv; google::protobuf::io::CodedInputStream::ReadTagFallback(void)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv
+  0x5a1b44: MOVS    R1, R0; google::protobuf::io::CodedInputStream *
+  0x5a1b46: STR     R0, [R4,#0x14]
+  0x5a1b48: CMP     R1, #0
+  0x5a1b4a: BNE     loc_5A1AA4
+  0x5a1b4c: MOVS    R0, #1
+  0x5a1b4e: POP     {R3-R7,PC}
+  0x5a1b50: PUSH    {R3-R5,LR}
+  0x5a1b52: LDR     R3, [R0,#4]
+  0x5a1b54: LDR     R1, [R0,#8]
+  0x5a1b56: MOVS    R4, R0
+  0x5a1b58: CMP     R3, R1
+  0x5a1b5a: BGE     loc_5A1B64
+  0x5a1b5c: LDR     R2, [R0]
+  0x5a1b5e: LSLS    R1, R3, #2
+  0x5a1b60: LDR     R5, [R1,R2]
+  0x5a1b62: B       loc_5A1B8A
+  0x5a1b64: LDR     R3, [R0,#0xC]
+  0x5a1b66: CMP     R1, R3
+  0x5a1b68: BNE     loc_5A1B70
+  0x5a1b6a: ADDS    R1, #1; int
+  0x5a1b6c: BL      _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi; google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int)
+     ¡ú _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+  0x5a1b70: LDR     R3, [R4,#8]
+  0x5a1b72: MOVS    R0, #0x24 ; '$'; unsigned int
+  0x5a1b74: ADDS    R3, #1
+  0x5a1b76: STR     R3, [R4,#8]
+  0x5a1b78: BLX     _Znwj; operator new(uint)
+     ¡ú _Znwj
+  0x5a1b7c: MOVS    R5, R0
+  0x5a1b7e: BL      _ZN11ISeer20Comm10one_item_tC2Ev; ISeer20Comm::one_item_t::one_item_t(void)
+     ¡ú _ZN11ISeer20Comm10one_item_tC2Ev
+  0x5a1b82: LDR     R3, [R4,#4]
+  0x5a1b84: LDR     R2, [R4]
+  0x5a1b86: LSLS    R1, R3, #2
+  0x5a1b88: STR     R5, [R1,R2]
+  0x5a1b8a: ADDS    R3, #1
+  0x5a1b8c: MOVS    R0, R5
+  0x5a1b8e: STR     R3, [R4,#4]
+  0x5a1b90: POP     {R3-R5,PC}
+  0x5a1b92: MOVS    R0, R5
+  0x5a1b94: BLX     _ZdlPv; operator delete(void *)
+     ¡ú _ZdlPv
+  0x5a1b98: BLX     __cxa_end_cleanup
+     ¡ú __cxa_end_cleanup
+  0x5a1b9c: PUSH    {R4-R7,LR}
+  0x5a1b9e: SUB     SP, SP, #0x24
+  0x5a1ba0: MOVS    R5, R0
+  0x5a1ba2: MOVS    R4, R1
+  0x5a1ba4: CMP     R1, R0
+  0x5a1ba6: BNE     loc_5A1BCA
+  0x5a1ba8: LDR     R2, =(aJniIseerClasse_146 - 0x5A1BB2); "jni/../../iSeer/Classes/NetWorkManager/"...
+  0x5a1baa: MOVS    R1, #3
+  0x5a1bac: ADD     R0, SP, #0x38+var_28
+  0x5a1bae: ADD     R2, PC; "jni/../../iSeer/Classes/NetWorkManager/"...
+  0x5a1bb0: LDR     R3, =(stru_4F54.st_name+1)
+  0x5a1bb2: BL      _ZN6google8protobuf8internal10LogMessageC2ENS0_8LogLevelEPKci; google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel,char const*,int)
+     ¡ú _ZN6google8protobuf8internal10LogMessageC2ENS0_8LogLevelEPKci
+  0x5a1bb6: LDR     R1, =(aCheckFailedFro - 0x5A1BBE); "CHECK failed: (&from) != (this): "
+  0x5a1bb8: ADD     R0, SP, #0x38+var_28
+  0x5a1bba: ADD     R1, PC; "CHECK failed: (&from) != (this): "
+  0x5a1bbc: BL      _ZN6google8protobuf8internal10LogMessagelsEPKc; google::protobuf::internal::LogMessage::operator<<(char const*)
+     ¡ú _ZN6google8protobuf8internal10LogMessagelsEPKc
+  0x5a1bc0: MOVS    R1, R0; this
+  0x5a1bc2: ADD     R0, SP, #0x38+var_2C; int
+  0x5a1bc4: BL      _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE; google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage &)
+     ¡ú _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE
+  0x5a1bc8: B       loc_5A1C06
+  0x5a1bca: LDR     R1, [R5,#0xC]
+  0x5a1bcc: LDR     R3, [R4,#0xC]
+  0x5a1bce: MOVS    R7, R5
+  0x5a1bd0: ADDS    R7, #8
+  0x5a1bd2: ADDS    R1, R1, R3; int
+  0x5a1bd4: MOVS    R0, R7; this
+  0x5a1bd6: BL      _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi; google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int)
+     ¡ú _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+  0x5a1bda: MOVS    R6, #0
+  0x5a1bdc: B       loc_5A1BF4
+  0x5a1bde: LDR     R3, [R4,#8]
+  0x5a1be0: LSLS    R2, R6, #2
+

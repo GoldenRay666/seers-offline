@@ -9,34 +9,30 @@ function install() {
     if (!mod) return;
     base = mod.base;
 
-    // Hook getLastServerId
-    for (const exp of mod.enumerateExports()) {
-        if (exp.name.includes("getLastServerId") && exp.name.length < 50) {
-            Interceptor.attach(exp.address, {
-                onLeave(retval) {
-                    L(`[getLastServerId] returns ${retval} (0x${retval.toString(16)})`);
-                }
-            });
-            L(`[hook] getLastServerId @ ${exp.address.sub(base)}`);
-        }
-    }
-
-    // Hook the check_session handler entry to see the response fields
-    Interceptor.attach(base.add(0x62f0b4), {
-        onEnter(args) { L(`[checkSession handler] entered`); },
-        onLeave() { L(`[checkSession handler] done`); }
-    });
-
-    // Hook the comparison at 0x62f116
-    Interceptor.attach(base.add(0x62f116), {
+    // Hook server_role_t::Merge @ 0x5a1a96
+    Interceptor.attach(base.add(0x5a1a96), {
         onEnter(args) {
-            // At this point: R7 = getLastServerId(), R3 = local_server.online_id
-            L(`[COMPARE] getLastServerId() vs serverInfo.id`);
+            this.msg = args[0];
+            L(`[server_role Merge] ENTER msg=${this.msg}`);
+        },
+        onLeave(retval) {
+            L(`[server_role Merge] RETURN ${retval.toInt32()}`);
         }
     });
 
+    // Hook player_info_t::Merge @ 0x59f0bc
+    Interceptor.attach(base.add(0x59f0bc), {
+        onEnter(args) {
+            this.msg = args[0];
+            L(`[player_info Merge] ENTER msg=${this.msg}`);
+        },
+        onLeave(retval) {
+            L(`[player_info Merge] RETURN ${retval.toInt32()}`);
+        }
+    });
+
+    L(`[READY] 2 hooks`);
     done = 1;
-    L(`[READY]`);
 }
 setInterval(install, 1000);
 install();

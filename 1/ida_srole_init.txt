@@ -1,0 +1,96 @@
+// _ZNK11ISeer20Comm13server_role_t13IsInitializedEv @ 0x587794
+  0x587794: PUSH    {R3-R5,LR}
+  0x587796: MOVS    R4, R0
+  0x587798: LDR     R0, [R0,#0x30]
+  0x58779a: MOVS    R3, #1
+  0x58779c: ANDS    R0, R3
+  0x58779e: BEQ     locret_5877D8
+  0x5877a0: LDR     R0, [R4,#8]
+  0x5877a2: CMP     R0, #0
+  0x5877a4: BNE     loc_5877B0
+  0x5877a6: LDR     R3, =(_ZN11ISeer20Comm13server_role_t17default_instance_E_ptr - 0x5877AC)
+  0x5877a8: ADD     R3, PC; _ZN11ISeer20Comm13server_role_t17default_instance_E_ptr
+  0x5877aa: LDR     R3, [R3]; ISeer20Comm::server_role_t::default_instance_
+  0x5877ac: LDR     R3, [R3]; ISeer20Comm::server_role_t::default_instance_
+  0x5877ae: LDR     R0, [R3,#8]
+  0x5877b0: LDR     R3, [R0]
+  0x5877b2: MOVS    R5, #0
+  0x5877b4: LDR     R3, [R3,#0x14]
+  0x5877b6: BLX     R3
+  0x5877b8: CMP     R0, #0
+  0x5877ba: BNE     loc_5877D0
+  0x5877bc: B       locret_5877D8
+  0x5877be: LDR     R3, [R4,#0xC]
+  0x5877c0: LSLS    R2, R5, #2
+  0x5877c2: LDR     R0, [R2,R3]
+  0x5877c4: LDR     R3, [R0]
+  0x5877c6: LDR     R3, [R3,#0x14]
+  0x5877c8: BLX     R3
+  0x5877ca: CMP     R0, #0
+  0x5877cc: BEQ     locret_5877D8
+  0x5877ce: ADDS    R5, #1
+
+// _ZNK11ISeer20Comm13server_info_t13IsInitializedEv @ 0x5866e2
+  0x5866e2: LDR     R0, [R0,#0x2C]
+  0x5866e4: MOVS    R3, #7
+  0x5866e6: ANDS    R0, R3
+  0x5866e8: SUBS    R0, #7
+  0x5866ea: NEGS    R3, R0
+  0x5866ec: ADCS    R0, R3
+  0x5866ee: BX      LR
+  0x5866f0: STR     R1, [R0,#0x2C]
+  0x5866f2: BX      LR
+  0x5866f4: PUSH    {R3-R5,LR}
+  0x5866f6: MOVS    R4, R0
+  0x5866f8: MOVS    R5, R1
+  0x5866fa: CMP     R1, R0
+  0x5866fc: BEQ     locret_58670E
+  0x5866fe: LDR     R3, [R0]
+  0x586700: LDR     R3, [R3,#0x10]
+  0x586702: BLX     R3
+  0x586704: LDR     R3, [R4]
+  0x586706: MOVS    R0, R4
+  0x586708: MOVS    R1, R5
+  0x58670a: LDR     R3, [R3,#0x38]
+  0x58670c: BLX     R3
+  0x58670e: POP     {R3-R5,PC}
+  0x586710: STR     R1, [R0,#0x10]
+  0x586712: BX      LR
+  0x586714: PUSH    {R3-R5,LR}
+  0x586716: MOVS    R4, R0
+  0x586718: MOVS    R5, R1
+  0x58671a: CMP     R1, R0
+  0x58671c: BEQ     locret_58672E
+
+// _ZNK14ISeer20CSProto37cli_get_server_list_out_server_info_t13IsInitializedEv @ 0x5aab4c
+  0x5aab4c: LDR     R0, [R0,#0x18]
+  0x5aab4e: MOVS    R3, #7
+  0x5aab50: ANDS    R0, R3
+  0x5aab52: SUBS    R0, #7
+  0x5aab54: NEGS    R3, R0
+  0x5aab56: ADCS    R0, R3
+  0x5aab58: BX      LR
+  0x5aab5a: STR     R1, [R0,#0x30]
+  0x5aab5c: BX      LR
+  0x5aab5e: PUSH    {R3-R5,LR}
+  0x5aab60: MOVS    R4, R0
+  0x5aab62: MOVS    R5, R1
+  0x5aab64: CMP     R1, R0
+  0x5aab66: BEQ     locret_5AAB78
+  0x5aab68: LDR     R3, [R0]
+  0x5aab6a: LDR     R3, [R3,#0x10]
+  0x5aab6c: BLX     R3
+  0x5aab6e: LDR     R3, [R4]
+  0x5aab70: MOVS    R0, R4
+  0x5aab72: MOVS    R1, R5
+  0x5aab74: LDR     R3, [R3,#0x38]
+  0x5aab76: BLX     R3
+  0x5aab78: POP     {R3-R5,PC}
+  0x5aab7a: STR     R1, [R0,#8]
+  0x5aab7c: BX      LR
+  0x5aab7e: PUSH    {R3-R5,LR}
+  0x5aab80: MOVS    R4, R0
+  0x5aab82: MOVS    R5, R1
+  0x5aab84: CMP     R1, R0
+  0x5aab86: BEQ     locret_5AAB98
+

@@ -161,26 +161,22 @@ function buildServerListResponse() {
 }
 
 function buildCheckSessionResponse(withRole) {
-    // cli_check_session_out {
-    //   f1: {
-    //     f1: server_info_t { f1:id, f2:name, f3:status }
-    //     f2: role_info? { ... }
-    //   }
-    // }
+    const serverIp = (1 << 24) | 127;
     const serverInfo = Buffer.concat([
         encodeUint32(1, 1),
-        encodeString(2, "Offline Server"),
-        encodeUint32(3, 1),
+        encodeUint32(2, serverIp),
+        encodeUint32(3, 8002),
     ]);
     let serverRole = encodeMessage(1, serverInfo);
     if (withRole) {
         const role = getLastRole(1);
         if (role) {
+            // TEST: f1+f2 + sentinel 0x00 — Merge exits cleanly, IsInitialized mask&3==3
+            const roleTmBytes = encodeVarint(role.roleTm);
             const roleInfo = Buffer.concat([
-                encodeUint32(1, role.uid || 1),
-                encodeUint32(2, role.roleTm),
-                encodeString(3, role.nick),
-                encodeUint32(6, role.gender || 1),
+                Buffer.from([0x08, 0x01]),           // f1: uid=1
+                Buffer.concat([Buffer.from([0x10]), roleTmBytes]),  // f2: roleTm
+                Buffer.from([0x00]),                  // sentinel: end-of-stream
             ]);
             serverRole = Buffer.concat([serverRole, encodeMessage(2, roleInfo)]);
         }
@@ -747,8 +743,8 @@ function buildResponse(cmd, fields, socket) {
 
     // ---- Auth & Session ----
     if (cmd.includes('check_session') || cmd.includes('recheck_session')) {
-        // Only recheck includes role info (todo: fix check_session role format for direct login)
-        const withRole = cmd.includes('recheck') && STATE.roles[1] && STATE.roles[1].length > 0;
+        // TEST: withRole always on when roles exist
+        const withRole = STATE.roles[1] && STATE.roles[1].length > 0;
         const resp = buildCheckSessionResponse(withRole);
         console.log(`[SESSION] ${cmd.includes('recheck')?'recheck':'check'} withRole=${withRole} body=${resp.length}B`);
         return resp;
@@ -808,6 +804,13 @@ function buildResponse(cmd, fields, socket) {
     }
 
     if (cmd.includes('login_in')) {
+        // Push map entry before login_out so map loads during animation
+        const role = getLastRole(1);
+        if (role) {
+            pushMessage(socket, 'ISeer20CSProto.player_enter_map_out',
+                buildPlayerEnterMapOut(10001, role.nick, role.roleTm, role.gender),
+                socket._lastF3 || 1, 0, 0);
+        }
         return buildLoginResponse();
     }
 

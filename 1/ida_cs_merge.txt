@@ -1,0 +1,228 @@
+// _ZN14ISeer20CSProto21cli_check_session_out27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE @ 0x60d43c
+  0x60d43c: PUSH    {R0-R2,R4-R7,LR}
+  0x60d43e: ADDS    R3, R0, #4
+  0x60d440: MOVS    R6, R0
+  0x60d442: MOVS    R4, R1
+  0x60d444: MOVS    R5, #7
+  0x60d446: STR     R3, [SP,#0x20+var_1C]
+  0x60d448: B       loc_60D4A2
+  0x60d44a: LSRS    R3, R1, #3
+  0x60d44c: CMP     R3, #1
+  0x60d44e: BNE     loc_60D48E
+  0x60d450: MOVS    R3, R1
+  0x60d452: ANDS    R3, R5
+  0x60d454: CMP     R3, #2
+  0x60d456: BNE     loc_60D48E
+  0x60d458: MOVS    R7, R6
+  0x60d45a: ADDS    R7, #8
+  0x60d45c: MOVS    R0, R7
+  0x60d45e: BL      _ZN6google8protobuf8internal20RepeatedPtrFieldBase3AddINS0_16RepeatedPtrFieldIN11ISeer20Comm13server_role_tEE11TypeHandlerEEEPNT_4TypeEv; google::protobuf::internal::RepeatedPtrFieldBase::Add<google::protobuf::RepeatedPtrField<ISeer20Comm::server_role_t>::TypeHandler>(void)
+     ¡ú _ZN6google8protobuf8internal20RepeatedPtrFieldBase3AddINS0_16RepeatedPtrFieldIN11ISeer20Comm13server_role_tEE11TypeHandlerEEEPNT_4TypeEv
+  0x60d462: MOVS    R1, R0
+  0x60d464: MOVS    R0, R4
+  0x60d466: BL      _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13server_role_tEEEbPNS0_2io16CodedInputStreamEPT_; google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual<ISeer20Comm::server_role_t>(google::protobuf::io::CodedInputStream *,ISeer20Comm::server_role_t *)
+     ¡ú _ZN6google8protobuf8internal14WireFormatLite20ReadMessageNoVirtualIN11ISeer20Comm13server_role_tEEEbPNS0_2io16CodedInputStreamEPT_
+  0x60d46a: CMP     R0, #0
+  0x60d46c: BEQ     locret_60D4C8
+  0x60d46e: LDR     R3, [R4,#4]
+  0x60d470: LDR     R2, [R4,#8]
+  0x60d472: CMP     R3, R2
+  0x60d474: BCS     loc_60D482
+  0x60d476: LDRB    R2, [R3]
+  0x60d478: CMP     R2, #0xA
+  0x60d47a: BNE     loc_60D482
+  0x60d47c: ADDS    R3, #1
+  0x60d47e: STR     R3, [R4,#4]
+  0x60d480: B       loc_60D45C
+  0x60d482: MOVS    R0, R4; this
+  0x60d484: BL      _ZN6google8protobuf2io16CodedInputStream11ExpectAtEndEv; google::protobuf::io::CodedInputStream::ExpectAtEnd(void)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream11ExpectAtEndEv
+  0x60d488: CMP     R0, #0
+  0x60d48a: BEQ     loc_60D4A2
+  0x60d48c: B       loc_60D4C6
+  0x60d48e: MOVS    R3, R1
+  0x60d490: ANDS    R3, R5; google::protobuf::UnknownFieldSet *
+  0x60d492: CMP     R3, #4
+  0x60d494: BEQ     loc_60D4C6
+  0x60d496: MOVS    R0, R4; this
+  0x60d498: LDR     R2, [SP,#0x20+var_1C]; google::protobuf::UnknownFieldSet *
+  0x60d49a: BL      _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE; google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream *,uint,google::protobuf::UnknownFieldSet *)
+     ¡ú _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE
+  0x60d49e: CMP     R0, #0
+  0x60d4a0: BEQ     locret_60D4C8
+  0x60d4a2: LDR     R3, [R4,#4]
+  0x60d4a4: LDR     R2, [R4,#8]
+  0x60d4a6: CMP     R3, R2
+  0x60d4a8: BCS     loc_60D4B8
+  0x60d4aa: LDRB    R1, [R3]
+  0x60d4ac: LSLS    R2, R1, #0x18
+  0x60d4ae: BMI     loc_60D4B8
+  0x60d4b0: ADDS    R3, #1
+  0x60d4b2: STR     R1, [R4,#0x14]
+  0x60d4b4: STR     R3, [R4,#4]
+  0x60d4b6: B       loc_60D4C2
+  0x60d4b8: MOVS    R0, R4; this
+  0x60d4ba: BL      _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv; google::protobuf::io::CodedInputStream::ReadTagFallback(void)
+     ¡ú _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv
+  0x60d4be: MOVS    R1, R0; google::protobuf::io::CodedInputStream *
+  0x60d4c0: STR     R0, [R4,#0x14]
+  0x60d4c2: CMP     R1, #0
+  0x60d4c4: BNE     loc_60D44A
+  0x60d4c6: MOVS    R0, #1
+  0x60d4c8: POP     {R1-R7,PC}
+  0x60d4ca: ALIGN 4
+  0x60d4cc: PUSH    {R4-R7,LR}
+  0x60d4ce: SUB     SP, SP, #0x24
+  0x60d4d0: MOVS    R5, R0
+  0x60d4d2: MOVS    R4, R1
+  0x60d4d4: CMP     R1, R0
+  0x60d4d6: BNE     loc_60D4FA
+  0x60d4d8: LDR     R2, =(aJniIseerClasse_147 - 0x60D4E2); "jni/../../iSeer/Classes/NetWorkManager/"...
+  0x60d4da: MOVS    R1, #3
+  0x60d4dc: ADD     R0, SP, #0x38+var_28
+  0x60d4de: ADD     R2, PC; "jni/../../iSeer/Classes/NetWorkManager/"...
+  0x60d4e0: LDR     R3, =0x29A3
+  0x60d4e2: BL      _ZN6google8protobuf8internal10LogMessageC2ENS0_8LogLevelEPKci; google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel,char const*,int)
+     ¡ú _ZN6google8protobuf8internal10LogMessageC2ENS0_8LogLevelEPKci
+  0x60d4e6: LDR     R1, =(aCheckFailedFro - 0x60D4EE); "CHECK failed: (&from) != (this): "
+  0x60d4e8: ADD     R0, SP, #0x38+var_28
+  0x60d4ea: ADD     R1, PC; "CHECK failed: (&from) != (this): "
+  0x60d4ec: BL      _ZN6google8protobuf8internal10LogMessagelsEPKc; google::protobuf::internal::LogMessage::operator<<(char const*)
+     ¡ú _ZN6google8protobuf8internal10LogMessagelsEPKc
+  0x60d4f0: MOVS    R1, R0; this
+  0x60d4f2: ADD     R0, SP, #0x38+var_2C; int
+  0x60d4f4: BL      _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE; google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage &)
+     ¡ú _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE
+  0x60d4f8: B       loc_60D536
+  0x60d4fa: LDR     R1, [R5,#0xC]
+  0x60d4fc: LDR     R3, [R4,#0xC]
+  0x60d4fe: MOVS    R7, R5
+  0x60d500: ADDS    R7, #8
+  0x60d502: ADDS    R1, R1, R3; int
+  0x60d504: MOVS    R0, R7; this
+  0x60d506: BL      _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi; google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int)
+     ¡ú _ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEi
+  0x60d50a: MOVS    R6, #0
+  0x60d50c: B       loc_60D524
+  0x60d50e: LDR     R3, [R4,#8]
+  0x60d510: LSLS    R2, R6, #2
+  0x60d512: MOVS    R0, R7
+  0x60d514: LDR     R2, [R2,R3]
+  0x60d516: ADDS    R6, #1
+  0x60d518: STR     R2, [SP,#0x38+var_34]
+  0x60d51a: BL      _ZN6google8protobuf8internal20RepeatedPtrFieldBase3AddINS0_16RepeatedPtrFieldIN11ISeer20Comm13server_role_tEE11TypeHandlerEEEPNT_4TypeEv; google::protobuf::internal::RepeatedPtrFieldBase::Add<google::protobuf::RepeatedPtrField<ISeer20Comm::server_role_t>::TypeHandler>(void)
+     ¡ú _ZN6google8protobuf8internal20RepeatedPtrFieldBase3AddINS0_16RepeatedPtrFieldIN11ISeer20Comm13server_role_tEE11TypeHandlerEEEPNT_4TypeEv
+  0x60d51e: LDR     R1, [SP,#0x38+var_34]; ISeer20Comm::server_role_t *
+  0x60d520: BL      _ZN11ISeer20Comm13server_role_t9MergeFromERKS0_; ISeer20Comm::server_role_t::MergeFrom(ISeer20Comm::server_role_t const&)
+     ¡ú _ZN11ISeer20Comm13server_role_t9MergeFromERKS0_
+  0x60d524: LDR     R3, [R4,#0xC]
+  0x60d526: CMP     R6, R3
+  0x60d528: BLT     loc_60D50E
+     ¡ú loc_60D50E
+  0x60d52a: ADDS    R0, R5, #4; this
+  0x60d52c: ADDS    R1, R4, #4; google::protobuf::UnknownFieldSet *
+  0x60d52e: BL      _ZN6google8protobuf15UnknownFieldSet9MergeFromERKS1_; google::protobuf::UnknownFieldSet::MergeFrom(google::protobuf::UnknownFieldSet const&)
+     ¡ú _ZN6google8protobuf15UnknownFieldSet9MergeFromERKS1_
+  0x60d532: ADD     SP, SP, #0x24 ; '$'
+  0x60d534: POP     {R4-R7,PC}
+  0x60d536: ADD     R0, SP, #0x38+var_28; this
+  0x60d538: BL      _ZN6google8protobuf8internal10LogMessageD2Ev; google::protobuf::internal::LogMessage::~LogMessage()
+     ¡ú _ZN6google8protobuf8internal10LogMessageD2Ev
+  0x60d53c: B       loc_60D4FA
+  0x60d53e: ADD     R0, SP, #0x10
+  0x60d540: BL      _ZN6google8protobuf8internal10LogMessageD2Ev; google::protobuf::internal::LogMessage::~LogMessage()
+     ¡ú _ZN6google8protobuf8internal10LogMessageD2Ev
+  0x60d544: BLX     __cxa_end_cleanup
+     ¡ú __cxa_end_cleanup
+  0x60d548: DCD aJniIseerClasse_147 - 0x60D4E2
+  0x60d54c: DCD 0x29A3
+  0x60d550: DCD aCheckFailedFro - 0x60D4EE
+  0x60d554: PUSH    {R3-R5,LR}
+  0x60d556: MOVS    R4, R0
+  0x60d558: MOVS    R5, R1
+  0x60d55a: CMP     R1, R0
+  0x60d55c: BEQ     locret_60D56C
+  0x60d55e: LDR     R3, [R0]
+  0x60d560: LDR     R3, [R3,#0x10]
+  0x60d562: BLX     R3
+  0x60d564: MOVS    R0, R4; this
+  0x60d566: MOVS    R1, R5; ISeer20CSProto::cli_check_session_out *
+  0x60d568: BL      _ZN14ISeer20CSProto21cli_check_session_out9MergeFromERKS0_; ISeer20CSProto::cli_check_session_out::MergeFrom(ISeer20CSProto::cli_check_session_out const&)
+     ¡ú _ZN14ISeer20CSProto21cli_check_session_out9MergeFromERKS0_
+  0x60d56c: POP     {R3-R5,PC}
+  0x60d56e: ALIGN 0x10
+  0x60d570: PUSH    {R4,R5,LR}
+  0x60d572: SUB     SP, SP, #0x1C
+  0x60d574: MOVS    R5, R0
+  0x60d576: MOVS    R4, R1
+  0x60d578: CMP     R1, R0
+  0x60d57a: BNE     loc_60D59E
+  0x60d57c: LDR     R2, =(aJniIseerClasse_147 - 0x60D586); "jni/../../iSeer/Classes/NetWorkManager/"...
+  0x60d57e: MOVS    R1, #3
+  0x60d580: ADD     R0, SP, #0x28+var_20
+  0x60d582: ADD     R2, PC; "jni/../../iSeer/Classes/NetWorkManager/"...
+  0x60d584: LDR     R3, =0x2997
+  0x60d586: BL      _ZN6google8protobuf8internal10LogMessageC2ENS0_8LogLevelEPKci; google::protobuf::internal::LogMessage::LogMessage(google::protobuf::LogLevel,char const*,int)
+     ¡ú _ZN6google8protobuf8internal10LogMessageC2ENS0_8LogLevelEPKci
+  0x60d58a: LDR     R1, =(aCheckFailedFro - 0x60D592); "CHECK failed: (&from) != (this): "
+  0x60d58c: ADD     R0, SP, #0x28+var_20
+  0x60d58e: ADD     R1, PC; "CHECK failed: (&from) != (this): "
+  0x60d590: BL      _ZN6google8protobuf8internal10LogMessagelsEPKc; google::protobuf::internal::LogMessage::operator<<(char const*)
+     ¡ú _ZN6google8protobuf8internal10LogMessagelsEPKc
+  0x60d594: MOVS    R1, R0; this
+  0x60d596: ADD     R0, SP, #0x28+var_24; int
+  0x60d598: BL      _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE; google::protobuf::internal::LogFinisher::operator=(google::protobuf::internal::LogMessage &)
+     ¡ú _ZN6google8protobuf8internal11LogFinisheraSERNS1_10LogMessageE
+  0x60d59c: B       loc_60D5CC
+  0x60d59e: CMP     R4, #0
+  0x60d5a0: BEQ     loc_60D5BA
+  0x60d5a2: LDR     R1, =(_ZTIN6google8protobuf7MessageE_ptr - 0x60D5AC)
+  0x60d5a4: LDR     R2, =(_ZTIN14ISeer20CSProto21cli_check_session_outE_ptr - 0x60D5AE)
+  0x60d5a6: MOVS    R0, R4; lpsrc
+  0x60d5a8: ADD     R1, PC; _ZTIN6google8protobuf7MessageE_ptr
+  0x60d5aa: ADD     R2, PC; _ZTIN14ISeer20CSProto21cli_check_session_outE_ptr
+  0x60d5ac: LDR     R1, [R1]; lpstype
+  0x60d5ae: LDR     R2, [R2]; lpdtype
+  0x60d5b0: MOVS    R3, #0; s2d
+  0x60d5b2: BLX     __dynamic_cast
+     ¡ú __dynamic_cast
+  0x60d5b6: SUBS    R1, R0, #0; ISeer20CSProto::cli_check_session_out *
+  0x60d5b8: BNE     loc_60D5C4
+  0x60d5ba: MOVS    R0, R4; this
+  0x60d5bc: MOVS    R1, R5; google::protobuf::Message *
+  0x60d5be: BL      _ZN6google8protobuf8internal13ReflectionOps5MergeERKNS0_7MessageEPS3_; google::protobuf::internal::ReflectionOps::Merge(google::protobuf::Message const&,google::protobuf::Message*)
+     ¡ú _ZN6google8protobuf8internal13ReflectionOps5MergeERKNS0_7MessageEPS3_
+  0x60d5c2: B       loc_60D5DE
+  0x60d5c4: MOVS    R0, R5; this
+  0x60d5c6: BL      _ZN14ISeer20CSProto21cli_check_session_out9MergeFromERKS0_; ISeer20CSProto::cli_check_session_out::MergeFrom(ISeer20CSProto::cli_check_session_out const&)
+     ¡ú _ZN14ISeer20CSProto21cli_check_session_out9MergeFromERKS0_
+  0x60d5ca: B       loc_60D5DE
+  0x60d5cc: ADD     R0, SP, #0x28+var_20; this
+  0x60d5ce: BL      _ZN6google8protobuf8internal10LogMessageD2Ev; google::protobuf::internal::LogMessage::~LogMessage()
+     ¡ú _ZN6google8protobuf8internal10LogMessageD2Ev
+  0x60d5d2: B       loc_60D59E
+  0x60d5d4: ADD     R0, SP, #0x28+var_20; this
+  0x60d5d6: BL      _ZN6google8protobuf8internal10LogMessageD2Ev; google::protobuf::internal::LogMessage::~LogMessage()
+     ¡ú _ZN6google8protobuf8internal10LogMessageD2Ev
+  0x60d5da: BLX     __cxa_end_cleanup
+     ¡ú __cxa_end_cleanup
+  0x60d5de: ADD     SP, SP, #0x1C
+  0x60d5e0: POP     {R4,R5,PC}
+  0x60d5e2: ALIGN 4
+  0x60d5e4: DCD aJniIseerClasse_147 - 0x60D586
+  0x60d5e8: DCD 0x2997
+  0x60d5ec: DCD aCheckFailedFro - 0x60D592
+  0x60d5f0: DCD _ZTIN6google8protobuf7MessageE_ptr - 0x60D5AC
+  0x60d5f4: DCD _ZTIN14ISeer20CSProto21cli_check_session_outE_ptr - 0x60D5AE
+  0x60d5f8: PUSH    {R3-R5,LR}
+  0x60d5fa: LDR     R3, [R0,#4]
+  0x60d5fc: LDR     R1, [R0,#8]
+  0x60d5fe: MOVS    R4, R0
+  0x60d600: CMP     R3, R1
+  0x60d602: BGE     loc_60D60C
+  0x60d604: LDR     R2, [R0]
+  0x60d606: LSLS    R1, R3, #2
+  0x60d608: LDR     R5, [R1,R2]
+  0x60d60a: B       loc_60D632
+  0x60d60c: LDR     R3, [R0,#0xC]
+

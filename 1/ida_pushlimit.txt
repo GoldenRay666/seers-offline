@@ -1,0 +1,118 @@
+// _ZN6google8protobuf2io16CodedInputStream9PushLimitEi @ 0x888854
+  0x888854: PUSH    {R3-R7,LR}
+  0x888856: LDR     R5, [R0,#0xC]
+  0x888858: LDR     R7, [R0,#8]
+  0x88885a: LDR     R2, [R0,#4]
+  0x88885c: LDR     R6, [R0,#0x20]
+  0x88885e: LDR     R4, [R0,#0x1C]
+  0x888860: LDR     R3, =0x7FFFFFFF
+  0x888862: CMP     R1, #0
+  0x888864: BLT     loc_888878
+  0x888866: SUBS    R2, R7, R2
+  0x888868: ADDS    R2, R2, R6
+  0x88886a: SUBS    R2, R5, R2
+  0x88886c: SUBS    R5, R3, R2
+  0x88886e: CMP     R1, R5
+  0x888870: BGT     loc_888878
+  0x888872: ADDS    R1, R2, R1
+  0x888874: STR     R1, [R0,#0x1C]
+  0x888876: B       loc_88887A
+  0x888878: STR     R3, [R0,#0x1C]
+  0x88887a: LDR     R3, [R0,#0x1C]
+  0x88887c: CMP     R3, R4
+  0x88887e: BLE     loc_888882
+  0x888880: MOVS    R3, R4
+  0x888882: STR     R3, [R0,#0x1C]
+  0x888884: BL      _ZN6google8protobuf2io16CodedInputStream21RecomputeBufferLimitsEv; google::protobuf::io::CodedInputStream::RecomputeBufferLimits(void)
+  0x888888: MOVS    R0, R4
+  0x88888a: POP     {R3-R7,PC}
+  0x88888c: DCD 0x7FFFFFFF
+  0x888890: PUSH    {R4,LR}
+  0x888892: STR     R1, [R0,#0x1C]
+  0x888894: MOVS    R4, R0
+  0x888896: BL      _ZN6google8protobuf2io16CodedInputStream21RecomputeBufferLimitsEv; google::protobuf::io::CodedInputStream::RecomputeBufferLimits(void)
+  0x88889a: MOVS    R3, #0
+  0x88889c: STRB    R3, [R4,#0x18]
+  0x88889e: POP     {R4,PC}
+  0x8888a0: LDR     R3, [R0,#0x1C]
+  0x8888a2: LDR     R2, =0x7FFFFFFF
+  0x8888a4: CMP     R3, R2
+  0x8888a6: BEQ     loc_8888BA
+  0x8888a8: LDR     R1, [R0,#8]
+  0x8888aa: LDR     R2, [R0,#4]
+  0x8888ac: SUBS    R2, R1, R2
+  0x8888ae: LDR     R1, [R0,#0x20]
+  0x8888b0: LDR     R0, [R0,#0xC]
+  0x8888b2: ADDS    R2, R2, R1
+  0x8888b4: SUBS    R0, R0, R2
+  0x8888b6: SUBS    R0, R3, R0
+  0x8888b8: B       locret_8888BE
+  0x8888ba: MOVS    R0, #1
+  0x8888bc: NEGS    R0, R0
+  0x8888be: BX      LR
+  0x8888c0: DCD 0x7FFFFFFF
+  0x8888c4: PUSH    {R4,LR}
+  0x8888c6: LDR     R4, [R0,#8]
+  0x8888c8: LDR     R3, [R0,#4]
+  0x8888ca: SUBS    R3, R4, R3
+  0x8888cc: LDR     R4, [R0,#0x20]
+  0x8888ce: ADDS    R3, R3, R4
+  0x8888d0: LDR     R4, [R0,#0xC]
+  0x8888d2: SUBS    R3, R4, R3
+
+// _ZN6google8protobuf2io16CodedInputStream11ReadTagSlowEv @ 0x888cc6
+  0x888cc6: PUSH    {R0,R1,R4,LR}
+  0x888cc8: LDR     R2, [R0,#4]
+  0x888cca: LDR     R3, [R0,#8]
+  0x888ccc: MOVS    R4, R0
+  0x888cce: CMP     R2, R3
+  0x888cd0: BNE     loc_888CF6
+  0x888cd2: BL      _ZN6google8protobuf2io16CodedInputStream7RefreshEv; google::protobuf::io::CodedInputStream::Refresh(void)
+  0x888cd6: CMP     R0, #0
+  0x888cd8: BNE     loc_888CF6
+  0x888cda: LDR     R1, [R4,#0xC]
+  0x888cdc: LDR     R2, [R4,#0x20]
+  0x888cde: LDR     R3, [R4,#0x24]
+  0x888ce0: SUBS    R2, R1, R2
+  0x888ce2: CMP     R2, R3
+  0x888ce4: BLT     loc_888CF0
+  0x888ce6: LDR     R2, [R4,#0x1C]
+  0x888ce8: SUBS    R3, R2, R3
+  0x888cea: NEGS    R2, R3
+  0x888cec: ADCS    R3, R2
+  0x888cee: B       loc_888CF2
+  0x888cf0: MOVS    R3, #1
+  0x888cf2: STRB    R3, [R4,#0x18]
+  0x888cf4: B       locret_888D1A
+  0x888cf6: LDR     R3, [R4,#4]
+  0x888cf8: LDR     R2, [R4,#8]
+  0x888cfa: CMP     R3, R2
+  0x888cfc: BCS     loc_888D0C
+  0x888cfe: LDRB    R2, [R3]
+  0x888d00: LSLS    R1, R2, #0x18
+  0x888d02: BMI     loc_888D0C
+  0x888d04: ADDS    R3, #1
+  0x888d06: STR     R2, [SP,#0x10+var_10]
+  0x888d08: STR     R3, [R4,#4]
+  0x888d0a: B       loc_888D18
+  0x888d0c: MOVS    R0, R4; this
+  0x888d0e: MOV     R1, SP; unsigned __int64 *
+  0x888d10: BL      _ZN6google8protobuf2io16CodedInputStream20ReadVarint64FallbackEPy; google::protobuf::io::CodedInputStream::ReadVarint64Fallback(ulong long *)
+  0x888d14: CMP     R0, #0
+  0x888d16: BEQ     locret_888D1A
+  0x888d18: LDR     R0, [SP,#0x10+var_10]
+  0x888d1a: POP     {R1,R2,R4,PC}
+  0x888d1c: PUSH    {R4-R6,LR}
+  0x888d1e: LDR     R2, [R0,#8]
+  0x888d20: LDR     R3, [R0,#4]
+  0x888d22: SUBS    R1, R2, R3
+  0x888d24: CMP     R1, #9
+  0x888d26: BGT     loc_888D34
+  0x888d28: CMP     R2, R3
+  0x888d2a: BLS     loc_888DC6
+  0x888d2c: SUBS    R1, R2, #1
+  0x888d2e: LDRB    R1, [R1]
+  0x888d30: CMP     R1, #0x7F
+  0x888d32: BHI     loc_888DC6
+  0x888d34: LDRB    R6, [R3]
+  0x888d36: MOVS    R5, #0x7F

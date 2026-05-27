@@ -1,0 +1,160 @@
+// _ZN11ISeer20Comm24functional_switch_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE @ 0x5878a0
+  0x5878a0: PUSH    {R3-R7,LR}
+  0x5878a2: MOVS    R5, R0
+  0x5878a4: MOVS    R4, R1
+  0x5878a6: MOVS    R6, #7
+  0x5878a8: ADDS    R7, R0, #4
+     ;; offset: +0x4
+  0x5878aa: B       loc_587C38
+  0x5878ac: LSRS    R0, R1, #3
+  0x5878ae: SUBS    R0, #1; switch 16 cases
+  0x5878b0: CMP     R0, #0xF
+  0x5878b2: BLS     loc_5878B6
+     => loc_5878B6
+  0x5878b4: B       def_5878B6; jumptable 005878B6 default case
+  0x5878b6: BL      __gnu_thumb1_case_uhi; switch jump
+     => __gnu_thumb1_case_uhi
+  0x5878ba: DCW 0x10; jump table for switch statement
+  0x5878bc: DCW 0x2B
+  0x5878be: DCW 0x46
+  0x5878c0: DCW 0x61
+  0x5878c2: DCW 0x7C
+  0x5878c4: DCW 0x97
+  0x5878c6: DCW 0xB2
+  0x5878c8: DCW 0xCD
+  0x5878ca: DCW 0xE8
+  0x5878cc: DCW 0x104
+  0x5878ce: DCW 0x120
+  0x5878d0: DCW 0x13C
+  0x5878d2: DCW 0x155
+  0x5878d4: DCW 0x16D
+  0x5878d6: DCW 0x185
+  0x5878d8: DCW 0x1A1
+  0x5878da: TST     R1, R6; jumptable 005878B6 case 1
+  0x5878dc: BEQ     loc_5878E0
+  0x5878de: B       def_5878B6; jumptable 005878B6 default case
+  0x5878e0: MOVS    R1, R5
+  0x5878e2: ADDS    R1, #8; unsigned int *
+  0x5878e4: MOVS    R0, R4; this
+  0x5878e6: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     => _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x5878ea: CMP     R0, #0
+  0x5878ec: BNE     loc_5878F0
+  0x5878ee: B       locret_587C60
+  0x5878f0: LDR     R3, [R5,#0x4C]
+  0x5878f2: MOVS    R2, #1
+  0x5878f4: ORRS    R3, R2
+  0x5878f6: STR     R3, [R5,#0x4C]
+  0x5878f8: LDR     R3, [R4,#4]
+  0x5878fa: LDR     R2, [R4,#8]
+  0x5878fc: CMP     R3, R2
+  0x5878fe: BCC     loc_587902
+  0x587900: B       loc_587C38
+  0x587902: LDRB    R2, [R3]
+  0x587904: CMP     R2, #0x10
+  0x587906: BEQ     loc_58790A
+  0x587908: B       loc_587C38
+  0x58790a: ADDS    R3, #1
+  0x58790c: STR     R3, [R4,#4]
+  0x58790e: B       loc_587916
+  0x587910: TST     R1, R6; jumptable 005878B6 case 2
+  0x587912: BEQ     loc_587916
+  0x587914: B       def_5878B6; jumptable 005878B6 default case
+  0x587916: MOVS    R1, R5
+  0x587918: ADDS    R1, #0xC; unsigned int *
+  0x58791a: MOVS    R0, R4; this
+  0x58791c: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     => _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x587920: CMP     R0, #0
+  0x587922: BNE     loc_587926
+  0x587924: B       locret_587C60
+  0x587926: LDR     R3, [R5,#0x4C]
+  0x587928: MOVS    R2, #2
+  0x58792a: ORRS    R3, R2
+  0x58792c: STR     R3, [R5,#0x4C]
+  0x58792e: LDR     R3, [R4,#4]
+  0x587930: LDR     R2, [R4,#8]
+  0x587932: CMP     R3, R2
+  0x587934: BCC     loc_587938
+  0x587936: B       loc_587C38
+  0x587938: LDRB    R2, [R3]
+  0x58793a: CMP     R2, #0x18
+  0x58793c: BEQ     loc_587940
+  0x58793e: B       loc_587C38
+  0x587940: ADDS    R3, #1
+  0x587942: STR     R3, [R4,#4]
+  0x587944: B       loc_58794C
+  0x587946: TST     R1, R6; jumptable 005878B6 case 3
+  0x587948: BEQ     loc_58794C
+  0x58794a: B       def_5878B6; jumptable 005878B6 default case
+  0x58794c: MOVS    R1, R5
+  0x58794e: ADDS    R1, #0x10; unsigned int *
+  0x587950: MOVS    R0, R4; this
+  0x587952: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     => _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x587956: CMP     R0, #0
+  0x587958: BNE     loc_58795C
+  0x58795a: B       locret_587C60
+  0x58795c: LDR     R3, [R5,#0x4C]
+  0x58795e: MOVS    R2, #4
+  0x587960: ORRS    R3, R2
+  0x587962: STR     R3, [R5,#0x4C]
+  0x587964: LDR     R3, [R4,#4]
+  0x587966: LDR     R2, [R4,#8]
+  0x587968: CMP     R3, R2
+  0x58796a: BCC     loc_58796E
+  0x58796c: B       loc_587C38
+  0x58796e: LDRB    R2, [R3]
+  0x587970: CMP     R2, #0x20 ; ' '
+  0x587972: BEQ     loc_587976
+  0x587974: B       loc_587C38
+  0x587976: ADDS    R3, #1
+  0x587978: STR     R3, [R4,#4]
+  0x58797a: B       loc_587982
+  0x58797c: TST     R1, R6; jumptable 005878B6 case 4
+  0x58797e: BEQ     loc_587982
+  0x587980: B       def_5878B6; jumptable 005878B6 default case
+  0x587982: MOVS    R1, R5
+  0x587984: ADDS    R1, #0x14; unsigned int *
+  0x587986: MOVS    R0, R4; this
+  0x587988: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     => _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x58798c: CMP     R0, #0
+  0x58798e: BNE     loc_587992
+  0x587990: B       locret_587C60
+  0x587992: LDR     R3, [R5,#0x4C]
+  0x587994: MOVS    R2, #8
+  0x587996: ORRS    R3, R2
+  0x587998: STR     R3, [R5,#0x4C]
+  0x58799a: LDR     R3, [R4,#4]
+  0x58799c: LDR     R2, [R4,#8]
+  0x58799e: CMP     R3, R2
+  0x5879a0: BCC     loc_5879A4
+  0x5879a2: B       loc_587C38
+  0x5879a4: LDRB    R2, [R3]
+  0x5879a6: CMP     R2, #0x28 ; '('
+  0x5879a8: BEQ     loc_5879AC
+  0x5879aa: B       loc_587C38
+  0x5879ac: ADDS    R3, #1
+  0x5879ae: STR     R3, [R4,#4]
+  0x5879b0: B       loc_5879B8
+  0x5879b2: TST     R1, R6; jumptable 005878B6 case 5
+  0x5879b4: BEQ     loc_5879B8
+  0x5879b6: B       def_5878B6; jumptable 005878B6 default case
+  0x5879b8: MOVS    R1, R5
+  0x5879ba: ADDS    R1, #0x18; unsigned int *
+  0x5879bc: MOVS    R0, R4; this
+  0x5879be: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     => _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x5879c2: CMP     R0, #0
+  0x5879c4: BNE     loc_5879C8
+  0x5879c6: B       locret_587C60
+  0x5879c8: LDR     R3, [R5,#0x4C]
+  0x5879ca: MOVS    R2, #0x10
+  0x5879cc: ORRS    R3, R2
+  0x5879ce: STR     R3, [R5,#0x4C]
+  0x5879d0: LDR     R3, [R4,#4]
+  0x5879d2: LDR     R2, [R4,#8]
+  0x5879d4: CMP     R3, R2
+  0x5879d6: BCC     loc_5879DA
+

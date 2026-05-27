@@ -1,0 +1,42 @@
+// size=72 bytes
+
+  0x59f45c: PUSH    {R0,R1,R4-R6,LR}
+  0x59f45e: MOVS    R5, R1
+  0x59f460: ADD     R1, SP, #0x18+var_14; unsigned int *
+  0x59f462: MOVS    R4, R0
+  0x59f464: BL      _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj; google::protobuf::io::CodedInputStream::ReadVarint32(uint *)
+     => _ZN6google8protobuf2io16CodedInputStream12ReadVarint32EPj
+  0x59f468: CMP     R0, #0
+  0x59f46a: BEQ     locret_59F4A2
+     !! BRANCH to 0x59f4a2
+  0x59f46c: MOVS    R0, R4; this
+  0x59f46e: BL      _ZN6google8protobuf2io16CodedInputStream23IncrementRecursionDepthEv; google::protobuf::io::CodedInputStream::IncrementRecursionDepth(void)
+     => _ZN6google8protobuf2io16CodedInputStream23IncrementRecursionDepthEv
+  0x59f472: CMP     R0, #0
+  0x59f474: BEQ     locret_59F4A2
+     !! BRANCH to 0x59f4a2
+  0x59f476: LDR     R1, [SP,#0x18+var_14]; int
+  0x59f478: MOVS    R0, R4; this
+  0x59f47a: BL      _ZN6google8protobuf2io16CodedInputStream9PushLimitEi; google::protobuf::io::CodedInputStream::PushLimit(int)
+     => _ZN6google8protobuf2io16CodedInputStream9PushLimitEi
+  0x59f47e: MOVS    R1, R4; google::protobuf::io::CodedInputStream *
+  0x59f480: MOVS    R6, R0
+  0x59f482: MOVS    R0, R5; this
+  0x59f484: BL      _ZN11ISeer20Comm13player_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE; ISeer20Comm::player_info_t::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream *)
+     => _ZN11ISeer20Comm13player_info_t27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE
+  0x59f488: CMP     R0, #0
+  0x59f48a: BEQ     locret_59F4A2
+     !! BRANCH to 0x59f4a2
+  0x59f48c: LDRB    R0, [R4,#0x18]
+  0x59f48e: CMP     R0, #0
+  0x59f490: BEQ     locret_59F4A2
+     !! BRANCH to 0x59f4a2
+  0x59f492: MOVS    R0, R4; this
+  0x59f494: MOVS    R1, R6; int
+  0x59f496: BL      _ZN6google8protobuf2io16CodedInputStream8PopLimitEi; google::protobuf::io::CodedInputStream::PopLimit(int)
+     => _ZN6google8protobuf2io16CodedInputStream8PopLimitEi
+  0x59f49a: MOVS    R0, R4; this
+  0x59f49c: BL      _ZN6google8protobuf2io16CodedInputStream23DecrementRecursionDepthEv; google::protobuf::io::CodedInputStream::DecrementRecursionDepth(void)
+     => _ZN6google8protobuf2io16CodedInputStream23DecrementRecursionDepthEv
+  0x59f4a0: MOVS    R0, #1
+  0x59f4a2: POP     {R1,R2,R4-R6,PC}

@@ -1,0 +1,37 @@
+// handleAckMsgRecheckSession @ 0x630b8c
+// size=68
+
+  0x630b8c: PUSH    {R3,LR}
+  0x630b8e: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+     ¡ú _ZN11GameManager13sharedManagerEv
+  0x630b92: BL      _ZN11GameManager13getSceneLayerEv; GameManager::getSceneLayer(void)
+     ¡ú _ZN11GameManager13getSceneLayerEv
+  0x630b96: BL      _ZN10SceneLayer23removeEventSwallowLayerEv; SceneLayer::removeEventSwallowLayer(void)
+     ¡ú _ZN10SceneLayer23removeEventSwallowLayerEv
+  0x630b9a: BL      _ZN20OnlineNetworkManager14sShareInstanceEv; OnlineNetworkManager::sShareInstance(void)
+     ¡ú _ZN20OnlineNetworkManager14sShareInstanceEv
+  0x630b9e: BL      _ZN20OnlineNetworkManager14sendGetSysTimeEv; OnlineNetworkManager::sendGetSysTime(void)
+     ¡ú _ZN20OnlineNetworkManager14sendGetSysTimeEv
+  0x630ba2: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+     ¡ú _ZN11GameManager13sharedManagerEv
+  0x630ba6: BL      _ZN11GameManager13getSceneLayerEv; GameManager::getSceneLayer(void)
+     ¡ú _ZN11GameManager13getSceneLayerEv
+  0x630baa: CMP     R0, #0
+  0x630bac: BEQ     locret_630BCE
+  0x630bae: BL      _ZN11GameManager13sharedManagerEv; GameManager::sharedManager(void)
+     ¡ú _ZN11GameManager13sharedManagerEv
+  0x630bb2: BL      _ZN11GameManager13getSceneLayerEv; GameManager::getSceneLayer(void)
+     ¡ú _ZN11GameManager13getSceneLayerEv
+  0x630bb6: ADDS    R0, #0xFC; this
+  0x630bb8: LDR     R2, [R0,#0x48]
+  0x630bba: LDR     R3, =0x2739
+  0x630bbc: CMP     R2, R3
+  0x630bbe: BNE     locret_630BCE
+  0x630bc0: BL      _ZN20OnlineNetworkManager14sShareInstanceEv; OnlineNetworkManager::sShareInstance(void)
+     ¡ú _ZN20OnlineNetworkManager14sShareInstanceEv
+  0x630bc4: MOVS    R2, #0; unsigned int
+  0x630bc6: MOVS    R1, #1; unsigned int
+  0x630bc8: MOVS    R3, R2; int
+  0x630bca: BL      _ZN20OnlineNetworkManager21sendStartPVPInvBattleEjji; OnlineNetworkManager::sendStartPVPInvBattle(uint,uint,int)
+     ¡ú _ZN20OnlineNetworkManager21sendStartPVPInvBattleEjji
+  0x630bce: POP     {R3,PC}

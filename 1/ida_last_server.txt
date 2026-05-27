@@ -1,0 +1,52 @@
+// _ZN11GameManager15getLastServerIdEv @ 0x4733a4
+int __fastcall GameManager	:		:	getLastServerId	(	GameManager *this	)	
+	{	(00000000
+  (40000001!cocos2d	:		:	CCUserDefault *v1!	;	 // r0
+(80000000(00000000
+(00000000(00000001  (00000003v1 (00000002	=	 (00000004	(	cocos2d	:		:	CCUserDefault *	)	(00000006cocos2d::CCUserDefault::sharedUserDefault(00000005	(	(00000007this	)		;	(00000001
+(00000008   return  (0000000Acocos2d::CCUserDefault::getIntegerForKey(00000009	(	(0000000Bv1	,	 (0000000C"LAST_SERVER_ID"	,	 (0000000D 0 	)		;	(00000008
+	}	(00000000
+  0x4733a4: PUSH    {R3,LR}
+  0x4733a6: BL      _ZN7cocos2d13CCUserDefault17sharedUserDefaultEv; cocos2d::CCUserDefault::sharedUserDefault(void)
+  0x4733aa: LDR     R1, =(aLastServerId - 0x4733B2); "LAST_SERVER_ID"
+  0x4733ac: MOVS    R2, #0; int
+  0x4733ae: ADD     R1, PC; "LAST_SERVER_ID"
+  0x4733b0: BL      _ZN7cocos2d13CCUserDefault16getIntegerForKeyEPKci; cocos2d::CCUserDefault::getIntegerForKey(char const*,int)
+  0x4733b4: POP     {R3,PC}
+  0x4733b6: ALIGN 4
+  0x4733b8: DCD aLastServerId - 0x4733B2
+  0x4733bc: PUSH    {R3-R5,LR}
+  0x4733be: MOVS    R4, R0
+  0x4733c0: BL      _ZN11GameManager13getSceneLayerEv; GameManager::getSceneLayer(void)
+  0x4733c4: ADDS    R0, #0xFC
+  0x4733c6: LDR     R3, [R0,#0x38]
+  0x4733c8: CMP     R3, #0
+  0x4733ca: BEQ     loc_4733D2
+  0x4733cc: MOVS    R0, R4; this
+  0x4733ce: BL      _ZN11GameManager17pauseCurrentSceneEv; GameManager::pauseCurrentScene(void)
+  0x4733d2: BL      _ZN9ShopLayer15createByCCBFileEv; ShopLayer::createByCCBFile(void)
+  0x4733d6: MOVS    R5, R0
+  0x4733d8: BL      _ZN9ShopLayer19showSpecialItemPageEv; ShopLayer::showSpecialItemPage(void)
+  0x4733dc: MOVS    R1, R5; cocos2d::CCLayer *
+  0x4733de: MOVS    R0, R4; this
+  0x4733e0: BL      _ZN11GameManager10setUiLayerEPN7cocos2d7CCLayerE; GameManager::setUiLayer(cocos2d::CCLayer *)
+  0x4733e4: POP     {R3-R5,PC}
+  0x4733e6: PUSH    {R3-R5,LR}
+  0x4733e8: MOVS    R4, R0
+  0x4733ea: BL      _ZN11GameManager13getSceneLayerEv; GameManager::getSceneLayer(void)
+  0x4733ee: ADDS    R0, #0xFC; this
+  0x4733f0: LDR     R3, [R0,#0x38]
+
+// _ZN11GameManager15setLastServerIdEi @ 0x473384
+int __fastcall GameManager	:		:	setLastServerId	(	GameManager *this	,	 int a2	)	
+	{	(00000000
+  (40000003!cocos2d	:		:	CCUserDefault *v3!	;	 // r0
+  (40000004!cocos2d	:		:	CCUserDefault *v4!	;	 // r0
+  (40000005!cocos2d	:		:	CCUserDefault *v5!	;	 // r0
+(80000000(00000000
+(00000000(00000001  (00000003v3 (00000002	=	 (00000004	(	cocos2d	:		:	CCUserDefault *	)	(00000006cocos2d::CCUserDefault::sharedUserDefault(00000005	(	(00000007this	)		;	(00000001
+(00000008  (0000000Av4 (00000009	=	 (0000000B	(	cocos2d	:		:	CCUserDefault *	)	(0000000Dcocos2d::CCUserDefault::setIntegerForKey(0000000C	(	(0000000Ev3	,	 (0000000F"LAST_SERVER_ID"	,	 (00000010a2	)		;	(00000008
+(00000011  (00000013v5 (00000012	=	 (00000014	(	cocos2d	:		:	CCUserDefault *	)	(00000016cocos2d::CCUserDefault::sharedUserDefault(00000015	(	(00000017v4	)		;	(00000011
+(00000018   return  (0000001Acocos2d::CCUserDefault::flush(00000019	(	(0000001Bv5	)		;	(00000018
+	}	(00000000
+
