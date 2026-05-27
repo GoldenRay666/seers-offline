@@ -213,12 +213,11 @@ function buildLoginResponse() {
     const roleTm = role ? role.roleTm : now;
     const gender = role ? role.gender : 1;
 
+    // player_basic_info_t at field 1, switchInfo at field 2, time at field 3, field 4
     const basicInfo = buildPlayerBasicInfo(nick, roleTm, gender, 1);
-    const switchInfo = Buffer.alloc(0); // empty = all features default
-
     return Buffer.concat([
         encodeMessage(1, basicInfo),
-        encodeMessage(2, switchInfo),
+        encodeMessage(2, Buffer.alloc(0)),  // switchInfo
         encodeUint32(3, now),
         encodeUint32(4, 0),
     ]);
@@ -230,7 +229,8 @@ function buildRandomNickResponse() {
 }
 
 function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
-    // Player self entry
+    const mapDef = MAP_DEFS.find(m => m.id === mapId) || {};
+    if (!mapDef._logged) { console.log(`[MAP] mapId=${mapId} npcs=${(mapDef.npc||[]).length} mine=${mapDef.mine_type}`); mapDef._logged = true; }
     const playerEntry = Buffer.concat([
         encodeUint32(1, 1), encodeUint32(2, roleTm),
         encodeString(3, nick), encodeUint32(4, 0),
@@ -238,53 +238,58 @@ function buildPlayerEnterMapOut(mapId, nick, roleTm, gender) {
         encodeUint32(8, 0),
     ]);
 
-    // NPCs on the map
-    const mon1 = encodeMessage(2, Buffer.concat([
-        encodeUint32(1, 4),    // mon_id = 休咻
-        encodeUint32(2, 3),    // level
-    ]));
-    const npcs = Buffer.concat([
-        // NPC 3: 多罗 (tutorial NPC)
-        encodeMessage(3, Buffer.concat([encodeUint32(1, 3)])),
-        // NPC 100011: Wild 法拉 with monster
-        encodeMessage(3, Buffer.concat([
-            encodeUint32(1, 100011),
-            mon1,
-        ])),
-    ]);
+    // Dynamic NPCs from map config
+    let npcs = Buffer.alloc(0), events = Buffer.alloc(0);
+    const mapNpcs = mapDef.npc || [];
+    if (mapNpcs.length > 0) console.log(`[MAP] Processing ${mapNpcs.length} NPCs for map ${mapId}: ${JSON.stringify(mapNpcs.map(n=>n.id))}`);
+    for (const mn of mapNpcs) {
+        const npcDef = NPC_DEFS.find(n => n.id === mn.id) || {};
+        if (npcDef.mon) console.log(`[MAP] NPC ${mn.id} (${npcDef.name}) has mon: ${JSON.stringify(npcDef.mon)}`);
+        const isWild = mn.type2 === 'BTL_TYPE2_WILD' || mn.type2 === 1;
+        let npcEntry = Buffer.concat([encodeUint32(1, mn.id)]);
+        // NPC mon data
+        if (npcDef.mon && npcDef.mon.length > 0) {
+            const m = npcDef.mon[0];
+            npcEntry = Buffer.concat([npcEntry, encodeMessage(2, Buffer.concat([
+                encodeUint32(1, m.id || 4), encodeUint32(2, m.min_level || 3),
+            ]))]);
+        }
+        npcs = Buffer.concat([npcs, encodeMessage(3, npcEntry)]);
 
-    // Mine info (ore spots)
+        // Battle event for wild NPCs
+        if (isWild && npcDef.mon && npcDef.mon[0]) {
+            const wm = npcDef.mon[0];
+            const battleMon = Buffer.concat([encodeUint32(1, wm.id || 4), encodeUint32(2, wm.min_level || 3)]);
+            const pkCombat = encodeMessage(9, Buffer.concat([
+                encodeUint32(1, 999), encodeUint32(2, 1),
+                encodeString(3, npcDef.name || '野怪'), encodeUint32(4, 1),
+                encodeMessage(6, battleMon),
+                encodeUint32(7, 50 + (wm.min_level || 3) * 10),
+                encodeUint32(8, 20 + (wm.min_level || 3) * 2),
+                encodeUint32(9, 15), encodeUint32(10, 10),
+            ]));
+            events = Buffer.concat([events, encodeMessage(5, Buffer.concat([
+                encodeUint32(1, 1), // event type = battle
+                encodeMessage(8, Buffer.concat([encodeUint32(1, mn.id)])),
+                pkCombat,
+            ]))]);
+        }
+    }
+
+    // Mine spots from map config
     const now = Math.floor(Date.now() / 1000);
-    const mineList = Buffer.concat([
-        encodeMessage(4, Buffer.concat([encodeUint32(1, 10001), encodeUint32(2, 5), encodeUint32(3, now)])),
-        encodeMessage(4, Buffer.concat([encodeUint32(1, 10023), encodeUint32(2, 5), encodeUint32(3, now)])),
-    ]);
-
-    // Events: NPC 100011 wild battle
-    const battleMon = Buffer.concat([
-        encodeUint32(1, 4),    // mon_id = 休咻
-        encodeUint32(2, 3),    // level
-    ]);
-    const pkCombat = encodeMessage(9, Buffer.concat([
-        encodeUint32(1, 999),               // uid
-        encodeUint32(2, 1),                 // role_tm
-        encodeString(3, '休咻'),             // nick
-        encodeUint32(4, 1),                 // gender
-        encodeMessage(6, battleMon),         // mons
-        encodeUint32(7, 50),                 // max_hp
-        encodeUint32(8, 20),                 // total_atk
-        encodeUint32(9, 15),                 // total_def
-        encodeUint32(10, 10),                // total_spd
-    ]));
-    const events = Buffer.concat([
-        encodeMessage(5, Buffer.concat([
-            encodeUint32(1, 1),        // event type = battle
-            encodeMessage(8, Buffer.concat([  // npc sub-message
-                encodeUint32(1, 100011),       // npc_id
-            ])),
-            pkCombat,
-        ])),
-    ]);
+    let mineList = Buffer.alloc(0);
+    const mineType = mapDef.mine_type || 0;
+    if (mineType > 0) {
+        mineList = Buffer.concat([
+            encodeMessage(4, Buffer.concat([encodeUint32(1, 10001), encodeUint32(2, 5), encodeUint32(3, now)])),
+        ]);
+        if (mineType >= 3) {
+            mineList = Buffer.concat([mineList,
+                encodeMessage(4, Buffer.concat([encodeUint32(1, 10023), encodeUint32(2, 5), encodeUint32(3, now)])),
+            ]);
+        }
+    }
 
     return Buffer.concat([
         encodeUint32(1, mapId),
@@ -379,39 +384,176 @@ function buildMonInfo(monId, level, nickname) {
     ]);
 }
 
-// Task system
-const TASK_DEFS = [
-    {
-        id: 1, name: '初到异蘑世界', info: '与多罗对话',
-        task_type: 2, need_level: 0,
-        obtain_map_id: 10001, commit_map_id: 10001,
-        obtain_npc_id: 3, commit_npc_id: 3,
-        obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
-        prize_id: 50001, area_id: 1,
-        steps: [{seq: 1, step_type: 5, value: 1, target: '3', link: [10001]}],
-        flag: 1,
-    },
-    {
-        id: 10001, name: '初到异蘑世界', info: '与多罗对话',
-        task_type: 2, need_level: 0,
-        obtain_map_id: 10001, commit_map_id: 10001,
-        obtain_npc_id: 3, commit_npc_id: 3,
-        obtain_dialog: 100, progress_dialog: 105, finish_dialog: 110,
-        prize_id: 50001, area_id: 1,
-        steps: [{seq: 1, step_type: 5, value: 1, target: '3', link: [10001]}],
-        // step_type 5 = talk to NPC
-    },
-    {
-        id: 10002, name: '矿石采集', info: '采集矿石1次',
-        task_type: 2, need_level: 0,
-        obtain_map_id: 10001, commit_map_id: 10001,
-        obtain_npc_id: 3, commit_npc_id: 3,
-        obtain_dialog: 200, progress_dialog: 205, finish_dialog: 210,
-        prize_id: 50002, area_id: 1,
-        steps: [{seq: 1, step_type: 6, value: 1, target: '采矿', link: [10001]}],
-        // step_type 6 = mine ore
-    },
-];
+// Task system — loaded from assets/PbConfig/task.pbconf (text proto)
+// Generic text proto loader
+function loadTextProto(filename, rootKey) {
+    const result = [];
+    try {
+        const text = fs.readFileSync(`./assets/PbConfig/${filename}`, 'utf-8');
+        let current = null, currentNested = null, nestLevel = 0;
+        for (const line of text.split('\n')) {
+            const s = line.trim();
+            if (!s) continue;
+            // Track nesting
+            const openBraces = (s.match(/\{/g) || []).length;
+            const closeBraces = (s.match(/\}/g) || []).length;
+
+            if (s.startsWith(rootKey + ': {') || s.startsWith(rootKey + ' {') || s.startsWith(rootKey + '{')) {
+                current = {};
+            } else if (current && s.match(/^\w+:\s*\{/)) {
+                // Nested block like "npc: {" or "step: {"
+                const nestedKey = s.match(/^(\w+):/)[1];
+                if (!current[nestedKey]) current[nestedKey] = [];
+                current._nestedKey = nestedKey;
+                current._nestedObj = {};
+                nestLevel++;
+            } else if (s === '}' || s === '};') {
+                if (current && current._nestedObj) {
+                    if (!current[current._nestedKey]) current[current._nestedKey] = [];
+                    current[current._nestedKey].push(current._nestedObj);
+                    current._nestedObj = null;
+                    current._nestedKey = null;
+                    nestLevel--;
+                } else if (nestLevel === 0 && current) {
+                    result.push(current); current = null;
+                }
+                if (nestLevel > 0) nestLevel--;
+                if (nestLevel < 0) nestLevel = 0;
+            } else if (current) {
+                const target = current._nestedObj || current;
+                const m = s.match(/^(\w+):\s*(.+)$/);
+                if (m) {
+                    const key = m[1];
+                    let val = m[2].trim();
+                    // Remove trailing comments
+                    val = val.replace(/\s*\/\/.*$/, '');
+                    // Remove quotes
+                    if (val.startsWith('"') && val.endsWith('"')) val = val.slice(1, -1);
+                    // Try parse as number
+                    const num = Number(val);
+                    if (!isNaN(num) && val !== '') {
+                        // Check if it's an array (multiple same keys = array)
+                        if (current[key] !== undefined && Array.isArray(current[key])) {
+                            current[key].push(num);
+                        } else if (current[key] !== undefined) {
+                            current[key] = [current[key], num];
+                        } else {
+                            current[key] = num;
+                        }
+                    } else {
+                        current[key] = val;
+                    }
+                }
+            }
+        }
+        console.log(`[CONFIG] ${filename}: ${result.length} entries loaded`);
+    } catch(e) {
+        console.log(`[CONFIG] ${filename}: ${e.message}`);
+    }
+    return result;
+}
+
+const TASK_DEFS = [];
+const TASK_TYPE_MAP = {TASK_TYPE_BRANCH: 2, TASK_TYPE_MAIN: 1, TASK_TYPE_DAILY: 3, TASK_TYPE_SUB: 4};
+const STEP_TYPE_MAP = {TASK_STEP_TYPE_MINING: 6, TASK_STEP_TYPE_TALK: 5, TASK_STEP_TYPE_BATTLE: 1, TASK_STEP_TYPE_COLLECT: 7};
+
+// Load all pbconf configs
+const rawTasks = loadTextProto('task.pbconf', 'task');
+// Parse task-specific nested structure (steps)
+for (const t of rawTasks) {
+    t.steps = t.steps || [];
+    // Convert enum strings to numbers
+    if (typeof t.task_type === 'string') t.task_type = TASK_TYPE_MAP[t.task_type] || 2;
+    if (t.steps) for (const s of t.steps) {
+        if (typeof s.step_type === 'string') s.step_type = STEP_TYPE_MAP[s.step_type] || 5;
+        if (s.link !== undefined && !Array.isArray(s.link)) s.link = [s.link];
+    }
+    TASK_DEFS.push(t);
+}
+console.log(`[TASK] ${TASK_DEFS.length} tasks loaded`);
+
+// NPC config with nested mon{} support — depth tracking
+let NPC_DEFS = [];
+(function parseNpcConfig() {
+    try {
+        const text = fs.readFileSync('./assets/PbConfig/npc.pbconf', 'utf-8');
+        let current = null, nestStack = [];
+        const getTarget = () => nestStack.length > 0 ? nestStack[nestStack.length-1].obj : current;
+        for (const line of text.split('\n')) {
+            const s = line.trim();
+            if (!s || s.startsWith('//')) continue;
+            const openBrace = s.includes('{');
+            const closeBrace = s === '}' || s === '};';
+
+            if (s === 'npc: {' || s.startsWith('npc: {')) { current = {}; nestStack = []; }
+            else if (closeBrace) {
+                if (nestStack.length > 0) {
+                    const top = nestStack.pop();
+                    current[top.key] = current[top.key] || [];
+                    current[top.key].push(top.obj);
+                } else if (current) { NPC_DEFS.push(current); current = null; }
+            } else if (current && openBrace) {
+                const m = s.match(/^(\w+):\s*\{/);
+                if (m) nestStack.push({key: m[1], obj: {}});
+            } else if (current) {
+                const m = s.match(/^(\w+):\s*(.+)$/);
+                if (m) {
+                    const key = m[1], val = m[2].trim().replace(/^"(.*)"$/, '$1');
+                    const num = Number(val);
+                    const target = getTarget();
+                    if (!isNaN(num) && val !== '') target[key] = num;
+                    else target[key] = val;
+                }
+            }
+        }
+        console.log(`[NPC] Parsed: ${NPC_DEFS.length} NPCs`);
+        const n3 = NPC_DEFS.find(n => n.id === 3);
+        const nw = NPC_DEFS.find(n => n.id === 100011);
+        if (n3) console.log(`[NPC] NPC 3 (${n3.name}) mon=${JSON.stringify(n3.mon)}`);
+        if (nw) console.log(`[NPC] NPC 100011 (${nw.name}) mon=${JSON.stringify(nw.mon)}`);
+    } catch(e) { console.log(`[NPC] Parse error: ${e.message}`); }
+})();
+const PRIZE_DEFS = loadTextProto('prize.pbconf', 'prize');
+// Map config with nested npc{} support — depth tracking
+let MAP_DEFS = [];
+(function parseMapConfig() {
+    try {
+        const text = fs.readFileSync('./assets/PbConfig/map.pbconf', 'utf-8');
+        let current = null, nestStack = [];
+        const getTarget = () => nestStack.length > 0 ? nestStack[nestStack.length-1].obj : current;
+        for (const line of text.split('\n')) {
+            const s = line.trim();
+            if (!s || s.startsWith('//')) continue;
+            const openBrace = s.includes('{') && !s.includes('}');
+            const closeBrace = s === '}' || s === '};';
+
+            if (s === 'map: {' || s.startsWith('map: {')) { current = {}; nestStack = []; }
+            else if (closeBrace) {
+                if (nestStack.length > 0) {
+                    const top = nestStack.pop();
+                    if (current) { current[top.key] = current[top.key] || []; current[top.key].push(top.obj); }
+                } else if (current) { MAP_DEFS.push(current); current = null; }
+            } else if (current && openBrace) {
+                const m = s.match(/^(\w+):\s*\{/);
+                if (m) nestStack.push({key: m[1], obj: {}});
+            } else if (current) {
+                const m = s.match(/^(\w+):\s*(.+)$/);
+                if (m) {
+                    const key = m[1], val = m[2].trim().replace(/^"(.*)"$/, '$1');
+                    const num = Number(val);
+                    const target = getTarget();
+                    if (!isNaN(num) && val !== '') target[key] = num;
+                    else target[key] = val;
+                }
+            }
+        }
+        console.log(`[MAP] Parsed: ${MAP_DEFS.length} maps`);
+        const m1 = MAP_DEFS.find(m => m.id === 10001);
+        if (m1) console.log(`[MAP] Map 10001: npcs=${(m1.npc||[]).length} mine_type=${m1.mine_type}`);
+    } catch(e) { console.log(`[MAP] Parse error: ${e.message}`); }
+})();
+const SHOP_DEFS = loadTextProto('shop.pbconf', 'good');
+const ACTIVITY_DEFS = loadTextProto('activity.pbconf', 'activity');
 
 function buildPbTaskInfo(taskDef) {
     let stepList = Buffer.alloc(0);
@@ -804,12 +946,16 @@ function buildResponse(cmd, fields, socket) {
     }
 
     if (cmd.includes('login_in')) {
-        // Push map entry before login_out so map loads during animation
         const role = getLastRole(1);
         if (role) {
+            const ps = getPlayerState(role.uid || 1);
+            const f3 = socket._lastF3 || 1, f4 = socket._lastF4, f5 = socket._lastF5;
+            if (ps.bagMon) for (const m of ps.bagMon) {
+                pushMessage(socket, 'ISeer20CSProto.notify_gain_new_mon_out',
+                    encodeMessage(2, buildMonInfo(m.monId, m.level || 5, null)), f3, f4, f5);
+            }
             pushMessage(socket, 'ISeer20CSProto.player_enter_map_out',
-                buildPlayerEnterMapOut(10001, role.nick, role.roleTm, role.gender),
-                socket._lastF3 || 1, 0, 0);
+                buildPlayerEnterMapOut(10001, role.nick, role.roleTm, role.gender), f3, 0, 0);
         }
         return buildLoginResponse();
     }
@@ -1162,6 +1308,7 @@ function buildResponse(cmd, fields, socket) {
         const eventType = fields[1] || 0;
         const npcId = fields[2] || 0;
         console.log(`[EVENT] type=${eventType} npc=${npcId}`);
+        // Client handles dialog + task acceptance; mock just acknowledges
         return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
@@ -1171,31 +1318,81 @@ function buildResponse(cmd, fields, socket) {
     }
     if (cmd.includes('obtain_task')) {
         const taskId = fields[1] || 0;
-        const taskDef = TASK_DEFS.find(t => t.id === taskId);
-        if (taskDef) {
-            const ps = getPlayerState(socket._uid || 1);
-            if (!ps.tasks.find(t => t.id === taskId)) {
-                ps.tasks.push({...taskDef});
-                console.log(`[TASK] obtain_task id=${taskId} — added to player`);
-            } else {
-                console.log(`[TASK] obtain_task id=${taskId} — already owned`);
-            }
-        } else {
-            console.log(`[TASK] obtain_task id=${taskId} — UNKNOWN, empty detail`);
+        const ps = getPlayerState(socket._uid || 1);
+        // Accept ANY task the client sends — game config defines them
+        let taskDef = TASK_DEFS.find(t => t.id === taskId);
+        if (!taskDef) {
+            // Auto-create minimal task entry
+            taskDef = {id: taskId, name: `任务${taskId}`, info: '', task_type: 2, need_level: 0,
+                obtain_map_id: 10001, commit_map_id: 10001,
+                obtain_npc_id: fields[2] || 3, commit_npc_id: fields[2] || 3,
+                obtain_dialog: 0, progress_dialog: 0, finish_dialog: 0,
+                prize_id: 0, area_id: 1, steps: []};
+            console.log(`[TASK] obtain_task id=${taskId} — auto-created`);
         }
-        const detail = taskDef ? buildPbTaskInfo(taskDef) : Buffer.alloc(0);
+        if (!ps.tasks.find(t => t.id === taskId)) {
+            ps.tasks.push({...taskDef});
+            console.log(`[TASK] Added id=${taskId} to player`);
+        }
+        saveState();
+        const detail = buildPbTaskInfo(taskDef);
         return Buffer.concat([encodeUint32(1, taskId), encodeMessage(2, detail)]);
     }
     if (cmd.includes('finish_task')) {
         const taskId = fields[1] || 0;
         const ps = getPlayerState(socket._uid || 1);
+        const taskDef = TASK_DEFS.find(t => t.id === taskId);
+        // Push prize if task has one
+        if (taskDef && taskDef.prize_id) {
+            const prize = PRIZE_DEFS.find(p => p.prize_id === taskDef.prize_id);
+            if (prize && prize.info && prize.info.length > 0) {
+                for (const info of prize.info) {
+                    let playerAttr = Buffer.alloc(0);
+                    if (info.player_attr) {
+                        const pa = info.player_attr;
+                        playerAttr = Buffer.concat([
+                            encodeUint32(1, pa.exp || 0),
+                            encodeUint32(10, pa.coin || pa.gcoin || 0),
+                        ]);
+                        // Apply rewards
+                        ps.exp = (ps.exp || 0) + (pa.exp || 0);
+                        ps.coin = (ps.coin || 0) + (pa.coin || 0) + (pa.gcoin || 0);
+                    }
+                    if (playerAttr.length > 0) {
+                        const prizeT = Buffer.concat([encodeUint32(1, info.prize_idx || taskDef.prize_id), encodeMessage(4, playerAttr)]);
+                        pushMessage(socket, 'ISeer20CSProto.cli_notify_gain_prize_out', encodeMessage(1, prizeT), socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+                    }
+                }
+                console.log(`[TASK] finish_task id=${taskId} prize_id=${taskDef.prize_id} — rewards pushed`);
+            }
+        }
         ps.tasks = ps.tasks.filter(t => t.id !== taskId);
+        saveState();
+        // Push finish_task_out as notification
+        const finishPush = Buffer.concat([encodeUint32(1, taskId), encodeUint32(2, 1)]);
+        pushMessage(socket, 'ISeer20CSProto.finish_task_out', finishPush, socket._lastF3 || 1, socket._lastF4, socket._lastF5);
+        console.log(`[TASK] finish_task id=${taskId} — pushed + responded`);
+        return finishPush;
+    }
+    if (cmd.includes('cancel_task')) {
+        const taskId = fields[1] || 0;
+        console.log(`[TASK] cancel_task id=${taskId} — IGNORED`);
         return Buffer.concat([encodeUint32(1, taskId), encodeUint32(2, 0)]);
     }
     if (cmd.includes('set_task_step')) {
+        console.log(`[TASK] set_task_step fields=${JSON.stringify(fields)}`);
+        const taskId = fields[1] || 0;
+        const stepSeq = fields[2] || 0;
+        const ps = getPlayerState(socket._uid || 1);
+        const task = ps.tasks.find(t => t.id === taskId);
+        if (task && task.steps) {
+            const step = task.steps.find(s => s.seq === stepSeq);
+            if (step) step.progress = (step.progress || 0) + 1;
+        }
         return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
     if (cmd.includes('pb_cs_task')) {
+        console.log(`[TASK] pb_cs_task fields=${JSON.stringify(fields)}`);
         return Buffer.concat([encodeUint32(1, 0), encodeUint32(2, 0)]);
     }
 
@@ -1251,9 +1448,10 @@ function buildResponse(cmd, fields, socket) {
             let monList = Buffer.alloc(0);
             for (const m of ps.bagMon) {
                 const monInfo = buildMonInfo(m.monId, m.level || 5, m.nick || null);
-                monList = Buffer.concat([monList, encodeMessage(1, monInfo)]);
+                monList = Buffer.concat([monList, encodeMessage(2, monInfo)]);  // f2 = mon, like notify_gain_new_mon_out
             }
-            return Buffer.concat([monList, encodeUint32(2, 0)]);
+            const mainIdx = ps.bagMon.findIndex(m => m.monId === ps.mainMon);
+            return Buffer.concat([monList, encodeUint32(1, mainIdx >= 0 ? mainIdx : 0)]);
         }
         return Buffer.concat([Buffer.from([0x0a, 0x00]), encodeUint32(2, 0)]);
     }

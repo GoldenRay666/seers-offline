@@ -1,0 +1,133 @@
+// _ZN14ISeer20CSProto14get_bag_mon_in27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE @ 0x5b1d88
+  0x5b1d88: PUSH    {R4-R6,LR}
+  0x5b1d8a: MOVS    R4, R1
+  0x5b1d8c: MOVS    R5, #7
+  0x5b1d8e: ADDS    R6, R0, #4
+     ;; offset +0x4
+  0x5b1d90: B       loc_5B1DA6
+  0x5b1d92: MOVS    R3, R1
+  0x5b1d94: ANDS    R3, R5; google::protobuf::UnknownFieldSet *
+  0x5b1d96: CMP     R3, #4
+  0x5b1d98: BEQ     loc_5B1DCA
+  0x5b1d9a: MOVS    R0, R4; this
+  0x5b1d9c: MOVS    R2, R6; google::protobuf::UnknownFieldSet *
+  0x5b1d9e: BL      _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE; google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream *,uint,google::protobuf::UnknownFieldSet *)
+     => _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE
+  0x5b1da2: CMP     R0, #0
+  0x5b1da4: BEQ     locret_5B1DCC
+  0x5b1da6: LDR     R3, [R4,#4]
+  0x5b1da8: LDR     R2, [R4,#8]
+  0x5b1daa: CMP     R3, R2
+  0x5b1dac: BCS     loc_5B1DBC
+  0x5b1dae: LDRB    R1, [R3]
+  0x5b1db0: LSLS    R2, R1, #0x18
+  0x5b1db2: BMI     loc_5B1DBC
+  0x5b1db4: ADDS    R3, #1
+  0x5b1db6: STR     R1, [R4,#0x14]
+  0x5b1db8: STR     R3, [R4,#4]
+  0x5b1dba: B       loc_5B1DC6
+  0x5b1dbc: MOVS    R0, R4; this
+  0x5b1dbe: BL      _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv; google::protobuf::io::CodedInputStream::ReadTagFallback(void)
+     => _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv
+  0x5b1dc2: MOVS    R1, R0; google::protobuf::io::CodedInputStream *
+  0x5b1dc4: STR     R0, [R4,#0x14]
+  0x5b1dc6: CMP     R1, #0
+  0x5b1dc8: BNE     loc_5B1D92
+  0x5b1dca: MOVS    R0, #1
+  0x5b1dcc: POP     {R4-R6,PC}
+  0x5b1dce: PUSH    {R4-R6,LR}
+  0x5b1dd0: MOVS    R4, R1
+  0x5b1dd2: MOVS    R5, #7
+  0x5b1dd4: ADDS    R6, R0, #4
+     ;; offset +0x4
+  0x5b1dd6: B       loc_5B1DEC
+  0x5b1dd8: MOVS    R3, R1
+  0x5b1dda: ANDS    R3, R5; google::protobuf::UnknownFieldSet *
+  0x5b1ddc: CMP     R3, #4
+  0x5b1dde: BEQ     loc_5B1E10
+  0x5b1de0: MOVS    R0, R4; this
+  0x5b1de2: MOVS    R2, R6; google::protobuf::UnknownFieldSet *
+  0x5b1de4: BL      _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE; google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream *,uint,google::protobuf::UnknownFieldSet *)
+     => _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE
+  0x5b1de8: CMP     R0, #0
+  0x5b1dea: BEQ     locret_5B1E12
+  0x5b1dec: LDR     R3, [R4,#4]
+  0x5b1dee: LDR     R2, [R4,#8]
+  0x5b1df0: CMP     R3, R2
+  0x5b1df2: BCS     loc_5B1E02
+  0x5b1df4: LDRB    R1, [R3]
+  0x5b1df6: LSLS    R2, R1, #0x18
+  0x5b1df8: BMI     loc_5B1E02
+  0x5b1dfa: ADDS    R3, #1
+  0x5b1dfc: STR     R1, [R4,#0x14]
+  0x5b1dfe: STR     R3, [R4,#4]
+  0x5b1e00: B       loc_5B1E0C
+  0x5b1e02: MOVS    R0, R4; this
+  0x5b1e04: BL      _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv; google::protobuf::io::CodedInputStream::ReadTagFallback(void)
+     => _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv
+  0x5b1e08: MOVS    R1, R0; google::protobuf::io::CodedInputStream *
+  0x5b1e0a: STR     R0, [R4,#0x14]
+  0x5b1e0c: CMP     R1, #0
+  0x5b1e0e: BNE     loc_5B1DD8
+  0x5b1e10: MOVS    R0, #1
+  0x5b1e12: POP     {R4-R6,PC}
+  0x5b1e14: PUSH    {R4-R6,LR}
+  0x5b1e16: MOVS    R4, R1
+  0x5b1e18: MOVS    R5, #7
+  0x5b1e1a: ADDS    R6, R0, #4
+     ;; offset +0x4
+  0x5b1e1c: B       loc_5B1E32
+  0x5b1e1e: MOVS    R3, R1
+  0x5b1e20: ANDS    R3, R5; google::protobuf::UnknownFieldSet *
+  0x5b1e22: CMP     R3, #4
+  0x5b1e24: BEQ     loc_5B1E56
+  0x5b1e26: MOVS    R0, R4; this
+  0x5b1e28: MOVS    R2, R6; google::protobuf::UnknownFieldSet *
+  0x5b1e2a: BL      _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE; google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream *,uint,google::protobuf::UnknownFieldSet *)
+     => _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE
+  0x5b1e2e: CMP     R0, #0
+  0x5b1e30: BEQ     locret_5B1E58
+  0x5b1e32: LDR     R3, [R4,#4]
+  0x5b1e34: LDR     R2, [R4,#8]
+  0x5b1e36: CMP     R3, R2
+  0x5b1e38: BCS     loc_5B1E48
+  0x5b1e3a: LDRB    R1, [R3]
+  0x5b1e3c: LSLS    R2, R1, #0x18
+  0x5b1e3e: BMI     loc_5B1E48
+  0x5b1e40: ADDS    R3, #1
+  0x5b1e42: STR     R1, [R4,#0x14]
+  0x5b1e44: STR     R3, [R4,#4]
+  0x5b1e46: B       loc_5B1E52
+  0x5b1e48: MOVS    R0, R4; this
+  0x5b1e4a: BL      _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv; google::protobuf::io::CodedInputStream::ReadTagFallback(void)
+     => _ZN6google8protobuf2io16CodedInputStream15ReadTagFallbackEv
+  0x5b1e4e: MOVS    R1, R0; google::protobuf::io::CodedInputStream *
+  0x5b1e50: STR     R0, [R4,#0x14]
+  0x5b1e52: CMP     R1, #0
+  0x5b1e54: BNE     loc_5B1E1E
+  0x5b1e56: MOVS    R0, #1
+  0x5b1e58: POP     {R4-R6,PC}
+  0x5b1e5a: PUSH    {R4-R6,LR}
+  0x5b1e5c: MOVS    R4, R1
+  0x5b1e5e: MOVS    R5, #7
+  0x5b1e60: ADDS    R6, R0, #4
+     ;; offset +0x4
+  0x5b1e62: B       loc_5B1E78
+  0x5b1e64: MOVS    R3, R1
+  0x5b1e66: ANDS    R3, R5; google::protobuf::UnknownFieldSet *
+  0x5b1e68: CMP     R3, #4
+  0x5b1e6a: BEQ     loc_5B1E9C
+  0x5b1e6c: MOVS    R0, R4; this
+  0x5b1e6e: MOVS    R2, R6; google::protobuf::UnknownFieldSet *
+  0x5b1e70: BL      _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE; google::protobuf::internal::WireFormat::SkipField(google::protobuf::io::CodedInputStream *,uint,google::protobuf::UnknownFieldSet *)
+     => _ZN6google8protobuf8internal10WireFormat9SkipFieldEPNS0_2io16CodedInputStreamEjPNS0_15UnknownFieldSetE
+  0x5b1e74: CMP     R0, #0
+  0x5b1e76: BEQ     locret_5B1E9E
+  0x5b1e78: LDR     R3, [R4,#4]
+  0x5b1e7a: LDR     R2, [R4,#8]
+  0x5b1e7c: CMP     R3, R2
+  0x5b1e7e: BCS     loc_5B1E8E
+  0x5b1e80: LDRB    R1, [R3]
+  0x5b1e82: LSLS    R2, R1, #0x18
+  0x5b1e84: BMI     loc_5B1E8E
+
