@@ -88,6 +88,103 @@ for ea in idautils.Functions():
 - **Step 3** IDA：`get_item_out_one_t` f1→msg+8(item_id REQUIRED), f2→msg+0xC(grid_id); `bag_updates_out_one_t` f1→msg+8(grid_id REQUIRED), f2→msg+0xC(item_id) → **两个 one_t 字段 1 含义不同**，mock 需区分编码
 
 ---
+## IDA 反编译 + 原生链路验证（核心方法论）
+
+**不要猜！不要用 Frida hack 绕过！每个 "为什么" 都要用 IDA 反编译确认。**
+
+### 反编译流程
+
+1. 写 IDA Python 脚本，用 `ida_hexrays.decompile(ea)` 反编译目标函数
+2. 用 `idat.exe -A -S<script.py> <so>` 命令行执行
+3. 读取输出，追踪逻辑链
+
+```python
+# 模板：ida_decomp.py
+import idaapi, idc, ida_hexrays, ida_funcs, idautils
+OUTPUT = "C:/javatools/1/ida_out.txt"
+
+def decompile_func(ea, name):
+    cfunc = ida_hexrays.decompile(ea)
+    if cfunc:
+        sv = cfunc.get_pseudocode()
+        lines = [sv[i].line for i in range(sv.size())]
+        return f"// {name} @ 0x{ea:x}\n" + "\n".join(lines) + "\n"
+    return "// FAILED\n"
+
+def main():
+    idaapi.auto_wait()
+    with open(OUTPUT, 'w') as f:
+        # 查找函数
+        for ea in idautils.Functions():
+            name = idc.get_func_name(ea)
+            if "targetName" in name:
+                f.write(decompile_func(ea, name))
+        # 或直接用地址
+        f.write(decompile_func(0x62d8b1, "handleNtfMsgBattleEnd"))
+    idc.qexit(0)
+
+if __name__ == "__main__":
+    main()
+```
+
+### 分析套路
+
+1. **找 handler**：从 `ida_register.log` 查 CMD→handler 映射
+2. **反编译 handler**：看它怎么处理响应消息、调用了什么函数
+3. **反编译被调用函数**：追数据流，看哪些字段被读写、条件如何判断
+4. **对比 mock 发送的数据**：确认 proto 字段映射是否匹配 handler 期望
+5. **如果不对**：修正 mock 的 proto 编码，直到 handler 的条件分支走通
+
+### 本次会话关键链路验证
+
+```
+handleNtfMsgStartBattle → UID 比较 (消息uid vs m_userInfo[0..3])
+  → 匹配 → addWaitingSprites → getSpriteInfoByUUID → 精灵创建
+  → 不匹配 → setAttackee → NPC 路径
+
+m_userInfo[0..3] 永为 0 → 发 uid=0 匹配 → 原生链路通 ✓
+
+handleNtfMsgBattleEnd → pushTurnEvent → getAttacker 循环 (待修)
+
+handleAckMsgCheckSession → server_role_t 迭代 → online_id 比较
+  → getLastServerId() vs serverInfo.id (格式问题待修)
+```
+
+### 常用 IDA 命令
+
+```bash
+# Windows 32-bit
+"D:/BaiduNetdiskDownload/IDA_Pro_v8.3_Portable123/idat.exe" -A -S"script.py" "libgame_logic.so"
+
+# 输出查看
+head -100 1/ida_out.txt     # 伪代码
+grep "关键函数" 1/ida_out.txt  # 搜索
+grep -A30 "0x62d8b1" 1/ida_handler_start.txt  # 反汇编上下文
+```
+
+### 已反编译的关键函数
+
+| 函数 | 地址 | 大小 |
+|------|------|------|
+| handleNtfMsgStartBattle | 0x62d9dd | 280B |
+| handleNtfMsgBattleEnd | 0x62d8b1 | 92B |
+| addWaitingSprites | 0x466550 | 360B |
+| getAttacker | 0x4463bd | 58B |
+| addElfComponent | 0x44d50d | 126B |
+| setBattleSprite | 0x4666bd | 108B |
+| BattleManager::start | 0x465c54 | 300B |
+| handleAckMsgCheckSession | 0x62f0b4 | 458B |
+| handleAckMsgCreateRole | 0x62eed8 | 200B |
+| handleMsgLoginIn | 0x62fd5c | 3196B |
+| updateUserInfo | 0x54efbc | 204B |
+| getSpriteInfoByUUID | 0x54eefd | - |
+| player_basic_info_t::Merge | 0x59f4a4 | → sub_59F4B6 |
+| btl_player_simple_info_t::Merge | 0x57dca4 | 8 fields |
+| btl_notify_battle_end_out::Merge (CS) | 0x5b3e6c | f1/f2 uint32 |
+| btl_notify_battle_end_out::Merge (BTL) | 0x5792ac | 5 fields |
+| cli_check_session_out::Merge | 0x5ce588 | 8 fields |
+
+---
 ## 三层故障定位框架（旧版，保留用于非 proto 问题）
 
 每次"游戏不工作"都按三层依次排除，**不要跳层**：
