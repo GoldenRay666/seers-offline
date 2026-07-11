@@ -1,8 +1,8 @@
-# 十轮对抗审查 — 全部修复清单
+# 十一轮对抗审查 — 全部修复清单
 
-> 审查方法: IDA 白盒 MergePartial + Handler 汇编逐条对照 × 10 轮对抗
+> 审查方法: IDA 白盒 MergePartial + Handler 汇编逐条对照 + 旧版代码对比 × 11 轮对抗
 > 审查范围: 11 个 handler 模块 + lib 库 + state 层 + data 层 + server.js
-> 总修复: 38 处
+> 总修复: 42 处
 
 ---
 
@@ -131,3 +131,37 @@
 | `effect1_t` 字段映射 | battle.js 手拼 buffer 的字段号可能不对 |
 | `player_basic_info_t` 字段号 | MergePartial 为空，f42/f43 等纯猜测 |
 | `player_enter_map_out` f1 类型 | 代码发 varint，handler 在 +0x08 读 pointer |
+
+---
+
+## 第十一轮: 旧版代码对比
+
+| # | 文件 | 问题 | 修复 |
+|---|------|------|------|
+| 39 | battle.js | `turn_over` info_t Hp/HpChg f4/f5 交换、缺 f6=BtlAttrLevel | IDA 验证: f4=Hp, f5=HpChg, f6=BtlAttrLevel |
+| 40 | login.js | create_role 忽略用户昵称性别 | parseBodyFields 读 f2(昵称) + f3(性别) |
+| 41 | login.js | select_main_mon 推 10001→应为 10023 | 恢复旧版值 |
+| 42 | login.js | cli_login_in 无 handler | 新增 handler |
+
+## 更新统计
+
+| 严重度 | 数量 |
+|--------|------|
+| CRITICAL | 7 |
+| HIGH | 11 |
+| MEDIUM | 18 |
+| LOW | 6 |
+
+| 文件 | 修改次数 |
+|------|---------|
+| handlers/login.js | 6 |
+| lib/game.js | 11 |
+| handlers/battle.js | 5 |
+| handlers/shop.js | 4 |
+| handlers/item.js | 4 |
+| handlers/monster.js | 4 |
+| handlers/misc.js | 2 |
+| handlers/quest.js | 2 |
+| state/player.js | 2 |
+| server.js | 2 |
+| handlers/player.js | 1 |
