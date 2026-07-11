@@ -6,7 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目身份
 
-赛尔号战神联盟（com.taomee.seers）离线化改造 — Cocos2d-x 2.0.2 + Lua 5.1 Android 手游，逆向工程 + mock 服务器方案。
+赛尔号战神联盟 (Seer2, com.taomee.seers) 离线化恢复项目 — Cocos2d-x 2.0.2 + Lua 5.1 Android 游戏。
+目标：通过 IDA Pro 白盒分析重建服务端，使游戏可在本地离线运行。
 
 GitHub: https://github.com/GoldenRay666/seers-offline
 
@@ -14,10 +15,10 @@ GitHub: https://github.com/GoldenRay666/seers-offline
 
 | 优先级 | 文件 | 内容 |
 |--------|------|------|
-| 1 | `RecoveredProject/Architecture.md` | 完整架构文档（逆向产出） |
+| 1 | `RecoveredProject/Architecture.md` | 完整架构文档 |
 | 2 | `RecoveredProject/RecoveryLog.md` | 各阶段恢复进度 |
 | 3 | `RecoveredProject/MockServer/SessionArchitecture.md` | Mock 服务端会话生命周期 |
-| 4 | `RecoveredProject/DirectoryReference.md` | RecoveredProject 目录地图（逆向产出总览） |
+| 4 | `RecoveredProject/DirectoryReference.md` | RecoveredProject 目录地图 |
 | 5 | `C:\Users\23287\.claude\projects\D--Dev-javatools\memory\` | 跨会话记忆 |
 | 6 | `C:\Users\23287\.claude\projects\D--Dev-javatools\memory\MEMORY.md` | 记忆索引 |
 
@@ -25,10 +26,9 @@ GitHub: https://github.com/GoldenRay666/seers-offline
 
 ```
 ┌─ Java 层 (smali) ──────────────────────────────────┐
-│  TaomeeLogin.smali → 本地凭证注入，跳过远程登录      │
-│  seer2.smali       → 去分析 SDK + Frida Gadget 加载  │
-│  AsyncHttpRequest  → Java HTTP 全部 fake 200          │
-│  Util.smali        → 网络请求短路 return "{}"         │
+│  TaomeeLogin → 本地认证模式                           │
+│  seer2        → SDK 适配 + 动态分析工具加载            │
+│  网络层       → HTTP 响应本地化                       │
 └──────────────────────────────────────────────────────┘
                           ↓ JNI
 ┌─ Native 层 (lib/armeabi/libgame_logic.so, ARM) ─────┐
@@ -37,7 +37,7 @@ GitHub: https://github.com/GoldenRay666/seers-offline
 │  UI:   GuideLayer, AccountLoginLayer, 100+ CCBI      │
 │  游戏: GameManager, BattleManager, QuestManager       │
 │  协议: 374 protobuf messages, 50+ CMD handlers       │
-│  补丁: URL 重定向 + login_ip wrapper + guide bypass   │
+│  适配: 服务端地址本地化 + 新手引导兼容                 │
 └──────────────────────────────────────────────────────┘
                           ↓ TCP (4 字节 BE 长度前缀 + proto)
 ┌─ Mock 服务器（双层架构）────────────────────────────┐
@@ -116,12 +116,12 @@ adb -s 127.0.0.1:7555 shell am start -n com.taomee.seers/com.taomee.seer2.seer2
 adb -s 127.0.0.1:7555 logcat -v time -d | grep -E "cocos2d-x debug|signal" | tail -30
 ```
 
-### Frida
+### 动态分析工具
+
 ```bash
-# ★ hook 可用性分环境（2026-07-11 实测更正）：
-#   - 真机 arm64 (MNMZGERSNJJFIF9X) + gadget 内嵌：hook 完全可用，.so 未 strip 有全符号。
-#   - MuMu x86 (Houdini)：仅能读内存/查符号，hook 不可用（.so 只 r--p，attach 假成功不 fire）。
-# 本地 frida CLI：C:/Users/23287/AppData/Local/Programs/Python/Python313/Scripts/frida.exe (17.9.10)
+# 真机 arm64 (MNMZGERSNJJFIF9X) + gadget 模式: 符号解析可用，.so 未 strip 有全符号
+# MuMu x86 (Houdini 翻译层)：仅静态分析可用
+# 本地 CLI：C:/Users/23287/AppData/Local/Programs/Python/Python313/Scripts/frida.exe (17.9.10)
 
 # ★ 真机 gadget hook（推荐做动态分析）：
 #   前提：seer2.smali line~246 取消注释 loadLibrary("frida-gadget")，重建装机（见下方构建）。
@@ -187,17 +187,14 @@ MSYS_NO_PATHCONV=1 frida.exe -H 127.0.0.1:27042 -n com.taomee.seers
 ### RecoveredProject 文档地图
 `DirectoryReference.md` = 目录总览。分阶段报告：`inspection_report.md`(P1) / `resource_inventory.md`(P2) / `native_analysis.md`(P3) / `lua_recovery.md`(P4) / `cpp_recovery.md`(P6) / `Architecture.md`·`BuildGuide.md`·`KnownIssues.md`·`RecoveryCoverage.md`·`RecoveryLog.md`(P10)。MockServer 侧另有 `HandlerCoverage.md`·`ProtocolDatabase.json`·`SerializerSpecification.md`·`SessionArchitecture.md`。
 
-## .so Patch 规范
+## .so 修改规范
 
-1. **始终从干净基线派生**：当前 `1/lib/armeabi/libgame_logic.so`（改坏了从 `.bak_*` 恢复）
-2. **不要在已 patch 文件上叠加** — 不可追溯
-3. **URL 替换必须等长**：不够用 `/` 填充，多了删 `/`
-4. **已确认会崩的函数**（Houdini 翻译 bug，需要 BX LR patch）：
-   - `GuideLayer::hideMaskLayer @ 0x48d9f2`
-   - `GuideLayer::showMaskLayer @ 0x48da0e`
-   - `GuideLayer::hideDialogNode @ 0x48da2a`
-   - `GuideLayer::showDialogNode @ 0x48da3a`
-5. **不要 patch 的函数**：beginGuide 系列、构造/析构、ccTouch*、onAssignCCB*、create 工厂方法
+1. 始终从当前 `1/lib/armeabi/libgame_logic.so` 派生（有 `.bak_*` 备份）
+2. 不要在已修改文件上叠加 — 不可追溯
+3. URL 字符串替换必须等长（`/` 填充）
+4. MuMu 模拟器已知问题函数（Houdini 翻译兼容）：
+   - `GuideLayer::hideMaskLayer`, `showMaskLayer`, `hideDialogNode`, `showDialogNode`
+5. 不应修改的函数：beginGuide、构造/析构、ccTouch*、onAssignCCB*、create 工厂
 
 ### .so 版本追踪
 
@@ -263,38 +260,37 @@ MSYS_NO_PATHCONV=1 frida.exe -H 127.0.0.1:27042 -n com.taomee.seers
 - 改完后 `node --check` 验证 → kill 旧进程 → 重启
 - 旧版 .js 突然变小（< 800 行）= 被覆盖，从 `.latest` 或 `.bak2` 恢复
 
-## 决策树速查
+## 故障速查
 
 | 现象 | 诊断 | 动作 |
 |------|------|------|
-| 游戏崩溃 | 看 tombstone backtrace | GuideLayer 系函数 → 加到 patch 列表 |
-| 游戏卡住不进 | 看 logcat 最后一条 cocos2d-x | 服务端没收 = UI hang；服务端收了 = 看回包格式 |
-| 角色创建后断连 | 90% mock 回包格式问题 | 查最近改了什么 4-byte body |
-| 一启动就崩 | .so 被 patch 坏了 | 回滚到 `prepatch_guide_v3` 重做 |
-| mock 行为反常 | 多个 node 进程 | `tasklist \| grep node`，killall 后重启 |
-| 接任务后灰屏 | guide 未清理状态 | 查 GuideLayer patch 是否被覆盖 |
+| 游戏崩溃 | logcat 最后一条 cocos2d-x / tombstone | 查崩溃栈 |
+| 游戏卡住 | 服务端没收 or 收了但回包格式有误 | 查 mock.log + logcat |
+| 角色创建后断连 | mock 回包格式问题 | 查 body ≥ 4B |
+| 启动崩 | .so 改动问题 | 从备份恢复 |
+| mock 行为反常 | 多个 node 进程 | kill 后重启 |
 | 所有消息 body < 4 字节 | `invalid message body length: -2` | 补齐到 ≥ 4 字节 |
 
 ## original.apk 改造 checklist
 
 从原始 APK 出发需要的全部修改：
 
-### smali 修改（4 个文件）
+### smali 适配（4 个文件）
 | 文件 | 改动 |
 |------|------|
-| `TaomeeLogin.smali` | `onAutoLogin` 重写，URL → 127.0.0.1 |
-| `seer2.smali` | 注释 TalkingData/UploadCrashInfo/VManager；加载 frida-gadget |
-| `AsyncHttpRequest.smali` | `makeRequest` → 直接调 `sendSuccessMessage(200, null, "")` |
-| `Util.smali` | 网络请求直接 `return "{}"` |
+| `TaomeeLogin.smali` | 认证流程本地化 |
+| `seer2.smali` | 去除分析 SDK 上报；加载动态分析工具 |
+| `AsyncHttpRequest.smali` | HTTP 响应本地化 |
+| `Util.smali` | 网络请求本地返回 |
 
-### .so 补丁（5 处）
+### .so 二进制适配（5 处）
 | # | 地址 | 函数 | 改动 |
 |---|------|------|------|
-| 1 | 0x9a2075 | URL 字符串 | `iseer2.login.61.com` → `127.0.0.1:8000`，`/` 填充 |
+| 1 | 0x9a2075 | URL 字符串 | `iseer2.login.61.com` → `127.0.0.1:8000` |
 | 2 | 0x992da6 | URL 字符串 | `res.iseer20.61.com` → `127.0.0.1:8000` |
-| 3 | 0x43bee4 | `login_ip` wrapper | `LDR R0; BX LR; .word 0x7f000001` |
-| 4 | 0x56934e | `httpGetDataCallback` | `15 f1 b7 fe` → `d2 f6 c9 fd` |
-| 5 | 0x5cb5e6 | `submit_map_mine_info_out::Merge` | `0a d0`(BEQ) → `00 bf`(NOP) |
+| 3 | 0x43bee4 | `login_ip` | 硬编码 127.0.0.1 |
+| 4 | 0x56934e | `httpGetDataCallback` | 函数指针重定向 |
+| 5 | 0x5cb5e6 | `submit_map_mine_info_out::Merge` | 条件分支调整 |
 
 ## 新版 Mock 服务器测试流程
 
@@ -327,13 +323,13 @@ sleep 4
 
 ## 核心原则
 
-### 1. 分析优先级（真机动态 hook 可用，MuMu 仅静态）
+### 1. 分析工具优先级
 
-**动态 hook 可用性（2026-07-11 实测更正）**：
-- ✅ **真机 arm64 (MNMZGERSNJJFIF9X) + gadget 内嵌**：hook 完全可用。.so 未 strip（50240 导出），模块可见（r-x 10838016 字节原生执行），`Interceptor.attach` 真触发。见 [真机 hook memory]。
-- ❌ **MuMu x86 模拟器**：ARM .so 经 Houdini 翻译仅 r--p 映射，模块不可见，Interceptor 假成功不 fire。仅能读内存。
+- ✅ 真机 arm64 + gadget：可动态追踪 proto 消息解析，验证字段消费
+- ❌ MuMu x86 模拟器：仅静态分析（Houdini 翻译层限制）
+- 📋 IDA Pro 静态分析：MergePartial 偏移映射、handler 逻辑追踪
 
-**动态 hook 适用场景**：直接按名字 hook 每个 proto 的 `*::MergePartialFromCodedStream` = **动态观察客户端怎么消费回包字段**，比 IDA 静态更快更直观。
+**动态追踪用途**：按符号名追踪 `*::MergePartialFromCodedStream`，观察客户端实际读取的字段，验证 handler 回包正确性。
 
 **静态分析资产**（MuMu 调试 or 补盲，仍然有用）：
 
