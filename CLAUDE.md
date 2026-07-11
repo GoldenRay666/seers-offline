@@ -17,8 +17,9 @@ GitHub: https://github.com/GoldenRay666/seers-offline
 | 1 | `RecoveredProject/Architecture.md` | 完整架构文档（逆向产出） |
 | 2 | `RecoveredProject/RecoveryLog.md` | 各阶段恢复进度 |
 | 3 | `RecoveredProject/MockServer/SessionArchitecture.md` | Mock 服务端会话生命周期 |
-| 4 | `C:\Users\23287\.claude\projects\D--Dev-javatools\memory\` | 跨会话记忆 |
-| 5 | `C:\Users\23287\.claude\projects\D--Dev-javatools\memory\MEMORY.md` | 记忆索引 |
+| 4 | `RecoveredProject/DirectoryReference.md` | RecoveredProject 目录地图（逆向产出总览） |
+| 5 | `C:\Users\23287\.claude\projects\D--Dev-javatools\memory\` | 跨会话记忆 |
+| 6 | `C:\Users\23287\.claude\projects\D--Dev-javatools\memory\MEMORY.md` | 记忆索引 |
 
 ## 核心架构（三层）
 
@@ -62,10 +63,22 @@ GitHub: https://github.com/GoldenRay666/seers-offline
 # 一键构建（打包 + 签名 + 安装）
 D:\Dev\javatools\1\build_offline.bat
 
-# 或分步：
-java -jar C:\javatools\apktool.jar b D:\Dev\javatools\1 -o D:\Dev\javatools\1_offline.apk
-jarsigner -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\javatools\debug.keystore -storepass android -keypass android D:\Dev\javatools\1_offline.apk debug
-adb -s 127.0.0.1:7555 install -r D:\Dev\javatools\1_offline.apk
+# 或分步（工具在 tools/ 目录，非 C:\javatools\）：
+java -jar tools/apktool.jar b 1 -o 1_offline.apk
+
+# ★ 签名（Android 13+ 真机必须用 apksigner v2，jarsigner v1 装不上）：
+# keystore alias=debug, 密码 android/android
+C:/Users/23287/AppData/Local/Android/Sdk/build-tools/34.0.0/apksigner.bat sign \
+  --ks tools/debug.keystore --ks-key-alias debug \
+  --ks-pass pass:android --key-pass pass:android 1_offline.apk
+
+# 装真机（hook 平台）：
+adb -s MNMZGERSNJJFIF9X install -r 1_offline.apk
+
+# 装 MuMu（模拟器，不可 hook）：
+adb -s 127.0.0.1:7555 install -r 1_offline.apk
+
+# 真机 gadget hook 版本注意：seer2.smali line~246 取消注释 loadLibrary("frida-gadget") 再构建
 ```
 
 ### Mock 服务器
@@ -103,13 +116,23 @@ adb -s 127.0.0.1:7555 shell am start -n com.taomee.seers/com.taomee.seer2.seer2
 adb -s 127.0.0.1:7555 logcat -v time -d | grep -E "cocos2d-x debug|signal" | tail -30
 ```
 
-### Frida（ARM 真机，Gadget 模式）
+### Frida
 ```bash
-# 转发 Frida 端口
-MSYS_NO_PATHCONV=1 adb forward tcp:27042 tcp:27042
+# ★ hook 可用性分环境（2026-07-11 实测更正）：
+#   - 真机 arm64 (MNMZGERSNJJFIF9X) + gadget 内嵌：hook 完全可用，.so 未 strip 有全符号。
+#   - MuMu x86 (Houdini)：仅能读内存/查符号，hook 不可用（.so 只 r--p，attach 假成功不 fire）。
+# 本地 frida CLI：C:/Users/23287/AppData/Local/Programs/Python/Python313/Scripts/frida.exe (17.9.10)
 
-# 运行脚本（Module.findExportByName 不可用，用 enumerateExports）
-MSYS_NO_PATHCONV=1 frida -H 127.0.0.1:27042 Gadget -l D:\Dev\javatools\1\frida_mine_autofix.js
+# ★ 真机 gadget hook（推荐做动态分析）：
+#   前提：seer2.smali line~246 取消注释 loadLibrary("frida-gadget")，重建装机（见下方构建）。
+adb -s MNMZGERSNJJFIF9X forward tcp:27042 tcp:27042
+adb -s MNMZGERSNJJFIF9X shell am start -n com.taomee.seers/com.taomee.seer2.seer2   # gadget listen 27042
+frida.exe -H 127.0.0.1:27042 -n Gadget -l 1/frida_realdevice_hook.js
+#   脚本里用 m.enumerateSymbols() 按 mangled 名字拿地址（别用 x86 patch 偏移，对不上）。
+
+# MuMu 只读内存/查符号（hook 无效）：
+adb -s 127.0.0.1:7555 shell "su -c '/data/local/tmp/fs -D &'"
+MSYS_NO_PATHCONV=1 frida.exe -H 127.0.0.1:27042 -n com.taomee.seers
 ```
 
 ### IDA 反编译（命令行）
@@ -142,9 +165,31 @@ MSYS_NO_PATHCONV=1 frida -H 127.0.0.1:27042 Gadget -l D:\Dev\javatools\1\frida_m
 | 　Lua 源码 | `RecoveredProject/RecoveredLua/` |
 | 　原始资源 | `RecoveredProject/RecoveredAssets/` |
 
+## 离线分析工具链（RE pipeline，仓库根，git 未跟踪）
+
+整个 `RecoveredProject/` 逆向产出（RecoveredCPP 1903 文件 / RecoveredAssets 1833 / reverse_engineering 16651 / proto_decoded 80）由仓库根一批 Python 脚本**分阶段**生成。这些脚本 **git 未跟踪（本地工具，不在 commit 里）** —— 改运行时逻辑走上面的循环，这里只在需要重建/扩展逆向产物时用。
+
+### 当前在用
+| 脚本 | 阶段 | 产出 |
+|------|------|------|
+| `recover_symbols.py` | 2 | `reverse_engineering/RecoveredSymbols.json`（符号 demangle + 分类） |
+| `extract_rtti.py` | 3/5 | RTTI/vtable/类继承 → `EngineBoundary.md` + `ClassHierarchy.md` |
+| `decode_protos.py` / `decode_pbconf.py` | — | `proto_decoded/*.json`（用 `assets/PbProtoFile/*.proto` 解 `.pbconf`） |
+| `gen_proto_headers.py` | — | `RecoveredCPP/Classes/proto/` 的 C++ proto 头 |
+| `parse_ccbi.py` | — | `ccbi_decoded/`（CocosBuilder CCBI → UI 布局） |
+| `build_knowledge_graph.py` | — | **`RecoveredProject/knowledge_graph.db`（18MB，权威 RE 知识库）** |
+
+### 知识库（三个 .db，只有一个当前）
+- `RecoveredProject/knowledge_graph.db`（18MB，**当前**）—— 节点 Class/Function/Proto/Handler/…​ + 边 calls/owns/handles/…​，每条 fact 带 evidence + confidence + source_refs。查逆向结论优先查它。
+- `knowledge_base.db`（180KB）—— `auto_team.py` v2.1「自主逆向团队」用（Planner→Context→Analyst(Claude)→Reviewer→人工 gate→Curator，DeepSeek 驱动），流程见 `AUTO_TEAM_WORKFLOW.md`。
+- `knowledge.db`（0 字节，**已废弃**）—— 旧 `main.py`/`context_builder.py`/`commit.py` 循环，已被 auto_team 取代，勿再用。
+
+### RecoveredProject 文档地图
+`DirectoryReference.md` = 目录总览。分阶段报告：`inspection_report.md`(P1) / `resource_inventory.md`(P2) / `native_analysis.md`(P3) / `lua_recovery.md`(P4) / `cpp_recovery.md`(P6) / `Architecture.md`·`BuildGuide.md`·`KnownIssues.md`·`RecoveryCoverage.md`·`RecoveryLog.md`(P10)。MockServer 侧另有 `HandlerCoverage.md`·`ProtocolDatabase.json`·`SerializerSpecification.md`·`SessionArchitecture.md`。
+
 ## .so Patch 规范
 
-1. **始终从干净基线派生**：`1/lib/armeabi/libgame_logic.so.prepatch_guide_v3`
+1. **始终从干净基线派生**：当前 `1/lib/armeabi/libgame_logic.so`（改坏了从 `.bak_*` 恢复）
 2. **不要在已 patch 文件上叠加** — 不可追溯
 3. **URL 替换必须等长**：不够用 `/` 填充，多了删 `/`
 4. **已确认会崩的函数**（Houdini 翻译 bug，需要 BX LR patch）：
@@ -156,12 +201,16 @@ MSYS_NO_PATHCONV=1 frida -H 127.0.0.1:27042 Gadget -l D:\Dev\javatools\1\frida_m
 
 ### .so 版本追踪
 
+**干净基线 = 当前 `1/lib/armeabi/libgame_logic.so`**（不再维护独立 prepatch 文件；派生 patch 从它出发，改坏了从下面的 .bak 恢复）。
+
 | 文件 | 用途 |
 |------|------|
-| `libgame_logic.so.prepatch_guide_v3` | **干净基线**（MuMu x86，GuideLayer 已 patch） |
-| `libgame_logic.so.arm_working` | ARM 工作版（仅 walkToEva patch） |
-| `libgame_logic.so.arm_fixgray` | **当前 APK 基线**（walkToEva→BL endGuide, 8 字节） |
-| `libgame_logic.so.arm_fixtouch` | BattleFinishedLayer touch fix（**已回退**，系误报） |
+| `libgame_logic.so` | **当前工作副本 / 干净基线** |
+| `libgame_logic.so.bak_20260608` | 备份 |
+| `libgame_logic.so.bak_eventswallow` | 备份 |
+| `libgame_logic.so.before_revert_mining` | 备份（回退 mining patch 前） |
+
+> 旧的 `prepatch_guide_v3` / `arm_working` / `arm_fixgray` / `arm_fixtouch` 已删除，勿再引用。
 
 ## Mock Server 架构（双层）
 
@@ -194,9 +243,9 @@ MSYS_NO_PATHCONV=1 frida -H 127.0.0.1:27042 Gadget -l D:\Dev\javatools\1\frida_m
 - `UNKNOWN`: 未验证，可能有问题
 
 ### 运行铁律
-- **必须在 `D:\javatools\1\` 目录下运行**：`cd D:/javatools/1 && node ../RecoveredProject/MockServer/server.js`
+- **必须在 `D:\Dev\javatools\1\` 目录下运行**：`cd D:/Dev/javatools/1 && node ../RecoveredProject/MockServer/server.js`
 - 否则 `./assets/PbConfig/*.pbconf` 路径全错 → 0 任务/0 NPC/0 地图
-- **save.json 写在 CWD**：`D:\javatools\save.json`（不是 `1/` 下）。删存档要删这个。
+- **save.json 写在 CWD**：`D:\Dev\javatools\save.json`（不是 `1/` 下）。删存档要删这个。
 - 改完后 `node --check` 验证 → kill 旧进程 → 重启
 
 ## Mock Server 维护准则
@@ -223,7 +272,7 @@ MSYS_NO_PATHCONV=1 frida -H 127.0.0.1:27042 Gadget -l D:\Dev\javatools\1\frida_m
 | 角色创建后断连 | 90% mock 回包格式问题 | 查最近改了什么 4-byte body |
 | 一启动就崩 | .so 被 patch 坏了 | 回滚到 `prepatch_guide_v3` 重做 |
 | mock 行为反常 | 多个 node 进程 | `tasklist \| grep node`，killall 后重启 |
-| 接任务后灰屏 | guide 未清理状态 | 等 root + Frida trace，不要猜 patch |
+| 接任务后灰屏 | guide 未清理状态 | 查 GuideLayer patch 是否被覆盖 |
 | 所有消息 body < 4 字节 | `invalid message body length: -2` | 补齐到 ≥ 4 字节 |
 
 ## original.apk 改造 checklist
@@ -278,10 +327,48 @@ sleep 4
 
 ## 核心原则
 
+### 1. 分析优先级（真机动态 hook 可用，MuMu 仅静态）
+
+**动态 hook 可用性（2026-07-11 实测更正）**：
+- ✅ **真机 arm64 (MNMZGERSNJJFIF9X) + gadget 内嵌**：hook 完全可用。.so 未 strip（50240 导出），模块可见（r-x 10838016 字节原生执行），`Interceptor.attach` 真触发。见 [真机 hook memory]。
+- ❌ **MuMu x86 模拟器**：ARM .so 经 Houdini 翻译仅 r--p 映射，模块不可见，Interceptor 假成功不 fire。仅能读内存。
+
+**动态 hook 适用场景**：直接按名字 hook 每个 proto 的 `*::MergePartialFromCodedStream` = **动态观察客户端怎么消费回包字段**，比 IDA 静态更快更直观。
+
+**静态分析资产**（MuMu 调试 or 补盲，仍然有用）：
+
+| 资产 | 内容 | 用途 |
+|------|------|------|
+| `analysis_output/ida_logs/ida_register.log` | 154 条 CMD→handler 映射 | 确认客户端接收的消息类型 |
+| `analysis_output/handlers/*.txt` | 20 个 handler 完整反编译 | 客户端收到消息后怎么消费每个字段 |
+| `analysis_output/whitebox/btl_*.txt` | 每个 battle 消息的 MergePartial 偏移 | 字段号→C++ 偏移 |
+| `analysis_output/whitebox/comm_*.txt` | mon_info_t 等公共类型的 MergePartial | 子消息字段布局 |
+| `RecoveredProject/MockServer/data/proto_schema.json` | 565 条 IDA 验证的字段布局 | **权威 schema，se.encode() 用** |
+| `analysis_output/ida_full_dump.json` | 462 message + 136 handler + 3678 consumer | 全量 RE 数据 |
+| `analysis_output/PROTO_HANDLER_REFERENCE.md` | handler→consumer 参考 | 字段含义 + 客户端消费逻辑 |
+| `analysis_output/CLIENT_HANDLER_LOGIC.md` | 各 handler 逐字段消费路径 | 字段→UserData/BattleManager 写入 |
+| `analysis_output/CLIENT_ANALYSIS.md` | 全流程分析 | 登录/地图/战斗全链路 |
+| `RecoveredProject/MockServer/data/ProtocolRegistry.json` | 协议单一事实源（258 条） | handler 写回包查这个 |
+| `RecoveredProject/MockServer/PROTOCOL_REGISTRY.md` | 注册表人读索引 | |
+
+**验证回包**：
+1. 查 `ida_register.log` → 确认客户端注册了哪种 out 类型
+2. 查 `proto_schema.json` / `whitebox/*.txt` → 取 MergePartial 字段布局
+3. 查 `handlers/*.txt` / `CLIENT_HANDLER_LOGIC.md` → 确认每个字段的客户端含义（读哪个偏移、写到哪里）
+4. （如果 hook 可用）hook 对应 `MergePartial` 确认字段实际被读
+
+**每次写 handler 前**先查 `ProtocolRegistry.json`，用 `lib/schema_encoder.js` 的 `encode(msgName, {字段号:值})` 出 body，禁止手拼 buffer。
+
+> 注意：`proto_schema.json` 的字段**编号**是 IDA 验证的（正确），但字段**名称**是 dumper 猜的（常错）。真实语义以 `whitebox/*.txt` 和 `handlers/*.txt` 的 C++ offset→consumer 为准。
+
+### 2. 其他核心原则
+
 - 中文交流，精简，直接给结论和命令
 - 破坏性操作前先确认（kill 进程、改 /data/app、覆盖 mock 等）
-- 协议分析走三步法（mock 日志 → Frida → IDA），不跳步
+- 协议分析查静态资产不用猜：`ProtocolRegistry.json` → `proto_schema.json` → `whitebox/*.txt` → `handlers/*.txt`
+- 真机 hook → 按符号名 hook `MergePartial` 动态看字段消费；MuMu → IDA 静态替代
+- **不要尝试在 MuMu 上用 Frida hook**（Houdini 翻译，attach 假成功不 fire）
 - 每次关键发现写 memory 到 `C:\Users\23287\.claude\projects\D--Dev-javatools\memory\`
-- 优先翻 `1/ida_*.txt`（已有 IDA 输出），不要重新跑 IDA
+- 优先翻 `analysis_output/`（已有 IDA 输出），不要重新跑 IDA
 - 动手前先 `ls 1/` 找现成脚本复用，不重复写
 - 用户没 token 时立刻收尾，不要 sleep 等冷启动
